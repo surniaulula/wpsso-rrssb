@@ -2,7 +2,7 @@
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)</td></tr>
-<tr><th align="right" valign="top" nowrap>Summary</th><td>WPSSO extension to add Ridiculously Responsive Social Sharing Buttons to your content, as a shorcode, or widget.</td></tr>
+<tr><th align="right" valign="top" nowrap>Summary</th><td>WPSSO extension to add Ridiculously Responsive Social Sharing Buttons to your content, as a shortcode, or widget.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>0.1</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires At Least</th><td>WordPress 3.0</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To</th><td>WordPress 4.2.3</td></tr>

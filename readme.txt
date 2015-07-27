@@ -10,7 +10,7 @@ Requires At Least: 3.0
 Tested Up To: 4.2.3
 Stable Tag: 0.1
 
-WPSSO extension to add Ridiculously Responsive Social Sharing Buttons to your content, as a shorcode, or widget.
+WPSSO extension to add Ridiculously Responsive Social Sharing Buttons to your content, as a shortcode, or widget.
 
 == Description ==
 
