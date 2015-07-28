@@ -18,13 +18,13 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 			$this->p =& Wpsso::get_instance();
 			if ( ! is_object( $this->p ) )
 				return;
-			$lca = $this->p->cf['lca'];
-			$short = $this->p->cf['plugin'][$lca]['short'];
-			$widget_name = 'Sharing Buttons';
+			$short = $this->p->cf['plugin']['wpssorrssb']['short'];
+			$name = $this->p->cf['plugin']['wpssorrssb']['name'];
+			$widget_name = $short;
 			$widget_class = $lca.'-rrssb-widget';
 			$widget_ops = array( 
 				'classname' => $widget_class,
-				'description' => 'The '.$short.' social sharing buttons widget.'
+				'description' => 'The '.$name.' widget.'
 			);
 			$this->WP_Widget( $widget_class, $widget_name, $widget_ops );
 		}
