@@ -1,4 +1,4 @@
-=== WPSSO Ridiculously Responsive Social Sharing Buttons - Awesome SVG Buttons on Any Device ===
+=== WPSSO Ridiculously Responsive Social Sharing Buttons - Awesome SVG Buttons in Any Size ===
 Plugin Name: WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)
 Plugin Slug: wpsso-rrssb
 Contributors: jsmoriss
