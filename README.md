@@ -49,7 +49,7 @@
 </ul>
 
 <blockquote>
-<p>Download the Free version from <a href="http://surniaulula.github.io/wpsso-rrssb/">GitHub</a> or <a href="https://wordpress.org/plugins/wpsso-rrssb/">WordPress.org</a>.</p>
+<p>Download the Free version from <a href="http://surniaulula.github.io/wpsso-rrssb/">GitHub</a> or <a href="https://wordpress.org/plugins/wpsso-rrssb/">WordPress.org</a>. WPSSO RRSSB uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.</p>
 </blockquote>
 
 <h4>Fastest Performance</h4>
