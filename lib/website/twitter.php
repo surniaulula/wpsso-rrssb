@@ -99,7 +99,7 @@ if ( ! class_exists( 'WpssoRrssbSharingTwitter' ) ) {
 		}
 
 		public function filter_get_defaults( $opts_def ) {
-			self::$cf['opt']['defaults']['twitter_cap_hashtags'] = $this->p->options['og_desc_hashtags'];
+			self::$cf['opt']['defaults']['twitter_cap_hashtags'] = $opts_def['og_desc_hashtags'];
 			return array_merge( $opts_def, self::$cf['opt']['defaults'] );
 		}
 

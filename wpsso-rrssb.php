@@ -26,7 +26,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 		protected static $instance = null;
 
 		private $opt_version_suffix = 'rrssb1';
-		private $wpsso_min_version = '3.6.2';
+		private $wpsso_min_version = '3.6.3';
 		private $wpsso_has_min_ver = true;
 
 		public static function &get_instance() {
@@ -88,6 +88,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 			if ( $this->wpsso_has_min_ver === false )
 				return;
 			$this->p->is_avail['rrssb'] = true;
+			$this->p->is_avail['admin']['sharing'] = true;
 		}
 
 		public function wpsso_init_objects() {

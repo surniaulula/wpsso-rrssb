@@ -18,7 +18,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'version' => '0.1',	// plugin version
 					'short' => 'WPSSO RRSSB',
 					'name' => 'WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)',
-					'desc' => 'WPSSO extension to provide Ridiculously Responsive Social Sharing Buttons - with support for hashtags, short URLs, bbPress, and BuddyPress.',
+					'desc' => 'WPSSO extension to add Ridiculously Responsive Social Sharing Buttons to your content, as a shortcode, or widget.',
 					'slug' => 'wpsso-rrssb',
 					'base' => 'wpsso-rrssb/wpsso-rrssb.php',
 					'update_auth' => '',
@@ -34,13 +34,13 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 						'wp_support' => 'https://wordpress.org/support/plugin/wpsso-rrssb',
 						// wpsso.com
 						'update' => 'http://wpsso.com/extend/plugins/wpsso-rrssb/update/',
-						'purchase' => '',
+						'purchase' => 'http://wpsso.com/extend/plugins/wpsso-rrssb/',
 						'changelog' => 'http://wpsso.com/extend/plugins/wpsso-rrssb/changelog/',
-						'codex' => '',
-						'faq' => '',
+						'codex' => 'http://wpsso.com/codex/plugins/wpsso-rrssb/',
+						'faq' => 'http://wpsso.com/codex/plugins/wpsso-rrssb/faq/',
 						'notes' => '',
-						'feed' => '',
-						'pro_support' => '',
+						'feed' => 'http://wpsso.com/category/application/wordpress/wp-plugins/wpsso-rrssb/feed/',
+						'pro_support' => 'http://wpsso-rrssb.support.wpsso.com/',
 					),
 					'lib' => array(
 						'submenu' => array (
