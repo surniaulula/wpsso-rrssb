@@ -64,6 +64,8 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 == Screenshots ==
 
+01. An example showing all Ridiculously Responsive Social Sharing Buttons enabled (using the default WPSSO RRSSB stylesheet) in the CSS sidebar, content text, and widget.
+
 == Changelog ==
 
 = Free / Basic Version Repository =
