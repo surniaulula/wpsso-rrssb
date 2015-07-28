@@ -111,7 +111,7 @@ if ( ! class_exists( 'WpssoRrssbSharingTumblr' ) ) {
 				$atts['source_id'] = $this->p->util->get_source_id( 'tumblr', $atts );
 
 			return $this->p->util->replace_inline_vars( $this->p->options['tumblr_html'], $use_post, false, $atts, array(
-				 	'tumblr_title' => rawurlencode( $this->p->webpage->get_title( 0, '',
+				 	'tumblr_title' => rawurlencode( $this->p->webpage->get_caption( 'title', 0,
 						$use_post, true, false, false, 'og_title', 'tumblr' ) ),
 				 	'tumblr_caption' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['tumblr_cap_len'],
 						$use_post, true, $add_hashtags, false, 'og_desc', 'tumblr' ) ),

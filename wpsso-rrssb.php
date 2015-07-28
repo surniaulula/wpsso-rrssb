@@ -25,7 +25,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 		protected static $instance = null;
 
-		private $opt_version_suffix = 'rrssb1';
+		private $opt_version_suffix = 'rrssb2';
 		private $wpsso_min_version = '3.6.3';
 		private $wpsso_has_min_ver = true;
 

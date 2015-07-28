@@ -35,9 +35,21 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			$lca = $this->p->cf['lca'];
 			$post_status = get_post_status( $head_info['post_id'] );
 			$size_info = $this->p->media->get_size_info( 'thumbnail' );
+			$save_draft_msg = '<em>Save a draft version or publish the '.$head_info['ptn'].' to enable this field.</em>';
 
-			$rows[] = '<td colspan="2" align="center">'.
+			$rows[] = '<td colspan="3" align="center">'.
 				$this->p->msgs->get( 'pro-feature-msg', array( 'lca' => 'wpssorrssb' ) ).'</td>';
+
+			/*
+			 * Email
+			 */
+			$rows['email_title'] = $this->p->util->get_th( 'Email Subject', 'medium', 'post-email_title' ). 
+			'<td class="blank">'.$this->p->webpage->get_caption( 'title', 0,
+				true, true, false ).'</td>';
+
+			$rows['email_desc'] = $this->p->util->get_th( 'Email Message', 'medium', 'post-email_desc' ). 
+			'<td class="blank average">'.$this->p->webpage->get_caption( 'excerpt', $opts['email_cap_len'], 
+				true, true, $this->p->options['email_cap_hashtags'] ).'</td>';
 
 			/*
 			 * Pinterest
@@ -45,7 +57,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			list( $pid, $img_url ) = $this->p->og->get_the_media_urls( $lca.'-pinterest-button',
 				$head_info['post_id'], 'rp', array( 'pid', 'image' ) );
 
-			$th = $this->p->util->get_th( 'Pinterest Image Caption', 'medium', 'post-pin_desc' );
+			$th = $this->p->util->get_th( 'Pinterest Caption', 'medium', 'post-pin_desc' );
 			if ( ! empty( $pid ) ) {
 				list(
 					$img_url,
@@ -54,13 +66,11 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 					$img_cropped
 				) = $this->p->media->get_attachment_image_src( $pid, 'thumbnail', false ); 
 			}
-			if ( ! empty( $img_url ) ) {
-				$rows['pin_desc'] = $th.'<td class="blank">'.
-				$this->p->webpage->get_caption( 'excerpt', $this->p->options['pin_cap_len'],
-					true, true, $this->p->options['pin_cap_hashtags'] ).'</td>'.
-				'<td style="width:'.$size_info['width'].'px;"><img src="'.$img_url.'"
-					style="max-width:'.$size_info['width'].'px;"></td>';
-			} else $rows['pin_desc'] = $th.'<td class="blank"><em>Caption disabled - no suitable image found for the Pinterest button.</em></td>';
+			$rows['pin_desc'] = $th.'<td class="blank">'.
+			$this->p->webpage->get_caption( 'excerpt', $this->p->options['pin_cap_len'],
+				true, true, $this->p->options['pin_cap_hashtags'] ).'</td>'.
+			( empty( $img_url ) ? '' : '<td style="width:'.$size_info['width'].'px;"><img src="'.$img_url.'"
+				style="max-width:'.$size_info['width'].'px;"></td>' );
 
 			/*
 			 * Twitter
@@ -70,6 +80,26 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			'<td class="blank">'.$this->p->webpage->get_caption( 'title', $twitter_cap_len, 
 				true, true, $this->p->options['twitter_cap_hashtags'] ).'</td>';
 
+			/*
+			 * Generic Title / Caption Input
+			 */
+			foreach ( array(
+				'LinkedIn' => 'linkedin',
+				'Reddit' => 'reddit',
+				'Tumblr' => 'tumblr',
+			) as $name => $opt_prefix ) {
+				$rows[$opt_prefix.'_title'] = $this->p->util->get_th( $name.' Title', 'medium', 'post-'.$opt_prefix.'_title' ). 
+				'<td class="blank">'.$this->p->webpage->get_caption( 'title', 0,
+					true, true, false ).'</td>';
+	
+				$rows[$opt_prefix.'_desc'] = $this->p->util->get_th( $name.' Caption', 'medium', 'post-'.$opt_prefix.'_desc' ). 
+				'<td class="blank average">'.$this->p->webpage->get_caption( 'excerpt', $opts[$opt_prefix.'_cap_len'], 
+					true, true, $this->p->options[$opt_prefix.'_cap_hashtags'] ).'</td>';
+			}
+
+			/*
+			 * Miscellaneous
+			 */
 			$rows['buttons_disabled'] = '<tr class="hide_in_basic">'.
 			$this->p->util->get_th( 'Disable Sharing Buttons', 'medium', 'post-buttons_disabled', $head_info ).
 			'<td class="blank">&nbsp;</td>';

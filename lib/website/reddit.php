@@ -35,11 +35,11 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingReddit' ) && class_exists( 'WpssoR
 			'<td>'.$this->show_on_checkboxes( 'reddit' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-                        $this->p->util->get_th( 'Summary Text Length' ).
+                        $this->p->util->get_th( 'Caption Text Length' ).
 			'<td>'.$this->form->get_input( 'reddit_cap_len', 'short' ).' characters or less</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			$this->p->util->get_th( 'Append Hashtags to Summary' ).
+			$this->p->util->get_th( 'Append Hashtags to Caption' ).
 			'<td>'.$this->form->get_select( 'reddit_cap_hashtags',
 				range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', null, true ).' tag names</td>';
 
@@ -85,7 +85,18 @@ if ( ! class_exists( 'WpssoRrssbSharingReddit' ) ) {
 
 		public function __construct( &$plugin ) {
 			$this->p =& $plugin;
-			$this->p->util->add_plugin_filters( $this, array( 'get_defaults' => 1 ) );
+			$this->p->util->add_plugin_filters( $this, array(
+				'get_defaults' => 1,
+				'get_meta_defaults' => 2,
+			) );
+		}
+
+		public function filter_get_meta_defaults( $opts_def, $mod ) {
+			$meta_def = array(
+				'reddit_title' => '',
+				'reddit_desc' => '',
+			);
+			return array_merge( $opts_def, $meta_def );
 		}
 
 		public function filter_get_defaults( $opts_def ) {
@@ -112,10 +123,10 @@ if ( ! class_exists( 'WpssoRrssbSharingReddit' ) ) {
 				$atts['source_id'] = $this->p->util->get_source_id( 'reddit', $atts );
 
 			return $this->p->util->replace_inline_vars( $this->p->options['reddit_html'], $use_post, false, $atts, array(
-				 	'reddit_title' => rawurlencode( $this->p->webpage->get_title( 0, '',
-						$use_post, true, false, false, 'og_title', 'reddit' ) ),
+				 	'reddit_title' => rawurlencode( $this->p->webpage->get_caption( 'title', 0,
+						$use_post, true, false, false, 'reddit_title', 'reddit' ) ),
 				 	'reddit_summary' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['reddit_cap_len'],
-						$use_post, true, $add_hashtags, false, 'og_desc', 'reddit' ) ),
+						$use_post, true, $add_hashtags, false, 'reddit_desc', 'reddit' ) ),
 				 ) );
 		}
 	}

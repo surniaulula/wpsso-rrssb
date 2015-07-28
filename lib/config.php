@@ -18,7 +18,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'version' => '0.1',	// plugin version
 					'short' => 'WPSSO RRSSB',
 					'name' => 'WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)',
-					'desc' => 'WPSSO extension to add Ridiculously Responsive Social Sharing Buttons to your content, as a shortcode, or widget.',
+					'desc' => 'WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.',
 					'slug' => 'wpsso-rrssb',
 					'base' => 'wpsso-rrssb/wpsso-rrssb.php',
 					'update_auth' => '',
@@ -108,6 +108,9 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		}
 
 		public static function require_libs( $plugin_filepath ) {
+			if ( ! is_admin() )
+				require_once( WPSSORRSSB_PLUGINDIR.'lib/functions.php' );
+
 			add_filter( 'wpssorrssb_load_lib', array( 'WpssoRrssbConfig', 'load_lib' ), 10, 3 );
 		}
 

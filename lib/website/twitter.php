@@ -95,7 +95,17 @@ if ( ! class_exists( 'WpssoRrssbSharingTwitter' ) ) {
 
 		public function __construct( &$plugin ) {
 			$this->p =& $plugin;
-			$this->p->util->add_plugin_filters( $this, array( 'get_defaults' => 1 ) );
+			$this->p->util->add_plugin_filters( $this, array(
+				'get_defaults' => 1,
+				'get_meta_defaults' => 2,
+			) );
+		}
+
+		public function filter_get_meta_defaults( $opts_def, $mod ) {
+			$meta_def = array(
+				'twitter_desc' => '',
+			);
+			return array_merge( $opts_def, $meta_def );
 		}
 
 		public function filter_get_defaults( $opts_def ) {

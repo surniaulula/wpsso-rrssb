@@ -34,13 +34,13 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					'buttons_pos_excerpt' => 'bottom',
 					'buttons_use_social_css' => 1,
 					'buttons_enqueue_social_css' => 1,
-					'buttons_css_sharing' => '',		// all buttons
-					'buttons_css_content' => '',		// post/page content
-					'buttons_css_excerpt' => '',		// post/page excerpt
-					'buttons_css_admin_edit' => '',
-					'buttons_css_sidebar' => '',
-					'buttons_css_shortcode' => '',
-					'buttons_css_widget' => '',
+					'buttons_css_rrssb-sharing' => '',		// all buttons
+					'buttons_css_rrssb-content' => '',		// post/page content
+					'buttons_css_rrssb-excerpt' => '',		// post/page excerpt
+					'buttons_css_rrssb-admin_edit' => '',
+					'buttons_css_rrssb-sidebar' => '',
+					'buttons_css_rrssb-shortcode' => '',
+					'buttons_css_rrssb-widget' => '',
 				),
 			),
 			'sharing' => array(
@@ -51,13 +51,13 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					'admin_edit' => 'Admin Edit',
 				),
 				'style' => array(
-					'sharing' => 'All Buttons',
-					'content' => 'Content',
-					'excerpt' => 'Excerpt',
-					'sidebar' => 'CSS Sidebar',
-					'admin_edit' => 'Admin Edit',
-					'shortcode' => 'Shortcode',
-					'widget' => 'Widget',
+					'rrssb-sharing' => 'All Buttons',
+					'rrssb-content' => 'Content',
+					'rrssb-excerpt' => 'Excerpt',
+					'rrssb-sidebar' => 'CSS Sidebar',
+					'rrssb-admin_edit' => 'Admin Edit',
+					'rrssb-shortcode' => 'Shortcode',
+					'rrssb-widget' => 'Widget',
 				),
 			),
 		);
@@ -114,7 +114,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			$url_path = parse_url( trailingslashit( plugins_url( '', $this->plugin_filepath ) ), PHP_URL_PATH );	// relative URL
 
 			foreach ( self::$cf['sharing']['style'] as $id => $name ) {
-				$css_file = $plugin_dir.'css/'.$id.'-buttons.css';
+				$css_file = $plugin_dir.'css/'.$id.'.css';
 
 				// css files are only loaded once (when variable is empty) into defaults to minimize disk i/o
 				if ( empty( $opts_def['buttons_css_'.$id] ) ) {
@@ -248,7 +248,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		public function show_admin_sharing( $post ) {
 			$post_type = get_post_type_object( $post->post_type );	// since 3.0
 			$post_type_name = ucfirst( $post_type->name );
-			$css_data = $this->p->options['buttons_css_admin_edit'];
+			$css_data = $this->p->options['buttons_css_rrssb-admin_edit'];
 			$classname = apply_filters( $this->p->cf['lca'].'_load_lib', false, 'ext/compressor', 'SuextMinifyCssCompressor' );
 			if ( $classname !== false && class_exists( $classname ) )
 				$css_data = call_user_func( array( $classname, 'process' ), $css_data );
