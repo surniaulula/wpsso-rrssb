@@ -28,7 +28,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingStyles' ) && class_exists( 'WpssoA
 			$short_pro = $short.' Pro';
 			switch ( $idx ) {
 
-				case 'info-style-sharing':
+				case 'info-style-rrssb-sharing':
 
 					$notes_url = $this->p->cf['plugin'][$lca]['url']['notes'];
 					$text = '<p>'.$short.' uses the \''.$lca.'-buttons\' class to wrap all its 
@@ -38,7 +38,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingStyles' ) && class_exists( 'WpssoA
 					buttons for specific Posts, Pages, categories, tags, etc.</p>';
 					break;
 
-				case 'info-style-content':
+				case 'info-style-rrssb-content':
 
 					$text = '<p>Social sharing buttons, enabled / added to the content text from the '.
 					$this->p->util->get_admin_url( 'sharing', 'Buttons settings page' ).
@@ -51,7 +51,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingStyles' ) && class_exists( 'WpssoA
         li.rrssb-facebook { }</pre>';
 					break;
 
-				case 'info-style-excerpt':
+				case 'info-style-rrssb-excerpt':
 					$text = '<p>Social sharing buttons, enabled / added to the excerpt text from the '.
 					$this->p->util->get_admin_url( 'sharing', 'Buttons settings page' ).
 					', are assigned the \''.$lca.'-excerpt-buttons\' class, which itself contains the 
@@ -63,7 +63,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingStyles' ) && class_exists( 'WpssoA
         .facebook-button { }</pre>';
 					break;
 
-				case 'info-style-sidebar':
+				case 'info-style-rrssb-sidebar':
 					$text = '<p>Social sharing buttons added to the sidebar are assigned the 
 					\'#'.$lca.'-sidebar\' CSS id, which itself contains \'#'.$lca.'-sidebar-header\',
 					\'#'.$lca.'-sidebar-buttons\', and the \''.$lca.'-buttons\' class -- 
@@ -78,7 +78,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingStyles' ) && class_exists( 'WpssoA
 	    .facebook-button { }</pre>';
 					break;
 
-				case 'info-style-shortcode':
+				case 'info-style-rrssb-shortcode':
 					$text = '<p>Social sharing buttons added from a shortcode are assigned the 
 					\''.$lca.'-shortcode-buttons\' class, which itself contains the 
 					\''.$lca.'-buttons\' class -- a common class for all the sharing buttons 
@@ -89,7 +89,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingStyles' ) && class_exists( 'WpssoA
         .facebook-button { }</pre>';
 					break;
 
-				case 'info-style-widget':
+				case 'info-style-rrssb-widget':
 					$text = '<p>Social sharing buttons within the '.$this->p->cf['menu'].
 					' Sharing Buttons widget are assigned the 
 					\''.$lca.'-widget-buttons\' class, which itself contains the 
@@ -108,7 +108,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingStyles' ) && class_exists( 'WpssoA
         #facebook-'.$lca.'-widget-buttons-2 { }</pre>';
 					break;
 
-				case 'info-style-admin_edit':
+				case 'info-style-rrssb-admin_edit':
 					$text = '<p>Social sharing buttons within the Admin Post / Page Edit metabox
 					are assigned the \''.$lca.'-admin_edit-buttons\' class, which itself contains the 
 					\''.$lca.'-buttons\' class -- a common class for all the sharing buttons 
