@@ -15,17 +15,22 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 		protected $p;
 
 		public function __construct() {
+
 			$this->p =& Wpsso::get_instance();
 			if ( ! is_object( $this->p ) )
 				return;
+
+			$lca = $this->p->cf['lca'];
 			$short = $this->p->cf['plugin']['wpssorrssb']['short'];
 			$name = $this->p->cf['plugin']['wpssorrssb']['name'];
+
 			$widget_name = $short;
 			$widget_class = $lca.'-rrssb-widget';
 			$widget_ops = array( 
 				'classname' => $widget_class,
 				'description' => 'The '.$name.' widget.'
 			);
+
 			$this->WP_Widget( $widget_class, $widget_name, $widget_ops );
 		}
 	
@@ -33,7 +38,7 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 			if ( is_feed() )
 				return;	// nothing to do in the feeds
 
-			if ( ! empty( $_SERVER['WPSSORRSSB_DISABLE'] ) )
+			if ( ! empty( $_SERVER['WPSSORRSSB_SOCIAL_SHARING_DISABLE'] ) )
 				return;
 
 			if ( ! is_object( $this->p ) )
@@ -41,7 +46,8 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 
 			if ( is_object( $this->p->rrssb ) && 
 				$this->p->rrssb->is_post_buttons_disabled() ) {
-				$this->p->debug->log( 'widget buttons skipped: sharing buttons disabled' );
+				if ( $this->p->debug->enabled )
+					$this->p->debug->log( 'widget buttons skipped: sharing buttons disabled' );
 				return;
 			}
 			extract( $args );
@@ -52,12 +58,15 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 				$cache_salt = __METHOD__.'(lang:'.SucomUtil::get_locale().'_widget:'.$this->id.'_url:'.$sharing_url.')';
 				$cache_id = $lca.'_'.md5( $cache_salt );
 				$cache_type = 'object cache';
-				$this->p->debug->log( $cache_type.': transient salt '.$cache_salt );
+				if ( $this->p->debug->enabled )
+					$this->p->debug->log( $cache_type.': transient salt '.$cache_salt );
 				$html = get_transient( $cache_id );
 				if ( $html !== false ) {
-					$this->p->debug->log( $cache_type.': html retrieved from transient '.$cache_id );
+					if ( $this->p->debug->enabled )
+						$this->p->debug->log( $cache_type.': html retrieved from transient '.$cache_id );
 					echo $html;
-					$this->p->debug->show_html();
+					if ( $this->p->debug->enabled )
+						$this->p->debug->show_html();
 					return;
 				}
 			}
@@ -85,11 +94,13 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 
 			if ( $this->p->is_avail['cache']['transient'] ) {
 				set_transient( $cache_id, $html, $this->p->options['plugin_object_cache_exp'] );
-				$this->p->debug->log( $cache_type.': html saved to transient '.
-					$cache_id.' ('.$this->p->options['plugin_object_cache_exp'].' seconds)');
+				if ( $this->p->debug->enabled )
+					$this->p->debug->log( $cache_type.': html saved to transient '.
+						$cache_id.' ('.$this->p->options['plugin_object_cache_exp'].' seconds)');
 			}
 			echo $html;
-			$this->p->debug->show_html();
+			if ( $this->p->debug->enabled )
+				$this->p->debug->show_html();
 		}
 	
 		public function update( $new_instance, $old_instance ) {

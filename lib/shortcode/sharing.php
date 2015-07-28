@@ -89,7 +89,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				$ids = array_map( 'trim', explode( ',', $atts['buttons'] ) );
 				unset ( $atts['buttons'] );
 				$html .= '<!-- '.$lca.' '.$atts['css_class']." begin -->\n".
-					'<div class="'.$lca.'-'.$atts['css_class']."\">\n".
+					'<div class="'.$lca.'-rrssb '.$lca.'-'.$atts['css_class']."\">\n".
 					$this->p->rrssb->get_html( $ids, $atts ).
 					'</div><!-- .'.$lca.'-'.$atts['css_class']." -->\n".
 					'<!-- '.$lca.' '.$atts['css_class']." end -->\n";

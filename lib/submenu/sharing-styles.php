@@ -31,92 +31,76 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingStyles' ) && class_exists( 'WpssoA
 				case 'info-style-rrssb-sharing':
 
 					$notes_url = $this->p->cf['plugin'][$lca]['url']['notes'];
-					$text = '<p>'.$short.' uses the \''.$lca.'-buttons\' class to wrap all its 
-					sharing buttons, and each button has it\'s own individual class name as well. 
-					Refer to the <a href="'.$notes_url.'" target="_blank">Notes</a> 
-					webpage for additional stylesheet information, including how to hide the sharing 
-					buttons for specific Posts, Pages, categories, tags, etc.</p>';
+					$text = '<p>'.$short.' uses the \''.$lca.'-rrssb\' class to wrap all
+					sharing buttons, and each button has it\'s own individual class name as well.
+					This tab can be used for CSS common to all sharing button locations.</p>';
 					break;
 
 				case 'info-style-rrssb-content':
 
 					$text = '<p>Social sharing buttons, enabled / added to the content text from the '.
-					$this->p->util->get_admin_url( 'sharing', 'Buttons settings page' ).
-					', are assigned the \''.$lca.'-content-buttons\' class, which itself contains the 
-					\''.$lca.'-buttons\' class -- a common class for all the sharing buttons 
-					(see the All Buttons tab).</p> 
+					$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page,
+					are assigned the \''.$lca.'-rrssb-content\' class.</p> 
 					<p>Example:</p><pre>
-.'.$lca.'-rrssb .'.$lca.'-rrssb-content
+div.'.$lca.'-rrssb
+  .'.$lca.'-rrssb-content
     ul.rrssb-buttons
-        li.rrssb-facebook { }</pre>';
+      li.rrssb-facebook {}</pre>';
 					break;
 
 				case 'info-style-rrssb-excerpt':
 					$text = '<p>Social sharing buttons, enabled / added to the excerpt text from the '.
-					$this->p->util->get_admin_url( 'sharing', 'Buttons settings page' ).
-					', are assigned the \''.$lca.'-excerpt-buttons\' class, which itself contains the 
-					\''.$lca.'-buttons\' class -- a common class for all the sharing buttons 
-					(see the All Buttons tab).</p> 
+					$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page,
+					are assigned the \''.$lca.'-rrssb-excerpt\' class.</p> 
 					<p>Example:</p><pre>
-.'.$lca.'-excerpt-buttons 
-    .'.$lca.'-buttons
-        .facebook-button { }</pre>';
+div.'.$lca.'-rrssb
+  .'.$lca.'-rrssb-excerpt
+    ul.rrssb-buttons
+      li.rrssb-facebook {}</pre>';
 					break;
 
 				case 'info-style-rrssb-sidebar':
-					$text = '<p>Social sharing buttons added to the sidebar are assigned the 
-					\'#'.$lca.'-sidebar\' CSS id, which itself contains \'#'.$lca.'-sidebar-header\',
-					\'#'.$lca.'-sidebar-buttons\', and the \''.$lca.'-buttons\' class -- 
-					a common class for all the sharing buttons (see the All Buttons tab).</p> 
+					$text = '<p>Social sharing buttons, enabled / added to the CSS sidebar from the '.
+					$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page,
+					are assigned the \''.$lca.'-rrssb-sidebar\' ID.</p> 
+					<p>In order to achieve a vertical display, each un-ordered list (ul) contains a 
+					single list item (li).</p>
 					<p>Example:</p><pre>
-#'.$lca.'-sidebar
-    #'.$lca.'-sidebar-header { }
-
-#'.$lca.'-sidebar
-    #'.$lca.'-sidebar-buttons
-        .'.$lca.'-buttons
-	    .facebook-button { }</pre>';
+div.'.$lca.'-rrssb 
+  #'.$lca.'-rrssb-sidebar
+    ul.rrssb-buttons
+      li.rrssb-facebook {}</pre>';
 					break;
 
 				case 'info-style-rrssb-shortcode':
-					$text = '<p>Social sharing buttons added from a shortcode are assigned the 
-					\''.$lca.'-shortcode-buttons\' class, which itself contains the 
-					\''.$lca.'-buttons\' class -- a common class for all the sharing buttons 
-					(see the All Buttons tab).</p> 
+					$text = '<p>Social sharing buttons, enabled / added from a shortcode 
+					are assigned the \''.$lca.'-rrssb-shortcode\' class by default.</p> 
 					<p>Example:</p><pre>
-.'.$lca.'-shortcode-buttons 
-    .'.$lca.'-buttons
-        .facebook-button { }</pre>';
+div.'.$lca.'-rrssb 
+  .'.$lca.'-rrssb-shortcode
+    ul.rrssb-buttons
+      li.rrssb-facebook {}</pre>';
 					break;
 
 				case 'info-style-rrssb-widget':
-					$text = '<p>Social sharing buttons within the '.$this->p->cf['menu'].
-					' Sharing Buttons widget are assigned the 
-					\''.$lca.'-widget-buttons\' class, which itself contains the 
-					\''.$lca.'-buttons\' class -- a common class for all the sharing buttons 
-					(see the All Buttons tab).</p> 
+					$text = '<p>Social sharing buttons, enabled in the '.$short.' widget
+					are assigned the \''.$lca.'-rrssb-widget\' class (along with some unique CSS ID names).</p> 
 					<p>Example:</p><pre>
-.'.$lca.'-widget-buttons 
-    .'.$lca.'-buttons
-        .facebook-button { }</pre>
-					<p>The '.$this->p->cf['menu'].' Sharing Buttons widget also has an id of 
-					\''.$lca.'-widget-buttons-<em>#</em>\', and the buttons have an id of 
-					\'<em>name</em>-'.$lca.'-widget-buttons-<em>#</em>\'.</p>
-					<p>Example:</p><pre>
-#'.$lca.'-widget-buttons-2
-    .'.$lca.'-buttons
-        #facebook-'.$lca.'-widget-buttons-2 { }</pre>';
+aside.widget 
+  .'.$lca.'-rrssb-widget 
+    ul.rrssb-buttons
+        li.rrssb-facebook { }</pre>';
 					break;
 
 				case 'info-style-rrssb-admin_edit':
-					$text = '<p>Social sharing buttons within the Admin Post / Page Edit metabox
-					are assigned the \''.$lca.'-admin_edit-buttons\' class, which itself contains the 
-					\''.$lca.'-buttons\' class -- a common class for all the sharing buttons 
-					(see the All Buttons tab).</p> 
+					$text = '<p>Social sharing buttons, enabled / added to the admin editing pages from the '.
+					$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page,
+					are assigned the \''.$lca.'-rrssb-admin_edit\' class.</p> 
 					<p>Example:</p><pre>
-.'.$lca.'-admin_edit-buttons 
-    .'.$lca.'-buttons
-        .facebook-button { }</pre>';
+div.'.$lca.'-rrssb
+  .'.$lca.'-rrssb-admin_edit
+    ul.rrssb-buttons
+      li.rrssb-facebook {}</pre>';
 					break;
 			}
 			return $text;
@@ -135,10 +119,6 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingStyles' ) && class_exists( 'WpssoA
 							stylesheet with the URL of <a href="'.WpssoRrssbSharing::$sharing_css_url.'">'.
 							WpssoRrssbSharing::$sharing_css_url.'</a>. The minimized stylesheet can be 
 							enqueued by WordPress, or included directly in the webpage header.';
-							break;
-		
-						case 'tooltip-buttons_js_sidebar':
-							$text = 'JavaScript that is added to the webpage for the social sharing sidebar.';
 							break;
 		
 						case 'tooltip-buttons_enqueue_social_css':
