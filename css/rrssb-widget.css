@@ -1,0 +1,20 @@
+/* Save an empty style text box to reload the default example styles.
+ * These styles are provided as examples only - modifications may be 
+ * necessary to customize the layout for your website.
+ */
+
+.widget ul.rrssb-buttons {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.widget ul.rrssb-buttons.small-format {
+	padding-top:5px;
+}
+.widget ul.rrssb-buttons.tiny-format {
+	height:30px;
+}
+.widget ul.rrssb-buttons.tiny-format li {
+	padding:0 3px;
+	border:none;
+}

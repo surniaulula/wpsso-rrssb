@@ -1,0 +1,13 @@
+/* Save an empty style text box to reload the default example styles.
+ * These styles are provided as examples only - modifications may be 
+ * necessary to customize the layout for your website.
+ */
+
+table.sucom-setting .rrssb-buttons {
+	margin:0;
+	list-style:none;
+}
+table.sucom-setting .rrssb-buttons:before,
+table.sucom-setting .rrssb-buttons:after {
+	display:none;
+}
