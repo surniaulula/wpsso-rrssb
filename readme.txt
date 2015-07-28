@@ -8,7 +8,7 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.txt
 Requires At Least: 3.0
 Tested Up To: 4.2.3
-Stable Tag: 0.1
+Stable Tag: 0.2
 
 WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
 
@@ -66,6 +66,8 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 01. An example showing all Ridiculously Responsive Social Sharing Buttons enabled (using the default WPSSO RRSSB stylesheet) in the CSS sidebar, content text, and widget.
 02. The 'Sharing Buttons' tab available in the 'Social Settings' metabox allows you to fine-tune the text used by some social sharing websites.
+03. The 'Sharing Buttons' settings page.
+04. The 'Sharing Styles' settings page.
 
 == Changelog ==
 
@@ -74,20 +76,20 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 * [GitHub](https://github.com/SurniaUlula/wpsso-ssb)
 * [WordPress.org](https://wordpress.org/plugins/wpsso-ssb/developers/)
 
-= Version 0.1 =
+= Version 0.2 =
 
 * **New Features**
 	* *None*
 * **Improvements**
 	* *None*
 * **Bugfixes**
-	* *None*
+	* Corrected the styling help text on the "Sharing Styles" settings page.
 * **Developer Notes**
 	* *None*
 
 == Upgrade Notice ==
 
-= 0.1 =
+= 0.2 =
 
-Initial release.
+Corrected the styling help text on the "Sharing Styles" settings page.
 
