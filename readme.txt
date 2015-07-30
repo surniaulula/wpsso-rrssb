@@ -76,7 +76,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 * [GitHub](https://github.com/SurniaUlula/wpsso-ssb)
 * [WordPress.org](https://wordpress.org/plugins/wpsso-ssb/developers/)
 
-= Version 0.2 =
+= Version 0.2 (2015/07/29) =
 
 * **New Features**
 	* *None*
