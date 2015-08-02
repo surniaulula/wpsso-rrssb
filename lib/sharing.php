@@ -207,6 +207,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 							$this->p->debug->log( 'failed writing to '.self::$sharing_css_file );
 					} elseif ( $this->p->debug->enabled )
 						$this->p->debug->log( 'updated css file '.self::$sharing_css_file.' ('.$written.' bytes written)' );
+					fclose( $fh );
 				} else {
 					if ( ! is_writable( WPSSO_CACHEDIR ) ) {
 						if ( is_admin() )
@@ -219,7 +220,6 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					if ( $this->p->debug->enabled )
 						$this->p->debug->log( 'failed opening '.self::$sharing_css_file.' for writing' );
 				}
-				fclose( $fh );
 			} else $this->unlink_sharing_css();
 		}
 
