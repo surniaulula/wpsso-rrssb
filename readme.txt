@@ -48,6 +48,21 @@ Each of these social sharing buttons can be enabled, configured, and styled indi
 <p>Download the Free version from <a href="http://surniaulula.github.io/wpsso-rrssb/">GitHub</a> or <a href="https://wordpress.org/plugins/wpsso-rrssb/">WordPress.org</a>. WPSSO RRSSB uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.</p>
 </blockquote>
 
+**Pro / Power-User Version**
+
+The [Pro version of WPSSO RRSSB](http://wpsso.com/extend/plugins/wpsso-rrssb/) includes a number of additional options and features:
+
+* A stylesheets editor for each social sharing button locations (content, excerpt, shortcode, widget, etc.).
+* URL shortening with Bitly or Google for URLs in Tweet texts.
+* Additional sharing button locations and CSS styles for:
+	* [bbPress](https://wordpress.org/plugins/bbpress/)
+	* [BuddyPress](https://wordpress.org/plugins/buddypress/)
+	* [WooCommerce](https://wordpress.org/plugins/woocommerce/)
+
+<blockquote>
+<p>The WordPress Social Sharing Optimization (WPSSO) plugin is required to use the WPSSO RRSSB extension. You can use the Free version of WPSSO RRSSB with <em>both</em> the Free and Pro versions of WPSSO, but <a href="http://wpsso.com/extend/plugins/wpsso-rrssb/">WPSSO RRSSB Pro</a> requires the use of <a href="http://wpsso.com/extend/plugins/wpsso/">WPSSO Pro</a> as well. <a href="http://wpsso.com/extend/plugins/wpsso-ssb/">Purchase the WPSSO RRSSB Pro extension</a> (includes a <em>No Risk 30 Day Refund Policy</em>).</p>
+</blockquote>
+
 = Fastest Performance =
 
 WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of all available caching techniques (persistent / non-persistent object and disk caching).
@@ -99,6 +114,10 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 	* *None*
 
 == Upgrade Notice ==
+
+= 1.0 =
+
+Added the WooCommerce, bbPress, and BuddyPress integration modules.
 
 = 0.2 =
 
