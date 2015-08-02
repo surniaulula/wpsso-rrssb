@@ -76,6 +76,17 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 * [GitHub](https://github.com/SurniaUlula/wpsso-ssb)
 * [WordPress.org](https://wordpress.org/plugins/wpsso-ssb/developers/)
 
+= Version 1.0 (2015/08/02) =
+
+* **New Features**
+	* Added the WooCommerce, bbPress, and BuddyPress integration modules.
+* **Improvements**
+	* *None*
+* **Bugfixes**
+	* *None*
+* **Developer Notes**
+	* *None*
+
 = Version 0.2 (2015/07/29) =
 
 * **New Features**
