@@ -38,8 +38,8 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingStyles' ) && class_exists( 'WpssoA
 
 				case 'info-style-rrssb-content':
 
-					$text = '<p>Social sharing buttons, enabled / added to the content text from the '.
-					$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page,
+					$text = '<p>Social sharing buttons &mdash enabled / added to the content text from the '.
+					$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page &mdash;
 					are assigned the \''.$lca.'-rrssb-content\' class.</p> 
 					<p>Example:</p><pre>
 div.'.$lca.'-rrssb
@@ -49,8 +49,9 @@ div.'.$lca.'-rrssb
 					break;
 
 				case 'info-style-rrssb-excerpt':
-					$text = '<p>Social sharing buttons, enabled / added to the excerpt text from the '.
-					$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page,
+
+					$text = '<p>Social sharing buttons &mdash; enabled / added to the excerpt text from the '.
+					$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page &mdash;
 					are assigned the \''.$lca.'-rrssb-excerpt\' class.</p> 
 					<p>Example:</p><pre>
 div.'.$lca.'-rrssb
@@ -60,8 +61,9 @@ div.'.$lca.'-rrssb
 					break;
 
 				case 'info-style-rrssb-sidebar':
-					$text = '<p>Social sharing buttons, enabled / added to the CSS sidebar from the '.
-					$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page,
+
+					$text = '<p>Social sharing buttons &mdash; enabled / added to the CSS sidebar from the '.
+					$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page &mdash;
 					are assigned the \''.$lca.'-rrssb-sidebar\' ID.</p> 
 					<p>In order to achieve a vertical display, each un-ordered list (ul) contains a 
 					single list item (li).</p>
@@ -73,7 +75,8 @@ div.'.$lca.'-rrssb
 					break;
 
 				case 'info-style-rrssb-shortcode':
-					$text = '<p>Social sharing buttons, enabled / added from a shortcode 
+
+					$text = '<p>Social sharing buttons added from a shortcode 
 					are assigned the \''.$lca.'-rrssb-shortcode\' class by default.</p> 
 					<p>Example:</p><pre>
 div.'.$lca.'-rrssb 
@@ -83,8 +86,10 @@ div.'.$lca.'-rrssb
 					break;
 
 				case 'info-style-rrssb-widget':
-					$text = '<p>Social sharing buttons, enabled in the '.$short.' widget
-					are assigned the \''.$lca.'-rrssb-widget\' class (along with some unique CSS ID names).</p> 
+
+					$text = '<p>Social sharing buttons enabled in the '.$short.' widget
+					are assigned the \''.$lca.'-rrssb-widget\' class 
+					(along with additional unique CSS ID names).</p> 
 					<p>Example:</p><pre>
 aside.widget 
   .'.$lca.'-rrssb-widget 
@@ -93,8 +98,9 @@ aside.widget
 					break;
 
 				case 'info-style-rrssb-admin_edit':
-					$text = '<p>Social sharing buttons, enabled / added to the admin editing pages from the '.
-					$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page,
+
+					$text = '<p>Social sharing buttons &mdash; enabled / added to the admin editing pages from the '.
+					$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page &mdash;
 					are assigned the \''.$lca.'-rrssb-admin_edit\' class.</p> 
 					<p>Example:</p><pre>
 div.'.$lca.'-rrssb
@@ -102,6 +108,42 @@ div.'.$lca.'-rrssb
     ul.rrssb-buttons
       li.rrssb-facebook {}</pre>';
 					break;
+
+				case 'info-style-rrssb-woo_short': 
+
+					$text = '<p>Social sharing buttons &mdash; enabled / added to the WooCommerce Short Description text 
+					from the '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page &mdash;
+					are assigned the \''.$lca.'-rrssb-woo_short\' class.</p>
+					<p>Example:</p><pre>
+div.'.$lca.'-rrssb
+  .'.$lca.'-rrssb-woo_short
+    ul.rrssb-buttons
+      li.rrssb-facebook {}</pre>';
+      					break;
+
+				case 'info-style-rrssb-bbp_single': 
+
+					$text = '<p>Social sharing buttons &mdash; enabled / added at the top of bbPress Single Templates 
+					from the '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page &mdash;
+					are assigned the \''.$lca.'-rrssb-bbp_single\' class.</p>
+					<p>Example:</p><pre>
+div.'.$lca.'-rrssb
+  .'.$lca.'-rrssb-bbp_single
+    ul.rrssb-buttons
+      li.rrssb-facebook {}</pre>';
+      					break;
+
+				case 'info-style-rrssb-bp_activity': 
+
+					$text = '<p>Social sharing buttons &mdash; enabled / added to BuddyPress Activities 
+					from the '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page &mdash;
+					are assigned the \''.$lca.'-rrssb-bp_activity\' class.</p>
+					<p>Example:</p><pre>
+div.'.$lca.'-rrssb
+  .'.$lca.'-rrssb-bp_activity
+    ul.rrssb-buttons
+      li.rrssb-facebook {}</pre>';
+      					break;
 			}
 			return $text;
 		}
@@ -155,7 +197,7 @@ div.'.$lca.'-rrssb
 				'<td>'.$this->form->get_checkbox( 'buttons_enqueue_social_css' ).'</td>',
 			) );
 
-			$tabs = apply_filters( $this->p->cf['lca'].'_'.$metabox.'_tabs', WpssoRrssbSharing::$cf['sharing']['style'] );
+			$tabs = apply_filters( $this->p->cf['lca'].'_style_tabs', WpssoRrssbSharing::$cf['sharing']['style'] );
 			$rows = array();
 			foreach ( $tabs as $key => $title )
 				$rows[$key] = array_merge( $this->get_rows( $metabox, $key ), 
@@ -164,10 +206,10 @@ div.'.$lca.'-rrssb
 		}
 
 		protected function get_rows( $metabox, $key ) {
-
-			$rows[] = '<th class="textinfo">'.$this->p->msgs->get( 'info-style-'.$key ).'</th>'.
-			'<td>'.$this->form->get_textarea( 'buttons_css_'.$key, 'tall code' ).'</td>';
-
+			$rows['buttons_css_'.$key] = '<th class="textinfo">'.$this->p->msgs->get( 'info-style-'.$key ).'</th>'.
+			'<td'.( isset( $this->p->options['buttons_css_'.$key.':is'] ) &&
+				$this->p->options['buttons_css_'.$key.':is'] === 'disabled' ? ' class="blank"' : '' ).'>'.
+			$this->form->get_textarea( 'buttons_css_'.$key, 'tall code' ).'</td>';
 			return $rows;
 		}
 	}

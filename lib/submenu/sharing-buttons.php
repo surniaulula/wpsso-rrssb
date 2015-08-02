@@ -151,15 +151,15 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingButtons' ) && class_exists( 'Wpsso
 		// Show Button in: Content, Excerpt, Admin Edit, etc.
 		protected function show_on_checkboxes( $prefix ) {
 			$col = 0;
-			$max = 4;
+			$max = 6;
 			$html = '<table>';
 			$show_on = apply_filters( $this->p->cf['lca'].'_sharing_show_on', 
 				WpssoRrssbSharing::$cf['sharing']['show_on'], $prefix );
 			foreach ( $show_on as $suffix => $desc ) {
 				$col++;
-				$class = array_key_exists( $prefix.'_on_'.$suffix.':is', $this->p->options ) &&
+				$class = isset( $this->p->options[$prefix.'_on_'.$suffix.':is'] ) &&
 					$this->p->options[$prefix.'_on_'.$suffix.':is'] === 'disabled' &&
-					! $this->p->check->aop() ? 'show_on blank' : 'show_on';
+					! $this->p->check->aop( 'wpssorrssb' ) ? 'show_on blank' : 'show_on';
 				if ( $col == 1 )
 					$html .= '<tr><td class="'.$class.'">';
 				else $html .= '<td class="'.$class.'">';

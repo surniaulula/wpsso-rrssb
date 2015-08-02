@@ -15,7 +15,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(
-					'version' => '0.2',	// plugin version
+					'version' => '1.0',	// plugin version
 					'short' => 'WPSSO RRSSB',
 					'name' => 'WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)',
 					'desc' => 'WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.',
@@ -70,10 +70,28 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 							'admin' => array(
 								'sharing' => 'Sharing Admin',
 							),
+							'ecom' => array(
+								'woocommerce' => 'WooCommerce',
+							),
+							'forum' => array(
+								'bbpress' => 'bbPress',
+							),
+							'social' => array(
+								'buddypress' => 'BuddyPress',
+							),
 						),
 						'pro' => array(
 							'admin' => array(
 								'sharing' => 'Sharing Admin',
+							),
+							'ecom' => array(
+								'woocommerce' => 'WooCommerce',
+							),
+							'forum' => array(
+								'bbpress' => 'bbPress',
+							),
+							'social' => array(
+								'buddypress' => 'BuddyPress',
 							),
 						),
 					),

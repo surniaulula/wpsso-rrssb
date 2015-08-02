@@ -8,8 +8,8 @@
  * License URI: http://www.gnu.org/licenses/gpl.txt
  * Description: WPSSO extension to provide Ridiculously Responsive Social Sharing Buttons - with support for hashtags, short URLs, bbPress, and BuddyPress.
  * Requires At Least: 3.0
- * Tested Up To: 4.2.2
- * Version: 0.2
+ * Tested Up To: 4.2.3
+ * Version: 1.0
  * 
  * Copyright 2014-2015 - Jean-Sebastien Morisset - http://surniaulula.com/
  */
@@ -25,8 +25,8 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 		protected static $instance = null;
 
-		private $opt_version_suffix = 'rrssb2';
-		private $wpsso_min_version = '3.6.3';
+		private $opt_version_suffix = 'rrssb3';
+		private $wpsso_min_version = '3.6.4';
 		private $wpsso_has_min_ver = true;
 
 		public static function &get_instance() {

@@ -37,3 +37,12 @@
 	top:0;
 	margin:20% auto;
 }
+@media (max-width:1200px) {
+	#wpsso-rrssb-sidebar .rrssb-buttons { 
+		width:32px;
+		height:32px;
+	}
+	#wpsso-rrssb-sidebar .rrssb-buttons.small-format li { 
+		height:32px;
+	}
+}
