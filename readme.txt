@@ -1,4 +1,4 @@
-=== WPSSO Ridiculously Responsive Social Sharing Buttons - Awesome SVG Buttons in Any Size ===
+=== WPSSO Ridiculously Responsive Social Sharing Buttons - inc WooCommerce bbPress BuddyPress ===
 Plugin Name: WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)
 Plugin Slug: wpsso-rrssb
 Contributors: jsmoriss
