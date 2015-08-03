@@ -186,7 +186,7 @@ div.'.$lca.'-rrssb
 
 			if ( file_exists( WpssoRrssbSharing::$sharing_css_file ) &&
 				( $fsize = filesize( WpssoRrssbSharing::$sharing_css_file ) ) !== false )
-					$css_min_msg = ' css is '.$fsize.' bytes minimized';
+					$css_min_msg = ' <a href="'.WpssoRrssbSharing::$sharing_css_url.'">minimized css is '.$fsize.' bytes</a>';
 			else $css_min_msg = '';
 
 			$this->p->util->do_table_rows( array( 
