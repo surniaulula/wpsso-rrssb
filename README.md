@@ -9,7 +9,7 @@
 <tr><th align="right" valign="top" nowrap>Contributors</th><td>jsmoriss</td></tr>
 <tr><th align="right" valign="top" nowrap>Website URL</th><td><a href="https://wpsso.com/">https://wpsso.com/</a></td></tr>
 <tr><th align="right" valign="top" nowrap>License</th><td><a href="http://www.gnu.org/licenses/gpl.txt">GPLv3</a></td></tr>
-<tr><th align="right" valign="top" nowrap>Tags / Keywords</th><td>wpsso, facebook, google+, twitter, pinterest, svg, retina, shortcode, bbpress, buddypress, shorten, woocommerce</td></tr>
+<tr><th align="right" valign="top" nowrap>Tags / Keywords</th><td>wpsso, facebook, google+, twitter, pinterest, linkedin, svg, retina, bbpress, buddypress, shorten, woocommerce, widget, shortcode</td></tr>
 </table>
 
 <h2>Description</h2>
