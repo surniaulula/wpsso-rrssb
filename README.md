@@ -1,4 +1,4 @@
-<h1>WPSSO Ridiculously Responsive Social Sharing Buttons</h1><h3>inc WooCommerce bbPress BuddyPress</h3>
+<h1>WPSSO Ridiculously Responsive Social Sharing Buttons</h1><h3>w/ WooCommerce bbPress BuddyPress</h3>
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)</td></tr>
