@@ -1,4 +1,4 @@
-<h1>WPSSO Ridiculously Responsive Social Sharing Buttons</h1><h3>WooCommerce bbPress BuddyPress +</h3>
+<h1>WPSSO Ridiculously Responsive Social Sharing Buttons + WooCommerce bbPress BuddyPress</h1>
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)</td></tr>
@@ -14,7 +14,7 @@
 
 <h2>Description</h2>
 
-<p align="center"><img src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png" width="256" height="256" /></p><p>Add <em>awesome</em> and <strong>Ridiculously Responsive Social Sharing Buttons</strong> to posts / pages, custom post types, <a href="https://wordpress.org/plugins/bbpress/">bbPress</a>, <a href="https://wordpress.org/plugins/buddypress/">BuddyPress</a>, <a href="https://wordpress.org/plugins/woocommerce/">WooCommerce</a> product pages, and many more. The sharing buttons can be included in your content, excerpts, in a floating CSS sidebar, in a widget, from shortcodes, and on admin editing pages. The Scalable Vector Graphics (SVG) used by WPSSO RRSSB resize automatically to their container size, so they always look great from any device (phone, tablet, laptop, etc.), including high resolution retina displays.</p>
+<p align="center"><img src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png" width="256" height="256" /></p><p>Add awesome and <strong>Ridiculously Responsive Social Sharing Buttons</strong> to posts / pages, custom post types, <a href="https://wordpress.org/plugins/bbpress/">bbPress</a>, <a href="https://wordpress.org/plugins/buddypress/">BuddyPress</a>, <a href="https://wordpress.org/plugins/woocommerce/">WooCommerce</a> product pages, and many more. The sharing buttons can be included in your content, excerpts, in a floating CSS sidebar, in a widget, from shortcodes, and on admin editing pages. The Scalable Vector Graphics (SVG) used by WPSSO RRSSB resize automatically to their container size, so they always look great from any device (phone, tablet, laptop, etc.), including high resolution retina displays.</p>
 
 <p>WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) works in conjunction with the <a href="https://wordpress.org/plugins/wpsso/">WordPress Social Sharing Optimization (WPSSO)</a> plugin, extending its features with additional settings pages, tabs, and options to provide <strong>Ridiculously Responsive Social Sharing Buttons</strong>. Using WPSSO as its framework, WPSSO RRSSB provides customized and accurate information about your content to social websites.</p>
 
