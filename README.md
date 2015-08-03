@@ -81,6 +81,11 @@
 
 <h4>Install and Uninstall</h4>
 
+<ul>
+    <li><a href="http://wpsso.com/codex/plugins/wpsso-rrssb/installation/install-the-plugin/">Install the Plugin</a></li>
+    <li><a href="http://wpsso.com/codex/plugins/wpsso-rrssb/installation/uninstall-the-plugin/">Uninstall the Plugin</a></li>
+</ul>
+
 
 <h2>Frequently Asked Questions</h2>
 
