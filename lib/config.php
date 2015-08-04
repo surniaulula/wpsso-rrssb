@@ -15,7 +15,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(
-					'version' => '1.0',	// plugin version
+					'version' => '1.0.1',	// plugin version
 					'short' => 'WPSSO RRSSB',
 					'name' => 'WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)',
 					'desc' => 'WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.',
@@ -104,7 +104,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			$slug = self::$cf['plugin'][$lca]['slug'];
 
 			define( 'WPSSORRSSB_FILEPATH', $plugin_filepath );						
-			define( 'WPSSORRSSB_PLUGINDIR', trailingslashit( plugin_dir_path( $plugin_filepath ) ) );
+			define( 'WPSSORRSSB_PLUGINDIR', trailingslashit( realpath( dirname( $plugin_filepath ) ) ) );
 			define( 'WPSSORRSSB_PLUGINBASE', plugin_basename( $plugin_filepath ) );
 			define( 'WPSSORRSSB_TEXTDOM', $slug );
 			define( 'WPSSORRSSB_URLPATH', trailingslashit( plugins_url( '', $plugin_filepath ) ) );

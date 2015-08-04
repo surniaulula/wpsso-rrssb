@@ -69,7 +69,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			$this->plugin_filepath = $plugin_filepath;
 
 			self::$sharing_css_name = 'sharing-styles-id-'.get_current_blog_id().'.min.css';
-			self::$sharing_css_file = realpath( WPSSO_CACHEDIR.self::$sharing_css_name );	// fwrite() needs the real path
+			self::$sharing_css_file = WPSSO_CACHEDIR.self::$sharing_css_name;
 			self::$sharing_css_url = WPSSO_CACHEURL.self::$sharing_css_name;
 
 			$this->set_objects();
@@ -110,24 +110,24 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		public function filter_get_defaults( $opts_def ) {
 			$opts_def = array_merge( $opts_def, self::$cf['opt']['defaults'] );
 			$opts_def = $this->p->util->push_add_to_options( $opts_def, array( 'buttons' => 'frontend' ) );
-			$plugin_dir = trailingslashit( plugin_dir_path( $this->plugin_filepath ) );
+			$plugin_dir = trailingslashit( realpath( dirname( $this->plugin_filepath ) ) );
 			$url_path = parse_url( trailingslashit( plugins_url( '', $this->plugin_filepath ) ), PHP_URL_PATH );	// relative URL
 			$style_tabs = apply_filters( $this->p->cf['lca'].'_style_tabs', self::$cf['sharing']['style'] );
 
 			foreach ( $style_tabs as $id => $name ) {
-				$css_file = realpath( $plugin_dir.'css/'.$id.'.css' );
+				$buttons_css_file = $plugin_dir.'css/'.$id.'.css';
 
 				// css files are only loaded once (when variable is empty) into defaults to minimize disk i/o
 				if ( empty( $opts_def['buttons_css_'.$id] ) ) {
-					if ( ! file_exists( $css_file ) )
+					if ( ! file_exists( $buttons_css_file ) )
 						continue;
-					elseif ( ! $fh = @fopen( $css_file, 'rb' ) )
-						$this->p->notice->err( 'Failed to open '.$css_file.' for reading.' );
+					elseif ( ! $fh = @fopen( $buttons_css_file, 'rb' ) )
+						$this->p->notice->err( 'Failed to open '.$buttons_css_file.' for reading.' );
 					else {
-						$css_data = fread( $fh, filesize( $css_file ) );
+						$css_data = fread( $fh, filesize( $buttons_css_file ) );
 						fclose( $fh );
 						if ( $this->p->debug->enabled )
-							$this->p->debug->log( 'read css from file '.$css_file );
+							$this->p->debug->log( 'read css from file '.$buttons_css_file );
 						foreach ( array( 
 							'plugin_url_path' => $url_path,
 						) as $macro => $value )
@@ -205,8 +205,11 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 							$this->p->notice->err( 'Failed writing to file '.self::$sharing_css_file.'.', true );
 						if ( $this->p->debug->enabled )
 							$this->p->debug->log( 'failed writing to '.self::$sharing_css_file );
-					} elseif ( $this->p->debug->enabled )
+					} elseif ( $this->p->debug->enabled ) {
+						if ( is_admin() )
+							$this->p->notice->inf( 'Updated CSS '.self::$sharing_css_file.' ('.$written.' bytes written)', true );
 						$this->p->debug->log( 'updated css file '.self::$sharing_css_file.' ('.$written.' bytes written)' );
+					}
 					fclose( $fh );
 				} else {
 					if ( ! is_writable( WPSSO_CACHEDIR ) ) {
