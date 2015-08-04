@@ -7,7 +7,7 @@ Tags: wpsso, facebook, google+, twitter, pinterest, linkedin, svg, retina, bbpre
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.txt
 Requires At Least: 3.0
-Tested Up To: 4.2.3
+Tested Up To: 4.2.4
 Stable Tag: 1.0
 
 WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
@@ -96,6 +96,17 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 * [GitHub](https://github.com/SurniaUlula/wpsso-ssb)
 * [WordPress.org](https://wordpress.org/plugins/wpsso-ssb/developers/)
+
+= Version 1.0.1 (2015/08/04) =
+
+* **New Features**
+	* *None*
+* **Improvements**
+	* Confirmed WordPress v4.2.4 compatibility.
+* **Bugfixes**
+	* Fixed a possible error on failed CSS file writes by applying PHP realpath() to the WPSSORRSSB_PLUGINDIR constant value.
+* **Developer Notes**
+	* *None*
 
 = Version 1.0 (2015/08/02) =
 
