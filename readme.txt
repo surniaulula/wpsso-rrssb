@@ -85,9 +85,10 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 == Screenshots ==
 
 01. An example showing **Ridiculously Responsive Social Sharing Buttons** enabled (with the default WPSSO RRSSB stylesheet) in the CSS sidebar, content text, and widget.
-02. The 'Sharing Buttons' tab available in the 'Social Settings' metabox allows you to fine-tune the text used by some social sharing websites.
-03. The 'Sharing Buttons' settings page.
-04. The 'Sharing Styles' settings page.
+02. An example showing a WooCommerce product page with **Ridiculously Responsive Social Sharing Buttons** in the CSS sidebar, short and long product descriptions.
+03. The 'Sharing Buttons' tab available in the 'Social Settings' metabox allows you to fine-tune the text used by some social sharing websites.
+04. The 'Sharing Buttons' settings page.
+05. The 'Sharing Styles' settings page.
 
 == Changelog ==
 
