@@ -132,6 +132,10 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 == Upgrade Notice ==
 
+= 1.0.1 =
+
+Confirmed WordPress v4.2.4 compatibility. Fixed a possible error on failed CSS file writes by applying PHP realpath() to the WPSSORRSSB_PLUGINDIR constant value.
+
 = 1.0 =
 
 Added the WooCommerce, bbPress, and BuddyPress integration modules.
