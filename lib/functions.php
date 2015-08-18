@@ -12,6 +12,11 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 	function wpssorrssb_get_sharing_buttons( $ids = array(), $atts = array() ) {
 		$wpsso =& Wpsso::get_instance();
 		if ( $wpsso->is_avail['rrssb'] ) {
+
+			if ( ! defined( 'WPSSORRSSB_BUTTONS_CACHE_EXP' ) )
+				define( 'WPSSORRSSB_BUTTONS_CACHE_EXP', 
+					$wpsso->options['plugin_object_cache_exp'] );
+
 			$cache_salt = __METHOD__.'(lang:'.SucomUtil::get_locale().
 				'_url:'.$wpsso->util->get_sharing_url().
 				'_ids:'.( implode( '_', $ids ) ).
@@ -19,14 +24,16 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 			$cache_id = $wpsso->cf['lca'].'_'.md5( $cache_salt );
 			$cache_type = 'object cache';
 
-			if ( $wpsso->is_avail['cache']['transient'] ) {
-				if ( $wpsso->debug->enabled )
-					$wpsso->debug->log( $cache_type.': transient salt '.$cache_salt );
-				$html = get_transient( $cache_id );
-			} elseif ( $wpsso->is_avail['cache']['object'] ) {
-				if ( $wpsso->debug->enabled )
-					$wpsso->debug->log( $cache_type.': wp_cache salt '.$cache_salt );
-				$html = wp_cache_get( $cache_id, __METHOD__ );
+			if ( ! isset( $atts['read_cache'] ) || ! empty( $atts['read_cache'] ) ) {
+				if ( $wpsso->is_avail['cache']['transient'] ) {
+					if ( $wpsso->debug->enabled )
+						$wpsso->debug->log( $cache_type.': transient salt '.$cache_salt );
+					$html = get_transient( $cache_id );
+				} elseif ( $wpsso->is_avail['cache']['object'] ) {
+					if ( $wpsso->debug->enabled )
+						$wpsso->debug->log( $cache_type.': wp_cache salt '.$cache_salt );
+					$html = wp_cache_get( $cache_id, __METHOD__ );
+				} else $html = false;
 			} else $html = false;
 
 			if ( $html !== false ) {
@@ -43,13 +50,13 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 				$wpsso->is_avail['cache']['object'] ) {
 
 				if ( $wpsso->is_avail['cache']['transient'] )
-					set_transient( $cache_id, $html, $wpsso->options['plugin_object_cache_exp'] );
+					set_transient( $cache_id, $html, WPSSORRSSB_BUTTONS_CACHE_EXP );
 				elseif ( $wpsso->is_avail['cache']['object'] )
-					wp_cache_set( $cache_id, $html, __METHOD__, $wpsso->options['plugin_object_cache_exp'] );
+					wp_cache_set( $cache_id, $html, __METHOD__, WPSSORRSSB_BUTTONS_CACHE_EXP );
 
 				if ( $wpsso->debug->enabled )
 					$wpsso->debug->log( $cache_type.': html saved to cache '.
-						$cache_id.' ('.$wpsso->options['plugin_object_cache_exp'].' seconds)');
+						$cache_id.' ('.WPSSORRSSB_BUTTONS_CACHE_EXP.' seconds)');
 			}
 		} else $html = '<!-- '.$wpsso->cf['lca'].' sharing sharing buttons disabled -->';
 
