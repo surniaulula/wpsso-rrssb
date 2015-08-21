@@ -31,7 +31,7 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 				'description' => 'The '.$name.' widget.'
 			);
 
-			$this->WP_Widget( $widget_class, $widget_name, $widget_ops );
+			parent::__construct( $widget_class, $widget_name, $widget_ops );
 		}
 	
 		public function widget( $args, $instance ) {
