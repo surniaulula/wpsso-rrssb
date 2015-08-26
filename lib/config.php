@@ -15,13 +15,13 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(
-					'version' => '1.0.2',	// plugin version
+					'version' => '1.0.3',	// plugin version
 					'short' => 'WPSSO RRSSB',
 					'name' => 'WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)',
 					'desc' => 'WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.',
 					'slug' => 'wpsso-rrssb',
 					'base' => 'wpsso-rrssb/wpsso-rrssb.php',
-					'update_auth' => '',
+					'update_auth' => 'tid',
 					'img' => array(
 						'icon_small' => 'images/icon-128x128.png',
 						'icon_medium' => 'images/icon-256x256.png',
