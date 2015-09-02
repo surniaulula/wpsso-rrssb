@@ -97,6 +97,18 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 * [GitHub](https://github.com/SurniaUlula/wpsso-ssb)
 * [WordPress.org](https://wordpress.org/plugins/wpsso-ssb/developers/)
 
+= Version 1.0.4 =
+
+* **New Features**
+	* *None*
+* **Improvements**
+	* *None*
+* **Bugfixes**
+	* *None*
+* **Developer Notes**
+	* Updated the tooltip and info message filter hooks for WPSSO v3.8.
+	* Removed the WPSSO RRSSB specific 'installed_version' and 'ua_plugin' filters.
+
 = Version 1.0.3 (2015/08/26) =
 
 * **New Features**
