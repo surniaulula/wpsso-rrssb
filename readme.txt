@@ -97,17 +97,18 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 * [GitHub](https://github.com/SurniaUlula/wpsso-ssb)
 * [WordPress.org](https://wordpress.org/plugins/wpsso-ssb/developers/)
 
-= Version 1.0.4 =
+= Version 1.0.4 (2015/09/03) =
 
 * **New Features**
 	* *None*
 * **Improvements**
-	* *None*
+	* Added Free feature summary in side metabox on settings pages.
 * **Bugfixes**
 	* *None*
 * **Developer Notes**
-	* Updated the tooltip and info message filter hooks for WPSSO v3.8.
+	* Updated the tooltip and info message filter names for WPSSO v3.8.
 	* Removed the WPSSO RRSSB specific 'installed_version' and 'ua_plugin' filters.
+	* Improved the setting of constants with new `set_variable_constants()` and `get_variable_constants()` methods in the WpssoRrssbConfig class.
 
 = Version 1.0.3 (2015/08/26) =
 
@@ -165,6 +166,10 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 	* *None*
 
 == Upgrade Notice ==
+
+= 1.0.4 =
+
+Updated the tooltip and info message filter names for WPSSO v3.8. Improved setting of constants with new methods in WpssoRrssbConfig class.
 
 = 1.0.3 =
 
