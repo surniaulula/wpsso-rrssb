@@ -20,7 +20,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingButtons' ) && class_exists( 'Wpsso
 			$this->menu_name = $name;
 			$this->set_objects();
 			$this->p->util->add_plugin_filters( $this, array(
-				'messages' => 2,
+				'messages_tooltip' => 2,
 			) );
 		}
 
@@ -32,29 +32,22 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingButtons' ) && class_exists( 'Wpsso
 			}
 		}
 
-		public function filter_messages( $text, $idx ) {
+		public function filter_messages_tooltip( $text, $idx ) {
+			if ( strpos( $idx, 'tooltip-buttons_' ) !== 0 )
+				return $text;
+
 			switch ( $idx ) {
-				/*
-				 * 'Social Buttons' settings
-				 */
-				case ( strpos( $idx, 'tooltip-buttons_' ) !== false ? true : false ):
-					switch ( $idx ) {
-						case ( strpos( $idx, 'tooltip-buttons_pos_' ) === false ? false : true ):
-							$text = 'Social sharing buttons can be added to the top, bottom, or both. Each sharing button must also be enabled below (see the "Show Button in" options).';
-							break;
-						case 'tooltip-buttons_on_index':
-							$text = 'Add the following social sharing buttons to each entry of an index webpage (<strong>non-static</strong> homepage, category, archive, etc.). By Default, social sharing buttons are <em>not</em> included on index webpages (default is unchecked). You must also enable the buttons you want to display by choosing to show the buttons on the content or excerpt.';
-							break;
-						case 'tooltip-buttons_on_front':
-							$text = 'If a static Post or Page has been chosen for the homepage, add the following social sharing buttons to the static homepage as well (default is unchecked). You must also enable the buttons you want to display by choosing to show the buttons on the content or excerpt.';
-							break;
-						case 'tooltip-buttons_add_to':
-							$text = 'Enabled social sharing buttons are added to the Post, Page, Media and Product custom post types by default. If your theme (or another plugin) supports additional custom post types, and you would like to include social sharing buttons on these webpages, check the appropriate option(s) here.';
-							break;
-						default:
-							$text = apply_filters( $this->p->cf['lca'].'_tooltip_buttons', $text, $idx );
-							break;
-					}
+				case ( strpos( $idx, 'tooltip-buttons_pos_' ) === false ? false : true ):
+					$text = 'Social sharing buttons can be added to the top, bottom, or both. Each sharing button must also be enabled below (see the "Show Button in" options).';
+					break;
+				case 'tooltip-buttons_on_index':
+					$text = 'Add the following social sharing buttons to each entry of an index webpage (<strong>non-static</strong> homepage, category, archive, etc.). By Default, social sharing buttons are <em>not</em> included on index webpages (default is unchecked). You must also enable the buttons you want to display by choosing to show the buttons on the content or excerpt.';
+					break;
+				case 'tooltip-buttons_on_front':
+					$text = 'If a static Post or Page has been chosen for the homepage, add the following social sharing buttons to the static homepage as well (default is unchecked). You must also enable the buttons you want to display by choosing to show the buttons on the content or excerpt.';
+					break;
+				case 'tooltip-buttons_add_to':
+					$text = 'Enabled social sharing buttons are added to the Post, Page, Media and Product custom post types by default. If your theme (or another plugin) supports additional custom post types, and you would like to include social sharing buttons on these webpages, check the appropriate option(s) here.';
 					break;
 			}
 			return $text;

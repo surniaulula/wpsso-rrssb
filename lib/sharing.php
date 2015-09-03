@@ -101,7 +101,12 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					'save_options' => 3,		// update the sharing css file
 					'option_type' => 4,		// identify option type for sanitation
 					'post_cache_transients' => 4,	// clear transients on post save
+					'messages_tooltip_side' => 2,	// tooltip messages for side boxes
 				) );
+
+				$this->p->util->add_plugin_filters( $this, array( 
+					'status_gpl_features' => 3,	// include sharing, shortcode, and widget status
+				), 10, 'wpssorrssb' );			// hook into the extension name instead
 			}
 			if ( $this->p->debug->enabled )
 				$this->p->debug->mark( 'action / filter setup' );
@@ -176,6 +181,40 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					$transients['WpssoRrssbSharing::get_buttons'][$type_id] = 'lang:'.$lang.'_type:'.$type_id.'_post:'.$post_id;
 			}
 			return $transients;
+		}
+
+		public function filter_status_gpl_features( $features, $lca, $info ) {
+			if ( ! empty( $info['lib']['submenu']['sharing-buttons'] ) )
+				$features['Sharing Buttons'] = array( 'classname' => $lca.'Sharing' );
+
+			if ( ! empty( $info['lib']['submenu']['sharing-styles'] ) )
+				$features['Sharing Stylesheet'] = array( 'status' => $this->p->options['buttons_use_social_css'] ? 'on' : 'off' );
+
+			if ( ! empty( $info['lib']['shortcode']['sharing'] ) )
+				$features['Sharing Shortcode'] = array( 'classname' => $lca.'ShortcodeSharing' );
+
+			if ( ! empty( $info['lib']['widget']['sharing'] ) )
+				$features['Sharing Widget'] = array( 'classname' => $lca.'WidgetSharing' );
+
+			return $features;
+		}
+
+		public function filter_messages_tooltip_side( $text, $idx ) {
+			switch ( $idx ) {
+				case 'tooltip-side-sharing-buttons':
+					$text = 'Social sharing features include the '.$this->p->cf['menu'].' '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' and '.$this->p->util->get_admin_url( 'sharing-styles', 'Sharing Styles' ).' settings pages, the Social Settings -&gt; Sharing Buttons tab on editing pages, along with the social sharing shortcode and widget.';
+					break;
+				case 'tooltip-side-sharing-stylesheet':
+					$text = 'A stylesheet can be included on all webpages for the social sharing buttons. Enable or disable the addition of the stylesheet from the '.$this->p->util->get_admin_url( 'sharing-styles', 'Sharing Styles' ).' settings page.';
+					break;
+				case 'tooltip-side-sharing-shortcode':
+					$text = 'Support for shortcode(s) can be enabled / disabled on the '.$this->p->util->get_admin_url( 'advanced', 'Advanced' ).' settings page. Shortcodes are disabled by default to optimize WordPress performance and content processing.';
+					break;
+				case 'tooltip-side-sharing-widget':
+					$text = 'The social sharing widget feature adds a "WPSSO RRSSB" widget in the WordPress Appearance -&gt; Widgets page. The widget can be used in any number of widget areas to share the current webpage URL.';
+					break;
+			}
+			return $text;
 		}
 
 		public function update_sharing_css( &$opts ) {
@@ -485,10 +524,10 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 <!-- '.$lca.' '.$css_type.' end -->'."\n\n";
 
 					if ( $this->p->is_avail['cache']['transient'] ) {
-						set_transient( $cache_id, $html, $this->p->cache->object_expire );
+						set_transient( $cache_id, $html, $this->p->options['plugin_object_cache_exp'] );
 						if ( $this->p->debug->enabled )
 							$this->p->debug->log( $cache_type.': '.$type.' html saved to transient '.
-							$cache_id.' ('.$this->p->cache->object_expire.' seconds)' );
+							$cache_id.' ('.$this->p->options['plugin_object_cache_exp'].' seconds)' );
 					}
 				}
 			}
@@ -541,23 +580,35 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			global $post;
 			$ret = false;
 			
+			if ( ! isset( $post->ID ) )
+				return $ret;
+
 			if ( isset( $this->post_buttons_disabled[$post->ID] ) )
 				return $this->post_buttons_disabled[$post->ID];
 
 			if ( ! empty( $post ) ) {
-				$post_type = $post->post_type;
 				if ( $this->p->mods['util']['post']->get_options( $post->ID, 'buttons_disabled' ) ) {
 					if ( $this->p->debug->enabled )
-						$this->p->debug->log( 'post '.$post->ID.': sharing buttons disabled by custom meta option' );
+						$this->p->debug->log( 'post '.$post->ID.
+							': sharing buttons disabled by custom meta option' );
 					$ret = true;
-				} elseif ( ! empty( $post_type ) && empty( $this->p->options['buttons_add_to_'.$post_type] ) ) {
+				} elseif ( ! empty( $post->post_type ) && 
+					empty( $this->p->options['buttons_add_to_'.$post->post_type] ) ) {
 					if ( $this->p->debug->enabled )
-						$this->p->debug->log( 'post '.$post->ID.': sharing buttons not enabled for post type '.$post_type );
+						$this->p->debug->log( 'post '.$post->ID.
+							': sharing buttons not enabled for post type '.$post->post_type );
 					$ret = true;
 				}
 			}
-
 			return $this->post_buttons_disabled[$post->ID] = apply_filters( $this->p->cf['lca'].'_post_buttons_disabled', $ret, $post->ID );
+		}
+
+		public function remove_paragraph_tags( $match = array() ) {
+			if ( empty( $match ) || ! is_array( $match ) ) return;
+			$text = empty( $match[1] ) ? '' : $match[1];
+			$suff = empty( $match[2] ) ? '' : $match[2];
+			$ret = preg_replace( '/(<\/*[pP]>|\n)/', '', $text );
+			return $suff.$ret; 
 		}
 
 		public function get_defined_website_names() {

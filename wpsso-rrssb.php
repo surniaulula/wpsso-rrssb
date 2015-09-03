@@ -9,7 +9,7 @@
  * Description: WPSSO extension to provide Ridiculously Responsive Social Sharing Buttons - with support for hashtags, short URLs, bbPress, and BuddyPress.
  * Requires At Least: 3.0
  * Tested Up To: 4.3
- * Version: 1.0.3
+ * Version: 1.0.4
  * 
  * Copyright 2014-2015 - Jean-Sebastien Morisset - http://surniaulula.com/
  */
@@ -26,7 +26,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 		protected static $instance = null;
 
 		private $opt_version_suffix = 'rrssb3';
-		private $wpsso_min_version = '3.7.3';
+		private $wpsso_min_version = '3.8';
 		private $wpsso_has_min_ver = true;
 
 		public static function &get_instance() {
@@ -103,24 +103,6 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 		public function wpsso_init_plugin() {
 			if ( $this->wpsso_has_min_ver === false )
 				return $this->warning_wpsso_version( WpssoRrssbConfig::$cf['plugin']['wpssorrssb'] );
-
-			if ( ! empty( $this->p->options['plugin_wpssorrssb_tid'] ) )
-				$this->p->util->add_plugin_filters( $this, array( 'installed_version' => 1, 'ua_plugin' => 1 ), 10, 'wpssorrssb' );
-		}
-
-		public function filter_installed_version( $version ) {
-			if ( ! $this->p->check->aop( 'wpssorrssb', false ) )
-				$version = '0.'.$version;
-			return $version;
-		}
-
-		public function filter_ua_plugin( $plugin ) {
-			if ( $this->p->check->aop( 'wpssorrssb' ) )
-				$plugin .= 'L';
-			elseif ( $this->p->check->aop( 'wpssorrssb', false ) )
-				$plugin .= 'U';
-			else $plugin .= 'G';
-			return $plugin;
 		}
 
 		private function warning_wpsso_version( $info ) {

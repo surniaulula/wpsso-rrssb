@@ -47,7 +47,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			'<td class="blank">'.$this->p->webpage->get_caption( 'title', 0, true, true, false ).'</td>';
 
 			$rows['email_desc'] = $this->p->util->get_th( 'Email Message', 'medium', 'post-email_desc' ). 
-			'<td class="blank">'.$this->p->webpage->get_caption( 'excerpt', $opts['email_cap_len'], 
+			'<td class="blank">'.$this->p->webpage->get_caption( 'excerpt', $this->p->options['email_cap_len'], 
 				true, true, $this->p->options['email_cap_hashtags'] ).'</td>';
 
 			/*
@@ -91,7 +91,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 				'<td class="blank">'.$this->p->webpage->get_caption( 'title', 0, true, true, false ).'</td>';
 	
 				$rows[$opt_prefix.'_desc'] = $this->p->util->get_th( $name.' Caption', 'medium', 'post-'.$opt_prefix.'_desc' ). 
-				'<td class="blank">'.$this->p->webpage->get_caption( 'excerpt', $opts[$opt_prefix.'_cap_len'], 
+				'<td class="blank">'.$this->p->webpage->get_caption( 'excerpt', $this->p->options[$opt_prefix.'_cap_len'], 
 					true, true, $this->p->options[$opt_prefix.'_cap_hashtags'] ).'</td>';
 			}
 

@@ -15,7 +15,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(
-					'version' => '1.0.3',	// plugin version
+					'version' => '1.0.4',	// plugin version
 					'short' => 'WPSSO RRSSB',
 					'name' => 'WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)',
 					'desc' => 'WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.',
@@ -29,7 +29,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'url' => array(
 						// wordpress.org
 						'download' => 'https://wordpress.org/plugins/wpsso-rrssb/',
-						'review' => 'https://wordpress.org/support/view/plugin-reviews/wpsso-rrssb#postform',
+						'review' => 'https://wordpress.org/support/view/plugin-reviews/wpsso-rrssb?filter=5&rate=5#postform',
 						'readme' => 'https://plugins.svn.wordpress.org/wpsso-rrssb/trunk/readme.txt',
 						'wp_support' => 'https://wordpress.org/support/plugin/wpsso-rrssb',
 						// wpsso.com
@@ -100,8 +100,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		);
 
 		public static function set_constants( $plugin_filepath ) { 
-			$lca = 'wpssorrssb';
-			$slug = self::$cf['plugin'][$lca]['slug'];
+			$slug = self::$cf['plugin']['wpssorrssb']['slug'];
 
 			define( 'WPSSORRSSB_FILEPATH', $plugin_filepath );						
 			define( 'WPSSORRSSB_PLUGINDIR', trailingslashit( realpath( dirname( $plugin_filepath ) ) ) );
@@ -109,20 +108,31 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			define( 'WPSSORRSSB_TEXTDOM', $slug );
 			define( 'WPSSORRSSB_URLPATH', trailingslashit( plugins_url( '', $plugin_filepath ) ) );
 
-			/*
-			 * Allow some constants to be pre-defined in wp-config.php
-			 */
-			if ( ! defined( 'WPSSORRSSB_SHARING_SHORTCODE' ) )
-				define( 'WPSSORRSSB_SHARING_SHORTCODE', 'rrssb' );
+			self::set_variable_constants();
+		}
+
+		public static function set_variable_constants() { 
+			foreach ( self::get_variable_constants() as $name => $value )
+				if ( ! defined( $name ) )
+					define( $name, $value );
+		}
+
+		public static function get_variable_constants() { 
+			$var_const = array();
+
+			$var_const['WPSSORRSSB_SHARING_SHORTCODE'] = 'rrssb';
 
 			/*
 			 * WPSSO RRSSB hook priorities
 			 */
-			if ( ! defined( 'WPSSORRSSB_SOCIAL_PRIORITY' ) )
-				define( 'WPSSORRSSB_SOCIAL_PRIORITY', 100 );
+			$var_const['WPSSORRSSB_SOCIAL_PRIORITY'] = 100;
+			$var_const['WPSSORRSSB_FOOTER_PRIORITY'] = 100;
 
-			if ( ! defined( 'WPSSORRSSB_FOOTER_PRIORITY' ) )
-				define( 'WPSSORRSSB_FOOTER_PRIORITY', 100 );
+			foreach ( $var_const as $name => $value )
+				if ( defined( $name ) )
+					$var_const[$name] = constant( $name );	// inherit existing values
+
+			return $var_const;
 		}
 
 		public static function require_libs( $plugin_filepath ) {
