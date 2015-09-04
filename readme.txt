@@ -14,7 +14,12 @@ WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in y
 
 == Description ==
 
-<p><img src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png" width="256" height="256" style="width:33%;min-width:128px;max-width:256px;float:left;margin:0 40px 20px 0;" />Add awesome and <strong>Ridiculously Responsive Social Sharing Buttons</strong> to posts / pages, custom post types, <a href="https://wordpress.org/plugins/bbpress/">bbPress</a>, <a href="https://wordpress.org/plugins/buddypress/">BuddyPress</a>, <a href="https://wordpress.org/plugins/woocommerce/">WooCommerce</a> product pages, and many more. The sharing buttons can be included in your content, excerpts, in a floating CSS sidebar, in a widget, from shortcodes, and on admin editing pages. The Scalable Vector Graphics (SVG) used by WPSSO RRSSB resize automatically to their container size, so they always look great from any device (phone, tablet, laptop, etc.), including high resolution retina displays.</p>
+<p><img src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png" width="256" height="256" style="width:33%;min-width:128px;max-width:256px;float:left;margin:0 40px 20px 0;" />Add awesome and <strong>Ridiculously Responsive Social Sharing Buttons</strong> to posts / pages, custom post types, <a href="https://wordpress.org/plugins/bbpress/">bbPress</a>, <a href="https://wordpress.org/plugins/buddypress/">BuddyPress</a>, <a href="https://wordpress.org/plugins/woocommerce/">WooCommerce</a> product pages, and many more. The sharing buttons can be included in your content, excerpts, in a floating CSS sidebar, in a widget, from shortcodes, and on admin editing pages.</p>
+
+
+<blockquote>
+<p>The Scalable Vector Graphics (SVG) used by WPSSO RRSSB resize automatically to their container size, so they always look great from any device (phone, tablet, laptop, etc.), including high resolution retina displays.</p>
+</blockquote>
 
 <p>WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) works in conjunction with the <a href="https://wordpress.org/plugins/wpsso/">WordPress Social Sharing Optimization (WPSSO)</a> plugin, extending its features with additional settings pages, tabs, and options to provide <strong>Ridiculously Responsive Social Sharing Buttons</strong>. Using WPSSO as its framework, WPSSO RRSSB provides customized and accurate information about your content to social websites.</p>
 
@@ -28,8 +33,8 @@ WPSSO RRSSB allows you to include a selection of <strong>Ridiculously Responsive
 * On admin editing pages, including media, product pages, and custom post types.
 * In a WordPress sharing widget.
 * In a floating CSS sidebar.
-* From a shortcode within your content and/or excerpt.
-* From a function in your theme's template(s).
+* A shortcode within your content and/or excerpt.
+* A function in your theme's template(s).
 
 Each of these social sharing buttons can be enabled, configured, and styled individually:
 
@@ -44,6 +49,8 @@ Each of these social sharing buttons can be enabled, configured, and styled indi
 * Tumblr
 * VK
 
+A built-in stylesheet editor allows you to fine-tune the CSS for each social sharing button location easily (content, excerpt, shortcode, widget, etc.).
+
 <blockquote>
 <p>Download the Free version from <a href="http://surniaulula.github.io/wpsso-rrssb/">GitHub</a> or <a href="https://wordpress.org/plugins/wpsso-rrssb/">WordPress.org</a>. WPSSO RRSSB uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.</p>
 </blockquote>
@@ -52,8 +59,7 @@ Each of these social sharing buttons can be enabled, configured, and styled indi
 
 The [Pro version of WPSSO RRSSB](http://wpsso.com/extend/plugins/wpsso-rrssb/) includes a number of additional options and features:
 
-* A stylesheets editor for each social sharing button locations (content, excerpt, shortcode, widget, etc.).
-* URL shortening with Bitly or Google for URLs in Tweet texts.
+* URL shortening with Bitly or Google for URLs in Tweets.
 * Additional sharing button locations and CSS styles for:
 	* [bbPress](https://wordpress.org/plugins/bbpress/)
 	* [BuddyPress](https://wordpress.org/plugins/buddypress/)
