@@ -103,6 +103,17 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 * [GitHub](https://github.com/SurniaUlula/wpsso-ssb)
 * [WordPress.org](https://wordpress.org/plugins/wpsso-ssb/developers/)
 
+= Version 1.0.5 =
+
+* **New Features**
+	* *None*
+* **Improvements**
+	* *None*
+* **Bugfixes**
+	* *None*
+* **Developer Notes**
+	* Added a WpssoRrssbRegister class with `WpssoUtil::save_time()` calls during activation to save install / activation / update timestamps.
+
 = Version 1.0.4 (2015/09/03) =
 
 * **New Features**
@@ -160,18 +171,11 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 * **Developer Notes**
 	* *None*
 
-= Version 0.2 (2015/07/29) =
-
-* **New Features**
-	* *None*
-* **Improvements**
-	* *None*
-* **Bugfixes**
-	* Corrected the styling help text on the "Sharing Styles" settings page.
-* **Developer Notes**
-	* *None*
-
 == Upgrade Notice ==
+
+= 1.0.5 =
+
+Added a WpssoRrssbRegister class with method calls during activation to save install / activation / update timestamps.
 
 = 1.0.4 =
 
@@ -192,8 +196,4 @@ Fixed a possible error on failed CSS file writes by applying PHP realpath() to t
 = 1.0 =
 
 Added the WooCommerce, bbPress, and BuddyPress integration modules.
-
-= 0.2 =
-
-Corrected the styling help text on the "Sharing Styles" settings page.
 
