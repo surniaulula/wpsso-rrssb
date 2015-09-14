@@ -7,7 +7,7 @@
  * License: GPLv3
  * License URI: http://www.gnu.org/licenses/gpl.txt
  * Description: WPSSO extension to provide Ridiculously Responsive Social Sharing Buttons - with support for hashtags, short URLs, bbPress, and BuddyPress.
- * Requires At Least: 3.0
+ * Requires At Least: 3.1
  * Tested Up To: 4.3
  * Version: 1.0.5
  * 
