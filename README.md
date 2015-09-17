@@ -24,7 +24,7 @@
 
 <h4>Quick List of Features</h4>
 
-<p><strong>Free / Basic Version</strong></p>
+<p><strong>Free / Basic Features</strong></p>
 
 <p>WPSSO RRSSB allows you to include a selection of <strong>Ridiculously Responsive Social Sharing Buttons</strong> in multiple locations:</p>
 
@@ -43,12 +43,12 @@
 <li>Email</li>
 <li>Facebook</li>
 <li>Google+</li>
-<li>Twitter</li>
-<li>Pinterest</li>
 <li>LinkedIn</li>
-<li>Reddit</li>
+<li>Pinterest</li>
 <li>Pocket</li>
+<li>Reddit</li>
 <li>Tumblr</li>
+<li>Twitter</li>
 <li>VK</li>
 </ul>
 
@@ -58,12 +58,21 @@
 <p>Download the Free version from <a href="http://surniaulula.github.io/wpsso-rrssb/">GitHub</a> or <a href="https://wordpress.org/plugins/wpsso-rrssb/">WordPress.org</a>. WPSSO RRSSB uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.</p>
 </blockquote>
 
-<p><strong>Pro / Power-User Version</strong></p>
+<p><strong>Pro / Power-User Features</strong></p>
 
 <p>The <a href="http://wpsso.com/extend/plugins/wpsso-rrssb/">Pro version of WPSSO RRSSB</a> includes a number of additional options and features:</p>
 
 <ul>
-<li>URL shortening with Bitly or Google for URLs in Tweets.</li>
+<li>Custom titles and text in the Social Settings metabox for:
+
+<ul>
+<li>Email</li>
+<li>LinkedIn</li>
+<li>Pinterest</li>
+<li>Reddit</li>
+<li>Tumblr</li>
+<li>Twitter</li>
+</ul></li>
 <li>Additional sharing button locations and CSS styles for:
 
 <ul>

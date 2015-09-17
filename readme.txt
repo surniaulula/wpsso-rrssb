@@ -23,9 +23,9 @@ WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in y
 
 <p>WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) works in conjunction with the <a href="https://wordpress.org/plugins/wpsso/">WordPress Social Sharing Optimization (WPSSO)</a> plugin, extending its features with additional settings pages, tabs, and options to provide <strong>Ridiculously Responsive Social Sharing Buttons</strong>. Using WPSSO as its framework, WPSSO RRSSB provides customized and accurate information about your content to social websites.</p>
 
-= Quick List of Features =
+<h4>Quick List of Features</h4>
 
-**Free / Basic Version**
+<strong>Free / Basic Features</strong>
 
 WPSSO RRSSB allows you to include a selection of <strong>Ridiculously Responsive Social Sharing Buttons</strong> in multiple locations:
 
@@ -41,12 +41,12 @@ Each of these social sharing buttons can be enabled, configured, and styled indi
 * Email
 * Facebook
 * Google+
-* Twitter
-* Pinterest
 * LinkedIn
-* Reddit
+* Pinterest
 * Pocket
+* Reddit
 * Tumblr
+* Twitter
 * VK
 
 A built-in stylesheet editor allows you to fine-tune the CSS for each social sharing button location easily (content, excerpt, shortcode, widget, etc.).
@@ -55,11 +55,17 @@ A built-in stylesheet editor allows you to fine-tune the CSS for each social sha
 <p>Download the Free version from <a href="http://surniaulula.github.io/wpsso-rrssb/">GitHub</a> or <a href="https://wordpress.org/plugins/wpsso-rrssb/">WordPress.org</a>. WPSSO RRSSB uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.</p>
 </blockquote>
 
-**Pro / Power-User Version**
+<strong>Pro / Power-User Features</strong>
 
 The [Pro version of WPSSO RRSSB](http://wpsso.com/extend/plugins/wpsso-rrssb/) includes a number of additional options and features:
 
-* URL shortening with Bitly or Google for URLs in Tweets.
+* Custom titles and text in the Social Settings metabox for:
+	* Email
+	* LinkedIn
+	* Pinterest
+	* Reddit
+	* Tumblr
+	* Twitter
 * Additional sharing button locations and CSS styles for:
 	* [bbPress](https://wordpress.org/plugins/bbpress/)
 	* [BuddyPress](https://wordpress.org/plugins/buddypress/)
