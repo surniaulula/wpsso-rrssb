@@ -109,7 +109,18 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 * [GitHub](https://github.com/SurniaUlula/wpsso-ssb)
 * [WordPress.org](https://wordpress.org/plugins/wpsso-ssb/developers/)
 
-= Version 1.0.5 =
+= Version 1.0.6 (2015/09/19) =
+
+* **New Features**
+	* *None*
+* **Improvements**
+	* *None*
+* **Bugfixes**
+	* *None*
+* **Developer Notes**
+	* Added a self-deactivation feature when WPSSO RRSSB is activated and WPSSO is missing. 
+
+= Version 1.0.5 (2015/09/09) =
 
 * **New Features**
 	* *None*
@@ -178,6 +189,10 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 	* *None*
 
 == Upgrade Notice ==
+
+= 1.0.6 =
+
+Added a self-deactivation feature when WPSSO RRSSB is activated and WPSSO is missing. 
 
 = 1.0.5 =
 
