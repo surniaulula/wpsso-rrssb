@@ -100,14 +100,11 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		);
 
 		public static function set_constants( $plugin_filepath ) { 
-			$slug = self::$cf['plugin']['wpssorrssb']['slug'];
-
 			define( 'WPSSORRSSB_FILEPATH', $plugin_filepath );						
 			define( 'WPSSORRSSB_PLUGINDIR', trailingslashit( realpath( dirname( $plugin_filepath ) ) ) );
-			define( 'WPSSORRSSB_PLUGINBASE', plugin_basename( $plugin_filepath ) );
-			define( 'WPSSORRSSB_TEXTDOM', $slug );
+			define( 'WPSSORRSSB_PLUGINBASE', self::$cf['plugin']['wpssorrssb']['base'] );	// wpsso-rrssb/wpsso-rrssb.php
+			define( 'WPSSORRSSB_TEXTDOM', self::$cf['plugin']['wpssorrssb']['slug'] );	// wpsso-rrssb
 			define( 'WPSSORRSSB_URLPATH', trailingslashit( plugins_url( '', $plugin_filepath ) ) );
-
 			self::set_variable_constants();
 		}
 
