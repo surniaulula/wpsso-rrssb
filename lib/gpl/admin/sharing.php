@@ -49,7 +49,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			$rows['email_desc'] = $this->p->util->get_th( 'Email Message', 'medium', 'post-email_desc' ). 
 			'<td class="blank">'.$this->p->webpage->get_caption( 'excerpt', 
 				$this->p->options['email_cap_len'], true, true, 
-					$this->p->options['email_cap_hashtags'], true, '' ).'</td>';
+					$this->p->options['email_cap_hashtags'], true, 'none' ).'</td>';
 
 			/*
 			 * Pinterest
@@ -68,8 +68,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			}
 			$rows['pin_desc'] = $th.'<td class="blank">'.
 			$this->p->webpage->get_caption( 'excerpt', 
-				$this->p->options['pin_cap_len'], true, true, 
-					$this->p->options['pin_cap_hashtags'], true, '' ).'</td>'.
+				$this->p->options['pin_cap_len'], true, true, $this->p->options['pin_cap_hashtags'] ).'</td>'.
 			( empty( $img_url ) ? '' : '<td style="width:'.$size_info['width'].'px;"><img src="'.$img_url.'"
 				style="max-width:'.$size_info['width'].'px;"></td>' );
 
@@ -79,8 +78,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			$twitter_cap_len = $this->p->util->get_tweet_max_len( get_permalink( $head_info['post_id'] ) );
 			$rows['twitter_desc'] = $this->p->util->get_th( 'Tweet Text', 'medium', 'post-twitter_desc' ). 
 			'<td class="blank">'.$this->p->webpage->get_caption( 'title', 
-				$twitter_cap_len, true, true, 
-					$this->p->options['twitter_cap_hashtags'] ).'</td>';
+				$twitter_cap_len, true, true, $this->p->options['twitter_cap_hashtags'] ).'</td>';
 
 			/*
 			 * Generic Title / Caption Input
@@ -96,7 +94,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 				$rows[$opt_prefix.'_desc'] = $this->p->util->get_th( $name.' Caption', 'medium', 'post-'.$opt_prefix.'_desc' ). 
 				'<td class="blank">'.$this->p->webpage->get_caption( 'excerpt', 
 					$this->p->options[$opt_prefix.'_cap_len'], true, true, 
-						$this->p->options[$opt_prefix.'_cap_hashtags'], true, '' ).'</td>';
+						$this->p->options[$opt_prefix.'_cap_hashtags'] ).'</td>';
 			}
 
 			/*
