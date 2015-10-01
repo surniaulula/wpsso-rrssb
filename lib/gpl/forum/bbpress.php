@@ -14,12 +14,6 @@ if ( ! class_exists( 'WpssoRrssbGplForumBbpress' ) ) {
 
 		private $p;
 		private $sharing;
-		private $has_setup = false;
-		private $post_id;
-		private $post_type;
-		private $topic_type = 'topic';
-		private $forum_type = 'forum';
-		private $reply_type = 'reply';
 
 		public function __construct( &$plugin ) {
 			$this->p =& $plugin;
@@ -27,10 +21,10 @@ if ( ! class_exists( 'WpssoRrssbGplForumBbpress' ) ) {
 				$this->p->debug->mark();
 
 			if ( class_exists( 'bbpress' ) ) {	// is_bbpress() is not available here
-				if ( array_key_exists( 'rrssb', $this->p->is_avail ) &&
-					$this->p->is_avail['rrssb'] === true ) {
+				if ( ! empty( $this->p->is_avail['rrssb'] ) ) {
 					$classname = __CLASS__.'Sharing';
-					$this->sharing = new $classname( $this->p );
+					if ( class_exists( $classname ) )
+						$this->sharing = new $classname( $this->p );
 				}
 			}
 		}
