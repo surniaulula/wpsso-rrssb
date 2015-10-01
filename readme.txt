@@ -109,6 +109,17 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 * [GitHub](https://github.com/SurniaUlula/wpsso-ssb)
 * [WordPress.org](https://wordpress.org/plugins/wpsso-ssb/developers/)
 
+= Version 1.0.7 (2015/10/01) =
+
+* **New Features**
+	* *None*
+* **Improvements**
+	* Improved the default CSS for BuddyPress activity buttons.
+* **Bugfixes**
+	* Fixed loading of the BuddyPress integration module (Pro version).
+* **Developer Notes**
+	* *None*
+
 = Version 1.0.6 (2015/09/19) =
 
 * **New Features**
