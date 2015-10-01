@@ -6,3 +6,17 @@
 .wpsso-rrssb-bp_activity { 
 	margin:10px 0;
 }
+.wpsso-rrssb-bp_activity ul.rrssb-buttons li span.rrssb-icon {
+	display:inline-block;
+	text-align:left;
+}
+.wpsso-rrssb-bp_activity ul.rrssb-buttons li span.rrssb-text {
+	display:inline-block;
+	font-size:0.7em;
+	vertical-align:middle;
+	text-align:center;
+}
+#buddypress ul.activity-list .wpsso-rrssb-bp_activity ul.rrssb-buttons li {
+	overflow:visible;
+	padding:0 2px;
+}

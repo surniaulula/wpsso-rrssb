@@ -148,6 +148,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingButtons' ) && class_exists( 'Wpsso
 			$html = '<table>';
 			$show_on = apply_filters( $this->p->cf['lca'].'_sharing_show_on', 
 				WpssoRrssbSharing::$cf['sharing']['show_on'], $prefix );
+
 			foreach ( $show_on as $suffix => $desc ) {
 				$col++;
 				$class = isset( $this->p->options[$prefix.'_on_'.$suffix.':is'] ) &&

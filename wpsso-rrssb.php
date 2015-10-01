@@ -9,7 +9,7 @@
  * Description: WPSSO extension to provide Ridiculously Responsive Social Sharing Buttons - with support for hashtags, short URLs, bbPress, and BuddyPress.
  * Requires At Least: 3.1
  * Tested Up To: 4.3.1
- * Version: 1.0.6
+ * Version: 1.0.7
  * 
  * Copyright 2014-2015 - Jean-Sebastien Morisset - http://surniaulula.com/
  */
@@ -70,11 +70,11 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 			if ( $deactivate === true ) {
 				require_once( ABSPATH.'wp-admin/includes/plugin.php' );
 				deactivate_plugins( WPSSORRSSB_PLUGINBASE );
-				wp_die( '<p>'.sprintf( __( 'The %s extension requires the %s plugin &mdash; please install and '.
-					'activate the %s plugin before trying to re-activate the %s extension.', WPSSORRSSB_TEXTDOM ), 
+				wp_die( '<p>'.sprintf( 'The %s extension requires the %s plugin &mdash; please install and '.
+					'activate the %s plugin before trying to re-activate the %s extension.', 
 						$name, self::$wpsso_name, self::$wpsso_short, $short ).'</p>' );
-			} else echo '<div class="error"><p>'.sprintf( __( 'The %s extension requires the %s plugin &mdash; '.
-					'please install and activate the %s plugin.', WPSSORRSSB_TEXTDOM ), 
+			} else echo '<div class="error"><p>'.sprintf( 'The %s extension requires the %s plugin &mdash; '.
+					'please install and activate the %s plugin.', 
 						$name, self::$wpsso_name, self::$wpsso_short ).'</p></div>';
 		}
 
