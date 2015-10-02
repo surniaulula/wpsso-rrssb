@@ -111,6 +111,18 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 * [GitHub](https://github.com/SurniaUlula/wpsso-ssb)
 * [WordPress.org](https://wordpress.org/plugins/wpsso-ssb/developers/)
 
+= Version 1.0.8 =
+
+* **New Features**
+	* *None*
+* **Improvements**
+	* Updated the text domain in preparation for plugin import to translate.wordpress.org.
+	* Added the translation function to all option labels in the settings pages and metaboxes.
+* **Bugfixes**
+	* *None*
+* **Developer Notes**
+	* Added a POT (Portable Object Template) file with translation strings in wpsso-rrssb/languages/wpsso-rrssb.pot.
+
 = Version 1.0.7 (2015/10/01) =
 
 * **New Features**
