@@ -123,7 +123,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 * **Developer Notes**
 	* Added a POT (Portable Object Template) file with translation strings in wpsso-rrssb/languages/wpsso-rrssb.pot.
 
-= Version 1.0.7 (2015/10/01) =
+= Version 1.0.7 2015/10/01 =
 
 * **New Features**
 	* *None*
@@ -134,7 +134,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 * **Developer Notes**
 	* *None*
 
-= Version 1.0.6 (2015/09/19) =
+= Version 1.0.6 2015/09/19 =
 
 * **New Features**
 	* *None*
@@ -145,7 +145,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 * **Developer Notes**
 	* Added a self-deactivation feature when WPSSO RRSSB is activated and WPSSO is missing. 
 
-= Version 1.0.5 (2015/09/09) =
+= Version 1.0.5 2015/09/09 =
 
 * **New Features**
 	* *None*
@@ -156,7 +156,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 * **Developer Notes**
 	* Added a WpssoRrssbRegister class with `WpssoUtil::save_time()` calls during activation to save install / activation / update timestamps.
 
-= Version 1.0.4 (2015/09/03) =
+= Version 1.0.4 2015/09/03 =
 
 * **New Features**
 	* *None*
@@ -169,7 +169,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 	* Removed the WPSSO RRSSB specific 'installed_version' and 'ua_plugin' filters.
 	* Improved the setting of constants with new `set_variable_constants()` and `get_variable_constants()` methods in the WpssoRrssbConfig class.
 
-= Version 1.0.3 (2015/08/26) =
+= Version 1.0.3 2015/08/26 =
 
 * **New Features**
 	* *None*
@@ -180,7 +180,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 * **Developer Notes**
 	* *None*
 
-= Version 1.0.2 (2015/08/18) =
+= Version 1.0.2 2015/08/18 =
 
 * **New Features**
 	* *None*
@@ -191,7 +191,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 * **Developer Notes**
 	* *None*
 
-= Version 1.0.1 (2015/08/04) =
+= Version 1.0.1 2015/08/04 =
 
 * **New Features**
 	* *None*
@@ -202,7 +202,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 * **Developer Notes**
 	* *None*
 
-= Version 1.0 (2015/08/02) =
+= Version 1.0 2015/08/02 =
 
 * **New Features**
 	* Added the WooCommerce, bbPress, and BuddyPress integration modules.
@@ -217,33 +217,5 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 = 1.0.7 =
 
-Fixed loading of BuddyPress integration module (Pro version). Improved default CSS for BuddyPress activity buttons.
-
-= 1.0.6 =
-
-Added a self-deactivation feature when WPSSO RRSSB is activated and WPSSO is missing. 
-
-= 1.0.5 =
-
-Added a WpssoRrssbRegister class with method calls during activation to save install / activation / update timestamps.
-
-= 1.0.4 =
-
-Updated the tooltip and info message filter names for WPSSO v3.8. Improved setting of constants with new methods in WpssoRrssbConfig class.
-
-= 1.0.3 =
-
-Fixed a missing authentication query argument for update checks (Pro version).
-
-= 1.0.2 =
-
-Fixed an incorrectly named object expiration variable in the wpssorrssb_get_sharing_buttons() function.
-
-= 1.0.1 =
-
-Fixed a possible error on failed CSS file writes by applying PHP realpath() to the WPSSORRSSB_PLUGINDIR constant value.
-
-= 1.0 =
-
-Added the WooCommerce, bbPress, and BuddyPress integration modules.
+2015/10/01 Fixed loading of BuddyPress integration module (Pro version). Improved default CSS for BuddyPress activity buttons.
 
