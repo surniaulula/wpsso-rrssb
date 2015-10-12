@@ -83,7 +83,7 @@
 </ul></li>
 </ul>
 
-<h4>WPSSO Framework Required</h4>
+<h4>Uses the WPSSO Framework</h4>
 
 <p>The WordPress Social Sharing Optimization (WPSSO) plugin is required to use the WPSSO RRSSB extension. You can use the Free version of WPSSO RRSSB with <em>both</em> the Free and Pro versions of WPSSO, but <a href="http://wpsso.com/extend/plugins/wpsso-rrssb/">WPSSO RRSSB Pro</a> requires the use of the <a href="http://wpsso.com/extend/plugins/wpsso/">WPSSO Pro</a> plugin as well. <a href="http://wpsso.com/extend/plugins/wpsso-rrssb/">Purchase the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) Pro extension</a> (includes a <em>No Risk 30 Day Refund Policy</em>).</p>
 
