@@ -107,10 +107,10 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 * [GitHub](https://github.com/SurniaUlula/wpsso-rrssb)
 * [WordPress.org](https://wordpress.org/plugins/wpsso-rrssb/developers/)
 
-= Version 1.0.8 =
+= Version 1.1.0 =
 
 * **New Features**
-	* *None*
+	* Added a French language (fr_FR) translation.
 * **Improvements**
 	* Added translation function calls to all option labels in the settings pages and metaboxes.
 	* Updated the text domain in preparation for plugin import to translate.wordpress.org.
