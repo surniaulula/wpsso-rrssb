@@ -59,6 +59,11 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					'rrssb-shortcode' => 'Shortcode',
 					'rrssb-widget' => 'Widget',
 				),
+				'position' => array(
+					'top' => 'Top',
+					'bottom' => 'Bottom',
+					'both' => 'Both Top and Bottom',
+				),
 			),
 		);
 
@@ -112,6 +117,17 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				$this->p->debug->mark( 'action / filter setup' );
 		}
 
+		private function set_objects() {
+			foreach ( $this->p->cf['plugin']['wpssorrssb']['lib']['website'] as $id => $name ) {
+				$classname = WpssoRrssbConfig::load_lib( false, 'website/'.$id, 'wpssorrssbsharing'.$id );
+				if ( $classname !== false && class_exists( $classname ) ) {
+					$this->website[$id] = new $classname( $this->p );
+					if ( $this->p->debug->enabled )
+						$this->p->debug->log( $classname.' class loaded' );
+				}
+			}
+		}
+
 		public function filter_get_defaults( $opts_def ) {
 			$opts_def = array_merge( $opts_def, self::$cf['opt']['defaults'] );
 			$opts_def = $this->p->util->push_add_to_options( $opts_def, array( 'buttons' => 'frontend' ) );
@@ -127,7 +143,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					if ( ! file_exists( $buttons_css_file ) )
 						continue;
 					elseif ( ! $fh = @fopen( $buttons_css_file, 'rb' ) )
-						$this->p->notice->err( 'Failed to open '.$buttons_css_file.' for reading.' );
+						$this->p->notice->err( sprintf( __( 'Failed to open the %s file for reading.',
+							'wpsso-rrssb' ), $buttons_css_file ) );
 					else {
 						$css_data = fread( $fh, filesize( $buttons_css_file ) );
 						fclose( $fh );
@@ -165,7 +182,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					return 'pos_num';
 					break;
 				// text strings that can be blank
-				case 'twitter_desc':
+				case ( preg_match( '/_(desc|title)$/', $key ) ? true : false ):
 					return 'ok_blank';
 					break;
 			}
@@ -184,36 +201,74 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 		public function filter_status_gpl_features( $features, $lca, $info ) {
 			if ( ! empty( $info['lib']['submenu']['sharing-buttons'] ) )
-				$features['Sharing Buttons'] = array( 'classname' => $lca.'Sharing' );
-
+				$features['Sharing Buttons'] = array( 
+					'classname' => $lca.'Sharing',
+				);
 			if ( ! empty( $info['lib']['submenu']['sharing-styles'] ) )
-				$features['Sharing Stylesheet'] = array( 'status' => $this->p->options['buttons_use_social_css'] ? 'on' : 'off' );
-
+				$features['Sharing Stylesheet'] = array(
+					'status' => $this->p->options['buttons_use_social_css'] ? 'on' : 'off',
+				);
 			if ( ! empty( $info['lib']['shortcode']['sharing'] ) )
-				$features['Sharing Shortcode'] = array( 'classname' => $lca.'ShortcodeSharing' );
-
+				$features['Sharing Shortcode'] = array(
+					'classname' => $lca.'ShortcodeSharing',
+				);
 			if ( ! empty( $info['lib']['widget']['sharing'] ) )
-				$features['Sharing Widget'] = array( 'classname' => $lca.'WidgetSharing' );
-
+				$features['Sharing Widget'] = array(
+					'classname' => $lca.'WidgetSharing',
+				);
 			return $features;
 		}
 
 		public function filter_messages_tooltip_side( $text, $idx ) {
 			switch ( $idx ) {
 				case 'tooltip-side-sharing-buttons':
-					$text = 'Social sharing features include the '.$this->p->cf['menu'].' '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' and '.$this->p->util->get_admin_url( 'sharing-styles', 'Sharing Styles' ).' settings pages, the Social Settings -&gt; Sharing Buttons tab on editing pages, along with the social sharing shortcode and widget.';
+					$text = sprintf( __( 'Social sharing features include the <a href="%1$s">%2$s</a> and <a href="%3$s">%4$s</a> settings pages, the <em>%5$s</em> tab in the <em>%6$s</em> metabox, along with the social sharing shortcode and widget.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'sharing-buttons' ), _x( 'Sharing Buttons', 'lib file description', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'sharing-styles' ), _x( 'Sharing Styles', 'lib file description', 'wpsso-rrssb' ), _x( 'Sharing Buttons', 'metabox tab', 'wpsso-rrssb' ), _x( 'Social Settings', 'metabox title', 'wpsso-rrssb' ) );
 					break;
 				case 'tooltip-side-sharing-stylesheet':
-					$text = 'A stylesheet can be included on all webpages for the social sharing buttons. Enable or disable the addition of the stylesheet from the '.$this->p->util->get_admin_url( 'sharing-styles', 'Sharing Styles' ).' settings page.';
+					$text = sprintf( __( 'A stylesheet for the social sharing buttons can be included in all webpages. You can enable or disable use of the stylesheet from the <a href="%1$s">%2$s</a> settings page.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'sharing-styles' ), _x( 'Sharing Styles', 'lib file description', 'wpsso-rrssb' ) );
 					break;
 				case 'tooltip-side-sharing-shortcode':
-					$text = 'Support for shortcode(s) can be enabled / disabled on the '.$this->p->util->get_admin_url( 'advanced', 'Advanced' ).' settings page. Shortcodes are disabled by default to optimize WordPress performance and content processing.';
+					$text = sprintf( __( 'Support for shortcode(s) can be enabled and disabled on the <a href="%1$s">%2$s</a> settings page. Shortcodes are disabled by default to optimize performance and content processing.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'advanced' ), _x( 'Advanced', 'lib file description', 'wpsso-rrssb' ) );
 					break;
 				case 'tooltip-side-sharing-widget':
-					$text = 'The social sharing widget feature adds a "WPSSO RRSSB" widget in the WordPress Appearance -&gt; Widgets page. The widget can be used in any number of widget areas to share the current webpage URL.';
+					$text = sprintf( __( 'The sharing widget feature adds a <em>%s</em> widget to the WordPress Widgets settings page. The sharing widget shares the URL for the current webpage (and not individual items within an index / archive webpage, for example).', 'wpsso-rrssb' ),_x( 'WPSSO RRSSB', 'lib file description', 'wpsso-rrssb' ) );
 					break;
 			}
 			return $text;
+		}
+
+		public function wp_enqueue_styles() {
+			if ( ! empty( $this->p->options['buttons_use_social_css'] ) ) {
+				if ( ! file_exists( self::$sharing_css_file ) ) {
+					if ( $this->p->debug->enabled )
+						$this->p->debug->log( 'updating '.self::$sharing_css_file );
+					$this->update_sharing_css( $this->p->options );
+				}
+				if ( ! empty( $this->p->options['buttons_enqueue_social_css'] ) ) {
+					if ( $this->p->debug->enabled )
+						$this->p->debug->log( 'wp_enqueue_style = '.$this->p->cf['lca'].'_sharing_buttons' );
+					wp_register_style( $this->p->cf['lca'].'_sharing_buttons', self::$sharing_css_url, 
+						false, $this->p->cf['plugin'][$this->p->cf['lca']]['version'] );
+					wp_enqueue_style( $this->p->cf['lca'].'_sharing_buttons' );
+				} else {
+					if ( ! is_readable( self::$sharing_css_file ) ) {
+						if ( $this->p->debug->enabled )
+							$this->p->debug->log( self::$sharing_css_file.' is not readable' );
+						if ( is_admin() )
+							$this->p->notice->err( sprintf( __( 'The %s file is not readable.',
+								'wpsso-rrssb' ), self::$sharing_css_file ), true );
+					} else {
+						echo '<style type="text/css">';
+						if ( ( $fsize = @filesize( self::$sharing_css_file ) ) > 0 &&
+							$fh = @fopen( self::$sharing_css_file, 'rb' ) ) {
+							echo fread( $fh, $fsize );
+							fclose( $fh );
+						}
+						echo '</style>',"\n";
+					}
+				}
+			} elseif ( $this->p->debug->enabled )
+				$this->p->debug->log( 'buttons_use_social_css option is disabled' );
 		}
 
 		public function update_sharing_css( &$opts ) {
@@ -231,35 +286,40 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				if ( $classname !== false && class_exists( $classname ) )
 					$css_data = call_user_func( array( $classname, 'process' ), $css_data );
 				else {
-					if ( is_admin() )
-						$this->p->notice->err( 'Failed to load minify class SuextMinifyCssCompressor.', true );
 					if ( $this->p->debug->enabled )
 						$this->p->debug->log( 'failed to load minify class SuextMinifyCssCompressor' );
+					if ( is_admin() )
+						$this->p->notice->err( __( 'Failed to load the minify class SuextMinifyCssCompressor.',
+							'wpsso-rrssb' ), true );
 				}
 
 				if ( $fh = @fopen( self::$sharing_css_file, 'wb' ) ) {
 					if ( ( $written = fwrite( $fh, $css_data ) ) === false ) {
-						if ( is_admin() )
-							$this->p->notice->err( 'Failed writing to file '.self::$sharing_css_file.'.', true );
 						if ( $this->p->debug->enabled )
 							$this->p->debug->log( 'failed writing to '.self::$sharing_css_file );
-					} elseif ( $this->p->debug->enabled ) {
 						if ( is_admin() )
-							$this->p->notice->inf( 'Updated CSS '.self::$sharing_css_file.' ('.$written.' bytes written)', true );
+							$this->p->notice->err( sprintf( __( 'Failed writing to the % file.',
+								'wpsso-rrssb' ), self::$sharing_css_file ), true );
+					} elseif ( $this->p->debug->enabled ) {
 						$this->p->debug->log( 'updated css file '.self::$sharing_css_file.' ('.$written.' bytes written)' );
+						if ( is_admin() )
+							$this->p->notice->inf( sprintf( __( 'Updated the %1$s stylesheet (%2$d bytes written)',
+								'wpsso-rrssb' ), self::$sharing_css_file, $written ), true );
 					}
 					fclose( $fh );
 				} else {
 					if ( ! is_writable( WPSSO_CACHEDIR ) ) {
-						if ( is_admin() )
-							$this->p->notice->err( WPSSO_CACHEDIR.' is not writable.', true );
 						if ( $this->p->debug->enabled )
 							$this->p->debug->log( WPSSO_CACHEDIR.' is not writable', true );
+						if ( is_admin() )
+							$this->p->notice->err( sprintf( __( 'The %s folder is not writable.',
+								'wpsso-rrssb' ), WPSSO_CACHEDIR ), true );
 					}
-					if ( is_admin() )
-						$this->p->notice->err( 'Failed to open file '.self::$sharing_css_file.' for writing.', true );
 					if ( $this->p->debug->enabled )
 						$this->p->debug->log( 'failed opening '.self::$sharing_css_file.' for writing' );
+					if ( is_admin() )
+						$this->p->notice->err( sprintf( __( 'Failed to open file %s for writing.',
+							'wpsso-rrssb' ), self::$sharing_css_file ), true );
 				}
 			} else $this->unlink_sharing_css();
 		}
@@ -268,8 +328,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			if ( file_exists( self::$sharing_css_file ) ) {
 				if ( ! @unlink( self::$sharing_css_file ) ) {
 					if ( is_admin() )
-						$this->p->notice->err( 'Error removing minimized stylesheet file'.
-							' &mdash; does the web server have sufficient privileges?', true );
+						$this->p->notice->err( __( 'Error removing the minimized stylesheet &mdash; does the web server have sufficient privileges?', 'wpsso-rrssb' ), true );
 				}
 			}
 		}
@@ -288,49 +347,30 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 			if ( ! empty( $this->p->options[ 'buttons_add_to_'.$post_type->name ] ) ) {
 				// add_meta_box( $id, $title, $callback, $post_type, $context, $priority, $callback_args );
-				add_meta_box( '_'.$this->p->cf['lca'].'_share', 'Sharing Buttons', 
-					array( &$this, 'show_admin_sharing' ), $post_type->name, 'side', 'high' );
+				add_meta_box( '_'.$this->p->cf['lca'].'_share', 
+					_x( 'Sharing Buttons', 'metabox title', 'wpsso-rrssb' ),
+						array( &$this, 'show_admin_sharing' ), $post_type->name, 'side', 'high' );
 			}
-		}
-
-		public function show_admin_sharing( $post ) {
-			$post_type = get_post_type_object( $post->post_type );	// since 3.0
-			$post_type_name = ucfirst( $post_type->name );
-			$css_data = $this->p->options['buttons_css_rrssb-admin_edit'];
-			$classname = apply_filters( $this->p->cf['lca'].'_load_lib', false, 'ext/compressor', 'SuextMinifyCssCompressor' );
-			if ( $classname !== false && class_exists( $classname ) )
-				$css_data = call_user_func( array( $classname, 'process' ), $css_data );
-
-			echo '<style type="text/css">'.$css_data.'</style>', "\n";
-			echo '<table class="sucom-setting '.$this->p->cf['lca'].' side"><tr><td>';
-			if ( get_post_status( $post->ID ) === 'publish' || 
-				get_post_type( $post->ID ) === 'attachment' ) {
-				$content = '';
-				echo $this->get_buttons( $content, 'admin_edit' );
-				if ( $this->p->debug->enabled )
-					$this->p->debug->show_html( null, 'Debug Log' );
-			} else echo '<p class="centered">The '.$post_type_name.' must be published<br/>before it can be shared.</p>';
-			echo '</td></tr></table>';
-		}
-
-		public function filter_pre_filter_remove( $ret, $filter ) {
-			return ( $this->remove_buttons_filter( $filter ) ? true : $ret );
 		}
 
 		public function filter_post_filter_add( $ret, $filter ) {
 			return ( $this->add_buttons_filter( $filter ) ? true : $ret );
 		}
 
+		public function filter_pre_filter_remove( $ret, $filter ) {
+			return ( $this->remove_buttons_filter( $filter ) ? true : $ret );
+		}
+
 		public function show_footer() {
 			if ( $this->have_buttons_for_type( 'sidebar' ) )
-				$this->show_sidebar_buttons();
+				$this->show_sidebar();
 			elseif ( $this->p->debug->enabled )
 				$this->p->debug->log( 'no buttons enabled for sidebar' );
 			if ( $this->p->debug->enabled )
 				$this->p->debug->show_html( null, 'Debug Log' );
 		}
 
-		public function show_sidebar_buttons() {
+		public function show_sidebar() {
 			$lca = $this->p->cf['lca'];
 			$text = '';	// variable must be passed by reference
 			echo $this->get_buttons( $text, 'sidebar', false, '', array( 'container_each' => true ) );
@@ -338,72 +378,30 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				$this->p->debug->show_html( null, 'Debug Log' );
 		}
 
-		private function set_objects() {
-			foreach ( $this->p->cf['plugin']['wpssorrssb']['lib']['website'] as $id => $name ) {
-				$classname = WpssoRrssbConfig::load_lib( false, 'website/'.$id, 'wpssorrssbsharing'.$id );
-				if ( $classname !== false && class_exists( $classname ) ) {
-					$this->website[$id] = new $classname( $this->p );
-					if ( $this->p->debug->enabled )
-						$this->p->debug->log( $classname.' class loaded' );
-				}
-			}
-		}
+		public function show_admin_sharing( $post ) {
+			$post_type = get_post_type_object( $post->post_type );	// since 3.0
+			$post_type_name = ucfirst( $post_type->name );
+			$css_data = $this->p->options['buttons_css_rrssb-admin_edit'];
 
-		public function enqueue_rrssb_ext( $hook ) {
-			$url_path = WPSSORRSSB_URLPATH;
-			$plugin_version = $this->p->cf['plugin']['wpssorrssb']['version'];
+			$classname = apply_filters( $this->p->cf['lca'].'_load_lib', 
+				false, 'ext/compressor', 'SuextMinifyCssCompressor' );
 
-			wp_register_script( 'rrssb',
-				$url_path.'js/ext/rrssb.min.js', 
-					array( 'jquery' ), $plugin_version, true );	// in footer
-			wp_enqueue_script( 'rrssb' );
+			if ( $classname !== false && class_exists( $classname ) )
+				$css_data = call_user_func( array( $classname, 'process' ), $css_data );
 
-			wp_register_style( 'rrssb',
-				$url_path.'css/ext/rrssb.min.css', 
-					array(), $plugin_version );
-			wp_enqueue_style( 'rrssb' );
-		}
+			echo '<style type="text/css">'.$css_data.'</style>', "\n";
+			echo '<table class="sucom-setting '.$this->p->cf['lca'].' side"><tr><td>';
+			if ( get_post_status( $post->ID ) === 'publish' || 
+				get_post_type( $post->ID ) === 'attachment' ) {
 
-		public function wp_enqueue_styles() {
-			if ( ! empty( $this->p->options['buttons_use_social_css'] ) ) {
-				if ( ! file_exists( self::$sharing_css_file ) ) {
-					if ( $this->p->debug->enabled )
-						$this->p->debug->log( 'updating '.self::$sharing_css_file );
-					$this->update_sharing_css( $this->p->options );
-				}
-				if ( ! empty( $this->p->options['buttons_enqueue_social_css'] ) ) {
-					if ( $this->p->debug->enabled )
-						$this->p->debug->log( 'wp_enqueue_style = '.$this->p->cf['lca'].'_sharing_buttons' );
-					wp_register_style( $this->p->cf['lca'].'_sharing_buttons', self::$sharing_css_url, 
-						false, $this->p->cf['plugin'][$this->p->cf['lca']]['version'] );
-					wp_enqueue_style( $this->p->cf['lca'].'_sharing_buttons' );
-				} else {
-					if ( ! is_readable( self::$sharing_css_file ) ) {
-						if ( is_admin() )
-							$this->p->notice->err( self::$sharing_css_file.' is not readable.', true );
-						if ( $this->p->debug->enabled )
-							$this->p->debug->log( self::$sharing_css_file.' is not readable' );
-					} else {
-						echo '<style type="text/css">';
-						if ( ( $fsize = @filesize( self::$sharing_css_file ) ) > 0 &&
-							$fh = @fopen( self::$sharing_css_file, 'rb' ) ) {
-							echo fread( $fh, $fsize );
-							fclose( $fh );
-						}
-						echo '</style>',"\n";
-					}
-				}
-			} elseif ( $this->p->debug->enabled )
-				$this->p->debug->log( 'social css option is disabled' );
-		}
+				$content = '';
+				echo $this->get_buttons( $content, 'admin_edit' );
+				if ( $this->p->debug->enabled )
+					$this->p->debug->show_html( null, 'Debug Log' );
 
-		public function have_buttons_for_type( $type ) {
-			if ( isset( $this->buttons_for_type[$type] ) )
-				return $this->buttons_for_type[$type];
-			foreach ( $this->p->cf['opt']['pre'] as $id => $pre )
-				if ( ! empty( $this->p->options[$pre.'_on_'.$type] ) )	// check if button is enabled
-					return $this->buttons_for_type[$type] = true;
-			return $this->buttons_for_type[$type] = false;
+			} else echo '<p class="centered">'.sprintf( __( '%s must be published<br/>before it can be shared.',
+				'wpsso-rrssb' ), $post_type_name ).'</p>';
+			echo '</td></tr></table>';
 		}
 
 		public function add_buttons_filter( $type = 'the_content' ) {
@@ -411,7 +409,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			if ( method_exists( $this, 'get_buttons_'.$type ) ) {
 				$ret = add_filter( $type, array( &$this, 'get_buttons_'.$type ), WPSSORRSSB_SOCIAL_PRIORITY );
 				if ( $this->p->debug->enabled )
-					$this->p->debug->log( 'buttons filter '.$type.' added ('.( $ret  ? 'true' : 'false' ).')' );
+					$this->p->debug->log( 'buttons filter '.$type.
+						' added ('.( $ret  ? 'true' : 'false' ).')' );
 			} elseif ( $this->p->debug->enabled )
 				$this->p->debug->log( 'get_buttons_'.$type.' method is missing' );
 			return $ret;
@@ -422,7 +421,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			if ( method_exists( $this, 'get_buttons_'.$type ) ) {
 				$ret = remove_filter( $type, array( &$this, 'get_buttons_'.$type ), WPSSORRSSB_SOCIAL_PRIORITY );
 				if ( $this->p->debug->enabled )
-					$this->p->debug->log( 'buttons filter '.$type.' removed ('.( $ret  ? 'true' : 'false' ).')' );
+					$this->p->debug->log( 'buttons filter '.$type.
+						' removed ('.( $ret  ? 'true' : 'false' ).')' );
 			}
 			return $ret;
 		}
@@ -526,14 +526,16 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 						set_transient( $cache_id, $html, $this->p->options['plugin_object_cache_exp'] );
 						if ( $this->p->debug->enabled )
 							$this->p->debug->log( $cache_type.': '.$type.' html saved to transient '.
-							$cache_id.' ('.$this->p->options['plugin_object_cache_exp'].' seconds)' );
+								$cache_id.' ('.$this->p->options['plugin_object_cache_exp'].' seconds)' );
 					}
 				}
 			}
+
 			if ( empty( $location ) ) {
 				$location = empty( $this->p->options['buttons_pos_'.$type] ) ? 
 					'bottom' : $this->p->options['buttons_pos_'.$type];
 			} 
+
 			switch ( $location ) {
 				case 'top': 
 					$text = $html.$text; 
@@ -545,6 +547,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					$text = $html.$text.$html; 
 					break;
 			}
+
 			return $text.( $this->p->debug->enabled ? $this->p->debug->get_html() : '' );
 		}
 
@@ -573,6 +576,15 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					$html_ret = $html_begin.$html_ret.$html_end;
 			}
 			return $html_ret;
+		}
+
+		public function have_buttons_for_type( $type ) {
+			if ( isset( $this->buttons_for_type[$type] ) )
+				return $this->buttons_for_type[$type];
+			foreach ( $this->p->cf['opt']['pre'] as $id => $pre )
+				if ( ! empty( $this->p->options[$pre.'_on_'.$type] ) )	// check if button is enabled
+					return $this->buttons_for_type[$type] = true;
+			return $this->buttons_for_type[$type] = false;
 		}
 
 		public function is_post_buttons_disabled() {
@@ -615,6 +627,21 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			foreach ( array_keys( $this->website ) as $id )
 				$ids[$id] = $this->p->cf['*']['lib']['website'][$id];
 			return $ids;
+		}
+
+		public function enqueue_rrssb_ext( $hook ) {
+			$url_path = WPSSORRSSB_URLPATH;
+			$plugin_version = $this->p->cf['plugin']['wpssorrssb']['version'];
+
+			wp_register_script( 'rrssb',
+				$url_path.'js/ext/rrssb.min.js', 
+					array( 'jquery' ), $plugin_version, true );	// in footer
+			wp_enqueue_script( 'rrssb' );
+
+			wp_register_style( 'rrssb',
+				$url_path.'css/ext/rrssb.min.css', 
+					array(), $plugin_version );
+			wp_enqueue_style( 'rrssb' );
 		}
 	}
 }

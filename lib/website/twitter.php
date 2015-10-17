@@ -27,33 +27,49 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingTwitter' ) && class_exists( 'Wpsso
 		protected function get_rows( $metabox, $key ) {
 			$rows = array();
 
-			$rows[] = $this->p->util->get_th( 'Preferred Order', null, 'twitter_order' ).
+			$rows[] = $this->p->util->get_th( _x( 'Preferred Order',
+				'option label', 'wpsso-rrssb' ), null, 'twitter_order' ).
 			'<td>'.$this->form->get_select( 'twitter_order', 
 				range( 1, count( $this->p->admin->submenu['sharing-buttons']->website ) ), 'short' ).  '</td>';
 
-			$rows[] = $this->p->util->get_th( 'Show Button in' ).
+			$rows[] = $this->p->util->get_th( _x( 'Show Button in',
+				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$this->show_on_checkboxes( 'twitter' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			$this->p->util->get_th( 'Tweet Text Length' ).'<td>'.
-			$this->form->get_input( 'twitter_cap_len', 'short' ).' characters or less</td>';
+			$this->p->util->get_th( _x( 'Tweet Text Length',
+				'option label', 'wpsso-rrssb' ) ).'<td>'.
+			$this->form->get_input( 'twitter_cap_len', 'short' ).' '.
+				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			$this->p->util->get_th( 'Append Hashtags to Tweet' ).
+			$this->p->util->get_th( _x( 'Append Hashtags to Tweet',
+				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$this->form->get_select( 'twitter_cap_hashtags',
-				range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', null, true ).' tag names</td>';
+				range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', null, true ).' '.
+					_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
-			$rows[] = $this->p->util->get_th( 'Add via @username', null, null, 'Append the website\'s @username to the tweet (see the '.$this->p->util->get_admin_url( 'general#sucom-tabset_pub-tab_twitter', 'Twitter options tab' ).' on the General settings page). The website\'s @username will be displayed and recommended after the Post / Page is shared.' ).
+			$rows[] = $this->p->util->get_th( _x( 'Add via @username',
+				'option label', 'wpsso-rrssb' ), null, null, 
+			sprintf( __( 'Append the website\'s business @username to the tweet (see the <a href="%1$s">Twitter</a> options tab on the %2$s settings page). The website\'s @username will be displayed and recommended after the webpage is shared.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'general#sucom-tabset_pub-tab_twitter' ), _x( 'General', 'lib file description', 'wpsso' ) ) ).
 			'<td>'.$this->form->get_checkbox( 'twitter_via' ).'</td>';
 
-			$rows[] = $this->p->util->get_th( 'Recommend Author', null, null, 'Recommend following the Author\'s Twitter @username (from their profile) after sharing. If the \'<em>Add via @username</em>\' option (above) is also checked, the Website\'s @username is suggested first.' ).
+			$rows[] = $this->p->util->get_th( _x( 'Recommend Author',
+				'option label', 'wpsso-rrssb' ), null, null, 
+			sprintf( __( 'Recommend following the author\'s Twitter @username (from their profile) after sharing a webpage. If the <em>%1$s</em> option is also checked, the website\'s @username is suggested first.', 'wpsso-rrssb' ), _x( 'Add via @username', 'option label', 'wpsso-rrssb' ) ) ).
 			'<td>'.$this->form->get_checkbox( 'twitter_rel_author' ).'</td>';
 
-			$rows[] = $this->p->util->get_th( 'Shorten URLs with', 'highlight', null, 'If you select a URL shortening service here, <strong>you must also enter its Service API Keys</strong> on the '.$this->p->util->get_admin_url( 'advanced#sucom-tabset_plugin-tab_apikeys', 'Advanced settings page' ).'.' ).
-			( $this->p->check->aop() ? '<td>'.$this->form->get_select( 'plugin_shortener', $this->p->cf['form']['shorteners'], 'medium' ).'&nbsp;' : '<td class="blank">'.$this->form->get_hidden( 'plugin_shortener' ).$this->p->cf['form']['shorteners'][$this->p->options['plugin_shortener']].' &mdash; ' ).' <strong>using these '.$this->p->util->get_admin_url( 'advanced#sucom-tabset_plugin-tab_apikeys', 'Service API Keys' ).'</strong></td>';
+			$rows[] = $this->p->util->get_th( _x( 'Shorten URLs with',
+				'option label', 'wpsso-rrssb' ), 'highlight', null, 
+			sprintf( __( 'If you select a URL shortening service here, you must also enter its <a href="%1$s">%2$s</a> on the %3$s settings page.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'advanced#sucom-tabset_plugin-tab_apikeys' ), _x( 'Service API Keys', 'metabox tab', 'wpsso' ), _x( 'Advanced', 'lib file description', 'wpsso' ) ) ).
+			( $this->p->check->aop() ?
+				'<td>'.$this->form->get_select( 'plugin_shortener', $this->p->cf['form']['shorteners'], 'medium' ).'&nbsp; ' :
+				'<td class="blank">'.$this->p->cf['form']['shorteners'][$this->p->options['plugin_shortener']].' &mdash; ' ).
+			sprintf( __( 'using these <a href="%1$s">%2$s</a>', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'advanced#sucom-tabset_plugin-tab_apikeys' ), _x( 'Service API Keys', 'metabox tab', 'wpsso' ) ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			$this->p->util->get_th( 'Sharing Button HTML', null, 'twitter_html' ).
+			$this->p->util->get_th( _x( 'Sharing Button HTML',
+				'option label', 'wpsso-rrssb' ), null, 'twitter_html' ).
 			'<td>'.$this->form->get_textarea( 'twitter_html', 'average code' ).'</td>';
 
 			return $rows;

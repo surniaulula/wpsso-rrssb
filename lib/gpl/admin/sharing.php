@@ -25,7 +25,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			foreach ( $tabs as $key => $val ) {
 				$new_tabs[$key] = $val;
 				if ( $key === 'media' )	// insert the social sharing tab after the media tab
-					$new_tabs['sharing'] = 'Sharing Buttons';
+					$new_tabs['sharing'] = _x( 'Sharing Buttons', 'metabox tab', 'wpsso-rrssb' );
 			}
 			return $new_tabs;
 		}
@@ -35,7 +35,8 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			$lca = $this->p->cf['lca'];
 			$post_status = get_post_status( $head_info['post_id'] );
 			$size_info = $this->p->media->get_size_info( 'thumbnail' );
-			$save_draft_msg = '<em>Save a draft version or publish the '.$head_info['ptn'].' to enable this field.</em>';
+			$save_draft_msg = '<em>'.__( 'Save a draft version or publish to update this value.',
+				'wpsso-rrssb' ).'</em>';
 
 			$rows[] = '<td colspan="3" align="center">'.
 				$this->p->msgs->get( 'pro-feature-msg', array( 'lca' => 'wpssorrssb' ) ).'</td>';
@@ -43,13 +44,25 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			/*
 			 * Email
 			 */
-			$rows['email_title'] = $this->p->util->get_th( 'Email Subject', 'medium', 'post-email_title' ). 
-			'<td class="blank">'.$this->p->webpage->get_caption( 'title', 0, true, true, false ).'</td>';
+			if ( $post_status == 'auto-draft' ) {
+				$rows['email_title'] = $this->p->util->get_th( _x( 'Email Subject',
+					'option label', 'wpsso-rrssb' ), 'medium', 'post-email_title' ). 
+				'<td class="blank">'.$save_draft_msg.'</td>';
 
-			$rows['email_desc'] = $this->p->util->get_th( 'Email Message', 'medium', 'post-email_desc' ). 
-			'<td class="blank">'.$this->p->webpage->get_caption( 'excerpt', 
-				$this->p->options['email_cap_len'], true, true, 
-					$this->p->options['email_cap_hashtags'], true, 'none' ).'</td>';
+				$rows['email_desc'] = $this->p->util->get_th( _x( 'Email Message',
+					'option label', 'wpsso-rrssb' ), 'medium', 'post-email_desc' ). 
+				'<td class="blank">'.$save_draft_msg.'</td>';
+			} else {
+				$rows['email_title'] = $this->p->util->get_th( _x( 'Email Subject',
+					'option label', 'wpsso-rrssb' ), 'medium', 'post-email_title' ). 
+				'<td class="blank">'.$this->p->webpage->get_caption( 'title', 0, true, true, false ).'</td>';
+	
+				$rows['email_desc'] = $this->p->util->get_th( _x( 'Email Message',
+					'option label', 'wpsso-rrssb' ), 'medium', 'post-email_desc' ). 
+				'<td class="blank">'.$this->p->webpage->get_caption( 'excerpt', 
+					$this->p->options['email_cap_len'], true, true, 
+						$this->p->options['email_cap_hashtags'], true, 'none' ).'</td>';
+			}
 
 			/*
 			 * Pinterest
@@ -57,7 +70,8 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			list( $pid, $img_url ) = $this->p->og->get_the_media_urls( $lca.'-pinterest-button',
 				$head_info['post_id'], 'rp', array( 'pid', 'image' ) );
 
-			$th = $this->p->util->get_th( 'Pinterest Caption', 'medium', 'post-pin_desc' );
+			$th = $this->p->util->get_th( _x( 'Pinterest Caption',
+				'option label', 'wpsso-rrssb' ), 'medium', 'post-pin_desc' );
 			if ( ! empty( $pid ) ) {
 				list(
 					$img_url,
@@ -75,10 +89,17 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			/*
 			 * Twitter
 			 */
-			$twitter_cap_len = $this->p->util->get_tweet_max_len( get_permalink( $head_info['post_id'] ) );
-			$rows['twitter_desc'] = $this->p->util->get_th( 'Tweet Text', 'medium', 'post-twitter_desc' ). 
-			'<td class="blank">'.$this->p->webpage->get_caption( 'title', 
-				$twitter_cap_len, true, true, $this->p->options['twitter_cap_hashtags'] ).'</td>';
+			if ( $post_status == 'auto-draft' ) {
+				$rows['twitter_desc'] = $this->p->util->get_th( _x( 'Tweet Text',
+					'option label', 'wpsso-rrssb' ), 'medium', 'post-twitter_desc' ). 
+				'<td class="blank">'.$save_draft_msg.'</td>';
+			} else {
+				$twitter_cap_len = $this->p->util->get_tweet_max_len( get_permalink( $head_info['post_id'] ) );
+				$rows['twitter_desc'] = $this->p->util->get_th( _x( 'Tweet Text',
+					'option label', 'wpsso-rrssb' ), 'medium', 'post-twitter_desc' ). 
+				'<td class="blank">'.$this->p->webpage->get_caption( 'title', 
+					$twitter_cap_len, true, true, $this->p->options['twitter_cap_hashtags'] ).'</td>';
+			}
 
 			/*
 			 * Generic Title / Caption Input
@@ -88,29 +109,36 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 				'Reddit' => 'reddit',
 				'Tumblr' => 'tumblr',
 			) as $name => $opt_prefix ) {
-				$rows[$opt_prefix.'_title'] = $this->p->util->get_th( $name.' Title', 'medium', 'post-'.$opt_prefix.'_title' ). 
-				'<td class="blank">'.$this->p->webpage->get_caption( 'title', 0, true, true, false ).'</td>';
+				if ( $post_status == 'auto-draft' ) {
+					$rows[$opt_prefix.'_title'] = $this->p->util->get_th( sprintf( _x( '%s Title',
+						'option label', 'wpsso-rrssb' ), $name ), 'medium', 'post-'.$opt_prefix.'_title' ). 
+					'<td class="blank">'.$save_draft_msg.'</td>';
 	
-				$rows[$opt_prefix.'_desc'] = $this->p->util->get_th( $name.' Caption', 'medium', 'post-'.$opt_prefix.'_desc' ). 
-				'<td class="blank">'.$this->p->webpage->get_caption( 'excerpt', 
-					$this->p->options[$opt_prefix.'_cap_len'], true, true, 
-						$this->p->options[$opt_prefix.'_cap_hashtags'] ).'</td>';
+					$rows[$opt_prefix.'_desc'] = $this->p->util->get_th( sprintf( _x( '%s Caption',
+						'option label', 'wpsso-rrssb' ), $name ), 'medium', 'post-'.$opt_prefix.'_desc' ). 
+					'<td class="blank">'.$save_draft_msg.'</td>';
+				} else {
+					$rows[$opt_prefix.'_title'] = $this->p->util->get_th( sprintf( _x( '%s Title',
+						'option label', 'wpsso-rrssb' ), $name ), 'medium', 'post-'.$opt_prefix.'_title' ). 
+					'<td class="blank">'.$this->p->webpage->get_caption( 'title', 0, true, true, false ).'</td>';
+	
+					$rows[$opt_prefix.'_desc'] = $this->p->util->get_th( sprintf( _x( '%s Caption',
+						'option label', 'wpsso-rrssb' ), $name ), 'medium', 'post-'.$opt_prefix.'_desc' ). 
+					'<td class="blank">'.$this->p->webpage->get_caption( 'excerpt', 
+						$this->p->options[$opt_prefix.'_cap_len'], true, true, 
+								$this->p->options[$opt_prefix.'_cap_hashtags'] ).'</td>';
+				}
 			}
 
 			/*
 			 * Miscellaneous
 			 */
 			$rows['buttons_disabled'] = '<tr class="hide_in_basic">'.
-			$this->p->util->get_th( 'Disable Sharing Buttons', 'medium', 'post-buttons_disabled', $head_info ).
+			$this->p->util->get_th( _x( 'Disable Sharing Buttons',
+				'option label', 'wpsso-rrssb' ), 'medium', 'post-buttons_disabled', $head_info ).
 			'<td class="blank">&nbsp;</td>';
 
 			return $rows;
-		}
-
-		protected function get_site_use( &$form, &$network, $opt ) {
-			return $network === false ? '' : $this->p->util->get_th( 'Site Use', 'site_use' ).
-				'<td class="site_use blank">'.$form->get_select( $opt.':use', 
-					$this->p->cf['form']['site_option_use'], 'site_use', null, true, true ).'</td>';
 		}
 	}
 }

@@ -64,10 +64,14 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				$this->p->debug->log( 'exiting early: invalid object type' );
 				return $content;
 			}
-			$post_id = empty( $obj->ID ) || empty( $obj->post_type ) ? 0 : $obj->ID;
-			$atts['url'] = empty( $atts['url'] ) ? $this->p->util->get_sharing_url( true ) : $atts['url'];
-			$atts['css_class'] = empty( $atts['css_class'] ) && ! empty( $post_id ) ? 'rrssb-shortcode' : $atts['css_class'];
-			$atts['filter_id'] = empty( $atts['filter_id'] ) ? 'shortcode' : $atts['filter_id'];
+			$post_id = empty( $obj->ID ) || empty( $obj->post_type ) ?
+				0 : $obj->ID;
+			$atts['url'] = empty( $atts['url'] ) ?
+				$this->p->util->get_sharing_url( true ) : $atts['url'];
+			$atts['css_class'] = empty( $atts['css_class'] ) && ! empty( $post_id ) ?
+				'rrssb-shortcode' : $atts['css_class'];
+			$atts['filter_id'] = empty( $atts['filter_id'] ) ?
+				'shortcode' : $atts['filter_id'];
 
 			$html = '';
 			if ( ! empty( $atts['buttons'] ) ) {

@@ -27,15 +27,18 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingGplus' ) && class_exists( 'WpssoRr
 		protected function get_rows( $metabox, $key ) {
 			$rows = array();
 
-			$rows[] = $this->p->util->get_th( 'Preferred Order', null, 'gp_order' ).
+			$rows[] = $this->p->util->get_th( _x( 'Preferred Order',
+				'option label', 'wpsso-rrssb' ), null, 'gp_order' ).
 			'<td>'.$this->form->get_select( 'gp_order', 
 				range( 1, count( $this->p->admin->submenu['sharing-buttons']->website ) ), 'short' ).  '</td>';
 
-			$rows[] = $this->p->util->get_th( 'Show Button in' ).
+			$rows[] = $this->p->util->get_th( _x( 'Show Button in',
+				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$this->show_on_checkboxes( 'gp' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			$this->p->util->get_th( 'Sharing Button HTML', null, 'gp_html' ).
+			$this->p->util->get_th( _x( 'Sharing Button HTML',
+				'option label', 'wpsso-rrssb' ), null, 'gp_html' ).
 			'<td>'.$this->form->get_textarea( 'gp_html', 'average code' ).'</td>';
 
 			return $rows;

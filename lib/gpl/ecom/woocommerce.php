@@ -73,11 +73,11 @@ if ( ! class_exists( 'WpssoRrssbGplEcomWoocommerceSharing' ) ) {
 		}
 
 		public function filter_sharing_buttons_position_rows( $rows, $form ) {
-			$pos = array( 'top' => 'Top', 'bottom' => 'Bottom', 'both' => 'Both Top and Bottom' );
 			$rows[] = '<td colspan="2" align="center">'.
 				$this->p->msgs->get( 'pro-feature-msg', array( 'lca' => 'wpssorrssb' ) ).'</td>';
-			$rows['buttons_pos_woo_short'] = $this->p->util->get_th( 'Position in Woo Short Text', null, 'buttons_pos_woo_short' ).
-			'<td class="blank">'.$form->get_hidden( 'buttons_pos_woo_short' ).$pos[$this->p->options['buttons_pos_woo_short']].'</td>';
+			$rows['buttons_pos_woo_short'] = $this->p->util->get_th( _x( 'Position in Woo Short Text',
+				'option label', 'wpsso-rrssb' ), null, 'buttons_pos_woo_short' ).
+			'<td class="blank">'.WpssoRrssbSharing::$cf['sharing']['position'][$this->p->options['buttons_pos_woo_short']].'</td>';
 			return $rows;
 		}
 	}

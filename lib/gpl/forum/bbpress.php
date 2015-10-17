@@ -81,11 +81,11 @@ if ( ! class_exists( 'WpssoRrssbGplForumBbpressSharing' ) ) {
 		}
 
 		public function filter_sharing_position_rows( $rows, $form ) {
-			$pos = array( 'top' => 'Top', 'bottom' => 'Bottom', 'both' => 'Both Top and Bottom' );
 			$rows[] = '<td colspan="2" align="center">'.
 				$this->p->msgs->get( 'pro-feature-msg', array( 'lca' => 'wpssorrssb' ) ).'</td>';
-			$rows['buttons_pos_bbp_single'] = $this->p->util->get_th( 'Position in bbPress Single', null, 'buttons_pos_bbp_single' ).
-			'<td class="blank">'.$form->get_hidden( 'buttons_pos_bbp_single' ).$pos[$this->p->options['buttons_pos_bbp_single']].'</td>';
+			$rows['buttons_pos_bbp_single'] = $this->p->util->get_th( _x( 'Position in bbPress Single',
+				'option label', 'wpsso-rrssb' ), null, 'buttons_pos_bbp_single' ).
+			'<td class="blank">'.WpssoRrssbSharing::$cf['sharing']['position'][$this->p->options['buttons_pos_bbp_single']].'</td>';
 			return $rows;
 		}
 	}

@@ -28,7 +28,7 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 			$widget_class = $lca.'-rrssb-widget';
 			$widget_ops = array( 
 				'classname' => $widget_class,
-				'description' => 'The '.$name.' widget.'
+				'description' => sprintf( __( 'The %s widget.', 'wpsso-rrssb' ), $name ),
 			);
 
 			parent::__construct( $widget_class, $widget_name, $widget_ops );
@@ -112,11 +112,12 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 		}
 	
 		public function form( $instance ) {
-			$title = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : 'Share It';
-			echo "\n", '<p><label for="', $this->get_field_id( 'title' ), '">Title (Leave Blank for No Title):</label>',
-				'<input class="widefat" id="', $this->get_field_id( 'title' ), 
-					'" name="', $this->get_field_name( 'title' ), 
-					'" type="text" value="', $title, '" /></p>', "\n";
+			$title = isset( $instance['title'] ) ?
+				esc_attr( $instance['title'] ) : _x( 'Share It', 'option value', 'wpsso-rrssb' );
+			echo "\n", '<p><label for="', $this->get_field_id( 'title' ), '">'.
+				_x( 'Widget Title (leave blank for no title)', 'option label', 'nextgen-facebook' ).':</label>',
+				'<input class="widefat" id="'.$this->get_field_id( 'title' ).'" name="'.
+					$this->get_field_name( 'title' ).'" type="text" value="'.$title.'"/></p>'."\n";
 	
 			foreach ( $this->p->rrssb->get_defined_website_names() as $id => $name ) {
 				$name = $name == 'GooglePlus' ? 'Google+' : $name;

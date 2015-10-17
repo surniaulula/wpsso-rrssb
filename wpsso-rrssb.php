@@ -1,15 +1,18 @@
 <?php
 /*
  * Plugin Name: WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)
+ * Plugin Slug: wpsso-rrssb
+ * Text Domain: wpsso-rrssb
+ * Domain Path: /languages
  * Plugin URI: http://surniaulula.com/extend/plugins/wpsso-rrssb/
  * Author: Jean-Sebastien Morisset
  * Author URI: http://surniaulula.com/
  * License: GPLv3
  * License URI: http://www.gnu.org/licenses/gpl.txt
- * Description: WPSSO extension to provide Ridiculously Responsive Social Sharing Buttons - with support for hashtags, short URLs, bbPress, and BuddyPress.
+ * Description: WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
  * Requires At Least: 3.1
  * Tested Up To: 4.3.1
- * Version: 1.0.7
+ * Version: 1.1.0
  * 
  * Copyright 2014-2015 - Jean-Sebastien Morisset - http://surniaulula.com/
  */
@@ -28,7 +31,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 		private static $wpsso_short = 'WPSSO';
 		private static $wpsso_name = 'WordPress Social Sharing Optimization (WPSSO)';
-		private static $wpsso_min_version = '3.10';
+		private static $wpsso_min_version = '3.11.0';
 		private static $wpsso_has_min_ver = true;
 		private static $opt_version_suffix = 'rrssb3';
 
@@ -64,18 +67,16 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 		}
 
 		public static function wpsso_missing_notice( $deactivate = false ) {
-			$lca = 'wpssorrssb';
-			$name = WpssoRrssbConfig::$cf['plugin'][$lca]['name'];
-			$short = WpssoRrssbConfig::$cf['plugin'][$lca]['short'];
+			$info = WpssoRrssbConfig::$cf['plugin']['wpssorrssb'];
+			load_plugin_textdomain( $info['text_domain'], false, $info['slug'].$info['domain_path'] );
+
 			if ( $deactivate === true ) {
 				require_once( ABSPATH.'wp-admin/includes/plugin.php' );
-				deactivate_plugins( WPSSORRSSB_PLUGINBASE );
-				wp_die( '<p>'.sprintf( 'The %s extension requires the %s plugin &mdash; please install and '.
-					'activate the %s plugin before trying to re-activate the %s extension.', 
-						$name, self::$wpsso_name, self::$wpsso_short, $short ).'</p>' );
-			} else echo '<div class="error"><p>'.sprintf( 'The %s extension requires the %s plugin &mdash; '.
-					'please install and activate the %s plugin.', 
-						$name, self::$wpsso_name, self::$wpsso_short ).'</p></div>';
+				deactivate_plugins( $info['base'] );
+
+				wp_die( '<p>'.sprintf( __( 'The %1$s extension requires the %2$s plugin &mdash; please install and activate the %3$s plugin before trying to re-activate the %4$s extension.', 'wpsso-rrssb' ), $info['name'], self::$wpsso_name, self::$wpsso_short, $info['short'] ).'</p>' );
+
+			} else echo '<div class="error"><p>'.sprintf( __( 'The %1$s extension requires the %2$s plugin &mdash; please install and activate the %3$s plugin.', 'wpsso-rrssb' ), $info['name'], self::$wpsso_name, self::$wpsso_short ).'</p></div>';
 		}
 
 		public function wpsso_get_config( $cf ) {
@@ -90,9 +91,13 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 		}
 
 		public function wpsso_init_options() {
-			$this->p =& Wpsso::get_instance();
+			if ( method_exists( 'Wpsso', 'get_instance' ) )
+				$this->p =& Wpsso::get_instance();
+			else $this->p =& $GLOBALS['wpsso'];
+
 			if ( self::$wpsso_has_min_ver === false )
 				return;
+
 			$this->p->is_avail['rrssb'] = true;
 			$this->p->is_avail['admin']['sharing'] = true;
 		}
@@ -100,29 +105,32 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 		public function wpsso_init_objects() {
 			if ( self::$wpsso_has_min_ver === false )
 				return;
+
 			WpssoRrssbConfig::load_lib( false, 'sharing' );
 			$this->p->rrssb = new WpssoRrssbSharing( $this->p, __FILE__ );
 		}
 
 		public function wpsso_init_plugin() {
 			if ( self::$wpsso_has_min_ver === false )
-				return $this->warning_wpsso_version( WpssoRrssbConfig::$cf['plugin']['wpssorrssb'] );
+				return $this->warning_wpsso_version();
 		}
 
-		private function warning_wpsso_version( $info ) {
+		private function warning_wpsso_version() {
+			$info = WpssoRrssbConfig::$cf['plugin']['wpssorrssb'];
 			$wpsso_version = $this->p->cf['plugin']['wpsso']['version'];
+			load_plugin_textdomain( $info['text_domain'], false, $info['slug'].$info['domain_path'] );
+
 			if ( $this->p->debug->enabled )
-				$this->p->debug->log( $info['name'].' requires WPSSO version '.self::$wpsso_min_version.
-					' or newer ('.$wpsso_version.' installed)' );
+				$this->p->debug->log( $info['name'].' requires '.self::$wpsso_short.' version '.
+					self::$wpsso_min_version.' or newer ('.$wpsso_version.' installed)' );
+
 			if ( is_admin() )
-				$this->p->notice->err( 'The '.$info['name'].' version '.$info['version'].
-					' extension requires WPSSO version '.self::$wpsso_min_version.
-					' or newer (version '.$wpsso_version.' is currently installed).', true );
+				$this->p->notice->err( sprintf( __( 'The %1$s extension version %2$s requires the use of %3$s version %4$s or newer (version %5$s is currently installed).', 'wpsso-rrssb' ), $info['name'], $info['version'], self::$wpsso_short, self::$wpsso_min_version, $wpsso_version ), true );
 		}
 	}
 
         global $wpssorrssb;
-	$wpssoRrssb = WpssoRrssb::get_instance();
+	$wpssorrssb = WpssoRrssb::get_instance();
 }
 
 ?>

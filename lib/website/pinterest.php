@@ -27,31 +27,40 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingPinterest' ) && class_exists( 'Wps
 		protected function get_rows( $metabox, $key ) {
 			$rows = array();
 
-			$rows[] = $this->p->util->get_th( 'Preferred Order', null, 'pin_order' ).
+			$rows[] = $this->p->util->get_th( _x( 'Preferred Order',
+				'option label', 'wpsso-rrssb' ), null, 'pin_order' ).
 			'<td>'.$this->form->get_select( 'pin_order', 
 				range( 1, count( $this->p->admin->submenu['sharing-buttons']->website ) ), 'short' ).  '</td>';
 
-			$rows[] = $this->p->util->get_th( 'Show Button in' ).
+			$rows[] = $this->p->util->get_th( _x( 'Show Button in',
+				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$this->show_on_checkboxes( 'pin' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			$this->p->util->get_th( 'Share Single Image', null, null, 'Check this option to have the Pinterest button appear only on Posts and Pages with a custom Image ID (in the Social Settings metabox), a featured image, or an attached image, that is equal to or larger than the \'Image Dimensions\' you have chosen. <strong>By leaving this option unchecked, the Pinterest button will submit the current webpage URL without a specific image</strong>, allowing Pinterest to present any number of available images for pinning.' ).
+			$this->p->util->get_th( _x( 'Share Single Image',
+				'option label', 'wpsso-rrssb' ), null, null, 'Check this option to have the Pinterest button appear only on Posts and Pages with a custom Image ID (in the Social Settings metabox), a featured image, or an attached image, that is equal to or larger than the \'Image Dimensions\' you have chosen. <strong>By leaving this option unchecked, the Pinterest button will submit the current webpage URL without a specific image</strong>, allowing Pinterest to present any number of available images for pinning.' ).
 			'<td>'.$this->form->get_checkbox( 'pin_use_img' ).'</td>';
 
-			$rows[] = $this->p->util->get_th( 'Image Dimensions' ).
+			$rows[] = $this->p->util->get_th( _x( 'Image Dimensions',
+				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$this->form->get_image_dimensions_input( 'pin_img' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-                        $this->p->util->get_th( 'Caption Text Length' ).
-			'<td>'.$this->form->get_input( 'pin_cap_len', 'short' ).' characters or less</td>';
+                        $this->p->util->get_th( _x( 'Caption Text Length',
+				'option label', 'wpsso-rrssb' ) ).
+			'<td>'.$this->form->get_input( 'pin_cap_len', 'short' ).' '.
+				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			$this->p->util->get_th( 'Append Hashtags to Summary' ).
+			$this->p->util->get_th( _x( 'Append Hashtags to Summary',
+				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$this->form->get_select( 'pin_cap_hashtags',
-				range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', null, true ).' tag names</td>';
+				range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', null, true ).' '.
+					_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			$this->p->util->get_th( 'Sharing Button HTML', null, 'pin_html' ).
+			$this->p->util->get_th( _x( 'Sharing Button HTML',
+				'option label', 'wpsso-rrssb' ), null, 'pin_html' ).
 			'<td>'.$this->form->get_textarea( 'pin_html', 'average code' ).'</td>';
 
 			return $rows;

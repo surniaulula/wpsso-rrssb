@@ -27,15 +27,18 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingVk' ) && class_exists( 'WpssoRrssb
 		protected function get_rows( $metabox, $key ) {
 			$rows = array();
 
-			$rows[] = $this->p->util->get_th( 'Preferred Order', null, 'vk_order' ).
+			$rows[] = $this->p->util->get_th( _x( 'Preferred Order',
+				'option label', 'wpsso-rrssb' ), null, 'vk_order' ).
 			'<td>'.$this->form->get_select( 'vk_order', 
 				range( 1, count( $this->p->admin->submenu['sharing-buttons']->website ) ), 'short' ).  '</td>';
 
-			$rows[] = $this->p->util->get_th( 'Show Button in' ).
+			$rows[] = $this->p->util->get_th( _x( 'Show Button in',
+				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$this->show_on_checkboxes( 'vk' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			$this->p->util->get_th( 'Sharing Button HTML', null, 'vk_html' ).
+			$this->p->util->get_th( _x( 'Sharing Button HTML',
+				'option label', 'wpsso-rrssb' ), null, 'vk_html' ).
 			'<td>'.$this->form->get_textarea( 'vk_html', 'average code' ).'</td>';
 
 			return $rows;

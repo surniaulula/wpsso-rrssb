@@ -27,24 +27,31 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingReddit' ) && class_exists( 'WpssoR
 		protected function get_rows( $metabox, $key ) {
 			$rows = array();
 
-			$rows[] = $this->p->util->get_th( 'Preferred Order', null, 'reddit_order' ).
+			$rows[] = $this->p->util->get_th( _x( 'Preferred Order',
+				'option label', 'wpsso-rrssb' ), null, 'reddit_order' ).
 			'<td>'.$this->form->get_select( 'reddit_order', 
 				range( 1, count( $this->p->admin->submenu['sharing-buttons']->website ) ), 'short' ).  '</td>';
 
-			$rows[] = $this->p->util->get_th( 'Show Button in' ).
+			$rows[] = $this->p->util->get_th( _x( 'Show Button in',
+				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$this->show_on_checkboxes( 'reddit' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-                        $this->p->util->get_th( 'Caption Text Length' ).
-			'<td>'.$this->form->get_input( 'reddit_cap_len', 'short' ).' characters or less</td>';
+                        $this->p->util->get_th( _x( 'Caption Text Length',
+				'option label', 'wpsso-rrssb' ) ).
+			'<td>'.$this->form->get_input( 'reddit_cap_len', 'short' ).' '.
+				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			$this->p->util->get_th( 'Append Hashtags to Caption' ).
+			$this->p->util->get_th( _x( 'Append Hashtags to Caption',
+				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$this->form->get_select( 'reddit_cap_hashtags',
-				range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', null, true ).' tag names</td>';
+				range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', null, true ).' '.
+					_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			$this->p->util->get_th( 'Sharing Button HTML', null, 'reddit_html' ).
+			$this->p->util->get_th( _x( 'Sharing Button HTML',
+				'option label', 'wpsso-rrssb' ), null, 'reddit_html' ).
 			'<td>'.$this->form->get_textarea( 'reddit_html', 'average code' ).'</td>';
 
 			return $rows;

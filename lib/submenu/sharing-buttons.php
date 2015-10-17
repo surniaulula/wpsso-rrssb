@@ -38,16 +38,16 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingButtons' ) && class_exists( 'Wpsso
 
 			switch ( $idx ) {
 				case ( strpos( $idx, 'tooltip-buttons_pos_' ) === false ? false : true ):
-					$text = 'Social sharing buttons can be added to the top, bottom, or both. Each sharing button must also be enabled below (see the "Show Button in" options).';
+					$text = sprintf( __( 'Social sharing buttons can be added to the top, bottom, or both. Each sharing button must also be enabled below (see the <em>%s</em> options).', 'wpsso-rrssb' ), _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) );
 					break;
 				case 'tooltip-buttons_on_index':
-					$text = 'Add the following social sharing buttons to each entry of an index webpage (<strong>non-static</strong> homepage, category, archive, etc.). By Default, social sharing buttons are <em>not</em> included on index webpages (default is unchecked). You must also enable the buttons you want to display by choosing to show the buttons on the content or excerpt.';
+					$text = __( 'Add the social sharing buttons to each entry of an index webpage (for example, <strong>non-static</strong> homepage, category, archive, etc.). Social sharing buttons are not included on index webpages by default.', 'wpsso-rrssb' );
 					break;
 				case 'tooltip-buttons_on_front':
-					$text = 'If a static Post or Page has been chosen for the homepage, add the following social sharing buttons to the static homepage as well (default is unchecked). You must also enable the buttons you want to display by choosing to show the buttons on the content or excerpt.';
+					$text = __( 'If a static Post or Page has been selected for the homepage, you can add the social sharing buttons to that static homepage as well (default is unchecked).', 'wpsso-rrssb' );
 					break;
 				case 'tooltip-buttons_add_to':
-					$text = 'Enabled social sharing buttons are added to the Post, Page, Media and Product custom post types by default. If your theme (or another plugin) supports additional custom post types, and you would like to include social sharing buttons on these webpages, check the appropriate option(s) here.';
+					$text = __( 'Enabled social sharing buttons are added to the Post, Page, Media, and Product webpages by default. If your theme (or another plugin) supports additional custom post types, and you would like to include social sharing buttons on these webpages, check the appropriate option(s) here.', 'wpsso-rrssb' );
 					break;
 			}
 			return $text;
@@ -58,16 +58,19 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingButtons' ) && class_exists( 'Wpsso
 			$row = 0;
 
 			// add_meta_box( $id, $title, $callback, $post_type, $context, $priority, $callback_args );
-			add_meta_box( $this->pagehook.'_sharing_buttons', 'Social Sharing Buttons', 
-				array( &$this, 'show_metabox_sharing_buttons' ), $this->pagehook, 'normal' );
+			add_meta_box( $this->pagehook.'_sharing_buttons',
+				_x( 'Social Sharing Buttons', 'metabox title', 'wpsso-rrssb' ),
+					array( &$this, 'show_metabox_sharing_buttons' ), $this->pagehook, 'normal' );
 
 			foreach ( $this->p->cf['*']['lib']['website'] as $id => $name ) {
 				$classname = 'wpssorrssbsubmenusharing'.$id;
 				if ( class_exists( $classname ) ) {
 					$pos_id = 'normal';
 					$name = $name == 'GooglePlus' ? 'Google+' : $name;
+
 					add_meta_box( $this->pagehook.'_'.$id, $name, 
 						array( &$this->website[$id], 'show_metabox_website' ), $this->pagehook, $pos_id );
+
 					$this->website[$id]->form = &$this->get_form_reference();
 				}
 			}
@@ -80,8 +83,8 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingButtons' ) && class_exists( 'Wpsso
 		public function show_metabox_sharing_buttons() {
 			$metabox = 'sharing_buttons';
 			$tabs = array(
-				'include' => 'Include Buttons',
-				'position' => 'Buttons Position',
+				'include' => _x( 'Include Buttons', 'metabox tab', 'wpsso-rrssb' ),
+				'position' => _x( 'Buttons Position', 'metabox tab', 'wpsso-rrssb' ),
 			);
 
 			$tabs = apply_filters( $this->p->cf['lca'].'_'.$metabox.'_tabs', $tabs );
@@ -107,10 +110,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingButtons' ) && class_exists( 'Wpsso
 
 				case 'sharing_buttons-include':
 
-					$rows[] = $this->p->util->get_th( 'Include on Index Webpages', null, 'buttons_on_index' ).
+					$rows[] = $this->p->util->get_th( _x( 'Include on Index Webpages',
+						'option label', 'wpsso-rrssb' ), null, 'buttons_on_index' ).
 					'<td>'.$this->form->get_checkbox( 'buttons_on_index' ).'</td>';
 
-					$rows[] = $this->p->util->get_th( 'Include on Static Homepage', null, 'buttons_on_front' ).
+					$rows[] = $this->p->util->get_th( _x( 'Include on Static Homepage',
+						'option label', 'wpsso-rrssb' ), null, 'buttons_on_front' ).
 					'<td>'.$this->form->get_checkbox( 'buttons_on_front' ).'</td>';
 
 					$checkboxes = '';
@@ -120,20 +125,23 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingButtons' ) && class_exists( 'Wpsso
 							$post_type->label.' '.( empty( $post_type->description ) ? '' :
 								'('.$post_type->description.')' ).'</p>';
 
-					$rows[] = $this->p->util->get_th( 'Include on Post Types', null, 'buttons_add_to' ).
+					$rows[] = $this->p->util->get_th( _x( 'Include on Post Types',
+						'option label', 'wpsso-rrssb' ), null, 'buttons_add_to' ).
 						'<td>'.$checkboxes.'</td>';
 
 					break;
 
 				case 'sharing_buttons-position':
 
-					$rows[] = $this->p->util->get_th( 'Position in Content Text', null, 'buttons_pos_content' ).
+					$rows[] = $this->p->util->get_th( _x( 'Position in Content Text',
+						'option label', 'wpsso-rrssb' ), null, 'buttons_pos_content' ).
 					'<td>'.$this->form->get_select( 'buttons_pos_content',
-						array( 'top' => 'Top', 'bottom' => 'Bottom', 'both' => 'Both Top and Bottom' ) ).'</td>';
+						WpssoRrssbSharing::$cf['sharing']['position'] ).'</td>';
 
-					$rows[] = $this->p->util->get_th( 'Position in Excerpt Text', null, 'buttons_pos_excerpt' ).
+					$rows[] = $this->p->util->get_th( _x( 'Position in Excerpt Text',
+						'option label', 'wpsso-rrssb' ), null, 'buttons_pos_excerpt' ).
 					'<td>'.$this->form->get_select( 'buttons_pos_excerpt', 
-						array( 'top' => 'Top', 'bottom' => 'Bottom', 'both' => 'Both Top and Bottom' ) ).'</td>';
+						WpssoRrssbSharing::$cf['sharing']['position'] ).'</td>';
 
 					break;
 			}
@@ -148,7 +156,6 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingButtons' ) && class_exists( 'Wpsso
 			$html = '<table>';
 			$show_on = apply_filters( $this->p->cf['lca'].'_sharing_show_on', 
 				WpssoRrssbSharing::$cf['sharing']['show_on'], $prefix );
-
 			foreach ( $show_on as $suffix => $desc ) {
 				$col++;
 				$class = isset( $this->p->options[$prefix.'_on_'.$suffix.':is'] ) &&
@@ -157,7 +164,8 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingButtons' ) && class_exists( 'Wpsso
 				if ( $col == 1 )
 					$html .= '<tr><td class="'.$class.'">';
 				else $html .= '<td class="'.$class.'">';
-				$html .= $this->form->get_checkbox( $prefix.'_on_'.$suffix ).$desc.'&nbsp; ';
+				$html .= $this->form->get_checkbox( $prefix.'_on_'.$suffix ).
+					_x( $desc, 'option value', 'wpsso-rrssb' ).'&nbsp; ';
 				if ( $col == $max ) {
 					$html .= '</td></tr>';
 					$col = 0;
