@@ -10,7 +10,7 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.txt
 Requires At Least: 3.1
 Tested Up To: 4.3.1
-Stable Tag: 1.0.7
+Stable Tag: 1.1.0
 
 WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
 
@@ -105,7 +105,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 * [GitHub](https://github.com/SurniaUlula/wpsso-rrssb)
 * [WordPress.org](https://wordpress.org/plugins/wpsso-rrssb/developers/)
 
-= Version 1.1.0 =
+= Version 1.1.0 2015/10/17 =
 
 * **New Features**
 	* Added a French language (fr_FR) translation.
@@ -209,7 +209,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 == Upgrade Notice ==
 
-= 1.0.7 =
+= 1.1.0 =
 
-2015/10/01 Fixed loading of BuddyPress integration module (Pro version). Improved default CSS for BuddyPress activity buttons.
+2015/10/17 Added a French language (fr_FR) translation. Added translation function calls to all option labels. Added a POT in languages/wpsso-rrssb.pot.
 
