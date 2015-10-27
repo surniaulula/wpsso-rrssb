@@ -52,8 +52,10 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 			WpssoRrssbConfig::require_libs( __FILE__ );
 			$this->reg = new WpssoRrssbRegister();		// activate, deactivate, uninstall hooks
 
-			if ( is_admin() )
+			if ( is_admin() ) {
+				load_plugin_textdomain( 'wpsso-rrssb', false, 'wpsso-rrssb/languages/' );
 				add_action( 'admin_init', array( &$this, 'check_for_wpsso' ) );
+			}
 
 			add_filter( 'wpsso_get_config', array( &$this, 'wpsso_get_config' ), 30, 1 );
 			add_action( 'wpsso_init_options', array( &$this, 'wpsso_init_options' ), 10 );
@@ -68,7 +70,6 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 		public static function wpsso_missing_notice( $deactivate = false ) {
 			$info = WpssoRrssbConfig::$cf['plugin']['wpssorrssb'];
-			load_plugin_textdomain( $info['text_domain'], false, $info['slug'].$info['domain_path'] );
 
 			if ( $deactivate === true ) {
 				require_once( ABSPATH.'wp-admin/includes/plugin.php' );
@@ -99,7 +100,9 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 				return;
 
 			$this->p->is_avail['rrssb'] = true;
-			$this->p->is_avail['admin']['sharing'] = true;
+			if ( is_admin() ) {
+				$this->p->is_avail['admin']['sharing'] = true;
+			}
 		}
 
 		public function wpsso_init_objects() {
@@ -118,7 +121,6 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 		private function warning_wpsso_version() {
 			$info = WpssoRrssbConfig::$cf['plugin']['wpssorrssb'];
 			$wpsso_version = $this->p->cf['plugin']['wpsso']['version'];
-			load_plugin_textdomain( $info['text_domain'], false, $info['slug'].$info['domain_path'] );
 
 			if ( $this->p->debug->enabled )
 				$this->p->debug->log( $info['name'].' requires '.self::$wpsso_short.' version '.
