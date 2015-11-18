@@ -90,6 +90,8 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 = Additional Documentation =
 
+* [RRSSB Shortcode for Sharing Buttons](http://wpsso.com/codex/plugins/wpsso-rrssb/notes/rrssb-shortcode/)
+
 == Screenshots ==
 
 01. An example showing **Ridiculously Responsive Social Sharing Buttons** enabled (with the default WPSSO RRSSB stylesheet) in the CSS sidebar, content text, and widget.

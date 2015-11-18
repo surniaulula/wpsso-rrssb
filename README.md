@@ -112,3 +112,7 @@
 <h3>Other Notes</h3>
 <h4>Additional Documentation</h4>
 
+<ul>
+<li><a href="http://wpsso.com/codex/plugins/wpsso-rrssb/notes/rrssb-shortcode/">RRSSB Shortcode for Sharing Buttons</a></li>
+</ul>
+
