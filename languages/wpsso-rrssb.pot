@@ -3,9 +3,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"(WPSSO RRSSB) 1.1.0\n"
+"(WPSSO RRSSB) 1.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2015-11-05 03:12:38+00:00\n"
+"POT-Creation-Date: 2015-12-06 04:28:34+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,12 +13,12 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: lib/config-gettext-extract.php:3 lib/sharing.php:225
+#: lib/config-gettext-extract.php:3 lib/sharing.php:227
 msgctxt "lib file description"
 msgid "Sharing Buttons"
 msgstr ""
 
-#: lib/config-gettext-extract.php:4 lib/sharing.php:225 lib/sharing.php:228
+#: lib/config-gettext-extract.php:4 lib/sharing.php:227 lib/sharing.php:230
 #: lib/submenu/sharing-styles.php:31
 msgctxt "lib file description"
 msgid "Sharing Styles"
@@ -102,7 +102,7 @@ msgid "Widget"
 msgstr ""
 
 #: lib/gpl/admin/sharing.php:28 lib/pro/admin/sharing.php:35
-#: lib/sharing.php:225
+#: lib/sharing.php:227
 msgctxt "metabox tab"
 msgid "Sharing Buttons"
 msgstr ""
@@ -167,38 +167,38 @@ msgstr ""
 msgid "Failed to open the %s file for reading."
 msgstr ""
 
-#: lib/sharing.php:225
+#: lib/sharing.php:227
 msgid ""
 "Social sharing features include the <a href=\"%1$s\">%2$s</a> and <a href=\"%"
 "3$s\">%4$s</a> settings pages, the <em>%5$s</em> tab in the <em>%6$s</em> "
 "metabox, along with the social sharing shortcode and widget."
 msgstr ""
 
-#: lib/sharing.php:225
+#: lib/sharing.php:227
 msgctxt "metabox title"
 msgid "Social Settings"
 msgstr ""
 
-#: lib/sharing.php:228
+#: lib/sharing.php:230
 msgid ""
 "A stylesheet for the social sharing buttons can be included in all webpages. "
 "You can enable or disable use of the stylesheet from the <a href=\"%1$s\">%2"
 "$s</a> settings page."
 msgstr ""
 
-#: lib/sharing.php:231
+#: lib/sharing.php:233
 msgid ""
 "Support for shortcode(s) can be enabled and disabled on the <a href=\"%1$s\">"
 "%2$s</a> settings page. Shortcodes are disabled by default to optimize "
 "performance and content processing."
 msgstr ""
 
-#: lib/sharing.php:231 lib/website/twitter.php:64
+#: lib/sharing.php:233 lib/website/twitter.php:64
 msgctxt "lib file description"
 msgid "Advanced"
 msgstr ""
 
-#: lib/sharing.php:234
+#: lib/sharing.php:236
 msgid ""
 "The sharing widget feature adds a <em>%s</em> widget to the WordPress "
 "Widgets settings page. The sharing widget shares the URL for the current "
@@ -206,47 +206,47 @@ msgid ""
 "example)."
 msgstr ""
 
-#: lib/sharing.php:234
+#: lib/sharing.php:236
 msgctxt "lib file description"
 msgid "WPSSO RRSSB"
 msgstr ""
 
-#: lib/sharing.php:258
+#: lib/sharing.php:260
 msgid "The %s file is not readable."
 msgstr ""
 
-#: lib/sharing.php:292
+#: lib/sharing.php:294
 msgid "Failed to load the minify class SuextMinifyCssCompressor."
 msgstr ""
 
-#: lib/sharing.php:301
+#: lib/sharing.php:303
 msgid "Failed writing to the % file."
 msgstr ""
 
-#: lib/sharing.php:306
+#: lib/sharing.php:308
 msgid "Updated the %1$s stylesheet (%2$d bytes written)"
 msgstr ""
 
-#: lib/sharing.php:315
+#: lib/sharing.php:317
 msgid "The %s folder is not writable."
 msgstr ""
 
-#: lib/sharing.php:321
+#: lib/sharing.php:323
 msgid "Failed to open file %s for writing."
 msgstr ""
 
-#: lib/sharing.php:331
+#: lib/sharing.php:333
 msgid ""
 "Error removing the minimized stylesheet &mdash; does the web server have "
 "sufficient privileges?"
 msgstr ""
 
-#: lib/sharing.php:351
+#: lib/sharing.php:353
 msgctxt "metabox title"
 msgid "Sharing Buttons"
 msgstr ""
 
-#: lib/sharing.php:402
+#: lib/sharing.php:404
 msgid "%s must be published<br/>before it can be shared."
 msgstr ""
 

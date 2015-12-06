@@ -193,8 +193,10 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			$show_on = apply_filters( $this->p->cf['lca'].'_sharing_show_on', 
 				self::$cf['sharing']['show_on'], null );
 
-			foreach( $show_on as $type_id => $type_name )
+			foreach( $show_on as $type_id => $type_name ) {
 				$transients['WpssoRrssbSharing::get_buttons'][$type_id] = 'lang:'.$lang.'_type:'.$type_id.'_post:'.$post_id;
+				$transients['WpssoRrssbSharing::get_buttons'][$type_id] = 'lang:'.$lang.'_type:'.$type_id.'_post:'.$post_id.'_prot:https';
+			}
 
 			return $transients;
 		}
@@ -489,8 +491,9 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			if ( $this->p->is_avail['cache']['transient'] ) {
 				$cache_salt = __METHOD__.'('.apply_filters( $lca.'_buttons_cache_salt', 
 					'lang:'.SucomUtil::get_locale().'_type:'.$type.'_post:'.$post_id.
-						( empty( $post_id ) ? '_url:'.$this->p->util->get_sharing_url( $use_post,
-							true, $src_id ) : '' ), $type, $use_post ).')';
+						( empty( $_SERVER['HTTPS'] ) ? '' : '_prot:https' ).
+						( empty( $post_id ) ? '_url:'.$this->p->util->get_sharing_url( $use_post, true, $src_id ) : '' ),
+							$type, $use_post ).')';
 				$cache_id = $lca.'_'.md5( $cache_salt );
 				$cache_type = 'object cache';
 				if ( $this->p->debug->enabled )
