@@ -194,8 +194,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				self::$cf['sharing']['show_on'], null );
 
 			foreach( $show_on as $type_id => $type_name ) {
-				$transients['WpssoRrssbSharing::get_buttons'][$type_id] = 'lang:'.$lang.'_type:'.$type_id.'_post:'.$post_id;
-				$transients['WpssoRrssbSharing::get_buttons'][$type_id] = 'lang:'.$lang.'_type:'.$type_id.'_post:'.$post_id.'_prot:https';
+				$transients['WpssoRrssbSharing::get_buttons'][] = 'lang:'.$lang.'_type:'.$type_id.'_post:'.$post_id;
+				$transients['WpssoRrssbSharing::get_buttons'][] = 'lang:'.$lang.'_type:'.$type_id.'_post:'.$post_id.'_prot:https';
 			}
 
 			return $transients;
