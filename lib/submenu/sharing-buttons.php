@@ -120,7 +120,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingButtons' ) && class_exists( 'Wpsso
 
 					$checkboxes = '';
 
-					foreach ( $this->p->util->get_post_types( 'frontend' ) as $post_type )
+					foreach ( $this->p->util->get_post_types() as $post_type )
 						$checkboxes .= '<p>'.$this->form->get_checkbox( 'buttons_add_to_'.$post_type->name ).' '.
 							$post_type->label.' '.( empty( $post_type->description ) ? '' :
 								'('.$post_type->description.')' ).'</p>';
