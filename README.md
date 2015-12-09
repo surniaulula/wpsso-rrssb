@@ -5,7 +5,7 @@
 <tr><th align="right" valign="top" nowrap>Summary</th><td>WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.1.1</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires At Least</th><td>WordPress 3.1</td></tr>
-<tr><th align="right" valign="top" nowrap>Tested Up To</th><td>WordPress 4.4.0</td></tr>
+<tr><th align="right" valign="top" nowrap>Tested Up To</th><td>WordPress 4.4</td></tr>
 <tr><th align="right" valign="top" nowrap>Contributors</th><td>jsmoriss</td></tr>
 <tr><th align="right" valign="top" nowrap>License</th><td>GPLv3</td></tr>
 <tr><th align="right" valign="top" nowrap>Tags / Keywords</th><td>wpsso, facebook, google+, twitter, pinterest, linkedin, svg, retina, bbpress, buddypress, shorten, woocommerce, widget, shortcode</td></tr>
