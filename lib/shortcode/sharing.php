@@ -58,14 +58,15 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 		}
 
 		public function shortcode( $atts, $content = null ) { 
-			$lca = $this->p->cf['lca'];
-			$atts = apply_filters( $lca.'_shortcode_'.WPSSORRSSB_SHARING_SHORTCODE, $atts, $content );
 			if ( ( $obj = $this->p->util->get_post_object() ) === false ) {
 				$this->p->debug->log( 'exiting early: invalid object type' );
 				return $content;
 			}
 			$post_id = empty( $obj->ID ) || empty( $obj->post_type ) ?
 				0 : $obj->ID;
+			$lca = $this->p->cf['lca'];
+			$atts = apply_filters( $lca.'_shortcode_'.WPSSORRSSB_SHARING_SHORTCODE,
+				$atts, $content );
 			$atts['url'] = empty( $atts['url'] ) ?
 				$this->p->util->get_sharing_url( true ) : $atts['url'];
 			$atts['css_class'] = empty( $atts['css_class'] ) ?
