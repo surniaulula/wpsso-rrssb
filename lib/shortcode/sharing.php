@@ -68,7 +68,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				0 : $obj->ID;
 			$atts['url'] = empty( $atts['url'] ) ?
 				$this->p->util->get_sharing_url( true ) : $atts['url'];
-			$atts['css_class'] = empty( $atts['css_class'] ) && ! empty( $post_id ) ?
+			$atts['css_class'] = empty( $atts['css_class'] ) ?
 				'rrssb-shortcode' : $atts['css_class'];
 			$atts['filter_id'] = empty( $atts['filter_id'] ) ?
 				'shortcode' : $atts['filter_id'];
