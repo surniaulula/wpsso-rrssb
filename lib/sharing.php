@@ -574,7 +574,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				} elseif ( $this->p->debug->enabled )
 					$this->p->debug->log( 'website object missing for '.$id );
 			}
-			if ( trim( $html_ret ) !== '' ) {
+			$html_ret = trim( $html_ret );
+			if ( ! empty( $html_ret ) ) {
 				if ( empty( $atts['container_each'] ) )
 					$html_ret = $html_begin.$html_ret.$html_end;
 			}

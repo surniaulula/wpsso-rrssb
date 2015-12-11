@@ -62,7 +62,7 @@ if ( ! class_exists( 'WpssoRrssbGplForumBbpressSharing' ) ) {
 			return $opts_def;
 		}
 
-		public function filter_sharing_show_on( $show_on = array(), $prefix ) {
+		public function filter_sharing_show_on( $show_on = array(), $prefix = '' ) {
 			switch ( $prefix ) {
 				case 'pin':
 					break;

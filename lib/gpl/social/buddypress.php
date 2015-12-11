@@ -60,7 +60,6 @@ if ( ! class_exists( 'WpssoRrssbGplSocialBuddypressSharing' ) ) {
 			return $opts_def;
 		}
 
-
 		public function filter_sharing_show_on( $show_on = array(), $prefix = '' ) {
 			switch ( $prefix ) {
 				case 'pin':

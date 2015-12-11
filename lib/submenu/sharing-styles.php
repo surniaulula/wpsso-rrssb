@@ -41,119 +41,76 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingStyles' ) && class_exists( 'WpssoA
 		public function filter_messages_info( $text, $idx ) {
 			if ( strpos( $idx, 'info-style-rrssb-' ) !== 0 )
 				return $text;
-
-			$lca =  $this->p->cf['lca'];
-			$short = $this->p->cf['plugin'][$lca]['short'];
-
+			$short = $this->p->cf['plugin']['wpsso']['short'];
 			switch ( $idx ) {
 
 				case 'info-style-rrssb-sharing':
-
-					$notes_url = $this->p->cf['plugin'][$lca]['url']['notes'];
-					$text = '<p>'.$short.' uses the \''.$lca.'-rrssb\' class to wrap all sharing buttons, and each button has it\'s own individual class name as well. This tab can be used for CSS common to all sharing button locations.</p>';
+					$text = '<p>'.$short.' uses the \'wpsso-rrssb\' class to wrap all sharing buttons, and each button has it\'s own individual class name as well. This tab can be used to edit the CSS common to all sharing button locations.</p>';
 					break;
 
 				case 'info-style-rrssb-content':
-
-					$text = '<p>Social sharing buttons &mdash; enabled / added to the content text from the '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page &mdash; are assigned the \''.$lca.'-rrssb-content\' class.</p> 
-
-					<p>Example:</p><pre>
-div.'.$lca.'-rrssb
-  .'.$lca.'-rrssb-content
-    ul.rrssb-buttons
-      li.rrssb-facebook {}</pre>';
+					$text = '<p>Social sharing buttons, enabled / added to the content text from the '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-content\' class.</p>'.
+					$this->get_css_example( 'content', true );
 					break;
 
 				case 'info-style-rrssb-excerpt':
-
-					$text = '<p>Social sharing buttons &mdash; enabled / added to the excerpt text from the '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page &mdash; are assigned the \''.$lca.'-rrssb-excerpt\' class.</p> 
-					
-					<p>Example:</p><pre>
-div.'.$lca.'-rrssb
-  .'.$lca.'-rrssb-excerpt
-    ul.rrssb-buttons
-      li.rrssb-facebook {}</pre>';
+					$text = '<p>Social sharing buttons, enabled / added to the excerpt text from the '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-excerpt\' class.</p>'.
+					$this->get_css_example( 'excerpt', true );
 					break;
 
 				case 'info-style-rrssb-sidebar':
-
-					$text = '<p>Social sharing buttons &mdash; enabled / added to the CSS sidebar from the '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page &mdash; are assigned the \''.$lca.'-rrssb-sidebar\' ID.</p> 
-					
-					<p>In order to achieve a vertical display, each un-ordered list (ul) contains a single list item (li).</p>
-
+					$text = '<p>Social sharing buttons, enabled / added to the CSS sidebar from the '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-sidebar\' ID.</p> 
+					<p>In order to achieve a vertical display, each un-ordered list (UL) contains a single list item (LI).</p>
 					<p>Example:</p><pre>
-div.'.$lca.'-rrssb 
-  #'.$lca.'-rrssb-sidebar
+div.wpsso-rrssb 
+  #wpsso-rrssb-sidebar
     ul.rrssb-buttons
       li.rrssb-facebook {}</pre>';
 					break;
 
 				case 'info-style-rrssb-shortcode':
-
-					$text = '<p>Social sharing buttons added from a shortcode are assigned the \''.$lca.'-rrssb-shortcode\' class by default.</p> 
-
-					<p>Example:</p><pre>
-div.'.$lca.'-rrssb 
-  .'.$lca.'-rrssb-shortcode
-    ul.rrssb-buttons
-      li.rrssb-facebook {}</pre>';
+					$text = '<p>Social sharing buttons added from a shortcode are assigned the \'wpsso-rrssb-shortcode\' class by default.</p>'.
+					$this->get_css_example( 'admin_edit', true );
 					break;
 
 				case 'info-style-rrssb-widget':
-
-					$text = '<p>Social sharing buttons enabled in the '.$short.' widget are assigned the \''.$lca.'-rrssb-widget\' class (along with additional unique CSS ID names).</p> 
-
+					$text = '<p>Social sharing buttons enabled in the '.$short.' widget are assigned the \'wpsso-rrssb-widget\' class (along with additional unique CSS ID names).</p> 
 					<p>Example:</p><pre>
 aside.widget 
-  .'.$lca.'-rrssb-widget 
+  .wpsso-rrssb-widget 
     ul.rrssb-buttons
-        li.rrssb-facebook { }</pre>';
+        li.rrssb-facebook {}</pre>';
 					break;
 
 				case 'info-style-rrssb-admin_edit':
-
-					$text = '<p>Social sharing buttons &mdash; enabled / added to the admin editing pages from the '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page &mdash; are assigned the \''.$lca.'-rrssb-admin_edit\' class.</p> 
-
-					<p>Example:</p><pre>
-div.'.$lca.'-rrssb
-  .'.$lca.'-rrssb-admin_edit
-    ul.rrssb-buttons
-      li.rrssb-facebook {}</pre>';
+					$text = '<p>Social sharing buttons, enabled / added to the admin editing pages from the '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-admin_edit\' class.</p>'.
+					$this->get_css_example( 'admin_edit', true );
 					break;
 
 				case 'info-style-rrssb-woo_short': 
-
-					$text = '<p>Social sharing buttons &mdash; enabled / added to the WooCommerce Short Description text from the '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page &mdash; are assigned the \''.$lca.'-rrssb-woo_short\' class.</p>
-
-					<p>Example:</p><pre>
-div.'.$lca.'-rrssb
-  .'.$lca.'-rrssb-woo_short
-    ul.rrssb-buttons
-      li.rrssb-facebook {}</pre>';
+					$text = '<p>Social sharing buttons, enabled / added to the WooCommerce Short Description text from the '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-woo_short\' class.</p>'.
+					$this->get_css_example( 'woo_short' );
       					break;
 
 				case 'info-style-rrssb-bbp_single': 
-
-					$text = '<p>Social sharing buttons &mdash; enabled / added at the top of bbPress Single Templates from the '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page &mdash; are assigned the \''.$lca.'-rrssb-bbp_single\' class.</p>
-
-					<p>Example:</p><pre>
-div.'.$lca.'-rrssb
-  .'.$lca.'-rrssb-bbp_single
-    ul.rrssb-buttons
-      li.rrssb-facebook {}</pre>';
+					$text = '<p>Social sharing buttons, enabled / added at the top of bbPress Single Templates from the '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-bbp_single\' class.</p>'.
+					$this->get_css_example( 'bbp_single' );
       					break;
 
 				case 'info-style-rrssb-bp_activity': 
-
-					$text = '<p>Social sharing buttons &mdash; enabled / added to BuddyPress Activities from the '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page &mdash; are assigned the \''.$lca.'-rrssb-bp_activity\' class.</p>
-
-					<p>Example:</p><pre>
-div.'.$lca.'-rrssb
-  .'.$lca.'-rrssb-bp_activity
-    ul.rrssb-buttons
-      li.rrssb-facebook {}</pre>';
+					$text = '<p>Social sharing buttons, enabled / added to BuddyPress Activities from the '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-bp_activity\' class.</p>'.
+					$this->get_css_example( 'bp_activity' );
       					break;
 			}
+			return $text;
+		}
+
+		protected function get_css_example( $type ) {
+			$text = '<p>Example:</p><pre>
+div.wpsso-rrssb
+  .wpsso-rrssb-'.$type.'
+    ul.rrssb-buttons
+      li.rrssb-facebook {}</pre>';
 			return $text;
 		}
 
@@ -185,9 +142,11 @@ div.'.$lca.'-rrssb
 			$tabs = apply_filters( $this->p->cf['lca'].'_style_tabs',
 				WpssoRrssbSharing::$cf['sharing']['style'] );
 			$rows = array();
-			foreach ( $tabs as $key => $title )
+			foreach ( $tabs as $key => $title ) {
+				$tabs[$key] = _x( $title, 'metabox tab', 'wpsso-ssb' );	// translate the tab title
 				$rows[$key] = array_merge( $this->get_rows( $metabox, $key ), 
 					apply_filters( $this->p->cf['lca'].'_'.$metabox.'_'.$key.'_rows', array(), $this->form ) );
+			}
 			$this->p->util->do_tabs( $metabox, $tabs, $rows );
 		}
 

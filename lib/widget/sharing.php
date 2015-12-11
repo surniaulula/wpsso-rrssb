@@ -114,7 +114,7 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 		public function form( $instance ) {
 			$title = isset( $instance['title'] ) ?
 				esc_attr( $instance['title'] ) : _x( 'Share It', 'option value', 'wpsso-rrssb' );
-			echo "\n", '<p><label for="', $this->get_field_id( 'title' ), '">'.
+			echo "\n".'<p><label for="'.$this->get_field_id( 'title' ).'">'.
 				_x( 'Widget Title (leave blank for no title)', 'option label', 'nextgen-facebook' ).':</label>',
 				'<input class="widefat" id="'.$this->get_field_id( 'title' ).'" name="'.
 					$this->get_field_name( 'title' ).'" type="text" value="'.$title.'"/></p>'."\n";
