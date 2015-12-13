@@ -151,9 +151,9 @@ Official announcement: N/A
 
 = 1.1.2 =
 
-2015/12/09 Updated the required and tested version strings. Updated method names and arguments for WPSSO v3.18.0. 
+2015/12/09 - Updated the required and tested version strings. Updated method names and arguments for WPSSO v3.18.0. 
 
 = 1.1.1 =
 
-2015/12/06 Added a check for HTTPS when defining the social buttons transient cache object.
+2015/12/06 - Added a check for HTTPS when defining the social buttons transient cache object.
 
