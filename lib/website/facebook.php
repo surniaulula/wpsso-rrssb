@@ -37,9 +37,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingFacebook' ) && class_exists( 'Wpss
 			'<td>'.$this->show_on_checkboxes( 'fb' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			$this->p->util->get_th( _x( 'Sharing Button HTML',
-				'option label', 'wpsso-rrssb' ), null, 'fb_html' ).
-			'<td>'.$this->form->get_textarea( 'fb_html', 'average code' ).'</td>';
+			'<td colspan="2">'.$this->form->get_textarea( 'fb_html', 'average code' ).'</td>';
 
 			return $rows;
 		}

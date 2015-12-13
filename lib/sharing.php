@@ -355,12 +355,12 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			}
 		}
 
-		public function filter_post_filter_add( $ret, $filter ) {
-			return ( $this->add_buttons_filter( $filter ) ? true : $ret );
+		public function filter_post_filter_add( $ret, $filter_name ) {
+			return ( $this->add_buttons_filter( $filter_name ) ? true : $ret );
 		}
 
-		public function filter_pre_filter_remove( $ret, $filter ) {
-			return ( $this->remove_buttons_filter( $filter ) ? true : $ret );
+		public function filter_pre_filter_remove( $ret, $filter_name ) {
+			return ( $this->remove_buttons_filter( $filter_name ) ? true : $ret );
 		}
 
 		public function show_footer() {

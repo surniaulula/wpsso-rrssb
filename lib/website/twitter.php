@@ -68,9 +68,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingTwitter' ) && class_exists( 'Wpsso
 			sprintf( __( 'using these <a href="%1$s">%2$s</a>', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'advanced#sucom-tabset_plugin-tab_apikeys' ), _x( 'Service API Keys', 'metabox tab', 'wpsso' ) ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			$this->p->util->get_th( _x( 'Sharing Button HTML',
-				'option label', 'wpsso-rrssb' ), null, 'twitter_html' ).
-			'<td>'.$this->form->get_textarea( 'twitter_html', 'average code' ).'</td>';
+			'<td colspan="2">'.$this->form->get_textarea( 'twitter_html', 'average code' ).'</td>';
 
 			return $rows;
 		}

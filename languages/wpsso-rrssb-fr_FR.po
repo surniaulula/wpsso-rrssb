@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
 "(WPSSO RRSSB) 1.1.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2015-12-11 07:20-0700\n"
-"PO-Revision-Date: 2015-12-11 07:20-0700\n"
+"POT-Creation-Date: 2015-12-13 09:22-0700\n"
+"PO-Revision-Date: 2015-12-13 09:22-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -438,15 +438,6 @@ msgctxt "option comment"
 msgid "tag names"
 msgstr "noms d'étiquettes"
 
-#: lib/website/email.php:53 lib/website/facebook.php:40
-#: lib/website/gplus.php:40 lib/website/linkedin.php:53
-#: lib/website/pinterest.php:62 lib/website/pocket.php:40
-#: lib/website/reddit.php:53 lib/website/tumblr.php:53
-#: lib/website/twitter.php:71 lib/website/vk.php:40
-msgctxt "option label"
-msgid "Sharing Button HTML"
-msgstr "HTML du bouton de partage"
-
 #: lib/website/linkedin.php:40 lib/website/pinterest.php:49
 #: lib/website/reddit.php:40
 msgctxt "option label"
@@ -608,3 +599,7 @@ msgstr "Jean-Sebastien Morisset"
 #. Author URI of the plugin/theme
 msgid "http://surniaulula.com/"
 msgstr "http://surniaulula.com/"
+
+#~ msgctxt "option label"
+#~ msgid "Sharing Button HTML"
+#~ msgstr "HTML du bouton de partage"

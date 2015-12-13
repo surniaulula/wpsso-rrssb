@@ -37,9 +37,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingVk' ) && class_exists( 'WpssoRrssb
 			'<td>'.$this->show_on_checkboxes( 'vk' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			$this->p->util->get_th( _x( 'Sharing Button HTML',
-				'option label', 'wpsso-rrssb' ), null, 'vk_html' ).
-			'<td>'.$this->form->get_textarea( 'vk_html', 'average code' ).'</td>';
+			'<td colspan="2">'.$this->form->get_textarea( 'vk_html', 'average code' ).'</td>';
 
 			return $rows;
 		}

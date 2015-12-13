@@ -50,9 +50,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingReddit' ) && class_exists( 'WpssoR
 					_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			$this->p->util->get_th( _x( 'Sharing Button HTML',
-				'option label', 'wpsso-rrssb' ), null, 'reddit_html' ).
-			'<td>'.$this->form->get_textarea( 'reddit_html', 'average code' ).'</td>';
+			'<td colspan="2">'.$this->form->get_textarea( 'reddit_html', 'average code' ).'</td>';
 
 			return $rows;
 		}

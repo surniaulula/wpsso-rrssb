@@ -50,9 +50,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingEmail' ) && class_exists( 'WpssoRr
 					_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			$this->p->util->get_th( _x( 'Sharing Button HTML',
-				'option label', 'wpsso-rrssb' ), null, 'email_html' ).
-			'<td>'.$this->form->get_textarea( 'email_html', 'average code' ).'</td>';
+			'<td colspan="2">'.$this->form->get_textarea( 'email_html', 'average code' ).'</td>';
 
 			return $rows;
 		}

@@ -37,9 +37,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingPocket' ) && class_exists( 'WpssoR
 			'<td>'.$this->show_on_checkboxes( 'pocket' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			$this->p->util->get_th( _x( 'Sharing Button HTML',
-				'option label', 'wpsso-rrssb' ), null, 'pocket_html' ).
-			'<td>'.$this->form->get_textarea( 'pocket_html', 'average code' ).'</td>';
+			'<td colspan="2">'.$this->form->get_textarea( 'pocket_html', 'average code' ).'</td>';
 
 			return $rows;
 		}

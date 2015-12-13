@@ -37,9 +37,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingGplus' ) && class_exists( 'WpssoRr
 			'<td>'.$this->show_on_checkboxes( 'gp' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			$this->p->util->get_th( _x( 'Sharing Button HTML',
-				'option label', 'wpsso-rrssb' ), null, 'gp_html' ).
-			'<td>'.$this->form->get_textarea( 'gp_html', 'average code' ).'</td>';
+			'<td colspan="2">'.$this->form->get_textarea( 'gp_html', 'average code' ).'</td>';
 
 			return $rows;
 		}
