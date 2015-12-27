@@ -12,10 +12,11 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingStyles' ) && class_exists( 'WpssoA
 
 	class WpssoRrssbSubmenuSharingStyles extends WpssoAdmin {
 
-		public function __construct( &$plugin, $id, $name ) {
+		public function __construct( &$plugin, $id, $name, $lib ) {
 			$this->p =& $plugin;
 			$this->menu_id = $id;
 			$this->menu_name = $name;
+			$this->menu_lib = $lib;
 			$this->p->util->add_plugin_filters( $this, array( 
 				'messages_tooltip' => 2,	// tooltip messages filter
 				'messages_info' => 2,		// info messages filter
@@ -140,7 +141,7 @@ div.wpsso-rrssb
 			) );
 
 			$tabs = apply_filters( $this->p->cf['lca'].'_style_tabs',
-				WpssoRrssbSharing::$cf['sharing']['style'] );
+				$this->p->cf['sharing']['style'] );
 			$rows = array();
 			foreach ( $tabs as $key => $title ) {
 				$tabs[$key] = _x( $title, 'metabox tab', 'wpsso-ssb' );	// translate the tab title

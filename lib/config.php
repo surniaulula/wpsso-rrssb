@@ -99,6 +99,28 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					),
 				),
 			),
+			'sharing' => array(
+				'show_on' => array( 
+					'content' => 'Content',
+					'excerpt' => 'Excerpt', 
+					'sidebar' => 'CSS Sidebar', 
+					'admin_edit' => 'Admin Edit',
+				),
+				'style' => array(
+					'rrssb-sharing' => 'All Buttons',
+					'rrssb-content' => 'Content',
+					'rrssb-excerpt' => 'Excerpt',
+					'rrssb-sidebar' => 'CSS Sidebar',
+					'rrssb-admin_edit' => 'Admin Edit',
+					'rrssb-shortcode' => 'Shortcode',
+					'rrssb-widget' => 'Widget',
+				),
+				'position' => array(
+					'top' => 'Top',
+					'bottom' => 'Bottom',
+					'both' => 'Both Top and Bottom',
+				),
+			),
 		);
 
 		public static function set_constants( $plugin_filepath ) { 

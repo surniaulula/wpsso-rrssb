@@ -14,10 +14,14 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingButtons' ) && class_exists( 'Wpsso
 
 		public $website = array();
 
-		public function __construct( &$plugin, $id, $name ) {
+		protected $website_id = '';
+		protected $website_name = '';
+
+		public function __construct( &$plugin, $id, $name, $lib ) {
 			$this->p =& $plugin;
 			$this->menu_id = $id;
 			$this->menu_name = $name;
+			$this->menu_lib = $lib;
 			$this->set_objects();
 			$this->p->util->add_plugin_filters( $this, array(
 				'messages_tooltip' => 2,
@@ -95,9 +99,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingButtons' ) && class_exists( 'Wpsso
 
 		public function show_metabox_website() {
 			$metabox = 'website';
-			$key = $this->id;
-			$this->p->util->do_table_rows( array_merge( $this->get_rows( $metabox, $key ),
-					apply_filters( $this->p->cf['lca'].'_'.$metabox.'_'.$key.'_rows', array(), $this->form ) ),
+			$key = $this->website_id;
+			$this->p->util->do_table_rows( 
+				array_merge( 
+					$this->get_rows( $metabox, $key ),
+					apply_filters( $this->p->cf['lca'].'_'.$metabox.'_'.$key.'_rows', array(), $this->form )
+				),
 				'metabox-'.$metabox.'-'.$key
 			);
 		}
@@ -134,12 +141,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingButtons' ) && class_exists( 'Wpsso
 					$rows[] = $this->p->util->get_th( _x( 'Position in Content Text',
 						'option label', 'wpsso-rrssb' ), null, 'buttons_pos_content' ).
 					'<td>'.$this->form->get_select( 'buttons_pos_content',
-						WpssoRrssbSharing::$cf['sharing']['position'] ).'</td>';
+						$this->p->cf['sharing']['position'] ).'</td>';
 
 					$rows[] = $this->p->util->get_th( _x( 'Position in Excerpt Text',
 						'option label', 'wpsso-rrssb' ), null, 'buttons_pos_excerpt' ).
 					'<td>'.$this->form->get_select( 'buttons_pos_excerpt', 
-						WpssoRrssbSharing::$cf['sharing']['position'] ).'</td>';
+						$this->p->cf['sharing']['position'] ).'</td>';
 
 					break;
 			}
@@ -153,7 +160,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingButtons' ) && class_exists( 'Wpsso
 			$max = 6;
 			$html = '<table>';
 			$show_on = apply_filters( $this->p->cf['lca'].'_sharing_show_on', 
-				WpssoRrssbSharing::$cf['sharing']['show_on'], $prefix );
+				$this->p->cf['sharing']['show_on'], $prefix );
 			foreach ( $show_on as $suffix => $desc ) {
 				$col++;
 				$class = isset( $this->p->options[$prefix.'_on_'.$suffix.':is'] ) &&

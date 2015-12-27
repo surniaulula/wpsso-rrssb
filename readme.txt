@@ -107,7 +107,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 * [GitHub](https://github.com/SurniaUlula/wpsso-rrssb)
 * [WordPress.org](https://wordpress.org/plugins/wpsso-rrssb/developers/)
 
-= Version 1.1.3 (TBD) =
+= Version 1.1.3 (2015/12/27) =
 
 * **New Features**
 	* *None*
@@ -116,7 +116,10 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 * **Bugfixes**
 	* *None*
 * **Developer Notes**
-	* Minor update to settings layout for WPSSO version 3.19.0.
+	* Updated minimum required version to WPSSO v3.20.0.
+	* Updated the settings page construct to include the library name argument.
+	* Renamed the website class `$id` and `$name` properties to `$website_id` and `$website_name`.
+	* Moved `WpssoRrssbSharing::$cf['sharing']` to `WpssoRrssbConfig::$cf['sharing']`.
 
 = Version 1.1.2 (2015/12/09) =
 
@@ -162,7 +165,7 @@ Official announcement: N/A
 
 = 1.1.3 =
 
-TBD - Minor update to settings layout for WPSSO version 3.19.0.
+2015/12/27 - Minor update to settings layout for WPSSO version 3.19.0.
 
 = 1.1.2 =
 

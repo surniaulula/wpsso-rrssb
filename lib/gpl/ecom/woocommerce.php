@@ -77,7 +77,7 @@ if ( ! class_exists( 'WpssoRrssbGplEcomWoocommerceSharing' ) ) {
 				$this->p->msgs->get( 'pro-feature-msg', array( 'lca' => 'wpssorrssb' ) ).'</td>';
 			$rows['buttons_pos_woo_short'] = $this->p->util->get_th( _x( 'Position in Woo Short Text',
 				'option label', 'wpsso-rrssb' ), null, 'buttons_pos_woo_short' ).
-			'<td class="blank">'.WpssoRrssbSharing::$cf['sharing']['position'][$this->p->options['buttons_pos_woo_short']].'</td>';
+			'<td class="blank">'.$this->p->cf['sharing']['position'][$this->p->options['buttons_pos_woo_short']].'</td>';
 			return $rows;
 		}
 	}
