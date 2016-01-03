@@ -14,7 +14,7 @@
  * Tested Up To: 4.4
  * Version: 1.1.3
  * 
- * Copyright 2014-2015 - Jean-Sebastien Morisset - http://surniaulula.com/
+ * Copyright 2014-2016 Jean-Sebastien Morisset (http://surniaulula.com/)
  */
 
 if ( ! defined( 'ABSPATH' ) ) 
@@ -33,7 +33,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 		private static $wpsso_name = 'WordPress Social Sharing Optimization (WPSSO)';
 		private static $wpsso_min_version = '3.20.0';
 		private static $wpsso_has_min_ver = true;
-		private static $opt_version_suffix = 'rrssb3';
+		private static $opt_version_suffix = 'rrssb4';
 
 		public static function &get_instance() {
 			if ( self::$instance === null )
