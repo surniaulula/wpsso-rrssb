@@ -1,4 +1,4 @@
-=== WPSSO Ridiculously Responsive Social Sharing Buttons ===
+=== WPSSO Ridiculously Responsive Social Sharing Buttons - with Support for Admin Edit Pages ===
 Plugin Name: WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)
 Plugin Slug: wpsso-rrssb
 Text Domain: wpsso-rrssb
