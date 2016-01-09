@@ -167,11 +167,3 @@ Official announcement: N/A
 
 2015/12/27 - Minor update to settings layout for WPSSO version 3.19.0.
 
-= 1.1.2 =
-
-2015/12/27 - Updated minimum required version to WPSSO v3.20.0. Updated the settings page construct to include the library name argument.
-
-= 1.1.1 =
-
-2015/12/06 - Added a check for HTTPS when defining the social buttons transient cache object.
-
