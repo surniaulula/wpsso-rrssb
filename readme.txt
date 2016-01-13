@@ -107,6 +107,17 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 * [GitHub](https://github.com/SurniaUlula/wpsso-rrssb)
 * [WordPress.org](https://wordpress.org/plugins/wpsso-rrssb/developers/)
 
+= Version 1.1.4 (2016/01/13) =
+
+* **New Features**
+	* *None*
+* **Improvements**
+	* *None*
+* **Bugfixes**
+	* *None*
+* **Developer Notes**
+	* Updated the css and js files from the latest RRSSB master branch (https://github.com/kni-labs/rrssb).
+
 = Version 1.1.3 (2015/12/27) =
 
 * **New Features**
@@ -162,6 +173,10 @@ Official announcement: N/A
 	* Added a POT (Portable Object Template) file with translation strings in languages/wpsso-rrssb.pot.
 
 == Upgrade Notice ==
+
+= 1.1.4 =
+
+2016/01/13 - Updated the css and js files from the latest RRSSB master branch (https://github.com/kni-labs/rrssb).
 
 = 1.1.3 =
 
