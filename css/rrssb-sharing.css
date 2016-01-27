@@ -3,6 +3,9 @@
  * necessary to customize the layout for your website.
  */
 
+.rrssb-buttons a {
+	border:none;
+}
 .rrssb-text {
 	white-space:nowrap;
 }

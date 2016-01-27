@@ -158,7 +158,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			switch ( $key ) {
 				// integer options that must be 1 or more (not zero)
 				case ( preg_match( '/_order$/', $key ) ? true : false ):
-					return 'pos_num';
+					return 'pos_num';	// cast as integer
 					break;
 				// text strings that can be blank
 				case ( preg_match( '/_(desc|title)$/', $key ) ? true : false ):
@@ -467,11 +467,18 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			$src_id = $this->p->util->get_source_id( $type );
 			$html = false;
 
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->log( 'use_post: '.( $use_post === false ?
+					'false' : ( $use_post === true ? 'true' : $use_post ) ) );
+				$this->p->debug->log( 'post_id: '.$post_id );
+				$this->p->debug->log( 'src_id: '.$src_id );
+			}
+
 			// fetch from the cache, if possible
 			if ( $this->p->is_avail['cache']['transient'] ) {
 				$cache_salt = __METHOD__.'('.apply_filters( $lca.'_buttons_cache_salt', 
 					'lang:'.SucomUtil::get_locale().'_type:'.$type.'_post:'.$post_id.
-						( empty( $_SERVER['HTTPS'] ) ? '' : '_prot:https' ).
+						( SucomUtil::is_https() ? '_prot:https' : '' ).
 						( empty( $post_id ) ? '_url:'.$this->p->util->get_sharing_url( $use_post, true, $src_id ) : '' ),
 							$type, $use_post ).')';
 				$cache_id = $lca.'_'.md5( $cache_salt );
