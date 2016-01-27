@@ -107,6 +107,17 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 * [GitHub](https://github.com/SurniaUlula/wpsso-rrssb)
 * [WordPress.org](https://wordpress.org/plugins/wpsso-rrssb/developers/)
 
+= Version 1.1.5 (TBD) =
+
+* **New Features**
+	* *None*
+* **Improvements**
+	* *None*
+* **Bugfixes**
+	* *None*
+* **Developer Notes**
+	* Used the new SucomUtil::is_https() static method to determine the protocol to be used (http or https).
+
 = Version 1.1.4 (2016/01/13) =
 
 * **New Features**
