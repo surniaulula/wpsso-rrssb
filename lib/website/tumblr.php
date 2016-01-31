@@ -85,7 +85,18 @@ if ( ! class_exists( 'WpssoRrssbSharingTumblr' ) ) {
 
 		public function __construct( &$plugin ) {
 			$this->p =& $plugin;
-			$this->p->util->add_plugin_filters( $this, array( 'get_defaults' => 1 ) );
+			$this->p->util->add_plugin_filters( $this, array( 
+				'get_defaults' => 1,
+				'get_meta_defaults' => 2,
+			) );
+		}
+
+		public function filter_get_meta_defaults( $opts_def, $mod ) {
+			$meta_def = array(
+				'tumblr_title' => '',
+				'tumblr_desc' => '',
+			);
+			return array_merge( $opts_def, $meta_def );
 		}
 
 		public function filter_get_defaults( $opts_def ) {
@@ -113,9 +124,9 @@ if ( ! class_exists( 'WpssoRrssbSharingTumblr' ) ) {
 
 			return $this->p->util->replace_inline_vars( $this->p->options['tumblr_html'], $use_post, false, $atts, array(
 				 	'tumblr_title' => rawurlencode( $this->p->webpage->get_caption( 'title', 0,
-						$use_post, true, false, false, 'og_title', 'tumblr' ) ),
-				 	'tumblr_caption' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['tumblr_cap_len'],
-						$use_post, true, $add_hashtags, false, 'og_desc', 'tumblr' ) ),
+						$use_post, true, false, false, 'tumblr_title', 'tumblr' ) ),
+				 	'tumblr_summary' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['tumblr_cap_len'],
+						$use_post, true, $add_hashtags, false, 'tumblr_desc', 'tumblr' ) ),
 				 ) );
 		}
 	}

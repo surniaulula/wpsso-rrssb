@@ -103,7 +103,15 @@ if ( ! class_exists( 'WpssoRrssbSharingPinterest' ) ) {
 			$this->p->util->add_plugin_filters( $this, array( 
 				'plugin_image_sizes' => 1,
 				'get_defaults' => 1,
+				'get_meta_defaults' => 2,
 			) );
+		}
+
+		public function filter_get_meta_defaults( $opts_def, $mod ) {
+			$meta_def = array(
+				'pin_desc' => '',
+			);
+			return array_merge( $opts_def, $meta_def );
 		}
 
 		public function filter_get_defaults( $opts_def ) {
