@@ -3,7 +3,7 @@ Plugin Name: WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)
 Plugin Slug: wpsso-rrssb
 Text Domain: wpsso-rrssb
 Domain Path: /languages
-Contributors: JS Morisset
+Contributors: jsmoriss
 Donate Link: https://wpsso.com/
 Tags: wpsso, facebook, google+, twitter, pinterest, linkedin, svg, retina, bbpress, buddypress, shorten, woocommerce, widget, shortcode
 License: GPLv3
