@@ -109,8 +109,13 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 = Version 1.2.0 (TBD) =
 
+Official announcement: N/A
+
+Please note: This latest release includes new social sharing buttons and styles. You can use the new "Reload Default Styles" action button to load the latest sharing styles.
+
 * **New Features**
-	* *None*
+	* Added a new "Allow for Platform" option for all social sharing buttons.
+	* Added a new "Reload Default Styles" action button on the Sharing Styles settings page.
 * **Improvements**
 	* *None*
 * **Bugfixes**
@@ -119,6 +124,8 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 	* Used the new SucomUtil::is_https() static method to determine the protocol to be used (http or https).
 
 = Version 1.1.4 (2016/01/13) =
+
+Official announcement: N/A
 
 * **New Features**
 	* *None*
@@ -130,6 +137,8 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 	* Updated the css and js files from the latest RRSSB master branch (https://github.com/kni-labs/rrssb).
 
 = Version 1.1.3 (2015/12/27) =
+
+Official announcement: N/A
 
 * **New Features**
 	* *None*
@@ -144,6 +153,8 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 	* Moved `WpssoRrssbSharing::$cf['sharing']` to `WpssoRrssbConfig::$cf['sharing']`.
 
 = Version 1.1.2 (2015/12/09) =
+
+Official announcement: N/A
 
 * **New Features**
 	* *None*
@@ -188,8 +199,4 @@ Official announcement: N/A
 = 1.1.4 =
 
 2016/01/13 - Updated the css and js files from the latest RRSSB master branch (https://github.com/kni-labs/rrssb).
-
-= 1.1.3 =
-
-2015/12/27 - Minor update to settings layout for WPSSO version 3.19.0.
 
