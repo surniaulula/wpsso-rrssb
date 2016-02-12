@@ -140,9 +140,10 @@ div.wpsso-rrssb
 				'<td>'.$this->form->get_checkbox( 'buttons_enqueue_social_css' ).'</td>',
 			) );
 
-			$tabs = apply_filters( $this->p->cf['lca'].'_style_tabs',
-				$this->p->cf['sharing']['style'] );
 			$rows = array();
+			$tabs = apply_filters( $this->p->cf['lca'].'_sharing_rrssb_styles_tabs', 
+				$this->p->cf['sharing']['rrssb-style'] );
+
 			foreach ( $tabs as $key => $title ) {
 				$tabs[$key] = _x( $title, 'metabox tab', 'wpsso-ssb' );	// translate the tab title
 				$rows[$key] = array_merge( $this->get_rows( $metabox, $key ), 

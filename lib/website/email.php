@@ -24,13 +24,19 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingEmail' ) && class_exists( 'WpssoRr
 			$rows = array();
 
 			$rows[] = $this->p->util->get_th( _x( 'Preferred Order',
-				'option label', 'wpsso-rrssb' ), null, 'email_order' ).
+				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$this->form->get_select( 'email_order', 
 				range( 1, count( $this->p->admin->submenu['sharing-buttons']->website ) ), 'short' ).  '</td>';
 
 			$rows[] = $this->p->util->get_th( _x( 'Show Button in',
 				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$this->show_on_checkboxes( 'email' ).'</td>';
+
+			$rows[] = '<tr class="hide_in_basic">'.
+			$this->p->util->get_th( _x( 'Allow for Platform',
+				'option label (short)', 'wpsso-rrssb' ) ).
+			'<td>'.$this->form->get_select( 'email_platform',
+				$this->p->cf['sharing']['platform'] ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
                         $this->p->util->get_th( _x( 'Email Message Length',
@@ -46,7 +52,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingEmail' ) && class_exists( 'WpssoRr
 					_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			'<td colspan="2">'.$this->form->get_textarea( 'email_html', 'average code' ).'</td>';
+			'<td colspan="2">'.$this->form->get_textarea( 'email_rrssb_html', 'average code' ).'</td>';
 
 			return $rows;
 		}
@@ -60,14 +66,15 @@ if ( ! class_exists( 'WpssoRrssbSharingEmail' ) ) {
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
+					'email_order' => 1,
 					'email_on_content' => 1,
 					'email_on_excerpt' => 0,
 					'email_on_sidebar' => 0,
 					'email_on_admin_edit' => 0,
-					'email_order' => 1,
+					'email_platform' => 'any',
 					'email_cap_len' => 500,
 					'email_cap_hashtags' => 0,
-					'email_html' => '<li class="rrssb-email">
+					'email_rrssb_html' => '<li class="rrssb-email">
 	<a href="mailto:?subject=Share:%20%%email_title%%&body=%%email_excerpt%%%0D%0A%0D%0AShared%20from%20%%sharing_url%%%0D%0A">
 		<span class="rrssb-icon">
 			<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
@@ -122,12 +129,12 @@ if ( ! class_exists( 'WpssoRrssbSharingEmail' ) ) {
 			if ( ! isset( $atts['source_id'] ) )
 				$atts['source_id'] = $this->p->util->get_source_id( 'email', $atts );
 
-			return $this->p->util->replace_inline_vars( $this->p->options['email_html'], $use_post, false, $atts, array(
-				 	'email_title' => rawurlencode( $this->p->webpage->get_title( 0, '',
-						$use_post, true, false, false, 'email_title', 'email' ) ),
-				 	'email_excerpt' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['email_cap_len'],
-						$use_post, true, $add_hashtags, false, 'email_desc', 'email' ) ),
-				 ) );
+			return $this->p->util->replace_inline_vars( $this->p->options['email_rrssb_html'], $use_post, false, $atts, array(
+			 	'email_title' => rawurlencode( $this->p->webpage->get_title( 0, '',
+					$use_post, true, false, false, 'email_title', 'email' ) ),
+			 	'email_excerpt' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['email_cap_len'],
+					$use_post, true, $add_hashtags, false, 'email_desc', 'email' ) ),
+			 ) );
 		}
 	}
 }

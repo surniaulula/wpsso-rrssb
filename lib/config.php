@@ -15,7 +15,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(
-					'version' => '1.1.5',	// plugin version
+					'version' => '1.2.0',	// plugin version
 					'short' => 'WPSSO RRSSB',
 					'name' => 'WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)',
 					'desc' => 'WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.',
@@ -61,6 +61,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 							'pocket' => 'Pocket', 
 							'tumblr' => 'Tumblr', 
 							'vk' => 'VK', 
+							'whatsapp' => 'WhatsApp', 
 						),
 						'shortcode' => array(
 							'sharing' => 'Sharing Shortcode',
@@ -106,7 +107,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'sidebar' => 'CSS Sidebar', 
 					'admin_edit' => 'Admin Edit',
 				),
-				'style' => array(
+				'rrssb-style' => array(
 					'rrssb-sharing' => 'All Buttons',
 					'rrssb-content' => 'Content',
 					'rrssb-excerpt' => 'Excerpt',
@@ -118,7 +119,12 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 				'position' => array(
 					'top' => 'Top',
 					'bottom' => 'Bottom',
-					'both' => 'Both Top and Bottom',
+					'both' => 'Top and Bottom',
+				),
+				'platform' => array(
+					'desktop' => 'Desktop Only',
+					'mobile' => 'Mobile Only',
+					'any' => 'Any Platform',
 				),
 			),
 		);

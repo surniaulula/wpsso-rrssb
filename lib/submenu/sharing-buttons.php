@@ -86,7 +86,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingButtons' ) && class_exists( 'Wpsso
 
 		public function show_metabox_sharing_buttons() {
 			$metabox = 'sharing_buttons';
-			$tabs = apply_filters( $this->p->cf['lca'].'_'.$metabox.'_tabs', array(
+			$tabs = apply_filters( $this->p->cf['lca'].'_rrssb_sharing_buttons_tabs', array(
 				'include' => _x( 'Include Buttons', 'metabox tab', 'wpsso-rrssb' ),
 				'position' => _x( 'Buttons Position', 'metabox tab', 'wpsso-rrssb' ),
 			) );

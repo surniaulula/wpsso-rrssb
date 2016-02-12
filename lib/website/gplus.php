@@ -33,7 +33,13 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingGplus' ) && class_exists( 'WpssoRr
 			'<td>'.$this->show_on_checkboxes( 'gp' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			'<td colspan="2">'.$this->form->get_textarea( 'gp_html', 'average code' ).'</td>';
+			$this->p->util->get_th( _x( 'Allow for Platform',
+				'option label (short)', 'wpsso-rrssb' ) ).
+			'<td>'.$this->form->get_select( 'gp_platform',
+				$this->p->cf['sharing']['platform'] ).'</td>';
+
+			$rows[] = '<tr class="hide_in_basic">'.
+			'<td colspan="2">'.$this->form->get_textarea( 'gp_rrssb_html', 'average code' ).'</td>';
 
 			return $rows;
 		}
@@ -47,12 +53,13 @@ if ( ! class_exists( 'WpssoRrssbSharingGplus' ) ) {
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
+					'gp_order' => 3,
 					'gp_on_content' => 1,
 					'gp_on_excerpt' => 0,
 					'gp_on_sidebar' => 0,
 					'gp_on_admin_edit' => 1,
-					'gp_order' => 3,
-					'gp_html' => '<li class="rrssb-googleplus">
+					'gp_platform' => 'any',
+					'gp_rrssb_html' => '<li class="rrssb-googleplus">
 	<a href="https://plus.google.com/share?url=%%sharing_url%%" class="popup">
 		<span class="rrssb-icon">
 			<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
@@ -93,7 +100,7 @@ if ( ! class_exists( 'WpssoRrssbSharingGplus' ) ) {
 			if ( ! isset( $atts['source_id'] ) )
 				$atts['source_id'] = $this->p->util->get_source_id( 'gplus', $atts );
 
-			return $this->p->util->replace_inline_vars( $this->p->options['gp_html'], $use_post, false, $atts );
+			return $this->p->util->replace_inline_vars( $this->p->options['gp_rrssb_html'], $use_post, false, $atts );
 		}
 	}
 }

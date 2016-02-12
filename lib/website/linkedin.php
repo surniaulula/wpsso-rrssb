@@ -33,6 +33,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingLinkedin' ) && class_exists( 'Wpss
 			'<td>'.$this->show_on_checkboxes( 'linkedin' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
+			$this->p->util->get_th( _x( 'Allow for Platform',
+				'option label (short)', 'wpsso-rrssb' ) ).
+			'<td>'.$this->form->get_select( 'linkedin_platform',
+				$this->p->cf['sharing']['platform'] ).'</td>';
+
+			$rows[] = '<tr class="hide_in_basic">'.
                         $this->p->util->get_th( _x( 'Caption Text Length',
 				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$this->form->get_input( 'linkedin_cap_len', 'short' ).' '.
@@ -46,7 +52,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingLinkedin' ) && class_exists( 'Wpss
 					_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			'<td colspan="2">'.$this->form->get_textarea( 'linkedin_html', 'average code' ).'</td>';
+			'<td colspan="2">'.$this->form->get_textarea( 'linkedin_rrssb_html', 'average code' ).'</td>';
 
 			return $rows;
 		}
@@ -60,14 +66,15 @@ if ( ! class_exists( 'WpssoRrssbSharingLinkedin' ) ) {
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
+					'linkedin_order' => 6,
 					'linkedin_on_content' => 1,
 					'linkedin_on_excerpt' => 0,
 					'linkedin_on_sidebar' => 0,
 					'linkedin_on_admin_edit' => 1,
-					'linkedin_order' => 6,
+					'linkedin_platform' => 'any',
 					'linkedin_cap_len' => 300,
 					'linkedin_cap_hashtags' => 0,
-					'linkedin_html' => '<li class="rrssb-linkedin">
+					'linkedin_rrssb_html' => '<li class="rrssb-linkedin">
 	<a href="http://www.linkedin.com/shareArticle?mini=true&url=%%sharing_url%%&title=%%linkedin_title%%&summary=%%linkedin_caption%%" class="popup">
 		<span class="rrssb-icon">
 			<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
@@ -122,12 +129,12 @@ if ( ! class_exists( 'WpssoRrssbSharingLinkedin' ) ) {
 			if ( ! isset( $atts['source_id'] ) )
 				$atts['source_id'] = $this->p->util->get_source_id( 'linkedin', $atts );
 
-			return $this->p->util->replace_inline_vars( $this->p->options['linkedin_html'], $use_post, false, $atts, array(
-				 	'linkedin_title' => rawurlencode( $this->p->webpage->get_caption( 'title', 0,
-						$use_post, true, false, false, 'linkedin_title', 'linkedin' ) ),
-				 	'linkedin_caption' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['linkedin_cap_len'],
-						$use_post, true, $add_hashtags, false, 'linkedin_desc', 'linkedin' ) ),
-				 ) );
+			return $this->p->util->replace_inline_vars( $this->p->options['linkedin_rrssb_html'], $use_post, false, $atts, array(
+			 	'linkedin_title' => rawurlencode( $this->p->webpage->get_caption( 'title', 0,
+					$use_post, true, false, false, 'linkedin_title', 'linkedin' ) ),
+			 	'linkedin_caption' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['linkedin_cap_len'],
+					$use_post, true, $add_hashtags, false, 'linkedin_desc', 'linkedin' ) ),
+			 ) );
 		}
 	}
 }

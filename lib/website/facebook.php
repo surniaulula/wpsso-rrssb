@@ -33,7 +33,13 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingFacebook' ) && class_exists( 'Wpss
 			'<td>'.$this->show_on_checkboxes( 'fb' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			'<td colspan="2">'.$this->form->get_textarea( 'fb_html', 'average code' ).'</td>';
+			$this->p->util->get_th( _x( 'Allow for Platform',
+				'option label (short)', 'wpsso-rrssb' ) ).
+			'<td>'.$this->form->get_select( 'fb_platform',
+				$this->p->cf['sharing']['platform'] ).'</td>';
+
+			$rows[] = '<tr class="hide_in_basic">'.
+			'<td colspan="2">'.$this->form->get_textarea( 'fb_rrssb_html', 'average code' ).'</td>';
 
 			return $rows;
 		}
@@ -47,12 +53,13 @@ if ( ! class_exists( 'WpssoRrssbSharingFacebook' ) ) {
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
+					'fb_order' => 2,
 					'fb_on_content' => 1,
 					'fb_on_excerpt' => 0,
 					'fb_on_sidebar' => 0,
 					'fb_on_admin_edit' => 1,
-					'fb_order' => 2,
-					'fb_html' => '<li class="rrssb-facebook">
+					'fb_platform' => 'any',
+					'fb_rrssb_html' => '<li class="rrssb-facebook">
 	<a href="https://www.facebook.com/sharer/sharer.php?u=%%sharing_url%%" class="popup">
 		<span class="rrssb-icon">
 			<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" width="29" height="29" viewBox="0 0 29 29">
@@ -93,7 +100,7 @@ if ( ! class_exists( 'WpssoRrssbSharingFacebook' ) ) {
 			if ( ! isset( $atts['source_id'] ) )
 				$atts['source_id'] = $this->p->util->get_source_id( 'facebook', $atts );
 
-			return $this->p->util->replace_inline_vars( $this->p->options['fb_html'], $use_post, false, $atts );
+			return $this->p->util->replace_inline_vars( $this->p->options['fb_rrssb_html'], $use_post, false, $atts );
 		}
 	}
 }

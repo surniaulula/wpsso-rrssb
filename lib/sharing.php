@@ -81,15 +81,20 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					add_action( 'add_meta_boxes', array( &$this, 'add_post_buttons_metabox' ) );
 
 				$this->p->util->add_plugin_filters( $this, array( 
-					'save_options' => 3,		// update the sharing css file
-					'option_type' => 4,		// identify option type for sanitation
-					'post_cache_transients' => 4,	// clear transients on post save
-					'messages_tooltip_side' => 2,	// tooltip messages for side boxes
+					'save_options' => 3,			// update the sharing css file
+					'option_type' => 4,			// identify option type for sanitation
+					'post_cache_transients' => 4,		// clear transients on post save
+					'messages_tooltip_side' => 2,		// tooltip messages for side boxes
+					'secondary_action_buttons' => 4,	// add a reload default styles button
 				) );
 
 				$this->p->util->add_plugin_filters( $this, array( 
-					'status_gpl_features' => 3,	// include sharing, shortcode, and widget status
-				), 10, 'wpssorrssb' );			// hook into the extension name instead
+					'status_gpl_features' => 3,		// include sharing, shortcode, and widget status
+				), 10, 'wpssorrssb' );				// hook into the extension name instead
+
+				$this->p->util->add_plugin_actions( $this, array(
+					'load_setting_page_reload_default_sharing_rrssb_styles' => 4,
+				) );
 			}
 			if ( $this->p->debug->enabled )
 				$this->p->debug->mark( 'action / filter setup' );
@@ -111,10 +116,10 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			$opts_def = $this->p->util->add_ptns_to_opts( $opts_def, 'buttons_add_to' );
 			$plugin_dir = trailingslashit( realpath( dirname( $this->plugin_filepath ) ) );
 			$url_path = parse_url( trailingslashit( plugins_url( '', $this->plugin_filepath ) ), PHP_URL_PATH );	// relative URL
-			$style_tabs = apply_filters( $this->p->cf['lca'].'_style_tabs',
-				$this->p->cf['sharing']['style'] );
+			$tabs = apply_filters( $this->p->cf['lca'].'_sharing_rrssb_styles_tabs', 
+				$this->p->cf['sharing']['rrssb-style'] );
 
-			foreach ( $style_tabs as $id => $name ) {
+			foreach ( $tabs as $id => $name ) {
 				$buttons_css_file = $plugin_dir.'css/'.$id.'.css';
 
 				// css files are only loaded once (when variable is empty) into defaults to minimize disk i/o
@@ -218,6 +223,28 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			return $text;
 		}
 
+		public function filter_secondary_action_buttons( $actions, $menu_id, $menu_name, $menu_lib ) {
+			if ( $menu_id === 'sharing-styles' )
+				$actions['reload_default_sharing_rrssb_styles'] = __( 'Reload Default Styles', 'submit button', 'wpsso-rrssb' );
+			return $actions;
+		}
+		
+		public function action_load_setting_page_reload_default_sharing_rrssb_styles( $pagehook, $menu_id, $menu_name, $menu_lib ) {
+			$opts =& $this->p->options;
+			$def_opts = $this->p->opt->get_defaults();
+			$tabs = apply_filters( $this->p->cf['lca'].'_sharing_rrssb_styles_tabs', 
+				$this->p->cf['sharing']['rrssb-style'] );
+
+			foreach ( $tabs as $id => $name )
+				if ( isset( $opts['buttons_css_'.$id] ) &&
+					isset( $def_opts['buttons_css_'.$id] ) )
+						$opts['buttons_css_'.$id] = $def_opts['buttons_css_'.$id];
+
+			$this->update_sharing_css( $opts );
+			$this->p->opt->save_options( WPSSO_OPTIONS_NAME, $opts, false );
+			$this->p->notice->inf( __( 'All sharing styles have been reloaded with their default settings and saved.', 'wpsso-ssb' ) );
+		}
+
 		public function wp_enqueue_styles() {
 			if ( ! empty( $this->p->options['buttons_use_social_css'] ) ) {
 				if ( ! file_exists( self::$sharing_css_file ) ) {
@@ -253,57 +280,61 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function update_sharing_css( &$opts ) {
-			if ( ! empty( $opts['buttons_use_social_css'] ) ) {
-				$css_data = '';
-				$style_tabs = apply_filters( $this->p->cf['lca'].'_style_tabs',
-					$this->p->cf['sharing']['style'] );
 
-				foreach ( $style_tabs as $id => $name )
-					if ( isset( $opts['buttons_css_'.$id] ) )
-						$css_data .= $opts['buttons_css_'.$id];
+			if ( empty( $opts['buttons_use_social_css'] ) ) {
+				$this->unlink_sharing_css();
+				return;
+			}
 
-				$classname = apply_filters( $this->p->cf['lca'].'_load_lib', 
-					false, 'ext/compressor', 'SuextMinifyCssCompressor' );
+			$css_data = '';
+			$tabs = apply_filters( $this->p->cf['lca'].'_sharing_rrssb_styles_tabs', 
+				$this->p->cf['sharing']['rrssb-style'] );
 
-				if ( $classname !== false && class_exists( $classname ) )
-					$css_data = call_user_func( array( $classname, 'process' ), $css_data );
-				else {
+			foreach ( $tabs as $id => $name )
+				if ( isset( $opts['buttons_css_'.$id] ) )
+					$css_data .= $opts['buttons_css_'.$id];
+
+			$classname = apply_filters( $this->p->cf['lca'].'_load_lib', 
+				false, 'ext/compressor', 'SuextMinifyCssCompressor' );
+
+			if ( $classname !== false && class_exists( $classname ) )
+				$css_data = call_user_func( array( $classname, 'process' ), $css_data );
+			else {
+				if ( $this->p->debug->enabled )
+					$this->p->debug->log( 'failed to load minify class SuextMinifyCssCompressor' );
+				if ( is_admin() )
+					$this->p->notice->err( __( 'Failed to load the minify class SuextMinifyCssCompressor.',
+						'wpsso-rrssb' ), true );
+			}
+
+			if ( $fh = @fopen( self::$sharing_css_file, 'wb' ) ) {
+				if ( ( $written = fwrite( $fh, $css_data ) ) === false ) {
 					if ( $this->p->debug->enabled )
-						$this->p->debug->log( 'failed to load minify class SuextMinifyCssCompressor' );
+						$this->p->debug->log( 'failed writing to '.self::$sharing_css_file );
 					if ( is_admin() )
-						$this->p->notice->err( __( 'Failed to load the minify class SuextMinifyCssCompressor.',
-							'wpsso-rrssb' ), true );
-				}
-
-				if ( $fh = @fopen( self::$sharing_css_file, 'wb' ) ) {
-					if ( ( $written = fwrite( $fh, $css_data ) ) === false ) {
-						if ( $this->p->debug->enabled )
-							$this->p->debug->log( 'failed writing to '.self::$sharing_css_file );
-						if ( is_admin() )
-							$this->p->notice->err( sprintf( __( 'Failed writing to the % file.',
-								'wpsso-rrssb' ), self::$sharing_css_file ), true );
-					} elseif ( $this->p->debug->enabled ) {
-						$this->p->debug->log( 'updated css file '.self::$sharing_css_file.' ('.$written.' bytes written)' );
-						if ( is_admin() )
-							$this->p->notice->inf( sprintf( __( 'Updated the %1$s stylesheet (%2$d bytes written)',
-								'wpsso-rrssb' ), self::$sharing_css_file, $written ), true );
-					}
-					fclose( $fh );
-				} else {
-					if ( ! is_writable( WPSSO_CACHEDIR ) ) {
-						if ( $this->p->debug->enabled )
-							$this->p->debug->log( WPSSO_CACHEDIR.' is not writable', true );
-						if ( is_admin() )
-							$this->p->notice->err( sprintf( __( 'The %s folder is not writable.',
-								'wpsso-rrssb' ), WPSSO_CACHEDIR ), true );
-					}
-					if ( $this->p->debug->enabled )
-						$this->p->debug->log( 'failed opening '.self::$sharing_css_file.' for writing' );
-					if ( is_admin() )
-						$this->p->notice->err( sprintf( __( 'Failed to open file %s for writing.',
+						$this->p->notice->err( sprintf( __( 'Failed writing to the % file.',
 							'wpsso-rrssb' ), self::$sharing_css_file ), true );
+				} elseif ( $this->p->debug->enabled ) {
+					$this->p->debug->log( 'updated css file '.self::$sharing_css_file.' ('.$written.' bytes written)' );
+					if ( is_admin() )
+						$this->p->notice->inf( sprintf( __( 'Updated the %1$s stylesheet (%2$d bytes written)',
+							'wpsso-rrssb' ), self::$sharing_css_file, $written ), true );
 				}
-			} else $this->unlink_sharing_css();
+				fclose( $fh );
+			} else {
+				if ( ! is_writable( WPSSO_CACHEDIR ) ) {
+					if ( $this->p->debug->enabled )
+						$this->p->debug->log( WPSSO_CACHEDIR.' is not writable', true );
+					if ( is_admin() )
+						$this->p->notice->err( sprintf( __( 'The %s folder is not writable.',
+							'wpsso-rrssb' ), WPSSO_CACHEDIR ), true );
+				}
+				if ( $this->p->debug->enabled )
+					$this->p->debug->log( 'failed opening '.self::$sharing_css_file.' for writing' );
+				if ( is_admin() )
+					$this->p->notice->err( sprintf( __( 'Failed to open file %s for writing.',
+						'wpsso-rrssb' ), self::$sharing_css_file ), true );
+			}
 		}
 
 		public function unlink_sharing_css() {
@@ -507,8 +538,9 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					$html = '
 <!-- '.$lca.' '.$css_type.' begin -->
 <div class="'.$lca.'-rrssb'.
-	( $use_post ? ' '.$lca.'-'.$css_type.'">' : '" id="'.$lca.'-'.$css_type.'">' ).'
-'.$buttons_html.'</div><!-- .'.$lca.'-rrssb '.
+	( $use_post ? ' '.$lca.'-'.$css_type.'">' : '" id="'.$lca.'-'.$css_type.'">' ).
+$buttons_html.
+'</div><!-- .'.$lca.'-rrssb '.
 	( $use_post ? '.' : '#' ).$lca.'-'.$css_type.' -->
 <!-- '.$lca.' '.$css_type.' end -->'."\n\n";
 
@@ -547,15 +579,17 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			$html_begin = "<ul class=\"rrssb-buttons clearfix\">\n";
 			$html_end = "</ul><!-- .rrssb-buttons -->\n";
 			foreach ( $ids as $id ) {
-				$id = preg_replace( '/[^a-z]/', '', $id );	// sanitize the website object name, just in case
 				if ( isset( $this->website[$id] ) ) {
 					if ( method_exists( $this->website[$id], 'get_html' ) ) {
-						$html_part = $this->website[$id]->get_html( $atts, $this->p->options )."\n";
-						if ( trim( $html_part ) !== '' ) {
-							if ( empty( $atts['container_each'] ) )
-								$html_ret .= $html_part;
-							else $html_ret .= $html_begin.$html_part.$html_end;
-						}
+						if ( $this->allow_for_platform( $id ) ) {
+							$html_part = $this->website[$id]->get_html( $atts, $this->p->options )."\n";
+							if ( trim( $html_part ) !== '' ) {
+								if ( empty( $atts['container_each'] ) )
+									$html_ret .= $html_part;
+								else $html_ret .= $html_begin.$html_part.$html_end;
+							}
+						} elseif ( $this->p->debug->enabled )
+							$this->p->debug->log( $id.' not allowed for platform' );
 					} elseif ( $this->p->debug->enabled )
 						$this->p->debug->log( 'get_html method missing for '.$id );
 				} elseif ( $this->p->debug->enabled )
@@ -572,10 +606,30 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		public function have_buttons_for_type( $type ) {
 			if ( isset( $this->buttons_for_type[$type] ) )
 				return $this->buttons_for_type[$type];
-			foreach ( $this->p->cf['opt']['pre'] as $id => $pre )
-				if ( ! empty( $this->p->options[$pre.'_on_'.$type] ) )	// check if button is enabled
-					return $this->buttons_for_type[$type] = true;
+			foreach ( $this->p->cf['opt']['pre'] as $id => $pre ) {
+				if ( ! empty( $this->p->options[$pre.'_on_'.$type] ) &&		// check if button is enabled
+					$this->allow_for_platform( $id ) )			// check if allowed on platform
+						return $this->buttons_for_type[$type] = true;
+			}
 			return $this->buttons_for_type[$type] = false;
+		}
+
+		public function allow_for_platform( $id ) {
+			$pre = isset( $this->p->cf['opt']['pre'][$id] ) ?
+				$this->p->cf['opt']['pre'][$id] : $id;
+			if ( isset( $this->p->options[$pre.'_platform'] ) ) {
+				switch( $this->p->options[$pre.'_platform'] ) {
+					case 'any':
+						return true;
+					case 'desktop':
+						return SucomUtil::is_desktop();
+					case 'mobile':
+						return SucomUtil::is_mobile();
+					default:
+						return true;
+				}
+			}
+			return true;
 		}
 
 		public function is_post_buttons_disabled() {

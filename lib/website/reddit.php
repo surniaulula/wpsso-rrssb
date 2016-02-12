@@ -33,6 +33,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingReddit' ) && class_exists( 'WpssoR
 			'<td>'.$this->show_on_checkboxes( 'reddit' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
+			$this->p->util->get_th( _x( 'Allow for Platform',
+				'option label (short)', 'wpsso-rrssb' ) ).
+			'<td>'.$this->form->get_select( 'reddit_platform',
+				$this->p->cf['sharing']['platform'] ).'</td>';
+
+			$rows[] = '<tr class="hide_in_basic">'.
                         $this->p->util->get_th( _x( 'Caption Text Length',
 				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$this->form->get_input( 'reddit_cap_len', 'short' ).' '.
@@ -46,7 +52,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingReddit' ) && class_exists( 'WpssoR
 					_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			'<td colspan="2">'.$this->form->get_textarea( 'reddit_html', 'average code' ).'</td>';
+			'<td colspan="2">'.$this->form->get_textarea( 'reddit_rrssb_html', 'average code' ).'</td>';
 
 			return $rows;
 		}
@@ -60,14 +66,15 @@ if ( ! class_exists( 'WpssoRrssbSharingReddit' ) ) {
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
+					'reddit_order' => 7,
 					'reddit_on_content' => 0,
 					'reddit_on_excerpt' => 0,
 					'reddit_on_sidebar' => 0,
 					'reddit_on_admin_edit' => 0,
-					'reddit_order' => 7,
+					'reddit_platform' => 'any',
 					'reddit_cap_len' => 300,
 					'reddit_cap_hashtags' => 0,
-					'reddit_html' => '<li class="rrssb-reddit">
+					'reddit_rrssb_html' => '<li class="rrssb-reddit">
 	<a href="http://www.reddit.com/submit?url=%%sharing_url%%&title=%%reddit_title%%&text=%%reddit_summary%%">
 		<span class="rrssb-icon">
 			<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
@@ -123,12 +130,12 @@ if ( ! class_exists( 'WpssoRrssbSharingReddit' ) ) {
 			if ( ! isset( $atts['source_id'] ) )
 				$atts['source_id'] = $this->p->util->get_source_id( 'reddit', $atts );
 
-			return $this->p->util->replace_inline_vars( $this->p->options['reddit_html'], $use_post, false, $atts, array(
-				 	'reddit_title' => rawurlencode( $this->p->webpage->get_caption( 'title', 0,
-						$use_post, true, false, false, 'reddit_title', 'reddit' ) ),
-				 	'reddit_summary' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['reddit_cap_len'],
-						$use_post, true, $add_hashtags, false, 'reddit_desc', 'reddit' ) ),
-				 ) );
+			return $this->p->util->replace_inline_vars( $this->p->options['reddit_rrssb_html'], $use_post, false, $atts, array(
+			 	'reddit_title' => rawurlencode( $this->p->webpage->get_caption( 'title', 0,
+					$use_post, true, false, false, 'reddit_title', 'reddit' ) ),
+			 	'reddit_summary' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['reddit_cap_len'],
+					$use_post, true, $add_hashtags, false, 'reddit_desc', 'reddit' ) ),
+			 ) );
 		}
 	}
 }

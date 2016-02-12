@@ -33,7 +33,13 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingVk' ) && class_exists( 'WpssoRrssb
 			'<td>'.$this->show_on_checkboxes( 'vk' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			'<td colspan="2">'.$this->form->get_textarea( 'vk_html', 'average code' ).'</td>';
+			$this->p->util->get_th( _x( 'Allow for Platform',
+				'option label (short)', 'wpsso-rrssb' ) ).
+			'<td>'.$this->form->get_select( 'vk_platform',
+				$this->p->cf['sharing']['platform'] ).'</td>';
+
+			$rows[] = '<tr class="hide_in_basic">'.
+			'<td colspan="2">'.$this->form->get_textarea( 'vk_rrssb_html', 'average code' ).'</td>';
 
 			return $rows;
 		}
@@ -47,12 +53,13 @@ if ( ! class_exists( 'WpssoRrssbSharingVk' ) ) {
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
+					'vk_order' => 10,
 					'vk_on_content' => 0,
 					'vk_on_excerpt' => 0,
 					'vk_on_sidebar' => 0,
 					'vk_on_admin_edit' => 0,
-					'vk_order' => 10,
-					'vk_html' => '<li class="rrssb-vk">
+					'vk_platform' => 'any',
+					'vk_rrssb_html' => '<li class="rrssb-vk">
 	<a href="http://vk.com/share.php?url=%%sharing_url%%" class="popup">
 		<span class="rrssb-icon">
 			<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="70 70 378.7 378.7">
@@ -93,7 +100,7 @@ if ( ! class_exists( 'WpssoRrssbSharingVk' ) ) {
 			if ( ! isset( $atts['source_id'] ) )
 				$atts['source_id'] = $this->p->util->get_source_id( 'vk', $atts );
 
-			return $this->p->util->replace_inline_vars( $this->p->options['vk_html'], $use_post, false, $atts );
+			return $this->p->util->replace_inline_vars( $this->p->options['vk_rrssb_html'], $use_post, false, $atts );
 		}
 	}
 }

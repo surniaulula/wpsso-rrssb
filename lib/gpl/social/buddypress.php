@@ -49,7 +49,7 @@ if ( ! class_exists( 'WpssoRrssbGplSocialBuddypressSharing' ) ) {
 			if ( is_admin() ) {
 				$this->p->util->add_plugin_filters( $this, array( 
 					'sharing_show_on' => 2,
-					'style_tabs' => 1,
+					'sharing_rrssb_styles_tabs' => 1,
 				) );
 			}
 		}
@@ -72,7 +72,7 @@ if ( ! class_exists( 'WpssoRrssbGplSocialBuddypressSharing' ) ) {
 			return $show_on;
 		}
 
-		public function filter_style_tabs( $tabs ) {
+		public function filter_sharing_rrssb_styles_tabs( $tabs ) {
 			$tabs['rrssb-bp_activity'] = 'BP Activity';
 			$this->p->options['buttons_css_rrssb-bp_activity:is'] = 'disabled';
 			return $tabs;

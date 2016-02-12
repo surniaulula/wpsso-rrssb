@@ -33,6 +33,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingPinterest' ) && class_exists( 'Wps
 			'<td>'.$this->show_on_checkboxes( 'pin' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
+			$this->p->util->get_th( _x( 'Allow for Platform',
+				'option label (short)', 'wpsso-rrssb' ) ).
+			'<td>'.$this->form->get_select( 'pin_platform',
+				$this->p->cf['sharing']['platform'] ).'</td>';
+
+			$rows[] = '<tr class="hide_in_basic">'.
 			$this->p->util->get_th( _x( 'Share Single Image',
 				'option label', 'wpsso-rrssb' ), null, null, 'Check this option to have the Pinterest button appear only on Posts and Pages with a custom Image ID (in the Social Settings metabox), a featured image, or an attached image, that is equal to or larger than the \'Image Dimensions\' you have chosen. <strong>By leaving this option unchecked, the Pinterest button will submit the current webpage URL without a specific image</strong>, allowing Pinterest to present any number of available images for pinning.' ).
 			'<td>'.$this->form->get_checkbox( 'pin_use_img' ).'</td>';
@@ -55,7 +61,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingPinterest' ) && class_exists( 'Wps
 					_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			'<td colspan="2">'.$this->form->get_textarea( 'pin_html', 'average code' ).'</td>';
+			'<td colspan="2">'.$this->form->get_textarea( 'pin_rrssb_html', 'average code' ).'</td>';
 
 			return $rows;
 		}
@@ -69,12 +75,13 @@ if ( ! class_exists( 'WpssoRrssbSharingPinterest' ) ) {
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
+					'pin_order' => 5,
 					'pin_on_content' => 1,
 					'pin_on_excerpt' => 0,
 					'pin_on_sidebar' => 0,
 					'pin_on_admin_edit' => 1,
-					'pin_order' => 5,
-					'pin_use_img' => 1,
+					'pin_platform' => 'any',
+					'pin_use_img' => 0,
 					'pin_img_width' => 600,
 					'pin_img_height' => 600,
 					'pin_img_crop' => 0,
@@ -82,7 +89,7 @@ if ( ! class_exists( 'WpssoRrssbSharingPinterest' ) ) {
 					'pin_img_crop_y' => 'center',
 					'pin_cap_len' => 300,
 					'pin_cap_hashtags' => 0,
-					'pin_html' => '<li class="rrssb-pinterest">
+					'pin_rrssb_html' => '<li class="rrssb-pinterest">
 	<a href="http://pinterest.com/pin/create/button/?url=%%sharing_url%%&amp;media=%%media_url%%&amp;description=%%pinterest_caption%%" class="popup">
 		<span class="rrssb-icon">
 			<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
@@ -175,11 +182,11 @@ if ( ! class_exists( 'WpssoRrssbSharingPinterest' ) ) {
 				return false;
 			}
 
-			return $this->p->util->replace_inline_vars( $this->p->options['pin_html'], $use_post, false, $atts, array(
-					'media_url' => rawurlencode( $atts['photo'] ),
-				 	'pinterest_caption' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['pin_cap_len'],
-						$use_post, true, $add_hashtags, false, 'pin_desc', 'pinterest' ) ),
-				 ) );
+			return $this->p->util->replace_inline_vars( $this->p->options['pin_rrssb_html'], $use_post, false, $atts, array(
+				'media_url' => rawurlencode( $atts['photo'] ),
+			 	'pinterest_caption' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['pin_cap_len'],
+					$use_post, true, $add_hashtags, false, 'pin_desc', 'pinterest' ) ),
+			 ) );
 		}
 	}
 }

@@ -15,12 +15,12 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 		public function __construct( &$plugin ) {
 			$this->p =& $plugin;
 			$this->p->util->add_plugin_filters( $this, array( 
-				'post_tabs' => 3,		// post 'Sharing Buttons' tab
-				'post_sharing_rows' => 3,	// post 'Sharing Buttons' options
+				'post_social_settings_tabs' => 3,	// post 'Sharing Buttons' tab
+				'post_sharing_rows' => 3,		// post 'Sharing Buttons' options
 			), 40 );
 		}
 
-		public function filter_post_tabs( $tabs, $post, $post_type ) {
+		public function filter_post_social_settings_tabs( $tabs, $post, $post_type ) {
 			$new_tabs = array();
 			foreach ( $tabs as $key => $val ) {
 				$new_tabs[$key] = $val;

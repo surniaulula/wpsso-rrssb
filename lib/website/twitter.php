@@ -33,6 +33,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingTwitter' ) && class_exists( 'Wpsso
 			'<td>'.$this->show_on_checkboxes( 'twitter' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
+			$this->p->util->get_th( _x( 'Allow for Platform',
+				'option label (short)', 'wpsso-rrssb' ) ).
+			'<td>'.$this->form->get_select( 'twitter_platform',
+				$this->p->cf['sharing']['platform'] ).'</td>';
+
+			$rows[] = '<tr class="hide_in_basic">'.
 			$this->p->util->get_th( _x( 'Tweet Text Length',
 				'option label', 'wpsso-rrssb' ) ).'<td>'.
 			$this->form->get_input( 'twitter_cap_len', 'short' ).' '.
@@ -64,7 +70,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingTwitter' ) && class_exists( 'Wpsso
 			sprintf( __( 'using these <a href="%1$s">%2$s</a>', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'advanced#sucom-tabset_plugin-tab_apikeys' ), _x( 'Service API Keys', 'metabox tab', 'wpsso' ) ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			'<td colspan="2">'.$this->form->get_textarea( 'twitter_html', 'average code' ).'</td>';
+			'<td colspan="2">'.$this->form->get_textarea( 'twitter_rrssb_html', 'average code' ).'</td>';
 
 			return $rows;
 		}
@@ -78,16 +84,17 @@ if ( ! class_exists( 'WpssoRrssbSharingTwitter' ) ) {
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
+					'twitter_order' => 4,
 					'twitter_on_content' => 1,
 					'twitter_on_excerpt' => 0,
 					'twitter_on_sidebar' => 0,
 					'twitter_on_admin_edit' => 1,
-					'twitter_order' => 4,
+					'twitter_platform' => 'any',
 					'twitter_cap_len' => 140,
 					'twitter_cap_hashtags' => 0,
 					'twitter_via' => 1,
 					'twitter_rel_author' => 1,
-					'twitter_html' => '<li class="rrssb-twitter">
+					'twitter_rrssb_html' => '<li class="rrssb-twitter">
 	<a href="https://twitter.com/intent/tweet?original_referer=%%sharing_url%%&url=%%short_url%%&text=%%twitter_text%%&hashtags=%%twitter_hashtags%%&via=%%twitter_via%%&related=%%twitter_related%%" class="popup">
 		<span class="rrssb-icon">
 			<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
@@ -162,12 +169,12 @@ if ( ! class_exists( 'WpssoRrssbSharingTwitter' ) ) {
 				else $atts['related'] = '';
 			}
 
-			return $this->p->util->replace_inline_vars( $this->p->options['twitter_html'], $use_post, false, $atts, array(
-				 	'twitter_text' => rawurlencode( $atts['tweet'] ),
-				 	'twitter_hashtags' => rawurlencode( $atts['hashtags'] ),
-				 	'twitter_via' => rawurlencode( $atts['via'] ),
-				 	'twitter_related' => rawurlencode( $atts['related'] ),
-				 ) );
+			return $this->p->util->replace_inline_vars( $this->p->options['twitter_rrssb_html'], $use_post, false, $atts, array(
+			 	'twitter_text' => rawurlencode( $atts['tweet'] ),
+			 	'twitter_hashtags' => rawurlencode( $atts['hashtags'] ),
+			 	'twitter_via' => rawurlencode( $atts['via'] ),
+			 	'twitter_related' => rawurlencode( $atts['related'] ),
+			 ) );
 		}
 	}
 }

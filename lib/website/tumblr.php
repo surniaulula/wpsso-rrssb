@@ -33,6 +33,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingTumblr' ) && class_exists( 'WpssoR
 			'<td>'.$this->show_on_checkboxes( 'tumblr' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
+			$this->p->util->get_th( _x( 'Allow for Platform',
+				'option label (short)', 'wpsso-rrssb' ) ).
+			'<td>'.$this->form->get_select( 'tumblr_platform',
+				$this->p->cf['sharing']['platform'] ).'</td>';
+
+			$rows[] = '<tr class="hide_in_basic">'.
                         $this->p->util->get_th( _x( 'Summary Text Length',
 				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$this->form->get_input( 'tumblr_cap_len', 'short' ).' '.
@@ -46,7 +52,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingTumblr' ) && class_exists( 'WpssoR
 					_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			'<td colspan="2">'.$this->form->get_textarea( 'tumblr_html', 'average code' ).'</td>';
+			'<td colspan="2">'.$this->form->get_textarea( 'tumblr_rrssb_html', 'average code' ).'</td>';
 
 			return $rows;
 		}
@@ -60,14 +66,15 @@ if ( ! class_exists( 'WpssoRrssbSharingTumblr' ) ) {
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
+					'tumblr_order' => 9,
 					'tumblr_on_content' => 0,
 					'tumblr_on_excerpt' => 0,
 					'tumblr_on_sidebar' => 0,
 					'tumblr_on_admin_edit' => 0,
-					'tumblr_order' => 9,
+					'tumblr_platform' => 'any',
 					'tumblr_cap_len' => 300,
 					'tumblr_cap_hashtags' => 0,
-					'tumblr_html' => '<li class="rrssb-tumblr">
+					'tumblr_rrssb_html' => '<li class="rrssb-tumblr">
 	<a href="http://tumblr.com/share/link?url=%%sharing_url%%&name=%%tumblr_title%%&description=%%tumblr_summary%%" class="popup">
 		<span class="rrssb-icon">
 			<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
@@ -122,12 +129,12 @@ if ( ! class_exists( 'WpssoRrssbSharingTumblr' ) ) {
 			if ( ! isset( $atts['source_id'] ) )
 				$atts['source_id'] = $this->p->util->get_source_id( 'tumblr', $atts );
 
-			return $this->p->util->replace_inline_vars( $this->p->options['tumblr_html'], $use_post, false, $atts, array(
-				 	'tumblr_title' => rawurlencode( $this->p->webpage->get_caption( 'title', 0,
-						$use_post, true, false, false, 'tumblr_title', 'tumblr' ) ),
-				 	'tumblr_summary' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['tumblr_cap_len'],
-						$use_post, true, $add_hashtags, false, 'tumblr_desc', 'tumblr' ) ),
-				 ) );
+			return $this->p->util->replace_inline_vars( $this->p->options['tumblr_rrssb_html'], $use_post, false, $atts, array(
+			 	'tumblr_title' => rawurlencode( $this->p->webpage->get_caption( 'title', 0,
+					$use_post, true, false, false, 'tumblr_title', 'tumblr' ) ),
+			 	'tumblr_summary' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['tumblr_cap_len'],
+					$use_post, true, $add_hashtags, false, 'tumblr_desc', 'tumblr' ) ),
+			 ) );
 		}
 	}
 }

@@ -33,7 +33,13 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingPocket' ) && class_exists( 'WpssoR
 			'<td>'.$this->show_on_checkboxes( 'pocket' ).'</td>';
 
 			$rows[] = '<tr class="hide_in_basic">'.
-			'<td colspan="2">'.$this->form->get_textarea( 'pocket_html', 'average code' ).'</td>';
+			$this->p->util->get_th( _x( 'Allow for Platform',
+				'option label (short)', 'wpsso-rrssb' ) ).
+			'<td>'.$this->form->get_select( 'pocket_platform',
+				$this->p->cf['sharing']['platform'] ).'</td>';
+
+			$rows[] = '<tr class="hide_in_basic">'.
+			'<td colspan="2">'.$this->form->get_textarea( 'pocket_rrssb_html', 'average code' ).'</td>';
 
 			return $rows;
 		}
@@ -47,12 +53,13 @@ if ( ! class_exists( 'WpssoRrssbSharingPocket' ) ) {
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
+					'pocket_order' => 8,
 					'pocket_on_content' => 0,
 					'pocket_on_excerpt' => 0,
 					'pocket_on_sidebar' => 0,
 					'pocket_on_admin_edit' => 0,
-					'pocket_order' => 8,
-					'pocket_html' => '<li class="rrssb-pocket">
+					'pocket_platform' => 'any',
+					'pocket_rrssb_html' => '<li class="rrssb-pocket">
 	<a href="https://getpocket.com/save?url=%%sharing_url%%">
 		<span class="rrssb-icon">
 			<svg width="32" height="28" viewBox="0 0 32 28" xmlns="http://www.w3.org/2000/svg">
@@ -93,7 +100,7 @@ if ( ! class_exists( 'WpssoRrssbSharingPocket' ) ) {
 			if ( ! isset( $atts['source_id'] ) )
 				$atts['source_id'] = $this->p->util->get_source_id( 'pocket', $atts );
 
-			return $this->p->util->replace_inline_vars( $this->p->options['pocket_html'], $use_post, false, $atts );
+			return $this->p->util->replace_inline_vars( $this->p->options['pocket_rrssb_html'], $use_post, false, $atts );
 		}
 	}
 }
