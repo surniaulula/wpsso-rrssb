@@ -34,7 +34,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingGplus' ) && class_exists( 'WpssoRr
 
 			$rows[] = '<tr class="hide_in_basic">'.
 			$this->p->util->get_th( _x( 'Allow for Platform',
-				'option label (short)', 'wpsso-rrssb' ) ).
+				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$this->form->get_select( 'gp_platform',
 				$this->p->cf['sharing']['platform'] ).'</td>';
 

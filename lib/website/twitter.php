@@ -34,7 +34,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingTwitter' ) && class_exists( 'Wpsso
 
 			$rows[] = '<tr class="hide_in_basic">'.
 			$this->p->util->get_th( _x( 'Allow for Platform',
-				'option label (short)', 'wpsso-rrssb' ) ).
+				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$this->form->get_select( 'twitter_platform',
 				$this->p->cf['sharing']['platform'] ).'</td>';
 

@@ -378,7 +378,8 @@ msgstr ""
 #: lib/website/pinterest.php:36 lib/website/pocket.php:36
 #: lib/website/reddit.php:36 lib/website/tumblr.php:36
 #: lib/website/twitter.php:36 lib/website/vk.php:36
-msgctxt "option label (short)"
+#: lib/website/whatsapp.php:36
+msgctxt "option label"
 msgid "Allow for Platform"
 msgstr ""
 
@@ -494,11 +495,6 @@ msgstr ""
 
 #: lib/website/twitter.php:70
 msgid "using these <a href=\"%1$s\">%2$s</a>"
-msgstr ""
-
-#: lib/website/whatsapp.php:36
-msgctxt "option label"
-msgid "Allow for Platform"
 msgstr ""
 
 #: lib/widget/sharing.php:31

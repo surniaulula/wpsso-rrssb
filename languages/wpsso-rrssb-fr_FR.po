@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
 "(WPSSO RRSSB) 1.1.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2015-12-13 09:22-0700\n"
-"PO-Revision-Date: 2015-12-21 07:11-0700\n"
+"POT-Creation-Date: 2016-02-12 08:27-0400\n"
+"PO-Revision-Date: 2016-02-12 08:28-0400\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -16,18 +16,83 @@ msgstr ""
 "X-Generator: Poedit 1.8.6\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: lib/config-gettext-extract.php:3 lib/sharing.php:227
+#: lib/config-gettext-extract.php:3
+msgctxt "option value"
+msgid "Admin Edit"
+msgstr "Edit Admin"
+
+#: lib/config-gettext-extract.php:4
+msgctxt "option value"
+msgid "All Buttons"
+msgstr "Tous les Boutons"
+
+#: lib/config-gettext-extract.php:5
+msgctxt "option value"
+msgid "Any Platform"
+msgstr "Toute Plateformes"
+
+#: lib/config-gettext-extract.php:6
+msgctxt "option value"
+msgid "Bottom"
+msgstr "Le bas"
+
+#: lib/config-gettext-extract.php:7
+msgctxt "option value"
+msgid "Content"
+msgstr "Contenu"
+
+#: lib/config-gettext-extract.php:8
+msgctxt "option value"
+msgid "CSS Sidebar"
+msgstr "Barre Latérale"
+
+#: lib/config-gettext-extract.php:9
+msgctxt "option value"
+msgid "Desktop Only"
+msgstr "Plateforme de Bureau"
+
+#: lib/config-gettext-extract.php:10
+msgctxt "option value"
+msgid "Excerpt"
+msgstr "Extrait"
+
+#: lib/config-gettext-extract.php:11
+msgctxt "option value"
+msgid "Mobile Only"
+msgstr "Mobile Seulement"
+
+#: lib/config-gettext-extract.php:12 lib/sharing.php:211
 msgctxt "lib file description"
 msgid "Sharing Buttons"
 msgstr "Boutons de Partage"
 
-#: lib/config-gettext-extract.php:4 lib/sharing.php:227 lib/sharing.php:230
-#: lib/submenu/sharing-styles.php:31
+#: lib/config-gettext-extract.php:13 lib/sharing.php:211 lib/sharing.php:214
+#: lib/submenu/sharing-styles.php:32
 msgctxt "lib file description"
 msgid "Sharing Styles"
 msgstr "Styles de Partage"
 
-#: lib/config-gettext-extract.php:5
+#: lib/config-gettext-extract.php:14
+msgctxt "option value"
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: lib/config-gettext-extract.php:15
+msgctxt "option value"
+msgid "Top and Bottom"
+msgstr "Haut et Bas"
+
+#: lib/config-gettext-extract.php:16
+msgctxt "option value"
+msgid "Top"
+msgstr "Le haut"
+
+#: lib/config-gettext-extract.php:17
+msgctxt "option value"
+msgid "Widget"
+msgstr "Widget"
+
+#: lib/config-gettext-extract.php:18
 msgctxt "plugin description"
 msgid ""
 "WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons "
@@ -37,78 +102,8 @@ msgstr ""
 "réactif (SVG) dans votre contenu, les extraits, barre flottante CSS, widget, "
 "shortcode, etc."
 
-#: lib/config-gettext-extract.php:6
-msgctxt "metabox tab"
-msgid "Admin Edit"
-msgstr "Edit Admin"
-
-#: lib/config-gettext-extract.php:7
-msgctxt "option value"
-msgid "Admin Edit"
-msgstr "Edit Admin"
-
-#: lib/config-gettext-extract.php:8
-msgctxt "metabox tab"
-msgid "All Buttons"
-msgstr "Tous les Boutons"
-
-#: lib/config-gettext-extract.php:9
-msgctxt "option value"
-msgid "Both Top and Bottom"
-msgstr "En haut et en bas"
-
-#: lib/config-gettext-extract.php:10
-msgctxt "option value"
-msgid "Bottom"
-msgstr "Le bas"
-
-#: lib/config-gettext-extract.php:11
-msgctxt "metabox tab"
-msgid "Content"
-msgstr "Contenu"
-
-#: lib/config-gettext-extract.php:12
-msgctxt "option value"
-msgid "Content"
-msgstr "Contenu"
-
-#: lib/config-gettext-extract.php:13
-msgctxt "metabox tab"
-msgid "CSS Sidebar"
-msgstr "Barre Latérale"
-
-#: lib/config-gettext-extract.php:14
-msgctxt "option value"
-msgid "CSS Sidebar"
-msgstr "Barre Latérale"
-
-#: lib/config-gettext-extract.php:15
-msgctxt "metabox tab"
-msgid "Excerpt"
-msgstr "Extrait"
-
-#: lib/config-gettext-extract.php:16
-msgctxt "option value"
-msgid "Excerpt"
-msgstr "Extrait"
-
-#: lib/config-gettext-extract.php:17
-msgctxt "metabox tab"
-msgid "Shortcode"
-msgstr "Shortcode"
-
-#: lib/config-gettext-extract.php:18
-msgctxt "option value"
-msgid "Top"
-msgstr "Le haut"
-
-#: lib/config-gettext-extract.php:19
-msgctxt "metabox tab"
-msgid "Widget"
-msgstr "Widget"
-
 #: lib/gpl/admin/sharing.php:28 lib/pro/admin/sharing.php:35
-#: lib/sharing.php:227
+#: lib/sharing.php:211
 msgctxt "metabox tab"
 msgid "Sharing Buttons"
 msgstr "Boutons de Partage"
@@ -170,11 +165,11 @@ msgstr "Position dans le texte bbPress Single"
 msgid "Save a draft version or publish to enable this field."
 msgstr "Enregistrer une version préliminaire ou publiez pour activer ce champ."
 
-#: lib/sharing.php:146
+#: lib/sharing.php:130
 msgid "Failed to open the %s file for reading."
 msgstr "Impossible d'ouvrir le fichier %s pour la lecture."
 
-#: lib/sharing.php:227
+#: lib/sharing.php:211
 msgid ""
 "Social sharing features include the <a href=\"%1$s\">%2$s</a> and <a href="
 "\"%3$s\">%4$s</a> settings pages, the <em>%5$s</em> tab in the <em>%6$s</em> "
@@ -184,12 +179,12 @@ msgstr ""
 "\"%1$s\">%2$s</a> et <a href=\"%3$s\">%4$s</a>, l'onglet <em>%5$s</em> dans "
 "la metabox <em>%6$s</em>, ainsi que le shortcode et widget de partage social."
 
-#: lib/sharing.php:227
+#: lib/sharing.php:211
 msgctxt "metabox title"
 msgid "Social Settings"
 msgstr "Réglages Sociaux"
 
-#: lib/sharing.php:230
+#: lib/sharing.php:214
 msgid ""
 "A stylesheet for the social sharing buttons can be included in all webpages. "
 "You can enable or disable use of the stylesheet from the <a href=\"%1$s\">"
@@ -199,7 +194,7 @@ msgstr ""
 "dans toutes les pages Web. Vous pouvez activer ou désactiver l'utilisation "
 "de la feuille de style dans la page de réglage <a href=\"%1$s\">%2$s</a>."
 
-#: lib/sharing.php:233
+#: lib/sharing.php:217
 msgid ""
 "Support for shortcode(s) can be enabled and disabled on the <a href=\"%1$s\">"
 "%2$s</a> settings page. Shortcodes are disabled by default to optimize "
@@ -209,12 +204,12 @@ msgstr ""
 "réglage <a href=\"%1$s\">%2$s</a>. Les shortcodes sont désactivés par défaut "
 "pour optimiser la performance et le traitement du contenu."
 
-#: lib/sharing.php:233 lib/website/twitter.php:64
+#: lib/sharing.php:217 lib/website/twitter.php:66
 msgctxt "lib file description"
 msgid "Advanced"
 msgstr "Avancés"
 
-#: lib/sharing.php:236
+#: lib/sharing.php:220
 msgid ""
 "The sharing widget feature adds a <em>%s</em> widget to the WordPress "
 "Widgets settings page. The sharing widget shares the URL for the current "
@@ -226,37 +221,48 @@ msgstr ""
 "sociaux l'URL de la page Web actuelle (et non l'URL de chaque item sur une "
 "page Web d'index / archive, par exemple)."
 
-#: lib/sharing.php:236
+#: lib/sharing.php:220
 msgctxt "lib file description"
 msgid "WPSSO RRSSB"
 msgstr "WPSSO RRSSB"
 
-#: lib/sharing.php:260
+#: lib/sharing.php:228
+msgid "Reload Default Styles"
+msgstr "Recharger Styles par Défaut"
+
+#: lib/sharing.php:245
+msgid ""
+"All sharing styles have been reloaded with their default settings and saved."
+msgstr ""
+"Tous les styles de partage ont été rechargé avec leurs paramètres par défaut "
+"et sauvegardé."
+
+#: lib/sharing.php:266
 msgid "The %s file is not readable."
 msgstr "Le fichier %s n'est pas lisible."
 
-#: lib/sharing.php:294
+#: lib/sharing.php:306
 msgid "Failed to load the minify class SuextMinifyCssCompressor."
 msgstr ""
 "Impossible de charger la classe de rapetissement SuextMinifyCssCompressor."
 
-#: lib/sharing.php:303
+#: lib/sharing.php:315
 msgid "Failed writing to the % file."
 msgstr "Impossible d'écrire dans le fichier%."
 
-#: lib/sharing.php:308
+#: lib/sharing.php:320
 msgid "Updated the %1$s stylesheet (%2$d bytes written)"
 msgstr "La feuille de style %1$s a été mise à jour (%2$s octets écrits)."
 
-#: lib/sharing.php:317
+#: lib/sharing.php:329
 msgid "The %s folder is not writable."
 msgstr "Le dossier %s n'est pas accessible en écriture."
 
-#: lib/sharing.php:323
+#: lib/sharing.php:335
 msgid "Failed to open file %s for writing."
 msgstr "Impossible d'ouvrir le fichier %s pour l'écriture."
 
-#: lib/sharing.php:333
+#: lib/sharing.php:344
 msgid ""
 "Error removing the minimized stylesheet &mdash; does the web server have "
 "sufficient privileges?"
@@ -264,16 +270,16 @@ msgstr ""
 "Erreur en retirant la feuille de style minimisé &mdash; le serveur Web a "
 "t'il les privilèges nécessaires?"
 
-#: lib/sharing.php:353
+#: lib/sharing.php:364
 msgctxt "metabox title"
 msgid "Sharing Buttons"
 msgstr "Boutons de Partage Social"
 
-#: lib/sharing.php:404
+#: lib/sharing.php:415
 msgid "%s must be published<br/>before it can be shared."
 msgstr "%s doit être publié<br/>avant d'être partagé."
 
-#: lib/submenu/sharing-buttons.php:41
+#: lib/submenu/sharing-buttons.php:45
 msgid ""
 "Social sharing buttons can be added to the top, bottom, or both. Each "
 "sharing button must also be enabled below (see the <em>%s</em> options)."
@@ -282,16 +288,17 @@ msgstr ""
 "deux. Chaque bouton de partage doit aussi être activé ci-dessous (voir les "
 "options <em>%s</em>)."
 
-#: lib/submenu/sharing-buttons.php:41 lib/website/email.php:35
-#: lib/website/facebook.php:35 lib/website/gplus.php:35
-#: lib/website/linkedin.php:35 lib/website/pinterest.php:35
-#: lib/website/pocket.php:35 lib/website/reddit.php:35
-#: lib/website/tumblr.php:35 lib/website/twitter.php:35 lib/website/vk.php:35
+#: lib/submenu/sharing-buttons.php:45 lib/website/email.php:31
+#: lib/website/facebook.php:31 lib/website/gplus.php:31
+#: lib/website/linkedin.php:31 lib/website/pinterest.php:31
+#: lib/website/pocket.php:31 lib/website/reddit.php:31
+#: lib/website/tumblr.php:31 lib/website/twitter.php:31 lib/website/vk.php:31
+#: lib/website/whatsapp.php:31
 msgctxt "option label"
 msgid "Show Button in"
 msgstr "Afficher le bouton"
 
-#: lib/submenu/sharing-buttons.php:44
+#: lib/submenu/sharing-buttons.php:48
 msgid ""
 "Add the social sharing buttons to each entry of an index webpage (for "
 "example, <strong>non-static</strong> homepage, category, archive, etc.). "
@@ -302,7 +309,7 @@ msgstr ""
 "etc.). Les boutons de partage social ne sont pas inclus dans les pages Web "
 "d'index par défaut."
 
-#: lib/submenu/sharing-buttons.php:47
+#: lib/submenu/sharing-buttons.php:51
 msgid ""
 "If a static Post or Page has been selected for the homepage, you can add the "
 "social sharing buttons to that static homepage as well (default is "
@@ -312,7 +319,7 @@ msgstr ""
 "d'accueil, les boutons de partage social peuvent paraître sur la page "
 "d'accueil statique aussi (valeur par défaut est décochée)."
 
-#: lib/submenu/sharing-buttons.php:50
+#: lib/submenu/sharing-buttons.php:54
 msgid ""
 "Enabled social sharing buttons are added to the Post, Page, Media, and "
 "Product webpages by default. If your theme (or another plugin) supports "
@@ -325,47 +332,47 @@ msgstr ""
 "que vous souhaitez ajouter des boutons de partage social sur ces pages Web, "
 "cochez les options appropriées ici."
 
-#: lib/submenu/sharing-buttons.php:62
+#: lib/submenu/sharing-buttons.php:66
 msgctxt "metabox title"
 msgid "Social Sharing Buttons"
 msgstr "Boutons de Partage Social"
 
-#: lib/submenu/sharing-buttons.php:86
+#: lib/submenu/sharing-buttons.php:90
 msgctxt "metabox tab"
 msgid "Include Buttons"
 msgstr "Ajout de Boutons"
 
-#: lib/submenu/sharing-buttons.php:87
+#: lib/submenu/sharing-buttons.php:91
 msgctxt "metabox tab"
 msgid "Buttons Position"
 msgstr "Position des Boutons"
 
-#: lib/submenu/sharing-buttons.php:111
+#: lib/submenu/sharing-buttons.php:118
 msgctxt "option label"
 msgid "Include on Index Webpages"
 msgstr "Inclure sur les pages Web d'index"
 
-#: lib/submenu/sharing-buttons.php:115
+#: lib/submenu/sharing-buttons.php:122
 msgctxt "option label"
 msgid "Include on Static Homepage"
 msgstr "Inclure sur la page d'accueil statique"
 
-#: lib/submenu/sharing-buttons.php:126
+#: lib/submenu/sharing-buttons.php:133
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr "Inclure sur les articles de type"
 
-#: lib/submenu/sharing-buttons.php:134
+#: lib/submenu/sharing-buttons.php:141
 msgctxt "option label"
 msgid "Position in Content Text"
 msgstr "Position dans le texte de contenu"
 
-#: lib/submenu/sharing-buttons.php:139
+#: lib/submenu/sharing-buttons.php:146
 msgctxt "option label"
 msgid "Position in Excerpt Text"
 msgstr "Position dans le texte d'extrait"
 
-#: lib/submenu/sharing-styles.php:31
+#: lib/submenu/sharing-styles.php:32
 msgid ""
 "Add the CSS of all <em>%1$s</em> to webpages (default is checked). The CSS "
 "will be <strong>minimized</strong>, and saved to a single stylesheet with a "
@@ -377,7 +384,7 @@ msgstr ""
 "de style avec l'URL <a href=\"%2$s\">%3$s</a>. La feuille de style peut être "
 "mis en queue ou ajouté directement au HTML des pages Web."
 
-#: lib/submenu/sharing-styles.php:35
+#: lib/submenu/sharing-styles.php:36
 msgid ""
 "Have WordPress enqueue the social stylesheet instead of adding the CSS to in "
 "the webpage HTML (default is unchecked). Enqueueing the stylesheet may be "
@@ -390,101 +397,110 @@ msgstr ""
 "extension pour assembler tous le contenu des feuilles de styles dans un seul "
 "URL."
 
-#: lib/submenu/sharing-styles.php:120
+#: lib/submenu/sharing-styles.php:121
 msgctxt "metabox title"
 msgid "Social Sharing Styles"
 msgstr "Styles de Partage Social"
 
-#: lib/submenu/sharing-styles.php:133
+#: lib/submenu/sharing-styles.php:134
 msgctxt "option label"
 msgid "Use the Social Stylesheet"
 msgstr "Utiliser la feuille de style social"
 
-#: lib/submenu/sharing-styles.php:137
+#: lib/submenu/sharing-styles.php:138
 msgctxt "option label"
 msgid "Enqueue the Stylesheet"
 msgstr "Placer la feuille de style en queue"
 
-#: lib/website/email.php:30 lib/website/facebook.php:30
-#: lib/website/gplus.php:30 lib/website/linkedin.php:30
-#: lib/website/pinterest.php:30 lib/website/pocket.php:30
-#: lib/website/reddit.php:30 lib/website/tumblr.php:30
-#: lib/website/twitter.php:30 lib/website/vk.php:30
+#: lib/website/email.php:26 lib/website/facebook.php:26
+#: lib/website/gplus.php:26 lib/website/linkedin.php:26
+#: lib/website/pinterest.php:26 lib/website/pocket.php:26
+#: lib/website/reddit.php:26 lib/website/tumblr.php:26
+#: lib/website/twitter.php:26 lib/website/vk.php:26 lib/website/whatsapp.php:26
 msgctxt "option label"
 msgid "Preferred Order"
 msgstr "Ordre de préférence"
 
-#: lib/website/email.php:40
+#: lib/website/email.php:36 lib/website/facebook.php:36
+#: lib/website/gplus.php:36 lib/website/linkedin.php:36
+#: lib/website/pinterest.php:36 lib/website/pocket.php:36
+#: lib/website/reddit.php:36 lib/website/tumblr.php:36
+#: lib/website/twitter.php:36 lib/website/vk.php:36 lib/website/whatsapp.php:36
+msgctxt "option label"
+msgid "Allow for Platform"
+msgstr "Pour Plateforme"
+
+#: lib/website/email.php:42
 msgctxt "option label"
 msgid "Email Message Length"
 msgstr "Longueur du message couriel"
 
-#: lib/website/email.php:43 lib/website/linkedin.php:43
-#: lib/website/pinterest.php:52 lib/website/reddit.php:43
-#: lib/website/tumblr.php:43 lib/website/twitter.php:43
+#: lib/website/email.php:45 lib/website/linkedin.php:45
+#: lib/website/pinterest.php:54 lib/website/reddit.php:45
+#: lib/website/tumblr.php:45 lib/website/twitter.php:45
 msgctxt "option comment"
 msgid "characters or less"
 msgstr "caractères ou moins"
 
-#: lib/website/email.php:46
+#: lib/website/email.php:48
 msgctxt "option label"
 msgid "Append Hashtags to Message"
 msgstr "Ajout de hashtags au message"
 
-#: lib/website/email.php:50 lib/website/linkedin.php:50
-#: lib/website/pinterest.php:59 lib/website/reddit.php:50
-#: lib/website/tumblr.php:50 lib/website/twitter.php:50
+#: lib/website/email.php:52 lib/website/linkedin.php:52
+#: lib/website/pinterest.php:61 lib/website/reddit.php:52
+#: lib/website/tumblr.php:52 lib/website/twitter.php:52
 msgctxt "option comment"
 msgid "tag names"
 msgstr "noms d'étiquettes"
 
-#: lib/website/linkedin.php:40 lib/website/pinterest.php:49
-#: lib/website/reddit.php:40
+#: lib/website/linkedin.php:42 lib/website/pinterest.php:51
+#: lib/website/reddit.php:42
 msgctxt "option label"
 msgid "Caption Text Length"
 msgstr "Longueur du texte légende"
 
-#: lib/website/linkedin.php:46 lib/website/reddit.php:46
+#: lib/website/linkedin.php:48 lib/website/reddit.php:48
 msgctxt "option label"
 msgid "Append Hashtags to Caption"
 msgstr "Ajout de hashtags a la légende"
 
-#: lib/website/pinterest.php:40
+#: lib/website/pinterest.php:42
 msgctxt "option label"
 msgid "Share Single Image"
 msgstr "Partager une seule image"
 
-#: lib/website/pinterest.php:44
+#: lib/website/pinterest.php:46
 msgctxt "option label"
 msgid "Image Dimensions"
 msgstr "Dimensions de l’image"
 
-#: lib/website/pinterest.php:55 lib/website/tumblr.php:46
+#: lib/website/pinterest.php:57 lib/website/tumblr.php:48
 msgctxt "option label"
 msgid "Append Hashtags to Summary"
 msgstr "Ajout de hashtags au sommaire"
 
-#: lib/website/tumblr.php:40
+#: lib/website/tumblr.php:42
 msgctxt "option label"
 msgid "Summary Text Length"
 msgstr "Longueur du texte sommaire"
 
-#: lib/website/twitter.php:40
+#: lib/website/twitter.php:42
 msgctxt "option label"
 msgid "Tweet Text Length"
 msgstr "Longueur du texte Tweet"
 
-#: lib/website/twitter.php:46
+#: lib/website/twitter.php:48
 msgctxt "option label"
 msgid "Append Hashtags to Tweet"
 msgstr "Ajout de hashtags au Tweet"
 
-#: lib/website/twitter.php:52 lib/website/twitter.php:59
+#: lib/website/twitter.php:54 lib/website/twitter.php:61
 msgctxt "option label"
 msgid "Add via @username"
 msgstr "Ajouter via @nom"
 
-#: lib/website/twitter.php:54
+#: lib/website/twitter.php:56
 msgid ""
 "Append the website's business @username to the tweet (see the <a href=\"%1$s"
 "\">Twitter</a> options tab on the %2$s settings page). The website's "
@@ -494,17 +510,17 @@ msgstr ""
 "href=\"%1$s\">Twitter</a> sur la page de réglages %2$s). Le @nom du site Web "
 "sera affichés et recommandé après que la page Web est été partagée."
 
-#: lib/website/twitter.php:54
+#: lib/website/twitter.php:56
 msgctxt "lib file description"
 msgid "General"
 msgstr "Général"
 
-#: lib/website/twitter.php:57
+#: lib/website/twitter.php:59
 msgctxt "option label"
 msgid "Recommend Author"
 msgstr "Recommander l'auteur"
 
-#: lib/website/twitter.php:59
+#: lib/website/twitter.php:61
 msgid ""
 "Recommend following the author's Twitter @username (from their profile) "
 "after sharing a webpage. If the <em>%1$s</em> option is also checked, the "
@@ -515,12 +531,12 @@ msgstr ""
 "également cochée, le @nom d'affaires Twitter du site Web est aussi "
 "recommandes."
 
-#: lib/website/twitter.php:62
+#: lib/website/twitter.php:64
 msgctxt "option label"
 msgid "Shorten URLs with"
 msgstr "Raccourcir les URLs avec"
 
-#: lib/website/twitter.php:64
+#: lib/website/twitter.php:66
 msgid ""
 "If you select a URL shortening service here, you must also enter its <a href="
 "\"%1$s\">%2$s</a> on the %3$s settings page."
@@ -528,12 +544,12 @@ msgstr ""
 "Si vous sélectionnez un service de raccourcissement d'URL, vous devez "
 "également entrer ses <a href=\"%1$s\">%2$s</a> dans la page de réglages %3$s."
 
-#: lib/website/twitter.php:64 lib/website/twitter.php:68
+#: lib/website/twitter.php:66 lib/website/twitter.php:70
 msgctxt "metabox tab"
 msgid "Service API Keys"
 msgstr "Clés de Service API"
 
-#: lib/website/twitter.php:68
+#: lib/website/twitter.php:70
 msgid "using these <a href=\"%1$s\">%2$s</a>"
 msgstr "utilisant ces <a href=\"%1$s\">%2$s</a>"
 
@@ -593,8 +609,8 @@ msgstr ""
 "shortcode, etc."
 
 #. Author of the plugin/theme
-msgid "Jean-Sebastien Morisset"
-msgstr "Jean-Sebastien Morisset"
+msgid "JS Morisset"
+msgstr "JS Morisset"
 
 #. Author URI of the plugin/theme
 msgid "http://surniaulula.com/"

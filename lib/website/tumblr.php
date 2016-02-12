@@ -34,7 +34,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingTumblr' ) && class_exists( 'WpssoR
 
 			$rows[] = '<tr class="hide_in_basic">'.
 			$this->p->util->get_th( _x( 'Allow for Platform',
-				'option label (short)', 'wpsso-rrssb' ) ).
+				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$this->form->get_select( 'tumblr_platform',
 				$this->p->cf['sharing']['platform'] ).'</td>';
 
