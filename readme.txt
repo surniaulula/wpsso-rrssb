@@ -46,8 +46,9 @@ WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) works in conj
 	* Tumblr
 	* Twitter
 	* VK
-
-A built-in stylesheet editor allows you to fine-tune the CSS for each social sharing button location easily (content, excerpt, shortcode, widget, etc.).
+	* WhatsApp (for mobile devices)
+* Include / exclude each social sharing button based on the viewing device (desktop and/or mobile).
+* A built-in stylesheet editor allows you to fine-tune the CSS for each social sharing button location easily (content, excerpt, shortcode, widget, etc.).
 
 <blockquote>
 <p>Download the Free version from <a href="http://surniaulula.github.io/wpsso-rrssb/">GitHub</a> or <a href="https://wordpress.org/plugins/wpsso-rrssb/">WordPress.org</a>. WPSSO RRSSB uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.</p>
@@ -111,11 +112,12 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 Official announcement: N/A
 
-Please note: This latest release includes new social sharing buttons and styles. You can use the new "Reload Default Styles" action button to load the latest sharing styles.
+Please note: This latest release includes new social sharing buttons and styles. **Use the "Reload Default Styles" action button on the Sharing Styles page to reload the latest default sharing styles.**
 
 * **New Features**
 	* Added a new "Allow for Platform" option for all social sharing buttons.
 	* Added a new "Reload Default Styles" action button on the Sharing Styles settings page.
+	* Added a new "WhatsApp" social sharing button -- Please note that the default "Allow for Platform" option value for the WhatsApp button is "Mobile Only".
 * **Improvements**
 	* *None*
 * **Bugfixes**
@@ -196,7 +198,7 @@ Official announcement: N/A
 
 == Upgrade Notice ==
 
-= 1.1.4 =
+= 1.2.0 =
 
-2016/01/13 - Updated the css and js files from the latest RRSSB master branch (https://github.com/kni-labs/rrssb).
+2016/02/13 - Added a new "WhatsApp" sharing button and "Allow for Platform" option. Use the "Reload Default Styles" action button on the Sharing Styles page to reload the latest default sharing styles.
 
