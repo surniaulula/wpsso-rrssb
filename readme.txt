@@ -110,7 +110,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 = Changelog / Release Notes =
 
-** Version 1.2.0 (2016/02/13) **
+**Version 1.2.0 (2016/02/13)**
 
 Official announcement: N/A
 
@@ -127,7 +127,7 @@ Please note: This latest release includes new social sharing buttons and styles.
 * **Developer Notes**
 	* Used the new SucomUtil::is_https() static method to determine the protocol to be used (http or https).
 
-** Version 1.1.4 (2016/01/13) **
+**Version 1.1.4 (2016/01/13)**
 
 Official announcement: N/A
 
@@ -140,7 +140,7 @@ Official announcement: N/A
 * **Developer Notes**
 	* Updated the css and js files from the latest RRSSB master branch (https://github.com/kni-labs/rrssb).
 
-** Version 1.1.3 (2015/12/27) **
+**Version 1.1.3 (2015/12/27)**
 
 Official announcement: N/A
 
@@ -156,7 +156,7 @@ Official announcement: N/A
 	* Renamed the website class `$id` and `$name` properties to `$website_id` and `$website_name`.
 	* Moved `WpssoRrssbSharing::$cf['sharing']` to `WpssoRrssbConfig::$cf['sharing']`.
 
-** Version 1.1.2 (2015/12/09) **
+**Version 1.1.2 (2015/12/09)**
 
 Official announcement: N/A
 
@@ -171,7 +171,7 @@ Official announcement: N/A
 	* Updated minimum required version to WPSSO v3.18.0.
 	* Updated method names and arguments for WPSSO v3.18.0. 
 
-** Version 1.1.1 (2015/12/06) **
+**Version 1.1.1 (2015/12/06)**
 
 Official announcement: N/A
 
@@ -184,7 +184,7 @@ Official announcement: N/A
 * **Developer Notes**
 	* *None*
 
-** Version 1.1.0 (2015/10/17) **
+**Version 1.1.0 (2015/10/17)**
 
 Official announcement: N/A
 
