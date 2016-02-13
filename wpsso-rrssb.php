@@ -100,6 +100,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 				return;
 
 			$this->p->is_avail['rrssb'] = true;
+
 			if ( is_admin() ) {
 				$this->p->is_avail['admin']['sharing'] = true;
 			}
@@ -109,7 +110,6 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 			if ( self::$wpsso_has_min_ver === false )
 				return;
 
-			WpssoRrssbConfig::load_lib( false, 'sharing' );
 			$this->p->rrssb = new WpssoRrssbSharing( $this->p, __FILE__ );
 		}
 

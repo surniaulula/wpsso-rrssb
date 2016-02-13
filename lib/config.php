@@ -163,8 +163,11 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		}
 
 		public static function require_libs( $plugin_filepath ) {
+
 			require_once( WPSSORRSSB_PLUGINDIR.'lib/register.php' );
 			require_once( WPSSORRSSB_PLUGINDIR.'lib/functions.php' );
+			require_once( WPSSORRSSB_PLUGINDIR.'lib/sharing.php' );
+
 			add_filter( 'wpssorrssb_load_lib', array( 'WpssoRrssbConfig', 'load_lib' ), 10, 3 );
 		}
 
