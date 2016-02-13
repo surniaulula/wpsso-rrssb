@@ -110,7 +110,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 = Changelog / Release Notes =
 
-**Version 1.2.0 (2016/02/13)**
+**Version 1.2.0 (2016/02/14)**
 
 Official announcement: N/A
 
@@ -202,5 +202,5 @@ Official announcement: N/A
 
 = 1.2.0 =
 
-2016/02/13 - Added a new "WhatsApp" sharing button and "Allow for Platform" option. Use the "Reload Default Styles" action button on the Sharing Styles page to reload the latest default sharing styles.
+2016/02/14 - Added a new "WhatsApp" sharing button and "Allow for Platform" option. Use the "Reload Default Styles" action button on the Sharing Styles page to reload the latest default sharing styles.
 
