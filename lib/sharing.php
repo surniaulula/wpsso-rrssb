@@ -643,7 +643,7 @@ $buttons_html.
 				return $this->post_buttons_disabled[$post->ID];
 
 			if ( ! empty( $post ) ) {
-				if ( $this->p->mods['util']['post']->get_options( $post->ID, 'buttons_disabled' ) ) {
+				if ( $this->p->m['util']['post']->get_options( $post->ID, 'buttons_disabled' ) ) {
 					if ( $this->p->debug->enabled )
 						$this->p->debug->log( 'post '.$post->ID.': sharing buttons disabled by custom meta option' );
 					$ret = true;
