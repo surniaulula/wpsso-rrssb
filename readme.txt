@@ -1,4 +1,4 @@
-=== WPSSO Ridiculously Responsive Social Sharing Buttons - with WhatsApp for Mobile Devices =
+=== WPSSO Ridiculously Responsive Social Sharing Buttons - with WhatsApp for Mobile Devices ===
 Plugin Name: WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)
 Plugin Slug: wpsso-rrssb
 Text Domain: wpsso-rrssb
