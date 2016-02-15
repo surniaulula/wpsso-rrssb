@@ -1,4 +1,4 @@
-<h1>WPSSO Ridiculously Responsive Social Sharing Buttons</h1><h3>with WhatsApp for Mobile Devices</h3>
+<h1>WPSSO Ridiculously Responsive Social Sharing Buttons</h1><h3>including WhatsApp for Mobile</h3>
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)</td></tr>
