@@ -360,7 +360,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 			if ( ! empty( $this->p->options[ 'buttons_add_to_'.$post_type->name ] ) ) {
 				// add_meta_box( $id, $title, $callback, $post_type, $context, $priority, $callback_args );
-				add_meta_box( '_'.$this->p->cf['lca'].'_share', 
+				add_meta_box( '_'.$this->p->cf['lca'].'_rrssb_share', 
 					_x( 'Sharing Buttons', 'metabox title', 'wpsso-rrssb' ),
 						array( &$this, 'show_admin_sharing' ), $post_type->name, 'side', 'high' );
 			}
