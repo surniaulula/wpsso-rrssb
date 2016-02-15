@@ -217,7 +217,3 @@ Official announcement: N/A
 
 2016/02/15 - Updated the admin editing page CSS for the social sharing buttons metabox.
 
-= 1.2.0 =
-
-2016/02/14 - Added a new "WhatsApp" sharing button and "Allow for Platform" option. Use the "Reload Default Styles" action button on the Sharing Styles page to reload the latest default sharing styles.
-
