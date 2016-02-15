@@ -392,9 +392,11 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function show_admin_sharing( $post ) {
+			$lca = $this->p->cf['lca'];
 			$post_type = get_post_type_object( $post->post_type );	// since 3.0
 			$post_type_name = ucfirst( $post_type->name );
-			$css_data = $this->p->options['buttons_css_rrssb-admin_edit'];
+			$css_data = '#side-sortables #_'.$lca.'_rrssb_share .inside table.sucom-setting { padding:0; }'.
+				$this->p->options['buttons_css_rrssb-admin_edit'];
 
 			$classname = apply_filters( $this->p->cf['lca'].'_load_lib', 
 				false, 'ext/compressor', 'SuextMinifyCssCompressor' );

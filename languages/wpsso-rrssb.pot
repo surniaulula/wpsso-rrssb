@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"(WPSSO RRSSB) 1.2.0\n"
+"(WPSSO RRSSB) 1.2.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2016-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -250,7 +250,7 @@ msgctxt "metabox title"
 msgid "Sharing Buttons"
 msgstr ""
 
-#: lib/sharing.php:415
+#: lib/sharing.php:417
 msgid "%s must be published<br/>before it can be shared."
 msgstr ""
 
