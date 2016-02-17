@@ -501,10 +501,10 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			$html = false;
 
 			if ( $this->p->debug->enabled ) {
-				$this->p->debug->log( 'use_post: '.( $use_post === false ?
+				$this->p->debug->log( 'use_post is '.( $use_post === false ?
 					'false' : ( $use_post === true ? 'true' : $use_post ) ) );
-				$this->p->debug->log( 'post_id: '.$post_id );
-				$this->p->debug->log( 'src_id: '.$src_id );
+				$this->p->debug->log( 'post_id is '.$post_id );
+				$this->p->debug->log( 'src_id is '.$src_id );
 			}
 
 			// fetch from the cache, if possible
