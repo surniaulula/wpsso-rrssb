@@ -50,9 +50,9 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 				return $wpsso->debug->get_html().$html;
 			}
 
-			$html = '<!-- '.$wpsso->cf['lca'].' sharing buttons begin -->'.
+			$html = '<!-- '.$wpsso->cf['lca'].' '.__FUNCTION__.' function begin -->'."\n";
 				$wpsso->rrssb->get_html( $ids, $atts ).
-				'<!-- '.$wpsso->cf['lca'].' sharing buttons end -->';
+				'<!-- '.$wpsso->cf['lca'].' '.__FUNCTION__.' function end -->';
 	
 			if ( $wpsso->is_avail['cache']['transient'] ||
 				$wpsso->is_avail['cache']['object'] ) {
