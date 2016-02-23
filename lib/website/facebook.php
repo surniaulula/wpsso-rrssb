@@ -100,7 +100,8 @@ if ( ! class_exists( 'WpssoRrssbSharingFacebook' ) ) {
 			if ( ! isset( $atts['source_id'] ) )
 				$atts['source_id'] = $this->p->util->get_source_id( 'facebook', $atts );
 
-			return $this->p->util->replace_inline_vars( $this->p->options['fb_rrssb_html'], $use_post, false, $atts );
+			return $this->p->util->replace_inline_vars( '<!-- Facebook Button -->'.
+				$this->p->options['fb_rrssb_html'], $use_post, false, $atts );
 		}
 	}
 }

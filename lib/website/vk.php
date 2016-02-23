@@ -100,7 +100,8 @@ if ( ! class_exists( 'WpssoRrssbSharingVk' ) ) {
 			if ( ! isset( $atts['source_id'] ) )
 				$atts['source_id'] = $this->p->util->get_source_id( 'vk', $atts );
 
-			return $this->p->util->replace_inline_vars( $this->p->options['vk_rrssb_html'], $use_post, false, $atts );
+			return $this->p->util->replace_inline_vars( '<!-- VK Button -->'.
+				$this->p->options['vk_rrssb_html'], $use_post, false, $atts );
 		}
 	}
 }

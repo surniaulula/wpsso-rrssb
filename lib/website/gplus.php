@@ -100,7 +100,8 @@ if ( ! class_exists( 'WpssoRrssbSharingGplus' ) ) {
 			if ( ! isset( $atts['source_id'] ) )
 				$atts['source_id'] = $this->p->util->get_source_id( 'gplus', $atts );
 
-			return $this->p->util->replace_inline_vars( $this->p->options['gp_rrssb_html'], $use_post, false, $atts );
+			return $this->p->util->replace_inline_vars( '<!-- Google+ Button -->'.
+				$this->p->options['gp_rrssb_html'], $use_post, false, $atts );
 		}
 	}
 }

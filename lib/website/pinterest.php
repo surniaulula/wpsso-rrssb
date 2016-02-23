@@ -114,7 +114,7 @@ if ( ! class_exists( 'WpssoRrssbSharingPinterest' ) ) {
 			) );
 		}
 
-		public function filter_get_meta_defaults( $opts_def, $mod ) {
+		public function filter_get_meta_defaults( $opts_def, $mod_name ) {
 			$meta_def = array(
 				'pin_desc' => '',
 			);
@@ -182,11 +182,13 @@ if ( ! class_exists( 'WpssoRrssbSharingPinterest' ) ) {
 				return false;
 			}
 
-			return $this->p->util->replace_inline_vars( $this->p->options['pin_rrssb_html'], $use_post, false, $atts, array(
-				'media_url' => rawurlencode( $atts['photo'] ),
-			 	'pinterest_caption' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['pin_cap_len'],
-					$use_post, true, $add_hashtags, false, 'pin_desc', 'pinterest' ) ),
-			 ) );
+			return $this->p->util->replace_inline_vars( '<!-- Pinterest Button -->'.
+				$this->p->options['pin_rrssb_html'], $use_post, false, $atts, array(
+					'media_url' => rawurlencode( $atts['photo'] ),
+				 	'pinterest_caption' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['pin_cap_len'],
+						$use_post, true, $add_hashtags, false, 'pin_desc', 'pinterest' ) ),
+				 )
+			 );
 		}
 	}
 }

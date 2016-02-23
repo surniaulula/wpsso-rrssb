@@ -100,7 +100,8 @@ if ( ! class_exists( 'WpssoRrssbSharingPocket' ) ) {
 			if ( ! isset( $atts['source_id'] ) )
 				$atts['source_id'] = $this->p->util->get_source_id( 'pocket', $atts );
 
-			return $this->p->util->replace_inline_vars( $this->p->options['pocket_rrssb_html'], $use_post, false, $atts );
+			return $this->p->util->replace_inline_vars( '<!-- Pocket Button -->'.
+				$this->p->options['pocket_rrssb_html'], $use_post, false, $atts );
 		}
 	}
 }

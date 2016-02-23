@@ -98,7 +98,7 @@ if ( ! class_exists( 'WpssoRrssbSharingLinkedin' ) ) {
 			) );
 		}
 
-		public function filter_get_meta_defaults( $opts_def, $mod ) {
+		public function filter_get_meta_defaults( $opts_def, $mod_name ) {
 			$meta_def = array(
 				'linkedin_title' => '',
 				'linkedin_desc' => '',
@@ -129,12 +129,14 @@ if ( ! class_exists( 'WpssoRrssbSharingLinkedin' ) ) {
 			if ( ! isset( $atts['source_id'] ) )
 				$atts['source_id'] = $this->p->util->get_source_id( 'linkedin', $atts );
 
-			return $this->p->util->replace_inline_vars( $this->p->options['linkedin_rrssb_html'], $use_post, false, $atts, array(
-			 	'linkedin_title' => rawurlencode( $this->p->webpage->get_caption( 'title', 0,
-					$use_post, true, false, false, 'linkedin_title', 'linkedin' ) ),
-			 	'linkedin_caption' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['linkedin_cap_len'],
-					$use_post, true, $add_hashtags, false, 'linkedin_desc', 'linkedin' ) ),
-			 ) );
+			return $this->p->util->replace_inline_vars( '<!-- LinkedIn Button -->'.
+				$this->p->options['linkedin_rrssb_html'], $use_post, false, $atts, array(
+				 	'linkedin_title' => rawurlencode( $this->p->webpage->get_caption( 'title', 0,
+						$use_post, true, false, false, 'linkedin_title', 'linkedin' ) ),
+				 	'linkedin_caption' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['linkedin_cap_len'],
+						$use_post, true, $add_hashtags, false, 'linkedin_desc', 'linkedin' ) ),
+				 )
+			 );
 		}
 	}
 }

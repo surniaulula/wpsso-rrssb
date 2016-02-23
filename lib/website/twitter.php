@@ -118,7 +118,7 @@ if ( ! class_exists( 'WpssoRrssbSharingTwitter' ) ) {
 			) );
 		}
 
-		public function filter_get_meta_defaults( $opts_def, $mod ) {
+		public function filter_get_meta_defaults( $opts_def, $mod_name ) {
 			$meta_def = array(
 				'twitter_desc' => '',
 			);
@@ -169,12 +169,14 @@ if ( ! class_exists( 'WpssoRrssbSharingTwitter' ) ) {
 				else $atts['related'] = '';
 			}
 
-			return $this->p->util->replace_inline_vars( $this->p->options['twitter_rrssb_html'], $use_post, false, $atts, array(
-			 	'twitter_text' => rawurlencode( $atts['tweet'] ),
-			 	'twitter_hashtags' => rawurlencode( $atts['hashtags'] ),
-			 	'twitter_via' => rawurlencode( $atts['via'] ),
-			 	'twitter_related' => rawurlencode( $atts['related'] ),
-			 ) );
+			return $this->p->util->replace_inline_vars( '<!-- Twitter Button -->'.
+				$this->p->options['twitter_rrssb_html'], $use_post, false, $atts, array(
+				 	'twitter_text' => rawurlencode( $atts['tweet'] ),
+				 	'twitter_hashtags' => rawurlencode( $atts['hashtags'] ),
+				 	'twitter_via' => rawurlencode( $atts['via'] ),
+				 	'twitter_related' => rawurlencode( $atts['related'] ),
+				 )
+			 );
 		}
 	}
 }

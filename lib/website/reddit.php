@@ -99,7 +99,7 @@ if ( ! class_exists( 'WpssoRrssbSharingReddit' ) ) {
 			) );
 		}
 
-		public function filter_get_meta_defaults( $opts_def, $mod ) {
+		public function filter_get_meta_defaults( $opts_def, $mod_name ) {
 			$meta_def = array(
 				'reddit_title' => '',
 				'reddit_desc' => '',
@@ -130,12 +130,14 @@ if ( ! class_exists( 'WpssoRrssbSharingReddit' ) ) {
 			if ( ! isset( $atts['source_id'] ) )
 				$atts['source_id'] = $this->p->util->get_source_id( 'reddit', $atts );
 
-			return $this->p->util->replace_inline_vars( $this->p->options['reddit_rrssb_html'], $use_post, false, $atts, array(
-			 	'reddit_title' => rawurlencode( $this->p->webpage->get_caption( 'title', 0,
-					$use_post, true, false, false, 'reddit_title', 'reddit' ) ),
-			 	'reddit_summary' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['reddit_cap_len'],
-					$use_post, true, $add_hashtags, false, 'reddit_desc', 'reddit' ) ),
-			 ) );
+			return $this->p->util->replace_inline_vars( '<!-- Reddit Button -->'.
+				$this->p->options['reddit_rrssb_html'], $use_post, false, $atts, array(
+				 	'reddit_title' => rawurlencode( $this->p->webpage->get_caption( 'title', 0,
+						$use_post, true, false, false, 'reddit_title', 'reddit' ) ),
+				 	'reddit_summary' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['reddit_cap_len'],
+						$use_post, true, $add_hashtags, false, 'reddit_desc', 'reddit' ) ),
+				 )
+			 );
 		}
 	}
 }
