@@ -114,6 +114,19 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 = Changelog / Release Notes =
 
+**Version 1.2.2 (2016/02/24)**
+
+Official announcement: N/A
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* Fixed a syntax issue in the `wpssorrssb_get_sharing_buttons()` function.
+* *Developer Notes*
+	* None
+
 **Version 1.2.1 (2016/02/15)**
 
 Official announcement: N/A
@@ -145,6 +158,10 @@ Please note: This latest release includes new social sharing buttons and styles.
 	* Used the new SucomUtil::is_https() static method to determine the protocol to be used (http or https).
 
 == Upgrade Notice ==
+
+= 1.2.2 =
+
+2016/02/24 - Fixed a syntax issue in the `wpssorrssb_get_sharing_buttons()` function.
 
 = 1.2.1 =
 
