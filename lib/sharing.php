@@ -317,8 +317,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				} elseif ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'updated css file '.self::$sharing_css_file.' ('.$written.' bytes written)' );
 					if ( is_admin() )
-						$this->p->notice->inf( sprintf( __( 'Updated the %1$s stylesheet (%2$d bytes written)',
-							'wpsso-rrssb' ), self::$sharing_css_file, $written ), true );
+						$this->p->notice->inf( sprintf( __( 'Updated the <a href="%1$s">%2$s</a> stylesheet (%3$d bytes written).',
+							'wpsso-rrssb' ), self::$sharing_css_url, self::$sharing_css_file, $written ), true );
 				}
 				fclose( $fh );
 			} else {
@@ -536,12 +536,12 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				$css_type = $atts['css_id'] = 'rrssb-'.$type;
 				$buttons_html = $this->get_html( $sorted_ids, $atts );
 
-				if ( ! empty( $buttons_html ) ) {
+				if ( trim( $buttons_html ) ) {
 					$html = '
 <!-- '.$lca.' '.$css_type.' begin -->
 <div class="'.$lca.'-rrssb'.
 	( $use_post ? ' '.$lca.'-'.$css_type.'">' : '" id="'.$lca.'-'.$css_type.'">' ).
-$buttons_html.
+$buttons_html."\n".
 '</div><!-- .'.$lca.'-rrssb '.
 	( $use_post ? '.' : '#' ).$lca.'-'.$css_type.' -->
 <!-- '.$lca.' '.$css_type.' end -->'."\n\n";

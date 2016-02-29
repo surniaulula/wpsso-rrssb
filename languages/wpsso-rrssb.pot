@@ -228,7 +228,7 @@ msgid "Failed writing to the % file."
 msgstr ""
 
 #: lib/sharing.php:320
-msgid "Updated the %1$s stylesheet (%2$d bytes written)"
+msgid "Updated the <a href=\"%1$s\">%2$s</a> stylesheet (%3$d bytes written)."
 msgstr ""
 
 #: lib/sharing.php:329
