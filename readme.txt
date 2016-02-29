@@ -114,6 +114,19 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 = Changelog / Release Notes =
 
+**Version 1.2.3 (2016/03/01)**
+
+Official announcement: N/A
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Updated some hook names for WPSSO v3.26.0.
+
 **Version 1.2.2 (2016/02/24)**
 
 Official announcement: N/A
@@ -158,6 +171,10 @@ Please note: This latest release includes new social sharing buttons and styles.
 	* Used the new SucomUtil::is_https() static method to determine the protocol to be used (http or https).
 
 == Upgrade Notice ==
+
+= 1.2.3 =
+
+2016/03/01 - Updated some hook names for WPSSO v3.26.0.
 
 = 1.2.2 =
 
