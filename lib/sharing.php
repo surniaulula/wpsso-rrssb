@@ -51,7 +51,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				$this->p->debug->mark( 'action / filter setup' );
 			$this->plugin_filepath = $plugin_filepath;
 
-			self::$sharing_css_name = 'sharing-styles-id-'.get_current_blog_id().'.min.css';
+			self::$sharing_css_name = 'rrssb-sharing-styles-id-'.get_current_blog_id().'.min.css';
 			self::$sharing_css_file = WPSSO_CACHEDIR.self::$sharing_css_name;
 			self::$sharing_css_url = WPSSO_CACHEURL.self::$sharing_css_name;
 
