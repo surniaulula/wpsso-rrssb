@@ -12,11 +12,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingStyles' ) && class_exists( 'WpssoA
 
 	class WpssoRrssbSubmenuSharingStyles extends WpssoAdmin {
 
-		public function __construct( &$plugin, $id, $name, $lib ) {
+		public function __construct( &$plugin, $id, $name, $lib, $ext ) {
 			$this->p =& $plugin;
 			$this->menu_id = $id;
 			$this->menu_name = $name;
 			$this->menu_lib = $lib;
+			$this->menu_ext = $ext;
 			$this->p->util->add_plugin_filters( $this, array( 
 				'messages_tooltip' => 2,	// tooltip messages filter
 				'messages_info' => 2,		// info messages filter

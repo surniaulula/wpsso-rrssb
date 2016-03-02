@@ -64,7 +64,7 @@ msgid "Sharing Buttons"
 msgstr ""
 
 #: lib/config-gettext-extract.php:13 lib/sharing.php:211 lib/sharing.php:214
-#: lib/submenu/sharing-styles.php:32
+#: lib/submenu/sharing-styles.php:33
 msgctxt "lib file description"
 msgid "Sharing Styles"
 msgstr ""
@@ -254,13 +254,13 @@ msgstr ""
 msgid "%s must be published<br/>before it can be shared."
 msgstr ""
 
-#: lib/submenu/sharing-buttons.php:45
+#: lib/submenu/sharing-buttons.php:46
 msgid ""
 "Social sharing buttons can be added to the top, bottom, or both. Each "
 "sharing button must also be enabled below (see the <em>%s</em> options)."
 msgstr ""
 
-#: lib/submenu/sharing-buttons.php:45 lib/website/email.php:31
+#: lib/submenu/sharing-buttons.php:46 lib/website/email.php:31
 #: lib/website/facebook.php:31 lib/website/gplus.php:31
 #: lib/website/linkedin.php:31 lib/website/pinterest.php:31
 #: lib/website/pocket.php:31 lib/website/reddit.php:31
@@ -270,21 +270,21 @@ msgctxt "option label"
 msgid "Show Button in"
 msgstr ""
 
-#: lib/submenu/sharing-buttons.php:48
+#: lib/submenu/sharing-buttons.php:49
 msgid ""
 "Add the social sharing buttons to each entry of an index webpage (for "
 "example, <strong>non-static</strong> homepage, category, archive, etc.). "
 "Social sharing buttons are not included on index webpages by default."
 msgstr ""
 
-#: lib/submenu/sharing-buttons.php:51
+#: lib/submenu/sharing-buttons.php:52
 msgid ""
 "If a static Post or Page has been selected for the homepage, you can add the "
 "social sharing buttons to that static homepage as well (default is "
 "unchecked)."
 msgstr ""
 
-#: lib/submenu/sharing-buttons.php:54
+#: lib/submenu/sharing-buttons.php:55
 msgid ""
 "Enabled social sharing buttons are added to the Post, Page, Media, and "
 "Product webpages by default. If your theme (or another plugin) supports "
@@ -292,47 +292,47 @@ msgid ""
 "buttons on these webpages, check the appropriate option(s) here."
 msgstr ""
 
-#: lib/submenu/sharing-buttons.php:66
+#: lib/submenu/sharing-buttons.php:67
 msgctxt "metabox title"
 msgid "Social Sharing Buttons"
 msgstr ""
 
-#: lib/submenu/sharing-buttons.php:90
+#: lib/submenu/sharing-buttons.php:91
 msgctxt "metabox tab"
 msgid "Include Buttons"
 msgstr ""
 
-#: lib/submenu/sharing-buttons.php:91
+#: lib/submenu/sharing-buttons.php:92
 msgctxt "metabox tab"
 msgid "Buttons Position"
 msgstr ""
 
-#: lib/submenu/sharing-buttons.php:118
+#: lib/submenu/sharing-buttons.php:119
 msgctxt "option label"
 msgid "Include on Index Webpages"
 msgstr ""
 
-#: lib/submenu/sharing-buttons.php:122
+#: lib/submenu/sharing-buttons.php:123
 msgctxt "option label"
 msgid "Include on Static Homepage"
 msgstr ""
 
-#: lib/submenu/sharing-buttons.php:133
+#: lib/submenu/sharing-buttons.php:134
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr ""
 
-#: lib/submenu/sharing-buttons.php:141
+#: lib/submenu/sharing-buttons.php:142
 msgctxt "option label"
 msgid "Position in Content Text"
 msgstr ""
 
-#: lib/submenu/sharing-buttons.php:146
+#: lib/submenu/sharing-buttons.php:147
 msgctxt "option label"
 msgid "Position in Excerpt Text"
 msgstr ""
 
-#: lib/submenu/sharing-styles.php:32
+#: lib/submenu/sharing-styles.php:33
 msgid ""
 "Add the CSS of all <em>%1$s</em> to webpages (default is checked). The CSS "
 "will be <strong>minimized</strong>, and saved to a single stylesheet with a "
@@ -340,7 +340,7 @@ msgid ""
 "or added directly to the webpage HTML."
 msgstr ""
 
-#: lib/submenu/sharing-styles.php:36
+#: lib/submenu/sharing-styles.php:37
 msgid ""
 "Have WordPress enqueue the social stylesheet instead of adding the CSS to in "
 "the webpage HTML (default is unchecked). Enqueueing the stylesheet may be "
@@ -348,17 +348,17 @@ msgid ""
 "single stylesheet URL."
 msgstr ""
 
-#: lib/submenu/sharing-styles.php:121
+#: lib/submenu/sharing-styles.php:122
 msgctxt "metabox title"
 msgid "Social Sharing Styles"
 msgstr ""
 
-#: lib/submenu/sharing-styles.php:134
+#: lib/submenu/sharing-styles.php:135
 msgctxt "option label"
 msgid "Use the Social Stylesheet"
 msgstr ""
 
-#: lib/submenu/sharing-styles.php:138
+#: lib/submenu/sharing-styles.php:139
 msgctxt "option label"
 msgid "Enqueue the Stylesheet"
 msgstr ""
