@@ -31,7 +31,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 		private static $wpsso_short = 'WPSSO';
 		private static $wpsso_name = 'WordPress Social Sharing Optimization (WPSSO)';
-		private static $wpsso_min_version = '3.26.0';
+		private static $wpsso_min_version = '3.26.1';
 		private static $wpsso_has_min_ver = true;
 		private static $opt_version_suffix = 'rrssb8';
 
