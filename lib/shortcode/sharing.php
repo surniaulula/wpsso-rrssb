@@ -58,21 +58,18 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 		}
 
 		public function shortcode( $atts, $content = null ) { 
-			if ( ( $obj = $this->p->util->get_post_object() ) === false ) {
+
+			if ( ( $post_obj = $this->p->util->get_post_object() ) === false ) {
 				$this->p->debug->log( 'exiting early: invalid object type' );
 				return $content;
 			}
-			$post_id = empty( $obj->ID ) || empty( $obj->post_type ) ?
-				0 : $obj->ID;
+			$post_id = empty( $post_obj->ID ) || empty( $post_obj->post_type ) ?  0 : $post_obj->ID; 
+
 			$lca = $this->p->cf['lca'];
-			$atts = apply_filters( $lca.'_shortcode_'.WPSSORRSSB_SHARING_SHORTCODE,
-				$atts, $content );
-			$atts['url'] = empty( $atts['url'] ) ?
-				$this->p->util->get_sharing_url( true ) : $atts['url'];
-			$atts['css_class'] = empty( $atts['css_class'] ) ?
-				'rrssb-shortcode' : $atts['css_class'];
-			$atts['filter_id'] = empty( $atts['filter_id'] ) ?
-				'shortcode' : $atts['filter_id'];
+			$atts = apply_filters( $lca.'_shortcode_'.WPSSORRSSB_SHARING_SHORTCODE, $atts, $content );
+			$atts['url'] = empty( $atts['url'] ) ? $this->p->util->get_sharing_url( true ) : $atts['url'];
+			$atts['css_class'] = empty( $atts['css_class'] ) ? 'rrssb-shortcode' : $atts['css_class'];
+			$atts['filter_id'] = empty( $atts['filter_id'] ) ? 'shortcode' : $atts['filter_id'];
 
 			$html = '';
 			if ( ! empty( $atts['buttons'] ) ) {
@@ -97,7 +94,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 					'<div class="'.$lca.'-rrssb '.$lca.'-'.$atts['css_class']."\">\n".
 					$this->p->rrssb->get_html( $ids, $atts ).
 					'</div><!-- .'.$lca.'-'.$atts['css_class']." -->\n".
-					'<!-- '.$lca.' '.$atts['css_class']." end -->\n";
+					'<!-- '.$lca.' '.$atts['css_class']." end -->";
 
 				if ( $this->p->is_avail['cache']['transient'] ) {
 					set_transient( $cache_id, $html, $this->p->options['plugin_object_cache_exp'] );
