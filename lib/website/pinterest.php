@@ -151,12 +151,12 @@ if ( ! class_exists( 'WpssoRrssbSharingPinterest' ) ) {
 
 			$post_id = 0;
 			if ( is_singular() || $use_post !== false ) {
-				if ( ( $obj = $this->p->util->get_post_object( $use_post ) ) === false ) {
+				if ( ( $post_obj = $this->p->util->get_post_object( $use_post ) ) === false ) {
 					if ( $this->p->debug->enabled )
 						$this->p->debug->log( 'exiting early: invalid object type' );
 					return false;
 				}
-				$post_id = empty( $obj->ID ) || empty( $obj->post_type ) ? 0 : $obj->ID;
+				$post_id = empty( $post_obj->ID ) || empty( $post_obj->post_type ) ? 0 : $post_obj->ID;
 			}
 
 			if ( empty( $atts['size'] ) )

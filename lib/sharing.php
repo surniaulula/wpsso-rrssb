@@ -351,12 +351,12 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				return;
 
 			// get the current object / post type
-			if ( ( $obj = $this->p->util->get_post_object() ) === false ) {
+			if ( ( $post_obj = $this->p->util->get_post_object() ) === false ) {
 				if ( $this->p->debug->enabled )
 					$this->p->debug->log( 'exiting early: invalid object type' );
 				return;
 			}
-			$post_type = get_post_type_object( $obj->post_type );
+			$post_type = get_post_type_object( $post_obj->post_type );
 
 			if ( ! empty( $this->p->options[ 'buttons_add_to_'.$post_type->name ] ) ) {
 				// add_meta_box( $id, $title, $callback, $post_type, $context, $priority, $callback_args );
@@ -494,9 +494,9 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			}
 
 			$lca = $this->p->cf['lca'];
-			$obj = $this->p->util->get_post_object( $use_post );
-			$post_id = empty( $obj->ID ) || empty( $obj->post_type ) || 
-				( ! is_singular() && $use_post === false ) ? 0 : $obj->ID;
+			$post_obj = $this->p->util->get_post_object( $use_post );
+			$post_id = empty( $post_obj->ID ) || empty( $post_obj->post_type ) || 
+				( ! is_singular() && $use_post === false ) ? 0 : $post_obj->ID;
 			$src_id = $this->p->util->get_source_id( $type );
 			$html = false;
 
