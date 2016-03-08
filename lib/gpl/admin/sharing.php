@@ -67,8 +67,8 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			/*
 			 * Pinterest
 			 */
-			list( $pid, $img_url ) = $this->p->og->get_the_media_urls( $lca.'-pinterest-button',
-				$head_info['post_id'], 'rp', array( 'pid', 'image' ) );
+			extract( $this->p->og->get_the_media_info( $lca.'-pinterest-button',
+				$head_info['post_id'], 'rp', array( 'pid', 'img_url' ) ) );
 
 			$th = $this->p->util->get_th( _x( 'Pinterest Caption',
 				'option label', 'wpsso-rrssb' ), 'medium', 'post-pin_desc' );

@@ -156,9 +156,10 @@ if ( ! class_exists( 'WpssoRrssbSharingTwitter' ) ) {
 				$atts['hashtags'] = '';
 
 			if ( ! isset( $atts['via'] ) ) {
-				if ( ! empty( $opts['twitter_via'] ) )
-					$atts['via'] = preg_replace( '/^@/', '', $opts['tc_site'] );
-				else $atts['via'] = '';
+				if ( ! empty( $opts['twitter_via'] ) ) {
+					$key_locale = SucomUtil::get_key_locale( 'tc_site', $opts );
+					$atts['via'] = preg_replace( '/^@/', '', $opts[$key_locale] );
+				} else $atts['via'] = '';
 			}
 
 			if ( ! isset( $atts['related'] ) ) {

@@ -172,7 +172,8 @@ if ( ! class_exists( 'WpssoRrssbSharingPinterest' ) ) {
 
 			if ( empty( $atts['photo'] ) ) {
 				if ( ! empty( $this->p->options['pin_use_img'] ) )
-					list( $atts['photo'] ) = $this->p->og->get_the_media_urls( $atts['size'], $post_id, 'rp', array( 'image' ) );
+					list( $atts['photo'] ) = array_values( $this->p->og->get_the_media_info( $atts['size'],
+						$post_id, 'rp', array( 'img_url' ) ) );
 				else $atts['photo'] = '';
 			}
 
