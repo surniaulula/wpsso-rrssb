@@ -121,7 +121,7 @@ Official announcement: N/A
 * *New Features*
 	* None
 * *Improvements*
-	* Added locale support for the Twitter site user name (Pro version).
+	* Added locale support for the Twitter site user name.
 * *Bugfixes*
 	* None
 * *Developer Notes*
