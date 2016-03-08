@@ -114,6 +114,19 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 = Changelog / Release Notes =
 
+**Version 1.2.4 (TBD)**
+
+Official announcement: N/A
+
+* *New Features*
+	* None
+* *Improvements*
+	* Added locale support for the Twitter site user name (Pro version).
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Renamed the WpssoOpengraph `get_the_media_urls()` method to `get_the_media_info()` for WPSSO v3.27.0.
+
 **Version 1.2.3 (2016/03/01)**
 
 Official announcement: N/A
