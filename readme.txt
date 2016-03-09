@@ -114,14 +114,14 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 = Changelog / Release Notes =
 
-**Version 1.2.4 (TBD)**
+**Version 1.2.4 (2016/03/09)**
 
 Official announcement: N/A
 
 * *New Features*
 	* None
 * *Improvements*
-	* Added locale support for the Twitter site user name.
+	* Added multilingual / multi-language support for the Twitter site user name.
 * *Bugfixes*
 	* None
 * *Developer Notes*
@@ -184,6 +184,10 @@ Please note: This latest release includes new social sharing buttons and styles.
 	* Used the new SucomUtil::is_https() static method to determine the protocol to be used (http or https).
 
 == Upgrade Notice ==
+
+= 1.2.4 =
+
+2016/03/09 Added multilingual / multi-language support for the Twitter site user name.
 
 = 1.2.3 =
 
