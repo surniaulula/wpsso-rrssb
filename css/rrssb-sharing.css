@@ -5,6 +5,7 @@
 
 .rrssb-buttons a {
 	border:none;
+	box-shadow:none;
 }
 .rrssb-text {
 	white-space:nowrap;
