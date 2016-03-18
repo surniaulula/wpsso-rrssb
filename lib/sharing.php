@@ -648,28 +648,34 @@ $buttons_html."\n".
 		}
 
 		public function is_post_buttons_disabled() {
-			global $post;
 			$ret = false;
-			
-			if ( ! isset( $post->ID ) )
+
+			if ( ( $post_obj = $this->p->util->get_post_object() ) === false ) {
+				if ( $this->p->debug->enabled )
+					$this->p->debug->log( 'exiting early: invalid object type' );
+				return $ret;
+			}
+
+			$post_id = empty( $post_obj->ID ) ? 0 : $post_obj->ID;
+
+			if ( empty( $post_id ) )
 				return $ret;
 
-			if ( isset( $this->post_buttons_disabled[$post->ID] ) )
-				return $this->post_buttons_disabled[$post->ID];
+			if ( isset( $this->post_buttons_disabled[$post_id] ) )
+				return $this->post_buttons_disabled[$post_id];
 
-			if ( ! empty( $post ) ) {
-				if ( $this->p->m['util']['post']->get_options( $post->ID, 'buttons_disabled' ) ) {
-					if ( $this->p->debug->enabled )
-						$this->p->debug->log( 'post '.$post->ID.': sharing buttons disabled by custom meta option' );
-					$ret = true;
-				} elseif ( ! empty( $post->post_type ) && 
-					empty( $this->p->options['buttons_add_to_'.$post->post_type] ) ) {
-					if ( $this->p->debug->enabled )
-						$this->p->debug->log( 'post '.$post->ID.': sharing buttons not enabled for post type '.$post->post_type );
-					$ret = true;
-				}
+			if ( $this->p->m['util']['post']->get_options( $post_id, 'buttons_disabled' ) ) {
+				if ( $this->p->debug->enabled )
+					$this->p->debug->log( 'post '.$post_id.': sharing buttons disabled by meta data option' );
+				$ret = true;
+			} elseif ( ! empty( $post_obj->post_type ) && 
+				empty( $this->p->options['buttons_add_to_'.$post_obj->post_type] ) ) {
+				if ( $this->p->debug->enabled )
+					$this->p->debug->log( 'post '.$post_id.': sharing buttons not enabled for post type '.$post_obj->post_type );
+				$ret = true;
 			}
-			return $this->post_buttons_disabled[$post->ID] = apply_filters( $this->p->cf['lca'].'_post_buttons_disabled', $ret, $post->ID );
+
+			return $this->post_buttons_disabled[$post_id] = apply_filters( $this->p->cf['lca'].'_post_buttons_disabled', $ret, $post_id );
 		}
 
 		public function remove_paragraph_tags( $match = array() ) {
