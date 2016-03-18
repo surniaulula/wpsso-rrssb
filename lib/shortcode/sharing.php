@@ -63,7 +63,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				$this->p->debug->log( 'exiting early: invalid object type' );
 				return $content;
 			}
-			$post_id = empty( $post_obj->ID ) || empty( $post_obj->post_type ) ?  0 : $post_obj->ID; 
+			$post_id = empty( $post_obj->ID ) ? 0 : $post_obj->ID; 
 
 			$lca = $this->p->cf['lca'];
 			$atts = apply_filters( $lca.'_shortcode_'.WPSSORRSSB_SHARING_SHORTCODE, $atts, $content );

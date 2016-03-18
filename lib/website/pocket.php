@@ -16,32 +16,33 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingPocket' ) && class_exists( 'WpssoR
 			$this->p =& $plugin;
 			$this->website_id = $id;
 			$this->website_name = $name;
+
 			if ( $this->p->debug->enabled )
 				$this->p->debug->mark();
 		}
 
-		protected function get_rows( $metabox, $key ) {
-			$rows = array();
+		protected function get_table_rows( $metabox, $key ) {
+			$table_rows = array();
 
-			$rows[] = $this->p->util->get_th( _x( 'Preferred Order',
+			$table_rows[] = $this->form->get_th_html( _x( 'Preferred Order',
 				'option label', 'wpsso-rrssb' ), null, 'pocket_order' ).
 			'<td>'.$this->form->get_select( 'pocket_order', 
 				range( 1, count( $this->p->admin->submenu['sharing-buttons']->website ) ), 'short' ).  '</td>';
 
-			$rows[] = $this->p->util->get_th( _x( 'Show Button in',
+			$table_rows[] = $this->form->get_th_html( _x( 'Show Button in',
 				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$this->show_on_checkboxes( 'pocket' ).'</td>';
 
-			$rows[] = '<tr class="hide_in_basic">'.
-			$this->p->util->get_th( _x( 'Allow for Platform',
+			$table_rows[] = '<tr class="hide_in_basic">'.
+			$this->form->get_th_html( _x( 'Allow for Platform',
 				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$this->form->get_select( 'pocket_platform',
 				$this->p->cf['sharing']['platform'] ).'</td>';
 
-			$rows[] = '<tr class="hide_in_basic">'.
+			$table_rows[] = '<tr class="hide_in_basic">'.
 			'<td colspan="2">'.$this->form->get_textarea( 'pocket_rrssb_html', 'average code' ).'</td>';
 
-			return $rows;
+			return $table_rows;
 		}
 	}
 }
@@ -80,28 +81,25 @@ if ( ! class_exists( 'WpssoRrssbSharingPocket' ) ) {
 			$this->p->util->add_plugin_filters( $this, array( 'get_defaults' => 1 ) );
 		}
 
-		public function filter_get_defaults( $opts_def ) {
-			return array_merge( $opts_def, self::$cf['opt']['defaults'] );
+		public function filter_get_defaults( $def_opts ) {
+			return array_merge( $def_opts, self::$cf['opt']['defaults'] );
 		}
 
-		public function get_html( $atts = array(), &$opts = array() ) {
+		// do not use an $atts reference to allow for local changes
+		public function get_html( array $atts, array &$opts, array &$mod ) {
 			if ( $this->p->debug->enabled )
 				$this->p->debug->mark();
 
 			if ( empty( $opts ) ) 
 				$opts =& $this->p->options;
 
-			$use_post = isset( $atts['use_post'] ) ?
-				$atts['use_post'] : true;
-
-			if ( ! isset( $atts['add_page'] ) )
-				$atts['add_page'] = true;
-
-			if ( ! isset( $atts['source_id'] ) )
-				$atts['source_id'] = $this->p->util->get_source_id( 'pocket', $atts );
+			$atts['use_post'] = isset( $atts['use_post'] ) ? $atts['use_post'] : true;
+			$atts['add_page'] = isset( $atts['add_page'] ) ? $atts['add_page'] : true;
+			$atts['source_id'] = isset( $atts['source_id'] ) ?
+				$atts['source_id'] : $this->p->util->get_source_id( 'pocket', $atts );
 
 			return $this->p->util->replace_inline_vars( '<!-- Pocket Button -->'.
-				$this->p->options['pocket_rrssb_html'], $use_post, false, $atts );
+				$this->p->options['pocket_rrssb_html'], $atts['use_post'], false, $atts );
 		}
 	}
 }

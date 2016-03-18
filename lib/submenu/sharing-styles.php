@@ -18,6 +18,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingStyles' ) && class_exists( 'WpssoA
 			$this->menu_name = $name;
 			$this->menu_lib = $lib;
 			$this->menu_ext = $ext;
+
+			if ( $this->p->debug->enabled )
+				$this->p->debug->mark();
+
 			$this->p->util->add_plugin_filters( $this, array( 
 				'messages_tooltip' => 2,	// tooltip messages filter
 				'messages_info' => 2,		// info messages filter
@@ -132,33 +136,33 @@ div.wpsso-rrssb
 			else $css_min_msg = '';
 
 			$this->p->util->do_table_rows( array( 
-				$this->p->util->get_th( _x( 'Use the Social Stylesheet',
+				$this->form->get_th_html( _x( 'Use the Social Stylesheet',
 					'option label', 'wpsso-rrssb' ), 'highlight', 'buttons_use_social_css' ).
 				'<td>'.$this->form->get_checkbox( 'buttons_use_social_css' ).$css_min_msg.'</td>',
 
-				$this->p->util->get_th( _x( 'Enqueue the Stylesheet',
+				$this->form->get_th_html( _x( 'Enqueue the Stylesheet',
 					'option label', 'wpsso-rrssb' ), null, 'buttons_enqueue_social_css' ).
 				'<td>'.$this->form->get_checkbox( 'buttons_enqueue_social_css' ).'</td>',
 			) );
 
-			$rows = array();
+			$table_rows = array();
 			$tabs = apply_filters( $this->p->cf['lca'].'_sharing_rrssb_styles_tabs', 
 				$this->p->cf['sharing']['rrssb-style'] );
 
 			foreach ( $tabs as $key => $title ) {
 				$tabs[$key] = _x( $title, 'metabox tab', 'wpsso-ssb' );	// translate the tab title
-				$rows[$key] = array_merge( $this->get_rows( $metabox, $key ), 
+				$table_rows[$key] = array_merge( $this->get_table_rows( $metabox, $key ), 
 					apply_filters( $this->p->cf['lca'].'_'.$metabox.'_'.$key.'_rows', array(), $this->form ) );
 			}
-			$this->p->util->do_tabs( $metabox, $tabs, $rows );
+			$this->p->util->do_metabox_tabs( $metabox, $tabs, $table_rows );
 		}
 
-		protected function get_rows( $metabox, $key ) {
-			$rows['buttons_css_'.$key] = '<th class="textinfo">'.$this->p->msgs->get( 'info-style-'.$key ).'</th>'.
+		protected function get_table_rows( $metabox, $key ) {
+			$table_rows['buttons_css_'.$key] = '<th class="textinfo">'.$this->p->msgs->get( 'info-style-'.$key ).'</th>'.
 			'<td'.( isset( $this->p->options['buttons_css_'.$key.':is'] ) &&
 				$this->p->options['buttons_css_'.$key.':is'] === 'disabled' ? ' class="blank"' : '' ).'>'.
 			$this->form->get_textarea( 'buttons_css_'.$key, 'tall code' ).'</td>';
-			return $rows;
+			return $table_rows;
 		}
 	}
 }

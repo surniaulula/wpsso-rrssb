@@ -72,13 +72,13 @@ if ( ! class_exists( 'WpssoRrssbGplEcomWoocommerceSharing' ) ) {
 			return $tabs;
 		}
 
-		public function filter_sharing_buttons_position_rows( $rows, $form ) {
-			$rows[] = '<td colspan="2" align="center">'.
+		public function filter_sharing_buttons_position_rows( $table_rows, $form ) {
+			$table_rows[] = '<td colspan="2" align="center">'.
 				$this->p->msgs->get( 'pro-feature-msg', array( 'lca' => 'wpssorrssb' ) ).'</td>';
-			$rows['buttons_pos_woo_short'] = $this->p->util->get_th( _x( 'Position in Woo Short Text',
+			$table_rows['buttons_pos_woo_short'] = $form->get_th_html( _x( 'Position in Woo Short Text',
 				'option label', 'wpsso-rrssb' ), null, 'buttons_pos_woo_short' ).
 			'<td class="blank">'.$this->p->cf['sharing']['position'][$this->p->options['buttons_pos_woo_short']].'</td>';
-			return $rows;
+			return $table_rows;
 		}
 	}
 }

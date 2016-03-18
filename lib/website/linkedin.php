@@ -16,45 +16,46 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingLinkedin' ) && class_exists( 'Wpss
 			$this->p =& $plugin;
 			$this->website_id = $id;
 			$this->website_name = $name;
+
 			if ( $this->p->debug->enabled )
 				$this->p->debug->mark();
 		}
 
-		protected function get_rows( $metabox, $key ) {
-			$rows = array();
+		protected function get_table_rows( $metabox, $key ) {
+			$table_rows = array();
 
-			$rows[] = $this->p->util->get_th( _x( 'Preferred Order',
+			$table_rows[] = $this->form->get_th_html( _x( 'Preferred Order',
 				'option label', 'wpsso-rrssb' ), null, 'linkedin_order' ).
 			'<td>'.$this->form->get_select( 'linkedin_order', 
 				range( 1, count( $this->p->admin->submenu['sharing-buttons']->website ) ), 'short' ).  '</td>';
 
-			$rows[] = $this->p->util->get_th( _x( 'Show Button in',
+			$table_rows[] = $this->form->get_th_html( _x( 'Show Button in',
 				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$this->show_on_checkboxes( 'linkedin' ).'</td>';
 
-			$rows[] = '<tr class="hide_in_basic">'.
-			$this->p->util->get_th( _x( 'Allow for Platform',
+			$table_rows[] = '<tr class="hide_in_basic">'.
+			$this->form->get_th_html( _x( 'Allow for Platform',
 				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$this->form->get_select( 'linkedin_platform',
 				$this->p->cf['sharing']['platform'] ).'</td>';
 
-			$rows[] = '<tr class="hide_in_basic">'.
-                        $this->p->util->get_th( _x( 'Caption Text Length',
+			$table_rows[] = '<tr class="hide_in_basic">'.
+                        $this->form->get_th_html( _x( 'Caption Text Length',
 				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$this->form->get_input( 'linkedin_cap_len', 'short' ).' '.
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ).'</td>';
 
-			$rows[] = '<tr class="hide_in_basic">'.
-			$this->p->util->get_th( _x( 'Append Hashtags to Caption',
+			$table_rows[] = '<tr class="hide_in_basic">'.
+			$this->form->get_th_html( _x( 'Append Hashtags to Caption',
 				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$this->form->get_select( 'linkedin_cap_hashtags',
 				range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', null, true ).' '.
 					_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
-			$rows[] = '<tr class="hide_in_basic">'.
+			$table_rows[] = '<tr class="hide_in_basic">'.
 			'<td colspan="2">'.$this->form->get_textarea( 'linkedin_rrssb_html', 'average code' ).'</td>';
 
-			return $rows;
+			return $table_rows;
 		}
 	}
 }
@@ -94,47 +95,42 @@ if ( ! class_exists( 'WpssoRrssbSharingLinkedin' ) ) {
 			$this->p =& $plugin;
 			$this->p->util->add_plugin_filters( $this, array(
 				'get_defaults' => 1,
-				'get_meta_defaults' => 2,
+				'get_md_defaults' => 1,
 			) );
 		}
 
-		public function filter_get_meta_defaults( $opts_def, $mod_name ) {
-			$meta_def = array(
+		public function filter_get_md_defaults( $def_opts ) {
+			return array_merge( $def_opts, array(
 				'linkedin_title' => '',
 				'linkedin_desc' => '',
-			);
-			return array_merge( $opts_def, $meta_def );
+			) );
 		}
 
-		public function filter_get_defaults( $opts_def ) {
-			return array_merge( $opts_def, self::$cf['opt']['defaults'] );
+		public function filter_get_defaults( $def_opts ) {
+			return array_merge( $def_opts, self::$cf['opt']['defaults'] );
 		}
 
-		public function get_html( $atts = array(), &$opts = array() ) {
+		// do not use an $atts reference to allow for local changes
+		public function get_html( array $atts, array &$opts, array &$mod ) {
 			if ( $this->p->debug->enabled )
 				$this->p->debug->mark();
 
 			if ( empty( $opts ) ) 
 				$opts =& $this->p->options;
 
-			$use_post = isset( $atts['use_post'] ) ?
-				$atts['use_post'] : true;
-
-			$add_hashtags = empty( $this->p->options['linkedin_cap_hashtags'] ) ?
+			$atts['use_post'] = isset( $atts['use_post'] ) ? $atts['use_post'] : true;
+			$atts['add_page'] = isset( $atts['add_page'] ) ? $atts['add_page'] : true;
+			$atts['source_id'] = isset( $atts['source_id'] ) ?
+				$atts['source_id'] : $this->p->util->get_source_id( 'linkedin', $atts );
+			$atts['add_hashtags'] = empty( $this->p->options['linkedin_cap_hashtags'] ) ?
 				false : $this->p->options['linkedin_cap_hashtags'];
 
-			if ( ! isset( $atts['add_page'] ) )
-				$atts['add_page'] = true;
-
-			if ( ! isset( $atts['source_id'] ) )
-				$atts['source_id'] = $this->p->util->get_source_id( 'linkedin', $atts );
-
 			return $this->p->util->replace_inline_vars( '<!-- LinkedIn Button -->'.
-				$this->p->options['linkedin_rrssb_html'], $use_post, false, $atts, array(
+				$this->p->options['linkedin_rrssb_html'], $atts['use_post'], false, $atts, array(
 				 	'linkedin_title' => rawurlencode( $this->p->webpage->get_caption( 'title', 0,
-						$use_post, true, false, false, 'linkedin_title', 'linkedin' ) ),
+						$atts['use_post'], true, false, false, 'linkedin_title', 'linkedin' ) ),
 				 	'linkedin_caption' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['linkedin_cap_len'],
-						$use_post, true, $add_hashtags, false, 'linkedin_desc', 'linkedin' ) ),
+						$atts['use_post'], true, $atts['add_hashtags'], false, 'linkedin_desc', 'linkedin' ) ),
 				 )
 			 );
 		}
