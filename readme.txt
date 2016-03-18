@@ -48,6 +48,7 @@ WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) works in conj
 	* VK
 	* WhatsApp (for mobile devices)
 * Include / exclude each social sharing button based on the viewing device (desktop and/or mobile).
+* Support for Automattic's [Accelerated Mobile Pages (AMP)](https://wordpress.org/plugins/amp/) plugin.
 * A built-in stylesheet editor allows you to fine-tune the CSS for each social sharing button location easily (content, excerpt, shortcode, widget, etc.).
 
 <blockquote>
@@ -114,14 +115,16 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 = Changelog / Release Notes =
 
-**Version 1.3.0 (TBD)**
+**Version 1.3.0 (ETA 2016/03/20)**
 
 Official announcement: N/A
+
+> Required update for WordPress Social Sharing Optimization (WPSSO) version 3.28.0.
 
 * *New Features*
 	* Added support for Automattic's [Accelerated Mobile Pages (AMP)](https://wordpress.org/plugins/amp/) plugin.
 * *Improvements*
-	* None
+	* Improved the Social Settings options display (Free version).
 * *Bugfixes*
 	* None
 * *Developer Notes*
@@ -198,19 +201,11 @@ Please note: This latest release includes new social sharing buttons and styles.
 
 == Upgrade Notice ==
 
+= 1.3.0 =
+
+ETA 2016/03/20 - Required update for WPSSO v3.28.0. Improved the Social Settings options display (Free version). Added support for Automattic's AMP plugin.
+
 = 1.2.4 =
 
 2016/03/09 Added multilingual / multi-language support for the Twitter site user name.
-
-= 1.2.3 =
-
-2016/03/01 - Updated some hook names for WPSSO v3.26.0.
-
-= 1.2.2 =
-
-2016/02/24 - Fixed a syntax issue in the `wpssorrssb_get_sharing_buttons()` function.
-
-= 1.2.1 =
-
-2016/02/15 - Updated the admin editing page CSS for the social sharing buttons metabox.
 
