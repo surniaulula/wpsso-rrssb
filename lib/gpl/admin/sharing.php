@@ -24,7 +24,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			$new_tabs = array();
 			foreach ( $tabs as $key => $val ) {
 				$new_tabs[$key] = $val;
-				if ( $key === 'media' )	// insert the social sharing tab after the media tab
+				if ( $key === 'media' )
 					$new_tabs['sharing'] = _x( 'Sharing Buttons',
 						'metabox tab', 'wpsso-rrssb' );
 			}
@@ -36,7 +36,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			if ( empty( $mod['post_status'] ) || $mod['post_status'] === 'auto-draft' ) {
 				$table_rows['save_a_draft'] = '<td><blockquote class="status-info"><p class="centered">'.
 					sprintf( __( 'Save a draft version or publish the %s to display these options.',
-						'wpsso-rrssb' ), $mod['post_type'] ).'</p></td>';
+						'wpsso-rrssb' ), ucfirst( $mod['post_type'] ) ).'</p></td>';
 				return $table_rows;	// abort
 			}
 
