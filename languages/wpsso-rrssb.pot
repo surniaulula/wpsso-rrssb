@@ -238,12 +238,12 @@ msgid ""
 "sufficient privileges?"
 msgstr ""
 
-#: lib/sharing.php:367
+#: lib/sharing.php:366
 msgctxt "metabox title"
 msgid "Sharing Buttons"
 msgstr ""
 
-#: lib/sharing.php:421
+#: lib/sharing.php:418
 msgid "%s must be published<br/>before it can be shared."
 msgstr ""
 

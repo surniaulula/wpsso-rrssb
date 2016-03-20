@@ -59,11 +59,18 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 		public function shortcode( $atts, $content = null ) { 
 
-			if ( ( $post_obj = $this->p->util->get_post_object() ) === false ) {
-				$this->p->debug->log( 'exiting early: invalid object type' );
+			if ( $this->p->is_avail['amp_endpoint'] && is_amp_endpoint() ) {
+				if ( $this->p->debug->enabled )
+					$this->p->debug->log( 'exiting early: buttons not allowed in amp endpoint'  );
 				return $content;
-			}
-			$post_id = empty( $post_obj->ID ) ? 0 : $post_obj->ID; 
+			} elseif ( is_feed() ) {
+				if ( $this->p->debug->enabled )
+					$this->p->debug->log( 'exiting early: buttons not allowed in rss feeds'  );
+				return $content;
+			} elseif ( ( $post_obj = $this->p->util->get_post_object() ) === false ) {
+				$this->p->debug->log( 'exiting early: invalid post object' );
+				return $content;
+			} else $post_id = empty( $post_obj->ID ) ? 0 : $post_obj->ID;
 
 			$lca = $this->p->cf['lca'];
 			$atts = apply_filters( $lca.'_shortcode_'.WPSSORRSSB_SHARING_SHORTCODE, $atts, $content );
