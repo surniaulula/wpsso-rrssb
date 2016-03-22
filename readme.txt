@@ -115,6 +115,19 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 = Changelog / Release Notes =
 
+**Version 1.3.1 (ETA 2016/03/23)**
+
+Official announcement: N/A
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* Fixed the sidebar buttons display (which was showing tiny buttons horizontally instead of larger buttons vertically).
+* *Developer Notes*
+	* Modified the SucomWebpage `get_caption()`, `get_title()`, and `get_description()` method arguments to use the new `$mod` array.
+
 **Version 1.3.0 (2016/03/20)**
 
 Official announcement: [WPSSO Update - AMP Support and Several Core Changes](http://wpsso.com/2016/03/20/wpsso-update-amp-support-and-several-core-changes/)
@@ -131,6 +144,10 @@ Official announcement: [WPSSO Update - AMP Support and Several Core Changes](htt
 	* None
 
 == Upgrade Notice ==
+
+= 1.3.1 =
+
+ETA 2016/03/23 - Modified several SucomWebage method arguments to use the new `$mod` array.
 
 = 1.3.0 =
 
