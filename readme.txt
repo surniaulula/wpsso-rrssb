@@ -115,6 +115,19 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 = Changelog / Release Notes =
 
+**Version 1.3.2 (TBD)**
+
+Official announcement: N/A
+
+* *New Features*
+	* None
+* *Improvements*
+	* Removed the check for enabled/disabled buttons by webpage type for the buttons widget (it will always show).
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* None
+
 **Version 1.3.1 (ETA 2016/03/23)**
 
 Official announcement: N/A
