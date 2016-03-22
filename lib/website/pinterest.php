@@ -174,7 +174,7 @@ if ( ! class_exists( 'WpssoRrssbSharingPinterest' ) ) {
 				$this->p->options['pin_rrssb_html'], $atts['use_post'], false, $atts, array(
 					'media_url' => rawurlencode( $atts['photo'] ),
 				 	'pinterest_caption' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['pin_cap_len'],
-						$atts['use_post'], true, $atts['add_hashtags'], false, 'pin_desc', 'pinterest' ) ),
+						$mod, true, $atts['add_hashtags'], false, 'pin_desc', 'pinterest' ) ),
 				 )
 			 );
 		}

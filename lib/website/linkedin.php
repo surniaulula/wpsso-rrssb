@@ -128,9 +128,9 @@ if ( ! class_exists( 'WpssoRrssbSharingLinkedin' ) ) {
 			return $this->p->util->replace_inline_vars( '<!-- LinkedIn Button -->'.
 				$this->p->options['linkedin_rrssb_html'], $atts['use_post'], false, $atts, array(
 				 	'linkedin_title' => rawurlencode( $this->p->webpage->get_caption( 'title', 0,
-						$atts['use_post'], true, false, false, 'linkedin_title', 'linkedin' ) ),
+						$mod, true, false, false, 'linkedin_title', 'linkedin' ) ),
 				 	'linkedin_caption' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['linkedin_cap_len'],
-						$atts['use_post'], true, $atts['add_hashtags'], false, 'linkedin_desc', 'linkedin' ) ),
+						$mod, true, $atts['add_hashtags'], false, 'linkedin_desc', 'linkedin' ) ),
 				 )
 			 );
 		}

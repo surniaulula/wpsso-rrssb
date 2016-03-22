@@ -41,7 +41,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			}
 
 			$size_info = $this->p->media->get_size_info( 'thumbnail' );
-			$title_caption = $this->p->webpage->get_caption( 'title', 0, $mod['use_post'], true, false );
+			$title_caption = $this->p->webpage->get_caption( 'title', 0, $mod, true, false );
 			$table_rows[] = '<td colspan="3" align="center">'.$this->p->msgs->get( 'pro-feature-msg', 
 				array( 'lca' => 'wpssorrssb' ) ).'</td>';
 
@@ -50,7 +50,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			 */
 			$caption_len = $this->p->options['email_cap_len'];
 			$caption_text = $this->p->webpage->get_caption( 'excerpt', $caption_len, 
-				$mod['use_post'], true, $this->p->options['email_cap_hashtags'], true, 'none' );
+				$mod, true, $this->p->options['email_cap_hashtags'], true, 'none' );
 
 			$form_rows['email_title'] = array(
 				'label' => _x( 'Email Subject', 'option label', 'wpsso-rrssb' ),
@@ -68,7 +68,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			 */
 			$caption_len = $this->p->util->get_tweet_max_len( get_post_permalink( $mod['id'] ) );
 			$caption_text = $this->p->webpage->get_caption( 'title', $caption_len, 
-				$mod['use_post'], true, $this->p->options['twitter_cap_hashtags'] );
+				$mod, true, $this->p->options['twitter_cap_hashtags'] );
 
 			$form_rows['twitter_desc'] = array(
 				'label' => _x( 'Tweet Text', 'option label', 'wpsso-rrssb' ),
@@ -81,7 +81,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			 */
 			$caption_len = $this->p->options['pin_cap_len'];
 			$caption_text = $this->p->webpage->get_caption( 'excerpt', $caption_len, 
-				$mod['use_post'], true, $this->p->options['pin_cap_hashtags'] );
+				$mod, true, $this->p->options['pin_cap_hashtags'] );
 
 			$media = $this->p->og->get_the_media_info( $this->p->cf['lca'].'-pinterest-button',
 				$mod, 'rp', array( 'pid', 'img_url' ) );
@@ -95,8 +95,9 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 				'label' => _x( 'Pinterest Caption', 'option label', 'wpsso-rrssb' ),
 				'th_class' => 'medium', 'tooltip' => 'post-pin_desc', 'td_class' => 'blank top',
 				'content' => $form->get_no_textarea_value( $caption_text, '', '', $caption_len ).
-					'</td><td class="top" style="width:'.$size_info['width'].'px;"><img src="'.
-					$media['img_url'].'" style="max-width:'.$size_info['width'].'px;">',
+					( empty( $media['img_url'] ) ? '' : '</td><td class="top" style="width:'.
+					$size_info['width'].'px;"><img src="'.$media['img_url'].'" style="max-width:'.
+					$size_info['width'].'px;">' ),
 			);
 
 			/*
@@ -110,7 +111,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 
 				$caption_len = $this->p->options[$opt_prefix.'_cap_len'];
 				$caption_text = $this->p->webpage->get_caption( 'excerpt', $caption_len,
-					$mod['use_post'], true, $this->p->options[$opt_prefix.'_cap_hashtags'] );
+					$mod, true, $this->p->options[$opt_prefix.'_cap_hashtags'] );
 
 				$form_rows[$opt_prefix.'_title'] = array(
 					'label' => sprintf( _x( '%s Title', 'option label', 'wpsso-rrssb' ), $name ),

@@ -532,7 +532,6 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 						$sorted_ids[ zeroise( $this->p->options[$pre.'_order'], 3 ).'-'.$id ] = $id;
 				ksort( $sorted_ids );
 
-				$atts = array();
 				$atts['use_post'] = $use_post;
 				$atts['css_id'] = $css_type = 'rrssb-'.$type;
 
@@ -598,7 +597,8 @@ $buttons_html."\n".
 							if ( trim( $html_part ) !== '' ) {
 								if ( empty( $atts['container_each'] ) )
 									$html_ret .= $html_part;
-								else $html_ret .= $html_begin.$html_part.$html_end;
+								else $html_ret .= '<!-- container_each -->'.
+									$html_begin.$html_part.$html_end;
 							}
 						} elseif ( $this->p->debug->enabled )
 							$this->p->debug->log( $id.' not allowed for platform' );

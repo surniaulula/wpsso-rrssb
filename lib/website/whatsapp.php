@@ -103,7 +103,7 @@ if ( ! class_exists( 'WpssoRrssbSharingWhatsApp' ) ) {
 			return $this->p->util->replace_inline_vars( '<!-- WhatsApp Button -->'.
 				$this->p->options['wa_rrssb_html'], $atts['use_post'], false, $atts, array(
 				 	'title' => rawurlencode( $this->p->webpage->get_title( 0, '',
-						$atts['use_post'], true, false, false, 'og_title', 'whatsapp' ) ),
+						$mod, true, false, false, 'og_title', 'whatsapp' ) ),
 				)
 			);
 		}

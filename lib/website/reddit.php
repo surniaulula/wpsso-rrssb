@@ -129,9 +129,9 @@ if ( ! class_exists( 'WpssoRrssbSharingReddit' ) ) {
 			return $this->p->util->replace_inline_vars( '<!-- Reddit Button -->'.
 				$this->p->options['reddit_rrssb_html'], $atts['use_post'], false, $atts, array(
 				 	'reddit_title' => rawurlencode( $this->p->webpage->get_caption( 'title', 0,
-						$atts['use_post'], true, false, false, 'reddit_title', 'reddit' ) ),
+						$mod, true, false, false, 'reddit_title', 'reddit' ) ),
 				 	'reddit_summary' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['reddit_cap_len'],
-						$atts['use_post'], true, $atts['add_hashtags'], false, 'reddit_desc', 'reddit' ) ),
+						$mod, true, $atts['add_hashtags'], false, 'reddit_desc', 'reddit' ) ),
 				 )
 			 );
 		}

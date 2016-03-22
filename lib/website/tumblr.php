@@ -128,9 +128,9 @@ if ( ! class_exists( 'WpssoRrssbSharingTumblr' ) ) {
 			return $this->p->util->replace_inline_vars( '<!-- Tumblr Button -->'.
 				$this->p->options['tumblr_rrssb_html'], $atts['use_post'], false, $atts, array(
 				 	'tumblr_title' => rawurlencode( $this->p->webpage->get_caption( 'title', 0,
-						$atts['use_post'], true, false, false, 'tumblr_title', 'tumblr' ) ),
+						$mod, true, false, false, 'tumblr_title', 'tumblr' ) ),
 				 	'tumblr_summary' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['tumblr_cap_len'],
-						$atts['use_post'], true, $atts['add_hashtags'], false, 'tumblr_desc', 'tumblr' ) ),
+						$mod, true, $atts['add_hashtags'], false, 'tumblr_desc', 'tumblr' ) ),
 				 )
 			 );
 		}
