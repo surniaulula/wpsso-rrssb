@@ -84,7 +84,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 				$this->p->util->add_plugin_filters( $this, array( 
 					'save_options' => 3,			// update the sharing css file
-					'option_type' => 4,			// identify option type for sanitation
+					'option_type' => 2,			// identify option type for sanitation
 					'post_cache_transients' => 4,		// clear transients on post save
 					'messages_tooltip_side' => 2,		// tooltip messages for side boxes
 					'secondary_action_buttons' => 4,	// add a reload default styles button
@@ -155,7 +155,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			return $opts;
 		}
 
-		public function filter_option_type( $type, $key, $network, $mod ) {
+		public function filter_option_type( $type, $key ) {
 			if ( ! empty( $type ) )
 				return $type;
 
@@ -386,6 +386,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function show_sidebar() {
+			if ( $this->p->debug->enabled )
+				$this->p->debug->mark();
 			$lca = $this->p->cf['lca'];
 			$text = '';	// variable must be passed by reference
 			echo $this->get_buttons( $text, 'sidebar', false, 	// $use_post = false
@@ -395,6 +397,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function show_admin_sharing( $post_obj ) {
+			if ( $this->p->debug->enabled )
+				$this->p->debug->mark();
 			$lca = $this->p->cf['lca'];
 			$css_data = '#side-sortables #_'.$lca.'_rrssb_share .inside table.sucom-setting { padding:0; }'.
 				$this->p->options['buttons_css_rrssb-admin_edit'];
@@ -444,6 +448,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function get_buttons_the_excerpt( $text ) {
+			if ( $this->p->debug->enabled )
+				$this->p->debug->mark();
 			$id = $this->p->cf['lca'].' excerpt-buttons';
 			$text = preg_replace_callback( '/(<!-- '.$id.' begin -->.*<!-- '.$id.' end -->)(<\/p>)?/Usi', 
 				array( __CLASS__, 'remove_paragraph_tags' ), $text );
@@ -451,16 +457,21 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function get_buttons_get_the_excerpt( $text ) {
+			if ( $this->p->debug->enabled )
+				$this->p->debug->mark();
 			return $this->get_buttons( $text, 'excerpt' );
 		}
 
 		public function get_buttons_the_content( $text ) {
+			if ( $this->p->debug->enabled )
+				$this->p->debug->mark();
 			return $this->get_buttons( $text, 'content' );
 		}
 
 		public function get_buttons( &$text, $type = 'content', $use_post = true, $location = '', $atts = array() ) {
+			if ( $this->p->debug->enabled )
+				$this->p->debug->mark();
 
-			// should we skip the sharing buttons for this content type or webpage?
 			if ( is_admin() ) {
 				if ( strpos( $type, 'admin_' ) !== 0 ) {
 					if ( $this->p->debug->enabled )
@@ -475,19 +486,22 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				if ( $this->p->debug->enabled )
 					$this->p->debug->log( $type.' filter skipped: buttons not allowed in rss feeds'  );
 				return $text;
-			} else {
-				if ( ! is_singular() && empty( $this->p->options['buttons_on_index'] ) ) {
+			} elseif ( ! is_singular() ) {
+				if ( empty( $this->p->options['buttons_on_index'] ) ) {
 					if ( $this->p->debug->enabled )
 						$this->p->debug->log( $type.' filter skipped: index page without buttons_on_index enabled' );
 					return $text;
-				} elseif ( is_front_page() && empty( $this->p->options['buttons_on_front'] ) ) {
+				}
+			} elseif ( is_front_page() ) {
+				if ( empty( $this->p->options['buttons_on_front'] ) ) {
 					if ( $this->p->debug->enabled )
 						$this->p->debug->log( $type.' filter skipped: front page without buttons_on_front enabled' );
 					return $text;
 				}
+			} elseif ( is_singular() ) {
 				if ( $this->is_post_buttons_disabled() ) {
 					if ( $this->p->debug->enabled )
-						$this->p->debug->log( $type.' filter skipped: sharing buttons disabled' );
+						$this->p->debug->log( $type.' filter skipped: is singular and post buttons disabled' );
 					return $text;
 				}
 			}
@@ -578,6 +592,8 @@ $buttons_html."\n".
 
 		// get_html() can be called by a widget, shortcode, function, filter hook, etc.
 		public function get_html( array &$ids, array &$atts, &$mod = false ) {
+			if ( $this->p->debug->enabled )
+				$this->p->debug->mark();
 
 			$lca = $this->p->cf['lca'];
 			$use_post = isset( $atts['use_post'] ) ?

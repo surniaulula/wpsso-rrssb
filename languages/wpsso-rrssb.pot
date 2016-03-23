@@ -243,7 +243,7 @@ msgctxt "metabox title"
 msgid "Sharing Buttons"
 msgstr ""
 
-#: lib/sharing.php:418
+#: lib/sharing.php:422
 msgid "%s must be published<br/>before it can be shared."
 msgstr ""
 
@@ -494,12 +494,12 @@ msgstr ""
 msgid "The %s widget."
 msgstr ""
 
-#: lib/widget/sharing.php:116
+#: lib/widget/sharing.php:110
 msgctxt "option value"
 msgid "Share It"
 msgstr ""
 
-#: lib/widget/sharing.php:118
+#: lib/widget/sharing.php:112
 msgctxt "option label"
 msgid "Widget Title (leave blank for no title)"
 msgstr ""

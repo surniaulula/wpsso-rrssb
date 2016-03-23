@@ -44,12 +44,6 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 			if ( ! is_object( $this->p ) )
 				return;
 
-			if ( is_object( $this->p->rrssb ) && 
-				$this->p->rrssb->is_post_buttons_disabled() ) {
-				if ( $this->p->debug->enabled )
-					$this->p->debug->log( 'widget buttons skipped: sharing buttons disabled' );
-				return;
-			}
 			extract( $args );
 
 			$lca = $this->p->cf['lca'];

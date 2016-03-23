@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
 "(WPSSO RRSSB) 1.1.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2016-03-18 08:53-0400\n"
-"PO-Revision-Date: 2016-03-18 08:54-0400\n"
+"POT-Creation-Date: 2016-03-22 08:37-0400\n"
+"PO-Revision-Date: 2016-03-22 08:37-0400\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -108,41 +108,41 @@ msgctxt "metabox tab"
 msgid "Sharing Buttons"
 msgstr "Boutons de Partage"
 
-#: lib/gpl/admin/sharing.php:38 lib/pro/admin/sharing.php:44
+#: lib/gpl/admin/sharing.php:38 lib/pro/admin/sharing.php:45
 msgid "Save a draft version or publish the %s to display these options."
 msgstr "Enregistrer un brouillon ou publier pour activer ces options."
 
-#: lib/gpl/admin/sharing.php:56 lib/pro/admin/sharing.php:60
+#: lib/gpl/admin/sharing.php:56 lib/pro/admin/sharing.php:61
 msgctxt "option label"
 msgid "Email Subject"
 msgstr "Sujet du couriel"
 
-#: lib/gpl/admin/sharing.php:61 lib/pro/admin/sharing.php:66
+#: lib/gpl/admin/sharing.php:61 lib/pro/admin/sharing.php:67
 msgctxt "option label"
 msgid "Email Message"
 msgstr "Message du courriel"
 
-#: lib/gpl/admin/sharing.php:74 lib/pro/admin/sharing.php:80
+#: lib/gpl/admin/sharing.php:74 lib/pro/admin/sharing.php:81
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr "Texte du Tweet"
 
-#: lib/gpl/admin/sharing.php:95 lib/pro/admin/sharing.php:102
+#: lib/gpl/admin/sharing.php:95 lib/pro/admin/sharing.php:103
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr "Texte légende Pinterest"
 
-#: lib/gpl/admin/sharing.php:116 lib/pro/admin/sharing.php:123
+#: lib/gpl/admin/sharing.php:117 lib/pro/admin/sharing.php:125
 msgctxt "option label"
 msgid "%s Title"
 msgstr "Titre %s"
 
-#: lib/gpl/admin/sharing.php:122 lib/pro/admin/sharing.php:130
+#: lib/gpl/admin/sharing.php:123 lib/pro/admin/sharing.php:132
 msgctxt "option label"
 msgid "%s Caption"
 msgstr "Légende %s"
 
-#: lib/gpl/admin/sharing.php:132 lib/pro/admin/sharing.php:141
+#: lib/gpl/admin/sharing.php:133 lib/pro/admin/sharing.php:143
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr "Désactiver les boutons"
@@ -264,12 +264,12 @@ msgstr ""
 "Erreur en retirant la feuille de style minimisé &mdash; le serveur Web a "
 "t'il les privilèges nécessaires?"
 
-#: lib/sharing.php:367
+#: lib/sharing.php:366
 msgctxt "metabox title"
 msgid "Sharing Buttons"
 msgstr "Boutons de Partage Social"
 
-#: lib/sharing.php:421
+#: lib/sharing.php:418
 msgid "%s must be published<br/>before it can be shared."
 msgstr "%s doit être publié<br/>avant d'être partagé."
 
@@ -561,7 +561,7 @@ msgctxt "option label"
 msgid "Widget Title (leave blank for no title)"
 msgstr "Titre du Widget (laisser vide pour aucun titre)"
 
-#: wpsso-rrssb.php:78
+#: wpsso-rrssb.php:77
 msgid ""
 "The %1$s extension requires the %2$s plugin &mdash; please install and "
 "activate the %3$s plugin before trying to re-activate the %4$s extension."
@@ -569,7 +569,7 @@ msgstr ""
 "L'extension %1$s requiert %2$s &mdash; s'il vous plaît installer et activer "
 "l'extension %3$s avant d'essayer de re-activer %4$s."
 
-#: wpsso-rrssb.php:80
+#: wpsso-rrssb.php:79
 msgid ""
 "The %1$s extension requires the %2$s plugin &mdash; please install and "
 "activate the %3$s plugin."
@@ -577,7 +577,7 @@ msgstr ""
 "L'extension %1$s requiert %2$s &mdash; s'il vous plaît installer et activer "
 "l'extension %3$s."
 
-#: wpsso-rrssb.php:130
+#: wpsso-rrssb.php:126
 msgid ""
 "The %1$s extension version %2$s requires the use of %3$s version %4$s or "
 "newer (version %5$s is currently installed)."
