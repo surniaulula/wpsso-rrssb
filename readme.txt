@@ -115,7 +115,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 = Changelog / Release Notes =
 
-**Version 1.3.1 (ETA 2016/03/23)**
+**Version 1.3.1 (2016/03/23)**
 
 Official announcement: N/A
 
@@ -147,7 +147,7 @@ Official announcement: [WPSSO Update - AMP Support and Several Core Changes](htt
 
 = 1.3.1 =
 
-ETA 2016/03/23 - Modified several SucomWebage method arguments to use the new $mod array.
+2016/03/23 - Modified several SucomWebage method arguments to use the new $mod array. Improved enabled/disabled buttons logic (no longer applies to shortcode, function or widget buttons).
 
 = 1.3.0 =
 
