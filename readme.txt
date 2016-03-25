@@ -9,7 +9,7 @@ Tags: wpsso, facebook, google+, twitter, pinterest, linkedin, whatsapp, svg, ret
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.txt
 Requires At Least: 3.1
-Tested Up To: 4.4.2
+Tested Up To: 4.5
 Stable Tag: 1.3.1
 
 WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
@@ -115,6 +115,21 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 = Changelog / Release Notes =
 
+**Version 1.3.2 (2016/03/25)**
+
+Official announcement: N/A
+
+* *New Features*
+	* None
+* *Improvements*
+	* Refactored individual sharing button settings to use a filter hook instead of extending a class.
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Tested with WordPress v4.5-RC1-37079.
+	* Renamed the website library classes.
+	* Renamed CSS classes and ids for the website metaboxes.
+
 **Version 1.3.1 (2016/03/23)**
 
 Official announcement: N/A
@@ -144,6 +159,10 @@ Official announcement: [WPSSO Update - AMP Support and Several Core Changes](htt
 	* None
 
 == Upgrade Notice ==
+
+= 1.3.2 =
+
+2016/03/25 - Refactored sharing button settings to use a filter hooks. Tested with WordPress v4.5-RC1-37079.
 
 = 1.3.1 =
 
