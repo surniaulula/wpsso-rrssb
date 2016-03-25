@@ -8,48 +8,45 @@
 if ( ! defined( 'ABSPATH' ) ) 
 	die( 'These aren\'t the droids you\'re looking for...' );
 
-if ( ! class_exists( 'WpssoRrssbSubmenuSharingFacebook' ) && class_exists( 'WpssoRrssbSubmenuSharingButtons' ) ) {
+if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteFacebook' ) ) {
 
-	class WpssoRrssbSubmenuSharingFacebook extends WpssoRrssbSubmenuSharingButtons {
+	class WpssoRrssbSubmenuWebsiteFacebook {
 
-		public function __construct( &$plugin, $id, $name ) {
+		public function __construct( &$plugin ) {
 			$this->p =& $plugin;
-			$this->website_id = $id;
-			$this->website_name = $name;
-
-			if ( $this->p->debug->enabled )
-				$this->p->debug->mark();
+			$this->p->util->add_plugin_filters( $this, array(
+				'rrssb_website_facebook_rows' => 3,	// $table_rows, $form, $submenu
+			) );
 		}
 
-		protected function get_table_rows( $metabox, $key ) {
-			$table_rows = array();
+		public function filter_rrssb_website_facebook_rows( $table_rows, $form, $submenu ) {
 
-			$table_rows[] = $this->form->get_th_html( _x( 'Preferred Order',
+			$table_rows[] = $form->get_th_html( _x( 'Preferred Order',
 				'option label', 'wpsso-rrssb' ), null, 'fb_order' ).
-			'<td>'.$this->form->get_select( 'fb_order', 
-				range( 1, count( $this->p->admin->submenu['sharing-buttons']->website ) ), 'short' ).  '</td>';
+			'<td>'.$form->get_select( 'fb_order', 
+				range( 1, count( $submenu->website ) ), 'short' ).  '</td>';
 
-			$table_rows[] = $this->form->get_th_html( _x( 'Show Button in',
+			$table_rows[] = $form->get_th_html( _x( 'Show Button in',
 				'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$this->show_on_checkboxes( 'fb' ).'</td>';
+			'<td>'.$submenu->show_on_checkboxes( 'fb' ).'</td>';
 
 			$table_rows[] = '<tr class="hide_in_basic">'.
-			$this->form->get_th_html( _x( 'Allow for Platform',
+			$form->get_th_html( _x( 'Allow for Platform',
 				'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$this->form->get_select( 'fb_platform',
+			'<td>'.$form->get_select( 'fb_platform',
 				$this->p->cf['sharing']['platform'] ).'</td>';
 
 			$table_rows[] = '<tr class="hide_in_basic">'.
-			'<td colspan="2">'.$this->form->get_textarea( 'fb_rrssb_html', 'average code' ).'</td>';
+			'<td colspan="2">'.$form->get_textarea( 'fb_rrssb_html', 'average code' ).'</td>';
 
 			return $table_rows;
 		}
 	}
 }
 
-if ( ! class_exists( 'WpssoRrssbSharingFacebook' ) ) {
+if ( ! class_exists( 'WpssoRrssbWebsiteFacebook' ) ) {
 
-	class WpssoRrssbSharingFacebook {
+	class WpssoRrssbWebsiteFacebook {
 
 		private static $cf = array(
 			'opt' => array(				// options

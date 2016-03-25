@@ -105,7 +105,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 		private function set_objects() {
 			foreach ( $this->p->cf['plugin']['wpssorrssb']['lib']['website'] as $id => $name ) {
-				$classname = WpssoRrssbConfig::load_lib( false, 'website/'.$id, 'wpssorrssbsharing'.$id );
+				$classname = WpssoRrssbConfig::load_lib( false, 'website/'.$id, 'wpssorrssbwebsite'.$id );
 				if ( $classname !== false && class_exists( $classname ) ) {
 					$this->website[$id] = new $classname( $this->p );
 					if ( $this->p->debug->enabled )
@@ -119,7 +119,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			$def_opts = $this->p->util->add_ptns_to_opts( $def_opts, 'buttons_add_to' );
 			$plugin_dir = trailingslashit( realpath( dirname( $this->plugin_filepath ) ) );
 			$url_path = parse_url( trailingslashit( plugins_url( '', $this->plugin_filepath ) ), PHP_URL_PATH );	// relative URL
-			$tabs = apply_filters( $this->p->cf['lca'].'_sharing_rrssb_styles_tabs', 
+			$tabs = apply_filters( $this->p->cf['lca'].'_rrssb_styles_tabs', 
 				$this->p->cf['sharing']['rrssb-style'] );
 
 			foreach ( $tabs as $id => $name ) {
@@ -177,7 +177,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function filter_post_cache_transients( $transients, $post_id, $lang = 'en_US', $sharing_url ) {
-			$show_on = apply_filters( $this->p->cf['lca'].'_sharing_show_on', 
+			$show_on = apply_filters( $this->p->cf['lca'].'_rrssb_buttons_show_on', 
 				$this->p->cf['sharing']['show_on'], null );
 
 			foreach( $show_on as $type_id => $type_name ) {
@@ -235,7 +235,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		public function action_load_setting_page_reload_default_sharing_rrssb_styles( $pagehook, $menu_id, $menu_name, $menu_lib ) {
 			$opts =& $this->p->options;
 			$def_opts = $this->p->opt->get_defaults();
-			$tabs = apply_filters( $this->p->cf['lca'].'_sharing_rrssb_styles_tabs', 
+			$tabs = apply_filters( $this->p->cf['lca'].'_rrssb_styles_tabs', 
 				$this->p->cf['sharing']['rrssb-style'] );
 
 			foreach ( $tabs as $id => $name )
@@ -290,7 +290,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			}
 
 			$css_data = '';
-			$tabs = apply_filters( $this->p->cf['lca'].'_sharing_rrssb_styles_tabs', 
+			$tabs = apply_filters( $this->p->cf['lca'].'_rrssb_styles_tabs', 
 				$this->p->cf['sharing']['rrssb-style'] );
 
 			foreach ( $tabs as $id => $name )
@@ -697,10 +697,18 @@ $buttons_html."\n".
 			return $suff.$ret; 
 		}
 
-		public function get_defined_website_names() {
+		public function get_website_object_ids( $website_obj = array() ) {
 			$ids = array();
-			foreach ( array_keys( $this->website ) as $id )
-				$ids[$id] = $this->p->cf['*']['lib']['website'][$id];
+
+			if ( empty( $website_obj ) )
+				$website_keys = array_keys( $this->website );
+			else $website_keys = array_keys( $website_obj );
+
+			$website_ids = $this->p->cf['plugin']['wpssorrssb']['lib']['website'];
+
+			foreach ( $website_keys as $id )
+				$ids[$id] = isset( $website_ids[$id] ) ?
+					$website_ids[$id] : ucfirst( $id );
 			return $ids;
 		}
 

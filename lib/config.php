@@ -15,7 +15,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(
-					'version' => '1.3.1',		// plugin version
+					'version' => '1.3.2',		// plugin version
 					'opt_version' => '8',		// increment when changing default options
 					'short' => 'WPSSO RRSSB',	// short plugin name
 					'name' => 'WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)',
@@ -46,10 +46,11 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 						'pro_support' => 'http://wpsso-rrssb.support.wpsso.com/',
 					),
 					'lib' => array(
+						// submenu items must have unique keys
 						'submenu' => array (
-							'wpssorrssb-separator-0' => 'RRSSB Extension',
-							'sharing-buttons' => 'Sharing Buttons',
-							'sharing-styles' => 'Sharing Styles',
+							//'wpssorrssb-separator-0' => 'RRSSB Extension',
+							'rrssb-buttons' => 'Responsive Buttons',
+							'rrssb-styles' => 'Responsive Styles',
 						),
 						'website' => array(
 							'email' => 'Email', 
@@ -72,7 +73,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 						),
 						'gpl' => array(
 							'admin' => array(
-								'sharing' => 'Sharing Admin',
+								'sharing' => 'Sharing Settings',
 							),
 							'ecom' => array(
 								'woocommerce' => 'WooCommerce',
@@ -86,7 +87,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 						),
 						'pro' => array(
 							'admin' => array(
-								'sharing' => 'Sharing Admin',
+								'sharing' => 'Sharing Settings',
 							),
 							'ecom' => array(
 								'woocommerce' => 'WooCommerce',

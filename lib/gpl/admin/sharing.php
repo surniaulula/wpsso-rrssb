@@ -16,7 +16,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			$this->p =& $plugin;
 			$this->p->util->add_plugin_filters( $this, array( 
 				'post_social_settings_tabs' => 1,	// $tabs
-				'post_sharing_rows' => 4,		// $table_rows, $form, $head, $mod
+				'post_buttons_rows' => 4,		// $table_rows, $form, $head, $mod
 			), 40 );
 		}
 
@@ -25,13 +25,13 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			foreach ( $tabs as $key => $val ) {
 				$new_tabs[$key] = $val;
 				if ( $key === 'media' )
-					$new_tabs['sharing'] = _x( 'Sharing Buttons',
+					$new_tabs['buttons'] = _x( 'Sharing Buttons',
 						'metabox tab', 'wpsso-rrssb' );
 			}
 			return $new_tabs;
 		}
 
-		public function filter_post_sharing_rows( $table_rows, $form, $head, $mod ) {
+		public function filter_post_buttons_rows( $table_rows, $form, $head, $mod ) {
 
 			if ( empty( $mod['post_status'] ) || $mod['post_status'] === 'auto-draft' ) {
 				$table_rows['save_a_draft'] = '<td><blockquote class="status-info"><p class="centered">'.

@@ -8,9 +8,9 @@
 if ( ! defined( 'ABSPATH' ) ) 
 	die( 'These aren\'t the droids you\'re looking for...' );
 
-if ( ! class_exists( 'WpssoRrssbSubmenuSharingStyles' ) && class_exists( 'WpssoAdmin' ) ) {
+if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdmin' ) ) {
 
-	class WpssoRrssbSubmenuSharingStyles extends WpssoAdmin {
+	class WpssoRrssbSubmenuRrssbStyles extends WpssoAdmin {
 
 		public function __construct( &$plugin, $id, $name, $lib, $ext ) {
 			$this->p =& $plugin;
@@ -55,17 +55,17 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharingStyles' ) && class_exists( 'WpssoA
 					break;
 
 				case 'info-style-rrssb-content':
-					$text = '<p>Social sharing buttons, enabled / added to the content text from the '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-content\' class.</p>'.
+					$text = '<p>Social sharing buttons, enabled / added to the content text from the '.$this->p->util->get_admin_url( 'rrssb-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-content\' class.</p>'.
 					$this->get_css_example( 'content', true );
 					break;
 
 				case 'info-style-rrssb-excerpt':
-					$text = '<p>Social sharing buttons, enabled / added to the excerpt text from the '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-excerpt\' class.</p>'.
+					$text = '<p>Social sharing buttons, enabled / added to the excerpt text from the '.$this->p->util->get_admin_url( 'rrssb-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-excerpt\' class.</p>'.
 					$this->get_css_example( 'excerpt', true );
 					break;
 
 				case 'info-style-rrssb-sidebar':
-					$text = '<p>Social sharing buttons, enabled / added to the CSS sidebar from the '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-sidebar\' ID.</p> 
+					$text = '<p>Social sharing buttons, enabled / added to the CSS sidebar from the '.$this->p->util->get_admin_url( 'rrssb-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-sidebar\' ID.</p> 
 					<p>In order to achieve a vertical display, each un-ordered list (UL) contains a single list item (LI).</p>
 					<p>Example:</p><pre>
 div.wpsso-rrssb 
@@ -89,22 +89,22 @@ aside.widget
 					break;
 
 				case 'info-style-rrssb-admin_edit':
-					$text = '<p>Social sharing buttons, enabled / added to the admin editing pages from the '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-admin_edit\' class.</p>'.
+					$text = '<p>Social sharing buttons, enabled / added to the admin editing pages from the '.$this->p->util->get_admin_url( 'rrssb-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-admin_edit\' class.</p>'.
 					$this->get_css_example( 'admin_edit', true );
 					break;
 
 				case 'info-style-rrssb-woo_short': 
-					$text = '<p>Social sharing buttons, enabled / added to the WooCommerce Short Description text from the '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-woo_short\' class.</p>'.
+					$text = '<p>Social sharing buttons, enabled / added to the WooCommerce Short Description text from the '.$this->p->util->get_admin_url( 'rrssb-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-woo_short\' class.</p>'.
 					$this->get_css_example( 'woo_short' );
       					break;
 
 				case 'info-style-rrssb-bbp_single': 
-					$text = '<p>Social sharing buttons, enabled / added at the top of bbPress Single Templates from the '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-bbp_single\' class.</p>'.
+					$text = '<p>Social sharing buttons, enabled / added at the top of bbPress Single Templates from the '.$this->p->util->get_admin_url( 'rrssb-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-bbp_single\' class.</p>'.
 					$this->get_css_example( 'bbp_single' );
       					break;
 
 				case 'info-style-rrssb-bp_activity': 
-					$text = '<p>Social sharing buttons, enabled / added to BuddyPress Activities from the '.$this->p->util->get_admin_url( 'sharing-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-bp_activity\' class.</p>'.
+					$text = '<p>Social sharing buttons, enabled / added to BuddyPress Activities from the '.$this->p->util->get_admin_url( 'rrssb-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-bp_activity\' class.</p>'.
 					$this->get_css_example( 'bp_activity' );
       					break;
 			}
@@ -146,7 +146,7 @@ div.wpsso-rrssb
 			) );
 
 			$table_rows = array();
-			$tabs = apply_filters( $this->p->cf['lca'].'_sharing_rrssb_styles_tabs', 
+			$tabs = apply_filters( $this->p->cf['lca'].'_rrssb_styles_tabs', 
 				$this->p->cf['sharing']['rrssb-style'] );
 
 			foreach ( $tabs as $key => $title ) {

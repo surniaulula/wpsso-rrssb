@@ -8,61 +8,58 @@
 if ( ! defined( 'ABSPATH' ) ) 
 	die( 'These aren\'t the droids you\'re looking for...' );
 
-if ( ! class_exists( 'WpssoRrssbSubmenuSharingLinkedin' ) && class_exists( 'WpssoRrssbSubmenuSharingButtons' ) ) {
+if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteLinkedin' ) ) {
 
-	class WpssoRrssbSubmenuSharingLinkedin extends WpssoRrssbSubmenuSharingButtons {
+	class WpssoRrssbSubmenuWebsiteLinkedin {
 
-		public function __construct( &$plugin, $id, $name ) {
+		public function __construct( &$plugin ) {
 			$this->p =& $plugin;
-			$this->website_id = $id;
-			$this->website_name = $name;
-
-			if ( $this->p->debug->enabled )
-				$this->p->debug->mark();
+			$this->p->util->add_plugin_filters( $this, array(
+				'rrssb_website_linkedin_rows' => 3,	// $table_rows, $form, $submenu
+			) );
 		}
 
-		protected function get_table_rows( $metabox, $key ) {
-			$table_rows = array();
+		public function filter_rrssb_website_linkedin_rows( $table_rows, $form, $submenu ) {
 
-			$table_rows[] = $this->form->get_th_html( _x( 'Preferred Order',
+			$table_rows[] = $form->get_th_html( _x( 'Preferred Order',
 				'option label', 'wpsso-rrssb' ), null, 'linkedin_order' ).
-			'<td>'.$this->form->get_select( 'linkedin_order', 
-				range( 1, count( $this->p->admin->submenu['sharing-buttons']->website ) ), 'short' ).  '</td>';
+			'<td>'.$form->get_select( 'linkedin_order', 
+				range( 1, count( $submenu->website ) ), 'short' ).  '</td>';
 
-			$table_rows[] = $this->form->get_th_html( _x( 'Show Button in',
+			$table_rows[] = $form->get_th_html( _x( 'Show Button in',
 				'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$this->show_on_checkboxes( 'linkedin' ).'</td>';
+			'<td>'.$submenu->show_on_checkboxes( 'linkedin' ).'</td>';
 
 			$table_rows[] = '<tr class="hide_in_basic">'.
-			$this->form->get_th_html( _x( 'Allow for Platform',
+			$form->get_th_html( _x( 'Allow for Platform',
 				'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$this->form->get_select( 'linkedin_platform',
+			'<td>'.$form->get_select( 'linkedin_platform',
 				$this->p->cf['sharing']['platform'] ).'</td>';
 
 			$table_rows[] = '<tr class="hide_in_basic">'.
-                        $this->form->get_th_html( _x( 'Caption Text Length',
+                        $form->get_th_html( _x( 'Caption Text Length',
 				'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$this->form->get_input( 'linkedin_cap_len', 'short' ).' '.
+			'<td>'.$form->get_input( 'linkedin_cap_len', 'short' ).' '.
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = '<tr class="hide_in_basic">'.
-			$this->form->get_th_html( _x( 'Append Hashtags to Caption',
+			$form->get_th_html( _x( 'Append Hashtags to Caption',
 				'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$this->form->get_select( 'linkedin_cap_hashtags',
+			'<td>'.$form->get_select( 'linkedin_cap_hashtags',
 				range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', null, true ).' '.
 					_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = '<tr class="hide_in_basic">'.
-			'<td colspan="2">'.$this->form->get_textarea( 'linkedin_rrssb_html', 'average code' ).'</td>';
+			'<td colspan="2">'.$form->get_textarea( 'linkedin_rrssb_html', 'average code' ).'</td>';
 
 			return $table_rows;
 		}
 	}
 }
 
-if ( ! class_exists( 'WpssoRrssbSharingLinkedin' ) ) {
+if ( ! class_exists( 'WpssoRrssbWebsiteLinkedin' ) ) {
 
-	class WpssoRrssbSharingLinkedin {
+	class WpssoRrssbWebsiteLinkedin {
 
 		private static $cf = array(
 			'opt' => array(				// options

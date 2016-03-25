@@ -8,70 +8,81 @@
 if ( ! defined( 'ABSPATH' ) ) 
 	die( 'These aren\'t the droids you\'re looking for...' );
 
-if ( ! class_exists( 'WpssoRrssbSubmenuSharingPinterest' ) && class_exists( 'WpssoRrssbSubmenuSharingButtons' ) ) {
+if ( ! class_exists( 'WpssoRrssbSubmenuWebsitePinterest' ) ) {
 
-	class WpssoRrssbSubmenuSharingPinterest extends WpssoRrssbSubmenuSharingButtons {
+	class WpssoRrssbSubmenuWebsitePinterest {
 
-		public function __construct( &$plugin, $id, $name ) {
+		public function __construct( &$plugin ) {
 			$this->p =& $plugin;
-			$this->website_id = $id;
-			$this->website_name = $name;
-
-			if ( $this->p->debug->enabled )
-				$this->p->debug->mark();
+			$this->p->util->add_plugin_filters( $this, array(
+				'image-dimensions_general_rows' => 2,	// $table_rows, $form
+				'rrssb_website_pinterest_rows' => 3,	// $table_rows, $form, $submenu
+			) );
 		}
 
-		protected function get_table_rows( $metabox, $key ) {
-			$table_rows = array();
+		// add an option to the WordPress -> Settings -> Image Dimensions page
+		public function filter_image_dimensions_general_rows( $table_rows, $form ) {
 
-			$table_rows[] = $this->form->get_th_html( _x( 'Preferred Order',
+			$def_dimensions = $this->p->opt->get_defaults( 'pin_img_width' ).'x'.
+				$this->p->opt->get_defaults( 'pin_img_height' ).' '.
+				( $this->p->opt->get_defaults( 'pin_img_crop' ) == 0 ? 'uncropped' : 'cropped' );
+
+			$table_rows['pin_img_dimensions'] = $form->get_th_html( _x( 'Pinterest <em>Sharing Button</em>', 'option label', 'nextgen-facebook' ), null, 'pin_img_dimensions', 'The image dimensions that the Pinterest Pin It button will share (defaults is '.$def_dimensions.'). Images in the Facebook / Open Graph meta tags are usually cropped, where-as images on Pinterest often look better in their original aspect ratio (uncropped) and/or cropped using portrait photo dimensions.' ).
+			'<td>'.$form->get_image_dimensions_input( 'pin_img' ).'</td>';
+
+			return $table_rows;
+		}
+
+		public function filter_rrssb_website_pinterest_rows( $table_rows, $form, $submenu ) {
+
+			$table_rows[] = $form->get_th_html( _x( 'Preferred Order',
 				'option label', 'wpsso-rrssb' ), null, 'pin_order' ).
-			'<td>'.$this->form->get_select( 'pin_order', 
-				range( 1, count( $this->p->admin->submenu['sharing-buttons']->website ) ), 'short' ).  '</td>';
+			'<td>'.$form->get_select( 'pin_order', 
+				range( 1, count( $submenu->website ) ), 'short' ).  '</td>';
 
-			$table_rows[] = $this->form->get_th_html( _x( 'Show Button in',
+			$table_rows[] = $form->get_th_html( _x( 'Show Button in',
 				'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$this->show_on_checkboxes( 'pin' ).'</td>';
+			'<td>'.$submenu->show_on_checkboxes( 'pin' ).'</td>';
 
 			$table_rows[] = '<tr class="hide_in_basic">'.
-			$this->form->get_th_html( _x( 'Allow for Platform',
+			$form->get_th_html( _x( 'Allow for Platform',
 				'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$this->form->get_select( 'pin_platform',
+			'<td>'.$form->get_select( 'pin_platform',
 				$this->p->cf['sharing']['platform'] ).'</td>';
 
 			$table_rows[] = '<tr class="hide_in_basic">'.
-			$this->form->get_th_html( _x( 'Share Single Image',
+			$form->get_th_html( _x( 'Share Single Image',
 				'option label', 'wpsso-rrssb' ), null, null, 'Check this option to have the Pinterest button appear only on Posts and Pages with a custom Image ID (in the Social Settings metabox), a featured image, or an attached image, that is equal to or larger than the \'Image Dimensions\' you have chosen. <strong>By leaving this option unchecked, the Pinterest button will submit the current webpage URL without a specific image</strong>, allowing Pinterest to present any number of available images for pinning.' ).
-			'<td>'.$this->form->get_checkbox( 'pin_use_img' ).'</td>';
+			'<td>'.$form->get_checkbox( 'pin_use_img' ).'</td>';
 
-			$table_rows[] = $this->form->get_th_html( _x( 'Image Dimensions',
+			$table_rows[] = $form->get_th_html( _x( 'Image Dimensions',
 				'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$this->form->get_image_dimensions_input( 'pin_img' ).'</td>';
+			'<td>'.$form->get_image_dimensions_input( 'pin_img' ).'</td>';
 
 			$table_rows[] = '<tr class="hide_in_basic">'.
-                        $this->form->get_th_html( _x( 'Caption Text Length',
+                        $form->get_th_html( _x( 'Caption Text Length',
 				'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$this->form->get_input( 'pin_cap_len', 'short' ).' '.
+			'<td>'.$form->get_input( 'pin_cap_len', 'short' ).' '.
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = '<tr class="hide_in_basic">'.
-			$this->form->get_th_html( _x( 'Append Hashtags to Summary',
+			$form->get_th_html( _x( 'Append Hashtags to Summary',
 				'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$this->form->get_select( 'pin_cap_hashtags',
+			'<td>'.$form->get_select( 'pin_cap_hashtags',
 				range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', null, true ).' '.
 					_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = '<tr class="hide_in_basic">'.
-			'<td colspan="2">'.$this->form->get_textarea( 'pin_rrssb_html', 'average code' ).'</td>';
+			'<td colspan="2">'.$form->get_textarea( 'pin_rrssb_html', 'average code' ).'</td>';
 
 			return $table_rows;
 		}
 	}
 }
 
-if ( ! class_exists( 'WpssoRrssbSharingPinterest' ) ) {
+if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 
-	class WpssoRrssbSharingPinterest {
+	class WpssoRrssbWebsitePinterest {
 
 		private static $cf = array(
 			'opt' => array(				// options
@@ -126,7 +137,10 @@ if ( ! class_exists( 'WpssoRrssbSharingPinterest' ) ) {
 		}
 
 		public function filter_plugin_image_sizes( $sizes ) {
-			$sizes['pin_img'] = array( 'name' => 'pinterest-button', 'label' => 'Pinterest Sharing Button' );
+			$sizes['pin_img'] = array(
+				'name' => 'pinterest-button',
+				'label' => _x( 'Pinterest Sharing Button', 'image size label', 'wpsso-rrssb' ),
+			);
 			return $sizes;
 		}
 
