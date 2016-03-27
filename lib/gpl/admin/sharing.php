@@ -104,10 +104,10 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			 * Generic Title / Caption Input
 			 */
 			foreach ( array(
-				'LinkedIn' => 'linkedin',
-				'Reddit' => 'reddit',
-				'Tumblr' => 'tumblr',
-			) as $name => $opt_prefix ) {
+				'linkedin' => 'LinkedIn',
+				'reddit' => 'Reddit',
+				'tumblr' => 'Tumblr',
+			) as $opt_prefix => $name ) {
 
 				$caption_len = $this->p->options[$opt_prefix.'_cap_len'];
 				$caption_text = $this->p->webpage->get_caption( 'excerpt', $caption_len,

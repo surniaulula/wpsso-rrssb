@@ -74,6 +74,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 			$this->p->util->add_plugin_filters( $this, array( 
 				'get_defaults' => 1,		// add sharing options and css file contents to defaults
+				'get_md_defaults' => 1,				// add sharing options to meta data defaults
 				'text_filter_has_added' => 2,	// re-add the buttons filter to content, excerpt, etc.
 				'text_filter_has_removed' => 2,	// remove the buttons filter from content, excerpt, etc.
 			) );
@@ -112,6 +113,22 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 						$this->p->debug->log( $classname.' class loaded' );
 				}
 			}
+		}
+
+		public function filter_get_md_defaults( $def_opts ) {
+			return array_merge( $def_opts, array(
+				'email_title' => '',		// Email Subject
+				'email_desc' => '',		// Email Message
+				'twitter_desc' => '',		// Tweet Text
+				'pin_desc' => '',		// Pinterest Caption
+				'linkedin_title' => '',		// LinkedIn Title
+				'linkedin_desc' => '',		// LinkedIn Caption
+				'reddit_title' => '',		// Reddit Title
+				'reddit_desc' => '',		// Reddit Caption
+				'tumblr_title' => '',		// Tumblr Title
+				'tumblr_desc' => '',		// Tumblr Caption
+				'buttons_disabled' => 0,	// Disable Sharing Buttons
+			) );
 		}
 
 		public function filter_get_defaults( $def_opts ) {

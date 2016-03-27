@@ -122,13 +122,6 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 			$this->p->util->add_plugin_filters( $this, array( 
 				'plugin_image_sizes' => 1,
 				'get_defaults' => 1,
-				'get_md_defaults' => 1,
-			) );
-		}
-
-		public function filter_get_md_defaults( $def_opts ) {
-			return array_merge( $def_opts, array(
-				'pin_desc' => '',
 			) );
 		}
 

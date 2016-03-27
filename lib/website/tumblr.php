@@ -92,14 +92,6 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTumblr' ) ) {
 			$this->p =& $plugin;
 			$this->p->util->add_plugin_filters( $this, array( 
 				'get_defaults' => 1,
-				'get_md_defaults' => 1,
-			) );
-		}
-
-		public function filter_get_md_defaults( $def_opts ) {
-			return array_merge( $def_opts, array(
-				'tumblr_title' => '',
-				'tumblr_desc' => '',
 			) );
 		}
 
