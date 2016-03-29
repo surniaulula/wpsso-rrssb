@@ -92,6 +92,10 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 == Frequently Asked Questions ==
 
+= Frequently Asked Questions =
+
+* None
+
 == Other Notes ==
 
 = Additional Documentation =
