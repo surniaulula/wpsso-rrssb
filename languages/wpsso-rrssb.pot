@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"(WPSSO RRSSB) 1.3.2\n"
+"(WPSSO RRSSB) 1.3.3-1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2016-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -391,7 +391,7 @@ msgid "Email Message Length"
 msgstr ""
 
 #: lib/website/email.php:43 lib/website/linkedin.php:43
-#: lib/website/pinterest.php:66 lib/website/reddit.php:43
+#: lib/website/pinterest.php:61 lib/website/reddit.php:43
 #: lib/website/tumblr.php:43 lib/website/twitter.php:43
 msgctxt "option comment"
 msgid "characters or less"
@@ -403,13 +403,13 @@ msgid "Append Hashtags to Message"
 msgstr ""
 
 #: lib/website/email.php:50 lib/website/linkedin.php:50
-#: lib/website/pinterest.php:73 lib/website/reddit.php:50
+#: lib/website/pinterest.php:68 lib/website/reddit.php:50
 #: lib/website/tumblr.php:50 lib/website/twitter.php:50
 msgctxt "option comment"
 msgid "tag names"
 msgstr ""
 
-#: lib/website/linkedin.php:40 lib/website/pinterest.php:63
+#: lib/website/linkedin.php:40 lib/website/pinterest.php:58
 #: lib/website/reddit.php:40
 msgctxt "option label"
 msgid "Caption Text Length"
@@ -425,22 +425,17 @@ msgctxt "option label"
 msgid "Pinterest <em>Sharing Button</em>"
 msgstr ""
 
-#: lib/website/pinterest.php:54
-msgctxt "option label"
-msgid "Share Single Image"
-msgstr ""
-
-#: lib/website/pinterest.php:58
+#: lib/website/pinterest.php:53
 msgctxt "option label"
 msgid "Image Dimensions"
 msgstr ""
 
-#: lib/website/pinterest.php:69 lib/website/tumblr.php:46
+#: lib/website/pinterest.php:64 lib/website/tumblr.php:46
 msgctxt "option label"
 msgid "Append Hashtags to Summary"
 msgstr ""
 
-#: lib/website/pinterest.php:135
+#: lib/website/pinterest.php:129
 msgctxt "image size label"
 msgid "Pinterest Sharing Button"
 msgstr ""
@@ -523,19 +518,19 @@ msgctxt "option label"
 msgid "Widget Title (leave blank for no title)"
 msgstr ""
 
-#: wpsso-rrssb.php:77
+#: wpsso-rrssb.php:84
 msgid ""
 "The %1$s extension requires the %2$s plugin &mdash; please install and "
 "activate the %3$s plugin before trying to re-activate the %4$s extension."
 msgstr ""
 
-#: wpsso-rrssb.php:79
+#: wpsso-rrssb.php:86
 msgid ""
 "The %1$s extension requires the %2$s plugin &mdash; please install and "
 "activate the %3$s plugin."
 msgstr ""
 
-#: wpsso-rrssb.php:125
+#: wpsso-rrssb.php:132
 msgid ""
 "The %1$s extension version %2$s requires the use of %3$s version %4$s or "
 "newer (version %5$s is currently installed)."

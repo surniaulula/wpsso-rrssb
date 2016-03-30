@@ -15,7 +15,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsitePinterest' ) ) {
 		public function __construct( &$plugin ) {
 			$this->p =& $plugin;
 			$this->p->util->add_plugin_filters( $this, array(
-				'image-dimensions_general_rows' => 2,	// $table_rows, $form
+				'image_dimensions_general_rows' => 2,	// $table_rows, $form
 				'rrssb_website_pinterest_rows' => 3,	// $table_rows, $form, $submenu
 			) );
 		}
@@ -49,11 +49,6 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsitePinterest' ) ) {
 				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_select( 'pin_platform',
 				$this->p->cf['sharing']['platform'] ).'</td>';
-
-			$table_rows[] = '<tr class="hide_in_basic">'.
-			$form->get_th_html( _x( 'Share Single Image',
-				'option label', 'wpsso-rrssb' ), null, null, 'Check this option to have the Pinterest button appear only on Posts and Pages with a custom Image ID (in the Social Settings metabox), a featured image, or an attached image, that is equal to or larger than the \'Image Dimensions\' you have chosen. <strong>By leaving this option unchecked, the Pinterest button will submit the current webpage URL without a specific image</strong>, allowing Pinterest to present any number of available images for pinning.' ).
-			'<td>'.$form->get_checkbox( 'pin_use_img' ).'</td>';
 
 			$table_rows[] = $form->get_th_html( _x( 'Image Dimensions',
 				'option label', 'wpsso-rrssb' ) ).
@@ -93,7 +88,6 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 					'pin_on_sidebar' => 0,
 					'pin_on_admin_edit' => 1,
 					'pin_platform' => 'any',
-					'pin_use_img' => 0,
 					'pin_img_width' => 800,
 					'pin_img_height' => 1200,
 					'pin_img_crop' => 0,
@@ -167,27 +161,25 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 					$this->p->debug->log( 'returned image '.$atts['photo'].' ('.$atts['width'].'x'.$atts['height'].')' );
 			}
 
-			if ( empty( $atts['photo'] ) ) {
-				if ( ! empty( $this->p->options['pin_use_img'] ) ) {
-					$media_info = $this->p->og->get_the_media_info( $atts['size'], $mod, 'rp', array( 'img_url' ) );
-					$atts['photo'] = $media_info['img_url'];
-				} else $atts['photo'] = '';
-			}
+			$html = $this->p->options['pin_rrssb_html'];
 
-			if ( empty( $atts['photo'] ) && 
-				! empty( $this->p->options['pin_use_img'] ) ) {
-				if ( $this->p->debug->enabled )
-					$this->p->debug->log( 'exiting early: pin_use_img is enabled but no photo available' );
-				return false;	// abort
+			if ( empty( $atts['photo'] ) ) {
+				$media_info = $this->p->og->get_the_media_info( $atts['size'], $mod, 'rp', array( 'img_url' ) );
+				$atts['photo'] = $media_info['img_url'];
+				if ( empty( $atts['photo'] ) ) {
+					if ( $this->p->debug->enabled )
+						$this->p->debug->log( 'exiting early: no photo available' );
+					return '<!-- Pinterest Button: No Photo Available -->';	// abort
+				}
 			}
 
 			return $this->p->util->replace_inline_vars( '<!-- Pinterest Button -->'.
-				$this->p->options['pin_rrssb_html'], $atts['use_post'], false, $atts, array(
+				$html, $atts['use_post'], false, $atts, array(
 					'media_url' => rawurlencode( $atts['photo'] ),
 				 	'pinterest_caption' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['pin_cap_len'],
 						$mod, true, $atts['add_hashtags'], false, 'pin_desc', 'pinterest' ) ),
-				 )
-			 );
+				)
+			);
 		}
 	}
 }

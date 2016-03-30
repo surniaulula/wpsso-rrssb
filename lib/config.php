@@ -15,7 +15,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(
-					'version' => '1.3.2',		// plugin version
+					'version' => '1.3.3-1',		// plugin version
 					'opt_version' => '8',		// increment when changing default options
 					'short' => 'WPSSO RRSSB',	// short plugin name
 					'name' => 'WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)',
@@ -48,7 +48,6 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'lib' => array(
 						// submenu items must have unique keys
 						'submenu' => array (
-							//'wpssorrssb-separator-0' => 'RRSSB Extension',
 							'rrssb-buttons' => 'Responsive Buttons',
 							'rrssb-styles' => 'Responsive Styles',
 						),
@@ -173,14 +172,13 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			add_filter( 'wpssorrssb_load_lib', array( 'WpssoRrssbConfig', 'load_lib' ), 10, 3 );
 		}
 
-		// gpl / pro library loader
 		public static function load_lib( $ret = false, $filespec = '', $classname = '' ) {
 			if ( $ret === false && ! empty( $filespec ) ) {
 				$filepath = WPSSORRSSB_PLUGINDIR.'lib/'.$filespec.'.php';
 				if ( file_exists( $filepath ) ) {
 					require_once( $filepath );
 					if ( empty( $classname ) )
-						return 'wpssorrssb'.str_replace( array( '/', '-' ), '', $filespec );
+						return SucomUtil::sanitize_classname( 'wpssorrssb'.$filespec );
 					else return $classname;
 				}
 			}
