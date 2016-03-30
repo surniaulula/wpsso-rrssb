@@ -138,5 +138,5 @@ Official announcement: N/A
 
 = 1.3.3-1 =
 
-ETA 2016/03/31 - Improved / optimized image selection for the Pinterest button. Adopted a standard version numbering system.
+1.3.3-1 ETA 2016/03/31 - Improved / optimized image selection for the Pinterest button. Adopted a standard version numbering system.
 
