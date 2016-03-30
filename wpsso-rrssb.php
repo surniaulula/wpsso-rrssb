@@ -34,11 +34,10 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 		public $p;			// Wpsso
 		public $reg;			// WpssoRrssbRegister
 
-		protected static $instance = null;
-
+		private static $instance = null;
 		private static $wpsso_short = 'WPSSO';
 		private static $wpsso_name = 'WordPress Social Sharing Optimization (WPSSO)';
-		private static $wpsso_min_version = '3.28.4';
+		private static $wpsso_min_version = '3.28.5-1';
 		private static $wpsso_has_min_ver = true;
 
 		public static function &get_instance() {
@@ -134,7 +133,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 	}
 
         global $wpssorrssb;
-	$wpssorrssb = WpssoRrssb::get_instance();
+	$wpssorrssb =& WpssoRrssb::get_instance();
 }
 
 ?>
