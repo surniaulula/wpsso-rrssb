@@ -119,7 +119,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 = Changelog / Release Notes =
 
-**Version 1.3.3 (ETA 2016/03/31)**
+**Version 1.3.3-1 (2016/03/31)**
 
 Official announcement: N/A
 
@@ -138,5 +138,5 @@ Official announcement: N/A
 
 = 1.3.3-1 =
 
-1.3.3-1 ETA 2016/03/31 - Improved / optimized image selection for the Pinterest button. Adopted a standard version numbering system.
+(2016/03/31) Improved / optimized image selection for the Pinterest button. Adopted a standard version numbering system.
 
