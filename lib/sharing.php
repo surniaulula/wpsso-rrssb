@@ -206,11 +206,11 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function filter_status_gpl_features( $features, $lca, $info ) {
-			if ( ! empty( $info['lib']['submenu']['sharing-buttons'] ) )
+			if ( ! empty( $info['lib']['submenu']['rrssb-buttons'] ) )
 				$features['Sharing Buttons'] = array( 
 					'classname' => $lca.'Sharing',
 				);
-			if ( ! empty( $info['lib']['submenu']['sharing-styles'] ) )
+			if ( ! empty( $info['lib']['submenu']['rrssb-styles'] ) )
 				$features['Sharing Stylesheet'] = array(
 					'status' => $this->p->options['buttons_use_social_css'] ? 'on' : 'off',
 				);
