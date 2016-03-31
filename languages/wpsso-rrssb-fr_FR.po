@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
 "(WPSSO RRSSB) 1.1.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2016-03-25 14:13-0400\n"
-"PO-Revision-Date: 2016-03-25 14:15-0400\n"
+"POT-Creation-Date: 2016-03-31 03:32-0400\n"
+"PO-Revision-Date: 2016-03-31 03:32-0400\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -102,7 +102,7 @@ msgid "Widget"
 msgstr "Widget"
 
 #: lib/gpl/admin/sharing.php:28 lib/pro/admin/sharing.php:35
-#: lib/sharing.php:214
+#: lib/sharing.php:231
 msgctxt "metabox tab"
 msgid "Sharing Buttons"
 msgstr "Boutons de Partage"
@@ -156,11 +156,11 @@ msgctxt "option label"
 msgid "Position in bbPress Single"
 msgstr "Position dans le texte bbPress Single"
 
-#: lib/sharing.php:133
+#: lib/sharing.php:150
 msgid "Failed to open the %s file for reading."
 msgstr "Impossible d'ouvrir le fichier %s pour la lecture."
 
-#: lib/sharing.php:214
+#: lib/sharing.php:231
 msgid ""
 "Social sharing features include the <a href=\"%1$s\">%2$s</a> and <a href="
 "\"%3$s\">%4$s</a> settings pages, the <em>%5$s</em> tab in the <em>%6$s</em> "
@@ -170,22 +170,22 @@ msgstr ""
 "\"%1$s\">%2$s</a> et <a href=\"%3$s\">%4$s</a>, l'onglet <em>%5$s</em> dans "
 "la metabox <em>%6$s</em>, ainsi que le shortcode et widget de partage social."
 
-#: lib/sharing.php:214
+#: lib/sharing.php:231
 msgctxt "lib file description"
 msgid "Sharing Buttons"
 msgstr "Boutons de Partage"
 
-#: lib/sharing.php:214 lib/sharing.php:217 lib/submenu/rrssb-styles.php:37
+#: lib/sharing.php:231 lib/sharing.php:234 lib/submenu/rrssb-styles.php:37
 msgctxt "lib file description"
 msgid "Sharing Styles"
 msgstr "Styles de Partage"
 
-#: lib/sharing.php:214
+#: lib/sharing.php:231
 msgctxt "metabox title"
 msgid "Social Settings"
 msgstr "Réglages Sociaux"
 
-#: lib/sharing.php:217
+#: lib/sharing.php:234
 msgid ""
 "A stylesheet for the social sharing buttons can be included in all webpages. "
 "You can enable or disable use of the stylesheet from the <a href=\"%1$s\">"
@@ -195,7 +195,7 @@ msgstr ""
 "dans toutes les pages Web. Vous pouvez activer ou désactiver l'utilisation "
 "de la feuille de style dans la page de réglage <a href=\"%1$s\">%2$s</a>."
 
-#: lib/sharing.php:220
+#: lib/sharing.php:237
 msgid ""
 "Support for shortcode(s) can be enabled and disabled on the <a href=\"%1$s\">"
 "%2$s</a> settings page. Shortcodes are disabled by default to optimize "
@@ -205,12 +205,12 @@ msgstr ""
 "réglage <a href=\"%1$s\">%2$s</a>. Les shortcodes sont désactivés par défaut "
 "pour optimiser la performance et le traitement du contenu."
 
-#: lib/sharing.php:220 lib/website/twitter.php:64
+#: lib/sharing.php:237 lib/website/twitter.php:64
 msgctxt "lib file description"
 msgid "Advanced"
 msgstr "Avancés"
 
-#: lib/sharing.php:223
+#: lib/sharing.php:240
 msgid ""
 "The sharing widget feature adds a <em>%s</em> widget to the WordPress "
 "Widgets settings page. The sharing widget shares the URL for the current "
@@ -222,50 +222,50 @@ msgstr ""
 "sociaux l'URL de la page Web actuelle (et non l'URL de chaque item sur une "
 "page Web d'index / archive, par exemple)."
 
-#: lib/sharing.php:223
+#: lib/sharing.php:240
 msgctxt "lib file description"
 msgid "WPSSO RRSSB"
 msgstr "WPSSO RRSSB"
 
-#: lib/sharing.php:231
+#: lib/sharing.php:248
 msgid "Reload Default Styles"
 msgstr "Recharger Styles par Défaut"
 
-#: lib/sharing.php:248
+#: lib/sharing.php:265
 msgid ""
 "All sharing styles have been reloaded with their default settings and saved."
 msgstr ""
 "Tous les styles de partage ont été rechargé avec leurs paramètres par défaut "
 "et sauvegardé."
 
-#: lib/sharing.php:269
+#: lib/sharing.php:286
 msgid "The %s file is not readable."
 msgstr "Le fichier %s n'est pas lisible."
 
-#: lib/sharing.php:309
+#: lib/sharing.php:326
 msgid "Failed to load the minify class SuextMinifyCssCompressor."
 msgstr ""
 "Impossible de charger la classe de rapetissement SuextMinifyCssCompressor."
 
-#: lib/sharing.php:318
+#: lib/sharing.php:335
 msgid "Failed writing to the % file."
 msgstr "Impossible d'écrire dans le fichier%."
 
-#: lib/sharing.php:323
+#: lib/sharing.php:340
 msgid "Updated the <a href=\"%1$s\">%2$s</a> stylesheet (%3$d bytes written)."
 msgstr ""
 "La feuille de style <a href=\"%1$s\">%2$s</a> a été mise à jour (%3$s octets "
 "écrits)."
 
-#: lib/sharing.php:332
+#: lib/sharing.php:349
 msgid "The %s folder is not writable."
 msgstr "Le dossier %s n'est pas accessible en écriture."
 
-#: lib/sharing.php:338
+#: lib/sharing.php:355
 msgid "Failed to open file %s for writing."
 msgstr "Impossible d'ouvrir le fichier %s pour l'écriture."
 
-#: lib/sharing.php:347
+#: lib/sharing.php:364
 msgid ""
 "Error removing the minimized stylesheet &mdash; does the web server have "
 "sufficient privileges?"
@@ -273,12 +273,12 @@ msgstr ""
 "Erreur en retirant la feuille de style minimisé &mdash; le serveur Web a "
 "t'il les privilèges nécessaires?"
 
-#: lib/sharing.php:366
+#: lib/sharing.php:383
 msgctxt "metabox title"
 msgid "Sharing Buttons"
 msgstr "Boutons de Partage Social"
 
-#: lib/sharing.php:422
+#: lib/sharing.php:439
 msgid "%s must be published<br/>before it can be shared."
 msgstr "%s doit être publié<br/>avant d'être partagé."
 
@@ -439,7 +439,7 @@ msgid "Email Message Length"
 msgstr "Longueur du message couriel"
 
 #: lib/website/email.php:43 lib/website/linkedin.php:43
-#: lib/website/pinterest.php:66 lib/website/reddit.php:43
+#: lib/website/pinterest.php:61 lib/website/reddit.php:43
 #: lib/website/tumblr.php:43 lib/website/twitter.php:43
 msgctxt "option comment"
 msgid "characters or less"
@@ -451,13 +451,13 @@ msgid "Append Hashtags to Message"
 msgstr "Ajout de hashtags au message"
 
 #: lib/website/email.php:50 lib/website/linkedin.php:50
-#: lib/website/pinterest.php:73 lib/website/reddit.php:50
+#: lib/website/pinterest.php:68 lib/website/reddit.php:50
 #: lib/website/tumblr.php:50 lib/website/twitter.php:50
 msgctxt "option comment"
 msgid "tag names"
 msgstr "noms d'étiquettes"
 
-#: lib/website/linkedin.php:40 lib/website/pinterest.php:63
+#: lib/website/linkedin.php:40 lib/website/pinterest.php:58
 #: lib/website/reddit.php:40
 msgctxt "option label"
 msgid "Caption Text Length"
@@ -473,22 +473,17 @@ msgctxt "option label"
 msgid "Pinterest <em>Sharing Button</em>"
 msgstr "<em>Bouton de partage</em> Pinterest"
 
-#: lib/website/pinterest.php:54
-msgctxt "option label"
-msgid "Share Single Image"
-msgstr "Partager une seule image"
-
-#: lib/website/pinterest.php:58
+#: lib/website/pinterest.php:53
 msgctxt "option label"
 msgid "Image Dimensions"
 msgstr "Dimensions de l’image"
 
-#: lib/website/pinterest.php:69 lib/website/tumblr.php:46
+#: lib/website/pinterest.php:64 lib/website/tumblr.php:46
 msgctxt "option label"
 msgid "Append Hashtags to Summary"
 msgstr "Ajout de hashtags au sommaire"
 
-#: lib/website/pinterest.php:142
+#: lib/website/pinterest.php:129
 msgctxt "image size label"
 msgid "Pinterest Sharing Button"
 msgstr "Bouton de partage Pinterest"
@@ -580,7 +575,7 @@ msgctxt "option label"
 msgid "Widget Title (leave blank for no title)"
 msgstr "Titre du Widget (laisser vide pour aucun titre)"
 
-#: wpsso-rrssb.php:77
+#: wpsso-rrssb.php:83
 msgid ""
 "The %1$s extension requires the %2$s plugin &mdash; please install and "
 "activate the %3$s plugin before trying to re-activate the %4$s extension."
@@ -588,7 +583,7 @@ msgstr ""
 "L'extension %1$s requiert %2$s &mdash; s'il vous plaît installer et activer "
 "l'extension %3$s avant d'essayer de re-activer %4$s."
 
-#: wpsso-rrssb.php:79
+#: wpsso-rrssb.php:85
 msgid ""
 "The %1$s extension requires the %2$s plugin &mdash; please install and "
 "activate the %3$s plugin."
@@ -596,7 +591,7 @@ msgstr ""
 "L'extension %1$s requiert %2$s &mdash; s'il vous plaît installer et activer "
 "l'extension %3$s."
 
-#: wpsso-rrssb.php:125
+#: wpsso-rrssb.php:131
 msgid ""
 "The %1$s extension version %2$s requires the use of %3$s version %4$s or "
 "newer (version %5$s is currently installed)."
@@ -628,3 +623,7 @@ msgstr "JS Morisset"
 #. Author URI of the plugin/theme
 msgid "http://surniaulula.com/"
 msgstr "http://surniaulula.com/"
+
+#~ msgctxt "option label"
+#~ msgid "Share Single Image"
+#~ msgstr "Partager une seule image"
