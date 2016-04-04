@@ -84,7 +84,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 				$mod, true, $this->p->options['pin_cap_hashtags'] );
 
 			$media = $this->p->og->get_the_media_info( $this->p->cf['lca'].'-pinterest-button',
-				$mod, 'rp', array( 'pid', 'img_url' ) );
+				array( 'pid', 'img_url' ), $mod, 'rp' );
 
 			if ( ! empty( $media['pid'] ) )
 				list( $media['img_url'], $img_width, $img_height,

@@ -94,8 +94,6 @@ if ( ! class_exists( 'WpssoRrssbWebsiteWhatsApp' ) ) {
 
 			$atts['use_post'] = isset( $atts['use_post'] ) ? $atts['use_post'] : true;
 			$atts['add_page'] = isset( $atts['add_page'] ) ? $atts['add_page'] : true;
-			$atts['source_id'] = isset( $atts['source_id'] ) ?
-				$atts['source_id'] : $this->p->util->get_source_id( 'whatsapp', $atts );
 
 			return $this->p->util->replace_inline_vars( '<!-- WhatsApp Button -->'.
 				$this->p->options['wa_rrssb_html'], $atts['use_post'], false, $atts, array(

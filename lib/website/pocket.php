@@ -92,8 +92,6 @@ if ( ! class_exists( 'WpssoRrssbWebsitePocket' ) ) {
 
 			$atts['use_post'] = isset( $atts['use_post'] ) ? $atts['use_post'] : true;
 			$atts['add_page'] = isset( $atts['add_page'] ) ? $atts['add_page'] : true;
-			$atts['source_id'] = isset( $atts['source_id'] ) ?
-				$atts['source_id'] : $this->p->util->get_source_id( 'pocket', $atts );
 
 			return $this->p->util->replace_inline_vars( '<!-- Pocket Button -->'.
 				$this->p->options['pocket_rrssb_html'], $atts['use_post'], false, $atts );

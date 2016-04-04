@@ -92,8 +92,6 @@ if ( ! class_exists( 'WpssoRrssbWebsiteGplus' ) ) {
 
 			$atts['use_post'] = isset( $atts['use_post'] ) ? $atts['use_post'] : true;
 			$atts['add_page'] = isset( $atts['add_page'] ) ? $atts['add_page'] : true;
-			$atts['source_id'] = isset( $atts['source_id'] ) ?
-				$atts['source_id'] : $this->p->util->get_source_id( 'gplus', $atts );
 
 			return $this->p->util->replace_inline_vars( '<!-- Google+ Button -->'.
 				$this->p->options['gp_rrssb_html'], $atts['use_post'], false, $atts );

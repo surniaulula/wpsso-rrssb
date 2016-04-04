@@ -89,7 +89,7 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 					'pin_on_admin_edit' => 1,
 					'pin_platform' => 'any',
 					'pin_img_width' => 800,
-					'pin_img_height' => 1200,
+					'pin_img_height' => 1600,
 					'pin_img_crop' => 0,
 					'pin_img_crop_x' => 'center',
 					'pin_img_crop_y' => 'center',
@@ -141,8 +141,6 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 
 			$atts['use_post'] = isset( $atts['use_post'] ) ? $atts['use_post'] : true;
 			$atts['add_page'] = isset( $atts['add_page'] ) ? $atts['add_page'] : true;
-			$atts['source_id'] = isset( $atts['source_id'] ) ?
-				$atts['source_id'] : $this->p->util->get_source_id( 'pinterest', $atts );
 			$atts['add_hashtags'] = empty( $this->p->options['pin_cap_hashtags'] ) ?
 				false : $this->p->options['pin_cap_hashtags'];
 
@@ -164,7 +162,7 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 			$html = $this->p->options['pin_rrssb_html'];
 
 			if ( empty( $atts['photo'] ) ) {
-				$media_info = $this->p->og->get_the_media_info( $atts['size'], $mod, 'rp', array( 'img_url' ) );
+				$media_info = $this->p->og->get_the_media_info( $atts['size'], array( 'img_url' ), $mod, 'rp' );
 				$atts['photo'] = $media_info['img_url'];
 				if ( empty( $atts['photo'] ) ) {
 					if ( $this->p->debug->enabled )

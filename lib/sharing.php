@@ -531,13 +531,12 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 			$lca = $this->p->cf['lca'];
 			$mod = $this->p->util->get_page_mod( $use_post );	// get post/user/term id, module name, and module object reference
-			$src_id = $this->p->util->get_source_id( $type );
 			$html = false;
 
 			// fetch from the cache, if possible
 			if ( $this->p->is_avail['cache']['transient'] ) {
 
-				$sharing_url = $this->p->util->get_sharing_url( $use_post, true, $src_id );
+				$sharing_url = $this->p->util->get_sharing_url( $use_post, true );
 				$cache_salt = __METHOD__.'('.apply_filters( $lca.'_buttons_cache_salt', 
 					'lang:'.SucomUtil::get_locale().
 					'_type:'.$type.'_id:'.$mod['id'].

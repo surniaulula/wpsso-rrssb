@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"(WPSSO RRSSB) 1.3.3-1\n"
+"(WPSSO RRSSB) 1.3.4-dev2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2016-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -35,12 +35,12 @@ msgstr ""
 
 #: lib/config-gettext-extract.php:7
 msgctxt "option value"
-msgid "CSS Sidebar"
+msgid "Content"
 msgstr ""
 
 #: lib/config-gettext-extract.php:8
 msgctxt "option value"
-msgid "Content"
+msgid "CSS Sidebar"
 msgstr ""
 
 #: lib/config-gettext-extract.php:9
@@ -84,15 +84,15 @@ msgid "Top"
 msgstr ""
 
 #: lib/config-gettext-extract.php:17
+msgctxt "option value"
+msgid "Widget"
+msgstr ""
+
+#: lib/config-gettext-extract.php:18
 msgctxt "plugin description"
 msgid ""
 "WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons "
 "in your content, excerpts, CSS sidebar, widget, shortcode, etc."
-msgstr ""
-
-#: lib/config-gettext-extract.php:18
-msgctxt "option value"
-msgid "Widget"
 msgstr ""
 
 #: lib/gpl/admin/sharing.php:28 lib/pro/admin/sharing.php:35
