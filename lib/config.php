@@ -15,7 +15,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(
-					'version' => '1.3.4-dev2',		// plugin version
+					'version' => '1.3.4-alpha1',		// plugin version
 					'opt_version' => '8',		// increment when changing default options
 					'short' => 'WPSSO RRSSB',	// short plugin name
 					'name' => 'WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)',
@@ -129,6 +129,10 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 				),
 			),
 		);
+
+		public static function get_version() { 
+			return self::$cf['plugin']['wpssorrssb']['version'];
+		}
 
 		public static function set_constants( $plugin_filepath ) { 
 			define( 'WPSSORRSSB_FILEPATH', $plugin_filepath );						
