@@ -132,6 +132,8 @@ Official announcement: N/A
 * *Developer Notes*
 	* Modified the order of WpssoOpengraph `get_the_media_info()` method arguments for WPSSO v3.29.0.
 	* Removed all references to the WpssoUtil `get_source_id()` method and the `$src_id` method / filter argument.
+	* Changed SucomUtil `get_post_object()`, `get_term_object()` and `get_user_object()` to static methods calls.
+	* Changed `is_front_page()` to `$mod['is_front']` checks where possible, and `SucomUtil::is_front_page()` elsewhere.
 
 **Version 1.3.3-1 (2016/03/31)**
 
