@@ -12,7 +12,7 @@
  * Description: WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
  * Requires At Least: 3.1
  * Tested Up To: 4.5
- * Version: 1.3.4-alpha1
+ * Version: 1.3.4-alpha2
  * 
  * Version Numbers: {major}.{minor}.{bugfix}-{stage}{level}
  *
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 		private static $instance = null;
 		private static $wpsso_short = 'WPSSO';
 		private static $wpsso_name = 'WordPress Social Sharing Optimization (WPSSO)';
-		private static $wpsso_min_version = '3.29.0-alpha1';
+		private static $wpsso_min_version = '3.29.0-alpha2';
 		private static $wpsso_has_min_ver = true;
 
 		public static function &get_instance() {

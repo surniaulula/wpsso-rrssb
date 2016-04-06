@@ -193,13 +193,13 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			return $type;
 		}
 
-		public function filter_post_cache_transients( $transients, $post_id, $lang = 'en_US', $sharing_url ) {
+		public function filter_post_cache_transients( $transients, $post_id, $locale = 'en_US', $sharing_url ) {
 			$show_on = apply_filters( $this->p->cf['lca'].'_rrssb_buttons_show_on', 
 				$this->p->cf['sharing']['show_on'], null );
 
 			foreach( $show_on as $type_id => $type_name ) {
-				$transients['WpssoRrssbSharing::get_buttons'][] = 'lang:'.$lang.'_type:'.$type_id.'_id:'.$post_id.'_name:post';
-				$transients['WpssoRrssbSharing::get_buttons'][] = 'lang:'.$lang.'_type:'.$type_id.'_id:'.$post_id.'_name:post_prot:https';
+				$transients['WpssoRrssbSharing::get_buttons'][] = 'locale:'.$locale.'_post:'.$post_id.'_type:'.$type_id;
+				$transients['WpssoRrssbSharing::get_buttons'][] = 'locale:'.$locale.'_post:'.$post_id.'_type:'.$type_id.'_prot:https';
 			}
 
 			return $transients;
@@ -538,9 +538,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 				$sharing_url = $this->p->util->get_sharing_url( $use_post, true );
 				$cache_salt = __METHOD__.'('.apply_filters( $lca.'_buttons_cache_salt', 
-					'lang:'.SucomUtil::get_locale().
-					'_type:'.$type.'_id:'.$mod['id'].
-					'_name:'.$mod['name'].
+					SucomUtil::get_mod_salt( $mod ).'_type:'.$type.
 					( SucomUtil::is_https() ? '_prot:https' : '' ).
 					( empty( $mod['id'] ) ? '_url:'.$sharing_url : '' ),
 						$type, $use_post ).')';
