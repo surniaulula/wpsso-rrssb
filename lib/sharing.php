@@ -371,7 +371,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				return;
 
 			// get the current object / post type
-			if ( ( $post_obj = $this->p->util->get_post_object() ) === false ) {
+			if ( ( $post_obj = SucomUtil::get_post_object() ) === false ) {
 				if ( $this->p->debug->enabled )
 					$this->p->debug->log( 'exiting early: invalid post object' );
 				return;
@@ -509,7 +509,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 						$this->p->debug->log( $type.' filter skipped: index page without buttons_on_index enabled' );
 					return $text;
 				}
-			} elseif ( is_front_page() ) {
+			} elseif ( SucomUtil::is_front_page() ) {
 				if ( empty( $this->p->options['buttons_on_front'] ) ) {
 					if ( $this->p->debug->enabled )
 						$this->p->debug->log( $type.' filter skipped: front page without buttons_on_front enabled' );
@@ -679,7 +679,7 @@ $buttons_html."\n".
 		public function is_post_buttons_disabled() {
 			$ret = false;
 
-			if ( ( $post_obj = $this->p->util->get_post_object() ) === false ) {
+			if ( ( $post_obj = SucomUtil::get_post_object() ) === false ) {
 				if ( $this->p->debug->enabled )
 					$this->p->debug->log( 'exiting early: invalid post object' );
 				return $ret;
