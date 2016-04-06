@@ -119,7 +119,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 = Changelog / Release Notes =
 
-**Version 1.3.4-alpha2 (2016/04/06)**
+**Version 1.3.4-alpha3 (2016/04/06)**
 
 Official announcement: N/A
 
@@ -150,7 +150,7 @@ Official announcement: N/A
 
 == Upgrade Notice ==
 
-= 1.3.4-alpha2 =
+= 1.3.4-alpha3 =
 
 (2016/04/06) Modified the order of WpssoOpengraph `get_the_media_info()` method arguments for WPSSO v3.29.0.
 
