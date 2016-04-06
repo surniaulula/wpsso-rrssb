@@ -126,7 +126,7 @@ Official announcement: N/A
 * *New Features*
 	* None
 * *Improvements*
-	* None
+	* Added support for a 'use_post' argument in the sharing buttons shortcode.
 * *Bugfixes*
 	* None
 * *Developer Notes*
