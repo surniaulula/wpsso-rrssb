@@ -570,6 +570,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				if ( trim( $buttons_html ) ) {
 					$html = '
 <!-- '.$lca.' '.$css_type.' begin -->
+<!-- generated on '.date( 'c' ).' -->
 <div class="'.$lca.'-rrssb'.
 	( $use_post ? ' '.$lca.'-'.$css_type.'">' : '" id="'.$lca.'-'.$css_type.'">' ).
 $buttons_html."\n".
