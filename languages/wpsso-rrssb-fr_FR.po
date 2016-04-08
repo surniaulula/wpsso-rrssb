@@ -2,11 +2,10 @@
 # This file is distributed under the same license as the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"(WPSSO RRSSB) 1.3.4-1\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) 1.3.4-1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2016-04-05 17:04-0400\n"
-"PO-Revision-Date: 2016-04-05 17:04-0400\n"
+"POT-Creation-Date: 2016-04-08 08:03-0400\n"
+"PO-Revision-Date: 2016-04-08 08:30-0400\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -93,13 +92,8 @@ msgstr "Widget"
 
 #: lib/config-gettext-extract.php:18
 msgctxt "plugin description"
-msgid ""
-"WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons "
-"in your content, excerpts, CSS sidebar, widget, shortcode, etc."
-msgstr ""
-"Une extension WPSSO pour ajouter des boutons de partage sociaux ridiculement "
-"réactif (SVG) dans votre contenu, les extraits, barre flottante CSS, widget, "
-"shortcode, etc."
+msgid "WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc."
+msgstr "Une extension WPSSO pour ajouter des boutons de partage sociaux ridiculement réactif (SVG) dans votre contenu, les extraits, barre flottante CSS, widget, shortcode, etc."
 
 #: lib/gpl/admin/sharing.php:28 lib/pro/admin/sharing.php:35
 #: lib/sharing.php:231
@@ -161,14 +155,8 @@ msgid "Failed to open the %s file for reading."
 msgstr "Impossible d'ouvrir le fichier %s pour la lecture."
 
 #: lib/sharing.php:231
-msgid ""
-"Social sharing features include the <a href=\"%1$s\">%2$s</a> and <a href="
-"\"%3$s\">%4$s</a> settings pages, the <em>%5$s</em> tab in the <em>%6$s</em> "
-"metabox, along with the social sharing shortcode and widget."
-msgstr ""
-"Les fonctionnalités de partage social incluent les pages de réglages <a href="
-"\"%1$s\">%2$s</a> et <a href=\"%3$s\">%4$s</a>, l'onglet <em>%5$s</em> dans "
-"la metabox <em>%6$s</em>, ainsi que le shortcode et widget de partage social."
+msgid "Social sharing features include the <a href=\"%1$s\">%2$s</a> and <a href=\"%3$s\">%4$s</a> settings pages, the <em>%5$s</em> tab in the <em>%6$s</em> metabox, along with the social sharing shortcode and widget."
+msgstr "Les fonctionnalités de partage social incluent les pages de réglages <a href=\"%1$s\">%2$s</a> et <a href=\"%3$s\">%4$s</a>, l'onglet <em>%5$s</em> dans la metabox <em>%6$s</em>, ainsi que le shortcode et widget de partage social."
 
 #: lib/sharing.php:231
 msgctxt "lib file description"
@@ -186,24 +174,12 @@ msgid "Social Settings"
 msgstr "Réglages Sociaux"
 
 #: lib/sharing.php:234
-msgid ""
-"A stylesheet for the social sharing buttons can be included in all webpages. "
-"You can enable or disable use of the stylesheet from the <a href=\"%1$s\">"
-"%2$s</a> settings page."
-msgstr ""
-"Une feuille de style pour les boutons de partage social peut être inclus "
-"dans toutes les pages Web. Vous pouvez activer ou désactiver l'utilisation "
-"de la feuille de style dans la page de réglage <a href=\"%1$s\">%2$s</a>."
+msgid "A stylesheet for the social sharing buttons can be included in all webpages. You can enable or disable use of the stylesheet from the <a href=\"%1$s\">%2$s</a> settings page."
+msgstr "Une feuille de style pour les boutons de partage social peut être inclus dans toutes les pages Web. Vous pouvez activer ou désactiver l'utilisation de la feuille de style dans la page de réglage <a href=\"%1$s\">%2$s</a>."
 
 #: lib/sharing.php:237
-msgid ""
-"Support for shortcode(s) can be enabled and disabled on the <a href=\"%1$s\">"
-"%2$s</a> settings page. Shortcodes are disabled by default to optimize "
-"performance and content processing."
-msgstr ""
-"Le support pour shortcode(s) peut être activé et désactivé sur la page de "
-"réglage <a href=\"%1$s\">%2$s</a>. Les shortcodes sont désactivés par défaut "
-"pour optimiser la performance et le traitement du contenu."
+msgid "Support for shortcode(s) can be enabled and disabled on the <a href=\"%1$s\">%2$s</a> settings page. Shortcodes are disabled by default to optimize performance and content processing."
+msgstr "Le support pour shortcode(s) peut être activé et désactivé sur la page de réglage <a href=\"%1$s\">%2$s</a>. Les shortcodes sont désactivés par défaut pour optimiser la performance et le traitement du contenu."
 
 #: lib/sharing.php:237 lib/website/twitter.php:64
 msgctxt "lib file description"
@@ -211,16 +187,8 @@ msgid "Advanced"
 msgstr "Avancés"
 
 #: lib/sharing.php:240
-msgid ""
-"The sharing widget feature adds a <em>%s</em> widget to the WordPress "
-"Widgets settings page. The sharing widget shares the URL for the current "
-"webpage (and not individual items within an index / archive webpage, for "
-"example)."
-msgstr ""
-"La fonctionnalité du widget de partage ajoute un widget <em>%s</em> sur la "
-"page de réglages Widgets de WordPress. Le widget de partage soumet au sites "
-"sociaux l'URL de la page Web actuelle (et non l'URL de chaque item sur une "
-"page Web d'index / archive, par exemple)."
+msgid "The sharing widget feature adds a <em>%s</em> widget to the WordPress Widgets settings page. The sharing widget shares the URL for the current webpage (and not individual items within an index / archive webpage, for example)."
+msgstr "La fonctionnalité du widget de partage ajoute un widget <em>%s</em> sur la page de réglages Widgets de WordPress. Le widget de partage soumet au sites sociaux l'URL de la page Web actuelle (et non l'URL de chaque item sur une page Web d'index / archive, par exemple)."
 
 #: lib/sharing.php:240
 msgctxt "lib file description"
@@ -232,11 +200,8 @@ msgid "Reload Default Styles"
 msgstr "Recharger Styles par Défaut"
 
 #: lib/sharing.php:265
-msgid ""
-"All sharing styles have been reloaded with their default settings and saved."
-msgstr ""
-"Tous les styles de partage ont été rechargé avec leurs paramètres par défaut "
-"et sauvegardé."
+msgid "All sharing styles have been reloaded with their default settings and saved."
+msgstr "Tous les styles de partage ont été rechargé avec leurs paramètres par défaut et sauvegardé."
 
 #: lib/sharing.php:286
 msgid "The %s file is not readable."
@@ -244,8 +209,7 @@ msgstr "Le fichier %s n'est pas lisible."
 
 #: lib/sharing.php:326
 msgid "Failed to load the minify class SuextMinifyCssCompressor."
-msgstr ""
-"Impossible de charger la classe de rapetissement SuextMinifyCssCompressor."
+msgstr "Impossible de charger la classe de rapetissement SuextMinifyCssCompressor."
 
 #: lib/sharing.php:335
 msgid "Failed writing to the % file."
@@ -253,9 +217,7 @@ msgstr "Impossible d'écrire dans le fichier%."
 
 #: lib/sharing.php:340
 msgid "Updated the <a href=\"%1$s\">%2$s</a> stylesheet (%3$d bytes written)."
-msgstr ""
-"La feuille de style <a href=\"%1$s\">%2$s</a> a été mise à jour (%3$s octets "
-"écrits)."
+msgstr "La feuille de style <a href=\"%1$s\">%2$s</a> a été mise à jour (%3$s octets écrits)."
 
 #: lib/sharing.php:349
 msgid "The %s folder is not writable."
@@ -266,12 +228,8 @@ msgid "Failed to open file %s for writing."
 msgstr "Impossible d'ouvrir le fichier %s pour l'écriture."
 
 #: lib/sharing.php:364
-msgid ""
-"Error removing the minimized stylesheet &mdash; does the web server have "
-"sufficient privileges?"
-msgstr ""
-"Erreur en retirant la feuille de style minimisé &mdash; le serveur Web a "
-"t'il les privilèges nécessaires?"
+msgid "Error removing the minimized stylesheet &mdash; does the web server have sufficient privileges?"
+msgstr "Erreur en retirant la feuille de style minimisé &mdash; le serveur Web a t'il les privilèges nécessaires?"
 
 #: lib/sharing.php:383
 msgctxt "metabox title"
@@ -283,13 +241,8 @@ msgid "%s must be published<br/>before it can be shared."
 msgstr "%s doit être publié<br/>avant d'être partagé."
 
 #: lib/submenu/rrssb-buttons.php:51
-msgid ""
-"Social sharing buttons can be added to the top, bottom, or both. Each "
-"sharing button must also be enabled below (see the <em>%s</em> options)."
-msgstr ""
-"Les boutons de partage social peuvent être ajoutés en haut, en bas, ou les "
-"deux. Chaque bouton de partage doit aussi être activé ci-dessous (voir les "
-"options <em>%s</em>)."
+msgid "Social sharing buttons can be added to the top, bottom, or both. Each sharing button must also be enabled below (see the <em>%s</em> options)."
+msgstr "Les boutons de partage social peuvent être ajoutés en haut, en bas, ou les deux. Chaque bouton de partage doit aussi être activé ci-dessous (voir les options <em>%s</em>)."
 
 #: lib/submenu/rrssb-buttons.php:51 lib/website/email.php:29
 #: lib/website/facebook.php:29 lib/website/gplus.php:29
@@ -302,38 +255,16 @@ msgid "Show Button in"
 msgstr "Afficher le bouton"
 
 #: lib/submenu/rrssb-buttons.php:54
-msgid ""
-"Add the social sharing buttons to each entry of an index webpage (for "
-"example, <strong>non-static</strong> homepage, category, archive, etc.). "
-"Social sharing buttons are not included on index webpages by default."
-msgstr ""
-"Ajouter les boutons de partage social à chaque item d'une page d'index (par "
-"exemple, page d'accueil <strong>non-statique</strong>, catégorie, archives, "
-"etc.). Les boutons de partage social ne sont pas inclus dans les pages Web "
-"d'index par défaut."
+msgid "Add the social sharing buttons to each entry of an index webpage (for example, <strong>non-static</strong> homepage, category, archive, etc.). Social sharing buttons are not included on index webpages by default."
+msgstr "Ajouter les boutons de partage social à chaque item d'une page d'index (par exemple, page d'accueil <strong>non-statique</strong>, catégorie, archives, etc.). Les boutons de partage social ne sont pas inclus dans les pages Web d'index par défaut."
 
 #: lib/submenu/rrssb-buttons.php:57
-msgid ""
-"If a static Post or Page has been selected for the homepage, you can add the "
-"social sharing buttons to that static homepage as well (default is "
-"unchecked)."
-msgstr ""
-"Si un Article ou une Page statique a été sélectionnée pour la page "
-"d'accueil, les boutons de partage social peuvent paraître sur la page "
-"d'accueil statique aussi (valeur par défaut est décochée)."
+msgid "If a static Post or Page has been selected for the homepage, you can add the social sharing buttons to that static homepage as well (default is unchecked)."
+msgstr "Si un Article ou une Page statique a été sélectionnée pour la page d'accueil, les boutons de partage social peuvent paraître sur la page d'accueil statique aussi (valeur par défaut est décochée)."
 
 #: lib/submenu/rrssb-buttons.php:60
-msgid ""
-"Enabled social sharing buttons are added to the Post, Page, Media, and "
-"Product webpages by default. If your theme (or another plugin) supports "
-"additional custom post types, and you would like to include social sharing "
-"buttons on these webpages, check the appropriate option(s) here."
-msgstr ""
-"Les boutons de partage social activés sont ajoutés par défaut au pages Web "
-"d'Articles, Pages, Médias, et Produits. Si votre thème (ou une autre "
-"extension) supporte des types d'articles personnalisé supplémentaires, et "
-"que vous souhaitez ajouter des boutons de partage social sur ces pages Web, "
-"cochez les options appropriées ici."
+msgid "Enabled social sharing buttons are added to the Post, Page, Media, and Product webpages by default. If your theme (or another plugin) supports additional custom post types, and you would like to include social sharing buttons on these webpages, check the appropriate option(s) here."
+msgstr "Les boutons de partage social activés sont ajoutés par défaut au pages Web d'Articles, Pages, Médias, et Produits. Si votre thème (ou une autre extension) supporte des types d'articles personnalisé supplémentaires, et que vous souhaitez ajouter des boutons de partage social sur ces pages Web, cochez les options appropriées ici."
 
 #: lib/submenu/rrssb-buttons.php:70
 msgctxt "metabox title"
@@ -376,29 +307,12 @@ msgid "Position in Excerpt Text"
 msgstr "Position dans le texte d'extrait"
 
 #: lib/submenu/rrssb-styles.php:37
-msgid ""
-"Add the CSS of all <em>%1$s</em> to webpages (default is checked). The CSS "
-"will be <strong>minimized</strong>, and saved to a single stylesheet with a "
-"URL of <a href=\"%2$s\">%3$s</a>. The minimized stylesheet can be enqueued "
-"or added directly to the webpage HTML."
-msgstr ""
-"Ajouter le CSS de tous les <em>%1$s</em> au pages Web (cochée par défaut). "
-"Le CSS sera <strong>minimisé</strong> et sauvegardé dans une seule feuille "
-"de style avec l'URL <a href=\"%2$s\">%3$s</a>. La feuille de style peut être "
-"mis en queue ou ajouté directement au HTML des pages Web."
+msgid "Add the CSS of all <em>%1$s</em> to webpages (default is checked). The CSS will be <strong>minimized</strong>, and saved to a single stylesheet with a URL of <a href=\"%2$s\">%3$s</a>. The minimized stylesheet can be enqueued or added directly to the webpage HTML."
+msgstr "Ajouter le CSS de tous les <em>%1$s</em> au pages Web (cochée par défaut). Le CSS sera <strong>minimisé</strong> et sauvegardé dans une seule feuille de style avec l'URL <a href=\"%2$s\">%3$s</a>. La feuille de style peut être mis en queue ou ajouté directement au HTML des pages Web."
 
 #: lib/submenu/rrssb-styles.php:41
-msgid ""
-"Have WordPress enqueue the social stylesheet instead of adding the CSS to in "
-"the webpage HTML (default is unchecked). Enqueueing the stylesheet may be "
-"desirable if you use a plugin to concatenate all enqueued styles into a "
-"single stylesheet URL."
-msgstr ""
-"Demander a WordPress de mettre la feuille de style en queue au lieu "
-"d'ajouter le CSS au HTML des pages Web (décochée par défaut). Mettre la "
-"feuille de style en queue peut être souhaitable si vous utilisez une "
-"extension pour assembler tous le contenu des feuilles de styles dans un seul "
-"URL."
+msgid "Have WordPress enqueue the social stylesheet instead of adding the CSS to in the webpage HTML (default is unchecked). Enqueueing the stylesheet may be desirable if you use a plugin to concatenate all enqueued styles into a single stylesheet URL."
+msgstr "Demander a WordPress de mettre la feuille de style en queue au lieu d'ajouter le CSS au HTML des pages Web (décochée par défaut). Mettre la feuille de style en queue peut être souhaitable si vous utilisez une extension pour assembler tous le contenu des feuilles de styles dans un seul URL."
 
 #: lib/submenu/rrssb-styles.php:126
 msgctxt "metabox title"
@@ -509,14 +423,8 @@ msgid "Add via @username"
 msgstr "Ajouter via @nom"
 
 #: lib/website/twitter.php:54
-msgid ""
-"Append the website's business @username to the tweet (see the <a href=\"%1$s"
-"\">Twitter</a> options tab on the %2$s settings page). The website's "
-"@username will be displayed and recommended after the webpage is shared."
-msgstr ""
-"Ajouter le @nom d'affaires du site Web au Tweet (voir l'onglet d'options <a "
-"href=\"%1$s\">Twitter</a> sur la page de réglages %2$s). Le @nom du site Web "
-"sera affichés et recommandé après que la page Web est été partagée."
+msgid "Append the website's business @username to the tweet (see the <a href=\"%1$s\">Twitter</a> options tab on the %2$s settings page). The website's @username will be displayed and recommended after the webpage is shared."
+msgstr "Ajouter le @nom d'affaires du site Web au Tweet (voir l'onglet d'options <a href=\"%1$s\">Twitter</a> sur la page de réglages %2$s). Le @nom du site Web sera affichés et recommandé après que la page Web est été partagée."
 
 #: lib/website/twitter.php:54
 msgctxt "lib file description"
@@ -529,15 +437,8 @@ msgid "Recommend Author"
 msgstr "Recommander l'auteur"
 
 #: lib/website/twitter.php:59
-msgid ""
-"Recommend following the author's Twitter @username (from their profile) "
-"after sharing a webpage. If the <em>%1$s</em> option is also checked, the "
-"website's @username is suggested first."
-msgstr ""
-"Conseiller de suivre le @nom Twitter de l'auteur (défini sur leur page de "
-"profil) après avoir partagé une page Web. Si l'option <em>%1$s</em> est "
-"également cochée, le @nom d'affaires Twitter du site Web est aussi "
-"recommandes."
+msgid "Recommend following the author's Twitter @username (from their profile) after sharing a webpage. If the <em>%1$s</em> option is also checked, the website's @username is suggested first."
+msgstr "Conseiller de suivre le @nom Twitter de l'auteur (défini sur leur page de profil) après avoir partagé une page Web. Si l'option <em>%1$s</em> est également cochée, le @nom d'affaires Twitter du site Web est aussi recommandes."
 
 #: lib/website/twitter.php:62
 msgctxt "option label"
@@ -545,12 +446,8 @@ msgid "Shorten URLs with"
 msgstr "Raccourcir les URLs avec"
 
 #: lib/website/twitter.php:64
-msgid ""
-"If you select a URL shortening service here, you must also enter its <a href="
-"\"%1$s\">%2$s</a> on the %3$s settings page."
-msgstr ""
-"Si vous sélectionnez un service de raccourcissement d'URL, vous devez "
-"également entrer ses <a href=\"%1$s\">%2$s</a> dans la page de réglages %3$s."
+msgid "If you select a URL shortening service here, you must also enter its <a href=\"%1$s\">%2$s</a> on the %3$s settings page."
+msgstr "Si vous sélectionnez un service de raccourcissement d'URL, vous devez également entrer ses <a href=\"%1$s\">%2$s</a> dans la page de réglages %3$s."
 
 #: lib/website/twitter.php:64 lib/website/twitter.php:68
 msgctxt "metabox tab"
@@ -565,39 +462,27 @@ msgstr "utilisant ces <a href=\"%1$s\">%2$s</a>"
 msgid "The %s widget."
 msgstr "Le widget de %s."
 
-#: lib/widget/sharing.php:110
+#: lib/widget/sharing.php:111
 msgctxt "option value"
 msgid "Share It"
 msgstr "Partager"
 
-#: lib/widget/sharing.php:112
+#: lib/widget/sharing.php:113
 msgctxt "option label"
 msgid "Widget Title (leave blank for no title)"
 msgstr "Titre du Widget (laisser vide pour aucun titre)"
 
 #: wpsso-rrssb.php:83
-msgid ""
-"The %1$s extension requires the %2$s plugin &mdash; please install and "
-"activate the %3$s plugin before trying to re-activate the %4$s extension."
-msgstr ""
-"L'extension %1$s requiert %2$s &mdash; s'il vous plaît installer et activer "
-"l'extension %3$s avant d'essayer de re-activer %4$s."
+msgid "The %1$s extension requires the %2$s plugin &mdash; please install and activate the %3$s plugin before trying to re-activate the %4$s extension."
+msgstr "L'extension %1$s requiert %2$s &mdash; s'il vous plaît installer et activer l'extension %3$s avant d'essayer de re-activer %4$s."
 
 #: wpsso-rrssb.php:85
-msgid ""
-"The %1$s extension requires the %2$s plugin &mdash; please install and "
-"activate the %3$s plugin."
-msgstr ""
-"L'extension %1$s requiert %2$s &mdash; s'il vous plaît installer et activer "
-"l'extension %3$s."
+msgid "The %1$s extension requires the %2$s plugin &mdash; please install and activate the %3$s plugin."
+msgstr "L'extension %1$s requiert %2$s &mdash; s'il vous plaît installer et activer l'extension %3$s."
 
 #: wpsso-rrssb.php:131
-msgid ""
-"The %1$s extension version %2$s requires the use of %3$s version %4$s or "
-"newer (version %5$s is currently installed)."
-msgstr ""
-"L'extension %1$s version %2$s requiert l'utilisation de %3$s version %4$s ou "
-"plus récente (la version %5$s est actuellement installée)."
+msgid "The %1$s extension version %2$s requires the use of %3$s version %4$s or newer (version %5$s is currently installed)."
+msgstr "L'extension %1$s version %2$s requiert l'utilisation de %3$s version %4$s ou plus récente (la version %5$s est actuellement installée)."
 
 #. Plugin Name of the plugin/theme
 msgid "WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)"
@@ -608,13 +493,8 @@ msgid "http://surniaulula.com/extend/plugins/wpsso-rrssb/"
 msgstr "http://surniaulula.com/extend/plugins/wpsso-rrssb/"
 
 #. Description of the plugin/theme
-msgid ""
-"WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons "
-"in your content, excerpts, CSS sidebar, widget, shortcode, etc."
-msgstr ""
-"Une extension WPSSO pour ajouter des boutons de partage sociaux ridiculement "
-"réactif (SVG) dans votre contenu, les extraits, barre flottante CSS, widget, "
-"shortcode, etc."
+msgid "WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc."
+msgstr "Une extension WPSSO pour ajouter des boutons de partage sociaux ridiculement réactif (SVG) dans votre contenu, les extraits, barre flottante CSS, widget, shortcode, etc."
 
 #. Author of the plugin/theme
 msgid "JS Morisset"
@@ -623,7 +503,3 @@ msgstr "JS Morisset"
 #. Author URI of the plugin/theme
 msgid "http://surniaulula.com/"
 msgstr "http://surniaulula.com/"
-
-#~ msgctxt "option label"
-#~ msgid "Share Single Image"
-#~ msgstr "Partager une seule image"
