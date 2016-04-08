@@ -119,7 +119,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 = Changelog / Release Notes =
 
-**Version 1.3.4-rc1 (2016/04/08)**
+**Version 1.3.4-1 (2016/04/08)**
 
 Official announcement: N/A
 
@@ -152,9 +152,9 @@ Official announcement: N/A
 
 == Upgrade Notice ==
 
-= 1.3.4-rc1 =
+= 1.3.4-1 =
 
-(2016/04/08) Modified the order of WpssoOpengraph `get_the_media_info()` method arguments for WPSSO v3.29.0.
+(2016/04/08) Added support for a 'use_post' argument in the sharing buttons shortcode. Modified filter and method arguments for WPSSO v3.29.0.
 
 = 1.3.3-1 =
 
