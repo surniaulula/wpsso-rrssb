@@ -147,8 +147,7 @@ Official announcement: N/A
 * *Bugfixes*
 	* None
 * *Developer Notes*
-	* Adopted a standard version numbering system:
-		* `{major}.{minor}.{bugfix}-{stage}{level}`
+	* Adopted a new version numbering system: `{major}.{minor}.{bugfix}-{stage}{level}`
 
 == Upgrade Notice ==
 
