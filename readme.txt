@@ -119,6 +119,19 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 = Changelog / Release Notes =
 
+**Version 1.3.5-1 (2016/04/10)**
+
+Official announcement: N/A
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* Fixed an incorrect variable reference in the `wpssorrssb_get_sharing_buttons()` funtion.
+* *Developer Notes*
+	* None
+
 **Version 1.3.4-1 (2016/04/08)**
 
 Official announcement: N/A
@@ -150,6 +163,10 @@ Official announcement: N/A
 	* Adopted a new version numbering system: `{major}.{minor}.{bugfix}-{stage}{level}`
 
 == Upgrade Notice ==
+
+= 1.3.5-1 =
+
+(2016/04/10) Fixed an incorrect variable reference in the `wpssossb_get_sharing_buttons()` funtion.
 
 = 1.3.4-1 =
 
