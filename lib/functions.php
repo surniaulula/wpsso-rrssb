@@ -18,7 +18,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 
 			$atts['use_post'] = SucomUtil::sanitize_use_post( $atts ); 
 			$cache_salt = __FUNCTION__.'(locale:'.SucomUtil::get_locale().
-				'_url:'.$ngfb->util->get_sharing_url( $atts['use_post'] ).
+				'_url:'.$wpsso->util->get_sharing_url( $atts['use_post'] ).
 				'_ids:'.( implode( '_', $ids ) ).
 				'_atts:'.( implode( '_', $atts ) ).')';
 			$cache_id = $wpsso->cf['lca'].'_'.md5( $cache_salt );
