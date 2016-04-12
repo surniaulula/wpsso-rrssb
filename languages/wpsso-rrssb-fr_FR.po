@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) 1.3.4-1\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) 1.3.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2016-04-08 08:03-0400\n"
-"PO-Revision-Date: 2016-04-08 08:30-0400\n"
+"POT-Creation-Date: 2016-04-12 02:05-0400\n"
+"PO-Revision-Date: 2016-04-12 02:07-0400\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -96,7 +96,7 @@ msgid "WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Butto
 msgstr "Une extension WPSSO pour ajouter des boutons de partage sociaux ridiculement réactif (SVG) dans votre contenu, les extraits, barre flottante CSS, widget, shortcode, etc."
 
 #: lib/gpl/admin/sharing.php:28 lib/pro/admin/sharing.php:35
-#: lib/sharing.php:231
+#: lib/sharing.php:232
 msgctxt "metabox tab"
 msgid "Sharing Buttons"
 msgstr "Boutons de Partage"
@@ -150,93 +150,93 @@ msgctxt "option label"
 msgid "Position in bbPress Single"
 msgstr "Position dans le texte bbPress Single"
 
-#: lib/sharing.php:150
+#: lib/sharing.php:149
 msgid "Failed to open the %s file for reading."
 msgstr "Impossible d'ouvrir le fichier %s pour la lecture."
 
-#: lib/sharing.php:231
+#: lib/sharing.php:232
 msgid "Social sharing features include the <a href=\"%1$s\">%2$s</a> and <a href=\"%3$s\">%4$s</a> settings pages, the <em>%5$s</em> tab in the <em>%6$s</em> metabox, along with the social sharing shortcode and widget."
 msgstr "Les fonctionnalités de partage social incluent les pages de réglages <a href=\"%1$s\">%2$s</a> et <a href=\"%3$s\">%4$s</a>, l'onglet <em>%5$s</em> dans la metabox <em>%6$s</em>, ainsi que le shortcode et widget de partage social."
 
-#: lib/sharing.php:231
+#: lib/sharing.php:232
 msgctxt "lib file description"
 msgid "Sharing Buttons"
 msgstr "Boutons de Partage"
 
-#: lib/sharing.php:231 lib/sharing.php:234 lib/submenu/rrssb-styles.php:37
+#: lib/sharing.php:232 lib/sharing.php:235 lib/submenu/rrssb-styles.php:37
 msgctxt "lib file description"
 msgid "Sharing Styles"
 msgstr "Styles de Partage"
 
-#: lib/sharing.php:231
+#: lib/sharing.php:232
 msgctxt "metabox title"
 msgid "Social Settings"
 msgstr "Réglages Sociaux"
 
-#: lib/sharing.php:234
+#: lib/sharing.php:235
 msgid "A stylesheet for the social sharing buttons can be included in all webpages. You can enable or disable use of the stylesheet from the <a href=\"%1$s\">%2$s</a> settings page."
 msgstr "Une feuille de style pour les boutons de partage social peut être inclus dans toutes les pages Web. Vous pouvez activer ou désactiver l'utilisation de la feuille de style dans la page de réglage <a href=\"%1$s\">%2$s</a>."
 
-#: lib/sharing.php:237
+#: lib/sharing.php:238
 msgid "Support for shortcode(s) can be enabled and disabled on the <a href=\"%1$s\">%2$s</a> settings page. Shortcodes are disabled by default to optimize performance and content processing."
 msgstr "Le support pour shortcode(s) peut être activé et désactivé sur la page de réglage <a href=\"%1$s\">%2$s</a>. Les shortcodes sont désactivés par défaut pour optimiser la performance et le traitement du contenu."
 
-#: lib/sharing.php:237 lib/website/twitter.php:64
+#: lib/sharing.php:238 lib/website/twitter.php:64
 msgctxt "lib file description"
 msgid "Advanced"
 msgstr "Avancés"
 
-#: lib/sharing.php:240
+#: lib/sharing.php:241
 msgid "The sharing widget feature adds a <em>%s</em> widget to the WordPress Widgets settings page. The sharing widget shares the URL for the current webpage (and not individual items within an index / archive webpage, for example)."
 msgstr "La fonctionnalité du widget de partage ajoute un widget <em>%s</em> sur la page de réglages Widgets de WordPress. Le widget de partage soumet au sites sociaux l'URL de la page Web actuelle (et non l'URL de chaque item sur une page Web d'index / archive, par exemple)."
 
-#: lib/sharing.php:240
+#: lib/sharing.php:241
 msgctxt "lib file description"
 msgid "WPSSO RRSSB"
 msgstr "WPSSO RRSSB"
 
-#: lib/sharing.php:248
+#: lib/sharing.php:249
 msgid "Reload Default Styles"
 msgstr "Recharger Styles par Défaut"
 
-#: lib/sharing.php:265
+#: lib/sharing.php:266
 msgid "All sharing styles have been reloaded with their default settings and saved."
 msgstr "Tous les styles de partage ont été rechargé avec leurs paramètres par défaut et sauvegardé."
 
-#: lib/sharing.php:286
+#: lib/sharing.php:287
 msgid "The %s file is not readable."
 msgstr "Le fichier %s n'est pas lisible."
 
-#: lib/sharing.php:326
+#: lib/sharing.php:327
 msgid "Failed to load the minify class SuextMinifyCssCompressor."
 msgstr "Impossible de charger la classe de rapetissement SuextMinifyCssCompressor."
 
-#: lib/sharing.php:335
+#: lib/sharing.php:336
 msgid "Failed writing to the % file."
 msgstr "Impossible d'écrire dans le fichier%."
 
-#: lib/sharing.php:340
+#: lib/sharing.php:341
 msgid "Updated the <a href=\"%1$s\">%2$s</a> stylesheet (%3$d bytes written)."
 msgstr "La feuille de style <a href=\"%1$s\">%2$s</a> a été mise à jour (%3$s octets écrits)."
 
-#: lib/sharing.php:349
+#: lib/sharing.php:350
 msgid "The %s folder is not writable."
 msgstr "Le dossier %s n'est pas accessible en écriture."
 
-#: lib/sharing.php:355
+#: lib/sharing.php:356
 msgid "Failed to open file %s for writing."
 msgstr "Impossible d'ouvrir le fichier %s pour l'écriture."
 
-#: lib/sharing.php:364
+#: lib/sharing.php:365
 msgid "Error removing the minimized stylesheet &mdash; does the web server have sufficient privileges?"
 msgstr "Erreur en retirant la feuille de style minimisé &mdash; le serveur Web a t'il les privilèges nécessaires?"
 
-#: lib/sharing.php:383
+#: lib/sharing.php:384
 msgctxt "metabox title"
 msgid "Sharing Buttons"
 msgstr "Boutons de Partage Social"
 
-#: lib/sharing.php:439
+#: lib/sharing.php:440
 msgid "%s must be published<br/>before it can be shared."
 msgstr "%s doit être publié<br/>avant d'être partagé."
 
