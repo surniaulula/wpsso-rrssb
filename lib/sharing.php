@@ -136,8 +136,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			$def_opts = $this->p->util->add_ptns_to_opts( $def_opts, 'buttons_add_to' );
 			$plugin_dir = trailingslashit( realpath( dirname( $this->plugin_filepath ) ) );
 			$url_path = parse_url( trailingslashit( plugins_url( '', $this->plugin_filepath ) ), PHP_URL_PATH );	// relative URL
-			$tabs = apply_filters( $this->p->cf['lca'].'_rrssb_styles_tabs', 
-				$this->p->cf['sharing']['rrssb-style'] );
+			$tabs = apply_filters( $this->p->cf['lca'].'_rrssb_styles_tabs', $this->p->cf['sharing']['rrssb-style'] );
 
 			foreach ( $tabs as $id => $name ) {
 				$buttons_css_file = $plugin_dir.'css/'.$id.'.css';
@@ -200,6 +199,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			foreach( $show_on as $type_id => $type_name ) {
 				$transients['WpssoRrssbSharing::get_buttons'][] = 'locale:'.$locale.'_post:'.$post_id.'_type:'.$type_id;
 				$transients['WpssoRrssbSharing::get_buttons'][] = 'locale:'.$locale.'_post:'.$post_id.'_type:'.$type_id.'_prot:https';
+				$transients['WpssoRrssbSharing::get_buttons'][] = 'locale:'.$locale.'_post:'.$post_id.'_type:'.$type_id.'_mobile:true';
+				$transients['WpssoRrssbSharing::get_buttons'][] = 'locale:'.$locale.'_post:'.$post_id.'_type:'.$type_id.'_mobile:true_prot:https';
 			}
 
 			return $transients;
@@ -539,6 +540,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				$sharing_url = $this->p->util->get_sharing_url( $use_post, true );
 				$cache_salt = __METHOD__.'('.apply_filters( $lca.'_buttons_cache_salt', 
 					SucomUtil::get_mod_salt( $mod ).'_type:'.$type.
+					( SucomUtil::is_mobile() ? '_mobile:true' : '' ).
 					( SucomUtil::is_https() ? '_prot:https' : '' ).
 					( empty( $mod['id'] ) ? '_url:'.$sharing_url : '' ),
 						$type, $use_post ).')';
