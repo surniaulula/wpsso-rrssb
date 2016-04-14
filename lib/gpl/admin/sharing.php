@@ -42,8 +42,13 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 
 			$size_info = $this->p->media->get_size_info( 'thumbnail' );
 			$title_caption = $this->p->webpage->get_caption( 'title', 0, $mod, true, false );
-			$table_rows[] = '<td colspan="3" align="center">'.$this->p->msgs->get( 'pro-feature-msg', 
-				array( 'lca' => 'wpssorrssb' ) ).'</td>';
+
+			$table_rows[] = '<td colspan="3" align="center">'.
+				$this->p->msgs->get( 'pro-feature-msg', 
+					array( 'lca' => 'wpssorrssb' ) ).'</td>';
+
+			$table_rows[] = '<td colspan="3" align="center">'.
+				$this->p->msgs->get( 'pro-about-msg-post' ).'</td>';
 
 			/*
 			 * Email
