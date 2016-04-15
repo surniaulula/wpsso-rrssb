@@ -119,7 +119,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 = Changelog / Release Notes =
 
-**Version 1.3.7-1 (2016/04/14)**
+**Version 1.3.7-1 (2016/04/15)**
 
 Official announcement: N/A
 
@@ -190,9 +190,9 @@ Official announcement: N/A
 
 == Upgrade Notice ==
 
-= 1.3.7-dev1 =
+= 1.3.7-1 =
 
-(2016/04/14) Added a message in the Free / Basic version to explain how to change the social text and image.
+(2016/04/15) Added a message in the Free / Basic version to explain how to change the social text and image.
 
 = 1.3.6-1 =
 
