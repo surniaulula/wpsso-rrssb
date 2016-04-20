@@ -126,7 +126,7 @@ Official announcement: N/A
 * *New Features*
 	* None
 * *Improvements*
-	* Added a message in the Free / Basic version to explain how to change the social text and image.
+	* Updated some help and status messages.
 * *Bugfixes*
 	* None
 * *Developer Notes*
@@ -192,7 +192,7 @@ Official announcement: N/A
 
 = 1.3.7-1 =
 
-(2016/04/15) Added a message in the Free / Basic version to explain how to change the social text and image.
+(2016/04/15) Updated some help and status messages.
 
 = 1.3.6-1 =
 
