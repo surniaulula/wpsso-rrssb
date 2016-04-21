@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) 1.3.6\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) 1.3.8-1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2016-04-12 02:05-0400\n"
-"PO-Revision-Date: 2016-04-12 02:07-0400\n"
+"POT-Creation-Date: 2016-04-21 07:20-0400\n"
+"PO-Revision-Date: 2016-04-21 07:23-0400\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -105,37 +105,37 @@ msgstr "Boutons de Partage"
 msgid "Save a draft version or publish the %s to display these options."
 msgstr "Enregistrer un brouillon ou publier pour activer ces options."
 
-#: lib/gpl/admin/sharing.php:56 lib/pro/admin/sharing.php:61
+#: lib/gpl/admin/sharing.php:58 lib/pro/admin/sharing.php:61
 msgctxt "option label"
 msgid "Email Subject"
 msgstr "Sujet du couriel"
 
-#: lib/gpl/admin/sharing.php:61 lib/pro/admin/sharing.php:67
+#: lib/gpl/admin/sharing.php:63 lib/pro/admin/sharing.php:67
 msgctxt "option label"
 msgid "Email Message"
 msgstr "Message du courriel"
 
-#: lib/gpl/admin/sharing.php:74 lib/pro/admin/sharing.php:81
+#: lib/gpl/admin/sharing.php:76 lib/pro/admin/sharing.php:81
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr "Texte du Tweet"
 
-#: lib/gpl/admin/sharing.php:95 lib/pro/admin/sharing.php:103
+#: lib/gpl/admin/sharing.php:97 lib/pro/admin/sharing.php:103
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr "Texte légende Pinterest"
 
-#: lib/gpl/admin/sharing.php:117 lib/pro/admin/sharing.php:125
+#: lib/gpl/admin/sharing.php:119 lib/pro/admin/sharing.php:125
 msgctxt "option label"
 msgid "%s Title"
 msgstr "Titre %s"
 
-#: lib/gpl/admin/sharing.php:123 lib/pro/admin/sharing.php:132
+#: lib/gpl/admin/sharing.php:125 lib/pro/admin/sharing.php:132
 msgctxt "option label"
 msgid "%s Caption"
 msgstr "Légende %s"
 
-#: lib/gpl/admin/sharing.php:133 lib/pro/admin/sharing.php:143
+#: lib/gpl/admin/sharing.php:135 lib/pro/admin/sharing.php:143
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr "Désactiver les boutons"
