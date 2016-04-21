@@ -119,6 +119,19 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 = Changelog / Release Notes =
 
+**Version 1.3.8-1 (2016/04/21)**
+
+Official announcement: N/A
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Changed a call to `SucomUtil::is_front_page()` back to `is_front_page()`.
+
 **Version 1.3.7-1 (2016/04/15)**
 
 Official announcement: N/A
@@ -189,6 +202,10 @@ Official announcement: N/A
 	* Adopted a new version numbering system: `{major}.{minor}.{bugfix}-{stage}{level}`
 
 == Upgrade Notice ==
+
+= 1.3.8-1 =
+
+(2016/04/21) Minor code changes for WPSSO v3.29.6-1.
 
 = 1.3.7-1 =
 
