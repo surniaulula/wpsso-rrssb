@@ -507,19 +507,19 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			} elseif ( ! is_singular() ) {
 				if ( empty( $this->p->options['buttons_on_index'] ) ) {
 					if ( $this->p->debug->enabled )
-						$this->p->debug->log( $type.' filter skipped: index page without buttons_on_index enabled' );
+						$this->p->debug->log( $type.' filter skipped: buttons_on_index not enabled' );
 					return $text;
 				}
-			} elseif ( SucomUtil::is_front_page() ) {
+			} elseif ( is_front_page() ) {
 				if ( empty( $this->p->options['buttons_on_front'] ) ) {
 					if ( $this->p->debug->enabled )
-						$this->p->debug->log( $type.' filter skipped: front page without buttons_on_front enabled' );
+						$this->p->debug->log( $type.' filter skipped: buttons_on_front not enabled' );
 					return $text;
 				}
 			} elseif ( is_singular() ) {
 				if ( $this->is_post_buttons_disabled() ) {
 					if ( $this->p->debug->enabled )
-						$this->p->debug->log( $type.' filter skipped: is singular and post buttons disabled' );
+						$this->p->debug->log( $type.' filter skipped: post buttons are disabled' );
 					return $text;
 				}
 			}
