@@ -495,7 +495,7 @@ msgid ""
 "\"%1$s\">%2$s</a> on the %3$s settings page."
 msgstr ""
 
-#: lib/website/twitter.php:64 lib/website/twitter.php:68
+#: lib/website/twitter.php:64 lib/website/twitter.php:70
 msgctxt "metabox tab"
 msgid "Service API Keys"
 msgstr ""

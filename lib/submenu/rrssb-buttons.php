@@ -182,15 +182,16 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			$col = 0;
 			$max = 6;
 			$html = '<table>';
-			$show_on = apply_filters( $this->p->cf['lca'].'_rrssb_buttons_show_on', 
+			$lca = $this->p->cf['lca'];
+			$aop = $this->p->check->aop( 'wpssorrssb', true, $this->p->is_avail['aop'] );
+			$show_on = apply_filters( $lca.'_rrssb_buttons_show_on', 
 				$this->p->cf['sharing']['show_on'], $opt_prefix );
 
 			foreach ( $show_on as $opt_suffix => $short_desc ) {
 				$col++;
 				$class = isset( $this->p->options[$opt_prefix.'_on_'.$opt_suffix.':is'] ) &&
 					$this->p->options[$opt_prefix.'_on_'.$opt_suffix.':is'] === 'disabled' &&
-					! $this->p->check->aop( 'wpssorrssb', true, $this->p->is_avail['aop'] ) ?
-						'show_on blank' : 'show_on';
+						! $aop ? 'show_on blank' : 'show_on';
 				if ( $col == 1 )
 					$html .= '<tr><td class="'.$class.'">';
 				else $html .= '<td class="'.$class.'">';

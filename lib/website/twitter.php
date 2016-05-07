@@ -62,10 +62,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteTwitter' ) ) {
 			$table_rows[] = $form->get_th_html( _x( 'Shorten URLs with',
 				'option label', 'wpsso-rrssb' ), 'highlight', null, 
 			sprintf( __( 'If you select a URL shortening service here, you must also enter its <a href="%1$s">%2$s</a> on the %3$s settings page.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'advanced#sucom-tabset_plugin-tab_apikeys' ), _x( 'Service API Keys', 'metabox tab', 'wpsso' ), _x( 'Advanced', 'lib file description', 'wpsso' ) ) ).
-			( $this->p->check->aop() ?
+			( $this->p->check->aop( $this->p->cf['lca'], true, $this->p->is_avail['aop'] ) ?
 				'<td>'.$form->get_select( 'plugin_shortener', $this->p->cf['form']['shorteners'], 'medium' ).'&nbsp; ' :
 				'<td class="blank">'.$this->p->cf['form']['shorteners'][$this->p->options['plugin_shortener']].' &mdash; ' ).
-			sprintf( __( 'using these <a href="%1$s">%2$s</a>', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'advanced#sucom-tabset_plugin-tab_apikeys' ), _x( 'Service API Keys', 'metabox tab', 'wpsso' ) ).'</td>';
+			sprintf( __( 'using these <a href="%1$s">%2$s</a>', 'wpsso-rrssb' ),
+				$this->p->util->get_admin_url( 'advanced#sucom-tabset_plugin-tab_apikeys' ),
+				_x( 'Service API Keys', 'metabox tab', 'wpsso' ) ).'</td>';
 
 			$table_rows[] = '<tr class="hide_in_basic">'.
 			'<td colspan="2">'.$form->get_textarea( 'twitter_rrssb_html', 'average code' ).'</td>';
@@ -148,7 +150,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 
 			if ( ! isset( $atts['related'] ) ) {
 				if ( ! empty( $opts['twitter_rel_author'] ) && 
-					! empty( $post ) && $atts['use_post'] === true )
+					! empty( $post ) && $atts['use_post'] )
 						$atts['related'] = preg_replace( '/^@/', '', 
 							get_the_author_meta( $opts['plugin_cm_twitter_name'], $post->author ) );
 				else $atts['related'] = '';
