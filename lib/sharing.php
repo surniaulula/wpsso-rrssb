@@ -73,10 +73,10 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			}
 
 			$this->p->util->add_plugin_filters( $this, array( 
-				'get_defaults' => 1,		// add sharing options and css file contents to defaults
-				'get_md_defaults' => 1,				// add sharing options to meta data defaults
-				'text_filter_has_added' => 2,	// re-add the buttons filter to content, excerpt, etc.
-				'text_filter_has_removed' => 2,	// remove the buttons filter from content, excerpt, etc.
+				'get_defaults' => 1,			// add sharing options and css file contents to defaults
+				'get_md_defaults' => 1,			// add sharing options to meta data defaults
+				'text_filter_has_changes_before' => 2,	// remove the buttons filter from content, excerpt, etc.
+				'text_filter_has_changes_after' => 2,	// re-add the buttons filter to content, excerpt, etc.
 			) );
 
 			if ( is_admin() ) {
@@ -386,12 +386,12 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			}
 		}
 
-		public function filter_text_filter_has_added( $ret, $filter_name ) {
-			return ( $this->add_buttons_filter( $filter_name ) ? true : $ret );
+		public function filter_text_filter_has_changes_before( $ret, $filter_name ) {
+			return ( $this->remove_buttons_filter( $filter_name ) ? true : $ret );
 		}
 
-		public function filter_text_filter_has_removed( $ret, $filter_name ) {
-			return ( $this->remove_buttons_filter( $filter_name ) ? true : $ret );
+		public function filter_text_filter_has_changes_after( $ret, $filter_name ) {
+			return ( $this->add_buttons_filter( $filter_name ) ? true : $ret );
 		}
 
 		public function show_footer() {
