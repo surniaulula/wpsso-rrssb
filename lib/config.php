@@ -15,7 +15,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(
-					'version' => '1.3.9-1',		// plugin version
+					'version' => '1.3.10-dev1',		// plugin version
 					'opt_version' => '8',		// increment when changing default options
 					'short' => 'WPSSO RRSSB',	// short plugin name
 					'name' => 'WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)',
@@ -75,13 +75,13 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 								'sharing' => 'Sharing Settings',
 							),
 							'ecom' => array(
-								'woocommerce' => 'WooCommerce',
+								'woocommerce' => '(plugin) WooCommerce',
 							),
 							'forum' => array(
-								'bbpress' => 'bbPress',
+								'bbpress' => '(plugin) bbPress',
 							),
 							'social' => array(
-								'buddypress' => 'BuddyPress',
+								'buddypress' => '(plugin) BuddyPress',
 							),
 						),
 						'pro' => array(
@@ -89,13 +89,13 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 								'sharing' => 'Sharing Settings',
 							),
 							'ecom' => array(
-								'woocommerce' => 'WooCommerce',
+								'woocommerce' => '(plugin) WooCommerce',
 							),
 							'forum' => array(
-								'bbpress' => 'bbPress',
+								'bbpress' => '(plugin) bbPress',
 							),
 							'social' => array(
-								'buddypress' => 'BuddyPress',
+								'buddypress' => '(plugin) BuddyPress',
 							),
 						),
 					),

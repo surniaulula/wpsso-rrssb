@@ -87,7 +87,6 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					'save_options' => 3,			// update the sharing css file
 					'option_type' => 2,			// identify option type for sanitation
 					'post_cache_transients' => 4,		// clear transients on post save
-					'messages_tooltip_side' => 2,		// tooltip messages for side boxes
 					'secondary_action_buttons' => 4,	// add a reload default styles button
 				) );
 
@@ -193,14 +192,15 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function filter_post_cache_transients( $transients, $post_id, $locale = 'en_US', $sharing_url ) {
+			$locale_salt = 'locale:'.$locale.'_post:'.$post_id;
 			$show_on = apply_filters( $this->p->cf['lca'].'_rrssb_buttons_show_on', 
 				$this->p->cf['sharing']['show_on'], null );
 
 			foreach( $show_on as $type_id => $type_name ) {
-				$transients['WpssoRrssbSharing::get_buttons'][] = 'locale:'.$locale.'_post:'.$post_id.'_type:'.$type_id;
-				$transients['WpssoRrssbSharing::get_buttons'][] = 'locale:'.$locale.'_post:'.$post_id.'_type:'.$type_id.'_prot:https';
-				$transients['WpssoRrssbSharing::get_buttons'][] = 'locale:'.$locale.'_post:'.$post_id.'_type:'.$type_id.'_mobile:true';
-				$transients['WpssoRrssbSharing::get_buttons'][] = 'locale:'.$locale.'_post:'.$post_id.'_type:'.$type_id.'_mobile:true_prot:https';
+				$transients['WpssoRrssbSharing::get_buttons'][] = $locale_salt.'_type:'.$type_id;
+				$transients['WpssoRrssbSharing::get_buttons'][] = $locale_salt.'_type:'.$type_id.'_prot:https';
+				$transients['WpssoRrssbSharing::get_buttons'][] = $locale_salt.'_type:'.$type_id.'_mobile:true';
+				$transients['WpssoRrssbSharing::get_buttons'][] = $locale_salt.'_type:'.$type_id.'_mobile:true_prot:https';
 			}
 
 			return $transients;
@@ -208,40 +208,22 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 		public function filter_status_gpl_features( $features, $lca, $info ) {
 			if ( ! empty( $info['lib']['submenu']['rrssb-buttons'] ) )
-				$features['Sharing Buttons'] = array( 
+				$features['(sharing) Sharing Buttons'] = array(
 					'classname' => $lca.'Sharing',
 				);
 			if ( ! empty( $info['lib']['submenu']['rrssb-styles'] ) )
-				$features['Sharing Stylesheet'] = array(
+				$features['(sharing) Sharing Stylesheet'] = array(
 					'status' => $this->p->options['buttons_use_social_css'] ? 'on' : 'off',
 				);
 			if ( ! empty( $info['lib']['shortcode']['sharing'] ) )
-				$features['Sharing Shortcode'] = array(
+				$features['(sharing) Sharing Shortcode'] = array(
 					'classname' => $lca.'ShortcodeSharing',
 				);
 			if ( ! empty( $info['lib']['widget']['sharing'] ) )
-				$features['Sharing Widget'] = array(
+				$features['(sharing) Sharing Widget'] = array(
 					'classname' => $lca.'WidgetSharing',
 				);
 			return $features;
-		}
-
-		public function filter_messages_tooltip_side( $text, $idx ) {
-			switch ( $idx ) {
-				case 'tooltip-side-sharing-buttons':
-					$text = sprintf( __( 'Social sharing features include the <a href="%1$s">%2$s</a> and <a href="%3$s">%4$s</a> settings pages, the <em>%5$s</em> tab in the <em>%6$s</em> metabox, along with the social sharing shortcode and widget.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'sharing-buttons' ), _x( 'Sharing Buttons', 'lib file description', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'sharing-styles' ), _x( 'Sharing Styles', 'lib file description', 'wpsso-rrssb' ), _x( 'Sharing Buttons', 'metabox tab', 'wpsso-rrssb' ), _x( 'Social Settings', 'metabox title', 'wpsso-rrssb' ) );
-					break;
-				case 'tooltip-side-sharing-stylesheet':
-					$text = sprintf( __( 'A stylesheet for the social sharing buttons can be included in all webpages. You can enable or disable use of the stylesheet from the <a href="%1$s">%2$s</a> settings page.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'sharing-styles' ), _x( 'Sharing Styles', 'lib file description', 'wpsso-rrssb' ) );
-					break;
-				case 'tooltip-side-sharing-shortcode':
-					$text = sprintf( __( 'Support for shortcode(s) can be enabled and disabled on the <a href="%1$s">%2$s</a> settings page. Shortcodes are disabled by default to optimize performance and content processing.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'advanced' ), _x( 'Advanced', 'lib file description', 'wpsso-rrssb' ) );
-					break;
-				case 'tooltip-side-sharing-widget':
-					$text = sprintf( __( 'The sharing widget feature adds a <em>%s</em> widget to the WordPress Widgets settings page. The sharing widget shares the URL for the current webpage (and not individual items within an index / archive webpage, for example).', 'wpsso-rrssb' ),_x( 'WPSSO RRSSB', 'lib file description', 'wpsso-rrssb' ) );
-					break;
-			}
-			return $text;
 		}
 
 		public function filter_secondary_action_buttons( $actions, $menu_id, $menu_name, $menu_lib ) {
