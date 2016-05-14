@@ -119,7 +119,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 = Changelog / Release Notes =
 
-**Version 1.3.10-rc1 (2016/05/13)**
+**Version 1.3.10-1 (2016/05/14)**
 
 Official announcement: N/A
 
@@ -148,9 +148,9 @@ Official announcement: N/A
 
 == Upgrade Notice ==
 
-= 1.3.10-rc1 =
+= 1.3.10-1 =
 
-(2016/05/13) Categorized the display of Free / Pro features in the sidebar metabox.
+(2016/05/14) Categorized the display of Free / Pro features in the sidebar metabox.
 
 = 1.3.9-1 =
 
