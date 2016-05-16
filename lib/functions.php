@@ -13,9 +13,23 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 	function wpssorrssb_get_sharing_buttons( $ids = array(), $atts = array(), $expire = 86400 ) {
 
 		$wpsso =& Wpsso::get_instance();
+		if ( $wpsso->debug->enabled )
+			$wpsso->debug->mark();
+		$html = false;
 
-		if ( $wpsso->is_avail['rrssb'] ) {
-
+		if ( ! is_array( $ids ) ) {
+			error_log( __FUNCTION__.'() error: sharing button ids (1st argument) must be an array' );
+			if ( $wpsso->debug->enabled )
+				$wpsso->debug->log( 'sharing button ids must be an array' );
+		} elseif ( ! is_array( $atts ) ) {
+			error_log( __FUNCTION__.'() error: sharing button attributes (2nd argument) must be an array' );
+			if ( $wpsso->debug->enabled )
+				$wpsso->debug->log( 'sharing button attributes must be an array' );
+		} elseif ( ! $wpsso->is_avail['rrssb'] ) {
+			$html = '<!-- '.$wpsso->cf['lca'].' sharing buttons are disabled -->';
+			if ( $wpsso->debug->enabled )
+				$wpsso->debug->log( 'sharing buttons are disabled' );
+		} else {
 			$atts['use_post'] = SucomUtil::sanitize_use_post( $atts ); 
 			$cache_salt = __FUNCTION__.'(locale:'.SucomUtil::get_locale().
 				'_url:'.$wpsso->util->get_sharing_url( $atts['use_post'] ).
@@ -30,10 +44,8 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 					delete_transient( $cache_id );
 				elseif ( $wpsso->is_avail['cache']['object'] )
 					wp_cache_delete( $cache_id, __FUNCTION__ );
-				return;
-
+				return $wpsso->debug->get_html().$html;
 			} elseif ( ! isset( $atts['read_cache'] ) || $atts['read_cache'] ) {
-
 				if ( $wpsso->is_avail['cache']['transient'] ) {
 					if ( $wpsso->debug->enabled )
 						$wpsso->debug->log( $cache_type.': transient salt '.$cache_salt );
@@ -43,7 +55,6 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 						$wpsso->debug->log( $cache_type.': wp_cache salt '.$cache_salt );
 					$html = wp_cache_get( $cache_id, __FUNCTION__ );
 				} else $html = false;
-
 			} else $html = false;
 
 			if ( $html !== false ) {
@@ -68,8 +79,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 					$wpsso->debug->log( $cache_type.': html saved to cache '.
 						$cache_id.' ('.$expire.' seconds)');
 			}
-		} else $html = '<!-- '.$wpsso->cf['lca'].' sharing sharing buttons disabled -->';
-
+		}
 		return $wpsso->debug->get_html().$html;
 	}
 }
