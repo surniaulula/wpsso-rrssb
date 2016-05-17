@@ -119,7 +119,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 = Changelog / Release Notes =
 
-**Version 1.3.11-dev1 (TBD)**
+**Version 1.3.11-dev1 (2016/05/17)**
 
 Official announcement: N/A
 
@@ -149,7 +149,7 @@ Official announcement: N/A
 
 = 1.3.11-dev1 =
 
-(TBD) Added current locale to the sharing buttons CSS class.
+(2016/05/17) Added current locale to the sharing buttons CSS class.
 
 = 1.3.10-1 =
 
