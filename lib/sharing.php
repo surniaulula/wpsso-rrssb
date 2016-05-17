@@ -603,8 +603,8 @@ $buttons_html."\n".
 				$mod = $this->p->util->get_page_mod( $use_post );	// get post/user/term id, module name, and module object reference
 
 			$html_ret = '';
-			$html_begin = "<ul class=\"rrssb-buttons clearfix\">\n";
-			$html_end = "</ul><!-- .rrssb-buttons -->\n";
+			$html_begin = '<ul class="rrssb-buttons '.SucomUtil::get_locale( $mod ).' clearfix">'."\n";
+			$html_end = '</ul><!-- .rrssb-buttons.'.SucomUtil::get_locale( $mod ).'.clearfix -->'."\n";
 
 			foreach ( $ids as $id ) {
 				if ( isset( $this->website[$id] ) ) {
