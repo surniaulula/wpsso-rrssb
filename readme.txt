@@ -119,7 +119,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 = Changelog / Release Notes =
 
-**Version 1.3.13-dev1 (2015/05/24)**
+**Version 1.3.13-dev2 (2015/05/24)**
 
 Official announcement: N/A
 
@@ -131,6 +131,7 @@ Official announcement: N/A
 	* None
 * *Developer Notes*
 	* Modified the 'wpsso_sharing_url' filter arguments for WPSSO v3.32.1-1.
+	* Replaced the 'use_post' by `$mod` when calling the WpssoUtil `replace_inline_vars()` method.
 
 **Version 1.3.12-1 (2016/05/21)**
 
@@ -173,7 +174,7 @@ Official announcement: N/A
 
 == Upgrade Notice ==
 
-= 1.3.13-dev1 =
+= 1.3.13-dev2 =
 
 (2016/05/24) Modified the 'wpsso_sharing_url' filter arguments for WPSSO v3.32.1-1.
 
