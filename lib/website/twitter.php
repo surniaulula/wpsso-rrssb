@@ -136,7 +136,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 				false : $this->p->options['twitter_cap_hashtags'];
 
 			if ( ! isset( $atts['tweet'] ) )
-				$atts['tweet'] = $this->p->util->get_tweet_text( $atts, 'twitter', 'twitter' );
+				$atts['tweet'] = $this->p->util->get_tweet_text( $mod, $atts, 'twitter', 'twitter' );
 
 			if ( ! isset( $atts['hashtags'] ) )
 				$atts['hashtags'] = '';
@@ -157,7 +157,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 			}
 
 			return $this->p->util->replace_inline_vars( '<!-- Twitter Button -->'.
-				$this->p->options['twitter_rrssb_html'], $atts['use_post'], false, $atts, array(
+				$this->p->options['twitter_rrssb_html'], $mod, $atts, array(
 				 	'twitter_text' => rawurlencode( $atts['tweet'] ),
 				 	'twitter_hashtags' => rawurlencode( $atts['hashtags'] ),
 				 	'twitter_via' => rawurlencode( $atts['via'] ),

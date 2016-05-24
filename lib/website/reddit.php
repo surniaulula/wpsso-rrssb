@@ -114,7 +114,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteReddit' ) ) {
 				false : $this->p->options['reddit_cap_hashtags'];
 
 			return $this->p->util->replace_inline_vars( '<!-- Reddit Button -->'.
-				$this->p->options['reddit_rrssb_html'], $atts['use_post'], false, $atts, array(
+				$this->p->options['reddit_rrssb_html'], $mod, $atts, array(
 				 	'reddit_title' => rawurlencode( $this->p->webpage->get_caption( 'title', 0,
 						$mod, true, false, false, 'reddit_title', 'reddit' ) ),
 				 	'reddit_summary' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['reddit_cap_len'],

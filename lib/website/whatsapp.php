@@ -96,7 +96,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteWhatsApp' ) ) {
 			$atts['add_page'] = isset( $atts['add_page'] ) ? $atts['add_page'] : true;
 
 			return $this->p->util->replace_inline_vars( '<!-- WhatsApp Button -->'.
-				$this->p->options['wa_rrssb_html'], $atts['use_post'], false, $atts, array(
+				$this->p->options['wa_rrssb_html'], $mod, $atts, array(
 				 	'title' => rawurlencode( $this->p->webpage->get_title( 0, '',
 						$mod, true, false, false, 'og_title', 'whatsapp' ) ),
 				)

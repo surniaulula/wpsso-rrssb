@@ -113,7 +113,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteLinkedin' ) ) {
 				false : $this->p->options['linkedin_cap_hashtags'];
 
 			return $this->p->util->replace_inline_vars( '<!-- LinkedIn Button -->'.
-				$this->p->options['linkedin_rrssb_html'], $atts['use_post'], false, $atts, array(
+				$this->p->options['linkedin_rrssb_html'], $mod, $atts, array(
 				 	'linkedin_title' => rawurlencode( $this->p->webpage->get_caption( 'title', 0,
 						$mod, true, false, false, 'linkedin_title', 'linkedin' ) ),
 				 	'linkedin_caption' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['linkedin_cap_len'],

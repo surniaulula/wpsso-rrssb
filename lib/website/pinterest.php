@@ -172,7 +172,7 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 			}
 
 			return $this->p->util->replace_inline_vars( '<!-- Pinterest Button -->'.
-				$html, $atts['use_post'], false, $atts, array(
+				$html, $mod, $atts, array(
 					'media_url' => rawurlencode( $atts['photo'] ),
 				 	'pinterest_caption' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['pin_cap_len'],
 						$mod, true, $atts['add_hashtags'], false, 'pin_desc', 'pinterest' ) ),

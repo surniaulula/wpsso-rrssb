@@ -113,7 +113,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTumblr' ) ) {
 				false : $this->p->options['tumblr_cap_hashtags'];
 
 			return $this->p->util->replace_inline_vars( '<!-- Tumblr Button -->'.
-				$this->p->options['tumblr_rrssb_html'], $atts['use_post'], false, $atts, array(
+				$this->p->options['tumblr_rrssb_html'], $mod, $atts, array(
 				 	'tumblr_title' => rawurlencode( $this->p->webpage->get_caption( 'title', 0,
 						$mod, true, false, false, 'tumblr_title', 'tumblr' ) ),
 				 	'tumblr_summary' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['tumblr_cap_len'],

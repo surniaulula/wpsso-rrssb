@@ -94,7 +94,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteFacebook' ) ) {
 			$atts['add_page'] = isset( $atts['add_page'] ) ? $atts['add_page'] : true;
 
 			return $this->p->util->replace_inline_vars( '<!-- Facebook Button -->'.
-				$this->p->options['fb_rrssb_html'], $atts['use_post'], false, $atts );
+				$this->p->options['fb_rrssb_html'], $mod, $atts );
 		}
 	}
 }
