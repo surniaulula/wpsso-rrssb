@@ -71,11 +71,14 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 			$lca = $this->p->cf['lca'];
 			$atts = apply_filters( $lca.'_shortcode_'.WPSSORRSSB_SHARING_SHORTCODE, $atts, $content );
-			$atts['url'] = empty( $atts['url'] ) ? $this->p->util->get_sharing_url( true ) : $atts['url'];
+
 			$atts['css_class'] = empty( $atts['css_class'] ) ? 'rrssb-shortcode' : $atts['css_class'];
 			$atts['filter_id'] = empty( $atts['filter_id'] ) ? 'shortcode' : $atts['filter_id'];
 			$atts['use_post'] = SucomUtil::sanitize_use_post( $atts ); 
+
 			$mod = $this->p->util->get_page_mod( $atts['use_post'] );
+			$atts['url'] = empty( $atts['url'] ) ?
+				$this->p->util->get_sharing_url( $mod ) : $atts['url'];
 
 			$html = '';
 			if ( ! empty( $atts['buttons'] ) ) {
