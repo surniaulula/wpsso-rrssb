@@ -68,7 +68,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			/*
 			 * Twitter
 			 */
-			$caption_len = $this->p->util->get_tweet_max_len( get_post_permalink( $mod['id'] ) );
+			$caption_len = $this->p->util->get_tweet_max_len();
 			$caption_text = $this->p->webpage->get_caption( 'title', $caption_len, 
 				$mod, true, $this->p->options['twitter_cap_hashtags'] );
 
