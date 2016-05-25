@@ -57,7 +57,7 @@ WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) works in conj
 
 The [Pro version of WPSSO RRSSB](http://wpsso.com/extend/plugins/wpsso-rrssb/) includes a number of additional options and features:
 
-* Extends the features of WPSSO Pro (all WPSSO Pro extensions require a licensed and active WPSSO Pro plugin).
+* Extends the features of WPSSO Pro (requires a licensed and active WPSSO Pro plugin).
 * Custom titles and text in the Social Settings metabox for:
 	* Email
 	* LinkedIn
