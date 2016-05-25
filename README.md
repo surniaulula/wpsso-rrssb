@@ -27,6 +27,7 @@
 <p><strong>WPSSO RRSSB Free / Basic Features</strong></p>
 
 <ul>
+<li>Extends the features of either the Free or Pro versions of WPSSO.</li>
 <li>Allows you to include a selection of <strong>Ridiculously Responsive Social Sharing Buttons</strong> in multiple locations:
 
 <ul>
@@ -55,17 +56,15 @@
 <li>Include / exclude each social sharing button based on the viewing device (desktop and/or mobile).</li>
 <li>Support for Automattic's <a href="https://wordpress.org/plugins/amp/">Accelerated Mobile Pages (AMP)</a> plugin.</li>
 <li>A built-in stylesheet editor allows you to fine-tune the CSS for each social sharing button location easily (content, excerpt, shortcode, widget, etc.).</li>
+<li>Uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.</li>
 </ul>
-
-<blockquote>
-<p>Download the Free version from <a href="http://surniaulula.github.io/wpsso-rrssb/">GitHub</a> or <a href="https://wordpress.org/plugins/wpsso-rrssb/">WordPress.org</a>. WPSSO RRSSB uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.</p>
-</blockquote>
 
 <p><strong>WPSSO RRSSB Pro / Power-User Features</strong></p>
 
 <p>The <a href="http://wpsso.com/extend/plugins/wpsso-rrssb/">Pro version of WPSSO RRSSB</a> includes a number of additional options and features:</p>
 
 <ul>
+<li>Extends the features of WPSSO Pro (all WPSSO Pro extensions require a licensed and active WPSSO Pro plugin).</li>
 <li>Custom titles and text in the Social Settings metabox for:
 
 <ul>
@@ -85,17 +84,25 @@
 </ul></li>
 </ul>
 
-<h4>Extends the WPSSO Social Plugin</h4>
+<h4>Proven Performance</h4>
+
+<p>WPSSO and WPSSO RRSSB are <em>fast and coded for performance</em>, making full use of all available caching techniques (persistent / non-persistent object and disk caching). WPSSO loads only the library files and object classes it needs, keeping it small, fast, and yet still able to support a wide range of 3rd party integration features.</p>
+
+<h4>Available in Multiple Languages</h4>
+
+<ul>
+<li>English (US)</li>
+<li>French (France)</li>
+<li>More to come...</li>
+</ul>
+
+<h4>Extends the WPSSO Plugin</h4>
 
 <p>The WordPress Social Sharing Optimization (WPSSO) plugin is required to use the WPSSO RRSSB extension.</p>
 
 <p>You can use the Free version of WPSSO RRSSB with <em>both</em> the Free and Pro versions of WPSSO, but the <a href="http://wpsso.com/extend/plugins/wpsso-rrssb/">WPSSO RRSSB Pro</a> version requires the use of the <a href="http://wpsso.com/extend/plugins/wpsso/">WPSSO Pro</a> version as well.</p>
 
 <p>Purchase the <a href="http://wpsso.com/extend/plugins/wpsso-rrssb/">WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) Pro</a> extension (includes a <em>No Risk 30 Day Refund Policy</em>).</p>
-
-<h4>Proven Performance</h4>
-
-<p>WPSSO and WPSSO RRSSB are <em>fast and coded for performance</em>, making full use of all available caching techniques (persistent / non-persistent object and disk caching). WPSSO loads only the library files and object classes it needs, keeping it small, fast, and yet still able to support a wide range of 3rd party integration features.</p>
 
 
 <h2>Installation</h2>
