@@ -124,7 +124,7 @@ Purchase the [WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)
 
 = Changelog / Release Notes =
 
-**Version 1.3.13-rc1 (2015/05/24)**
+**Version 1.3.13-1 (2015/05/27)**
 
 Official announcement: N/A
 
@@ -180,9 +180,9 @@ Official announcement: N/A
 
 == Upgrade Notice ==
 
-= 1.3.13-rc1 =
+= 1.3.13-1 =
 
-(2016/05/24) Modified the 'wpsso_sharing_url' filter arguments for WPSSO v3.32.1-1.
+(2016/05/27) Modified the 'wpsso_sharing_url' filter arguments for WPSSO v3.32.1-1.
 
 = 1.3.12-1 =
 
