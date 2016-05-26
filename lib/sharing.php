@@ -717,15 +717,51 @@ $buttons_html."\n".
 			$url_path = WPSSORRSSB_URLPATH;
 			$plugin_version = $this->p->cf['plugin']['wpssorrssb']['version'];
 
-			wp_register_script( 'rrssb',
-				$url_path.'js/ext/rrssb.min.js', 
-					array( 'jquery' ), $plugin_version, true );	// in footer
+			wp_register_script( 'rrssb', $url_path.'js/ext/rrssb.min.js', array( 'jquery' ), $plugin_version, true );	// in footer
 			wp_enqueue_script( 'rrssb' );
 
-			wp_register_style( 'rrssb',
-				$url_path.'css/ext/rrssb.min.css', 
-					array(), $plugin_version );
+			wp_register_style( 'rrssb', $url_path.'css/ext/rrssb.min.css', array(), $plugin_version );
 			wp_enqueue_style( 'rrssb' );
+		}
+
+		public function get_tweet_text( array &$mod, $atts = array(), $opt_pre = 'twitter', $md_pre = 'twitter' ) {
+			if ( isset( $atts['tweet'] ) )	// just in case
+				return $atts['tweet'];
+			else {
+				$lca = $this->p->cf['lca'];
+				$atts['use_post'] = isset( $atts['use_post'] ) ? $atts['use_post'] : true;
+				$atts['add_page'] = isset( $atts['add_page'] ) ? $atts['add_page'] : true;	// required by get_sharing_url()
+				$atts['add_hashtags'] = isset( $atts['add_hashtags'] ) ? $atts['add_hashtags'] : true;
+	
+				$caption_type = empty( $this->p->options[$opt_pre.'_caption'] ) ?
+					'title' : $this->p->options[$opt_pre.'_caption'];
+	
+				$caption_len = $this->get_tweet_max_len( $opt_pre );
+
+				return $this->p->webpage->get_caption( $caption_type, $caption_len,
+					$mod, true, $atts['add_hashtags'], false, $md_pre.'_desc' );
+			}
+		}
+
+		// $opt_pre can be twitter, buffer, etc.
+		public function get_tweet_max_len( $opt_pre = 'twitter' ) {
+
+			$short_len = 23;	// twitter counts 23 characters for any url
+
+			if ( isset( $this->p->options['tc_site'] ) && 
+				! empty( $this->p->options[$opt_pre.'_via'] ) ) {
+					$tc_site = preg_replace( '/^@/', '', $this->p->options['tc_site'] );
+					$site_len = empty( $tc_site ) ? 0 : strlen( $tc_site ) + 6;
+			} else $site_len = 0;
+
+			$max_len = $this->p->options[$opt_pre.'_cap_len'] - $short_len - $site_len;
+
+			if ( $this->p->debug->enabled )
+				$this->p->debug->log( 'max tweet length is '.$max_len.' chars ('.
+					$this->p->options[$opt_pre.'_cap_len'].' minus '.
+					$site_len.' for site name and '.$short_len.' for url)' );
+
+			return $max_len;
 		}
 	}
 }
