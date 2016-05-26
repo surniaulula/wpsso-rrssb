@@ -124,7 +124,7 @@ Purchase the [WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)
 
 = Changelog / Release Notes =
 
-**Version 1.3.13-dev3 (2015/05/24)**
+**Version 1.3.13-rc1 (2015/05/24)**
 
 Official announcement: N/A
 
@@ -137,7 +137,7 @@ Official announcement: N/A
 * *Developer Notes*
 	* Modified the 'wpsso_sharing_url' filter arguments for WPSSO v3.32.1-1.
 	* Replaced the 'use_post' by `$mod` when calling the WpssoUtil `replace_inline_vars()` method.
-	* Updated the WpssoUtil `get_tweet_max_len()` arguments for the new refactored method.
+	* Updated `get_tweet_max_len()` arguments for the new refactored method.
 
 **Version 1.3.12-1 (2016/05/21)**
 
@@ -180,7 +180,7 @@ Official announcement: N/A
 
 == Upgrade Notice ==
 
-= 1.3.13-dev3 =
+= 1.3.13-rc1 =
 
 (2016/05/24) Modified the 'wpsso_sharing_url' filter arguments for WPSSO v3.32.1-1.
 
