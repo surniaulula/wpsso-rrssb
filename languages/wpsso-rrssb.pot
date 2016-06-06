@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"(WPSSO RRSSB) 1.3.13-1\n"
+"(WPSSO RRSSB) 1.3.14-dev1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2016-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -153,51 +153,51 @@ msgstr ""
 msgid "Failed to open the %s file for reading."
 msgstr ""
 
-#: lib/sharing.php:231
+#: lib/sharing.php:228
 msgid "Reload Default Styles"
 msgstr ""
 
-#: lib/sharing.php:248
+#: lib/sharing.php:245
 msgid ""
 "All sharing styles have been reloaded with their default settings and saved."
 msgstr ""
 
-#: lib/sharing.php:269
+#: lib/sharing.php:266
 msgid "The %s file is not readable."
 msgstr ""
 
-#: lib/sharing.php:309
+#: lib/sharing.php:306
 msgid "Failed to load the minify class SuextMinifyCssCompressor."
 msgstr ""
 
-#: lib/sharing.php:318
+#: lib/sharing.php:315
 msgid "Failed writing to the % file."
 msgstr ""
 
-#: lib/sharing.php:323
+#: lib/sharing.php:320
 msgid "Updated the <a href=\"%1$s\">%2$s</a> stylesheet (%3$d bytes written)."
 msgstr ""
 
-#: lib/sharing.php:332
+#: lib/sharing.php:329
 msgid "The %s folder is not writable."
 msgstr ""
 
-#: lib/sharing.php:338
+#: lib/sharing.php:335
 msgid "Failed to open file %s for writing."
 msgstr ""
 
-#: lib/sharing.php:347
+#: lib/sharing.php:344
 msgid ""
 "Error removing the minimized stylesheet &mdash; does the web server have "
 "sufficient privileges?"
 msgstr ""
 
-#: lib/sharing.php:366
+#: lib/sharing.php:363
 msgctxt "metabox title"
 msgid "Sharing Buttons"
 msgstr ""
 
-#: lib/sharing.php:422
+#: lib/sharing.php:419
 msgid "%s must be published<br/>before it can be shared."
 msgstr ""
 
