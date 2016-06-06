@@ -124,6 +124,19 @@ Purchase the [WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)
 
 = Changelog / Release Notes =
 
+**Version 1.1.14-dev1 (2016/06/05)**
+
+Official announcement: N/A
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Optimized the 'filter_option_type()' filter for a small performance gain when saving options.
+
 **Version 1.3.13-1 (2015/05/27)**
 
 Official announcement: N/A
@@ -139,60 +152,13 @@ Official announcement: N/A
 	* Replaced the 'use_post' by `$mod` when calling the WpssoUtil `replace_inline_vars()` method.
 	* Updated `get_tweet_max_len()` arguments for the new refactored method.
 
-**Version 1.3.12-1 (2016/05/21)**
-
-Official announcement: N/A
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* Fixed an incorrectly named Sharing Buttons filter hook in the Social Settings metabox (Pro version).
-* *Developer Notes*
-	* None
-
-**Version 1.3.11-1 (2016/05/18)**
-
-Official announcement: N/A
-
-* *New Features*
-	* None
-* *Improvements*
-	* Added the current locale value to the sharing buttons CSS class (example: .rrssb-buttons.en_US).
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* None
-
-**Version 1.3.10-1 (2016/05/14)**
-
-Official announcement: N/A
-
-* *New Features*
-	* None
-* *Improvements*
-	* Categorized the display of Free / Pro features in the sidebar metabox.
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* None
-
 == Upgrade Notice ==
+
+= 1.3.14-dev1 =
+
+(2016/06/05) Optimized the 'filter_option_type()' filter for a small performance gain when saving options.
 
 = 1.3.13-1 =
 
 (2016/05/27) Modified the 'wpsso_sharing_url' filter arguments for WPSSO v3.32.1-1.
-
-= 1.3.12-1 =
-
-(2016/05/21) Fixed an incorrectly named Sharing Buttons filter hook in the Social Settings metabox (Pro version).
-
-= 1.3.11-1 =
-
-(2016/05/18) Added current locale to the sharing buttons CSS class.
-
-= 1.3.10-1 =
-
-(2016/05/14) Categorized the display of Free / Pro features in the sidebar metabox.
 
