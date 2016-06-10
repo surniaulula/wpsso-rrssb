@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"(WPSSO RRSSB) 1.3.14-dev1\n"
+"(WPSSO RRSSB) 1.3.14-dev2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2016-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -139,12 +139,12 @@ msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/gpl/ecom/woocommerce.php:78 lib/pro/ecom/woocommerce.php:83
+#: lib/gpl/ecom/woocommerce.php:79 lib/pro/ecom/woocommerce.php:83
 msgctxt "option label"
 msgid "Position in Woo Short Text"
 msgstr ""
 
-#: lib/gpl/forum/bbpress.php:87 lib/pro/forum/bbpress.php:124
+#: lib/gpl/forum/bbpress.php:88 lib/pro/forum/bbpress.php:124
 msgctxt "option label"
 msgid "Position in bbPress Single"
 msgstr ""
