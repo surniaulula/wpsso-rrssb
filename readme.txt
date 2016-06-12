@@ -84,7 +84,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 The WordPress Social Sharing Optimization (WPSSO) plugin is required to use the WPSSO RRSSB extension.
 
-You can use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPSSO, but the [WPSSO RRSSB Pro](http://wpsso.com/extend/plugins/wpsso-rrssb/) version requires the use of the [WPSSO Pro](http://wpsso.com/extend/plugins/wpsso/) version as well.
+Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPSSO. The [WPSSO RRSSB Pro](http://wpsso.com/extend/plugins/wpsso-rrssb/) extension (along with all WPSSO Pro extensions) requires the [WPSSO Pro](http://wpsso.com/extend/plugins/wpsso/) plugin as well.
 
 Purchase the [WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) Pro](http://wpsso.com/extend/plugins/wpsso-rrssb/) extension (includes a *No Risk 30 Day Refund Policy*).
 
