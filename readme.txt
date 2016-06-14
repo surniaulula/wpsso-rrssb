@@ -10,7 +10,7 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.txt
 Requires At Least: 3.1
 Tested Up To: 4.5.2
-Stable Tag: 1.3.13-1
+Stable Tag: 1.3.14-1
 
 WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
 
@@ -124,7 +124,7 @@ Purchase the [WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)
 
 = Changelog / Release Notes =
 
-**Version 1.3.14-1 (2016/06/13)**
+**Version 1.3.14-1 (2016/06/14)**
 
 Official announcement: N/A
 
@@ -156,7 +156,7 @@ Official announcement: N/A
 
 = 1.3.14-1 =
 
-(2016/06/13) Optimized the 'filter_option_type()' filter for a small performance gain when saving options.
+(2016/06/14) Optimized the 'filter_option_type()' filter for a small performance gain when saving options.
 
 = 1.3.13-1 =
 
