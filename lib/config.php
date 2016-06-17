@@ -182,7 +182,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 				if ( file_exists( $filepath ) ) {
 					require_once( $filepath );
 					if ( empty( $classname ) )
-						return SucomUtil::sanitize_classname( 'wpssorrssb'.$filespec );
+						return SucomUtil::sanitize_classname( 'wpssorrssb'.$filespec, false );	// $underscore = false
 					else return $classname;
 				}
 			}
