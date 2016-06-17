@@ -137,28 +137,9 @@ Official announcement: N/A
 * *Developer Notes*
 	* Optimized the 'filter_option_type()' filter for a small performance gain when saving options.
 
-**Version 1.3.13-1 (2015/05/27)**
-
-Official announcement: N/A
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Modified the 'wpsso_sharing_url' filter arguments for WPSSO v3.32.1-1.
-	* Replaced the 'use_post' by `$mod` when calling the WpssoUtil `replace_inline_vars()` method.
-	* Updated `get_tweet_max_len()` arguments for the new refactored method.
-
 == Upgrade Notice ==
 
 = 1.3.14-1 =
 
 (2016/06/14) Optimized the 'filter_option_type()' filter for a small performance gain when saving options.
-
-= 1.3.13-1 =
-
-(2016/05/27) Modified the 'wpsso_sharing_url' filter arguments for WPSSO v3.32.1-1.
 
