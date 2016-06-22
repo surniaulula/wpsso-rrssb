@@ -124,6 +124,19 @@ Purchase the [WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)
 
 = Changelog / Release Notes =
 
+**Version 1.3.15-dev1 (TBD)**
+
+Official announcement: N/A
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Renamed the 'rrssb-style' library and array indexes to 'rrssb-styles'.
+
 **Version 1.3.14-1 (2016/06/14)**
 
 Official announcement: N/A
