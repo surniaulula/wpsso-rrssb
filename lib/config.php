@@ -15,7 +15,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(
-					'version' => '1.3.14-1',	// plugin version
+					'version' => '1.3.15-1',	// plugin version
 					'opt_version' => '8',		// increment when changing default options
 					'short' => 'WPSSO RRSSB',	// short plugin name
 					'name' => 'WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)',
@@ -108,7 +108,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'sidebar' => 'CSS Sidebar', 
 					'admin_edit' => 'Admin Edit',
 				),
-				'rrssb-style' => array(
+				'rrssb-styles' => array(
 					'rrssb-sharing' => 'All Buttons',
 					'rrssb-content' => 'Content',
 					'rrssb-excerpt' => 'Excerpt',
