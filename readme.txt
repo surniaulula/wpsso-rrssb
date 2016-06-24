@@ -124,6 +124,19 @@ Purchase the [WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)
 
 = Changelog / Release Notes =
 
+**Version 1.3.16-1 (2016/06/24)**
+
+Official announcement: N/A
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Updated the RRSSB library files (CSS and JavaScript) to the latest RRSSB trunk (see https://github.com/kni-labs/rrssb).
+
 **Version 1.3.15-1 (2016/06/23)**
 
 Official announcement: N/A
@@ -151,6 +164,10 @@ Official announcement: N/A
 	* Optimized the 'filter_option_type()' filter for a small performance gain when saving options.
 
 == Upgrade Notice ==
+
+= 1.3.16-1 =
+
+(2016/06/24) Updated the RRSSB library files (CSS and JavaScript) to the latest RRSSB trunk (see https://github.com/kni-labs/rrssb).
 
 = 1.3.15-1 =
 
