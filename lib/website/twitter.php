@@ -156,14 +156,19 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 				else $atts['related'] = '';
 			}
 
+			$extra_inline_vars = array();
+			$twitter_button_html = $this->p->options['twitter_rrssb_html'];
+
+			// remove empty query arguments from the twitter button html
+			// prevents twitter from appending an empty 'via' word to the tweet
+			foreach ( array( 'text' => 'tweet', 'hashtags' => 'hashtags', 'via' => 'via', 'related' => 'related' ) as $query_key => $atts_key  ) {
+				if ( $atts[$atts_key] )
+					$extra_inline_vars['twitter_'.$query_key] = rawurlencode( $atts[$atts_key] );
+				else $twitter_button_html = preg_replace( '/&'.$query_key.'=%%twitter_'.$query_key.'%%/', '', $twitter_button_html );
+			}
+
 			return $this->p->util->replace_inline_vars( '<!-- Twitter Button -->'.
-				$this->p->options['twitter_rrssb_html'], $mod, $atts, array(
-				 	'twitter_text' => rawurlencode( $atts['tweet'] ),
-				 	'twitter_hashtags' => rawurlencode( $atts['hashtags'] ),
-				 	'twitter_via' => rawurlencode( $atts['via'] ),
-				 	'twitter_related' => rawurlencode( $atts['related'] ),
-				 )
-			 );
+				$twitter_button_html, $mod, $atts, $extra_inline_vars );
 		}
 	}
 }
