@@ -133,7 +133,7 @@ Official announcement: N/A
 * *Improvements*
 	* None
 * *Bugfixes*
-	* None
+	* Added a work-around for a Twitter bug where an empty 'via' word could be appended to the tweet text.
 * *Developer Notes*
 	* Updated the RRSSB library files (CSS and JavaScript) to the latest RRSSB trunk (see https://github.com/kni-labs/rrssb).
 
