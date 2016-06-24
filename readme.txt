@@ -10,7 +10,7 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.txt
 Requires At Least: 3.1
 Tested Up To: 4.5.3
-Stable Tag: 1.3.15-1
+Stable Tag: 1.3.16-1
 
 WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
 
@@ -133,7 +133,7 @@ Official announcement: N/A
 * *Improvements*
 	* None
 * *Bugfixes*
-	* Added a work-around for a Twitter bug where an empty 'via' word could be appended to the tweet text.
+	* Added a work-around for a Twitter bug where an empty 'via' could be appended to the tweet text.
 * *Developer Notes*
 	* Updated the RRSSB library files (CSS and JavaScript) to the latest RRSSB trunk (see https://github.com/kni-labs/rrssb).
 
@@ -167,7 +167,7 @@ Official announcement: N/A
 
 = 1.3.16-1 =
 
-(2016/06/24) Updated the RRSSB library files (CSS and JavaScript) to the latest RRSSB trunk (see https://github.com/kni-labs/rrssb).
+(2016/06/24) Updated the RRSSB library files (CSS and JavaScript) to the latest RRSSB trunk. Added a work-around for a Twitter bug where an empty 'via' could be appended to the tweet text.
 
 = 1.3.15-1 =
 
