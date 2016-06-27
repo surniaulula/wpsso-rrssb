@@ -242,7 +242,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 			$this->update_sharing_css( $opts );
 			$this->p->opt->save_options( WPSSO_OPTIONS_NAME, $opts, false );
-			$this->p->notice->inf( __( 'All sharing styles have been reloaded with their default settings and saved.', 'wpsso-ssb' ) );
+			$this->p->notice->upd( __( 'All sharing styles have been reloaded with their default settings and saved.', 'wpsso-ssb' ) );
 		}
 
 		public function wp_enqueue_styles() {
@@ -317,7 +317,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				} elseif ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'updated css file '.self::$sharing_css_file.' ('.$written.' bytes written)' );
 					if ( is_admin() )
-						$this->p->notice->inf( sprintf( __( 'Updated the <a href="%1$s">%2$s</a> stylesheet (%3$d bytes written).',
+						$this->p->notice->upd( sprintf( __( 'Updated the <a href="%1$s">%2$s</a> stylesheet (%3$d bytes written).',
 							'wpsso-rrssb' ), self::$sharing_css_url, self::$sharing_css_file, $written ), true );
 				}
 				fclose( $fh );
