@@ -57,7 +57,7 @@ WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) works in conj
 
 The [Pro version of WPSSO RRSSB](http://wpsso.com/extend/plugins/wpsso-rrssb/) includes a number of additional options and features:
 
-* Extends the features of WPSSO Pro (requires a licensed and active WPSSO Pro plugin).
+* Extends the features of WPSSO Pro (requires a licensed WPSSO Pro plugin).
 * Custom titles and text in the Social Settings metabox for:
 	* Email
 	* LinkedIn
@@ -124,6 +124,19 @@ Purchase the [WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)
 
 = Changelog / Release Notes =
 
+**Version 1.3.17-dev1 (2016/06/28)**
+
+Official announcement: N/A
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Adjusted notices for the new notice methods in WPSSO v3.33.2-1.
+
 **Version 1.3.16-1 (2016/06/24)**
 
 Official announcement: N/A
@@ -137,43 +150,13 @@ Official announcement: N/A
 * *Developer Notes*
 	* Updated the RRSSB library files (CSS and JavaScript) to the latest RRSSB trunk (see https://github.com/kni-labs/rrssb).
 
-**Version 1.3.15-1 (2016/06/23)**
-
-Official announcement: N/A
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Renamed the 'rrssb-style' library and array indexes to 'rrssb-styles'.
-
-**Version 1.3.14-1 (2016/06/14)**
-
-Official announcement: N/A
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Optimized the 'filter_option_type()' filter for a small performance gain when saving options.
-
 == Upgrade Notice ==
+
+= 1.3.17-dev1 =
+
+(2016/06/28) Adjusted notices for the new notice methods in WPSSO v3.33.2-1.
 
 = 1.3.16-1 =
 
 (2016/06/24) Updated the RRSSB library files (CSS and JavaScript) to the latest RRSSB trunk. Added a work-around for a Twitter bug where an empty 'via' could be appended to the tweet text.
-
-= 1.3.15-1 =
-
-(2016/06/23) Renamed the 'rrssb-style' library and array indexes to 'rrssb-styles'.
-
-= 1.3.14-1 =
-
-(2016/06/14) Optimized the 'filter_option_type()' filter for a small performance gain when saving options.
 
