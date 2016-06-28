@@ -194,10 +194,10 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				$this->p->cf['sharing']['show_on'], null );
 
 			foreach( $show_on as $type_id => $type_name ) {
-				$transients['WpssoRrssbSharing::get_buttons'][] = $locale_salt.'_type:'.$type_id;
-				$transients['WpssoRrssbSharing::get_buttons'][] = $locale_salt.'_type:'.$type_id.'_prot:https';
-				$transients['WpssoRrssbSharing::get_buttons'][] = $locale_salt.'_type:'.$type_id.'_mobile:true';
-				$transients['WpssoRrssbSharing::get_buttons'][] = $locale_salt.'_type:'.$type_id.'_mobile:true_prot:https';
+				$transients[__CLASS__.'::get_buttons'][] = $locale_salt.'_type:'.$type_id;
+				$transients[__CLASS__.'::get_buttons'][] = $locale_salt.'_type:'.$type_id.'_prot:https';
+				$transients[__CLASS__.'::get_buttons'][] = $locale_salt.'_type:'.$type_id.'_mobile:true';
+				$transients[__CLASS__.'::get_buttons'][] = $locale_salt.'_type:'.$type_id.'_mobile:true_prot:https';
 			}
 
 			return $transients;
@@ -318,7 +318,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					$this->p->debug->log( 'updated css file '.self::$sharing_css_file.' ('.$written.' bytes written)' );
 					if ( is_admin() )
 						$this->p->notice->upd( sprintf( __( 'Updated the <a href="%1$s">%2$s</a> stylesheet (%3$d bytes written).',
-							'wpsso-rrssb' ), self::$sharing_css_url, self::$sharing_css_file, $written ), true );
+							'wpsso-rrssb' ), self::$sharing_css_url, self::$sharing_css_file, $written ), 
+								true, true, 'updated_'.self::$sharing_css_file, true );
 				}
 				fclose( $fh );
 			} else {

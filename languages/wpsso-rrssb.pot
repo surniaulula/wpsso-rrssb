@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"(WPSSO RRSSB) 1.3.16-1\n"
+"(WPSSO RRSSB) 1.3.17-dev1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2016-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -178,26 +178,26 @@ msgstr ""
 msgid "Updated the <a href=\"%1$s\">%2$s</a> stylesheet (%3$d bytes written)."
 msgstr ""
 
-#: lib/sharing.php:329
+#: lib/sharing.php:330
 msgid "The %s folder is not writable."
 msgstr ""
 
-#: lib/sharing.php:335
+#: lib/sharing.php:336
 msgid "Failed to open file %s for writing."
 msgstr ""
 
-#: lib/sharing.php:344
+#: lib/sharing.php:345
 msgid ""
 "Error removing the minimized stylesheet &mdash; does the web server have "
 "sufficient privileges?"
 msgstr ""
 
-#: lib/sharing.php:363
+#: lib/sharing.php:364
 msgctxt "metabox title"
 msgid "Sharing Buttons"
 msgstr ""
 
-#: lib/sharing.php:419
+#: lib/sharing.php:420
 msgid "%s must be published<br/>before it can be shared."
 msgstr ""
 
@@ -254,27 +254,27 @@ msgctxt "metabox tab"
 msgid "Buttons Position"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:143
+#: lib/submenu/rrssb-buttons.php:139
 msgctxt "option label"
 msgid "Include on Index Webpages"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:147
+#: lib/submenu/rrssb-buttons.php:143
 msgctxt "option label"
 msgid "Include on Static Homepage"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:158
+#: lib/submenu/rrssb-buttons.php:154
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:166
+#: lib/submenu/rrssb-buttons.php:162
 msgctxt "option label"
 msgid "Position in Content Text"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:171
+#: lib/submenu/rrssb-buttons.php:167
 msgctxt "option label"
 msgid "Position in Excerpt Text"
 msgstr ""
