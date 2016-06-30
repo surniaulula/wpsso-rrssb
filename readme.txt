@@ -124,7 +124,7 @@ Purchase the [WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)
 
 = Changelog / Release Notes =
 
-**Version 1.3.17-b1 (2016/06/29)**
+**Version 1.3.17-1 (2016/06/29)**
 
 Official announcement: N/A
 
@@ -152,7 +152,7 @@ Official announcement: N/A
 
 == Upgrade Notice ==
 
-= 1.3.17-b1 =
+= 1.3.17-1 =
 
 (2016/06/29) Adjusted notices for the new notice methods in WPSSO v3.33.2-1.
 
