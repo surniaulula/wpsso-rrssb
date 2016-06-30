@@ -156,7 +156,3 @@ Official announcement: N/A
 
 (2016/06/30) Adjusted notices for the new notice methods in WPSSO v3.33.2-1.
 
-= 1.3.16-1 =
-
-(2016/06/24) Updated the RRSSB library files (CSS and JavaScript) to the latest RRSSB trunk. Added a work-around for a Twitter bug where an empty 'via' could be appended to the tweet text.
-
