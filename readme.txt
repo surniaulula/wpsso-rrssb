@@ -84,9 +84,9 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 The WordPress Social Sharing Optimization (WPSSO) plugin is required to use the WPSSO RRSSB extension.
 
-Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPSSO. The [WPSSO RRSSB Pro](http://wpsso.com/extend/plugins/wpsso-rrssb/) extension (along with all WPSSO Pro extensions) requires the [WPSSO Pro](http://wpsso.com/extend/plugins/wpsso/) plugin as well.
+Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPSSO. The [WPSSO RRSSB Pro](http://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-extends) extension (along with all WPSSO Pro extensions) requires the [WPSSO Pro](http://wpsso.com/extend/plugins/wpsso/?utm_source=wpssorrssb-readme-extends) plugin as well.
 
-Purchase the [WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) Pro](http://wpsso.com/extend/plugins/wpsso-rrssb/) extension (includes a *No Risk 30 Day Refund Policy*).
+[Purchase the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) Pro extension](http://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-purchase) (includes a *No Risk 30 Day Refund Policy*).
 
 == Installation ==
 
@@ -124,7 +124,7 @@ Purchase the [WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)
 
 = Changelog / Release Notes =
 
-**Version 1.3.17-1 (2016/06/29)**
+**Version 1.3.17-1 (2016/06/30)**
 
 Official announcement: N/A
 
@@ -154,7 +154,7 @@ Official announcement: N/A
 
 = 1.3.17-1 =
 
-(2016/06/29) Adjusted notices for the new notice methods in WPSSO v3.33.2-1.
+(2016/06/30) Adjusted notices for the new notice methods in WPSSO v3.33.2-1.
 
 = 1.3.16-1 =
 
