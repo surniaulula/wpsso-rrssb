@@ -124,6 +124,19 @@ Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPS
 
 = Changelog / Release Notes =
 
+**Version 1.3.18-dev1 (2016/07/04)**
+
+Official announcement: N/A
+
+* *New Features*
+	* None
+* *Improvements*
+	* Added recursion prevention to the BuddyPress `add_activity_entry_buttons()` method (Pro version).
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* None
+
 **Version 1.3.17-1 (2016/06/30)**
 
 Official announcement: N/A
@@ -151,6 +164,10 @@ Official announcement: N/A
 	* Updated the RRSSB library files (CSS and JavaScript) to the latest RRSSB trunk (see https://github.com/kni-labs/rrssb).
 
 == Upgrade Notice ==
+
+= 1.3.18-dev1 =
+
+(2016/07/04) Updated the BuddyPress module to prevent recursion (Pro version).
 
 = 1.3.17-1 =
 
