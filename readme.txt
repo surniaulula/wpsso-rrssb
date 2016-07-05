@@ -124,7 +124,7 @@ Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPS
 
 = Changelog / Release Notes =
 
-**Version 1.3.18-dev1 (2016/07/04)**
+**Version 1.3.18-rc1 (2016/07/04)**
 
 Official announcement: N/A
 
@@ -165,7 +165,7 @@ Official announcement: N/A
 
 == Upgrade Notice ==
 
-= 1.3.18-dev1 =
+= 1.3.18-rc1 =
 
 (2016/07/04) Updated the BuddyPress module to prevent recursion (Pro version).
 
