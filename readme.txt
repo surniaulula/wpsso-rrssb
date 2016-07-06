@@ -10,7 +10,7 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.txt
 Requires At Least: 3.1
 Tested Up To: 4.5.3
-Stable Tag: 1.3.17-1
+Stable Tag: 1.3.18-1
 
 WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
 
@@ -124,7 +124,7 @@ Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPS
 
 = Changelog / Release Notes =
 
-**Version 1.3.18-1 (2016/07/04)**
+**Version 1.3.18-1 (2016/07/06)**
 
 Official announcement: N/A
 
@@ -167,7 +167,7 @@ Official announcement: N/A
 
 = 1.3.18-1 =
 
-(2016/07/04) Updated the BuddyPress module to prevent recursion (Pro version).
+(2016/07/06) Updated the BuddyPress module to prevent recursion (Pro version).
 
 = 1.3.17-1 =
 
