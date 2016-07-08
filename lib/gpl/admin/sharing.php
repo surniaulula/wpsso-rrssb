@@ -15,20 +15,8 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 		public function __construct( &$plugin ) {
 			$this->p =& $plugin;
 			$this->p->util->add_plugin_filters( $this, array( 
-				'post_social_settings_tabs' => 1,	// $tabs
 				'post_buttons_rows' => 4,		// $table_rows, $form, $head, $mod
 			), 40 );
-		}
-
-		public function filter_post_social_settings_tabs( $tabs ) {
-			$new_tabs = array();
-			foreach ( $tabs as $key => $val ) {
-				$new_tabs[$key] = $val;
-				if ( $key === 'media' )
-					$new_tabs['buttons'] = _x( 'Sharing Buttons',
-						'metabox tab', 'wpsso-rrssb' );
-			}
-			return $new_tabs;
 		}
 
 		public function filter_post_buttons_rows( $table_rows, $form, $head, $mod ) {
