@@ -18,11 +18,11 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 		$html = false;
 
 		if ( ! is_array( $ids ) ) {
-			error_log( __FUNCTION__.'() error: sharing button ids (1st argument) must be an array' );
+			error_log( __FUNCTION__.'() error: sharing button ids must be an array' );
 			if ( $wpsso->debug->enabled )
 				$wpsso->debug->log( 'sharing button ids must be an array' );
 		} elseif ( ! is_array( $atts ) ) {
-			error_log( __FUNCTION__.'() error: sharing button attributes (2nd argument) must be an array' );
+			error_log( __FUNCTION__.'() error: sharing button attributes must be an array' );
 			if ( $wpsso->debug->enabled )
 				$wpsso->debug->log( 'sharing button attributes must be an array' );
 		} elseif ( ! $wpsso->is_avail['rrssb'] ) {

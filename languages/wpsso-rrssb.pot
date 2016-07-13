@@ -134,12 +134,12 @@ msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/gpl/ecom/woocommerce.php:79 lib/pro/ecom/woocommerce.php:83
+#: lib/gpl/ecom/woocommerce.php:79 lib/pro/ecom/woocommerce.php:82
 msgctxt "option label"
 msgid "Position in Woo Short Text"
 msgstr ""
 
-#: lib/gpl/forum/bbpress.php:88 lib/pro/forum/bbpress.php:124
+#: lib/gpl/forum/bbpress.php:87 lib/pro/forum/bbpress.php:123
 msgctxt "option label"
 msgid "Position in bbPress Single"
 msgstr ""
