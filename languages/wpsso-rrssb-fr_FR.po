@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) 1.3.18-1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2016-07-09 15:50-0400\n"
-"PO-Revision-Date: 2016-07-09 15:50-0400\n"
+"POT-Creation-Date: 2016-07-14 12:03-0400\n"
+"PO-Revision-Date: 2016-07-14 12:03-0400\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -93,7 +93,7 @@ msgstr "Widget"
 #: lib/config-gettext-extract.php:18
 msgctxt "plugin description"
 msgid "WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc."
-msgstr "Une extension WPSSO pour ajouter des boutons de partage sociaux ridiculement réactif (SVG) dans votre contenu, les extraits, barre flottante CSS, widget, shortcode, etc."
+msgstr "Extension WPSSO pour ajouter des boutons de partage sociaux ridiculement réactif (SVG) dans votre contenu, les extraits, barre flottante CSS, widget, shortcode, etc."
 
 #: lib/gpl/admin/sharing.php:26 lib/pro/admin/sharing.php:33
 msgid "Save a draft version or publish the %s to display these options."
@@ -134,12 +134,12 @@ msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr "Désactiver les boutons"
 
-#: lib/gpl/ecom/woocommerce.php:79 lib/pro/ecom/woocommerce.php:83
+#: lib/gpl/ecom/woocommerce.php:79 lib/pro/ecom/woocommerce.php:82
 msgctxt "option label"
 msgid "Position in Woo Short Text"
 msgstr "Position dans le texte Woo Short"
 
-#: lib/gpl/forum/bbpress.php:88 lib/pro/forum/bbpress.php:124
+#: lib/gpl/forum/bbpress.php:87 lib/pro/forum/bbpress.php:123
 msgctxt "option label"
 msgid "Position in bbPress Single"
 msgstr "Position dans le texte bbPress Single"
@@ -241,8 +241,8 @@ msgstr "Position des Boutons"
 
 #: lib/submenu/rrssb-buttons.php:139
 msgctxt "option label"
-msgid "Include on Index Webpages"
-msgstr "Inclure sur les pages Web d'index"
+msgid "Include on Index / Archive Webpages"
+msgstr "Inclure sur les pages d'index / archive"
 
 #: lib/submenu/rrssb-buttons.php:143
 msgctxt "option label"
@@ -462,7 +462,7 @@ msgstr "http://surniaulula.com/extend/plugins/wpsso-rrssb/"
 
 #. Description of the plugin/theme
 msgid "WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc."
-msgstr "Une extension WPSSO pour ajouter des boutons de partage sociaux ridiculement réactif (SVG) dans votre contenu, les extraits, barre flottante CSS, widget, shortcode, etc."
+msgstr "Extension WPSSO pour ajouter des boutons de partage sociaux ridiculement réactif (SVG) dans votre contenu, les extraits, barre flottante CSS, widget, shortcode, etc."
 
 #. Author of the plugin/theme
 msgid "JS Morisset"
