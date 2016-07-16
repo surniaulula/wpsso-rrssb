@@ -485,7 +485,7 @@ msgid ""
 "activate the %3$s plugin."
 msgstr ""
 
-#: wpsso-rrssb.php:131
+#: wpsso-rrssb.php:133
 msgid ""
 "The %1$s extension version %2$s requires the use of %3$s version %4$s or "
 "newer (version %5$s is currently installed)."
