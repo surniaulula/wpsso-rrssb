@@ -49,7 +49,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled )
-				$this->p->debug->mark( 'action / filter setup' );
+				$this->p->debug->mark( 'rrssb sharing action / filter setup' );
 
 			$this->plugin_filepath = $plugin_filepath;
 
@@ -101,7 +101,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			}
 
 			if ( $this->p->debug->enabled )
-				$this->p->debug->mark( 'action / filter setup' );
+				$this->p->debug->mark( 'rrssb sharing action / filter setup' );
 		}
 
 		private function set_objects() {
