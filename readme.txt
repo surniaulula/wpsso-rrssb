@@ -124,6 +124,19 @@ Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPS
 
 = Changelog / Release Notes =
 
+**Version 1.3.19-rc1 (2016/07/17)**
+
+Official announcement: N/A
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Updated the 'wpsso_get_config' filter to use the new version argument in WPSSO v3.33.5-1.
+
 **Version 1.3.18-1 (2016/07/06)**
 
 Official announcement: N/A
@@ -138,6 +151,10 @@ Official announcement: N/A
 	* None
 
 == Upgrade Notice ==
+
+= 1.3.19-rc1 =
+
+(2016/07/17) Updated the 'wpsso_get_config' filter to use the new version argument in WPSSO v3.33.5-1.
 
 = 1.3.18-1 =
 
