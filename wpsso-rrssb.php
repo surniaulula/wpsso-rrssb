@@ -85,8 +85,8 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 			} else echo '<div class="error"><p>'.sprintf( __( 'The %1$s extension requires the %2$s plugin &mdash; please install and activate the %3$s plugin.', 'wpsso-rrssb' ), $info['name'], self::$req_name, self::$req_short ).'</p></div>';
 		}
 
-		public function wpsso_get_config( $cf, $version ) {
-			if ( version_compare( $version, self::$req_min_version, '<' ) ) {
+		public function wpsso_get_config( $cf, $plugin_version = 0 ) {
+			if ( version_compare( $plugin_version, self::$req_min_version, '<' ) ) {
 				self::$req_has_min_ver = false;
 				return $cf;
 			}
