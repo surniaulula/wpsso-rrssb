@@ -76,10 +76,15 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			$media = $this->p->og->get_the_media_info( $this->p->cf['lca'].'-pinterest-button',
 				array( 'pid', 'img_url' ), $mod, 'rp' );
 
-			if ( ! empty( $media['pid'] ) )
-				list( $media['img_url'], $img_width, $img_height,
-					$img_cropped ) = $this->p->media->get_attachment_image_src( $media['pid'],
-						'thumbnail', false ); 
+			if ( ! empty( $media['pid'] ) ) {
+				list(
+					$media['img_url'],
+					$img_width,
+					$img_height,
+					$img_cropped,
+					$img_pid
+				) = $this->p->media->get_attachment_image_src( $media['pid'], 'thumbnail', false ); 
+			}
 
 			$form_rows['pin_desc'] = array(
 				'label' => _x( 'Pinterest Caption', 'option label', 'wpsso-rrssb' ),

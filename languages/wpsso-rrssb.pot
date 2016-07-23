@@ -114,22 +114,22 @@ msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:85 lib/pro/admin/sharing.php:91
+#: lib/gpl/admin/sharing.php:90 lib/pro/admin/sharing.php:96
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:107 lib/pro/admin/sharing.php:113
+#: lib/gpl/admin/sharing.php:112 lib/pro/admin/sharing.php:118
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:113 lib/pro/admin/sharing.php:120
+#: lib/gpl/admin/sharing.php:118 lib/pro/admin/sharing.php:125
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:123 lib/pro/admin/sharing.php:131
+#: lib/gpl/admin/sharing.php:128 lib/pro/admin/sharing.php:136
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
