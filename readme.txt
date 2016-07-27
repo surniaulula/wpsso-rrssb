@@ -119,7 +119,7 @@ Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPS
 
 = Free / Basic Version Repository =
 
-* [GitHub](https://github.com/SurniaUlula/wpsso-rrssb)
+* [GitHub](https://surniaulula.github.io/wpsso-rrssb/)
 * [WordPress.org](https://wordpress.org/plugins/wpsso-rrssb/developers/)
 
 = Changelog / Release Notes =
