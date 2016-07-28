@@ -9,7 +9,7 @@ Tags: wpsso, sharing, sharing, buttons, responsive, facebook, google+, twitter, 
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.txt
 Requires At Least: 3.1
-Tested Up To: 4.5.3
+Tested Up To: 4.6
 Stable Tag: 1.3.20-1
 
 WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
