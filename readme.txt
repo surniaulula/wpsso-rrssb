@@ -124,7 +124,7 @@ Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPS
 
 = Changelog / Release Notes =
 
-**Version 1.3.20-1 (2016/07/23)**
+**Version 1.3.21-1 (2016/08/01)**
 
 Official announcement: N/A
 
@@ -133,26 +133,13 @@ Official announcement: N/A
 * *Improvements*
 	* None
 * *Bugfixes*
-	* None
+	* When checking for empty arguments to remove for the Twitter buttons, match both the '&' and '&amp;' query delimiters.
 * *Developer Notes*
-	* Updated the get_size_info() method class from WpssoMedia to SucomUtil.
-
-**Version 1.3.19-1 (2016/07/18)**
-
-Official announcement: N/A
-
-* *New Features*
 	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Updated the 'wpsso_get_config' filter to use the new version argument in WPSSO v3.33.5-1.
 
 == Upgrade Notice ==
 
-= 1.3.20-1 =
+= 1.3.21-1 =
 
-(2016/07/23) Updated the get_size_info() method class from WpssoMedia to SucomUtil.
+(2016/08/01) When checking for empty arguments to remove for the Twitter buttons, match both the '&' and '&amp;' query delimiters.
 
