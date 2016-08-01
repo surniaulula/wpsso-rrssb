@@ -164,7 +164,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 			foreach ( array( 'text' => 'tweet', 'hashtags' => 'hashtags', 'via' => 'via', 'related' => 'related' ) as $query_key => $atts_key  ) {
 				if ( $atts[$atts_key] )
 					$extra_inline_vars['twitter_'.$query_key] = rawurlencode( $atts[$atts_key] );
-				else $twitter_button_html = preg_replace( '/&'.$query_key.'=%%twitter_'.$query_key.'%%/', '', $twitter_button_html );
+				else $twitter_button_html = preg_replace( '/&(amp;)?'.$query_key.'=%%twitter_'.$query_key.'%%/', '', $twitter_button_html );
 			}
 
 			return $this->p->util->replace_inline_vars( '<!-- Twitter Button -->'.
