@@ -133,7 +133,7 @@ Official announcement: N/A
 * *Improvements*
 	* None
 * *Bugfixes*
-	* When checking for empty arguments to remove for the Twitter buttons, match both the '&' and '&amp;' query delimiters.
+	* When checking for empty arguments to remove for the Twitter buttons, match both the '&' and '&amp;amp;' query delimiters.
 * *Developer Notes*
 	* None
 
@@ -141,5 +141,5 @@ Official announcement: N/A
 
 = 1.3.21-1 =
 
-(2016/08/01) When checking for empty arguments to remove for the Twitter buttons, match both the '&' and '&amp;' query delimiters.
+(2016/08/01) When checking for empty arguments to remove for the Twitter buttons, match both the '&' and '&amp;amp;' query delimiters.
 
