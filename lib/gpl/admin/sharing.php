@@ -90,15 +90,14 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 				'label' => _x( 'Pinterest Caption', 'option label', 'wpsso-rrssb' ),
 				'th_class' => 'medium', 'tooltip' => 'post-pin_desc', 'td_class' => 'blank top',
 				'content' => $form->get_no_textarea_value( $caption_text, '', '', $caption_len ).
-					( empty( $media['img_url'] ) ? '' : '</td><td class="top" style="width:'.
-					$size_info['width'].'px;"><img src="'.$media['img_url'].'" style="max-width:'.
-					$size_info['width'].'px;">' ),
+					( empty( $media['img_url'] ) ? '' : '</td><td class="top thumb_preview">'.
+					'<img src="'.$media['img_url'].'" style="max-width:'.$size_info['width'].'px;">' ),
 			);
 
 			/*
 			 * Generic Title / Caption Input
 			 */
-			foreach ( array(
+			Foreach ( array(
 				'linkedin' => 'LinkedIn',
 				'reddit' => 'Reddit',
 				'tumblr' => 'Tumblr',

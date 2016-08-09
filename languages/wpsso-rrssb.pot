@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"(WPSSO RRSSB) 1.3.21-1\n"
+"(WPSSO RRSSB) 1.3.22-1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2016-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -119,17 +119,17 @@ msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:112 lib/pro/admin/sharing.php:118
+#: lib/gpl/admin/sharing.php:111 lib/pro/admin/sharing.php:118
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:118 lib/pro/admin/sharing.php:125
+#: lib/gpl/admin/sharing.php:117 lib/pro/admin/sharing.php:125
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:128 lib/pro/admin/sharing.php:136
+#: lib/gpl/admin/sharing.php:127 lib/pro/admin/sharing.php:136
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
