@@ -125,6 +125,19 @@ Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPS
 
 = Changelog / Release Notes =
 
+**Version 1.3.22-1 (2016/08/09)**
+
+Official announcement: N/A
+
+* *New Features*
+	* None
+* *Improvements*
+	* Added thumbnail preview CSS for mobile in the Social Settings metabox.
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* None
+
 **Version 1.3.21-1 (2016/08/01)**
 
 Official announcement: N/A
@@ -139,6 +152,10 @@ Official announcement: N/A
 	* None
 
 == Upgrade Notice ==
+
+= 1.3.22-1 =
+
+(2016/08/09) Added thumbnail preview CSS for mobile in the Social Settings metabox.
 
 = 1.3.21-1 =
 
