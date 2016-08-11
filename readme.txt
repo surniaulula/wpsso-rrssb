@@ -136,7 +136,7 @@ Official announcement: N/A
 * *Bugfixes*
 	* None
 * *Developer Notes*
-	* None
+	* Added a new `WpssoRrssbSharing::shorten_html_href()` static method.
 
 **Version 1.3.22-1 (2016/08/09)**
 
