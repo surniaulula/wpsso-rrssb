@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) 1.3.22-1\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) 1.3.23-1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2016-08-09 11:22-0300\n"
-"PO-Revision-Date: 2016-08-09 11:22-0300\n"
+"POT-Creation-Date: 2016-08-11 17:37-0400\n"
+"PO-Revision-Date: 2016-08-11 17:41-0400\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -340,7 +340,8 @@ msgctxt "option label"
 msgid "Caption Text Length"
 msgstr "Longueur du texte légende"
 
-#: lib/website/linkedin.php:46 lib/website/reddit.php:46
+#: lib/website/linkedin.php:46 lib/website/pinterest.php:64
+#: lib/website/reddit.php:46
 msgctxt "option label"
 msgid "Append Hashtags to Caption"
 msgstr "Ajout de hashtags a la légende"
@@ -355,12 +356,17 @@ msgctxt "option label"
 msgid "Image Dimensions"
 msgstr "Dimensions de l’image"
 
-#: lib/website/pinterest.php:64 lib/website/tumblr.php:46
+#: lib/website/pinterest.php:70
 msgctxt "option label"
-msgid "Append Hashtags to Summary"
-msgstr "Ajout de hashtags au sommaire"
+msgid "Shorten HTML A HREF Link"
+msgstr "Raccourcir le lien HTML A HREF"
 
-#: lib/website/pinterest.php:129
+#: lib/website/pinterest.php:73
+msgctxt "option comment"
+msgid "prevents a possible conflict with JavaScript from Pinterest"
+msgstr "empêche un conflit possible avec le JavaScript de Pinterest"
+
+#: lib/website/pinterest.php:136
 msgctxt "image size label"
 msgid "Pinterest Sharing Button"
 msgstr "Bouton de partage Pinterest"
@@ -369,6 +375,11 @@ msgstr "Bouton de partage Pinterest"
 msgctxt "option label"
 msgid "Summary Text Length"
 msgstr "Longueur du texte sommaire"
+
+#: lib/website/tumblr.php:46
+msgctxt "option label"
+msgid "Append Hashtags to Summary"
+msgstr "Ajout de hashtags au sommaire"
 
 #: lib/website/twitter.php:40
 msgctxt "option label"
@@ -402,29 +413,6 @@ msgstr "Recommander l'auteur"
 #: lib/website/twitter.php:59
 msgid "Recommend following the author's Twitter @username (from their profile) after sharing a webpage. If the <em>%1$s</em> option is also checked, the website's @username is suggested first."
 msgstr "Conseiller de suivre le @nom Twitter de l'auteur (défini sur leur page de profil) après avoir partagé une page Web. Si l'option <em>%1$s</em> est également cochée, le @nom d'affaires Twitter du site Web est aussi recommandes."
-
-#: lib/website/twitter.php:62
-msgctxt "option label"
-msgid "Shorten URLs with"
-msgstr "Raccourcir les URLs avec"
-
-#: lib/website/twitter.php:64
-msgid "If you select a URL shortening service here, you must also enter its <a href=\"%1$s\">%2$s</a> on the %3$s settings page."
-msgstr "Si vous sélectionnez un service de raccourcissement d'URL, vous devez également entrer ses <a href=\"%1$s\">%2$s</a> dans la page de réglages %3$s."
-
-#: lib/website/twitter.php:64 lib/website/twitter.php:70
-msgctxt "metabox tab"
-msgid "Service API Keys"
-msgstr "Clés de Service API"
-
-#: lib/website/twitter.php:64
-msgctxt "lib file description"
-msgid "Advanced"
-msgstr "Avancés"
-
-#: lib/website/twitter.php:68
-msgid "using these <a href=\"%1$s\">%2$s</a>"
-msgstr "utilisant ces <a href=\"%1$s\">%2$s</a>"
 
 #: lib/widget/sharing.php:31
 msgid "The %s widget."
@@ -471,3 +459,21 @@ msgstr "JS Morisset"
 #. Author URI of the plugin/theme
 msgid "http://surniaulula.com/"
 msgstr "http://surniaulula.com/"
+
+#~ msgctxt "option label"
+#~ msgid "Shorten URLs with"
+#~ msgstr "Raccourcir les URLs avec"
+
+#~ msgid "If you select a URL shortening service here, you must also enter its <a href=\"%1$s\">%2$s</a> on the %3$s settings page."
+#~ msgstr "Si vous sélectionnez un service de raccourcissement d'URL, vous devez également entrer ses <a href=\"%1$s\">%2$s</a> dans la page de réglages %3$s."
+
+#~ msgctxt "metabox tab"
+#~ msgid "Service API Keys"
+#~ msgstr "Clés de Service API"
+
+#~ msgctxt "lib file description"
+#~ msgid "Advanced"
+#~ msgstr "Avancés"
+
+#~ msgid "using these <a href=\"%1$s\">%2$s</a>"
+#~ msgstr "utilisant ces <a href=\"%1$s\">%2$s</a>"
