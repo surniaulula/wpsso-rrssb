@@ -130,7 +130,7 @@ Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPS
 Official announcement: N/A
 
 * *New Features*
-	* Added a new "Shorten HTML A HREF Link" option in the Pinterest button settings.
+	* Added a new "Shorten HTML A HREF Link" option in the Pinterest button settings (prevents a possible conflict with JavaScript from Pinterest).
 * *Improvements*
 	* Removed the "Shorten URLs with" duplicate option from Twitter settings (see the Advanced settings page for shortening options).
 * *Bugfixes*
