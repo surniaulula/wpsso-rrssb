@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"(WPSSO RRSSB) 1.3.22-1\n"
+"(WPSSO RRSSB) 1.3.23-dev1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2016-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -365,7 +365,8 @@ msgctxt "option label"
 msgid "Caption Text Length"
 msgstr ""
 
-#: lib/website/linkedin.php:46 lib/website/reddit.php:46
+#: lib/website/linkedin.php:46 lib/website/pinterest.php:64
+#: lib/website/reddit.php:46
 msgctxt "option label"
 msgid "Append Hashtags to Caption"
 msgstr ""
@@ -380,12 +381,17 @@ msgctxt "option label"
 msgid "Image Dimensions"
 msgstr ""
 
-#: lib/website/pinterest.php:64 lib/website/tumblr.php:46
+#: lib/website/pinterest.php:70
 msgctxt "option label"
-msgid "Append Hashtags to Summary"
+msgid "Shorten HTML A HREF Link"
 msgstr ""
 
-#: lib/website/pinterest.php:129
+#: lib/website/pinterest.php:73
+msgctxt "option comment"
+msgid "prevents a possible conflict with JavaScript from Pinterest"
+msgstr ""
+
+#: lib/website/pinterest.php:136
 msgctxt "image size label"
 msgid "Pinterest Sharing Button"
 msgstr ""
@@ -393,6 +399,11 @@ msgstr ""
 #: lib/website/tumblr.php:40
 msgctxt "option label"
 msgid "Summary Text Length"
+msgstr ""
+
+#: lib/website/tumblr.php:46
+msgctxt "option label"
+msgid "Append Hashtags to Summary"
 msgstr ""
 
 #: lib/website/twitter.php:40
@@ -432,31 +443,6 @@ msgid ""
 "Recommend following the author's Twitter @username (from their profile) "
 "after sharing a webpage. If the <em>%1$s</em> option is also checked, the "
 "website's @username is suggested first."
-msgstr ""
-
-#: lib/website/twitter.php:62
-msgctxt "option label"
-msgid "Shorten URLs with"
-msgstr ""
-
-#: lib/website/twitter.php:64
-msgid ""
-"If you select a URL shortening service here, you must also enter its <a href="
-"\"%1$s\">%2$s</a> on the %3$s settings page."
-msgstr ""
-
-#: lib/website/twitter.php:64 lib/website/twitter.php:70
-msgctxt "metabox tab"
-msgid "Service API Keys"
-msgstr ""
-
-#: lib/website/twitter.php:64
-msgctxt "lib file description"
-msgid "Advanced"
-msgstr ""
-
-#: lib/website/twitter.php:68
-msgid "using these <a href=\"%1$s\">%2$s</a>"
 msgstr ""
 
 #: lib/widget/sharing.php:31

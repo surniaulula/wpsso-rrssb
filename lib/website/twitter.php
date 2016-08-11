@@ -59,16 +59,6 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteTwitter' ) ) {
 			sprintf( __( 'Recommend following the author\'s Twitter @username (from their profile) after sharing a webpage. If the <em>%1$s</em> option is also checked, the website\'s @username is suggested first.', 'wpsso-rrssb' ), _x( 'Add via @username', 'option label', 'wpsso-rrssb' ) ) ).
 			'<td>'.$form->get_checkbox( 'twitter_rel_author' ).'</td>';
 
-			$table_rows[] = $form->get_th_html( _x( 'Shorten URLs with',
-				'option label', 'wpsso-rrssb' ), 'highlight', null, 
-			sprintf( __( 'If you select a URL shortening service here, you must also enter its <a href="%1$s">%2$s</a> on the %3$s settings page.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'advanced#sucom-tabset_plugin-tab_apikeys' ), _x( 'Service API Keys', 'metabox tab', 'wpsso' ), _x( 'Advanced', 'lib file description', 'wpsso' ) ) ).
-			( $this->p->check->aop( $this->p->cf['lca'], true, $this->p->is_avail['aop'] ) ?
-				'<td>'.$form->get_select( 'plugin_shortener', $this->p->cf['form']['shorteners'], 'medium' ).'&nbsp; ' :
-				'<td class="blank">'.$this->p->cf['form']['shorteners'][$this->p->options['plugin_shortener']].' &mdash; ' ).
-			sprintf( __( 'using these <a href="%1$s">%2$s</a>', 'wpsso-rrssb' ),
-				$this->p->util->get_admin_url( 'advanced#sucom-tabset_plugin-tab_apikeys' ),
-				_x( 'Service API Keys', 'metabox tab', 'wpsso' ) ).'</td>';
-
 			$table_rows[] = '<tr class="hide_in_basic">'.
 			'<td colspan="2">'.$form->get_textarea( 'twitter_rrssb_html', 'average code' ).'</td>';
 
@@ -161,7 +151,12 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 
 			// remove empty query arguments from the twitter button html
 			// prevents twitter from appending an empty 'via' word to the tweet
-			foreach ( array( 'text' => 'tweet', 'hashtags' => 'hashtags', 'via' => 'via', 'related' => 'related' ) as $query_key => $atts_key  ) {
+			foreach ( array( 
+				'text' => 'tweet',
+				'hashtags' => 'hashtags',
+				'via' => 'via',
+				'related' => 'related',
+			) as $query_key => $atts_key  ) {
 				if ( $atts[$atts_key] )
 					$extra_inline_vars['twitter_'.$query_key] = rawurlencode( $atts[$atts_key] );
 				else $twitter_button_html = preg_replace( '/&(amp;)?'.$query_key.'=%%twitter_'.$query_key.'%%/', '', $twitter_button_html );

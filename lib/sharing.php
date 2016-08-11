@@ -260,10 +260,10 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				}
 				if ( ! empty( $this->p->options['buttons_enqueue_social_css'] ) ) {
 					if ( $this->p->debug->enabled )
-						$this->p->debug->log( 'wp_enqueue_style = '.$this->p->cf['lca'].'_sharing_buttons' );
-					wp_register_style( $this->p->cf['lca'].'_sharing_buttons', self::$sharing_css_url, 
+						$this->p->debug->log( 'wp_enqueue_style = '.$this->p->cf['lca'].'_rrssb_sharing_css' );
+					wp_register_style( $this->p->cf['lca'].'_rrssb_sharing_css', self::$sharing_css_url, 
 						false, $this->p->cf['plugin'][$this->p->cf['lca']]['version'] );
-					wp_enqueue_style( $this->p->cf['lca'].'_sharing_buttons' );
+					wp_enqueue_style( $this->p->cf['lca'].'_rrssb_sharing_css' );
 				} else {
 					if ( ! is_readable( self::$sharing_css_file ) ) {
 						if ( $this->p->debug->enabled )
@@ -766,6 +766,17 @@ $buttons_html."\n".
 					$site_len.' for site name and '.$short_len.' for url)' );
 
 			return $max_len;
+		}
+
+		public static function shorten_html_href( $html ) {
+			return preg_replace_callback( '/(href=[\'"])([^\'"]+)([\'"])/', 
+				array( self, 'shorten_html_href_callback' ), $html );
+		}
+
+		protected static function shorten_html_href_callback( $matches ) {
+			$wpsso = Wpsso::get_instance();
+			return $matches[1].apply_filters( $wpsso->cf['lca'].'_shorten_url',
+				$matches[2], $wpsso->options['plugin_shortener'] ).$matches[3];
 		}
 	}
 }

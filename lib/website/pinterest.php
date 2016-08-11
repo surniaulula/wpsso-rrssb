@@ -61,11 +61,17 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsitePinterest' ) ) {
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = '<tr class="hide_in_basic">'.
-			$form->get_th_html( _x( 'Append Hashtags to Summary',
+			$form->get_th_html( _x( 'Append Hashtags to Caption',
 				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_select( 'pin_cap_hashtags',
 				range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', null, true ).' '.
 					_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
+
+			$table_rows[] = $form->get_th_html( _x( 'Shorten HTML A HREF Link',
+				'option label', 'wpsso-rrssb' ) ).
+			'<td>'.$form->get_checkbox( 'pin_shorten_href' ).' <em>'.
+				_x( 'prevents a possible conflict with JavaScript from Pinterest', 
+					'option comment', 'wpsso-rrssb' ).'</em></td>';
 
 			$table_rows[] = '<tr class="hide_in_basic">'.
 			'<td colspan="2">'.$form->get_textarea( 'pin_rrssb_html', 'average code' ).'</td>';
@@ -95,6 +101,7 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 					'pin_img_crop_y' => 'center',
 					'pin_cap_len' => 300,
 					'pin_cap_hashtags' => 0,
+					'pin_shorten_href' => 1,
 					'pin_rrssb_html' => '<li class="rrssb-pinterest">
 	<a href="http://pinterest.com/pin/create/button/?url=%%sharing_url%%&amp;media=%%media_url%%&amp;description=%%pinterest_caption%%" class="popup">
 		<span class="rrssb-icon">
@@ -160,8 +167,6 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 					$this->p->debug->log( 'returned image '.$atts['photo'].' ('.$atts['width'].'x'.$atts['height'].')' );
 			}
 
-			$html = $this->p->options['pin_rrssb_html'];
-
 			if ( empty( $atts['photo'] ) ) {
 				$media_info = $this->p->og->get_the_media_info( $atts['size'], array( 'img_url' ), $mod, 'rp' );
 				$atts['photo'] = $media_info['img_url'];
@@ -172,13 +177,17 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 				}
 			}
 
-			return $this->p->util->replace_inline_vars( '<!-- Pinterest Button -->'.
-				$html, $mod, $atts, array(
+			$pinterest_button_html = $this->p->util->replace_inline_vars( '<!-- Pinterest Button -->'.
+				$this->p->options['pin_rrssb_html'], $mod, $atts, array(
 					'media_url' => rawurlencode( $atts['photo'] ),
 				 	'pinterest_caption' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['pin_cap_len'],
 						$mod, true, $atts['add_hashtags'], false, 'pin_desc', 'pinterest' ) ),
 				)
 			);
+
+			if ( $this->p->options['pin_shorten_href'] )
+				return WpssoRrssbSharing::shorten_html_href( $pinterest_button_html );
+			else return $pinterest_button_html;
 		}
 	}
 }
