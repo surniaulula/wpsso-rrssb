@@ -82,16 +82,9 @@ if ( ! class_exists( 'WpssoRrssbWebsiteGplus' ) ) {
 			return array_merge( $def_opts, self::$cf['opt']['defaults'] );
 		}
 
-		// do not use an $atts reference to allow for local changes
-		public function get_html( array $atts, array &$opts, array &$mod ) {
+		public function get_html( array $atts, array $opts, array $mod ) {
 			if ( $this->p->debug->enabled )
 				$this->p->debug->mark();
-
-			if ( empty( $opts ) ) 
-				$opts =& $this->p->options;
-
-			$atts['use_post'] = isset( $atts['use_post'] ) ? $atts['use_post'] : true;
-			$atts['add_page'] = isset( $atts['add_page'] ) ? $atts['add_page'] : true;
 
 			return $this->p->util->replace_inline_vars( '<!-- Google+ Button -->'.
 				$this->p->options['gp_rrssb_html'], $mod, $atts );

@@ -551,20 +551,20 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				ksort( $sorted_ids );
 
 				$atts['use_post'] = $use_post;
-				$atts['css_id'] = $css_type = 'rrssb-'.$type;
+				$atts['css_id'] = $css_type_name = 'rrssb-'.$type;
 
 				$buttons_html = $this->get_html( $sorted_ids, $atts, $mod );
 
 				if ( trim( $buttons_html ) ) {
 					$html = '
-<!-- '.$lca.' '.$css_type.' begin -->
+<!-- '.$lca.' '.$css_type_name.' begin -->
 <!-- generated on '.date( 'c' ).' -->
 <div class="'.$lca.'-rrssb'.
-	( $use_post ? ' '.$lca.'-'.$css_type.'">' : '" id="'.$lca.'-'.$css_type.'">' ).
+	( $use_post ? ' '.$lca.'-'.$css_type_name.'">' : '" id="'.$lca.'-'.$css_type_name.'">' ).
 $buttons_html."\n".
 '</div><!-- .'.$lca.'-rrssb '.
-	( $use_post ? '.' : '#' ).$lca.'-'.$css_type.' -->
-<!-- '.$lca.' '.$css_type.' end -->'."\n\n";
+	( $use_post ? '.' : '#' ).$lca.'-'.$css_type_name.' -->
+<!-- '.$lca.' '.$css_type_name.' end -->'."\n\n";
 
 					if ( $this->p->is_avail['cache']['transient'] ) {
 						set_transient( $cache_id, $html, $this->p->options['plugin_object_cache_exp'] );
@@ -596,31 +596,41 @@ $buttons_html."\n".
 		}
 
 		// get_html() can be called by a widget, shortcode, function, filter hook, etc.
-		public function get_html( array &$ids, array &$atts, &$mod = false ) {
+		public function get_html( array $ids, array $atts, $mod = false ) {
 			if ( $this->p->debug->enabled )
 				$this->p->debug->mark();
 
 			$lca = $this->p->cf['lca'];
-			$use_post = isset( $atts['use_post'] ) ?
-				$atts['use_post'] : true;
+			$atts['use_post'] = isset( $atts['use_post'] ) ? $atts['use_post'] : true;	// maintain backwards compat
+			$atts['add_page'] = isset( $atts['add_page'] ) ? $atts['add_page'] : true;	// used by get_sharing_url()
+
 			if ( ! is_array( $mod ) )
-				$mod = $this->p->util->get_page_mod( $use_post );	// get post/user/term id, module name, and module object reference
+				$mod = $this->p->util->get_page_mod( $atts['use_post'] );	// get post/user/term id, module name, and module object reference
 
 			$html_ret = '';
 			$html_begin = '<ul class="rrssb-buttons '.SucomUtil::get_locale( $mod ).' clearfix">'."\n";
 			$html_end = '</ul><!-- .rrssb-buttons.'.SucomUtil::get_locale( $mod ).'.clearfix -->'."\n";
 
+			$saved_atts = $atts;
 			foreach ( $ids as $id ) {
 				if ( isset( $this->website[$id] ) ) {
 					if ( method_exists( $this->website[$id], 'get_html' ) ) {
 						if ( $this->allow_for_platform( $id ) ) {
+
+							$atts['src_id'] = SucomUtil::get_atts_src_id( $atts, $id );	// uses 'css_id' and 'use_post'
+							$atts['url'] = empty( $atts['url'] ) ? 
+								$this->p->util->get_sharing_url( $mod, $atts['add_page'], $atts['src_id'] ) : 
+								apply_filters( $lca.'_sharing_url', $atts['url'], $mod, $atts['add_page'], $atts['src_id'] );
 							$html_part = $this->website[$id]->get_html( $atts, $this->p->options, $mod )."\n";
+							$atts = $saved_atts;	// restore the common $atts array
+
 							if ( trim( $html_part ) !== '' ) {
 								if ( empty( $atts['container_each'] ) )
 									$html_ret .= $html_part;
 								else $html_ret .= '<!-- container_each -->'.
 									$html_begin.$html_part.$html_end;
 							}
+
 						} elseif ( $this->p->debug->enabled )
 							$this->p->debug->log( $id.' not allowed for platform' );
 					} elseif ( $this->p->debug->enabled )

@@ -72,11 +72,11 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			$lca = $this->p->cf['lca'];
 			$atts = apply_filters( $lca.'_shortcode_'.WPSSORRSSB_SHARING_SHORTCODE, $atts, $content );
 
+			$atts['use_post'] = SucomUtil::sanitize_use_post( $atts, true );	// $default = true
 			$atts['css_class'] = empty( $atts['css_class'] ) ? 'rrssb-shortcode' : $atts['css_class'];
-			$atts['filter_id'] = empty( $atts['filter_id'] ) ? 'shortcode' : $atts['filter_id'];
-			$atts['use_post'] = SucomUtil::sanitize_use_post( $atts ); 
 
 			$mod = $this->p->util->get_page_mod( $atts['use_post'] );
+
 			$atts['url'] = empty( $atts['url'] ) ?
 				$this->p->util->get_sharing_url( $mod ) : $atts['url'];
 
@@ -97,6 +97,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				}
 
 				$ids = array_map( 'trim', explode( ',', $atts['buttons'] ) );
+
 				unset ( $atts['buttons'] );
 
 				$html .= '<!-- '.$lca.' '.$atts['css_class']." begin -->\n".
@@ -111,6 +112,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 						$cache_id.' ('.$this->p->options['plugin_object_cache_exp'].' seconds)');
 				}
 			}
+
 			return $html.$this->p->debug->get_html();
 		}
 	}

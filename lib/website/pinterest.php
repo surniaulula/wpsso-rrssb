@@ -138,16 +138,10 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 			return $sizes;
 		}
 
-		// do not use an $atts reference to allow for local changes
-		public function get_html( array $atts, array &$opts, array &$mod ) {
+		public function get_html( array $atts, array $opts, array $mod ) {
 			if ( $this->p->debug->enabled )
 				$this->p->debug->mark();
 
-			if ( empty( $opts ) ) 
-				$opts =& $this->p->options;
-
-			$atts['use_post'] = isset( $atts['use_post'] ) ? $atts['use_post'] : true;
-			$atts['add_page'] = isset( $atts['add_page'] ) ? $atts['add_page'] : true;
 			$atts['add_hashtags'] = empty( $this->p->options['pin_cap_hashtags'] ) ?
 				false : $this->p->options['pin_cap_hashtags'];
 
