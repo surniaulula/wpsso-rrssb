@@ -125,7 +125,7 @@ Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPS
 
 = Changelog / Release Notes =
 
-**Version 1.3.23-dev1 (2016/08/11)**
+**Version 1.3.23-dev2 (2016/08/13)**
 
 Official announcement: N/A
 
@@ -137,6 +137,7 @@ Official announcement: N/A
 	* None
 * *Developer Notes*
 	* Added a new `WpssoRrssbSharing::shorten_html_href()` static method.
+	* Moved the get_sharing_url() call from the social website modules into the main sharing class loop.
 
 **Version 1.3.22-1 (2016/08/09)**
 
@@ -166,9 +167,9 @@ Official announcement: N/A
 
 == Upgrade Notice ==
 
-= 1.3.23-dev1 =
+= 1.3.23-dev2 =
 
-(2016/08/11) Added a new "Shorten HTML A HREF Link" option in the Pinterest button settings. Removed the "Shorten URLs with" duplicate option from Twitter settings.
+(2016/08/13) Added a new "Shorten HTML A HREF Link" option in the Pinterest button settings. Removed the "Shorten URLs with" duplicate option from Twitter settings.
 
 = 1.3.22-1 =
 
