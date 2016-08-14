@@ -618,9 +618,11 @@ $buttons_html."\n".
 						if ( $this->allow_for_platform( $id ) ) {
 
 							$atts['src_id'] = SucomUtil::get_atts_src_id( $atts, $id );	// uses 'css_id' and 'use_post'
-							$atts['url'] = empty( $atts['url'] ) ? 
-								$this->p->util->get_sharing_url( $mod, $atts['add_page'], $atts['src_id'] ) : 
-								apply_filters( $lca.'_sharing_url', $atts['url'], $mod, $atts['add_page'], $atts['src_id'] );
+							$atts['url'] = empty( $atts['url'] ) ? 				// used by get_inline_vals()
+								$this->p->util->get_sharing_url( $mod, 
+									$atts['add_page'], $atts['src_id'] ) : 
+								apply_filters( $lca.'_sharing_url', $atts['url'], 
+									$mod, $atts['add_page'], $atts['src_id'] );
 							$html_part = $this->website[$id]->get_html( $atts, $this->p->options, $mod )."\n";
 							$atts = $saved_atts;	// restore the common $atts array
 
