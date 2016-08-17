@@ -125,7 +125,7 @@ Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPS
 
 = Changelog / Release Notes =
 
-**Version 1.3.23-rc1 (2016/08/14)**
+**Version 1.3.23-rc2 (2016/08/17)**
 
 Official announcement: N/A
 
@@ -167,9 +167,9 @@ Official announcement: N/A
 
 == Upgrade Notice ==
 
-= 1.3.23-rc1 =
+= 1.3.23-rc2 =
 
-(2016/08/14) Added a new "Shorten HTML A HREF Link" option in the Pinterest button settings. Removed the "Shorten URLs with" duplicate option from Twitter settings.
+(2016/08/17) Added a new "Shorten HTML A HREF Link" option in the Pinterest button settings. Removed the "Shorten URLs with" duplicate option from Twitter settings.
 
 = 1.3.22-1 =
 
