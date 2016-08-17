@@ -38,7 +38,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 		private static $instance = null;
 		private static $req_short = 'WPSSO';
 		private static $req_name = 'WordPress Social Sharing Optimization (WPSSO)';
-		private static $req_min_version = '3.34.0-rc5';
+		private static $req_min_version = '3.34.0-rc6';
 		private static $req_has_min_ver = true;
 
 		public static function &get_instance() {
