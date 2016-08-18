@@ -11,7 +11,7 @@ Tags: wpsso, sharing, sharing, buttons, responsive, facebook, google+, twitter, 
 Contributors: jsmoriss
 Requires At Least: 3.1
 Tested Up To: 4.6
-Stable Tag: 1.3.22-1
+Stable Tag: 1.3.23-1
 
 WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
 
@@ -139,43 +139,9 @@ Official announcement: N/A
 	* Added a new `WpssoRrssbSharing::shorten_html_href()` static method.
 	* Moved the `get_sharing_url()` call from the social website modules into the main WpssoRrssbSharing loop.
 
-**Version 1.3.22-1 (2016/08/09)**
-
-Official announcement: N/A
-
-* *New Features*
-	* None
-* *Improvements*
-	* Added thumbnail preview CSS for mobile in the Social Settings metabox.
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* None
-
-**Version 1.3.21-1 (2016/08/01)**
-
-Official announcement: N/A
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* When checking for empty arguments to remove for the Twitter buttons, match both the '&' and '&amp;amp;' query delimiters.
-* *Developer Notes*
-	* None
-
 == Upgrade Notice ==
 
 = 1.3.23-1 =
 
 (2016/08/18) Added a new "Shorten HTML A HREF Link" option in the Pinterest button settings. Removed the "Shorten URLs with" duplicate option from Twitter settings.
-
-= 1.3.22-1 =
-
-(2016/08/09) Added thumbnail preview CSS for mobile in the Social Settings metabox.
-
-= 1.3.21-1 =
-
-(2016/08/01) When checking for empty arguments to remove for the Twitter buttons, match both the '&' and '&amp;amp;' query delimiters.
 
