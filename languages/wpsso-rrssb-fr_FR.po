@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) 1.3.23-1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2016-08-11 17:37-0400\n"
-"PO-Revision-Date: 2016-08-11 17:41-0400\n"
+"POT-Creation-Date: 2016-08-18 12:01-0400\n"
+"PO-Revision-Date: 2016-08-18 12:02-0400\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -241,8 +241,8 @@ msgstr "Position des Boutons"
 
 #: lib/submenu/rrssb-buttons.php:139
 msgctxt "option label"
-msgid "Include on Index / Archive Webpages"
-msgstr "Inclure sur les pages d'index / archive"
+msgid "Include on Index Webpages"
+msgstr "Inclure sur pages Web d'index"
 
 #: lib/submenu/rrssb-buttons.php:143
 msgctxt "option label"
@@ -459,21 +459,3 @@ msgstr "JS Morisset"
 #. Author URI of the plugin/theme
 msgid "http://surniaulula.com/"
 msgstr "http://surniaulula.com/"
-
-#~ msgctxt "option label"
-#~ msgid "Shorten URLs with"
-#~ msgstr "Raccourcir les URLs avec"
-
-#~ msgid "If you select a URL shortening service here, you must also enter its <a href=\"%1$s\">%2$s</a> on the %3$s settings page."
-#~ msgstr "Si vous sélectionnez un service de raccourcissement d'URL, vous devez également entrer ses <a href=\"%1$s\">%2$s</a> dans la page de réglages %3$s."
-
-#~ msgctxt "metabox tab"
-#~ msgid "Service API Keys"
-#~ msgstr "Clés de Service API"
-
-#~ msgctxt "lib file description"
-#~ msgid "Advanced"
-#~ msgstr "Avancés"
-
-#~ msgid "using these <a href=\"%1$s\">%2$s</a>"
-#~ msgstr "utilisant ces <a href=\"%1$s\">%2$s</a>"

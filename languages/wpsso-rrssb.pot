@@ -256,7 +256,7 @@ msgstr ""
 
 #: lib/submenu/rrssb-buttons.php:139
 msgctxt "option label"
-msgid "Include on Index / Archive Webpages"
+msgid "Include on Index Webpages"
 msgstr ""
 
 #: lib/submenu/rrssb-buttons.php:143

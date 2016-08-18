@@ -136,7 +136,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 
 				case 'rrssb_buttons-include':
 
-					$table_rows[] = $this->form->get_th_html( _x( 'Include on Index / Archive Webpages',
+					$table_rows[] = $this->form->get_th_html( _x( 'Include on Index Webpages',
 						'option label', 'wpsso-rrssb' ), null, 'buttons_on_index' ).
 					'<td>'.$this->form->get_checkbox( 'buttons_on_index' ).'</td>';
 
