@@ -55,7 +55,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 			require_once ( dirname( __FILE__ ).'/lib/config.php' );
 			WpssoRrssbConfig::set_constants( __FILE__ );
-			WpssoRrssbConfig::require_libs( __FILE__ );
+			WpssoRrssbConfig::require_libs( __FILE__ );	// includes the register.php class library
 			$this->reg = new WpssoRrssbRegister();		// activate, deactivate, uninstall hooks
 
 			if ( is_admin() ) {
