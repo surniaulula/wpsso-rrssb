@@ -13,7 +13,7 @@
  * Description: WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
  * Requires At Least: 3.1
  * Tested Up To: 4.6
- * Version: 1.3.23-1
+ * Version: 1.3.24-dev1
  * 
  * Version Numbers: {major}.{minor}.{bugfix}-{stage}{level}
  *
@@ -38,7 +38,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 		private static $instance = null;
 		private static $req_short = 'WPSSO';
 		private static $req_name = 'WordPress Social Sharing Optimization (WPSSO)';
-		private static $req_min_version = '3.34.0-1';
+		private static $req_min_version = '3.35.0-dev1';
 		private static $req_has_min_ver = true;
 
 		public static function &get_instance() {
@@ -60,7 +60,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 			if ( is_admin() ) {
 				load_plugin_textdomain( 'wpsso-rrssb', false, 'wpsso-rrssb/languages/' );
-				add_action( 'admin_init', array( &$this, 'check_for_wpsso' ) );
+				add_action( 'admin_init', array( &$this, 'required_check' ) );
 			}
 
 			add_filter( 'wpsso_get_config', array( &$this, 'wpsso_get_config' ), 30, 2 );
@@ -69,12 +69,12 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 			add_action( 'wpsso_init_plugin', array( &$this, 'wpsso_init_plugin' ), 10 );
 		}
 
-		public function check_for_wpsso() {
+		public function required_check() {
 			if ( ! class_exists( 'Wpsso' ) )
-				add_action( 'all_admin_notices', array( &$this, 'wpsso_missing_notice' ) );
+				add_action( 'all_admin_notices', array( &$this, 'required_notice' ) );
 		}
 
-		public static function wpsso_missing_notice( $deactivate = false ) {
+		public static function required_notice( $deactivate = false ) {
 			$info = WpssoRrssbConfig::$cf['plugin']['wpssorrssb'];
 
 			if ( $deactivate === true ) {
@@ -138,7 +138,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 					self::$req_min_version.' or newer ('.$have_version.' installed)' );
 
 			if ( is_admin() )
-				$this->p->notice->err( sprintf( __( 'The %1$s extension version %2$s requires the use of %3$s version %4$s or newer (version %5$s is currently installed).', 'wpsso-rrssb' ), $info['name'], $info['version'], self::$req_short, self::$req_min_version, $have_version ), true );
+				$this->p->notice->err( sprintf( __( 'The %1$s extension version %2$s requires the use of %3$s version %4$s or newer (version %5$s is currently installed).', 'wpsso-rrssb' ), $info['name'], $info['version'], self::$req_short, self::$req_min_version, $have_version ) );
 		}
 	}
 

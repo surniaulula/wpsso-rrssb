@@ -270,7 +270,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 							$this->p->debug->log( self::$sharing_css_file.' is not readable' );
 						if ( is_admin() )
 							$this->p->notice->err( sprintf( __( 'The %s file is not readable.',
-								'wpsso-rrssb' ), self::$sharing_css_file ), true );
+								'wpsso-rrssb' ), self::$sharing_css_file ) );
 					} else {
 						echo '<style type="text/css">';
 						if ( ( $fsize = @filesize( self::$sharing_css_file ) ) > 0 &&
@@ -310,7 +310,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					$this->p->debug->log( 'failed to load minify class SuextMinifyCssCompressor' );
 				if ( is_admin() )
 					$this->p->notice->err( __( 'Failed to load the minify class SuextMinifyCssCompressor.',
-						'wpsso-rrssb' ), true );
+						'wpsso-rrssb' ) );
 			}
 
 			if ( $fh = @fopen( self::$sharing_css_file, 'wb' ) ) {
@@ -319,13 +319,13 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 						$this->p->debug->log( 'failed writing to '.self::$sharing_css_file );
 					if ( is_admin() )
 						$this->p->notice->err( sprintf( __( 'Failed writing to the % file.',
-							'wpsso-rrssb' ), self::$sharing_css_file ), true );
+							'wpsso-rrssb' ), self::$sharing_css_file ) );
 				} elseif ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'updated css file '.self::$sharing_css_file.' ('.$written.' bytes written)' );
 					if ( is_admin() )
 						$this->p->notice->upd( sprintf( __( 'Updated the <a href="%1$s">%2$s</a> stylesheet (%3$d bytes written).',
 							'wpsso-rrssb' ), self::$sharing_css_url, self::$sharing_css_file, $written ), 
-								true, true, 'updated_'.self::$sharing_css_file, true );
+								true, 'updated_'.self::$sharing_css_file, true );
 				}
 				fclose( $fh );
 			} else {
@@ -334,13 +334,13 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 						$this->p->debug->log( WPSSO_CACHEDIR.' is not writable', true );
 					if ( is_admin() )
 						$this->p->notice->err( sprintf( __( 'The %s folder is not writable.',
-							'wpsso-rrssb' ), WPSSO_CACHEDIR ), true );
+							'wpsso-rrssb' ), WPSSO_CACHEDIR ) );
 				}
 				if ( $this->p->debug->enabled )
 					$this->p->debug->log( 'failed opening '.self::$sharing_css_file.' for writing' );
 				if ( is_admin() )
 					$this->p->notice->err( sprintf( __( 'Failed to open file %s for writing.',
-						'wpsso-rrssb' ), self::$sharing_css_file ), true );
+						'wpsso-rrssb' ), self::$sharing_css_file ) );
 			}
 		}
 
@@ -348,7 +348,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			if ( file_exists( self::$sharing_css_file ) ) {
 				if ( ! @unlink( self::$sharing_css_file ) ) {
 					if ( is_admin() )
-						$this->p->notice->err( __( 'Error removing the minimized stylesheet &mdash; does the web server have sufficient privileges?', 'wpsso-rrssb' ), true );
+						$this->p->notice->err( __( 'Error removing the minimized stylesheet &mdash; does the web server have sufficient privileges?', 'wpsso-rrssb' ) );
 				}
 			}
 		}
