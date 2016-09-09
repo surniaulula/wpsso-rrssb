@@ -5,6 +5,8 @@
 
 ul.rrssb-buttons {
 	visibility:visible;
+	padding:0 !important;
+	margin:0 !important;
 }
 ul.rrssb-buttons a {
 	border:none;
