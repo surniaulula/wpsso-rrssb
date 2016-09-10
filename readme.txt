@@ -129,7 +129,7 @@ Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPS
 
 = Changelog / Release Notes =
 
-**Version 1.3.24-rc2 (2016/09/09)**
+**Version 1.3.24-1 (2016/09/10)**
 
 Official announcement: N/A
 
@@ -158,9 +158,9 @@ Official announcement: N/A
 
 == Upgrade Notice ==
 
-= 1.3.24-rc2 =
+= 1.3.24-1 =
 
-(2016/09/09) Updated the SucomNotice method calls for WPSSO v3.35.0-1.
+(2016/09/10) Updated the SucomNotice method calls for WPSSO v3.35.0-1.
 
 = 1.3.23-1 =
 
