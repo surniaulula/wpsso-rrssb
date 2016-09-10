@@ -142,27 +142,9 @@ Official announcement: N/A
 * *Developer Notes*
 	* Updated the SucomNotice method calls for WPSSO v3.35.0-1.
 
-**Version 1.3.23-1 (2016/08/18)**
-
-Official announcement: N/A
-
-* *New Features*
-	* Added a new "Shorten HTML A HREF Link" option in the Pinterest button settings (prevents a possible conflict with JavaScript from Pinterest).
-* *Improvements*
-	* Removed the "Shorten URLs with" duplicate option from Twitter settings (see the Advanced settings page for shortening options).
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Added a new `WpssoRrssbSharing::shorten_html_href()` static method.
-	* Moved the `get_sharing_url()` call from the social website modules into the main WpssoRrssbSharing loop.
-
 == Upgrade Notice ==
 
 = 1.3.24-1 =
 
 (2016/09/10) Updated the SucomNotice method calls for WPSSO v3.35.0-1.
-
-= 1.3.23-1 =
-
-(2016/08/18) Added a new "Shorten HTML A HREF Link" option in the Pinterest button settings. Removed the "Shorten URLs with" duplicate option from Twitter settings.
 
