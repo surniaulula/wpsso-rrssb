@@ -424,7 +424,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					$this->p->debug->show_html( null, 'Debug Log' );
 
 			} else echo '<p class="centered">'.sprintf( __( '%s must be published<br/>before it can be shared.',
-				'wpsso-rrssb' ), ucfirst( $post_obj->post_type ) ).'</p>';
+				'wpsso-rrssb' ), SucomUtil::title_words( $post_obj->post_type ) ).'</p>';
 			echo '</td></tr></table>';
 		}
 
@@ -729,7 +729,7 @@ $buttons_html."\n".
 			return $ids;
 		}
 
-		public function enqueue_rrssb_ext( $hook ) {
+		public function enqueue_rrssb_ext( $hook_name ) {
 			$url_path = WPSSORRSSB_URLPATH;
 			$plugin_version = $this->p->cf['plugin']['wpssorrssb']['version'];
 
