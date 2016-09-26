@@ -424,7 +424,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					$this->p->debug->show_html( null, 'Debug Log' );
 
 			} else echo '<p class="centered">'.sprintf( __( '%s must be published<br/>before it can be shared.',
-				'wpsso-rrssb' ), SucomUtil::title_words( $post_obj->post_type ) ).'</p>';
+				'wpsso-rrssb' ), SucomUtil::titleize( $post_obj->post_type ) ).'</p>';
 			echo '</td></tr></table>';
 		}
 
