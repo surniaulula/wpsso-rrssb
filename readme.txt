@@ -129,7 +129,7 @@ Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPS
 
 = Changelog / Release Notes =
 
-**Version 1.3.25-b1 (2016/09/29)**
+**Version 1.3.25-1 (2016/10/01)**
 
 Official announcement: N/A
 
@@ -157,9 +157,9 @@ Official announcement: N/A
 
 == Upgrade Notice ==
 
-= 1.3.25-b1 =
+= 1.3.25-1 =
 
-(2016/09/29) Added a SucomUtil::titleize() method call to format post type names for display.
+(2016/10/01) Added a SucomUtil::titleize() method call to format post type names for display.
 
 = 1.3.24-1 =
 
