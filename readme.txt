@@ -129,7 +129,7 @@ Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPS
 
 = Changelog / Release Notes =
 
-**Version 1.3.26-dev1 (2016/10/12)**
+**Version 1.3.26-rc1 (2016/10/13)**
 
 Official announcement: N/A
 
@@ -157,9 +157,9 @@ Official announcement: N/A
 
 == Upgrade Notice ==
 
-= 1.3.26-dev1 =
+= 1.3.26-rc1 =
 
-(2016/10/12) Fixed the localized 'via' value for the Twitter button.
+(2016/10/13) Fixed the localized 'via' value for the Twitter button.
 
 = 1.3.25-1 =
 
