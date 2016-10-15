@@ -4,14 +4,14 @@ Plugin Slug: wpsso-rrssb
 Text Domain: wpsso-rrssb
 Domain Path: /languages
 License: GPLv3
-License URI: http://www.gnu.org/licenses/gpl.txt
+License URI: https://www.gnu.org/licenses/gpl.txt
 Donate Link: https://wpsso.com/?utm_source=wpssorrssb-readme-donate
 Assets URI: https://surniaulula.github.io/wpsso-rrssb/assets/
 Tags: wpsso, sharing, sharing, buttons, responsive, facebook, google+, twitter, pinterest, linkedin, whatsapp, svg, retina, bbpress, buddypress, shorten, woocommerce, widget, shortcode
 Contributors: jsmoriss
 Requires At Least: 3.1
 Tested Up To: 4.6.1
-Stable Tag: 1.3.25-1
+Stable Tag: 1.3.26-1
 
 WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
 
@@ -160,8 +160,4 @@ Official announcement: N/A
 = 1.3.26-1 =
 
 (2016/10/15) Fixed the localized 'via' value for the Twitter button.
-
-= 1.3.25-1 =
-
-(2016/10/01) Added a SucomUtil::titleize() method call to format post type names for display.
 
