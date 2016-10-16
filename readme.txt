@@ -26,7 +26,7 @@ WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in y
 <p>Using WPSSO as its framework, WPSSO RRSSB provides customized and <em>accurate</em> information to social websites.</p>
 
 <blockquote>
-<p><strong>Prerequisite</strong> &mdash; WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) is an extension for the <a href="https://wordpress.org/plugins/wpsso/">WordPress Social Sharing Optimization (WPSSO)</a> plugin.</p>
+<p><strong>Prerequisite</strong> &mdash; WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) is an extension for the <a href="https://wordpress.org/plugins/wpsso/">WordPress Social Sharing Optimization (WPSSO)</a> plugin, which <em>automatically</em> creates complete and accurate meta tags and Schema markup for Social Sharing Optimization (SSO) and SEO.</p>
 </blockquote>
 
 = Quick List of Features =
@@ -89,7 +89,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 The WordPress Social Sharing Optimization (WPSSO) plugin is required to use the WPSSO RRSSB extension.
 
-Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPSSO. The [WPSSO RRSSB Pro](http://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-extends) extension (along with all WPSSO Pro extensions) requires the [WPSSO Pro](http://wpsso.com/extend/plugins/wpsso/?utm_source=wpssorrssb-readme-extends) plugin as well.
+Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPSSO. The [WPSSO RRSSB Pro extension](http://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-extends) (along with all WPSSO Pro extensions) requires the [WPSSO Pro plugin](http://wpsso.com/extend/plugins/wpsso/?utm_source=wpssorrssb-readme-extends) as well.
 
 [Purchase the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) Pro extension](http://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-purchase) (includes a *No Risk 30 Day Refund Policy*).
 
