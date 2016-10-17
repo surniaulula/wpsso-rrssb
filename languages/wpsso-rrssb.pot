@@ -95,51 +95,51 @@ msgid ""
 "in your content, excerpts, CSS sidebar, widget, shortcode, etc."
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:26 lib/pro/admin/sharing.php:33
+#: lib/gpl/admin/sharing.php:26 lib/pro/admin/sharing.php:34
 msgid "Save a draft version or publish the %s to display these options."
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:46 lib/pro/admin/sharing.php:49
+#: lib/gpl/admin/sharing.php:46 lib/pro/admin/sharing.php:50
 msgctxt "option label"
 msgid "Email Subject"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:51 lib/pro/admin/sharing.php:55
+#: lib/gpl/admin/sharing.php:51 lib/pro/admin/sharing.php:56
 msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:64 lib/pro/admin/sharing.php:69
+#: lib/gpl/admin/sharing.php:64 lib/pro/admin/sharing.php:70
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:90 lib/pro/admin/sharing.php:96
+#: lib/gpl/admin/sharing.php:90 lib/pro/admin/sharing.php:97
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:111 lib/pro/admin/sharing.php:118
+#: lib/gpl/admin/sharing.php:111 lib/pro/admin/sharing.php:119
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:117 lib/pro/admin/sharing.php:125
+#: lib/gpl/admin/sharing.php:117 lib/pro/admin/sharing.php:126
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:127 lib/pro/admin/sharing.php:136
+#: lib/gpl/admin/sharing.php:127 lib/pro/admin/sharing.php:137
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/gpl/ecom/woocommerce.php:79 lib/pro/ecom/woocommerce.php:82
+#: lib/gpl/ecom/woocommerce.php:79 lib/pro/ecom/woocommerce.php:83
 msgctxt "option label"
 msgid "Position in Woo Short Text"
 msgstr ""
 
-#: lib/gpl/forum/bbpress.php:87 lib/pro/forum/bbpress.php:123
+#: lib/gpl/forum/bbpress.php:87 lib/pro/forum/bbpress.php:124
 msgctxt "option label"
 msgid "Position in bbPress Single"
 msgstr ""
@@ -482,7 +482,7 @@ msgid "WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "http://surniaulula.com/extend/plugins/wpsso-rrssb/"
+msgid "https://surniaulula.com/extend/plugins/wpsso-rrssb/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -496,5 +496,5 @@ msgid "JS Morisset"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://surniaulula.com/"
+msgid "https://surniaulula.com/"
 msgstr ""
