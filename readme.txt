@@ -60,7 +60,7 @@ WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in y
 
 **WPSSO RRSSB Pro / Power-User Features**
 
-The [Pro version of WPSSO RRSSB](http://wpsso.com/extend/plugins/wpsso-rrssb/) includes a number of additional options and features:
+The [Pro version of WPSSO RRSSB](https://wpsso.com/extend/plugins/wpsso-rrssb/) includes a number of additional options and features:
 
 * Extends the features of WPSSO Pro (requires a licensed WPSSO Pro plugin).
 * Custom titles and text in the Social Settings metabox for:
@@ -89,16 +89,16 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 The WordPress Social Sharing Optimization (WPSSO) plugin is required to use the WPSSO RRSSB extension.
 
-Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPSSO. The [WPSSO RRSSB Pro extension](http://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-extends) (along with all WPSSO Pro extensions) requires the [WPSSO Pro plugin](http://wpsso.com/extend/plugins/wpsso/?utm_source=wpssorrssb-readme-extends) as well.
+Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPSSO. The [WPSSO RRSSB Pro extension](https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-extends) (along with all WPSSO Pro extensions) requires the [WPSSO Pro plugin](https://wpsso.com/extend/plugins/wpsso/?utm_source=wpssorrssb-readme-extends) as well.
 
-[Purchase the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) Pro extension](http://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-purchase) (includes a *No Risk 30 Day Refund Policy*).
+[Purchase the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) Pro extension](https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-purchase) (includes a *No Risk 30 Day Refund Policy*).
 
 == Installation ==
 
 = Install and Uninstall =
 
-* [Install the Plugin](http://wpsso.com/codex/plugins/wpsso-rrssb/installation/install-the-plugin/)
-* [Uninstall the Plugin](http://wpsso.com/codex/plugins/wpsso-rrssb/installation/uninstall-the-plugin/)
+* [Install the Plugin](https://wpsso.com/codex/plugins/wpsso-rrssb/installation/install-the-plugin/)
+* [Uninstall the Plugin](https://wpsso.com/codex/plugins/wpsso-rrssb/installation/uninstall-the-plugin/)
 
 == Frequently Asked Questions ==
 
@@ -110,7 +110,7 @@ Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPS
 
 = Additional Documentation =
 
-* [RRSSB Shortcode for Sharing Buttons](http://wpsso.com/codex/plugins/wpsso-rrssb/notes/rrssb-shortcode/)
+* [RRSSB Shortcode for Sharing Buttons](https://wpsso.com/codex/plugins/wpsso-rrssb/notes/rrssb-shortcode/)
 
 == Screenshots ==
 
