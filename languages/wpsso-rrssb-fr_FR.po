@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) 1.3.26-1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2016-10-13 09:55-0700\n"
-"PO-Revision-Date: 2016-10-13 09:55-0700\n"
+"POT-Creation-Date: 2016-10-17 09:57-0700\n"
+"PO-Revision-Date: 2016-10-17 09:57-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -95,51 +95,51 @@ msgctxt "plugin description"
 msgid "WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc."
 msgstr "Extension WPSSO pour ajouter des boutons de partage sociaux ridiculement réactif (SVG) dans votre contenu, les extraits, barre flottante CSS, widget, shortcode, etc."
 
-#: lib/gpl/admin/sharing.php:26 lib/pro/admin/sharing.php:33
+#: lib/gpl/admin/sharing.php:26 lib/pro/admin/sharing.php:34
 msgid "Save a draft version or publish the %s to display these options."
 msgstr "Enregistrer un brouillon ou publier pour activer ces options."
 
-#: lib/gpl/admin/sharing.php:46 lib/pro/admin/sharing.php:49
+#: lib/gpl/admin/sharing.php:46 lib/pro/admin/sharing.php:50
 msgctxt "option label"
 msgid "Email Subject"
 msgstr "Sujet du couriel"
 
-#: lib/gpl/admin/sharing.php:51 lib/pro/admin/sharing.php:55
+#: lib/gpl/admin/sharing.php:51 lib/pro/admin/sharing.php:56
 msgctxt "option label"
 msgid "Email Message"
 msgstr "Message du courriel"
 
-#: lib/gpl/admin/sharing.php:64 lib/pro/admin/sharing.php:69
+#: lib/gpl/admin/sharing.php:64 lib/pro/admin/sharing.php:70
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr "Texte du Tweet"
 
-#: lib/gpl/admin/sharing.php:90 lib/pro/admin/sharing.php:96
+#: lib/gpl/admin/sharing.php:90 lib/pro/admin/sharing.php:97
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr "Texte légende Pinterest"
 
-#: lib/gpl/admin/sharing.php:111 lib/pro/admin/sharing.php:118
+#: lib/gpl/admin/sharing.php:111 lib/pro/admin/sharing.php:119
 msgctxt "option label"
 msgid "%s Title"
 msgstr "Titre %s"
 
-#: lib/gpl/admin/sharing.php:117 lib/pro/admin/sharing.php:125
+#: lib/gpl/admin/sharing.php:117 lib/pro/admin/sharing.php:126
 msgctxt "option label"
 msgid "%s Caption"
 msgstr "Légende %s"
 
-#: lib/gpl/admin/sharing.php:127 lib/pro/admin/sharing.php:136
+#: lib/gpl/admin/sharing.php:127 lib/pro/admin/sharing.php:137
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr "Désactiver les boutons"
 
-#: lib/gpl/ecom/woocommerce.php:79 lib/pro/ecom/woocommerce.php:82
+#: lib/gpl/ecom/woocommerce.php:79 lib/pro/ecom/woocommerce.php:83
 msgctxt "option label"
 msgid "Position in Woo Short Text"
 msgstr "Position dans le texte Woo Short"
 
-#: lib/gpl/forum/bbpress.php:87 lib/pro/forum/bbpress.php:123
+#: lib/gpl/forum/bbpress.php:87 lib/pro/forum/bbpress.php:124
 msgctxt "option label"
 msgid "Position in bbPress Single"
 msgstr "Position dans le texte bbPress Single"
@@ -445,8 +445,8 @@ msgid "WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)"
 msgstr "WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)"
 
 #. Plugin URI of the plugin/theme
-msgid "http://surniaulula.com/extend/plugins/wpsso-rrssb/"
-msgstr "http://surniaulula.com/extend/plugins/wpsso-rrssb/"
+msgid "https://surniaulula.com/extend/plugins/wpsso-rrssb/"
+msgstr "https://surniaulula.com/extend/plugins/wpsso-rrssb/"
 
 #. Description of the plugin/theme
 msgid "WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc."
@@ -457,5 +457,5 @@ msgid "JS Morisset"
 msgstr "JS Morisset"
 
 #. Author URI of the plugin/theme
-msgid "http://surniaulula.com/"
-msgstr "http://surniaulula.com/"
+msgid "https://surniaulula.com/"
+msgstr "https://surniaulula.com/"
