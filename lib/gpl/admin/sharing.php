@@ -14,12 +14,17 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 
 		public function __construct( &$plugin ) {
 			$this->p =& $plugin;
+			if ( $this->p->debug->enabled )
+				$this->p->debug->mark();
+
 			$this->p->util->add_plugin_filters( $this, array( 
 				'post_buttons_rows' => 4,		// $table_rows, $form, $head, $mod
 			), 40 );
 		}
 
 		public function filter_post_buttons_rows( $table_rows, $form, $head, $mod ) {
+			if ( $this->p->debug->enabled )
+				$this->p->debug->mark();
 
 			if ( empty( $mod['post_status'] ) || $mod['post_status'] === 'auto-draft' ) {
 				$table_rows['save_a_draft'] = '<td><blockquote class="status-info"><p class="centered">'.
