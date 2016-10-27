@@ -129,6 +129,20 @@ Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPS
 
 = Changelog / Release Notes =
 
+**Version 1.3.27-dev1 (TBD)**
+
+Official announcement: N/A
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Minor code changes required for WPSSO v3.37.0-1:
+		* Renamed the SucomUtil::after_key() method to SucomUtil::get_after_key().
+
 **Version 1.3.26-1 (2016/10/15)**
 
 Official announcement: N/A
