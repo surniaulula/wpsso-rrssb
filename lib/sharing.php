@@ -190,7 +190,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function filter_post_social_settings_tabs( $tabs, $mod ) {
-			return SucomUtil::after_key( $tabs, 'media', 'buttons',
+			return SucomUtil::get_after_key( $tabs, 'media', 'buttons',
 				_x( 'Sharing Buttons', 'metabox tab', 'wpsso-rrssb' ) );
 		}
 
