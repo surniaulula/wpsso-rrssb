@@ -129,17 +129,18 @@ Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPS
 
 = Changelog / Release Notes =
 
-**Version 1.3.27-dev1 (TBD)**
+**Version 1.4.0-dev1 (TBD)**
 
 Official announcement: N/A
 
 * *New Features*
 	* None
 * *Improvements*
-	* None
+	* Added a "Sharing Buttons Cache Expiry" option on the Advanced settings page.
 * *Bugfixes*
 	* None
 * *Developer Notes*
+	* Renamed the `$wpsso->rrssb` object to `$wpsso->rrssb_sharing`.
 	* Minor code changes required for WPSSO v3.37.0-1:
 		* Renamed the SucomUtil::after_key() method to SucomUtil::get_after_key().
 
