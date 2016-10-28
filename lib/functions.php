@@ -64,7 +64,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 			}
 
 			$html = '<!-- '.$lca.' '.__FUNCTION__.' function begin -->'."\n".
-				$wpsso->rrssb->get_html( $ids, $atts ).
+				$wpsso->rrssb_sharing->get_html( $ids, $atts ).
 				'<!-- '.$lca.' '.__FUNCTION__.' function end -->';
 	
 			if ( $wpsso->is_avail['cache']['transient'] ||

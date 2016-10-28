@@ -25,13 +25,26 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		public static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
+					/*
+					 * Advanced Settings
+					 */
+					// File and Object Cache Tab
+					'plugin_buttons_cache_exp' => 604800,		// Sharing Buttons Cache Expiry
+					/*
+					 * Sharing Buttons
+					 */
+					// Include Buttons
 					'buttons_on_index' => 0,
 					'buttons_on_front' => 0,
 					'buttons_add_to_post' => 1,
 					'buttons_add_to_page' => 1,
 					'buttons_add_to_attachment' => 1,
+					// Buttons Position Tab
 					'buttons_pos_content' => 'bottom',
 					'buttons_pos_excerpt' => 'bottom',
+					/*
+					 * Sharing Styles
+					 */
 					'buttons_use_social_css' => 1,
 					'buttons_enqueue_social_css' => 1,
 					'buttons_css_rrssb-sharing' => '',		// all buttons
@@ -41,7 +54,13 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					'buttons_css_rrssb-sidebar' => '',
 					'buttons_css_rrssb-shortcode' => '',
 					'buttons_css_rrssb-widget' => '',
-				),
+				),	// end of defaults
+				'site_defaults' => array(
+					'plugin_buttons_cache_exp' => 0,		// Sharing Buttons Cache Expiry
+					'plugin_buttons_cache_exp:use' => 'default',
+					'plugin_file_cache_exp' => 0,			// Social File Cache Expiry
+					'plugin_file_cache_exp:use' => 'default',
+				),	// end of site defaults
 			),
 		);
 
@@ -73,10 +92,11 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			}
 
 			$this->p->util->add_plugin_filters( $this, array( 
-				'get_defaults' => 1,			// add sharing options and css file contents to defaults
-				'get_md_defaults' => 1,			// add sharing options to meta data defaults
-				'text_filter_has_changes_before' => 2,	// remove the buttons filter from content, excerpt, etc.
-				'text_filter_has_changes_after' => 2,	// re-add the buttons filter to content, excerpt, etc.
+				'get_defaults' => 1,
+				'get_site_defaults' => 1,
+				'get_md_defaults' => 1,
+				'text_filter_has_changes_before' => 2,
+				'text_filter_has_changes_after' => 2,
 			) );
 
 			if ( is_admin() ) {
@@ -89,6 +109,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					'post_social_settings_tabs' => 2,	// $tabs, $mod
 					'post_cache_transients' => 4,		// clear transients on post save
 					'secondary_action_buttons' => 4,	// add a reload default styles button
+					'messages_tooltip' => 2,
+					'messages_info' => 2,
 				) );
 
 				$this->p->util->add_plugin_filters( $this, array( 
@@ -113,22 +135,6 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 						$this->p->debug->log( $classname.' class loaded' );
 				}
 			}
-		}
-
-		public function filter_get_md_defaults( $def_opts ) {
-			return array_merge( $def_opts, array(
-				'email_title' => '',		// Email Subject
-				'email_desc' => '',		// Email Message
-				'twitter_desc' => '',		// Tweet Text
-				'pin_desc' => '',		// Pinterest Caption
-				'linkedin_title' => '',		// LinkedIn Title
-				'linkedin_desc' => '',		// LinkedIn Caption
-				'reddit_title' => '',		// Reddit Title
-				'reddit_desc' => '',		// Reddit Caption
-				'tumblr_title' => '',		// Tumblr Title
-				'tumblr_desc' => '',		// Tumblr Caption
-				'buttons_disabled' => 0,	// Disable Sharing Buttons
-			) );
 		}
 
 		public function filter_get_defaults( $def_opts ) {
@@ -162,6 +168,26 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				}
 			}
 			return $def_opts;
+		}
+
+		public function filter_get_site_defaults( $site_def_opts ) {
+			return array_merge( $site_def_opts, self::$cf['opt']['site_defaults'] );
+		}
+
+		public function filter_get_md_defaults( $def_opts ) {
+			return array_merge( $def_opts, array(
+				'email_title' => '',		// Email Subject
+				'email_desc' => '',		// Email Message
+				'twitter_desc' => '',		// Tweet Text
+				'pin_desc' => '',		// Pinterest Caption
+				'linkedin_title' => '',		// LinkedIn Title
+				'linkedin_desc' => '',		// LinkedIn Caption
+				'reddit_title' => '',		// Reddit Title
+				'reddit_desc' => '',		// Reddit Caption
+				'tumblr_title' => '',		// Tumblr Title
+				'tumblr_desc' => '',		// Tumblr Caption
+				'buttons_disabled' => 0,	// Disable Sharing Buttons
+			) );
 		}
 
 		public function filter_save_options( $opts, $options_name, $network ) {
@@ -781,6 +807,99 @@ $buttons_html."\n".
 			return $matches[1].apply_filters( $wpsso->cf['lca'].'_shorten_url',
 				$matches[2], $wpsso->options['plugin_shortener'] ).$matches[3];
 		}
+
+		public function filter_messages_tooltip( $text, $idx ) {
+			if ( strpos( $idx, 'tooltip-buttons_' ) === 0 ) {
+				switch ( $idx ) {
+					case ( strpos( $idx, 'tooltip-buttons_pos_' ) === false ? false : true ):
+						$text = sprintf( __( 'Social sharing buttons can be added to the top, bottom, or both. Each sharing button must also be enabled below (see the <em>%s</em> options).', 'wpsso-rrssb' ), _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) );
+						break;
+					case 'tooltip-buttons_on_index':
+						$text = __( 'Add the social sharing buttons to each entry of an index webpage (for example, <strong>non-static</strong> homepage, category, archive, etc.). Social sharing buttons are not included on index webpages by default.', 'wpsso-rrssb' );
+						break;
+					case 'tooltip-buttons_on_front':
+						$text = __( 'If a static Post or Page has been selected for the homepage, you can add the social sharing buttons to that static homepage as well (default is unchecked).', 'wpsso-rrssb' );
+						break;
+					case 'tooltip-buttons_add_to':
+						$text = __( 'Enabled social sharing buttons are added to the Post, Page, Media, and Product webpages by default. If your theme (or another plugin) supports additional custom post types, and you would like to include social sharing buttons on these webpages, check the appropriate option(s) here.', 'wpsso-rrssb' );
+						break;
+					case 'tooltip-buttons_use_social_css':
+						$text = sprintf( __( 'Add the CSS of all <em>%1$s</em> to webpages (default is checked). The CSS will be <strong>minimized</strong>, and saved to a single stylesheet with a URL of <a href="%2$s">%3$s</a>. The minimized stylesheet can be enqueued or added directly to the webpage HTML.', 'wpsso-rrssb' ), _x( 'Sharing Styles', 'lib file description', 'wpsso-rrssb' ), WpssoRrssbSharing::$sharing_css_url, WpssoRrssbSharing::$sharing_css_url );
+						break;
+					case 'tooltip-buttons_enqueue_social_css':
+						$text = __( 'Have WordPress enqueue the social stylesheet instead of adding the CSS to in the webpage HTML (default is unchecked). Enqueueing the stylesheet may be desirable if you use a plugin to concatenate all enqueued styles into a single stylesheet URL.', 'wpsso-rrssb' );
+						break;
+				}
+			}
+			return $text;
+		}
+
+		public function filter_messages_info( $text, $idx ) {
+			if ( strpos( $idx, 'info-styles-rrssb-' ) !== 0 )
+				return $text;
+			$short = $this->p->cf['plugin']['wpsso']['short'];
+			switch ( $idx ) {
+				case 'info-styles-rrssb-sharing':
+					$text = '<p>'.$short.' uses the \'wpsso-rrssb\' class to wrap all sharing buttons, and each button has it\'s own individual class name as well. This tab can be used to edit the CSS common to all sharing button locations.</p>';
+					break;
+				case 'info-styles-rrssb-content':
+					$text = '<p>Social sharing buttons, enabled / added to the content text from the '.$this->p->util->get_admin_url( 'rrssb-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-content\' class.</p>'.
+					$this->get_info_css_example( 'content', true );
+					break;
+				case 'info-styles-rrssb-excerpt':
+					$text = '<p>Social sharing buttons, enabled / added to the excerpt text from the '.$this->p->util->get_admin_url( 'rrssb-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-excerpt\' class.</p>'.
+					$this->get_info_css_example( 'excerpt', true );
+					break;
+				case 'info-styles-rrssb-sidebar':
+					$text = '<p>Social sharing buttons, enabled / added to the CSS sidebar from the '.$this->p->util->get_admin_url( 'rrssb-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-sidebar\' ID.</p> 
+					<p>In order to achieve a vertical display, each un-ordered list (UL) contains a single list item (LI).</p>
+					<p>Example:</p><pre>
+div.wpsso-rrssb 
+  #wpsso-rrssb-sidebar
+    ul.rrssb-buttons
+      li.rrssb-facebook {}</pre>';
+					break;
+				case 'info-styles-rrssb-shortcode':
+					$text = '<p>Social sharing buttons added from a shortcode are assigned the \'wpsso-rrssb-shortcode\' class by default.</p>'.
+					$this->get_info_css_example( 'admin_edit', true );
+					break;
+				case 'info-styles-rrssb-widget':
+					$text = '<p>Social sharing buttons enabled in the '.$short.' widget are assigned the \'wpsso-rrssb-widget\' class (along with additional unique CSS ID names).</p> 
+					<p>Example:</p><pre>
+aside.widget 
+  .wpsso-rrssb-widget 
+    ul.rrssb-buttons
+        li.rrssb-facebook {}</pre>';
+					break;
+				case 'info-styles-rrssb-admin_edit':
+					$text = '<p>Social sharing buttons, enabled / added to the admin editing pages from the '.$this->p->util->get_admin_url( 'rrssb-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-admin_edit\' class.</p>'.
+					$this->get_info_css_example( 'admin_edit', true );
+					break;
+				case 'info-styles-rrssb-woo_short': 
+					$text = '<p>Social sharing buttons, enabled / added to the WooCommerce Short Description text from the '.$this->p->util->get_admin_url( 'rrssb-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-woo_short\' class.</p>'.
+					$this->get_info_css_example( 'woo_short' );
+      					break;
+				case 'info-styles-rrssb-bbp_single': 
+					$text = '<p>Social sharing buttons, enabled / added at the top of bbPress Single Templates from the '.$this->p->util->get_admin_url( 'rrssb-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-bbp_single\' class.</p>'.
+					$this->get_info_css_example( 'bbp_single' );
+      					break;
+				case 'info-styles-rrssb-bp_activity': 
+					$text = '<p>Social sharing buttons, enabled / added to BuddyPress Activities from the '.$this->p->util->get_admin_url( 'rrssb-buttons', 'Sharing Buttons' ).' settings page, are assigned the \'wpsso-rrssb-bp_activity\' class.</p>'.
+					$this->get_info_css_example( 'bp_activity' );
+      					break;
+			}
+			return $text;
+		}
+
+		protected function get_info_css_example( $type ) {
+			$text = '<p>Example:</p><pre>
+div.wpsso-rrssb
+  .wpsso-rrssb-'.$type.'
+    ul.rrssb-buttons
+      li.rrssb-facebook {}</pre>';
+			return $text;
+		}
+
 	}
 }
 

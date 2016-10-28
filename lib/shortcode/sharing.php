@@ -102,7 +102,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 				$html .= '<!-- '.$lca.' '.$atts['css_class']." begin -->\n".
 					'<div class="'.$lca.'-rrssb '.$lca.'-'.$atts['css_class']."\">\n".
-					$this->p->rrssb->get_html( $ids, $atts, $mod ).
+					$this->p->rrssb_sharing->get_html( $ids, $atts, $mod ).
 					'</div><!-- .'.$lca.'-'.$atts['css_class']." -->\n".
 					'<!-- '.$lca.' '.$atts['css_class']." end -->";
 

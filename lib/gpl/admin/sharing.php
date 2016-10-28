@@ -18,8 +18,24 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 				$this->p->debug->mark();
 
 			$this->p->util->add_plugin_filters( $this, array( 
+				'plugin_cache_rows' => 3,		// $table_rows, $form, $network
 				'post_buttons_rows' => 4,		// $table_rows, $form, $head, $mod
 			), 40 );
+		}
+
+		public function filter_plugin_cache_rows( $table_rows, $form, $network = false ) {
+			if ( $this->p->debug->enabled )
+				$this->p->debug->mark();
+
+			SucomUtil::add_before_key( $table_rows, 'plugin_verify_certs', array(
+				'plugin_buttons_cache_exp' => $form->get_th_html( _x( 'Sharing Buttons Cache Expiry',
+					'option label', 'wpsso-rrssb' ), null, 'plugin_buttons_cache_exp' ).
+				'<td nowrap class="blank">'.$this->p->options['plugin_buttons_cache_exp'].' '.
+				_x( 'seconds (0 to disable)', 'option comment', 'wpsso-rrssb' ).'</td>'.
+				$this->p->admin->get_site_use( $form, $network, 'plugin_buttons_cache_exp' ),
+			) );
+
+			return $table_rows;
 		}
 
 		public function filter_post_buttons_rows( $table_rows, $form, $head, $mod ) {
@@ -61,7 +77,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			/*
 			 * Twitter
 			 */
-			$caption_len = $this->p->rrssb->get_tweet_max_len();
+			$caption_len = $this->p->rrssb_sharing->get_tweet_max_len();
 			$caption_text = $this->p->webpage->get_caption( 'title', $caption_len, 
 				$mod, true, $this->p->options['twitter_cap_hashtags'] );
 

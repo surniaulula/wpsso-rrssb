@@ -120,7 +120,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 				false : $this->p->options['twitter_cap_hashtags'];
 
 			if ( ! isset( $atts['tweet'] ) )
-				$atts['tweet'] = $this->p->rrssb->get_tweet_text( $mod, $atts, 'twitter', 'twitter' );
+				$atts['tweet'] = $this->p->rrssb_sharing->get_tweet_text( $mod, $atts, 'twitter', 'twitter' );
 
 			if ( ! isset( $atts['hashtags'] ) )
 				$atts['hashtags'] = '';
