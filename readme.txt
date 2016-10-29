@@ -134,9 +134,9 @@ Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPS
 Official announcement: N/A
 
 * *New Features*
-	* None
-* *Improvements*
 	* Added a "Sharing Buttons Cache Expiry" option on the Advanced settings page.
+* *Improvements*
+	* None
 * *Bugfixes*
 	* None
 * *Developer Notes*
