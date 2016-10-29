@@ -58,8 +58,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				'site_defaults' => array(
 					'plugin_buttons_cache_exp' => 0,		// Sharing Buttons Cache Expiry
 					'plugin_buttons_cache_exp:use' => 'default',
-					'plugin_file_cache_exp' => 0,			// Social File Cache Expiry
-					'plugin_file_cache_exp:use' => 'default',
+					'plugin_social_file_cache_exp' => 0,			// Social File Cache Expiry
+					'plugin_social_file_cache_exp:use' => 'default',
 				),	// end of site defaults
 			),
 		);
