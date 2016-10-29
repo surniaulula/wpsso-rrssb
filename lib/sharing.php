@@ -29,7 +29,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					 * Advanced Settings
 					 */
 					// File and Object Cache Tab
-					'plugin_buttons_cache_exp' => 604800,		// Sharing Buttons Cache Expiry
+					'plugin_sharing_buttons_cache_exp' => 604800,	// Sharing Buttons Cache Expiry (7 days)
 					/*
 					 * Sharing Buttons
 					 */
@@ -56,10 +56,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					'buttons_css_rrssb-widget' => '',
 				),	// end of defaults
 				'site_defaults' => array(
-					'plugin_buttons_cache_exp' => 0,		// Sharing Buttons Cache Expiry
-					'plugin_buttons_cache_exp:use' => 'default',
-					'plugin_social_file_cache_exp' => 0,			// Social File Cache Expiry
-					'plugin_social_file_cache_exp:use' => 'default',
+					'plugin_sharing_buttons_cache_exp' => 604800,	// Sharing Buttons Cache Expiry (7 days)
+					'plugin_sharing_buttons_cache_exp:use' => 'default',
 				),	// end of site defaults
 			),
 		);
@@ -221,17 +219,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function filter_post_cache_transients( $transients, $post_id, $locale = 'en_US', $sharing_url ) {
-			$locale_salt = 'locale:'.$locale.'_post:'.$post_id;
-			$show_on = apply_filters( $this->p->cf['lca'].'_rrssb_buttons_show_on', 
-				$this->p->cf['sharing']['show_on'], null );
-
-			foreach( $show_on as $type_id => $type_name ) {
-				$transients[__CLASS__.'::get_buttons'][] = $locale_salt.'_type:'.$type_id;
-				$transients[__CLASS__.'::get_buttons'][] = $locale_salt.'_type:'.$type_id.'_prot:https';
-				$transients[__CLASS__.'::get_buttons'][] = $locale_salt.'_type:'.$type_id.'_mobile:true';
-				$transients[__CLASS__.'::get_buttons'][] = $locale_salt.'_type:'.$type_id.'_mobile:true_prot:https';
-			}
-
+			$locale_salt = 'locale:'.$locale.'_post:'.$post_id;	// see SucomUtil::get_mod_salt()
+			$transients[__CLASS__.'::get_buttons'][] = $locale_salt;
 			return $transients;
 		}
 
@@ -419,9 +408,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			if ( $this->p->debug->enabled )
 				$this->p->debug->mark();
 			$lca = $this->p->cf['lca'];
-			$text = '';	// variable must be passed by reference
-			echo $this->get_buttons( $text, 'sidebar', false, 	// $use_post = false
-				'', array( 'container_each' => true ) );
+			echo $this->get_buttons( '', 'sidebar', false, '', array( 'container_each' => true ) );	// $use_post = false
 			if ( $this->p->debug->enabled )
 				$this->p->debug->show_html( null, 'Debug Log' );
 		}
@@ -498,7 +485,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			return $this->get_buttons( $text, 'content' );
 		}
 
-		public function get_buttons( &$text, $type = 'content', $use_post = true, $location = '', $atts = array() ) {
+		// $mod = true | false | post_id | $mod array
+		public function get_buttons( $text, $type = 'content', $mod = true, $location = '', $atts = array() ) {
 			if ( $this->p->debug->enabled )
 				$this->p->debug->mark();
 
@@ -543,60 +531,58 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			}
 
 			$lca = $this->p->cf['lca'];
-			$mod = $this->p->util->get_page_mod( $use_post );	// get post/user/term id, module name, and module object reference
-			$html = false;
+			if ( ! is_array( $mod ) )
+				$mod = $this->p->util->get_page_mod( $mod );
+			$buttons_index = $this->get_buttons_cache_index( $type );
+			$buttons_array = array();
+			$cache_exp = (int) apply_filters( $lca.'_cache_expire_sharing_buttons', 
+				$this->p->options['plugin_sharing_buttons_cache_exp'], $buttons_index );
 
-			// fetch from the cache, if possible
-			if ( $this->p->is_avail['cache']['transient'] ) {
-
-				$sharing_url = $this->p->util->get_sharing_url( $mod, true );
-				$cache_salt = __METHOD__.'('.apply_filters( $lca.'_buttons_cache_salt', 
-					SucomUtil::get_mod_salt( $mod ).'_type:'.$type.
-					( SucomUtil::is_mobile() ? '_mobile:true' : '' ).
-					( SucomUtil::is_https() ? '_prot:https' : '' ).
-					( empty( $mod['id'] ) ? '_url:'.$sharing_url : '' ),
-						$type, $use_post ).')';
-				$cache_id = $lca.'_'.md5( $cache_salt );
-				$cache_type = 'object cache';
-
-				if ( $this->p->debug->enabled )
-					$this->p->debug->log( $cache_type.': transient salt '.$cache_salt );
-
-				$html = get_transient( $cache_id );
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->log( 'buttons index = '.$buttons_index );
+				$this->p->debug->log( 'cache expire = '.$cache_exp );
 			}
 
-			if ( $html !== false ) {
+			if ( $cache_exp > 0 ) {
+				$cache_salt = __METHOD__.'('.apply_filters( $lca.'_sharing_buttons_cache_salt', SucomUtil::get_mod_salt( $mod ).
+					( empty( $mod['id'] ) ? '_url:'.$this->p->util->get_sharing_url( $mod, true ) : '' ), $type, $mod ).')';
+				$cache_id = $lca.'_'.md5( $cache_salt );
 				if ( $this->p->debug->enabled )
-					$this->p->debug->log( $cache_type.': '.$type.' html retrieved from transient '.$cache_id );
-			} else {
+					$this->p->debug->log( 'transient cache salt '.$cache_salt );
+				$buttons_array = get_transient( $cache_id );
+				if ( isset( $buttons_array[$buttons_index] ) ) {
+					if ( $this->p->debug->enabled )
+						$this->p->debug->log( $type.' buttons array retrieved from transient '.$cache_id );
+				}
+			}
+
+			if ( ! isset( $buttons_array[$buttons_index] ) ) {
 				// sort enabled sharing buttons by their preferred order
 				$sorted_ids = array();
 				foreach ( $this->p->cf['opt']['pre'] as $id => $pre )
 					if ( ! empty( $this->p->options[$pre.'_on_'.$type] ) )
 						$sorted_ids[ zeroise( $this->p->options[$pre.'_order'], 3 ).'-'.$id ] = $id;
 				ksort( $sorted_ids );
-
-				$atts['use_post'] = $use_post;
+				$atts['use_post'] = $mod['use_post'];
 				$atts['css_id'] = $css_type_name = 'rrssb-'.$type;
 
-				$buttons_html = $this->get_html( $sorted_ids, $atts, $mod );
+				// returns html or an empty string
+				$buttons_array[$buttons_index] = $this->get_html( $sorted_ids, $atts, $mod );
 
-				if ( trim( $buttons_html ) ) {
-					$html = '
+				if ( ! empty( $buttons_array[$buttons_index] ) ) {
+					$buttons_array[$buttons_index] = '
 <!-- '.$lca.' '.$css_type_name.' begin -->
 <!-- generated on '.date( 'c' ).' -->
-<div class="'.$lca.'-rrssb'.
-	( $use_post ? ' '.$lca.'-'.$css_type_name.'">' : '" id="'.$lca.'-'.$css_type_name.'">' ).
-$buttons_html."\n".
-'</div><!-- .'.$lca.'-rrssb '.
-	( $use_post ? '.' : '#' ).$lca.'-'.$css_type_name.' -->
+<div class="'.$lca.'-rrssb'.( $mod['use_post'] ? ' '.$lca.'-'.$css_type_name.'">' : '" id="'.$lca.'-'.$css_type_name.'">' ).
+$buttons_array[$buttons_index]."\n".	// buttons html is trimmed, so add newline
+'</div><!-- .'.$lca.'-rrssb '.( $mod['use_post'] ? '.' : '#' ).$lca.'-'.$css_type_name.' -->
 <!-- '.$lca.' '.$css_type_name.' end -->'."\n\n";
 
-					if ( $this->p->is_avail['cache']['transient'] ) {
-						set_transient( $cache_id, $html, $this->p->options['plugin_object_cache_exp'] );
+					if ( $cache_exp > 0 ) {
+						set_transient( $cache_id, $buttons_array, $cache_exp );
 						if ( $this->p->debug->enabled )
-							$this->p->debug->log( $cache_type.': '.$type.' html saved to transient '.
-								$cache_id.' ('.$this->p->options['plugin_object_cache_exp'].' seconds)' );
+							$this->p->debug->log( $type.' buttons html saved to transient '.
+								$cache_id.' ('.$cache_exp.' seconds)' );
 					}
 				}
 			}
@@ -608,17 +594,25 @@ $buttons_html."\n".
 
 			switch ( $location ) {
 				case 'top': 
-					$text = $html.$text; 
+					$text = $buttons_array[$buttons_index].$text; 
 					break;
 				case 'bottom': 
-					$text = $text.$html; 
+					$text = $text.$buttons_array[$buttons_index]; 
 					break;
 				case 'both': 
-					$text = $html.$text.$html; 
+					$text = $buttons_array[$buttons_index].$text.$buttons_array[$buttons_index]; 
 					break;
 			}
 
-			return $text.( $this->p->debug->enabled ? $this->p->debug->get_html() : '' );
+			return $text.( $this->p->debug->enabled ?
+				$this->p->debug->get_html() : '' );
+		}
+
+		public function get_buttons_cache_index( $type ) {
+			$buttons_index = 'type:'.$type.
+				'_mobile:'.( SucomUtil::is_mobile() ? 'true' : 'false' ).
+				'_https:'.( SucomUtil::is_https() ? 'true' : 'false' );
+			return apply_filters( $this->p->cf['lca'].'_buttons_cache_index', $buttons_index, $type );
 		}
 
 		// get_html() can be called by a widget, shortcode, function, filter hook, etc.
@@ -631,11 +625,11 @@ $buttons_html."\n".
 			$atts['add_page'] = isset( $atts['add_page'] ) ? $atts['add_page'] : true;	// used by get_sharing_url()
 
 			if ( ! is_array( $mod ) )
-				$mod = $this->p->util->get_page_mod( $atts['use_post'] );	// get post/user/term id, module name, and module object reference
+				$mod = $this->p->util->get_page_mod( $atts['use_post'] );
 
-			$html_ret = '';
-			$html_begin = '<ul class="rrssb-buttons '.SucomUtil::get_locale( $mod ).' clearfix">'."\n";
-			$html_end = '</ul><!-- .rrssb-buttons.'.SucomUtil::get_locale( $mod ).'.clearfix -->'."\n";
+			$buttons_html = '';
+			$buttons_begin = '<ul class="rrssb-buttons '.SucomUtil::get_locale( $mod ).' clearfix">'."\n";
+			$buttons_end = '</ul><!-- .rrssb-buttons.'.SucomUtil::get_locale( $mod ).'.clearfix -->'."\n";
 
 			$saved_atts = $atts;
 			foreach ( $ids as $id ) {
@@ -649,14 +643,14 @@ $buttons_html."\n".
 									$atts['add_page'], $atts['src_id'] ) : 
 								apply_filters( $lca.'_sharing_url', $atts['url'], 
 									$mod, $atts['add_page'], $atts['src_id'] );
-							$html_part = $this->website[$id]->get_html( $atts, $this->p->options, $mod )."\n";
+							$buttons_part = $this->website[$id]->get_html( $atts, $this->p->options, $mod )."\n";
 							$atts = $saved_atts;	// restore the common $atts array
 
-							if ( trim( $html_part ) !== '' ) {
+							if ( trim( $buttons_part ) !== '' ) {
 								if ( empty( $atts['container_each'] ) )
-									$html_ret .= $html_part;
-								else $html_ret .= '<!-- container_each -->'.
-									$html_begin.$html_part.$html_end;
+									$buttons_html .= $buttons_part;
+								else $buttons_html .= '<!-- container_each -->'.
+									$buttons_begin.$buttons_part.$buttons_end;
 							}
 
 						} elseif ( $this->p->debug->enabled )
@@ -666,12 +660,13 @@ $buttons_html."\n".
 				} elseif ( $this->p->debug->enabled )
 					$this->p->debug->log( 'website object missing for '.$id );
 			}
-			$html_ret = trim( $html_ret );
-			if ( ! empty( $html_ret ) ) {
+
+			$buttons_html = trim( $buttons_html );
+			if ( ! empty( $buttons_html ) ) {
 				if ( empty( $atts['container_each'] ) )
-					$html_ret = $html_begin.$html_ret.$html_end;
+					$buttons_html = $buttons_begin.$buttons_html.$buttons_end;
 			}
-			return $html_ret;
+			return $buttons_html;
 		}
 
 		public function have_buttons_for_type( $type ) {
