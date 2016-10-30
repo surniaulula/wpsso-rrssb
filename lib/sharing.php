@@ -544,8 +544,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			}
 
 			if ( $cache_exp > 0 ) {
-				$cache_salt = __METHOD__.'('.apply_filters( $lca.'_sharing_buttons_cache_salt', SucomUtil::get_mod_salt( $mod ).
-					( empty( $mod['id'] ) ? '_url:'.$this->p->util->get_sharing_url( $mod, true ) : '' ), $type, $mod ).')';
+				$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod ).
+					( empty( $mod['id'] ) ? '_url:'.$this->p->util->get_sharing_url( $mod, true ) : '' ).')';
 				$cache_id = $lca.'_'.md5( $cache_salt );
 				if ( $this->p->debug->enabled )
 					$this->p->debug->log( 'transient cache salt '.$cache_salt );
@@ -608,10 +608,11 @@ $buttons_array[$buttons_index]."\n".	// buttons html is trimmed, so add newline
 				$this->p->debug->get_html() : '' );
 		}
 
-		public function get_buttons_cache_index( $type ) {
-			$buttons_index = 'type:'.$type.
+		public function get_buttons_cache_index( $type, $atts = false ) {
+			$buttons_index = 'type:'.( empty( $type ) ? 'none' : $type ).	// just in case
+				'_https:'.( SucomUtil::is_https() ? 'true' : 'false' ).
 				'_mobile:'.( SucomUtil::is_mobile() ? 'true' : 'false' ).
-				'_https:'.( SucomUtil::is_https() ? 'true' : 'false' );
+				( $atts !== false ? '_atts:'.http_build_query( $atts, '', '_' ) : '' );
 			return apply_filters( $this->p->cf['lca'].'_buttons_cache_index', $buttons_index, $type );
 		}
 

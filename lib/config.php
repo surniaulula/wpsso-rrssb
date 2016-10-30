@@ -15,7 +15,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(
-					'version' => '1.4.0-dev2',	// plugin version
+					'version' => '1.4.0-dev3',	// plugin version
 					'opt_version' => '11',		// increment when changing default options
 					'short' => 'WPSSO RRSSB',	// short plugin name
 					'name' => 'WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)',
@@ -152,7 +152,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static function get_variable_constants() { 
 			$var_const = array();
 
-			$var_const['WPSSORRSSB_SHARING_SHORTCODE'] = 'rrssb';
+			$var_const['WPSSORRSSB_SHARING_SHORTCODE_NAME'] = 'rrssb';
 
 			/*
 			 * WPSSO RRSSB hook priorities
