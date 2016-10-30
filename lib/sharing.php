@@ -441,27 +441,27 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			echo '</td></tr></table>';
 		}
 
-		public function add_buttons_filter( $type = 'the_content' ) {
-			$ret = false;
-			if ( method_exists( $this, 'get_buttons_'.$type ) ) {
-				$ret = add_filter( $type, array( &$this, 'get_buttons_'.$type ), WPSSORRSSB_SOCIAL_PRIORITY );
+		public function add_buttons_filter( $filter_name = 'the_content' ) {
+			$added = false;
+			if ( method_exists( $this, 'get_buttons_'.$filter_name ) ) {
+				$added = add_filter( $filter_name, array( &$this, 'get_buttons_'.$filter_name ), WPSSORRSSB_SOCIAL_PRIORITY );
 				if ( $this->p->debug->enabled )
-					$this->p->debug->log( 'buttons filter '.$type.
-						' added ('.( $ret  ? 'true' : 'false' ).')' );
+					$this->p->debug->log( 'buttons filter '.$filter_name.
+						' added ('.( $added  ? 'true' : 'false' ).')' );
 			} elseif ( $this->p->debug->enabled )
-				$this->p->debug->log( 'get_buttons_'.$type.' method is missing' );
-			return $ret;
+				$this->p->debug->log( 'get_buttons_'.$filter_name.' method is missing' );
+			return $added;
 		}
 
-		public function remove_buttons_filter( $type = 'the_content' ) {
-			$ret = false;
-			if ( method_exists( $this, 'get_buttons_'.$type ) ) {
-				$ret = remove_filter( $type, array( &$this, 'get_buttons_'.$type ), WPSSORRSSB_SOCIAL_PRIORITY );
+		public function remove_buttons_filter( $filter_name = 'the_content' ) {
+			$removed = false;
+			if ( method_exists( $this, 'get_buttons_'.$filter_name ) ) {
+				$removed = remove_filter( $filter_name, array( &$this, 'get_buttons_'.$filter_name ), WPSSORRSSB_SOCIAL_PRIORITY );
 				if ( $this->p->debug->enabled )
-					$this->p->debug->log( 'buttons filter '.$type.
-						' removed ('.( $ret  ? 'true' : 'false' ).')' );
+					$this->p->debug->log( 'buttons filter '.$filter_name.
+						' removed ('.( $removed  ? 'true' : 'false' ).')' );
 			}
-			return $ret;
+			return $removed;
 		}
 
 		public function get_buttons_the_excerpt( $text ) {
