@@ -129,7 +129,7 @@ Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPS
 
 = Changelog / Release Notes =
 
-**Version 1.4.0-dev3 (2016/10/30)**
+**Version 1.4.0-dev4 (2016/10/30)**
 
 Official announcement: N/A
 
@@ -140,7 +140,7 @@ Official announcement: N/A
 * *Bugfixes*
 	* None
 * *Developer Notes*
-	* Added a new WpssoRrssbSharing::get_buttons_index() method to cache sharing buttons HTML as array elements. This optimizes the cache by storing one transient instead of one transient per sharing buttons location within the same webpage.
+	* Added a new WpssoRrssbSharing::get_buttons_cache_index() method to cache sharing buttons HTML as array elements. This optimizes the cache by storing one transient instead of one transient per sharing buttons location within the same webpage.
 	* Renamed the `$wpsso->rrssb` object to `$wpsso->rrssb_sharing`.
 	* Renamed the 'wpsso_shortcode_rrssb' filter to 'wpsso_sharing_shortcode_rrssb'.
 	* Renamed the WPSSORRSSB_SHARING_SHORTCODE contant to WPSSORRSSB_SHARING_SHORTCODE_NAME.
@@ -177,7 +177,7 @@ Official announcement: N/A
 
 == Upgrade Notice ==
 
-= 1.4.0-dev3 =
+= 1.4.0-dev4 =
 
 (2016/10/30) Minor code changes required for WPSSO v3.37.0-1. Added a Sharing Buttons Cache Expiry option on the Advanced settings page. Optimized the sharing buttons HTML cache by storing only one transient per webpage.
 
