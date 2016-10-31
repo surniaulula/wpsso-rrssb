@@ -492,44 +492,33 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			if ( $this->p->debug->enabled )
 				$this->p->debug->mark();
 
+			$error_msg = false;
 			if ( is_admin() ) {
-				if ( strpos( $type, 'admin_' ) !== 0 ) {
-					if ( $this->p->debug->enabled )
-						$this->p->debug->log( $type.' filter skipped: '.$type.' ignored in back-end'  );
-					return $text;
-				}
+				if ( strpos( $type, 'admin_' ) !== 0 )
+					$error_msg = $type.' ignored in back-end';
 			} elseif ( $this->p->is_avail['amp_endpoint'] && is_amp_endpoint() ) {
-				if ( $this->p->debug->enabled )
-					$this->p->debug->log( $type.' filter skipped: buttons not allowed in amp endpoint'  );
-				return $text;
+				$error_msg = 'buttons not allowed in amp endpoint';
 			} elseif ( is_feed() ) {
-				if ( $this->p->debug->enabled )
-					$this->p->debug->log( $type.' filter skipped: buttons not allowed in rss feeds'  );
-				return $text;
+				$error_msg = 'buttons not allowed in rss feeds';
 			} elseif ( ! is_singular() ) {
-				if ( empty( $this->p->options['buttons_on_index'] ) ) {
-					if ( $this->p->debug->enabled )
-						$this->p->debug->log( $type.' filter skipped: buttons_on_index not enabled' );
-					return $text;
-				}
+				if ( empty( $this->p->options['buttons_on_index'] ) )
+					$error_msg = 'buttons_on_index not enabled';
 			} elseif ( is_front_page() ) {
-				if ( empty( $this->p->options['buttons_on_front'] ) ) {
-					if ( $this->p->debug->enabled )
-						$this->p->debug->log( $type.' filter skipped: buttons_on_front not enabled' );
-					return $text;
-				}
+				if ( empty( $this->p->options['buttons_on_front'] ) )
+					$error_msg = 'buttons_on_front not enabled';
 			} elseif ( is_singular() ) {
-				if ( $this->is_post_buttons_disabled() ) {
-					if ( $this->p->debug->enabled )
-						$this->p->debug->log( $type.' filter skipped: post buttons are disabled' );
-					return $text;
-				}
+				if ( $this->is_post_buttons_disabled() )
+					$error_msg = 'post buttons are disabled';
 			}
 
-			if ( ! $this->have_buttons_for_type( $type ) ) {
+			if ( ! $this->have_buttons_for_type( $type ) )
+				$error_msg = 'no sharing buttons enabled';
+
+			if ( $error_msg !== false ) {
 				if ( $this->p->debug->enabled )
-					$this->p->debug->log( $type.' filter skipped: no sharing buttons enabled' );
-				return $text;
+					$this->p->debug->log( $type.' filter skipped: '.$error_msg );
+				return $text."\n".'<!-- '.__METHOD__.' '.$type.' filter skipped: '.$error_msg.' -->'."\n".
+					( $this->p->debug->enabled ? $this->p->debug->get_html() : '' );
 			}
 
 			$lca = $this->p->cf['lca'];
@@ -606,16 +595,15 @@ $buttons_array[$buttons_index]."\n".	// buttons html is trimmed, so add newline
 					break;
 			}
 
-			return $text.( $this->p->debug->enabled ?
-				$this->p->debug->get_html() : '' );
+			return $text.( $this->p->debug->enabled ? $this->p->debug->get_html() : '' );
 		}
 
-		public function get_buttons_cache_index( $type, $atts = false ) {
-			$buttons_index = 'type:'.( empty( $type ) ? 'none' : $type ).	// just in case
+		public function get_buttons_cache_index( $type, $atts = false, $ids = false ) {
+			return 'type:'.( empty( $type ) ? 'none' : $type ).	// just in case
 				'_https:'.( SucomUtil::is_https() ? 'true' : 'false' ).
 				'_mobile:'.( SucomUtil::is_mobile() ? 'true' : 'false' ).
-				( $atts !== false ? '_atts:'.http_build_query( $atts, '', '_' ) : '' );
-			return apply_filters( $this->p->cf['lca'].'_buttons_cache_index', $buttons_index, $type );
+				( $atts !== false ? '_atts:'.http_build_query( $atts, '', '_' ) : '' ).
+				( $ids !== false ? '_ids:'.http_build_query( $ids, '', '_' ) : '' );
 		}
 
 		// get_html() can be called by a widget, shortcode, function, filter hook, etc.
