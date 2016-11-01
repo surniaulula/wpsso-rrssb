@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) 1.4.0-1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2016-10-31 17:26-0700\n"
-"PO-Revision-Date: 2016-10-31 17:26-0700\n"
+"POT-Creation-Date: 2016-11-01 11:26-0700\n"
+"PO-Revision-Date: 2016-11-01 11:26-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -154,65 +154,65 @@ msgctxt "option label"
 msgid "Position in bbPress Single"
 msgstr "Position dans le texte bbPress Single"
 
-#: lib/sharing.php:153
+#: lib/sharing.php:154
 msgid "Failed to open the %s file for reading."
 msgstr "Impossible d'ouvrir le fichier %s pour la lecture."
 
-#: lib/sharing.php:218
+#: lib/sharing.php:219
 msgctxt "metabox tab"
 msgid "Sharing Buttons"
 msgstr "Boutons de Partage"
 
-#: lib/sharing.php:251
+#: lib/sharing.php:252
 msgid "Reload Default Styles"
 msgstr "Recharger Styles par Défaut"
 
-#: lib/sharing.php:268
+#: lib/sharing.php:269
 msgid "All sharing styles have been reloaded with their default settings and saved."
 msgstr "Tous les styles de partage ont été rechargé avec leurs paramètres par défaut et sauvegardé."
 
-#: lib/sharing.php:289
+#: lib/sharing.php:290
 msgid "The %s file is not readable."
 msgstr "Le fichier %s n'est pas lisible."
 
-#: lib/sharing.php:329
+#: lib/sharing.php:330
 msgid "Failed to load the minify class SuextMinifyCssCompressor."
 msgstr "Impossible de charger la classe de rapetissement SuextMinifyCssCompressor."
 
-#: lib/sharing.php:338
+#: lib/sharing.php:339
 msgid "Failed writing to the % file."
 msgstr "Impossible d'écrire dans le fichier%."
 
-#: lib/sharing.php:343
+#: lib/sharing.php:344
 msgid "Updated the <a href=\"%1$s\">%2$s</a> stylesheet (%3$d bytes written)."
 msgstr "La feuille de style <a href=\"%1$s\">%2$s</a> a été mise à jour (%3$s octets écrits)."
 
-#: lib/sharing.php:353
+#: lib/sharing.php:354
 msgid "The %s folder is not writable."
 msgstr "Le dossier %s n'est pas accessible en écriture."
 
-#: lib/sharing.php:359
+#: lib/sharing.php:360
 msgid "Failed to open file %s for writing."
 msgstr "Impossible d'ouvrir le fichier %s pour l'écriture."
 
-#: lib/sharing.php:368
+#: lib/sharing.php:369
 msgid "Error removing the minimized stylesheet &mdash; does the web server have sufficient privileges?"
 msgstr "Erreur en retirant la feuille de style minimisé &mdash; le serveur Web a t'il les privilèges nécessaires?"
 
-#: lib/sharing.php:387
+#: lib/sharing.php:388
 msgctxt "metabox title"
 msgid "Sharing Buttons"
 msgstr "Boutons de Partage Social"
 
-#: lib/sharing.php:441
+#: lib/sharing.php:442
 msgid "%s must be published<br/>before it can be shared."
 msgstr "%s doit être publié<br/>avant d'être partagé."
 
-#: lib/sharing.php:801
+#: lib/sharing.php:803
 msgid "Social sharing buttons can be added to the top, bottom, or both. Each sharing button must also be enabled below (see the <em>%s</em> options)."
 msgstr "Les boutons de partage social peuvent être ajoutés en haut, en bas, ou les deux. Chaque bouton de partage doit aussi être activé ci-dessous (voir les options <em>%s</em>)."
 
-#: lib/sharing.php:801 lib/website/email.php:29 lib/website/facebook.php:29
+#: lib/sharing.php:803 lib/website/email.php:29 lib/website/facebook.php:29
 #: lib/website/gplus.php:29 lib/website/linkedin.php:29
 #: lib/website/pinterest.php:43 lib/website/pocket.php:29
 #: lib/website/reddit.php:29 lib/website/tumblr.php:29
@@ -221,30 +221,43 @@ msgctxt "option label"
 msgid "Show Button in"
 msgstr "Afficher le bouton"
 
-#: lib/sharing.php:804
+#: lib/sharing.php:806
 msgid "Add the social sharing buttons to each entry of an index webpage (for example, <strong>non-static</strong> homepage, category, archive, etc.). Social sharing buttons are not included on index webpages by default."
 msgstr "Ajouter les boutons de partage social à chaque item d'une page d'index (par exemple, page d'accueil <strong>non-statique</strong>, catégorie, archives, etc.). Les boutons de partage social ne sont pas inclus dans les pages Web d'index par défaut."
 
-#: lib/sharing.php:807
+#: lib/sharing.php:809
 msgid "If a static Post or Page has been selected for the homepage, you can add the social sharing buttons to that static homepage as well (default is unchecked)."
 msgstr "Si un Article ou une Page statique a été sélectionnée pour la page d'accueil, les boutons de partage social peuvent paraître sur la page d'accueil statique aussi (valeur par défaut est décochée)."
 
-#: lib/sharing.php:810
+#: lib/sharing.php:812
 msgid "Enabled social sharing buttons are added to the Post, Page, Media, and Product webpages by default. If your theme (or another plugin) supports additional custom post types, and you would like to include social sharing buttons on these webpages, check the appropriate option(s) here."
 msgstr "Les boutons de partage social activés sont ajoutés par défaut au pages Web d'Articles, Pages, Médias, et Produits. Si votre thème (ou une autre extension) supporte des types d'articles personnalisé supplémentaires, et que vous souhaitez ajouter des boutons de partage social sur ces pages Web, cochez les options appropriées ici."
 
-#: lib/sharing.php:813
+#: lib/sharing.php:815
 msgid "Add the CSS of all <em>%1$s</em> to webpages (default is checked). The CSS will be <strong>minimized</strong>, and saved to a single stylesheet with a URL of <a href=\"%2$s\">%3$s</a>. The minimized stylesheet can be enqueued or added directly to the webpage HTML."
 msgstr "Ajouter le CSS de tous les <em>%1$s</em> au pages Web (cochée par défaut). Le CSS sera <strong>minimisé</strong> et sauvegardé dans une seule feuille de style avec l'URL <a href=\"%2$s\">%3$s</a>. La feuille de style peut être mis en queue ou ajouté directement au HTML des pages Web."
 
-#: lib/sharing.php:813
+#: lib/sharing.php:815
 msgctxt "lib file description"
 msgid "Sharing Styles"
 msgstr "Styles de Partage"
 
-#: lib/sharing.php:816
+#: lib/sharing.php:818
 msgid "Have WordPress enqueue the social stylesheet instead of adding the CSS to in the webpage HTML (default is unchecked). Enqueueing the stylesheet may be desirable if you use a plugin to concatenate all enqueued styles into a single stylesheet URL."
 msgstr "Demander a WordPress de mettre la feuille de style en queue au lieu d'ajouter le CSS au HTML des pages Web (décochée par défaut). Mettre la feuille de style en queue peut être souhaitable si vous utilisez une extension pour assembler tous le contenu des feuilles de styles dans un seul URL."
+
+#: lib/sharing.php:828
+msgctxt "option comment"
+msgid "disabled"
+msgstr "désactivé"
+
+#: lib/sharing.php:829
+msgid "The rendered HTML for social sharing buttons is saved to the WordPress transient cache to optimize performance."
+msgstr "Le code HTML des boutons de partage social est enregistré dans le cache transitoire de WordPress pour optimiser la performance."
+
+#: lib/sharing.php:830
+msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
+msgstr "La valeur d'expiration de cache suggérée est de %1$s secondes (%2$s)."
 
 #: lib/submenu/rrssb-buttons.php:45
 msgctxt "metabox title"

@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"(WPSSO RRSSB) 1.4.0-b1\n"
+"(WPSSO RRSSB) 1.4.0-b2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2016-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -154,70 +154,70 @@ msgctxt "option label"
 msgid "Position in bbPress Single"
 msgstr ""
 
-#: lib/sharing.php:153
+#: lib/sharing.php:154
 msgid "Failed to open the %s file for reading."
 msgstr ""
 
-#: lib/sharing.php:218
+#: lib/sharing.php:219
 msgctxt "metabox tab"
 msgid "Sharing Buttons"
 msgstr ""
 
-#: lib/sharing.php:251
+#: lib/sharing.php:252
 msgid "Reload Default Styles"
 msgstr ""
 
-#: lib/sharing.php:268
+#: lib/sharing.php:269
 msgid ""
 "All sharing styles have been reloaded with their default settings and saved."
 msgstr ""
 
-#: lib/sharing.php:289
+#: lib/sharing.php:290
 msgid "The %s file is not readable."
 msgstr ""
 
-#: lib/sharing.php:329
+#: lib/sharing.php:330
 msgid "Failed to load the minify class SuextMinifyCssCompressor."
 msgstr ""
 
-#: lib/sharing.php:338
+#: lib/sharing.php:339
 msgid "Failed writing to the % file."
 msgstr ""
 
-#: lib/sharing.php:343
+#: lib/sharing.php:344
 msgid "Updated the <a href=\"%1$s\">%2$s</a> stylesheet (%3$d bytes written)."
 msgstr ""
 
-#: lib/sharing.php:353
+#: lib/sharing.php:354
 msgid "The %s folder is not writable."
 msgstr ""
 
-#: lib/sharing.php:359
+#: lib/sharing.php:360
 msgid "Failed to open file %s for writing."
 msgstr ""
 
-#: lib/sharing.php:368
+#: lib/sharing.php:369
 msgid ""
 "Error removing the minimized stylesheet &mdash; does the web server have "
 "sufficient privileges?"
 msgstr ""
 
-#: lib/sharing.php:387
+#: lib/sharing.php:388
 msgctxt "metabox title"
 msgid "Sharing Buttons"
 msgstr ""
 
-#: lib/sharing.php:441
+#: lib/sharing.php:442
 msgid "%s must be published<br/>before it can be shared."
 msgstr ""
 
-#: lib/sharing.php:801
+#: lib/sharing.php:803
 msgid ""
 "Social sharing buttons can be added to the top, bottom, or both. Each "
 "sharing button must also be enabled below (see the <em>%s</em> options)."
 msgstr ""
 
-#: lib/sharing.php:801 lib/website/email.php:29 lib/website/facebook.php:29
+#: lib/sharing.php:803 lib/website/email.php:29 lib/website/facebook.php:29
 #: lib/website/gplus.php:29 lib/website/linkedin.php:29
 #: lib/website/pinterest.php:43 lib/website/pocket.php:29
 #: lib/website/reddit.php:29 lib/website/tumblr.php:29
@@ -227,21 +227,21 @@ msgctxt "option label"
 msgid "Show Button in"
 msgstr ""
 
-#: lib/sharing.php:804
+#: lib/sharing.php:806
 msgid ""
 "Add the social sharing buttons to each entry of an index webpage (for "
 "example, <strong>non-static</strong> homepage, category, archive, etc.). "
 "Social sharing buttons are not included on index webpages by default."
 msgstr ""
 
-#: lib/sharing.php:807
+#: lib/sharing.php:809
 msgid ""
 "If a static Post or Page has been selected for the homepage, you can add the "
 "social sharing buttons to that static homepage as well (default is "
 "unchecked)."
 msgstr ""
 
-#: lib/sharing.php:810
+#: lib/sharing.php:812
 msgid ""
 "Enabled social sharing buttons are added to the Post, Page, Media, and "
 "Product webpages by default. If your theme (or another plugin) supports "
@@ -249,7 +249,7 @@ msgid ""
 "buttons on these webpages, check the appropriate option(s) here."
 msgstr ""
 
-#: lib/sharing.php:813
+#: lib/sharing.php:815
 msgid ""
 "Add the CSS of all <em>%1$s</em> to webpages (default is checked). The CSS "
 "will be <strong>minimized</strong>, and saved to a single stylesheet with a "
@@ -257,17 +257,32 @@ msgid ""
 "or added directly to the webpage HTML."
 msgstr ""
 
-#: lib/sharing.php:813
+#: lib/sharing.php:815
 msgctxt "lib file description"
 msgid "Sharing Styles"
 msgstr ""
 
-#: lib/sharing.php:816
+#: lib/sharing.php:818
 msgid ""
 "Have WordPress enqueue the social stylesheet instead of adding the CSS to in "
 "the webpage HTML (default is unchecked). Enqueueing the stylesheet may be "
 "desirable if you use a plugin to concatenate all enqueued styles into a "
 "single stylesheet URL."
+msgstr ""
+
+#: lib/sharing.php:828
+msgctxt "option comment"
+msgid "disabled"
+msgstr ""
+
+#: lib/sharing.php:829
+msgid ""
+"The rendered HTML for social sharing buttons is saved to the WordPress "
+"transient cache to optimize performance."
+msgstr ""
+
+#: lib/sharing.php:830
+msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
 msgstr ""
 
 #: lib/submenu/rrssb-buttons.php:45
