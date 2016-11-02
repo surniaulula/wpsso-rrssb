@@ -129,7 +129,7 @@ Use the Free version of WPSSO RRSSB with *both* the Free and Pro versions of WPS
 
 = Changelog / Release Notes =
 
-**Version 1.4.0-rc1 (2016/11/01)**
+**Version 1.4.0-rc1 (2016/11/02)**
 
 Official announcement: N/A
 
@@ -181,7 +181,7 @@ Official announcement: N/A
 
 = 1.4.0-rc1 =
 
-(2016/11/01) Minor code changes required for WPSSO v3.37.0-1. Added a Sharing Buttons Cache Expiry option on the Advanced settings page. Optimized the sharing buttons HTML cache by storing only one transient per webpage.
+(2016/11/02) Minor code changes required for WPSSO v3.37.0-1. Added a Sharing Buttons Cache Expiry option on the Advanced settings page. Optimized the sharing buttons HTML cache by storing only one transient per webpage.
 
 = 1.3.26-1 =
 
