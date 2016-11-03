@@ -44,7 +44,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 		$buttons_index = $wpsso->rrssb_sharing->get_buttons_cache_index( $type, $atts, $ids );
 		$buttons_array = array();
 		$cache_exp = (int) apply_filters( $lca.'_cache_expire_sharing_buttons', 
-			( $cache_exp === false ? $wpsso->options['plugin_sharing_buttons_cache_exp'] : $cache_exp ), $buttons_index );
+			( $cache_exp === false ? $wpsso->options['plugin_sharing_buttons_cache_exp'] : $cache_exp ) );
 
 		if ( $wpsso->debug->enabled ) {
 			$wpsso->debug->log( 'buttons index = '.$buttons_index );
