@@ -30,20 +30,20 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 						'icon_medium' => 'images/icon-256x256.png',
 					),
 					'url' => array(
-						// wordpress.org
+						// wordpress
 						'download' => 'https://wordpress.org/plugins/wpsso-rrssb/',
+						'forum' => 'https://wordpress.org/support/plugin/wpsso-rrssb',
 						'review' => 'https://wordpress.org/support/view/plugin-reviews/wpsso-rrssb?filter=5&rate=5#postform',
-						'readme' => 'https://plugins.svn.wordpress.org/wpsso-rrssb/trunk/readme.txt',
-						'wp_support' => 'https://wordpress.org/support/plugin/wpsso-rrssb',
-						// wpsso.com
+						// github
+						'readme_txt' => 'https://raw.githubusercontent.com/SurniaUlula/wpsso-rrssb/master/readme.txt',
+						// wpsso
 						'update' => 'https://wpsso.com/extend/plugins/wpsso-rrssb/update/',
 						'purchase' => 'https://wpsso.com/extend/plugins/wpsso-rrssb/',
 						'changelog' => 'https://wpsso.com/extend/plugins/wpsso-rrssb/changelog/',
 						'codex' => 'https://wpsso.com/codex/plugins/wpsso-rrssb/',
 						'faq' => 'https://wpsso.com/codex/plugins/wpsso-rrssb/faq/',
 						'notes' => 'https://wpsso.com/codex/plugins/wpsso-rrssb/notes/',
-						'feed' => 'https://wpsso.com/category/application/wordpress/wp-plugins/wpsso-rrssb/feed/',
-						'pro_support' => 'http://wpsso-rrssb.support.wpsso.com/',
+						'support' => 'http://wpsso-rrssb.support.wpsso.com/',
 					),
 					'lib' => array(
 						// submenu items must have unique keys
