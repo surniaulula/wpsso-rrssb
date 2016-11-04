@@ -13,13 +13,13 @@
  * Description: WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
  * Requires At Least: 3.5
  * Tested Up To: 4.6.1
- * Version: 1.4.0-1
+ * Version: 1.4.0-2
  * 
  * Version Numbers: {major}.{minor}.{bugfix}-{stage}{level}
  *
- *	{major}		Major code changes and/or significant feature changes.
- *	{minor}		New features added and/or improvements included.
- *	{bugfix}	Bugfixes and/or very minor improvements.
+ *	{major}		Major code changes or significant feature changes.
+ *	{minor}		New features added or improvements included.
+ *	{bugfix}	Bugfixes or very minor improvements.
  *	{stage}{level}	dev# (development), rc# (release candidate), # (production release)
  * 
  * Copyright 2014-2016 Jean-Sebastien Morisset (https://surniaulula.com/)

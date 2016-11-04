@@ -824,7 +824,7 @@ $buttons_array[$buttons_index]."\n".	// buttons html is trimmed, so add newline
 		public function filter_messages_tooltip_plugin( $text, $idx ) {
 			switch ( $idx ) {
 				case 'tooltip-plugin_sharing_buttons_cache_exp':
-					$cache_exp = NgfbSharing::$cf['opt']['defaults']['plugin_sharing_buttons_cache_exp'];	// use original un-filtered value
+					$cache_exp = WpssoRrssbSharing::$cf['opt']['defaults']['plugin_sharing_buttons_cache_exp'];	// use original un-filtered value
 					$cache_diff = $cache_exp ? human_time_diff( 0, $cache_exp ) : _x( 'disabled', 'option comment', 'wpsso-rrssb' );
 					$text = __( 'The rendered HTML for social sharing buttons is saved to the WordPress transient cache to optimize performance.',
 						'wpsso-rrssb' ).' '.sprintf( __( 'The suggested cache expiration value is %1$s seconds (%2$s).',
