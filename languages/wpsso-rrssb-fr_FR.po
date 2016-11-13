@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) 1.4.0-1\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) 1.4.1-1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2016-11-01 11:26-0700\n"
-"PO-Revision-Date: 2016-11-01 11:26-0700\n"
+"POT-Creation-Date: 2016-11-12 18:42-0800\n"
+"PO-Revision-Date: 2016-11-12 18:42-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -450,15 +450,15 @@ msgctxt "option label"
 msgid "Widget Title (leave blank for no title)"
 msgstr "Titre du Widget (laisser vide pour aucun titre)"
 
-#: wpsso-rrssb.php:84
+#: wpsso-rrssb.php:86
 msgid "The %1$s extension requires the %2$s plugin &mdash; please install and activate the %3$s plugin before trying to re-activate the %4$s extension."
 msgstr "L'extension %1$s requiert %2$s &mdash; s'il vous plaît installer et activer l'extension %3$s avant d'essayer de re-activer %4$s."
 
-#: wpsso-rrssb.php:86
+#: wpsso-rrssb.php:88
 msgid "The %1$s extension requires the %2$s plugin &mdash; please install and activate the %3$s plugin."
 msgstr "L'extension %1$s requiert %2$s &mdash; s'il vous plaît installer et activer l'extension %3$s."
 
-#: wpsso-rrssb.php:141
+#: wpsso-rrssb.php:143
 msgid "The %1$s extension version %2$s requires the use of %3$s version %4$s or newer (version %5$s is currently installed)."
 msgstr "L'extension %1$s version %2$s requiert l'utilisation de %3$s version %4$s ou plus récente (la version %5$s est actuellement installée)."
 
