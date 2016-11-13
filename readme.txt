@@ -140,6 +140,17 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = Changelog / Release Notes =
 
+**Version 1.4.1-1 (2016/11/12)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Updated 'wpsso_post_cache_transients' filter arguments for WPSSO v3.37.2-1.
+
 **Version 1.4.0-2 (2016/11/04)**
 
 Official announcement: N/A
@@ -190,7 +201,7 @@ Official announcement: N/A
 
 == Upgrade Notice ==
 
-= 1.4.0-2 =
+= 1.4.1-1 =
 
-(2016/11/04) Minor code changes required for WPSSO v3.37.0-1. Added a Sharing Buttons Cache Expiry option on the Advanced settings page. Optimized the sharing buttons HTML cache by storing only one transient per webpage.
+(2016/11/12) Updated 'wpsso_post_cache_transients' filter for WPSSO v3.37.2-1.
 
