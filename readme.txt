@@ -140,7 +140,22 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = Changelog / Release Notes =
 
+**Version 1.4.2-dev1 (2016/11/14)**
+
+Official announcement: N/A
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Updated SucomUtil::get_mod_salt() method arguments for WPSSO v3.37.3-1.
+
 **Version 1.4.1-1 (2016/11/12)**
+
+Official announcement: N/A
 
 * *New Features*
 	* None
@@ -174,6 +189,10 @@ Official announcement: N/A
 		* Renamed the SucomUtil::after_key() method to SucomUtil::get_after_key().
 
 == Upgrade Notice ==
+
+= 1.4.2-dev1 =
+
+(2016/11/14) Updated SucomUtil::get_mod_salt() method arguments for WPSSO v3.37.3-1.
 
 = 1.4.1-1 =
 
