@@ -220,7 +220,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function filter_post_cache_transients( $transients, $mod, $locale, $sharing_url ) {
-			$locale_salt = SucomUtil::get_mod_salt( $mod, $locale );
+			$locale_salt = SucomUtil::get_mod_salt( $mod, $locale, $sharing_url );
 			$transients['WpssoRrssbSharing::get_buttons'][] = $locale_salt;
 			$transients['WpssoRrssbShortcodeSharing::shortcode'][] = $locale_salt;
 			$transients['WpssoRrssbWidgetSharing::widget'][] = $locale_salt;
@@ -525,22 +525,23 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			$lca = $this->p->cf['lca'];
 			if ( ! is_array( $mod ) )
 				$mod = $this->p->util->get_page_mod( $mod );
+			$sharing_url = $this->p->util->get_sharing_url( $mod );
 			$buttons_index = $this->get_buttons_cache_index( $type );
 			$buttons_array = array();
 			$cache_exp = (int) apply_filters( $lca.'_cache_expire_sharing_buttons', 
 				$this->p->options['plugin_sharing_buttons_cache_exp'] );
 
 			if ( $this->p->debug->enabled ) {
+				$this->p->debug->log( 'sharing url = '.$sharing_url );
 				$this->p->debug->log( 'buttons index = '.$buttons_index );
 				$this->p->debug->log( 'cache expire = '.$cache_exp );
 			}
 
 			if ( $cache_exp > 0 ) {
-				$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod ).
-					( empty( $mod['id'] ) ? '_url:'.$this->p->util->get_sharing_url( $mod, true ) : '' ).')';
+				$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, false, $sharing_url ).')';
 				$cache_id = $lca.'_'.md5( $cache_salt );
 				if ( $this->p->debug->enabled )
-					$this->p->debug->log( 'transient cache salt '.$cache_salt );
+					$this->p->debug->log( 'transient cache salt = '.$cache_salt );
 				$buttons_array = get_transient( $cache_id );
 				if ( isset( $buttons_array[$buttons_index] ) ) {
 					if ( $this->p->debug->enabled )

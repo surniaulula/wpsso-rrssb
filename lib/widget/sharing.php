@@ -51,22 +51,24 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 
 			$lca = $this->p->cf['lca'];
 			$type = 'sharing_widget_'.$this->id;
+			$mod = $this->p->util->get_page_mod( $atts['use_post'] );
+			$sharing_url = $this->p->util->get_sharing_url( $mod );
 			$buttons_index = $this->p->rrssb_sharing->get_buttons_cache_index( $type, $atts );
 			$buttons_array = array();
 			$cache_exp = (int) apply_filters( $lca.'_cache_expire_sharing_buttons', 
 				$this->p->options['plugin_sharing_buttons_cache_exp'] );
 
 			if ( $this->p->debug->enabled ) {
+				$this->p->debug->log( 'sharing url = '.$sharing_url );
 				$this->p->debug->log( 'buttons index = '.$buttons_index );
 				$this->p->debug->log( 'cache expire = '.$cache_exp );
 			}
 
 			if ( $cache_exp > 0 ) {
-				$cache_salt = __METHOD__.'(locale:'.SucomUtil::get_locale().
-					( empty( $mod['id'] ) ? '_url:'.$this->p->util->get_sharing_url( $atts['use_post'] ) : '' ).')';
+				$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, false, $sharing_url ).')';
 				$cache_id = $lca.'_'.md5( $cache_salt );
 				if ( $this->p->debug->enabled )
-					$this->p->debug->log( 'transient cache salt '.$cache_salt );
+					$this->p->debug->log( 'transient cache salt = '.$cache_salt );
 				$buttons_array = get_transient( $cache_id );
 				if ( isset( $buttons_array[$buttons_index] ) ) {
 					if ( $this->p->debug->enabled )
@@ -84,7 +86,7 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 				ksort( $sorted_ids );
 
 				// returns html or an empty string
-				$buttons_array[$buttons_index] = $this->p->rrssb_sharing->get_html( $sorted_ids, $atts );
+				$buttons_array[$buttons_index] = $this->p->rrssb_sharing->get_html( $sorted_ids, $atts, $mod );
 
 				if ( ! empty( $buttons_array[$buttons_index] ) ) {
 					$buttons_array[$buttons_index] = '

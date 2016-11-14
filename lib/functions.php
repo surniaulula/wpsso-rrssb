@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) )
 
 if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 
-	function wpssorrssb_get_sharing_buttons( $ids = array(), $atts = array(), $cache_exp = 86400 ) {
+	function wpssorrssb_get_sharing_buttons( $ids = array(), $atts = array(), $cache_exp = false ) {
 
 		$wpsso =& Wpsso::get_instance();
 		if ( $wpsso->debug->enabled )
@@ -41,22 +41,23 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 		$lca = $wpsso->cf['lca'];
 		$type = __FUNCTION__;
 		$mod = $wpsso->util->get_page_mod( $atts['use_post'] );
+		$sharing_url = $wpsso->util->get_sharing_url( $mod );
 		$buttons_index = $wpsso->rrssb_sharing->get_buttons_cache_index( $type, $atts, $ids );
 		$buttons_array = array();
 		$cache_exp = (int) apply_filters( $lca.'_cache_expire_sharing_buttons', 
 			( $cache_exp === false ? $wpsso->options['plugin_sharing_buttons_cache_exp'] : $cache_exp ) );
 
 		if ( $wpsso->debug->enabled ) {
+			$wpsso->debug->log( 'sharing url = '.$sharing_url );
 			$wpsso->debug->log( 'buttons index = '.$buttons_index );
 			$wpsso->debug->log( 'cache expire = '.$cache_exp );
 		}
 
 		if ( $cache_exp > 0 ) {
-			$cache_salt = __FUNCTION__.'('.SucomUtil::get_mod_salt( $mod ).
-				( empty( $mod['id'] ) ? '_url:'.$wpsso->util->get_sharing_url( $mod ) : '' ).')';
+			$cache_salt = __FUNCTION__.'('.SucomUtil::get_mod_salt( $mod, false, $sharing_url ).')';
 			$cache_id = $lca.'_'.md5( $cache_salt );
 			if ( $wpsso->debug->enabled )
-				$wpsso->debug->log( 'transient cache salt '.$cache_salt );
+				$wpsso->debug->log( 'transient cache salt = '.$cache_salt );
 			$buttons_array = get_transient( $cache_id );
 			if ( isset( $buttons_array[$buttons_index] ) ) {
 				if ( $wpsso->debug->enabled )
