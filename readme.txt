@@ -9,7 +9,7 @@ Donate Link: https://wpsso.com/?utm_source=wpssorrssb-readme-donate
 Assets URI: https://surniaulula.github.io/wpsso-rrssb/assets/
 Tags: wpsso, sharing, sharing, buttons, responsive, facebook, google+, twitter, pinterest, linkedin, whatsapp, svg, retina, bbpress, buddypress, shorten, woocommerce, widget, shortcode
 Contributors: jsmoriss
-Requires At Least: 3.5
+Requires At Least: 3.7
 Tested Up To: 4.6.1
 Stable Tag: 1.4.1-1
 
