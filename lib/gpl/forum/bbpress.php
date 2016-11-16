@@ -56,19 +56,19 @@ if ( ! class_exists( 'WpssoRrssbGplForumBbpressSharing' ) ) {
 		}
 
 		public function filter_get_defaults( $opts_def ) {
-			foreach ( $this->p->cf['opt']['pre'] as $name => $prefix )
-				$opts_def[$prefix.'_on_bbp_single'] = 0;
+			foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre )
+				$opts_def[$opt_pre.'_on_bbp_single'] = 0;
 			$opts_def['buttons_pos_bbp_single'] = 'top';
 			return $opts_def;
 		}
 
-		public function filter_rrssb_buttons_show_on( $show_on = array(), $prefix = '' ) {
-			switch ( $prefix ) {
+		public function filter_rrssb_buttons_show_on( $show_on = array(), $opt_pre = '' ) {
+			switch ( $opt_pre ) {
 				case 'pin':
 					break;
 				default:
 					$show_on['bbp_single'] = 'bbPress Single';
-					$this->p->options[$prefix.'_on_bbp_single:is'] = 'disabled';
+					$this->p->options[$opt_pre.'_on_bbp_single:is'] = 'disabled';
 					break;
 			}
 			return $show_on;

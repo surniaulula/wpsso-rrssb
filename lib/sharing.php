@@ -552,9 +552,9 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			if ( ! isset( $buttons_array[$buttons_index] ) ) {
 				// sort enabled sharing buttons by their preferred order
 				$sorted_ids = array();
-				foreach ( $this->p->cf['opt']['pre'] as $id => $pre )
-					if ( ! empty( $this->p->options[$pre.'_on_'.$type] ) )
-						$sorted_ids[ zeroise( $this->p->options[$pre.'_order'], 3 ).'-'.$id ] = $id;
+				foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre )
+					if ( ! empty( $this->p->options[$opt_pre.'_on_'.$type] ) )
+						$sorted_ids[ zeroise( $this->p->options[$opt_pre.'_order'], 3 ).'-'.$id ] = $id;
 				ksort( $sorted_ids );
 				$atts['use_post'] = $mod['use_post'];
 				$atts['css_id'] = $css_type_name = 'rrssb-'.$type;
@@ -665,8 +665,8 @@ $buttons_array[$buttons_index]."\n".	// buttons html is trimmed, so add newline
 		public function have_buttons_for_type( $type ) {
 			if ( isset( $this->buttons_for_type[$type] ) )
 				return $this->buttons_for_type[$type];
-			foreach ( $this->p->cf['opt']['pre'] as $id => $pre ) {
-				if ( ! empty( $this->p->options[$pre.'_on_'.$type] ) &&		// check if button is enabled
+			foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre ) {
+				if ( ! empty( $this->p->options[$opt_pre.'_on_'.$type] ) &&		// check if button is enabled
 					$this->allow_for_platform( $id ) )			// check if allowed on platform
 						return $this->buttons_for_type[$type] = true;
 			}
@@ -674,10 +674,10 @@ $buttons_array[$buttons_index]."\n".	// buttons html is trimmed, so add newline
 		}
 
 		public function allow_for_platform( $id ) {
-			$pre = isset( $this->p->cf['opt']['pre'][$id] ) ?
-				$this->p->cf['opt']['pre'][$id] : $id;
-			if ( isset( $this->p->options[$pre.'_platform'] ) ) {
-				switch( $this->p->options[$pre.'_platform'] ) {
+			$opt_pre = isset( $this->p->cf['opt']['cm_prefix'][$id] ) ?
+				$this->p->cf['opt']['cm_prefix'][$id] : $id;
+			if ( isset( $this->p->options[$opt_pre.'_platform'] ) ) {
+				switch( $this->p->options[$opt_pre.'_platform'] ) {
 					case 'any':
 						return true;
 					case 'desktop':

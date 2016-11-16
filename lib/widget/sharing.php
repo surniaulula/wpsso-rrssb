@@ -77,12 +77,11 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 			}
 
 			if ( ! isset( $buttons_array[$buttons_index] ) ) {
-
 				// sort enabled sharing buttons by their preferred order
 				$sorted_ids = array();
-				foreach ( $this->p->cf['opt']['pre'] as $id => $pre )
+				foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre )
 					if ( array_key_exists( $id, $instance ) && (int) $instance[$id] )
-						$sorted_ids[ zeroise( $this->p->options[$pre.'_order'], 3 ).'-'.$id] = $id;
+						$sorted_ids[ zeroise( $this->p->options[$opt_pre.'_order'], 3 ).'-'.$id] = $id;
 				ksort( $sorted_ids );
 
 				// returns html or an empty string

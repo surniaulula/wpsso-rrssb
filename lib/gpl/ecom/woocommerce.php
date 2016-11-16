@@ -54,15 +54,15 @@ if ( ! class_exists( 'WpssoRrssbGplEcomWoocommerceSharing' ) ) {
 		}
 
 		public function filter_get_defaults( $opts_def ) {
-			foreach ( $this->p->cf['opt']['pre'] as $name => $prefix )
-				$opts_def[$prefix.'_on_woo_short'] = 0;
+			foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre )
+				$opts_def[$opt_pre.'_on_woo_short'] = 0;
 			$opts_def['buttons_pos_woo_short'] = 'bottom';
 			return $opts_def;
 		}
 
-		public function filter_rrssb_buttons_show_on( $show_on = array(), $prefix ) {
+		public function filter_rrssb_buttons_show_on( $show_on = array(), $opt_pre ) {
 			$show_on['woo_short'] = 'Woo Short';
-			$this->p->options[$prefix.'_on_woo_short:is'] = 'disabled';
+			$this->p->options[$opt_pre.'_on_woo_short:is'] = 'disabled';
 			return $show_on;
 		}
 
