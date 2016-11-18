@@ -666,7 +666,7 @@ $buttons_array[$buttons_index]."\n".	// buttons html is trimmed, so add newline
 			if ( isset( $this->buttons_for_type[$type] ) )
 				return $this->buttons_for_type[$type];
 			foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre ) {
-				if ( ! empty( $this->p->options[$opt_pre.'_on_'.$type] ) &&		// check if button is enabled
+				if ( ! empty( $this->p->options[$opt_pre.'_on_'.$type] ) &&	// check if button is enabled
 					$this->allow_for_platform( $id ) )			// check if allowed on platform
 						return $this->buttons_for_type[$type] = true;
 			}
