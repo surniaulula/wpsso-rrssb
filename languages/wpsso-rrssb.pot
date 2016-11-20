@@ -270,18 +270,46 @@ msgid ""
 "single stylesheet URL."
 msgstr ""
 
-#: lib/sharing.php:829
+#: lib/sharing.php:822
+msgid ""
+"Append the %1$s to the tweet (see <a href=\"%2$s\">the Twitter options tab</"
+"a> in the %3$s settings page). The %1$s will be displayed and recommended "
+"after the webpage is shared."
+msgstr ""
+
+#: lib/sharing.php:822 lib/sharing.php:825
+msgctxt "option label"
+msgid "Twitter Business @username"
+msgstr ""
+
+#: lib/sharing.php:822
+msgctxt "lib file description"
+msgid "General"
+msgstr ""
+
+#: lib/sharing.php:825
+msgid ""
+"Recommend following the author's Twitter @username after sharing a webpage. "
+"If the %1$s option (above) is also checked, the %2$s is suggested first."
+msgstr ""
+
+#: lib/sharing.php:825 lib/website/twitter.php:52
+msgctxt "option label"
+msgid "Add via Business @username"
+msgstr ""
+
+#: lib/sharing.php:835
 msgctxt "option comment"
 msgid "disabled"
 msgstr ""
 
-#: lib/sharing.php:830
+#: lib/sharing.php:836
 msgid ""
 "The rendered HTML for social sharing buttons is saved to the WordPress "
 "transient cache to optimize performance."
 msgstr ""
 
-#: lib/sharing.php:831
+#: lib/sharing.php:837
 msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
 msgstr ""
 
@@ -441,33 +469,9 @@ msgctxt "option label"
 msgid "Append Hashtags to Tweet"
 msgstr ""
 
-#: lib/website/twitter.php:52 lib/website/twitter.php:59
+#: lib/website/twitter.php:56
 msgctxt "option label"
-msgid "Add via @username"
-msgstr ""
-
-#: lib/website/twitter.php:54
-msgid ""
-"Append the website's business @username to the tweet (see the <a href=\"%1$s"
-"\">Twitter</a> options tab on the %2$s settings page). The website's "
-"@username will be displayed and recommended after the webpage is shared."
-msgstr ""
-
-#: lib/website/twitter.php:54
-msgctxt "lib file description"
-msgid "General"
-msgstr ""
-
-#: lib/website/twitter.php:57
-msgctxt "option label"
-msgid "Recommend Author"
-msgstr ""
-
-#: lib/website/twitter.php:59
-msgid ""
-"Recommend following the author's Twitter @username (from their profile) "
-"after sharing a webpage. If the <em>%1$s</em> option is also checked, the "
-"website's @username is suggested first."
+msgid "Recommend Author @username"
 msgstr ""
 
 #: lib/widget/sharing.php:29

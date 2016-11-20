@@ -49,14 +49,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteTwitter' ) ) {
 				range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', null, true ).' '.
 					_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
-			$table_rows[] = $form->get_th_html( _x( 'Add via @username',
-				'option label', 'wpsso-rrssb' ), null, null, 
-			sprintf( __( 'Append the website\'s business @username to the tweet (see the <a href="%1$s">Twitter</a> options tab on the %2$s settings page). The website\'s @username will be displayed and recommended after the webpage is shared.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'general#sucom-tabset_pub-tab_twitter' ), _x( 'General', 'lib file description', 'wpsso' ) ) ).
+			$table_rows[] = $form->get_th_html( _x( 'Add via Business @username',
+				'option label', 'wpsso-rrssb' ), '', 'buttons_add_via'  ).
 			'<td>'.$form->get_checkbox( 'twitter_via' ).'</td>';
 
-			$table_rows[] = $form->get_th_html( _x( 'Recommend Author',
-				'option label', 'wpsso-rrssb' ), null, null, 
-			sprintf( __( 'Recommend following the author\'s Twitter @username (from their profile) after sharing a webpage. If the <em>%1$s</em> option is also checked, the website\'s @username is suggested first.', 'wpsso-rrssb' ), _x( 'Add via @username', 'option label', 'wpsso-rrssb' ) ) ).
+			$table_rows[] = $form->get_th_html( _x( 'Recommend Author @username',
+				'option label', 'wpsso-rrssb' ), '', 'buttons_rec_author'  ).
 			'<td>'.$form->get_checkbox( 'twitter_rel_author' ).'</td>';
 
 			$table_rows[] = '<tr class="hide_in_basic">'.
