@@ -40,12 +40,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 
 			$this->p->util->do_table_rows( array( 
 				$this->form->get_th_html( _x( 'Use the Social Stylesheet',
-					'option label', 'wpsso-rrssb' ), 'highlight', 'buttons_use_social_css' ).
-				'<td>'.$this->form->get_checkbox( 'buttons_use_social_css' ).$css_min_msg.'</td>',
+					'option label', 'wpsso-rrssb' ), 'highlight', 'buttons_use_social_style' ).
+				'<td>'.$this->form->get_checkbox( 'buttons_use_social_style' ).$css_min_msg.'</td>',
 
 				$this->form->get_th_html( _x( 'Enqueue the Stylesheet',
-					'option label', 'wpsso-rrssb' ), null, 'buttons_enqueue_social_css' ).
-				'<td>'.$this->form->get_checkbox( 'buttons_enqueue_social_css' ).'</td>',
+					'option label', 'wpsso-rrssb' ), null, 'buttons_enqueue_social_style' ).
+				'<td>'.$this->form->get_checkbox( 'buttons_enqueue_social_style' ).'</td>',
 			) );
 
 			$table_rows = array();

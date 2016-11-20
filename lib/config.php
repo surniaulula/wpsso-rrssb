@@ -15,7 +15,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(
-					'version' => '1.4.2-1',		// plugin version
+					'version' => '1.4.3-dev1',		// plugin version
 					'opt_version' => '11',		// increment when changing default options
 					'short' => 'WPSSO RRSSB',	// short plugin name
 					'name' => 'WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)',
@@ -25,6 +25,11 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'update_auth' => 'tid',
 					'text_domain' => 'wpsso-rrssb',
 					'domain_path' => '/languages',
+					'req' => array(
+						'short' => 'WPSSO',
+						'name' => 'WordPress Social Sharing Optimization (WPSSO)',
+						'min_version' => '3.37.3-1',
+					),
 					'img' => array(
 						'icon_small' => 'images/icon-128x128.png',
 						'icon_medium' => 'images/icon-256x256.png',
@@ -151,7 +156,6 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 
 		public static function get_variable_constants() { 
 			$var_const = array();
-
 			$var_const['WPSSORRSSB_SHARING_SHORTCODE_NAME'] = 'rrssb';
 
 			/*
@@ -163,12 +167,10 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			foreach ( $var_const as $name => $value )
 				if ( defined( $name ) )
 					$var_const[$name] = constant( $name );	// inherit existing values
-
 			return $var_const;
 		}
 
 		public static function require_libs( $plugin_filepath ) {
-
 			require_once( WPSSORRSSB_PLUGINDIR.'lib/register.php' );
 			require_once( WPSSORRSSB_PLUGINDIR.'lib/functions.php' );
 			require_once( WPSSORRSSB_PLUGINDIR.'lib/sharing.php' );

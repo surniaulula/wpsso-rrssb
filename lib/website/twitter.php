@@ -134,9 +134,9 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 
 			if ( ! isset( $atts['related'] ) ) {
 				if ( ! empty( $opts['twitter_rel_author'] ) && 
-					! empty( $post ) && $atts['use_post'] )
+					! empty( $mod['post_author'] ) && $atts['use_post'] )
 						$atts['related'] = preg_replace( '/^@/', '', 
-							get_the_author_meta( $opts['plugin_cm_twitter_name'], $post->author ) );
+							get_the_author_meta( $opts['plugin_cm_twitter_name'], $mod['post_author'] ) );
 				else $atts['related'] = '';
 			}
 
@@ -151,7 +151,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 				'via' => 'via',
 				'related' => 'related',
 			) as $query_key => $atts_key  ) {
-				if ( $atts[$atts_key] )
+				if ( ! empty( $atts[$atts_key] ) )
 					$extra_inline_vars['twitter_'.$query_key] = rawurlencode( $atts[$atts_key] );
 				else $twitter_button_html = preg_replace( '/&(amp;)?'.$query_key.'=%%twitter_'.$query_key.'%%/', '', $twitter_button_html );
 			}

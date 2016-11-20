@@ -45,8 +45,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					/*
 					 * Sharing Styles
 					 */
-					'buttons_use_social_css' => 1,
-					'buttons_enqueue_social_css' => 1,
+					'buttons_use_social_style' => 1,
+					'buttons_enqueue_social_style' => 1,
 					'buttons_css_rrssb-sharing' => '',		// all buttons
 					'buttons_css_rrssb-content' => '',		// post/page content
 					'buttons_css_rrssb-excerpt' => '',		// post/page excerpt
@@ -234,7 +234,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				);
 			if ( ! empty( $info['lib']['submenu']['rrssb-styles'] ) )
 				$features['(sharing) Sharing Stylesheet'] = array(
-					'status' => $this->p->options['buttons_use_social_css'] ? 'on' : 'off',
+					'status' => $this->p->options['buttons_use_social_style'] ? 'on' : 'off',
 				);
 			if ( ! empty( $info['lib']['shortcode']['sharing'] ) )
 				$features['(sharing) Sharing Shortcode'] = array(
@@ -270,13 +270,13 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function wp_enqueue_styles() {
-			if ( ! empty( $this->p->options['buttons_use_social_css'] ) ) {
+			if ( ! empty( $this->p->options['buttons_use_social_style'] ) ) {
 				if ( ! file_exists( self::$sharing_css_file ) ) {
 					if ( $this->p->debug->enabled )
 						$this->p->debug->log( 'updating '.self::$sharing_css_file );
 					$this->update_sharing_css( $this->p->options );
 				}
-				if ( ! empty( $this->p->options['buttons_enqueue_social_css'] ) ) {
+				if ( ! empty( $this->p->options['buttons_enqueue_social_style'] ) ) {
 					if ( $this->p->debug->enabled )
 						$this->p->debug->log( 'wp_enqueue_style = '.$this->p->cf['lca'].'_rrssb_sharing_css' );
 					wp_register_style( $this->p->cf['lca'].'_rrssb_sharing_css', self::$sharing_css_url, 
@@ -300,12 +300,12 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					}
 				}
 			} elseif ( $this->p->debug->enabled )
-				$this->p->debug->log( 'buttons_use_social_css option is disabled' );
+				$this->p->debug->log( 'buttons_use_social_style option is disabled' );
 		}
 
 		public function update_sharing_css( &$opts ) {
 
-			if ( empty( $opts['buttons_use_social_css'] ) ) {
+			if ( empty( $opts['buttons_use_social_style'] ) ) {
 				$this->unlink_sharing_css();
 				return;
 			}
@@ -812,10 +812,10 @@ $buttons_array[$buttons_index]."\n".	// buttons html is trimmed, so add newline
 				case 'tooltip-buttons_add_to':
 					$text = __( 'Enabled social sharing buttons are added to the Post, Page, Media, and Product webpages by default. If your theme (or another plugin) supports additional custom post types, and you would like to include social sharing buttons on these webpages, check the appropriate option(s) here.', 'wpsso-rrssb' );
 					break;
-				case 'tooltip-buttons_use_social_css':
+				case 'tooltip-buttons_use_social_style':
 					$text = sprintf( __( 'Add the CSS of all <em>%1$s</em> to webpages (default is checked). The CSS will be <strong>minimized</strong>, and saved to a single stylesheet with a URL of <a href="%2$s">%3$s</a>. The minimized stylesheet can be enqueued or added directly to the webpage HTML.', 'wpsso-rrssb' ), _x( 'Sharing Styles', 'lib file description', 'wpsso-rrssb' ), WpssoRrssbSharing::$sharing_css_url, WpssoRrssbSharing::$sharing_css_url );
 					break;
-				case 'tooltip-buttons_enqueue_social_css':
+				case 'tooltip-buttons_enqueue_social_style':
 					$text = __( 'Have WordPress enqueue the social stylesheet instead of adding the CSS to in the webpage HTML (default is unchecked). Enqueueing the stylesheet may be desirable if you use a plugin to concatenate all enqueued styles into a single stylesheet URL.', 'wpsso-rrssb' );
 					break;
 			}
