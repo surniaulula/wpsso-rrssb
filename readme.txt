@@ -140,7 +140,7 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = Changelog / Release Notes =
 
-**Version 1.4.3-dev1 (2016/11/20)**
+**Version 1.4.3-dev2 (2016/11/21)**
 
 Official announcement: N/A
 
@@ -206,9 +206,9 @@ Official announcement: N/A
 
 == Upgrade Notice ==
 
-= 1.4.3-dev1 =
+= 1.4.3-dev2 =
 
-(2016/11/20) Refactored the Twitter button class and the min_version_notice() method.
+(2016/11/21) Refactored the Twitter button class and the min_version_notice() method.
 
 = 1.4.2-1 =
 
