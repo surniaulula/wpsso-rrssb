@@ -783,19 +783,6 @@ $buttons_array[$buttons_index]."\n".	// buttons html is trimmed, so add newline
 			wp_enqueue_style( 'rrssb' );
 		}
 
-		public static function shorten_html_href( $html ) {
-			return preg_replace_callback( '/(href=[\'"])([^\'"]+)([\'"])/', 
-				array( __CLASS__, 'shorten_html_href_callback' ), $html );
-		}
-
-		protected static function shorten_html_href_callback( $matches ) {
-			$wpsso = Wpsso::get_instance();
-			if ( $wpsso->debug->enabled )
-				$wpsso->debug->log( 'shortening href url '.$matches[2] );
-			return $matches[1].apply_filters( $wpsso->cf['lca'].'_shorten_url',
-				$matches[2], $wpsso->options['plugin_shortener'] ).$matches[3];
-		}
-
 		public function filter_messages_tooltip( $text, $idx ) {
 			if ( strpos( $idx, 'tooltip-buttons_' ) !== 0 )
 				return $text;

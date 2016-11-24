@@ -67,10 +67,11 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsitePinterest' ) ) {
 				range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', null, true ).' '.
 					_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
-			$table_rows[] = $form->get_th_html( _x( 'Shorten HTML A HREF Link',
+			$table_rows[] = '<tr class="hide_in_basic">'.
+			$form->get_th_html( _x( 'Shorten HTML A HREF URLs',
 				'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_checkbox( 'pin_shorten_href' ).' <em>'.
-				_x( 'prevents a possible conflict with JavaScript from Pinterest', 
+				_x( 'prevents <em>double-popup</em> conflict with Pinterest JavaScript button.', 
 					'option comment', 'wpsso-rrssb' ).'</em></td>';
 
 			$table_rows[] = '<tr class="hide_in_basic">'.
@@ -101,7 +102,7 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 					'pin_img_crop_y' => 'center',
 					'pin_cap_len' => 300,
 					'pin_cap_hashtags' => 0,
-					'pin_shorten_href' => 1,
+					'pin_shorten_href' => 0,
 					'pin_rrssb_html' => '<li class="rrssb-pinterest">
 	<a href="http://pinterest.com/pin/create/button/?url=%%sharing_url%%&amp;media=%%media_url%%&amp;description=%%pinterest_caption%%" class="popup">
 		<span class="rrssb-icon">
@@ -180,7 +181,7 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 			);
 
 			if ( $this->p->options['pin_shorten_href'] )
-				return WpssoRrssbSharing::shorten_html_href( $pinterest_button_html );
+				return $this->p->util->shorten_html_href( $pinterest_button_html );
 			else return $pinterest_button_html;
 		}
 	}

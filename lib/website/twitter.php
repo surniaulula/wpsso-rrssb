@@ -58,6 +58,13 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteTwitter' ) ) {
 			'<td>'.$form->get_checkbox( 'twitter_rel_author' ).'</td>';
 
 			$table_rows[] = '<tr class="hide_in_basic">'.
+			$form->get_th_html( _x( 'Shorten HTML A HREF URLs',
+				'option label', 'wpsso-rrssb' ) ).
+			'<td>'.$form->get_checkbox( 'twitter_shorten_href' ).' <em>'.
+				_x( 'prevents <em>double-popup</em> conflict with Twitter JavaScript button.', 
+					'option comment', 'wpsso-rrssb' ).'</em></td>';
+
+			$table_rows[] = '<tr class="hide_in_basic">'.
 			'<td colspan="2">'.$form->get_textarea( 'twitter_rrssb_html', 'average code' ).'</td>';
 
 			return $table_rows;
@@ -82,6 +89,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 					'twitter_cap_hashtags' => 0,
 					'twitter_via' => 1,
 					'twitter_rel_author' => 1,
+					'twitter_shorten_href' => 0,
 					'twitter_rrssb_html' => '<li class="rrssb-twitter">
 	<a href="https://twitter.com/intent/tweet?original_referer=%%sharing_url%%&amp;url=%%short_url%%&amp;text=%%twitter_text%%&amp;hashtags=%%twitter_hashtags%%&amp;via=%%twitter_via%%&amp;related=%%twitter_related%%" class="popup">
 		<span class="rrssb-icon">
@@ -154,8 +162,12 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 				else $twitter_button_html = preg_replace( '/&(amp;)?'.$query_key.'=%%twitter_'.$query_key.'%%/', '', $twitter_button_html );
 			}
 
-			return $this->p->util->replace_inline_vars( '<!-- Twitter Button -->'.
+			$twitter_button_html = $this->p->util->replace_inline_vars( '<!-- Twitter Button -->'.
 				$twitter_button_html, $mod, $atts, $extra_inline_vars );
+
+			if ( $this->p->options['twitter_shorten_href'] )
+				return $this->p->util->shorten_html_href( $twitter_button_html );
+			else return $twitter_button_html;
 		}
 	}
 }
