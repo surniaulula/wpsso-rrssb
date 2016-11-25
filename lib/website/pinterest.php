@@ -68,13 +68,6 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsitePinterest' ) ) {
 					_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = '<tr class="hide_in_basic">'.
-			$form->get_th_html( _x( 'Shorten HTML A HREF URLs',
-				'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_checkbox( 'pin_shorten_href' ).' <em>'.
-				_x( 'prevents <em>double-popup</em> conflict with Pinterest JavaScript button.', 
-					'option comment', 'wpsso-rrssb' ).'</em></td>';
-
-			$table_rows[] = '<tr class="hide_in_basic">'.
 			'<td colspan="2">'.$form->get_textarea( 'pin_rrssb_html', 'average code' ).'</td>';
 
 			return $table_rows;
@@ -102,7 +95,6 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 					'pin_img_crop_y' => 'center',
 					'pin_cap_len' => 300,
 					'pin_cap_hashtags' => 0,
-					'pin_shorten_href' => 0,
 					'pin_rrssb_html' => '<li class="rrssb-pinterest">
 	<a href="http://pinterest.com/pin/create/button/?url=%%sharing_url%%&amp;media=%%media_url%%&amp;description=%%pinterest_caption%%" class="popup">
 		<span class="rrssb-icon">
@@ -172,17 +164,16 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 				}
 			}
 
-			$pinterest_button_html = $this->p->util->replace_inline_vars( '<!-- Pinterest Button -->'.
-				$this->p->options['pin_rrssb_html'], $mod, $atts, array(
+			// prevent pinterest javascript from creating a second popup window by replacing slash with double-slash
+			$pinterest_button_html = preg_replace( '/(\/create)\/(button\/)/', '$1//$2', $this->p->options['pin_rrssb_html'] );
+
+			return $this->p->util->replace_inline_vars( '<!-- Pinterest Button -->'.
+				$pinterest_button_html, $mod, $atts, array(
 					'media_url' => rawurlencode( $atts['photo'] ),
 				 	'pinterest_caption' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['pin_cap_len'],
 						$mod, true, $atts['add_hashtags'], false, 'pin_desc', 'pinterest' ) ),
 				)
 			);
-
-			if ( $this->p->options['pin_shorten_href'] )
-				return $this->p->util->shorten_html_href( $pinterest_button_html );
-			else return $pinterest_button_html;
 		}
 	}
 }
