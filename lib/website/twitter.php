@@ -139,7 +139,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 			}
 
 			$extra_inline_vars = array();
-			$twitter_button_html = preg_replace( '/(\/intent)\/(tweet\?)/', '$1/--/$2', 
+			$twitter_button_html = preg_replace( '/(\/intent)\/(tweet\?)/', '$1/+/$2', 
 				$this->p->options['twitter_rrssb_html'] );
 
 			// remove empty query arguments from the twitter button html
