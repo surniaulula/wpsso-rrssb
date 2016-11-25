@@ -57,7 +57,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 			$cache_salt = __FUNCTION__.'('.SucomUtil::get_mod_salt( $mod, false, $sharing_url ).')';
 			$cache_id = $lca.'_'.md5( $cache_salt );
 			if ( $wpsso->debug->enabled )
-				$wpsso->debug->log( 'transient cache salt = '.$cache_salt );
+				$wpsso->debug->log( 'transient cache salt '.$cache_salt );
 			$buttons_array = get_transient( $cache_id );
 			if ( isset( $buttons_array[$buttons_index] ) ) {
 				if ( $wpsso->debug->enabled )

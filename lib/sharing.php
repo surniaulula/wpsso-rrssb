@@ -541,7 +541,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, false, $sharing_url ).')';
 				$cache_id = $lca.'_'.md5( $cache_salt );
 				if ( $this->p->debug->enabled )
-					$this->p->debug->log( 'transient cache salt = '.$cache_salt );
+					$this->p->debug->log( 'transient cache salt '.$cache_salt );
 				$buttons_array = get_transient( $cache_id );
 				if ( isset( $buttons_array[$buttons_index] ) ) {
 					if ( $this->p->debug->enabled )
