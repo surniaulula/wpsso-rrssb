@@ -11,7 +11,7 @@ Tags: wpsso, sharing, sharing, buttons, responsive, facebook, google+, twitter, 
 Contributors: jsmoriss
 Requires At Least: 3.7
 Tested Up To: 4.6.1
-Stable Tag: 1.4.2-1
+Stable Tag: 1.4.3-1
 
 WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
 
@@ -140,7 +140,7 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = Changelog / Release Notes =
 
-**Version 1.4.3-rc2 (2016/11/25)**
+**Version 1.4.3-1 (2016/11/25)**
 
 Official announcement: N/A
 
@@ -207,11 +207,7 @@ Official announcement: N/A
 
 == Upgrade Notice ==
 
-= 1.4.3-rc2 =
+= 1.4.3-1 =
 
 (2016/11/25) Refactored the Twitter button class and the min_version_notice() method. Removed the "Shorten HTML A HREF Link" option. Added code to break-up/re-assemble the Twitter and Pinterest URLs to avoid duplicate popup windows.
-
-= 1.4.2-1 =
-
-(2016/11/17) Updated SucomUtil::get_mod_salt() method arguments for WPSSO v3.37.3-1.
 
