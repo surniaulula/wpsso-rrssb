@@ -164,8 +164,8 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 				}
 			}
 
-			// prevent pinterest javascript from creating a second popup window by replacing slash with double-slash
-			$pinterest_button_html = preg_replace( '/(\/create)\/(button\/)/', '$1//$2', $this->p->options['pin_rrssb_html'] );
+			$pinterest_button_html = preg_replace( '/(\/create)\/(button\/)/', '$1/--/$2', 
+				$this->p->options['pin_rrssb_html'] );
 
 			return $this->p->util->replace_inline_vars( '<!-- Pinterest Button -->'.
 				$pinterest_button_html, $mod, $atts, array(

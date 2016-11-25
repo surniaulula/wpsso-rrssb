@@ -138,9 +138,9 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 				else $atts['related'] = '';
 			}
 
-			// prevent twitter javascript from creating a second popup window by replacing slash with double-slash
-			$twitter_button_html = preg_replace( '/(\/intent)\/(tweet\?)/', '$1//$2', $this->p->options['twitter_rrssb_html'] );
 			$extra_inline_vars = array();
+			$twitter_button_html = preg_replace( '/(\/intent)\/(tweet\?)/', '$1/--/$2', 
+				$this->p->options['twitter_rrssb_html'] );
 
 			// remove empty query arguments from the twitter button html
 			// prevents twitter from appending an empty 'via' word to the tweet
