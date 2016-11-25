@@ -147,7 +147,8 @@ Official announcement: N/A
 * *New Features*
 	* None
 * *Improvements*
-	* None
+	* Removed the "Shorten HTML A HREF Link" option.
+	* Added code to break-up/re-assemble the Twitter and Pinterest URLs to avoid duplicate popup windows when using 3rd party button javascript.
 * *Bugfixes*
 	* None
 * *Developer Notes*
@@ -208,7 +209,7 @@ Official announcement: N/A
 
 = 1.4.3-rc2 =
 
-(2016/11/25) Refactored the Twitter button class and the min_version_notice() method.
+(2016/11/25) Refactored the Twitter button class and the min_version_notice() method. Removed the "Shorten HTML A HREF Link" option. Added code to break-up/re-assemble the Twitter and Pinterest URLs to avoid duplicate popup windows.
 
 = 1.4.2-1 =
 
