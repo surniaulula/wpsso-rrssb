@@ -133,7 +133,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 		private function min_version_notice() {
 			$info = WpssoRrssbConfig::$cf['plugin']['wpssorrssb'];
-			$wpsso_version = WpssoConfig::get_version();
+			$wpsso_version = $this->p->cf['plugin']['wpsso']['version'];
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log( $info['name'].' requires '.$info['req']['short'].' v'.
