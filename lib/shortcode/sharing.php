@@ -92,17 +92,19 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				$this->p->debug->log( 'cache expire = '.$cache_exp );
 			}
 
+			$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, false, $atts['url'] ).')';
+			$cache_id = $lca.'_'.md5( $cache_salt );
+			if ( $this->p->debug->enabled )
+				$this->p->debug->log( 'transient cache salt '.$cache_salt );
+
 			if ( $cache_exp > 0 ) {
-				$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, false, $atts['url'] ).')';
-				$cache_id = $lca.'_'.md5( $cache_salt );
-				if ( $this->p->debug->enabled )
-					$this->p->debug->log( 'transient cache salt '.$cache_salt );
 				$buttons_array = get_transient( $cache_id );
 				if ( isset( $buttons_array[$buttons_index] ) ) {
 					if ( $this->p->debug->enabled )
 						$this->p->debug->log( $type.' buttons array retrieved from transient '.$cache_id );
 				}
-			}
+			} elseif ( $this->p->debug->enabled )
+				$this->p->debug->log( $type.' buttons array transient cache is disabled' );
 
 			if ( ! isset( $buttons_array[$buttons_index] ) ) {
 

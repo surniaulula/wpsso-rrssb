@@ -53,17 +53,19 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 			$wpsso->debug->log( 'cache expire = '.$cache_exp );
 		}
 
+		$cache_salt = __FUNCTION__.'('.SucomUtil::get_mod_salt( $mod, false, $sharing_url ).')';
+		$cache_id = $lca.'_'.md5( $cache_salt );
+		if ( $wpsso->debug->enabled )
+			$wpsso->debug->log( 'transient cache salt '.$cache_salt );
+
 		if ( $cache_exp > 0 ) {
-			$cache_salt = __FUNCTION__.'('.SucomUtil::get_mod_salt( $mod, false, $sharing_url ).')';
-			$cache_id = $lca.'_'.md5( $cache_salt );
-			if ( $wpsso->debug->enabled )
-				$wpsso->debug->log( 'transient cache salt '.$cache_salt );
 			$buttons_array = get_transient( $cache_id );
 			if ( isset( $buttons_array[$buttons_index] ) ) {
 				if ( $wpsso->debug->enabled )
 					$wpsso->debug->log( $type.' buttons array retrieved from transient '.$cache_id );
 			}
-		}
+		} elseif ( $this->p->debug->enabled )
+			$wpsso->debug->log( $type.' buttons array transient cache is disabled' );
 
 		if ( ! isset( $buttons_array[$buttons_index] ) ) {
 
