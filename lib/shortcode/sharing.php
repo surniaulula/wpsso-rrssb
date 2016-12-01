@@ -124,7 +124,8 @@ $buttons_array[$buttons_index]."\n".	// buttons html is trimmed, so add newline
 '<!-- '.$lca.' '.$type.' end -->'."\n\n";
 
 					if ( $cache_exp > 0 ) {
-						set_transient( $cache_id, $buttons_array, $cache_exp );
+						// update the transient array and keep the original expiration time
+						$cache_exp = SucomUtil::update_transient_array( $cache_id, $buttons_array, $cache_exp );
 						if ( $this->p->debug->enabled )
 							$this->p->debug->log( $type.' buttons html saved to transient '.
 								$cache_id.' ('.$cache_exp.' seconds)' );
