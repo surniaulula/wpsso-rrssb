@@ -140,7 +140,7 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = Changelog / Release Notes =
 
-**Version 1.4.4-dev1 (2016/12/01)**
+**Version 1.4.4-dev4 (2016/12/03)**
 
 Official announcement: N/A
 
@@ -152,6 +152,7 @@ Official announcement: N/A
 	* None
 * *Developer Notes*
 	* Replaced set_transient() by SucomUtil::update_transient_array() to update buttons arrays and keep the original transient expiration time.
+	* Removed $locale argument from SucomUtil::get_mod_salt() calls.
 
 **Version 1.4.3-1 (2016/11/25)**
 
@@ -220,9 +221,9 @@ Official announcement: N/A
 
 == Upgrade Notice ==
 
-= 1.4.4-dev1 =
+= 1.4.4-dev4 =
 
-(2016/12/01) Replaced set_transient() to update buttons arrays and keep the original transient expiration time.
+(2016/12/03) Replaced set_transient() to update buttons arrays and keep the original transient expiration time.
 
 = 1.4.3-1 =
 
