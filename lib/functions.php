@@ -36,36 +36,34 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 				( $wpsso->debug->enabled ? $wpsso->debug->get_html() : '' );
 		}
 
-		$atts['use_post'] = SucomUtil::sanitize_use_post( $atts ); 
-
 		$lca = $wpsso->cf['lca'];
 		$type = __FUNCTION__;
+		$atts['use_post'] = SucomUtil::sanitize_use_post( $atts ); 
 		$mod = $wpsso->util->get_page_mod( $atts['use_post'] );
 		$sharing_url = $wpsso->util->get_sharing_url( $mod );
-		$buttons_index = $wpsso->rrssb_sharing->get_buttons_cache_index( $type, $atts, $ids );
 		$buttons_array = array();
+		$buttons_index = $wpsso->rrssb_sharing->get_buttons_cache_index( $type, $atts, $ids );
+		$cache_salt = __FUNCTION__.'('.SucomUtil::get_mod_salt( $mod, $sharing_url ).')';
+		$cache_id = $lca.'_'.md5( $cache_salt );
 		$cache_exp = (int) apply_filters( $lca.'_cache_expire_sharing_buttons', 
 			( $cache_exp === false ? $wpsso->options['plugin_sharing_buttons_cache_exp'] : $cache_exp ) );
 
 		if ( $wpsso->debug->enabled ) {
 			$wpsso->debug->log( 'sharing url = '.$sharing_url );
 			$wpsso->debug->log( 'buttons index = '.$buttons_index );
-			$wpsso->debug->log( 'cache expire = '.$cache_exp );
+			$wpsso->debug->log( 'transient expire = '.$cache_exp );
+			$wpsso->debug->log( 'transient salt = '.$cache_salt );
 		}
-
-		$cache_salt = __FUNCTION__.'('.SucomUtil::get_mod_salt( $mod, null, $sharing_url ).')';
-		$cache_id = $lca.'_'.md5( $cache_salt );
-		if ( $wpsso->debug->enabled )
-			$wpsso->debug->log( 'transient cache salt '.$cache_salt );
 
 		if ( $cache_exp > 0 ) {
 			$buttons_array = get_transient( $cache_id );
 			if ( isset( $buttons_array[$buttons_index] ) ) {
 				if ( $wpsso->debug->enabled )
-					$wpsso->debug->log( $type.' buttons array retrieved from transient '.$cache_id );
-			}
+					$wpsso->debug->log( $type.' buttons index found in array from transient '.$cache_id );
+			} elseif ( $this->p->debug->enabled )
+				$wpsso->debug->log( $type.' buttons index not in array from transient '.$cache_id );
 		} elseif ( $this->p->debug->enabled )
-			$wpsso->debug->log( $type.' buttons array transient cache is disabled' );
+			$wpsso->debug->log( $type.' buttons array transient is disabled' );
 
 		if ( ! isset( $buttons_array[$buttons_index] ) ) {
 

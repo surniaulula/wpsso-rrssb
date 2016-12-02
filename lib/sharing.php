@@ -219,11 +219,11 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				_x( 'Sharing Buttons', 'metabox tab', 'wpsso-rrssb' ) );
 		}
 
-		public function filter_post_cache_transients( $transients, $mod, $locale, $sharing_url ) {
-			$locale_salt = SucomUtil::get_mod_salt( $mod, $locale, $sharing_url );
-			$transients['WpssoRrssbSharing::get_buttons'][] = $locale_salt;
-			$transients['WpssoRrssbShortcodeSharing::shortcode'][] = $locale_salt;
-			$transients['WpssoRrssbWidgetSharing::widget'][] = $locale_salt;
+		public function filter_post_cache_transients( $transients, $mod, $sharing_url ) {
+			$cache_salt = SucomUtil::get_mod_salt( $mod, $sharing_url );
+			$transients['WpssoRrssbSharing::get_buttons'][] = $cache_salt;
+			$transients['WpssoRrssbShortcodeSharing::shortcode'][] = $cache_salt;
+			$transients['WpssoRrssbWidgetSharing::widget'][] = $cache_salt;
 			return $transients;
 		}
 
@@ -526,30 +526,29 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			if ( ! is_array( $mod ) )
 				$mod = $this->p->util->get_page_mod( $mod );
 			$sharing_url = $this->p->util->get_sharing_url( $mod );
-			$buttons_index = $this->get_buttons_cache_index( $type );
 			$buttons_array = array();
+			$buttons_index = $this->get_buttons_cache_index( $type );
+			$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, $sharing_url ).')';
+			$cache_id = $lca.'_'.md5( $cache_salt );
 			$cache_exp = (int) apply_filters( $lca.'_cache_expire_sharing_buttons', 
 				$this->p->options['plugin_sharing_buttons_cache_exp'] );
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'sharing url = '.$sharing_url );
 				$this->p->debug->log( 'buttons index = '.$buttons_index );
-				$this->p->debug->log( 'cache expire = '.$cache_exp );
+				$this->p->debug->log( 'transient expire = '.$cache_exp );
+				$this->p->debug->log( 'transient salt = '.$cache_salt );
 			}
-
-			$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, null, $sharing_url ).')';
-			$cache_id = $lca.'_'.md5( $cache_salt );
-			if ( $this->p->debug->enabled )
-				$this->p->debug->log( 'transient cache salt '.$cache_salt );
 
 			if ( $cache_exp > 0 ) {
 				$buttons_array = get_transient( $cache_id );
 				if ( isset( $buttons_array[$buttons_index] ) ) {
 					if ( $this->p->debug->enabled )
-						$this->p->debug->log( $type.' buttons array retrieved from transient '.$cache_id );
-				}
+						$this->p->debug->log( $type.' buttons index found in array from transient '.$cache_id );
+				} elseif ( $this->p->debug->enabled )
+					$this->p->debug->log( $type.' buttons index not in array from transient '.$cache_id );
 			} elseif ( $this->p->debug->enabled )
-				$this->p->debug->log( $type.' buttons array transient cache is disabled' );
+				$this->p->debug->log( $type.' buttons array transient is disabled' );
 
 			if ( ! isset( $buttons_array[$buttons_index] ) ) {
 
@@ -606,7 +605,10 @@ $buttons_array[$buttons_index]."\n".	// buttons html is trimmed, so add newline
 		}
 
 		public function get_buttons_cache_index( $type, $atts = false, $ids = false ) {
-			return 'type:'.( empty( $type ) ? 'none' : $type ).	// just in case
+			if ( $this->p->debug->enabled )
+				$this->p->debug->mark();
+			return 'locale:'.SucomUtil::get_locale( 'current' ).
+				'_type:'.( empty( $type ) ? 'none' : $type ).
 				'_https:'.( SucomUtil::is_https() ? 'true' : 'false' ).
 				'_mobile:'.( SucomUtil::is_mobile() ? 'true' : 'false' ).
 				( $atts !== false ? '_atts:'.http_build_query( $atts, '', '_' ) : '' ).
