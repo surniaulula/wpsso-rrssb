@@ -92,7 +92,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				$this->p->debug->log( 'cache expire = '.$cache_exp );
 			}
 
-			$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, false, $atts['url'] ).')';
+			$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, null, $atts['url'] ).')';
 			$cache_id = $lca.'_'.md5( $cache_salt );
 			if ( $this->p->debug->enabled )
 				$this->p->debug->log( 'transient cache salt '.$cache_salt );

@@ -53,7 +53,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 			$wpsso->debug->log( 'cache expire = '.$cache_exp );
 		}
 
-		$cache_salt = __FUNCTION__.'('.SucomUtil::get_mod_salt( $mod, false, $sharing_url ).')';
+		$cache_salt = __FUNCTION__.'('.SucomUtil::get_mod_salt( $mod, null, $sharing_url ).')';
 		$cache_id = $lca.'_'.md5( $cache_salt );
 		if ( $wpsso->debug->enabled )
 			$wpsso->debug->log( 'transient cache salt '.$cache_salt );
