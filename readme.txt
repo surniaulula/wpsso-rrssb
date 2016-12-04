@@ -140,7 +140,7 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = Changelog / Release Notes =
 
-**Version 1.4.4-2 (2016/12/04)**
+**Version 1.4.4-3 (2016/12/04)**
 
 Official announcement: N/A
 
@@ -221,7 +221,7 @@ Official announcement: N/A
 
 == Upgrade Notice ==
 
-= 1.4.4-2 =
+= 1.4.4-3 =
 
 (2016/12/04) Optimized wp_cache and transient caching for multilingual sites. Replaced set_transient() to update buttons arrays and keep the original transient expiration time.
 
