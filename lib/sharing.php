@@ -105,7 +105,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					'save_options' => 3,			// update the sharing css file
 					'option_type' => 2,			// identify option type for sanitation
 					'post_social_settings_tabs' => 2,	// $tabs, $mod
-					'post_cache_transients' => 4,		// clear transients on post save
+					'post_cache_transients' => 3,		// clear transients on post save
 					'secondary_action_buttons' => 4,	// add a reload default styles button
 					'messages_info' => 2,
 					'messages_tooltip' => 2,
