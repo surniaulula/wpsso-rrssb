@@ -60,9 +60,9 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 			if ( isset( $buttons_array[$buttons_index] ) ) {
 				if ( $wpsso->debug->enabled )
 					$wpsso->debug->log( $type.' buttons index found in array from transient '.$cache_id );
-			} elseif ( $this->p->debug->enabled )
+			} elseif ( $wpsso->debug->enabled )
 				$wpsso->debug->log( $type.' buttons index not in array from transient '.$cache_id );
-		} elseif ( $this->p->debug->enabled )
+		} elseif ( $wpsso->debug->enabled )
 			$wpsso->debug->log( $type.' buttons array transient is disabled' );
 
 		if ( ! isset( $buttons_array[$buttons_index] ) ) {
