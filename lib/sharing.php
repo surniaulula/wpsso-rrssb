@@ -757,7 +757,7 @@ $buttons_array[$buttons_index]."\n".	// buttons html is trimmed, so add newline
 				$atts['add_hashtags'] = isset( $atts['add_hashtags'] ) ? $atts['add_hashtags'] : true;
 				return $this->p->webpage->get_caption( ( empty( $this->p->options[$opt_pre.'_caption'] ) ?
 					'title' : $this->p->options[$opt_pre.'_caption'] ), $this->get_tweet_max_len( $opt_pre ),
-						$mod, true, $atts['add_hashtags'], false, $md_pre.'_desc' );
+						$mod, true, $atts['add_hashtags'], false, $md_pre.'_desc' );	// $encode = false
 			} else return $atts['tweet'];
 		}
 
