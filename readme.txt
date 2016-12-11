@@ -140,6 +140,19 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = Changelog / Release Notes =
 
+**Version 1.4.5-dev2 (2016/12/11)**
+
+Official announcement: N/A
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Excluded the Twitter and Pinterest URLs from the JavaScript popup protection for mobile devices.
+
 **Version 1.4.4-3 (2016/12/05)**
 
 Official announcement: N/A
@@ -220,6 +233,10 @@ Official announcement: N/A
 		* Renamed the SucomUtil::after_key() method to SucomUtil::get_after_key().
 
 == Upgrade Notice ==
+
+= 1.4.5-dev2 =
+
+(2016/12/11) Excluded the Twitter and Pinterest URLs from the JavaScript popup protection for mobile devices.
 
 = 1.4.4-3 =
 
