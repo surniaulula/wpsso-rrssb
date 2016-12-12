@@ -140,7 +140,7 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = Changelog / Release Notes =
 
-**Version 1.4.5-rc1 (2016/12/12)**
+**Version 1.4.5-1 (2016/12/12)**
 
 Official announcement: N/A
 
@@ -234,7 +234,7 @@ Official announcement: N/A
 
 == Upgrade Notice ==
 
-= 1.4.5-rc1 =
+= 1.4.5-1 =
 
 (2016/12/12) Excluded the Twitter and Pinterest URLs from the JavaScript popup protection for mobile devices.
 
