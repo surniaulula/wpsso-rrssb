@@ -142,8 +142,6 @@ Note that the production stage level can be incremented on occasion for simple t
 
 **Version 1.4.5-1 (2016/12/12)**
 
-Official announcement: N/A
-
 * *New Features*
 	* None
 * *Improvements*
@@ -154,8 +152,6 @@ Official announcement: N/A
 	* Excluded the Twitter and Pinterest URLs from the JavaScript popup protection for mobile devices.
 
 **Version 1.4.4-3 (2016/12/05)**
-
-Official announcement: N/A
 
 * *New Features*
 	* None
@@ -168,8 +164,6 @@ Official announcement: N/A
 	* Removed $locale argument from SucomUtil::get_mod_salt() calls.
 
 **Version 1.4.3-1 (2016/11/25)**
-
-Official announcement: N/A
 
 * *New Features*
 	* None
@@ -186,8 +180,6 @@ Official announcement: N/A
 
 **Version 1.4.2-1 (2016/11/17)**
 
-Official announcement: N/A
-
 * *New Features*
 	* None
 * *Improvements*
@@ -199,8 +191,6 @@ Official announcement: N/A
 
 **Version 1.4.1-1 (2016/11/12)**
 
-Official announcement: N/A
-
 * *New Features*
 	* None
 * *Improvements*
@@ -211,8 +201,6 @@ Official announcement: N/A
 	* Updated 'wpsso_post_cache_transients' filter arguments for WPSSO v3.37.2-1.
 
 **Version 1.4.0-1 (2016/11/04)**
-
-Official announcement: N/A
 
 * *New Features*
 	* Added a Sharing Buttons Cache Expiry option on the Advanced settings page.
