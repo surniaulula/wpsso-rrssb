@@ -155,7 +155,8 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 			}
 
 			if ( empty( $atts['photo'] ) ) {
-				$media_info = $this->p->og->get_the_media_info( $atts['size'], array( 'img_url' ), $mod, 'rp' );
+				$media_info = $this->p->og->get_the_media_info( $atts['size'], 
+					array( 'img_url' ), $mod, 'rp' );
 				$atts['photo'] = $media_info['img_url'];
 				if ( empty( $atts['photo'] ) ) {
 					if ( $this->p->debug->enabled )
