@@ -27,7 +27,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			if ( $this->p->debug->enabled )
 				$this->p->debug->mark();
 
-			SucomUtil::add_before_key( $table_rows, 'plugin_verify_certs', array(
+			SucomUtil::add_before_key( $table_rows, 'plugin_cache_info', array(
 				'plugin_sharing_buttons_cache_exp' => $form->get_th_html( _x( 'Sharing Buttons Cache Expiry',
 					'option label', 'wpsso-rrssb' ), null, 'plugin_sharing_buttons_cache_exp' ).
 				'<td nowrap class="blank">'.$this->p->options['plugin_sharing_buttons_cache_exp'].' '.
