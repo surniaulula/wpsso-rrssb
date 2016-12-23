@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) 1.4.5-1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2016-12-11 13:49+1000\n"
-"PO-Revision-Date: 2016-12-23 19:38+1100\n"
+"POT-Creation-Date: 2016-12-24 08:46+1100\n"
+"PO-Revision-Date: 2016-12-24 09:13+1100\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -185,7 +185,7 @@ msgstr "Impossible d'écrire dans le fichier%."
 
 #: lib/sharing.php:344
 msgid "Updated the <a href=\"%1$s\">%2$s</a> stylesheet (%3$d bytes written)."
-msgstr "La feuille de style <a href=\"%1$s\">%2$s</a> a été mise à jour (%3$s octets écrits)."
+msgstr "La feuille de style <a href=\"%1$s\">%2$s</a> a été mise à jour (%3$d octets écrits)."
 
 #: lib/sharing.php:354
 msgid "The %s folder is not writable."
