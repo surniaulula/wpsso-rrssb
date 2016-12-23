@@ -79,12 +79,6 @@ The [Pro version of WPSSO RRSSB](https://wpsso.com/extend/plugins/wpsso-rrssb/) 
 
 WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of all available caching techniques (persistent / non-persistent object and disk caching). WPSSO loads only the library files and object classes it needs, keeping it small, fast, and yet still able to support a wide range of 3rd party integration features.
 
-= Available in Multiple Languages =
-
-* English (US)
-* French (France)
-* More to come...
-
 = Extends the WPSSO Plugin =
 
 The WordPress Social Sharing Optimization (WPSSO) plugin is required to use the WPSSO RRSSB extension.
