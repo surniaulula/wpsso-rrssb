@@ -134,6 +134,17 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = Changelog / Release Notes =
 
+**Version 1.4.6-1 (2016/12/25)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* Minor CSS update for the WordPress 2017 theme (added box-shadow:none to links and list-style-type:none for lists). Click on the "Reload Default Styles" button to use these changes in your WPSSO RRSSB stylesheet.
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* None
+
 **Version 1.4.5-1 (2016/12/12)**
 
 * *New Features*
@@ -215,6 +226,10 @@ Note that the production stage level can be incremented on occasion for simple t
 		* Renamed the SucomUtil::after_key() method to SucomUtil::get_after_key().
 
 == Upgrade Notice ==
+
+= 1.4.6-1 =
+
+(2016/12/25) Minor CSS update for the WordPress 2017 theme.
 
 = 1.4.5-1 =
 
