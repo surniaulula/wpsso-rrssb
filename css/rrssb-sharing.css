@@ -11,6 +11,14 @@ ul.rrssb-buttons {
 ul.rrssb-buttons a {
 	border:none;
 	box-shadow:none;
+	-webkit-box-shadow:none;
+}
+ul.rrssb-buttons a:hover {
+	box-shadow:none;
+	-webkit-box-shadow:none;
+}
+ul.rrssb-buttons li {
+	list-style-type:none;
 }
 .rrssb-icon {
 }
