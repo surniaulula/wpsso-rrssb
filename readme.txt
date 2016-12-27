@@ -165,8 +165,8 @@ Note that the production stage level can be incremented on occasion for simple t
 * *Bugfixes*
 	* None
 * *Developer Notes*
-	* Replaced set_transient() by SucomUtil::update_transient_array() to update buttons arrays and keep the original transient expiration time.
-	* Removed $locale argument from SucomUtil::get_mod_salt() calls.
+	* Replaced set_transient() by SucomUtil update_transient_array() to update buttons arrays and keep the original transient expiration time.
+	* Removed $locale argument from SucomUtil get_mod_salt() calls.
 
 **Version 1.4.3-1 (2016/11/25)**
 
@@ -192,7 +192,7 @@ Note that the production stage level can be incremented on occasion for simple t
 * *Bugfixes*
 	* None
 * *Developer Notes*
-	* Updated SucomUtil::get_mod_salt() method arguments for WPSSO v3.37.3-1.
+	* Updated SucomUtil get_mod_salt() method arguments for WPSSO v3.37.3-1.
 
 **Version 1.4.1-1 (2016/11/12)**
 
@@ -216,14 +216,14 @@ Note that the production stage level can be incremented on occasion for simple t
 * *Developer Notes*
 	* Refactored the shortcode and widget classes to optimize caching performance.
 	* Refactored the wpssorrssb_get_sharing_buttons() function to optimize caching performance.
-	* Added a new WpssoRrssbSharing::get_buttons_cache_index() method to cache sharing buttons HTML as array elements. This optimizes the cache by storing one transient instead of one transient per sharing buttons location within the same webpage.
+	* Added a new WpssoRrssbSharing get_buttons_cache_index() method to cache sharing buttons HTML as array elements. This optimizes the cache by storing one transient instead of one transient per sharing buttons location within the same webpage.
 	* Renamed the `$wpsso->rrssb` object to `$wpsso->rrssb_sharing`.
 	* Renamed the 'wpsso_shortcode_rrssb' filter to 'wpsso_sharing_shortcode_rrssb'.
 	* Renamed the WPSSORRSSB_SHARING_SHORTCODE contant to WPSSORRSSB_SHARING_SHORTCODE_NAME.
 	* Added a new filter to adjust transient cache expiration:
 		* 'wpsso_cache_expire_sharing_buttons' ( $secs );
 	* Minor code changes required for WPSSO v3.37.0-1:
-		* Renamed the SucomUtil::after_key() method to SucomUtil::get_after_key().
+		* Renamed the SucomUtil after_key() method to get_after_key().
 
 == Upgrade Notice ==
 
