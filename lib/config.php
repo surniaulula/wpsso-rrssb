@@ -46,7 +46,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 						'purchase' => 'https://wpsso.com/extend/plugins/wpsso-rrssb/',
 						'changelog' => 'https://wpsso.com/extend/plugins/wpsso-rrssb/changelog/',
 						'codex' => 'https://wpsso.com/codex/plugins/wpsso-rrssb/',
-						'faq' => 'https://wpsso.com/codex/plugins/wpsso-rrssb/faq/',
+						'faq' => '',
 						'notes' => 'https://wpsso.com/codex/plugins/wpsso-rrssb/notes/',
 						'support' => 'http://wpsso-rrssb.support.wpsso.com/',
 					),
