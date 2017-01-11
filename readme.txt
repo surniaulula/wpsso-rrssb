@@ -10,7 +10,7 @@ Assets URI: https://surniaulula.github.io/wpsso-rrssb/assets/
 Tags: sharing, sharing, buttons, responsive, facebook, google+, twitter, pinterest, linkedin, whatsapp, svg, retina, bbpress, buddypress, shorten, woocommerce, widget, shortcode
 Contributors: jsmoriss
 Requires At Least: 3.7
-Tested Up To: 4.7
+Tested Up To: 4.7.1
 Stable Tag: 1.4.7-1
 
 WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
