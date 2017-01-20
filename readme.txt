@@ -11,7 +11,7 @@ Tags: sharing, sharing, buttons, responsive, facebook, google+, twitter, pintere
 Contributors: jsmoriss
 Requires At Least: 3.7
 Tested Up To: 4.7.1
-Stable Tag: 1.4.7-1
+Stable Tag: 1.4.8-1
 
 WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
 
