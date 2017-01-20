@@ -91,9 +91,8 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			 * Pinterest
 			 */
 			$caption_len = $this->p->options['pin_cap_len'];
-			$caption_text = $this->p->webpage->get_caption( 'excerpt', $caption_len, 
-				$mod, true, $this->p->options['pin_cap_hashtags'] );
-
+			$caption_text = $this->p->webpage->get_caption( 'excerpt', $caption_len, $mod, true, $this->p->options['pin_cap_hashtags'] );
+			$force_regen = $this->p->util->is_force_regen( $mod, 'rp' );	// false by default
 			$media = $this->p->og->get_the_media_info( $this->p->cf['lca'].'-pinterest-button',
 				array( 'pid', 'img_url' ), $mod, 'rp' );
 
@@ -104,7 +103,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 					$img_height,
 					$img_cropped,
 					$img_pid
-				) = $this->p->media->get_attachment_image_src( $media['pid'], 'thumbnail', false ); 
+				) = $this->p->media->get_attachment_image_src( $media['pid'], 'thumbnail', false, $force_regen ); 
 			}
 
 			$form_rows['pin_desc'] = array(
