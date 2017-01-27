@@ -134,6 +134,17 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = Changelog / Release Notes =
 
+**Version 1.4.9-1 (2017/01/27)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Updated the RRSSB css and js library files from https://github.com/kni-labs/rrssb.
+
 **Version 1.4.8-1 (2017/01/21)**
 
 * *New Features*
@@ -248,6 +259,10 @@ Note that the production stage level can be incremented on occasion for simple t
 		* Renamed the SucomUtil after_key() method to get_after_key().
 
 == Upgrade Notice ==
+
+= 1.4.9-1 =
+
+(2017/01/27) Updated the RRSSB css and js library files from https://github.com/kni-labs/rrssb.
 
 = 1.4.8-1 =
 
