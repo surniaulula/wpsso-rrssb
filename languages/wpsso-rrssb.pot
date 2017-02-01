@@ -169,7 +169,7 @@ msgstr ""
 
 #: lib/sharing.php:269
 msgid ""
-"All sharing styles have been reloaded with their default settings and saved."
+"All sharing styles have been reloaded with their default values and saved."
 msgstr ""
 
 #: lib/sharing.php:290

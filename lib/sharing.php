@@ -266,7 +266,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 			$this->update_sharing_css( $opts );
 			$this->p->opt->save_options( WPSSO_OPTIONS_NAME, $opts, false );
-			$this->p->notice->upd( __( 'All sharing styles have been reloaded with their default settings and saved.', 'wpsso-rrssb' ) );
+			$this->p->notice->upd( __( 'All sharing styles have been reloaded with their default values and saved.', 'wpsso-rrssb' ) );
 		}
 
 		public function wp_enqueue_styles() {
