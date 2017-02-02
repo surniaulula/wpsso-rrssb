@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) 1.4.8-1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2017-01-21 07:27+0800\n"
-"PO-Revision-Date: 2017-01-21 07:28+0800\n"
+"POT-Creation-Date: 2017-02-02 08:08+0800\n"
+"PO-Revision-Date: 2017-02-02 08:08+0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -169,8 +169,8 @@ msgid "Reload Default Styles"
 msgstr "Recharger Styles par Défaut"
 
 #: lib/sharing.php:269
-msgid "All sharing styles have been reloaded with their default settings and saved."
-msgstr "Tous les styles de partage ont été rechargé avec leurs paramètres par défaut et sauvegardé."
+msgid "All sharing styles have been reloaded with their default value and saved."
+msgstr "Tous les styles de partage ont été rechargé avec leur valeur par défaut et sauvegardé."
 
 #: lib/sharing.php:290
 msgid "The %s file is not readable."
