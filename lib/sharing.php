@@ -569,8 +569,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					$buttons_array[$buttons_index] = '
 <!-- '.$lca.' '.$css_type_name.' begin -->
 <!-- generated on '.date( 'c' ).' -->
-<div class="'.$lca.'-rrssb'.( $mod['use_post'] ? ' '.$lca.'-'.$css_type_name.'">' : '" id="'.$lca.'-'.$css_type_name.'">' ).
-$buttons_array[$buttons_index]."\n".	// buttons html is trimmed, so add newline
+<div class="'.$lca.'-rrssb'.( $mod['use_post'] ? ' '.$lca.'-'.$css_type_name.'"' : '" id="'.$lca.'-'.$css_type_name.'"' ).'>'."\n".
+$buttons_array[$buttons_index].
 '</div><!-- .'.$lca.'-rrssb '.( $mod['use_post'] ? '.' : '#' ).$lca.'-'.$css_type_name.' -->
 <!-- '.$lca.' '.$css_type_name.' end -->'."\n\n";
 
@@ -649,7 +649,7 @@ $buttons_array[$buttons_index]."\n".	// buttons html is trimmed, so add newline
 							if ( trim( $buttons_part ) !== '' ) {
 								if ( empty( $atts['container_each'] ) )
 									$buttons_html .= $buttons_part;
-								else $buttons_html .= '<!-- container_each -->'.
+								else $buttons_html .= '<!-- adding buttons as individual containers -->'."\n".
 									$buttons_begin.$buttons_part.$buttons_end;
 							}
 
