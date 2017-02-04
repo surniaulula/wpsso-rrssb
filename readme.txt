@@ -143,7 +143,7 @@ Note that the production stage level can be incremented on occasion for simple t
 * *Bugfixes*
 	* None
 * *Developer Notes*
-	* None
+	* Maintenance release.
 
 **Version 1.4.9-1 (2017/01/27)**
 
@@ -273,7 +273,7 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = 1.4.10-1 =
 
-(2017/02/04) None
+(2017/02/04) Maintenance release.
 
 = 1.4.9-1 =
 
