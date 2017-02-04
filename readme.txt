@@ -134,6 +134,17 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = Changelog / Release Notes =
 
+**Version 1.4.10-1 (2017/02/04)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* None
+
 **Version 1.4.9-1 (2017/01/27)**
 
 * *New Features*
@@ -259,6 +270,10 @@ Note that the production stage level can be incremented on occasion for simple t
 		* Renamed the SucomUtil after_key() method to get_after_key().
 
 == Upgrade Notice ==
+
+= 1.4.10-1 =
+
+(2017/02/04) None
 
 = 1.4.9-1 =
 
