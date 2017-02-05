@@ -403,8 +403,6 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				$this->show_sidebar();
 			elseif ( $this->p->debug->enabled )
 				$this->p->debug->log( 'no buttons enabled for sidebar' );
-			if ( $this->p->debug->enabled )
-				$this->p->debug->show_html( null, 'Debug Log' );
 		}
 
 		public function show_sidebar() {
@@ -412,8 +410,6 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				$this->p->debug->mark();
 			$lca = $this->p->cf['lca'];
 			echo $this->get_buttons( '', 'sidebar', false, '', array( 'container_each' => true ) );	// $use_post = false
-			if ( $this->p->debug->enabled )
-				$this->p->debug->show_html( null, 'Debug Log' );
 		}
 
 		public function show_admin_sharing( $post_obj ) {
@@ -436,8 +432,6 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 				$content = '';
 				echo $this->get_buttons( $content, 'admin_edit' );
-				if ( $this->p->debug->enabled )
-					$this->p->debug->show_html( null, 'Debug Log' );
 
 			} else echo '<p class="centered">'.sprintf( __( '%s must be published<br/>before it can be shared.',
 				'wpsso-rrssb' ), SucomUtil::titleize( $post_obj->post_type ) ).'</p>';
@@ -518,8 +512,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			if ( $error_msg !== false ) {
 				if ( $this->p->debug->enabled )
 					$this->p->debug->log( $type.' filter skipped: '.$error_msg );
-				return $text."\n".'<!-- '.__METHOD__.' '.$type.' filter skipped: '.$error_msg.' -->'."\n".
-					( $this->p->debug->enabled ? $this->p->debug->get_html() : '' );
+				return $text."\n".'<!-- '.__METHOD__.' '.$type.' filter skipped: '.$error_msg.' -->'."\n";
 			}
 
 			$lca = $this->p->cf['lca'];
@@ -601,7 +594,7 @@ $buttons_array[$buttons_index].
 					break;
 			}
 
-			return $text.( $this->p->debug->enabled ? $this->p->debug->get_html() : '' );
+			return $text;
 		}
 
 		public function get_buttons_cache_index( $type, $atts = false, $ids = false ) {

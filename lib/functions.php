@@ -32,8 +32,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 		if ( $error_msg !== false ) {
 			if ( $wpsso->debug->enabled )
 				$wpsso->debug->log( 'exiting early: '.$error_msg );
-			return '<!-- '.__FUNCTION__.' exiting early: '.$error_msg.' -->'."\n".
-				( $wpsso->debug->enabled ? $wpsso->debug->get_html() : '' );
+			return '<!-- '.__FUNCTION__.' exiting early: '.$error_msg.' -->'."\n";
 		}
 
 		$lca = $wpsso->cf['lca'];
@@ -87,8 +86,7 @@ $buttons_array[$buttons_index]."\n".	// buttons html is trimmed, so add newline
 			}
 		}
 
-		return $buttons_array[$buttons_index].
-			( $wpsso->debug->enabled ? $wpsso->debug->get_html() : '' );
+		return $buttons_array[$buttons_index];
 	}
 }
 

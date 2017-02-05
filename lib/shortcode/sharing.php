@@ -131,8 +131,7 @@ $buttons_array[$buttons_index]."\n".	// buttons html is trimmed, so add newline
 				}
 			}
 
-			return $buttons_array[$buttons_index].
-				( $this->p->debug->enabled ? $this->p->debug->get_html() : '' );
+			return $buttons_array[$buttons_index];
 		}
 	}
 }

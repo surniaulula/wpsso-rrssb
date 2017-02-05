@@ -109,8 +109,6 @@ $after_widget.
 			}
 
 			echo $buttons_array[$buttons_index];
-			if ( $this->p->debug->enabled )
-				$this->p->debug->show_html();
 		}
 	
 		public function update( $new_instance, $old_instance ) {
