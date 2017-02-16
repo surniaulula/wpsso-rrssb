@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) 1.4.10-1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2017-02-06 09:30+0800\n"
-"PO-Revision-Date: 2017-02-06 09:30+0800\n"
+"PO-Revision-Date: 2017-02-16 16:14+0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -93,7 +93,7 @@ msgstr "Widget"
 #: lib/config-gettext-extract.php:18
 msgctxt "plugin description"
 msgid "WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc."
-msgstr "Extension WPSSO pour ajouter des boutons de partage sociaux ridiculement réactif (SVG) dans votre contenu, les extraits, barre flottante CSS, widget, shortcode, etc."
+msgstr "Extension WPSSO pour ajouter des boutons de partage sociaux ridiculement réactif (SVG) dans le contenu, extraits, barre flottante CSS, widget, etc."
 
 #: lib/gpl/admin/sharing.php:31 lib/pro/admin/sharing.php:39
 msgctxt "option label"
@@ -468,7 +468,7 @@ msgstr "https://surniaulula.com/extend/plugins/wpsso-rrssb/"
 
 #. Description of the plugin/theme
 msgid "WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc."
-msgstr "Extension WPSSO pour ajouter des boutons de partage sociaux ridiculement réactif (SVG) dans votre contenu, les extraits, barre flottante CSS, widget, shortcode, etc."
+msgstr "Extension WPSSO pour ajouter des boutons de partage sociaux ridiculement réactif (SVG) dans le contenu, extraits, barre flottante CSS, widget, etc."
 
 #. Author of the plugin/theme
 msgid "JS Morisset"
