@@ -60,8 +60,6 @@ WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in y
 
 **WPSSO RRSSB Pro / Power-User Features**
 
-The [Pro version of WPSSO RRSSB](https://wpsso.com/extend/plugins/wpsso-rrssb/) includes a number of additional options and features:
-
 * Extends the features of WPSSO Pro (requires a licensed WPSSO Pro plugin).
 * Custom titles and text in the Social Settings metabox for:
 	* Email

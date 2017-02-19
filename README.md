@@ -65,8 +65,6 @@
 
 <p><strong>WPSSO RRSSB Pro / Power-User Features</strong></p>
 
-<p>The <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/">Pro version of WPSSO RRSSB</a> includes a number of additional options and features:</p>
-
 <ul>
 <li>Extends the features of WPSSO Pro (requires a licensed WPSSO Pro plugin).</li>
 <li>Custom titles and text in the Social Settings metabox for:
