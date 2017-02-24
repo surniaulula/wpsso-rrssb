@@ -48,8 +48,8 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 			$this->reg = new WpssoRrssbRegister();		// activate, deactivate, uninstall hooks
 
 			if ( is_admin() ) {
-				add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
 				add_action( 'admin_init', array( __CLASS__, 'required_check' ) );
+				add_action( 'wpsso_init_debug', array( __CLASS__, 'load_textdomain' ) );
 			}
 
 			add_filter( 'wpsso_get_config', array( &$this, 'wpsso_get_config' ), 30, 2 );
@@ -73,16 +73,19 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 				add_action( 'all_admin_notices', array( __CLASS__, 'required_notice' ) );
 		}
 
+		// also called from the activate_plugin method with $deactivate = true
 		public static function required_notice( $deactivate = false ) {
+			self::load_textdomain();
 			$info = WpssoRrssbConfig::$cf['plugin']['wpssorrssb'];
+			$die_msg = __( '%1$s is an extension for the %2$s plugin &mdash; please install and activate the %3$s plugin before activating %4$s.', 'wpsso-rrssb' );
+			$err_msg = __( 'The %1$s extension requires the %2$s plugin &mdash; please install and activate the %3$s plugin.', 'wpsso-rrssb' );
 
 			if ( $deactivate === true ) {
 				require_once( ABSPATH.'wp-admin/includes/plugin.php' );
 				deactivate_plugins( $info['base'] );
-				wp_die( '<p>'.sprintf( __( '%1$s is an extension for the %2$s plugin &mdash; please install and activate the %3$s plugin before activating the %4$s extension.', 'wpsso-rrssb' ), $info['name'], $info['req']['name'], $info['req']['short'], $info['short'] ).'</p>' );
+				wp_die( '<p>'.sprintf( $die_msg, $info['name'], $info['req']['name'], $info['req']['short'], $info['short'] ).'</p>' );
 			} else echo '<div class="notice notice-error error"><p>'.
-				sprintf( __( 'The %1$s extension requires the %2$s plugin &mdash; please install and activate the %3$s plugin.',
-					'wpsso-rrssb' ), $info['name'], $info['req']['name'], $info['req']['short'] ).'</p></div>';
+				sprintf( $err_msg, $info['name'], $info['req']['name'], $info['req']['short'] ).'</p></div>';
 		}
 
 		public function wpsso_get_config( $cf, $plugin_version = 0 ) {
