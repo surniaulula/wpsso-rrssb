@@ -49,7 +49,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 			if ( is_admin() ) {
 				add_action( 'admin_init', array( __CLASS__, 'required_check' ) );
-				add_action( 'wpsso_init_debug', array( __CLASS__, 'load_textdomain' ) );
+				add_action( 'wpsso_init_textdomain', array( __CLASS__, 'wpsso_init_textdomain' ) );
 			}
 
 			add_filter( 'wpsso_get_config', array( &$this, 'wpsso_get_config' ), 30, 2 );
@@ -64,10 +64,6 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 			return self::$instance;
 		}
 
-		public static function load_textdomain() {
-			load_plugin_textdomain( 'wpsso-rrssb', false, 'wpsso-rrssb/languages/' );
-		}
-
 		public static function required_check() {
 			if ( ! class_exists( 'Wpsso' ) )
 				add_action( 'all_admin_notices', array( __CLASS__, 'required_notice' ) );
@@ -75,7 +71,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 		// also called from the activate_plugin method with $deactivate = true
 		public static function required_notice( $deactivate = false ) {
-			self::load_textdomain();
+			self::wpsso_init_textdomain();
 			$info = WpssoRrssbConfig::$cf['plugin']['wpssorrssb'];
 			$die_msg = __( '%1$s is an extension for the %2$s plugin &mdash; please install and activate the %3$s plugin before activating %4$s.', 'wpsso-rrssb' );
 			$err_msg = __( 'The %1$s extension requires the %2$s plugin &mdash; please install and activate the %3$s plugin.', 'wpsso-rrssb' );
@@ -86,6 +82,10 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 				wp_die( '<p>'.sprintf( $die_msg, $info['name'], $info['req']['name'], $info['req']['short'], $info['short'] ).'</p>' );
 			} else echo '<div class="notice notice-error error"><p>'.
 				sprintf( $err_msg, $info['name'], $info['req']['name'], $info['req']['short'] ).'</p></div>';
+		}
+
+		public static function wpsso_init_textdomain() {
+			load_plugin_textdomain( 'wpsso-rrssb', false, 'wpsso-rrssb/languages/' );
 		}
 
 		public function wpsso_get_config( $cf, $plugin_version = 0 ) {
