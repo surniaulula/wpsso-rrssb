@@ -78,6 +78,8 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			$atts['css_class'] = empty( $atts['css_class'] ) ? 'rrssb-shortcode' : $atts['css_class'];
 
 			$type = 'sharing_shortcode_'.WPSSORRSSB_SHARING_SHORTCODE_NAME;
+			if ( $this->p->debug->enabled )
+				$this->p->debug->log( 'calling get_page_mod()' );
 			$mod = $this->p->util->get_page_mod( $atts['use_post'] );
 			$atts['url'] = empty( $atts['url'] ) ? $this->p->util->get_sharing_url( $mod ) : $atts['url'];
 			$buttons_array = array();

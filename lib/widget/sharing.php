@@ -51,6 +51,8 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 
 			$lca = $this->p->cf['lca'];
 			$type = 'sharing_widget_'.$this->id;
+			if ( $this->p->debug->enabled )
+				$this->p->debug->log( 'calling get_page_mod()' );
 			$mod = $this->p->util->get_page_mod( $atts['use_post'] );
 			$sharing_url = $this->p->util->get_sharing_url( $mod );
 			$buttons_array = array();
