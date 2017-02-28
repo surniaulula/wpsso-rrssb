@@ -491,7 +491,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			if ( is_admin() ) {
 				if ( strpos( $type, 'admin_' ) !== 0 )
 					$error_msg = $type.' ignored in back-end';
-			} elseif ( $this->p->is_avail['amp_endpoint'] && is_amp_endpoint() ) {
+			} elseif ( SucomUtil::is_amp() ) {
 				$error_msg = 'buttons not allowed in amp endpoint';
 			} elseif ( is_feed() ) {
 				$error_msg = 'buttons not allowed in rss feeds';

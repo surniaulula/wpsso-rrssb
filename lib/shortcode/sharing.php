@@ -58,7 +58,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 		public function shortcode( $atts, $content = null ) { 
 
-			if ( $this->p->is_avail['amp_endpoint'] && is_amp_endpoint() ) {
+			if ( SucomUtil::is_amp() ) {
 				if ( $this->p->debug->enabled )
 					$this->p->debug->log( 'exiting early: buttons not allowed in amp endpoint'  );
 				return $content;
