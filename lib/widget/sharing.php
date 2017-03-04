@@ -5,8 +5,9 @@
  * Copyright 2014-2017 Jean-Sebastien Morisset (https://surniaulula.com/)
  */
 
-if ( ! defined( 'ABSPATH' ) ) 
+if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for...' );
+}
 
 if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) ) {
 
