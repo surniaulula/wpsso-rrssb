@@ -39,8 +39,9 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 		$lca = $wpsso->cf['lca'];
 		$type = __FUNCTION__;
 		$atts['use_post'] = SucomUtil::sanitize_use_post( $atts ); 
-		if ( $wpsso->debug->enabled )
-			$wpsso->debug->log( 'calling get_page_mod()' );
+		if ( $wpsso->debug->enabled ) {
+			$wpsso->debug->log( 'required call to get_page_mod()' );
+		}
 		$mod = $wpsso->util->get_page_mod( $atts['use_post'] );
 		$sharing_url = $wpsso->util->get_sharing_url( $mod );
 		$buttons_array = array();
