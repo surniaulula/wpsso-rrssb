@@ -174,8 +174,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			return array_merge( $site_def_opts, self::$cf['opt']['site_defaults'] );
 		}
 
-		public function filter_get_md_defaults( $def_opts ) {
-			return array_merge( $def_opts, array(
+		public function filter_get_md_defaults( $md_defs ) {
+			return array_merge( $md_defs, array(
 				'email_title' => '',		// Email Subject
 				'email_desc' => '',		// Email Message
 				'twitter_desc' => '',		// Tweet Text
