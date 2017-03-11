@@ -118,8 +118,9 @@ $after_widget.
 		public function update( $new_instance, $old_instance ) {
 			$instance = $old_instance;
 			$instance['title'] = strip_tags( $new_instance['title'] );
-			foreach ( $this->p->rrssb_sharing->get_website_object_ids() as $id => $name )
+			foreach ( $this->p->rrssb_sharing->get_website_object_ids() as $id => $name ) {
 				$instance[$id] = empty( $new_instance[$id] ) ? 0 : 1;
+			}
 			return $instance;
 		}
 	

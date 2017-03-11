@@ -743,19 +743,23 @@ $buttons_array[$buttons_index].
 			return $suff.$ret; 
 		}
 
-		public function get_website_object_ids( $website_obj = array() ) {
-			$ids = array();
+		public function get_website_object_ids( $website = array() ) {
+			$website_ids = array();
 
-			if ( empty( $website_obj ) )
-				$website_keys = array_keys( $this->website );
-			else $website_keys = array_keys( $website_obj );
+			if ( empty( $website ) ) {
+				$keys = array_keys( $this->website );
+			} else {
+				$keys = array_keys( $website );
+			}
 
-			$website_ids = $this->p->cf['plugin']['wpssorrssb']['lib']['website'];
+			$website_lib = $this->p->cf['plugin']['wpssorrssb']['lib']['website'];
 
-			foreach ( $website_keys as $id )
-				$ids[$id] = isset( $website_ids[$id] ) ?
+			foreach ( $keys as $id ) {
+				$website_ids[$id] = isset( $website_lib[$id] ) ?
 					$website_ids[$id] : ucfirst( $id );
-			return $ids;
+			}
+
+			return $website_ids;
 		}
 
 		public function get_tweet_text( array $mod, $atts = array(), $opt_pre = 'twitter', $md_pre = 'twitter' ) {
