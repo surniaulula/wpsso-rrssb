@@ -756,7 +756,7 @@ $buttons_array[$buttons_index].
 
 			foreach ( $keys as $id ) {
 				$website_ids[$id] = isset( $website_lib[$id] ) ?
-					$website_ids[$id] : ucfirst( $id );
+					$website_lib[$id] : ucfirst( $id );
 			}
 
 			return $website_ids;
