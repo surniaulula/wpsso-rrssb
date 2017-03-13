@@ -137,6 +137,17 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = Changelog / Release Notes =
 
+**Version 1.4.12-1 (2017/03/13)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* Fixed an incorrect variable name in WpssoRrssbSharing get_website_object_ids().
+* *Developer Notes*
+	* None
+
 **Version 1.4.11-1 (2017/03/06)**
 
 * *New Features*
@@ -284,6 +295,10 @@ Note that the production stage level can be incremented on occasion for simple t
 		* Renamed the SucomUtil after_key() method to get_after_key().
 
 == Upgrade Notice ==
+
+= 1.4.12-1 =
+
+(2017/03/13) Fixed an incorrect variable name in WpssoRrssbSharing get_website_object_ids().
 
 = 1.4.11-1 =
 
