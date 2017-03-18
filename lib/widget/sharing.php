@@ -36,12 +36,12 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 		}
 	
 		public function widget( $args, $instance ) {
-			if ( ! is_object( $this->p ) )
+
+			if ( ! isset( $this->p->rrssb_sharing ) ) {	// just in case
 				return;
-			elseif ( ! $this->p->is_avail['rrssb'] )
-				return;
-			elseif ( is_feed() )
+			} elseif ( is_feed() ) {
 				return;	// nothing to do in the feeds
+			}
 
 			extract( $args );
 
