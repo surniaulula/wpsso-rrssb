@@ -5,7 +5,6 @@ Text Domain: wpsso-rrssb
 Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
-Donate Link: https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-donate
 Assets URI: https://surniaulula.github.io/wpsso-rrssb/assets/
 Tags: sharing, sharing, buttons, responsive, facebook, google+, twitter, pinterest, linkedin, whatsapp, svg, retina, bbpress, buddypress, shorten, woocommerce, widget, shortcode
 Contributors: jsmoriss
