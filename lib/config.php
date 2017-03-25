@@ -172,9 +172,9 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		}
 
 		public static function require_libs( $plugin_filepath ) {
-			require_once( WPSSORRSSB_PLUGINDIR.'lib/register.php' );
-			require_once( WPSSORRSSB_PLUGINDIR.'lib/functions.php' );
-			require_once( WPSSORRSSB_PLUGINDIR.'lib/sharing.php' );
+			require_once WPSSORRSSB_PLUGINDIR.'lib/register.php';
+			require_once WPSSORRSSB_PLUGINDIR.'lib/functions.php';
+			require_once WPSSORRSSB_PLUGINDIR.'lib/sharing.php';
 
 			add_filter( 'wpssorrssb_load_lib', array( 'WpssoRrssbConfig', 'load_lib' ), 10, 3 );
 		}
@@ -183,7 +183,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			if ( $ret === false && ! empty( $filespec ) ) {
 				$filepath = WPSSORRSSB_PLUGINDIR.'lib/'.$filespec.'.php';
 				if ( file_exists( $filepath ) ) {
-					require_once( $filepath );
+					require_once $filepath;
 					if ( empty( $classname ) )
 						return SucomUtil::sanitize_classname( 'wpssorrssb'.$filespec, false );	// $underscore = false
 					else return $classname;

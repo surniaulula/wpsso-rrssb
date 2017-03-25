@@ -11,7 +11,7 @@
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Description: WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
- * Requires At Least: 3.8
+ * Requires At Least: 3.7
  * Tested Up To: 4.7.3
  * Version: 1.4.12-1
  * 
@@ -66,23 +66,29 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 		}
 
 		public static function required_check() {
-			if ( ! class_exists( 'Wpsso' ) )
+			if ( ! class_exists( 'Wpsso' ) ) {
 				add_action( 'all_admin_notices', array( __CLASS__, 'required_notice' ) );
+			}
 		}
 
 		// also called from the activate_plugin method with $deactivate = true
 		public static function required_notice( $deactivate = false ) {
 			self::wpsso_init_textdomain();
 			$info = WpssoRrssbConfig::$cf['plugin']['wpssorrssb'];
-			$die_msg = __( '%1$s is an extension for the %2$s plugin &mdash; please install and activate the %3$s plugin before activating %4$s.', 'wpsso-rrssb' );
-			$err_msg = __( 'The %1$s extension requires the %2$s plugin &mdash; please install and activate the %3$s plugin.', 'wpsso-rrssb' );
-
+			$die_msg = __( '%1$s is an extension for the %2$s plugin &mdash; please install and activate the %3$s plugin before activating %4$s.',
+				'wpsso-rrssb' );
+			$err_msg = __( 'The %1$s extension requires the %2$s plugin &mdash; please install and activate the %3$s plugin.',
+				'wpsso-rrssb' );
 			if ( $deactivate === true ) {
-				require_once( ABSPATH.'wp-admin/includes/plugin.php' );
-				deactivate_plugins( $info['base'] );
+				if ( ! function_exists( 'deactivate_plugins' ) ) {
+					require_once ABSPATH.'wp-admin/includes/plugin.php';
+				}
+				deactivate_plugins( $info['base'], true );	// $silent = true
 				wp_die( '<p>'.sprintf( $die_msg, $info['name'], $info['req']['name'], $info['req']['short'], $info['short'] ).'</p>' );
-			} else echo '<div class="notice notice-error error"><p>'.
-				sprintf( $err_msg, $info['name'], $info['req']['name'], $info['req']['short'] ).'</p></div>';
+			} else {
+				echo '<div class="notice notice-error error"><p>'.
+					sprintf( $err_msg, $info['name'], $info['req']['name'], $info['req']['short'] ).'</p></div>';
+			}
 		}
 
 		public static function wpsso_init_textdomain() {
