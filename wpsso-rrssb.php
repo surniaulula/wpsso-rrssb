@@ -81,7 +81,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 				'wpsso-rrssb' );
 			if ( $deactivate === true ) {
 				if ( ! function_exists( 'deactivate_plugins' ) ) {
-					require_once ABSPATH.'wp-admin/includes/plugin.php';
+					require_once trailingslashit( ABSPATH ).'wp-admin/includes/plugin.php';
 				}
 				deactivate_plugins( $info['base'], true );	// $silent = true
 				wp_die( '<p>'.sprintf( $die_msg, $info['name'], $info['req']['name'], $info['req']['short'], $info['short'] ).'</p>' );
