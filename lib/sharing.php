@@ -322,9 +322,9 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			$classname = apply_filters( $this->p->cf['lca'].'_load_lib', 
 				false, 'ext/compressor', 'SuextMinifyCssCompressor' );
 
-			if ( $classname !== false && class_exists( $classname ) )
+			if ( $classname !== false && class_exists( $classname ) ) {
 				$css_data = call_user_func( array( $classname, 'process' ), $css_data );
-			else {
+			} else {
 				if ( $this->p->debug->enabled )
 					$this->p->debug->log( 'failed to load minify class SuextMinifyCssCompressor' );
 				if ( is_admin() )
