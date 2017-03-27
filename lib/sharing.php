@@ -139,7 +139,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 		public function filter_get_defaults( $def_opts ) {
 			$def_opts = array_merge( $def_opts, self::$cf['opt']['defaults'] );
-			$def_opts = $this->p->util->add_ptns_to_opts( $def_opts, 'buttons_add_to' );
+			$def_opts = $this->p->util->add_ptns_to_opts( $def_opts, 'buttons_add_to', 1 );
 			$plugin_dir = trailingslashit( realpath( dirname( $this->plugin_filepath ) ) );
 			$url_path = parse_url( trailingslashit( plugins_url( '', $this->plugin_filepath ) ), PHP_URL_PATH );	// relative URL
 			$tabs = apply_filters( $this->p->cf['lca'].'_rrssb_styles_tabs', $this->p->cf['sharing']['rrssb-styles'] );
