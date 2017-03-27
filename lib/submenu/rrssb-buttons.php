@@ -121,11 +121,11 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 					'<td>'.$this->form->get_checkbox( 'buttons_on_front' ).'</td>';
 
 					$add_to_checkboxes = '';
-
-					foreach ( $this->p->util->get_post_types() as $post_type )
-						$add_to_checkboxes .= '<p>'.$this->form->get_checkbox( 'buttons_add_to_'.$post_type->name ).' '.
-							$post_type->label.' '.( empty( $post_type->description ) ? '' :
-								'('.$post_type->description.')' ).'</p>';
+					foreach ( $this->p->util->get_post_types() as $post_type ) {
+						$add_to_checkboxes .= '<p>'.$this->form->get_checkbox( 'buttons_add_to_'.$post_type->name ).
+							' '.$post_type->label.( empty( $post_type->description ) ?
+								'' : ' ('.$post_type->description.')' ).'</p>';
+					}
 
 					$table_rows[] = $this->form->get_th_html( _x( 'Include on Post Types',
 						'option label', 'wpsso-rrssb' ), null, 'buttons_add_to' ).
