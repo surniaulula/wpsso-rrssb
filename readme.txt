@@ -135,7 +135,7 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = Changelog / Release Notes =
 
-**Version 1.4.13-dev4 (2017/03/28)**
+**Version 1.4.13-dev5 (2017/03/29)**
 
 * *New Features*
 	* None
@@ -305,9 +305,9 @@ Note that the production stage level can be incremented on occasion for simple t
 
 == Upgrade Notice ==
 
-= 1.4.13-dev4 =
+= 1.4.13-dev5 =
 
-(2017/03/28) Renamed calls to the WpssoOpenGraph get_the_media_info() method to get_media_info() for WPSSO v3.40.7-1.
+(2017/03/29) Renamed calls to the WpssoOpenGraph get_the_media_info() method to get_media_info() for WPSSO v3.40.7-1.
 
 = 1.4.12-1 =
 
