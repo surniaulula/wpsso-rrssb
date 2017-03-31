@@ -110,7 +110,7 @@ The WordPress Social Sharing Optimization (WPSSO) plugin is required to use the 
 == Screenshots ==
 
 01. WPSSO RRSSB example showing the **Ridiculously Responsive Social Sharing Buttons** enabled (with the default stylesheet) in the CSS sidebar, content text, and widget.
-02. WPSSO RRSSB example showing a WooCommerce product page with **Ridiculously Responsive Social Sharing Buttons** in the CSS sidebar, short and long product descriptions.
+02. WPSSO RRSSB example showing a WooCommerce product page with **Ridiculously Responsive Social Sharing Buttons** in the CSS sidebar, short and long product descriptions (Pro version).
 03. WPSSO RRSSB Sharing Buttons tab in the Social Settings metabox allows you to fine-tune and customize the text used by several social sharing websites (Pro version).
 04. WPSSO RRSSB Responsive Buttons settings page.
 05. WPSSO RRSSB Responsive Styles settings page.
