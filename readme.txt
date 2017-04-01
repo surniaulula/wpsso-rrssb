@@ -54,7 +54,7 @@ WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in y
 	* Twitter
 	* VK
 	* WhatsApp (for mobile devices)
-* Include / exclude each social sharing button based on the viewing device (desktop and/or mobile).
+* Include / exclude individual social sharing buttons based on the viewing device (desktop and/or mobile).
 * Support for Automattic's [Accelerated Mobile Pages (AMP)](https://wordpress.org/plugins/amp/) plugin.
 * A built-in stylesheet editor allows you to fine-tune the CSS for each social sharing button location easily (content, excerpt, shortcode, widget, etc.).
 * Uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.
