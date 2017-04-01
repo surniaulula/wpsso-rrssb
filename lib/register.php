@@ -46,6 +46,7 @@ if ( ! class_exists( 'WpssoRrssbRegister' ) ) {
 			self::do_multisite( $sitewide, array( &$this, 'deactivate_plugin' ) );
 		}
 
+		// uninstall.php defines constants before calling network_uninstall()
 		public static function network_uninstall() {
 			$sitewide = true;
 
@@ -79,6 +80,7 @@ if ( ! class_exists( 'WpssoRrssbRegister' ) ) {
 			// nothing to do
 		}
 
+		// uninstall.php defines constants before calling network_uninstall()
 		private static function uninstall_plugin() {
 			// nothing to do
 		}
