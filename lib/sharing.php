@@ -206,7 +206,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			switch ( $key ) {
 				// integer options that must be 1 or more (not zero)
 				case ( preg_match( '/_order$/', $key ) ? true : false ):
-					return 'pos_num';	// cast as integer
+					return 'pos_int';
 					break;
 				// text strings that can be blank
 				case ( preg_match( '/_(desc|title)$/', $key ) ? true : false ):
