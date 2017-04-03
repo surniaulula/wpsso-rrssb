@@ -94,8 +94,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				'get_defaults' => 1,
 				'get_site_defaults' => 1,
 				'get_md_defaults' => 1,
-				'text_filter_has_changes_before' => 2,
-				'text_filter_has_changes_after' => 2,
+				'text_filter_begin' => 2,
+				'text_filter_end' => 2,
 			) );
 
 			if ( is_admin() ) {
@@ -390,12 +390,12 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			}
 		}
 
-		public function filter_text_filter_has_changes_before( $ret, $filter_name ) {
-			return ( $this->remove_buttons_filter( $filter_name ) ? true : $ret );
+		public function filter_text_filter_begin( $bool, $filter_name ) {
+			return $this->remove_buttons_filter( $filter_name ) ? true : $bool;
 		}
 
-		public function filter_text_filter_has_changes_after( $ret, $filter_name ) {
-			return ( $this->add_buttons_filter( $filter_name ) ? true : $ret );
+		public function filter_text_filter_end( $bool, $filter_name ) {
+			return $this->add_buttons_filter( $filter_name ) ? true : $bool;
 		}
 
 		public function show_footer() {
