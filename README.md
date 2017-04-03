@@ -107,8 +107,8 @@
 <h4>Install and Uninstall</h4>
 
 <ul>
-<li><a href="https://wpsso.com/codex/plugins/wpsso-rrssb/installation/install-the-plugin/">Install the Plugin</a></li>
-<li><a href="https://wpsso.com/codex/plugins/wpsso-rrssb/installation/uninstall-the-plugin/">Uninstall the Plugin</a></li>
+<li><a href="https://wpsso.com/docs/plugins/wpsso-rrssb/installation/install-the-plugin/">Install the Plugin</a></li>
+<li><a href="https://wpsso.com/docs/plugins/wpsso-rrssb/installation/uninstall-the-plugin/">Uninstall the Plugin</a></li>
 </ul>
 
 
@@ -127,6 +127,6 @@
 <h4>Additional Documentation</h4>
 
 <ul>
-<li><a href="https://wpsso.com/codex/plugins/wpsso-rrssb/notes/rrssb-shortcode/">RRSSB Shortcode for Sharing Buttons</a></li>
+<li><a href="https://wpsso.com/docs/plugins/wpsso-rrssb/notes/rrssb-shortcode/">RRSSB Shortcode for Sharing Buttons</a></li>
 </ul>
 
