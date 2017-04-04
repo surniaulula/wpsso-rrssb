@@ -140,7 +140,7 @@ Note that the production stage level can be incremented on occasion for simple t
 * *New Features*
 	* None
 * *Improvements*
-	* Updated the plugin documentation and FAQ URLs.
+	* Updated the plugin icon images and the documentation URLs.
 * *Bugfixes*
 	* None
 * *Developer Notes*
@@ -318,7 +318,7 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = 1.4.14-dev2 =
 
-(2017/04/04) Updated the plugin documentation and FAQ URLs.
+(2017/04/04) Updated the plugin icon images and the documentation URLs.
 
 = 1.4.13-1 =
 
