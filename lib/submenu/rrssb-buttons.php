@@ -17,13 +17,15 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 
 		public function __construct( &$plugin, $id, $name, $lib, $ext ) {
 			$this->p =& $plugin;
+
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->mark();
+			}
+
 			$this->menu_id = $id;
 			$this->menu_name = $name;
 			$this->menu_lib = $lib;
-			$this->menu_ext = $ext;
-
-			if ( $this->p->debug->enabled )
-				$this->p->debug->mark();
+			$this->menu_ext = $ext;	// lowercase acronyn for plugin or extension
 
 			$this->set_objects();
 		}
@@ -83,9 +85,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 				'position' => _x( 'Buttons Position', 'metabox tab', 'wpsso-rrssb' ),
 			) );
 			$table_rows = array();
-			foreach ( $tabs as $key => $title )
+			foreach ( $tabs as $key => $title ) {
 				$table_rows[$key] = array_merge( $this->get_table_rows( $metabox, $key ), 
 					apply_filters( $lca.'_'.$metabox.'_'.$key.'_rows', array(), $this->form ) );
+			}
 			$this->p->util->do_metabox_tabs( $metabox, $tabs, $table_rows );
 		}
 
@@ -99,9 +102,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 				$this->p->util->do_table_rows( apply_filters( $lca.'_'.$metabox.'_'.$args['id'].'_rows',
 					array(), $this->form, $this ), 'metabox-'.$metabox.'-'.$args['id'], 'metabox-'.$metabox );
 			} else {
-				foreach ( $tabs as $tab => $title )
+				foreach ( $tabs as $tab => $title ) {
 					$table_rows[$tab] = apply_filters( $lca.'_'.$metabox.'_'.$args['id'].'_'.$tab.'_rows',
 						array(), $this->form, $this );
+				}
 				$this->p->util->do_metabox_tabs( $metabox.'_'.$args['id'], $tabs, $table_rows );
 			}
 		}
