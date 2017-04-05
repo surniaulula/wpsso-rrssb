@@ -324,11 +324,13 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			if ( $classname !== false && class_exists( $classname ) ) {
 				$css_data = call_user_func( array( $classname, 'process' ), $css_data );
 			} else {
-				if ( $this->p->debug->enabled )
+				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'failed to load minify class SuextMinifyCssCompressor' );
-				if ( is_admin() )
+				}
+				if ( is_admin() ) {
 					$this->p->notice->err( __( 'Failed to load the minify class SuextMinifyCssCompressor.',
 						'wpsso-rrssb' ) );
+				}
 			}
 
 			if ( $fh = @fopen( self::$sharing_css_file, 'wb' ) ) {
@@ -413,28 +415,30 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function show_admin_sharing( $post_obj ) {
-			if ( $this->p->debug->enabled )
+			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
+			}
 			$lca = $this->p->cf['lca'];
-			$css_data = '#side-sortables #_'.$lca.'_rrssb_share .inside table.sucom-setting { padding:0; }'.
+			$css_data = '#side-sortables #_'.$lca.'_rrssb_share .inside table.sucom-settings { padding:0; }'.
 				$this->p->options['buttons_css_rrssb-admin_edit'];
 
-			$classname = apply_filters( $this->p->cf['lca'].'_load_lib', 
-				false, 'ext/compressor', 'SuextMinifyCssCompressor' );
+			$classname = apply_filters( $lca.'_load_lib', false, 'ext/compressor', 'SuextMinifyCssCompressor' );
 
-			if ( $classname !== false && class_exists( $classname ) )
+			if ( $classname !== false && class_exists( $classname ) ) {
 				$css_data = call_user_func( array( $classname, 'process' ), $css_data );
+			}
 
 			echo '<style type="text/css">'.$css_data.'</style>', "\n";
-			echo '<table class="sucom-setting '.$this->p->cf['lca'].' side"><tr><td>';
-			if ( get_post_status( $post_obj->ID ) === 'publish' || 
-				$post_obj->post_type === 'attachment' ) {
+			echo '<table class="sucom-settings '.$this->p->cf['lca'].' side"><tr><td>';
 
+			if ( get_post_status( $post_obj->ID ) === 'publish' || $post_obj->post_type === 'attachment' ) {
 				$content = '';
 				echo $this->get_buttons( $content, 'admin_edit' );
+			} else {
+				echo '<p class="centered">'.sprintf( __( '%s must be published<br/>before it can be shared.',
+					'wpsso-rrssb' ), SucomUtil::titleize( $post_obj->post_type ) ).'</p>';
+			}
 
-			} else echo '<p class="centered">'.sprintf( __( '%s must be published<br/>before it can be shared.',
-				'wpsso-rrssb' ), SucomUtil::titleize( $post_obj->post_type ) ).'</p>';
 			echo '</td></tr></table>';
 		}
 
