@@ -18,14 +18,17 @@ if ( ! class_exists( 'WpssoRrssbGplForumBbpress' ) ) {
 
 		public function __construct( &$plugin ) {
 			$this->p =& $plugin;
-			if ( $this->p->debug->enabled )
+
+			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
+			}
 
 			if ( class_exists( 'bbpress' ) ) {	// is_bbpress() is not available here
 				if ( ! empty( $this->p->is_avail['rrssb'] ) ) {
 					$classname = __CLASS__.'Sharing';
-					if ( class_exists( $classname ) )
+					if ( class_exists( $classname ) ) {
 						$this->sharing = new $classname( $this->p );
+					}
 				}
 			}
 		}
@@ -40,8 +43,10 @@ if ( ! class_exists( 'WpssoRrssbGplForumBbpressSharing' ) ) {
 
 		public function __construct( &$plugin ) {
 			$this->p =& $plugin;
-			if ( $this->p->debug->enabled )
+
+			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
+			}
 
 			$this->p->util->add_plugin_filters( $this, array( 
 				'get_defaults' => 1,
@@ -57,9 +62,11 @@ if ( ! class_exists( 'WpssoRrssbGplForumBbpressSharing' ) ) {
 		}
 
 		public function filter_get_defaults( $opts_def ) {
-			foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre )
+			foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre ) {
 				$opts_def[$opt_pre.'_on_bbp_single'] = 0;
+			}
 			$opts_def['buttons_pos_bbp_single'] = 'top';
+
 			return $opts_def;
 		}
 

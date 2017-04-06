@@ -144,17 +144,17 @@ msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/gpl/ecom/woocommerce.php:80 lib/pro/ecom/woocommerce.php:84
+#: lib/gpl/ecom/woocommerce.php:87 lib/pro/ecom/woocommerce.php:89
 msgctxt "option label"
 msgid "Position in Woo Short Text"
 msgstr ""
 
-#: lib/gpl/forum/bbpress.php:88 lib/pro/forum/bbpress.php:125
+#: lib/gpl/forum/bbpress.php:95 lib/pro/forum/bbpress.php:133
 msgctxt "option label"
 msgid "Position in bbPress Single"
 msgstr ""
 
-#: lib/sharing.php:155
+#: lib/sharing.php:156
 msgid "Failed to open the %s file for reading."
 msgstr ""
 
@@ -172,52 +172,52 @@ msgid ""
 "All sharing styles have been reloaded with their default value and saved."
 msgstr ""
 
-#: lib/sharing.php:292
+#: lib/sharing.php:294
 msgid "The %s file is not readable."
 msgstr ""
 
-#: lib/sharing.php:331
+#: lib/sharing.php:337
 msgid "Failed to load the minify class SuextMinifyCssCompressor."
 msgstr ""
 
-#: lib/sharing.php:341
+#: lib/sharing.php:347
 msgid "Failed writing to the % file."
 msgstr ""
 
-#: lib/sharing.php:346
+#: lib/sharing.php:352
 msgid "Updated the <a href=\"%1$s\">%2$s</a> stylesheet (%3$d bytes written)."
 msgstr ""
 
-#: lib/sharing.php:356
+#: lib/sharing.php:362
 msgid "The %s folder is not writable."
 msgstr ""
 
-#: lib/sharing.php:362
+#: lib/sharing.php:368
 msgid "Failed to open file %s for writing."
 msgstr ""
 
-#: lib/sharing.php:371
+#: lib/sharing.php:377
 msgid ""
 "Error removing the minimized stylesheet &mdash; does the web server have "
 "sufficient privileges?"
 msgstr ""
 
-#: lib/sharing.php:390
+#: lib/sharing.php:396
 msgctxt "metabox title"
 msgid "Sharing Buttons"
 msgstr ""
 
-#: lib/sharing.php:438
+#: lib/sharing.php:444
 msgid "%s must be published<br/>before it can be shared."
 msgstr ""
 
-#: lib/sharing.php:813
+#: lib/sharing.php:819
 msgid ""
 "Social sharing buttons can be added to the top, bottom, or both. Each "
 "sharing button must also be enabled below (see the <em>%s</em> options)."
 msgstr ""
 
-#: lib/sharing.php:813 lib/website/email.php:30 lib/website/facebook.php:30
+#: lib/sharing.php:819 lib/website/email.php:30 lib/website/facebook.php:30
 #: lib/website/gplus.php:30 lib/website/linkedin.php:30
 #: lib/website/pinterest.php:44 lib/website/pocket.php:30
 #: lib/website/reddit.php:30 lib/website/tumblr.php:30
@@ -227,21 +227,21 @@ msgctxt "option label"
 msgid "Show Button in"
 msgstr ""
 
-#: lib/sharing.php:816
+#: lib/sharing.php:822
 msgid ""
 "Add the social sharing buttons to each entry of an index webpage (blog front "
 "page, category, archive, etc.). Social sharing buttons are not included on "
 "index webpages by default."
 msgstr ""
 
-#: lib/sharing.php:819
+#: lib/sharing.php:825
 msgid ""
 "If a static Post or Page has been selected for the front page, you can add "
 "the social sharing buttons to that static front page as well (default is "
 "unchecked)."
 msgstr ""
 
-#: lib/sharing.php:822
+#: lib/sharing.php:828
 msgid ""
 "Enabled social sharing buttons are added to the Post, Page, Media, and "
 "Product webpages by default. If your theme (or another plugin) supports "
@@ -249,7 +249,7 @@ msgid ""
 "buttons on these webpages, check the appropriate option(s) here."
 msgstr ""
 
-#: lib/sharing.php:825
+#: lib/sharing.php:831
 msgid ""
 "Add the CSS of all <em>%1$s</em> to webpages (default is checked). The CSS "
 "will be <strong>minimized</strong>, and saved to a single stylesheet with a "
@@ -257,12 +257,12 @@ msgid ""
 "or added directly to the webpage HTML."
 msgstr ""
 
-#: lib/sharing.php:825
+#: lib/sharing.php:831
 msgctxt "lib file description"
 msgid "Sharing Styles"
 msgstr ""
 
-#: lib/sharing.php:828
+#: lib/sharing.php:834
 msgid ""
 "Have WordPress enqueue the social stylesheet instead of adding the CSS to in "
 "the webpage HTML (default is unchecked). Enqueueing the stylesheet may be "
@@ -270,46 +270,46 @@ msgid ""
 "single stylesheet URL."
 msgstr ""
 
-#: lib/sharing.php:831
+#: lib/sharing.php:837
 msgid ""
 "Append the %1$s to the tweet (see <a href=\"%2$s\">the Twitter options tab</"
 "a> in the %3$s settings page). The %1$s will be displayed and recommended "
 "after the webpage is shared."
 msgstr ""
 
-#: lib/sharing.php:831 lib/sharing.php:834
+#: lib/sharing.php:837 lib/sharing.php:840
 msgctxt "option label"
 msgid "Twitter Business @username"
 msgstr ""
 
-#: lib/sharing.php:831
+#: lib/sharing.php:837
 msgctxt "lib file description"
 msgid "General"
 msgstr ""
 
-#: lib/sharing.php:834
+#: lib/sharing.php:840
 msgid ""
 "Recommend following the author's Twitter @username after sharing a webpage. "
 "If the %1$s option (above) is also checked, the %2$s is suggested first."
 msgstr ""
 
-#: lib/sharing.php:834 lib/website/twitter.php:53
+#: lib/sharing.php:840 lib/website/twitter.php:53
 msgctxt "option label"
 msgid "Add via Business @username"
 msgstr ""
 
-#: lib/sharing.php:844
+#: lib/sharing.php:850
 msgctxt "option comment"
 msgid "disabled"
 msgstr ""
 
-#: lib/sharing.php:845
+#: lib/sharing.php:851
 msgid ""
 "The rendered HTML for social sharing buttons is saved to the WordPress "
 "transient cache to optimize performance."
 msgstr ""
 
-#: lib/sharing.php:846
+#: lib/sharing.php:852
 msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
 msgstr ""
 

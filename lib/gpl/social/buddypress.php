@@ -18,14 +18,17 @@ if ( ! class_exists( 'WpssoRrssbGplSocialBuddypress' ) ) {
 
 		public function __construct( &$plugin ) {
 			$this->p =& $plugin;
-			if ( $this->p->debug->enabled )
+
+			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
+			}
 
 			if ( is_admin() || bp_current_component() ) {
 				if ( ! empty( $this->p->is_avail['rrssb'] ) ) {
 					$classname = __CLASS__.'Sharing';
-					if ( class_exists( $classname ) )
+					if ( class_exists( $classname ) ) {
 						$this->sharing = new $classname( $this->p );
+					}
 				}
 			}
 		}
@@ -40,8 +43,10 @@ if ( ! class_exists( 'WpssoRrssbGplSocialBuddypressSharing' ) ) {
 
 		public function __construct( &$plugin ) {
 			$this->p =& $plugin;
-			if ( $this->p->debug->enabled )
+
+			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
+			}
 
 			$this->p->util->add_plugin_filters( $this, array( 
 				'get_defaults' => 1,
@@ -56,8 +61,9 @@ if ( ! class_exists( 'WpssoRrssbGplSocialBuddypressSharing' ) ) {
 		}
 
 		public function filter_get_defaults( $opts_def ) {
-			foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre )
+			foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre ) {
 				$opts_def[$opt_pre.'_on_bp_activity'] = 0;
+			}
 			return $opts_def;
 		}
 
