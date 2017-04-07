@@ -15,7 +15,7 @@
  * Tested Up To: 4.7.3
  * Version: 1.4.14-1
  * 
- * Version Numbering Scheme: {major}.{minor}.{bugfix}-{stage}{level}
+ * Version Numbering: {major}.{minor}.{bugfix}-{stage}{level}
  *
  *	{major}		Major code changes / re-writes or significant feature changes.
  *	{minor}		New features / options were added or improved.
