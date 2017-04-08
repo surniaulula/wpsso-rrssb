@@ -133,6 +133,18 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = Changelog / Release Notes =
 
+**Version 1.4.15 (2017/04/08)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Minor revision to move URLs in the extension config to the main WPSSO plugin config.
+	* Dropped the package number from the production version string.
+
 **Version 1.4.14-1 (2017/04/05)**
 
 * *New Features*
@@ -189,131 +201,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * *Developer Notes*
 	* Maintenance release.
 
-**Version 1.4.9-1 (2017/01/27)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Updated the RRSSB css and js library files from https://github.com/kni-labs/rrssb.
-
-**Version 1.4.8-1 (2017/01/21)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Added support for the WpssoUtil is_force_regen() method introduced in WPSSO v3.39.1-1.
-
-**Version 1.4.7-1 (2017/01/08)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Added a 'plugins_loaded' action hook to load the plugin text domain.
-
-**Version 1.4.6-1 (2016/12/25)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* Minor CSS update for the WordPress 2017 theme (added box-shadow:none to links and list-style-type:none for lists). Click on the "Reload Default Styles" button to use these changes in your WPSSO RRSSB stylesheet.
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* None
-
-**Version 1.4.5-1 (2016/12/12)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Excluded the Twitter and Pinterest URLs from the JavaScript popup protection for mobile devices.
-
-**Version 1.4.4-3 (2016/12/05)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* Optimized wp_cache and transient caching for multilingual sites.
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Replaced set_transient() by SucomUtil update_transient_array() to update buttons arrays and keep the original transient expiration time.
-	* Removed $locale argument from SucomUtil get_mod_salt() calls.
-
-**Version 1.4.3-1 (2016/11/25)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* Removed the "Shorten HTML A HREF Link" option.
-	* Added code to break-up/re-assemble the Twitter and Pinterest URLs to avoid duplicate popup windows when using 3rd party button javascript.
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Refactored the min_version_notice() method and moved variables to config class.
-	* Refactored the Twitter button class to use the $mod variable instead of the global $post.
-	* Renamed the 'buttons_use_social_css' option key to 'buttons_use_social_style'.
-	* Renamed the 'buttons_enqueue_social_css' option key to 'buttons_enqueue_social_style'.
-
-**Version 1.4.2-1 (2016/11/17)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Updated SucomUtil get_mod_salt() method arguments for WPSSO v3.37.3-1.
-
-**Version 1.4.1-1 (2016/11/12)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Updated 'wpsso_post_cache_transients' filter arguments for WPSSO v3.37.2-1.
-
-**Version 1.4.0-1 (2016/11/04)**
-
-* *New Features*
-	* Added a Sharing Buttons Cache Expiry option on the Advanced settings page.
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Refactored the shortcode and widget classes to optimize caching performance.
-	* Refactored the wpssorrssb_get_sharing_buttons() function to optimize caching performance.
-	* Added a new WpssoRrssbSharing get_buttons_cache_index() method to cache sharing buttons HTML as array elements. This optimizes the cache by storing one transient instead of one transient per sharing buttons location within the same webpage.
-	* Renamed the `$wpsso->rrssb` object to `$wpsso->rrssb_sharing`.
-	* Renamed the 'wpsso_shortcode_rrssb' filter to 'wpsso_sharing_shortcode_rrssb'.
-	* Renamed the WPSSORRSSB_SHARING_SHORTCODE contant to WPSSORRSSB_SHARING_SHORTCODE_NAME.
-	* Added a new filter to adjust transient cache expiration:
-		* 'wpsso_cache_expire_sharing_buttons' ( $secs );
-	* Minor code changes required for WPSSO v3.37.0-1:
-		* Renamed the SucomUtil after_key() method to get_after_key().
-
 == Upgrade Notice ==
+
+= 1.4.15 =
+
+(2017/04/08) Minor revision to move URLs in the extension config to the main WPSSO plugin config.
 
 = 1.4.14-1 =
 
@@ -334,28 +226,4 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 = 1.4.10-1 =
 
 (2017/02/04) Maintenance release.
-
-= 1.4.9-1 =
-
-(2017/01/27) Updated the RRSSB css and js library files from https://github.com/kni-labs/rrssb.
-
-= 1.4.8-1 =
-
-(2017/01/21) Added support for the WpssoUtil is_force_regen() method introduced in WPSSO v3.39.1-1.
-
-= 1.4.7-1 =
-
-(2017/01/08) Added a 'plugins_loaded' action hook to load the plugin text domain.
-
-= 1.4.6-1 =
-
-(2016/12/25) Minor CSS update for the WordPress 2017 theme.
-
-= 1.4.5-1 =
-
-(2016/12/12) Excluded the Twitter and Pinterest URLs from the JavaScript popup protection for mobile devices.
-
-= 1.4.4-3 =
-
-(2016/12/05) Optimized wp_cache and transient caching for multilingual sites. Replaced set_transient() to update buttons arrays and keep the original transient expiration time.
 
