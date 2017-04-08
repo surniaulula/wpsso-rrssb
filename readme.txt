@@ -16,7 +16,7 @@ WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in y
 
 == Description ==
 
-<img src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png" style="width:33%;min-width:128px;max-width:256px;height:auto;float:left;margin:10px 40px 40px 0;" />
+<img src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png" width="128" height="128" class="plugin_icon">
 
 <p>Add awesome <strong>Ridiculously Responsive Social Sharing Buttons</strong> to posts / pages, custom post types, <a href="https://wordpress.org/plugins/bbpress/">bbPress</a>, <a href="https://wordpress.org/plugins/buddypress/">BuddyPress</a>, <a href="https://wordpress.org/plugins/woocommerce/">WooCommerce</a> product pages, and much more.</p>
 
