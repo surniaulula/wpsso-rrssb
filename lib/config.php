@@ -32,8 +32,10 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 						'min_version' => '3.40.11-1',
 					),
 					'img' => array(
-						'icon_small' => 'images/icon-128x128.png',
-						'icon_medium' => 'images/icon-256x256.png',
+						'icons' => array(
+							'low' => 'images/icon-128x128.png',
+							'high' => 'images/icon-256x256.png',
+						),
 					),
 					'lib' => array(
 						// submenu items must have unique keys
