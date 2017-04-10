@@ -4,11 +4,13 @@
  * necessary to customize the layout for your website.
  */
 
-table.sucom-settings .rrssb-buttons {
-	margin:0;
+table.sucom-settings ul.rrssb-buttons {
+	visibility:visible;
+	margin:0 !important;
+	padding:0 !important;
 	list-style:none;
 }
-table.sucom-settings .rrssb-buttons:before,
-table.sucom-settings .rrssb-buttons:after {
+table.sucom-settings ul.rrssb-buttons:before,
+table.sucom-settings ul.rrssb-buttons:after {
 	display:none;
 }
