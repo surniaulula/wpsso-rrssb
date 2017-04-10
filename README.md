@@ -13,7 +13,7 @@
 
 <h2>Description</h2>
 
-<p><img src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png" width="128" height="128" class="readme-plugin-icon"></p>
+<p><img class="readme-icon" src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png"></p>
 
 <p>Add awesome <strong>Ridiculously Responsive Social Sharing Buttons</strong> to posts / pages, custom post types, <a href="https://wordpress.org/plugins/bbpress/">bbPress</a>, <a href="https://wordpress.org/plugins/buddypress/">BuddyPress</a>, <a href="https://wordpress.org/plugins/woocommerce/">WooCommerce</a> product pages, and much more.</p>
 
