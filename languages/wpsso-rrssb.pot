@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"(WPSSO RRSSB) 1.4.15\n"
+"(WPSSO RRSSB) 1.4.16-a.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2017-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -144,7 +144,7 @@ msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/gpl/ecom/woocommerce.php:87 lib/pro/ecom/woocommerce.php:89
+#: lib/gpl/ecom/woocommerce.php:87 lib/pro/ecom/woocommerce.php:91
 msgctxt "option label"
 msgid "Position in Woo Short Text"
 msgstr ""
@@ -490,7 +490,7 @@ msgid ""
 "activate the %3$s plugin."
 msgstr ""
 
-#: wpsso-rrssb.php:152
+#: wpsso-rrssb.php:157
 msgid ""
 "The %1$s extension v%2$s requires %3$s v%4$s or newer (v%5$s currently "
 "installed)."

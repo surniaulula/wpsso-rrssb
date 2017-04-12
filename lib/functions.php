@@ -11,19 +11,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 	function wpssorrssb_get_sharing_buttons( $ids = array(), $atts = array(), $cache_exp = false ) {
+
 		$wpsso =& Wpsso::get_instance();
+
 		if ( $wpsso->debug->enabled ) {
 			$wpsso->debug->mark();
 		}
 
 		$error_msg = false;
+
 		if ( ! is_array( $ids ) ) {
 			$error_msg = 'sharing button ids must be an array';
 			error_log( __FUNCTION__.'() error: '.$error_msg );
 		} elseif ( ! is_array( $atts ) ) {
 			$error_msg = 'sharing button attributes must be an array';
 			error_log( __FUNCTION__.'() error: '.$error_msg );
-		} elseif ( ! $wpsso->is_avail['rrssb'] ) {
+		} elseif ( ! $wpsso->is_avail['p_ext']['rrssb'] ) {
 			$error_msg = 'sharing buttons are disabled';
 		} elseif ( empty( $ids ) ) {	// nothing to do
 			$error_msg = 'no buttons requested';

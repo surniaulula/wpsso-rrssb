@@ -17,10 +17,13 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 		public function __construct( &$plugin ) {
 			$this->p =& $plugin;
-			if ( $this->p->debug->enabled )
+
+			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
+			}
+
 			if ( ! is_admin() ) {
-				if ( $this->p->is_avail['rrssb'] ) {
+				if ( $this->p->is_avail['p_ext']['rrssb'] ) {
 					$this->wpautop();
 					$this->add();
 				}
