@@ -35,8 +35,9 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 				$classname = WpssoRrssbConfig::load_lib( false, 'website/'.$id, 'wpssorrssbsubmenuwebsite'.$id );
 				if ( $classname !== false && class_exists( $classname ) ) {
 					$this->website[$id] = new $classname( $this->p );
-					if ( $this->p->debug->enabled )
+					if ( $this->p->debug->enabled ) {
 						$this->p->debug->log( $classname.' class loaded' );
+					}
 				}
 			}
 		}
@@ -52,21 +53,22 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			$website_ids = $this->p->rrssb_sharing->get_website_object_ids( $this->website );
 
 			foreach ( $website_ids as $id => $name ) {
-				$name = $name == 'GooglePlus' ?
-					'Google+' : $name;
+
+				$name = $name == 'GooglePlus' ? 'Google+' : $name;
+				$pos_id = 'normal';
+				$prio = 'default';
 				$args = array( 'id' => $id, 'name' => $name );
 
 				add_meta_box( $this->pagehook.'_'.$id, $name, 
 					array( &$this, 'show_metabox_rrssb_website' ),
-						$this->pagehook, 'normal', 'default', $args );
+						$this->pagehook, $pos_id, $prio, $args );
 
 				add_filter( 'postbox_classes_'.$this->pagehook.'_'.$this->pagehook.'_'.$id, 
 					array( &$this, 'add_class_postbox_rrssb_website' ) );
 			}
 
-			// these metabox ids should be closed by default (array_diff() selects everything except those listed)
-			$ids = array_diff( array_keys( $website_ids ), array() );
-			$this->p->m['util']['user']->reset_metabox_prefs( $this->pagehook, $ids, 'closed' );
+			// close all website metaboxes by default
+			NgfbUser::reset_metabox_prefs( $this->pagehook, array_keys( $website_ids ), 'closed' );
 		}
 
 		public function add_class_postbox_rrssb_website( $classes ) {
