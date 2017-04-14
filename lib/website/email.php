@@ -22,30 +22,23 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteEmail' ) ) {
 
 		public function filter_rrssb_website_email_rows( $table_rows, $form, $submenu ) {
 
-			$table_rows[] = $form->get_th_html( _x( 'Preferred Order',
-				'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'email_order', 
-				range( 1, count( $submenu->website ) ), 'short' ).  '</td>';
-
-			$table_rows[] = $form->get_th_html( _x( 'Show Button in',
-				'option label', 'wpsso-rrssb' ) ).
+			$table_rows[] = $form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$submenu->show_on_checkboxes( 'email' ).'</td>';
 
-			$table_rows[] = '<tr class="hide_in_basic">'.
-			$form->get_th_html( _x( 'Allow for Platform',
-				'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'email_platform',
-				$this->p->cf['sharing']['platform'] ).'</td>';
+			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ).
+			'<td>'.$form->get_select( 'email_order', range( 1, count( $submenu->website ) ) ).'</td>';
 
 			$table_rows[] = '<tr class="hide_in_basic">'.
-                        $form->get_th_html( _x( 'Email Message Length',
-				'option label', 'wpsso-rrssb' ) ).
+			$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
+			'<td>'.$form->get_select( 'email_platform', $this->p->cf['sharing']['platform'] ).'</td>';
+
+			$table_rows[] = '<tr class="hide_in_basic">'.
+                        $form->get_th_html( _x( 'Email Message Length', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_input( 'email_cap_len', 'short' ).' '.
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = '<tr class="hide_in_basic">'.
-			$form->get_th_html( _x( 'Append Hashtags to Message',
-				'option label', 'wpsso-rrssb' ) ).
+			$form->get_th_html( _x( 'Append Hashtags to Message', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_select( 'email_cap_hashtags',
 				range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', null, true ).' '.
 					_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';

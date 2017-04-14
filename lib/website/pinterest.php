@@ -36,34 +36,26 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsitePinterest' ) ) {
 
 		public function filter_rrssb_website_pinterest_rows( $table_rows, $form, $submenu ) {
 
-			$table_rows[] = $form->get_th_html( _x( 'Preferred Order',
-				'option label', 'wpsso-rrssb' ), null, 'pin_order' ).
-			'<td>'.$form->get_select( 'pin_order', 
-				range( 1, count( $submenu->website ) ), 'short' ).  '</td>';
-
-			$table_rows[] = $form->get_th_html( _x( 'Show Button in',
-				'option label', 'wpsso-rrssb' ) ).
+			$table_rows[] = $form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$submenu->show_on_checkboxes( 'pin' ).'</td>';
 
-			$table_rows[] = '<tr class="hide_in_basic">'.
-			$form->get_th_html( _x( 'Allow for Platform',
-				'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'pin_platform',
-				$this->p->cf['sharing']['platform'] ).'</td>';
+			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ).
+			'<td>'.$form->get_select( 'pin_order', range( 1, count( $submenu->website ) ) ).'</td>';
 
-			$table_rows[] = $form->get_th_html( _x( 'Image Dimensions',
-				'option label', 'wpsso-rrssb' ) ).
+			$table_rows[] = '<tr class="hide_in_basic">'.
+			$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
+			'<td>'.$form->get_select( 'pin_platform', $this->p->cf['sharing']['platform'] ).'</td>';
+
+			$table_rows[] = $form->get_th_html( _x( 'Image Dimensions', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_image_dimensions_input( 'pin_img' ).'</td>';	// $use_opts = false
 
 			$table_rows[] = '<tr class="hide_in_basic">'.
-                        $form->get_th_html( _x( 'Caption Text Length',
-				'option label', 'wpsso-rrssb' ) ).
+                        $form->get_th_html( _x( 'Caption Text Length', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_input( 'pin_cap_len', 'short' ).' '.
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = '<tr class="hide_in_basic">'.
-			$form->get_th_html( _x( 'Append Hashtags to Caption',
-				'option label', 'wpsso-rrssb' ) ).
+			$form->get_th_html( _x( 'Append Hashtags to Caption', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_select( 'pin_cap_hashtags',
 				range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', null, true ).' '.
 					_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';

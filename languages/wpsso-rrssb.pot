@@ -217,12 +217,12 @@ msgid ""
 "sharing button must also be enabled below (see the <em>%s</em> options)."
 msgstr ""
 
-#: lib/sharing.php:819 lib/website/email.php:30 lib/website/facebook.php:30
-#: lib/website/gplus.php:30 lib/website/linkedin.php:30
-#: lib/website/pinterest.php:44 lib/website/pocket.php:30
-#: lib/website/reddit.php:30 lib/website/tumblr.php:30
-#: lib/website/twitter.php:30 lib/website/vk.php:30
-#: lib/website/whatsapp.php:30
+#: lib/sharing.php:819 lib/website/email.php:25 lib/website/facebook.php:25
+#: lib/website/gplus.php:25 lib/website/linkedin.php:25
+#: lib/website/pinterest.php:39 lib/website/pocket.php:25
+#: lib/website/reddit.php:25 lib/website/tumblr.php:25
+#: lib/website/twitter.php:25 lib/website/vk.php:25
+#: lib/website/whatsapp.php:25
 msgctxt "option label"
 msgid "Show Button in"
 msgstr ""
@@ -293,7 +293,7 @@ msgid ""
 "If the %1$s option (above) is also checked, the %2$s is suggested first."
 msgstr ""
 
-#: lib/sharing.php:840 lib/website/twitter.php:53
+#: lib/sharing.php:840 lib/website/twitter.php:46
 msgctxt "option label"
 msgid "Add via Business @username"
 msgstr ""
@@ -368,58 +368,58 @@ msgctxt "option label"
 msgid "Enqueue the Stylesheet"
 msgstr ""
 
-#: lib/website/email.php:25 lib/website/facebook.php:25
-#: lib/website/gplus.php:25 lib/website/linkedin.php:25
-#: lib/website/pinterest.php:39 lib/website/pocket.php:25
-#: lib/website/reddit.php:25 lib/website/tumblr.php:25
-#: lib/website/twitter.php:25 lib/website/vk.php:25
-#: lib/website/whatsapp.php:25
+#: lib/website/email.php:28 lib/website/facebook.php:28
+#: lib/website/gplus.php:28 lib/website/linkedin.php:28
+#: lib/website/pinterest.php:42 lib/website/pocket.php:28
+#: lib/website/reddit.php:28 lib/website/tumblr.php:28
+#: lib/website/twitter.php:28 lib/website/vk.php:28
+#: lib/website/whatsapp.php:28
 msgctxt "option label"
 msgid "Preferred Order"
 msgstr ""
 
-#: lib/website/email.php:35 lib/website/facebook.php:35
-#: lib/website/gplus.php:35 lib/website/linkedin.php:35
-#: lib/website/pinterest.php:49 lib/website/pocket.php:35
-#: lib/website/reddit.php:35 lib/website/tumblr.php:35
-#: lib/website/twitter.php:35 lib/website/vk.php:35
-#: lib/website/whatsapp.php:35
+#: lib/website/email.php:32 lib/website/facebook.php:32
+#: lib/website/gplus.php:32 lib/website/linkedin.php:32
+#: lib/website/pinterest.php:46 lib/website/pocket.php:32
+#: lib/website/reddit.php:32 lib/website/tumblr.php:32
+#: lib/website/twitter.php:32 lib/website/vk.php:32
+#: lib/website/whatsapp.php:32
 msgctxt "option label"
 msgid "Allow for Platform"
 msgstr ""
 
-#: lib/website/email.php:41
+#: lib/website/email.php:36
 msgctxt "option label"
 msgid "Email Message Length"
 msgstr ""
 
-#: lib/website/email.php:44 lib/website/linkedin.php:44
-#: lib/website/pinterest.php:62 lib/website/reddit.php:44
-#: lib/website/tumblr.php:44 lib/website/twitter.php:44
+#: lib/website/email.php:38 lib/website/linkedin.php:38
+#: lib/website/pinterest.php:55 lib/website/reddit.php:38
+#: lib/website/tumblr.php:38 lib/website/twitter.php:38
 msgctxt "option comment"
 msgid "characters or less"
 msgstr ""
 
-#: lib/website/email.php:47
+#: lib/website/email.php:41
 msgctxt "option label"
 msgid "Append Hashtags to Message"
 msgstr ""
 
-#: lib/website/email.php:51 lib/website/linkedin.php:51
-#: lib/website/pinterest.php:69 lib/website/reddit.php:51
-#: lib/website/tumblr.php:51 lib/website/twitter.php:51
+#: lib/website/email.php:44 lib/website/linkedin.php:44
+#: lib/website/pinterest.php:61 lib/website/reddit.php:44
+#: lib/website/tumblr.php:44 lib/website/twitter.php:44
 msgctxt "option comment"
 msgid "tag names"
 msgstr ""
 
-#: lib/website/linkedin.php:41 lib/website/pinterest.php:59
-#: lib/website/reddit.php:41
+#: lib/website/linkedin.php:36 lib/website/pinterest.php:53
+#: lib/website/reddit.php:36
 msgctxt "option label"
 msgid "Caption Text Length"
 msgstr ""
 
-#: lib/website/linkedin.php:47 lib/website/pinterest.php:65
-#: lib/website/reddit.php:47
+#: lib/website/linkedin.php:41 lib/website/pinterest.php:58
+#: lib/website/reddit.php:41
 msgctxt "option label"
 msgid "Append Hashtags to Caption"
 msgstr ""
@@ -429,37 +429,37 @@ msgctxt "option label"
 msgid "Pinterest <em>Sharing Button</em>"
 msgstr ""
 
-#: lib/website/pinterest.php:54
+#: lib/website/pinterest.php:49
 msgctxt "option label"
 msgid "Image Dimensions"
 msgstr ""
 
-#: lib/website/pinterest.php:130
+#: lib/website/pinterest.php:122
 msgctxt "image size label"
 msgid "Pinterest Sharing Button"
 msgstr ""
 
-#: lib/website/tumblr.php:41
+#: lib/website/tumblr.php:36
 msgctxt "option label"
 msgid "Summary Text Length"
 msgstr ""
 
-#: lib/website/tumblr.php:47
+#: lib/website/tumblr.php:41
 msgctxt "option label"
 msgid "Append Hashtags to Summary"
 msgstr ""
 
-#: lib/website/twitter.php:41
+#: lib/website/twitter.php:36
 msgctxt "option label"
 msgid "Tweet Text Length"
 msgstr ""
 
-#: lib/website/twitter.php:47
+#: lib/website/twitter.php:41
 msgctxt "option label"
 msgid "Append Hashtags to Tweet"
 msgstr ""
 
-#: lib/website/twitter.php:57
+#: lib/website/twitter.php:50
 msgctxt "option label"
 msgid "Recommend Author @username"
 msgstr ""

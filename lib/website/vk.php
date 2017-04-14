@@ -22,20 +22,15 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteVk' ) ) {
 
 		public function filter_rrssb_website_vk_rows( $table_rows, $form, $submenu ) {
 
-			$table_rows[] = $form->get_th_html( _x( 'Preferred Order',
-				'option label', 'wpsso-rrssb' ), null, 'vk_order' ).
-			'<td>'.$form->get_select( 'vk_order', 
-				range( 1, count( $submenu->website ) ), 'short' ).  '</td>';
-
-			$table_rows[] = $form->get_th_html( _x( 'Show Button in',
-				'option label', 'wpsso-rrssb' ) ).
+			$table_rows[] = $form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$submenu->show_on_checkboxes( 'vk' ).'</td>';
 
+			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ).
+			'<td>'.$form->get_select( 'vk_order', range( 1, count( $submenu->website ) ) ).'</td>';
+
 			$table_rows[] = '<tr class="hide_in_basic">'.
-			$form->get_th_html( _x( 'Allow for Platform',
-				'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'vk_platform',
-				$this->p->cf['sharing']['platform'] ).'</td>';
+			$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
+			'<td>'.$form->get_select( 'vk_platform', $this->p->cf['sharing']['platform'] ).'</td>';
 
 			$table_rows[] = '<tr class="hide_in_basic">'.
 			'<td colspan="2">'.$form->get_textarea( 'vk_rrssb_html', 'average code' ).'</td>';
