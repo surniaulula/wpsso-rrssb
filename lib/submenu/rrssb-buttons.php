@@ -68,7 +68,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			}
 
 			// close all website metaboxes by default
-			NgfbUser::reset_metabox_prefs( $this->pagehook, array_keys( $website_ids ), 'closed' );
+			WpssoUser::reset_metabox_prefs( $this->pagehook, array_keys( $website_ids ), 'closed' );
 		}
 
 		public function add_class_postbox_rrssb_website( $classes ) {
