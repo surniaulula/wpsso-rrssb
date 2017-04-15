@@ -50,9 +50,9 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 					array( &$this, 'show_metabox_rrssb_buttons' ),
 						$this->pagehook, 'normal' );
 
-			$website_ids = $this->p->rrssb_sharing->get_website_object_ids( $this->website );
+			$ids = $this->p->rrssb_sharing->get_website_object_ids( $this->website );
 
-			foreach ( $website_ids as $id => $name ) {
+			foreach ( $ids as $id => $name ) {
 
 				$name = $name == 'GooglePlus' ? 'Google+' : $name;
 				$pos_id = 'normal';
@@ -68,14 +68,15 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			}
 
 			// close all website metaboxes by default
-			WpssoUser::reset_metabox_prefs( $this->pagehook, array_keys( $website_ids ), 'closed' );
+			WpssoUser::reset_metabox_prefs( $this->pagehook, array_keys( $ids ), 'closed' );
 		}
 
 		public function add_class_postbox_rrssb_website( $classes ) {
 			$show_opts = WpssoUser::show_opts();
 			$classes[] = 'postbox-rrssb_website';
-			if ( ! empty( $show_opts ) )
+			if ( ! empty( $show_opts ) ) {
 				$classes[] = 'postbox-show_'.$show_opts;
+			}
 			return $classes;
 		}
 
@@ -95,6 +96,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 		}
 
 		public function show_metabox_rrssb_website( $post, $callback ) {
+
 			$lca = $this->p->cf['lca'];
 			$args = $callback['args'];
 			$metabox = 'rrssb_website';
@@ -157,6 +159,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 		}
 
 		public function show_on_checkboxes( $opt_prefix ) {
+
 			$col = 0;
 			$max = 6;
 			$html = '<table>';
@@ -166,22 +169,31 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 				$this->p->cf['sharing']['show_on'], $opt_prefix );
 
 			foreach ( $show_on as $opt_suffix => $short_desc ) {
-				$col++;
-				$class = isset( $this->p->options[$opt_prefix.'_on_'.$opt_suffix.':is'] ) &&
+				$css_class = isset( $this->p->options[$opt_prefix.'_on_'.$opt_suffix.':is'] ) &&
 					$this->p->options[$opt_prefix.'_on_'.$opt_suffix.':is'] === 'disabled' &&
 						! $aop ? 'show_on blank' : 'show_on';
-				if ( $col == 1 )
-					$html .= '<tr><td class="'.$class.'">';
-				else $html .= '<td class="'.$class.'">';
+
+				$col++;
+				if ( $col == 1 ) {
+					$html .= '<tr><td class="'.$css_class.'">';
+				} else {
+					$html .= '<td class="'.$css_class.'">';
+				}
+
 				$html .= $this->form->get_checkbox( $opt_prefix.'_on_'.$opt_suffix ).
 					_x( $short_desc, 'option value', 'wpsso-rrssb' ).'&nbsp; ';
+
 				if ( $col == $max ) {
 					$html .= '</td></tr>';
 					$col = 0;
-				} else $html .= '</td>';
+				} else {
+					$html .= '</td>';
+				}
 			}
+
 			$html .= $col < $max ? '</tr>' : '';
 			$html .= '</table>';
+
 			return $html;
 		}
 	}

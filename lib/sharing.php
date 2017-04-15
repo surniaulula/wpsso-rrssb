@@ -139,6 +139,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function filter_get_defaults( $def_opts ) {
+
 			$def_opts = array_merge( $def_opts, self::$cf['opt']['defaults'] );
 			$def_opts = $this->p->util->add_ptns_to_opts( $def_opts, 'buttons_add_to', 1 );
 			$plugin_dir = trailingslashit( realpath( dirname( $this->plugin_filepath ) ) );
@@ -156,15 +157,15 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 						$this->p->notice->err( sprintf( __( 'Failed to open the %s file for reading.',
 							'wpsso-rrssb' ), $buttons_css_file ) );
 					} else {
-						$css_data = fread( $fh, filesize( $buttons_css_file ) );
+						$buttons_css_data = fread( $fh, filesize( $buttons_css_file ) );
 						fclose( $fh );
 						if ( $this->p->debug->enabled ) {
 							$this->p->debug->log( 'read css from file '.$buttons_css_file );
 						}
 						foreach ( array( 'plugin_url_path' => $url_path ) as $macro => $value ) {
-							$css_data = preg_replace( '/%%'.$macro.'%%/', $value, $css_data );
+							$buttons_css_data = preg_replace( '/%%'.$macro.'%%/', $value, $buttons_css_data );
 						}
-						$def_opts['buttons_css_'.$id] = $css_data;
+						$def_opts['buttons_css_'.$id] = $buttons_css_data;
 					}
 				}
 			}
@@ -268,7 +269,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 			$this->update_sharing_css( $opts );
 			$this->p->opt->save_options( WPSSO_OPTIONS_NAME, $opts, false );
-			$this->p->notice->upd( __( 'All sharing styles have been reloaded with their default value and saved.', 'wpsso-rrssb' ) );
+			$this->p->notice->upd( __( 'All sharing styles have been reloaded with their default value and saved.',
+				'wpsso-rrssb' ) );
 		}
 
 		public function wp_enqueue_styles() {
@@ -314,79 +316,77 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				return;
 			}
 
-			$css_data = '';
+			$sharing_css_data = '';
 			$tabs = apply_filters( $this->p->cf['lca'].'_rrssb_styles_tabs', 
 				$this->p->cf['sharing']['rrssb-styles'] );
 
 			foreach ( $tabs as $id => $name ) {
 				if ( isset( $opts['buttons_css_'.$id] ) ) {
-					$css_data .= $opts['buttons_css_'.$id];
+					$sharing_css_data .= $opts['buttons_css_'.$id];
 				}
 			}
 
-			$classname = apply_filters( $this->p->cf['lca'].'_load_lib', 
-				false, 'ext/compressor', 'SuextMinifyCssCompressor' );
-
-			if ( $classname !== false && class_exists( $classname ) ) {
-				$css_data = call_user_func( array( $classname, 'process' ), $css_data );
-			} else {
-				if ( $this->p->debug->enabled ) {
-					$this->p->debug->log( 'failed to load minify class SuextMinifyCssCompressor' );
-				}
-				if ( is_admin() ) {
-					$this->p->notice->err( __( 'Failed to load the minify class SuextMinifyCssCompressor.',
-						'wpsso-rrssb' ) );
-				}
-			}
+			$sharing_css_data = SucomUtil::minify_css( $sharing_css_data, $lca );
 
 			if ( $fh = @fopen( self::$sharing_css_file, 'wb' ) ) {
-				if ( ( $written = fwrite( $fh, $css_data ) ) === false ) {
-					if ( $this->p->debug->enabled )
+				if ( ( $written = fwrite( $fh, $sharing_css_data ) ) === false ) {
+					if ( $this->p->debug->enabled ) {
 						$this->p->debug->log( 'failed writing to '.self::$sharing_css_file );
-					if ( is_admin() )
+					}
+					if ( is_admin() ) {
 						$this->p->notice->err( sprintf( __( 'Failed writing to the % file.',
 							'wpsso-rrssb' ), self::$sharing_css_file ) );
+					}
 				} elseif ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'updated css file '.self::$sharing_css_file.' ('.$written.' bytes written)' );
-					if ( is_admin() )
+					if ( is_admin() ) {
 						$this->p->notice->upd( sprintf( __( 'Updated the <a href="%1$s">%2$s</a> stylesheet (%3$d bytes written).',
 							'wpsso-rrssb' ), self::$sharing_css_url, self::$sharing_css_file, $written ), 
-								true, 'updated_'.self::$sharing_css_file, true );
+								true, 'updated_'.self::$sharing_css_file, true );	// allow dismiss
+					}
 				}
 				fclose( $fh );
 			} else {
 				if ( ! is_writable( WPSSO_CACHEDIR ) ) {
-					if ( $this->p->debug->enabled )
+					if ( $this->p->debug->enabled ) {
 						$this->p->debug->log( WPSSO_CACHEDIR.' is not writable', true );
-					if ( is_admin() )
+					}
+					if ( is_admin() ) {
 						$this->p->notice->err( sprintf( __( 'The %s folder is not writable.',
 							'wpsso-rrssb' ), WPSSO_CACHEDIR ) );
+					}
 				}
-				if ( $this->p->debug->enabled )
+				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'failed opening '.self::$sharing_css_file.' for writing' );
-				if ( is_admin() )
+				}
+				if ( is_admin() ) {
 					$this->p->notice->err( sprintf( __( 'Failed to open file %s for writing.',
 						'wpsso-rrssb' ), self::$sharing_css_file ) );
+				}
 			}
 		}
 
 		public function unlink_sharing_css() {
 			if ( file_exists( self::$sharing_css_file ) ) {
 				if ( ! @unlink( self::$sharing_css_file ) ) {
-					if ( is_admin() )
-						$this->p->notice->err( __( 'Error removing the minimized stylesheet &mdash; does the web server have sufficient privileges?', 'wpsso-rrssb' ) );
+					if ( is_admin() ) {
+						$this->p->notice->err( __( 'Error removing the minimized stylesheet &mdash; does the web server have sufficient privileges?',
+							'wpsso-rrssb' ) );
+					}
 				}
 			}
 		}
 
 		public function add_post_buttons_metabox() {
-			if ( ! is_admin() )
+			if ( ! is_admin() ) {
 				return;
+			}
 
 			// get the current object / post type
 			if ( ( $post_obj = SucomUtil::get_post_object() ) === false ) {
-				if ( $this->p->debug->enabled )
+				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'exiting early: invalid post object' );
+				}
 				return;
 			}
 
@@ -414,8 +414,9 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function show_sidebar() {
-			if ( $this->p->debug->enabled )
+			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
+			}
 			$lca = $this->p->cf['lca'];
 			echo $this->get_buttons( '', 'sidebar', false, '', array( 'container_each' => true ) );	// $use_post = false
 		}
@@ -425,21 +426,15 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				$this->p->debug->mark();
 			}
 			$lca = $this->p->cf['lca'];
-			$css_data = '#side-sortables #_'.$lca.'_rrssb_share .inside table.sucom-settings { padding:0; }'.
+			$sharing_css_data = '#side-sortables #_'.$lca.'_rrssb_share .inside table.sucom-settings { padding:0; }'.
 				$this->p->options['buttons_css_rrssb-admin_edit'];
+			$sharing_css_data = SucomUtil::minify_css( $sharing_css_data, $lca );
 
-			$classname = apply_filters( $lca.'_load_lib', false, 'ext/compressor', 'SuextMinifyCssCompressor' );
-
-			if ( $classname !== false && class_exists( $classname ) ) {
-				$css_data = call_user_func( array( $classname, 'process' ), $css_data );
-			}
-
-			echo '<style type="text/css">'.$css_data.'</style>', "\n";
-			echo '<table class="sucom-settings '.$this->p->cf['lca'].' side"><tr><td>';
+			echo '<style type="text/css">'.$sharing_css_data.'</style>', "\n";
+			echo '<table class="sucom-settings '.$lca.' side"><tr><td>';
 
 			if ( get_post_status( $post_obj->ID ) === 'publish' || $post_obj->post_type === 'attachment' ) {
-				$content = '';
-				echo $this->get_buttons( $content, 'admin_edit' );
+				echo $this->get_buttons( '', 'admin_edit' );
 			} else {
 				echo '<p class="centered">'.sprintf( __( '%s must be published<br/>before it can be shared.',
 					'wpsso-rrssb' ), SucomUtil::titleize( $post_obj->post_type ) ).'</p>';
@@ -452,11 +447,13 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			$added = false;
 			if ( method_exists( $this, 'get_buttons_'.$filter_name ) ) {
 				$added = add_filter( $filter_name, array( &$this, 'get_buttons_'.$filter_name ), WPSSORRSSB_SOCIAL_PRIORITY );
-				if ( $this->p->debug->enabled )
+				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'buttons filter '.$filter_name.
 						' added ('.( $added  ? 'true' : 'false' ).')' );
-			} elseif ( $this->p->debug->enabled )
+				}
+			} elseif ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'get_buttons_'.$filter_name.' method is missing' );
+			}
 			return $added;
 		}
 
@@ -499,21 +496,25 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 			$error_msg = false;
 			if ( is_admin() ) {
-				if ( strpos( $type, 'admin_' ) !== 0 )
+				if ( strpos( $type, 'admin_' ) !== 0 ) {
 					$error_msg = $type.' ignored in back-end';
+				}
 			} elseif ( SucomUtil::is_amp() ) {
 				$error_msg = 'buttons not allowed in amp endpoint';
 			} elseif ( is_feed() ) {
 				$error_msg = 'buttons not allowed in rss feeds';
 			} elseif ( ! is_singular() ) {
-				if ( empty( $this->p->options['buttons_on_index'] ) )
+				if ( empty( $this->p->options['buttons_on_index'] ) ) {
 					$error_msg = 'buttons_on_index not enabled';
+				}
 			} elseif ( is_front_page() ) {
-				if ( empty( $this->p->options['buttons_on_front'] ) )
+				if ( empty( $this->p->options['buttons_on_front'] ) ) {
 					$error_msg = 'buttons_on_front not enabled';
+				}
 			} elseif ( is_singular() ) {
-				if ( $this->is_post_buttons_disabled() )
+				if ( $this->is_post_buttons_disabled() ) {
 					$error_msg = 'post buttons are disabled';
+				}
 			}
 
 			if ( ! $this->have_buttons_for_type( $type ) )
