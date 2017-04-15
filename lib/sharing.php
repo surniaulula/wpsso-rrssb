@@ -316,9 +316,9 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				return;
 			}
 
+			$lca = $this->p->cf['lca'];
+			$tabs = apply_filters( $lca.'_rrssb_styles_tabs', $this->p->cf['sharing']['rrssb-styles'] );
 			$sharing_css_data = '';
-			$tabs = apply_filters( $this->p->cf['lca'].'_rrssb_styles_tabs', 
-				$this->p->cf['sharing']['rrssb-styles'] );
 
 			foreach ( $tabs as $id => $name ) {
 				if ( isset( $opts['buttons_css_'.$id] ) ) {
