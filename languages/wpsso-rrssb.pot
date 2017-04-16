@@ -497,7 +497,7 @@ msgid "WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "https://surniaulula.com/extend/plugins/wpsso-rrssb/"
+msgid "https://wpsso.com/extend/plugins/wpsso-rrssb/"
 msgstr ""
 
 #. Description of the plugin/theme
