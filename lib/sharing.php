@@ -30,7 +30,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					 * Advanced Settings
 					 */
 					// Cache Settings Tab
-					'plugin_sharing_buttons_cache_exp' => 604800,	// Sharing Buttons Cache Expiry (7 days)
+					'plugin_sharing_buttons_cache_exp' => WEEK_IN_SECONDS,	// Sharing Buttons Cache Expiry (7 days)
 					/*
 					 * Sharing Buttons
 					 */
@@ -57,7 +57,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					'buttons_css_rrssb-widget' => '',
 				),	// end of defaults
 				'site_defaults' => array(
-					'plugin_sharing_buttons_cache_exp' => 604800,	// Sharing Buttons Cache Expiry (7 days)
+					'plugin_sharing_buttons_cache_exp' => WEEK_IN_SECONDS,	// Sharing Buttons Cache Expiry (7 days)
 					'plugin_sharing_buttons_cache_exp:use' => 'default',
 				),	// end of site defaults
 			),
