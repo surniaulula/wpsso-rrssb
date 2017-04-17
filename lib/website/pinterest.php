@@ -135,7 +135,7 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 				$atts['size'] = $this->p->cf['lca'].'-pinterest-button';
 
 			if ( ! empty( $atts['pid'] ) ) {
-				$force_regen = $this->p->util->is_force_regen( $mod, 'rp' );	// false by default
+				$force_regen = $this->p->util->is_force_regen( $mod, 'p' );	// false by default
 
 				list(
 					$atts['photo'],
@@ -150,7 +150,7 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 			}
 
 			if ( empty( $atts['photo'] ) ) {
-				$media_info = $this->p->og->get_media_info( $atts['size'], array( 'img_url' ), $mod, 'rp' );
+				$media_info = $this->p->og->get_media_info( $atts['size'], array( 'img_url' ), $mod, 'p' );
 				$atts['photo'] = $media_info['img_url'];
 				if ( empty( $atts['photo'] ) ) {
 					if ( $this->p->debug->enabled )
