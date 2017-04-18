@@ -133,7 +133,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = Changelog / Release Notes =
 
-**Version 1.4.17-dev.2 (2017/04/18)**
+**Version 1.4.17-dev.3 (2017/04/18)**
 
 * *New Features*
 	* None
@@ -225,7 +225,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.4.17-dev.2 =
+= 1.4.17-dev.3 =
 
 (2017/04/18) Updated all Pinterest option key prefixes from 'rp' to 'p' for WPSSO v3.40.14.
 
