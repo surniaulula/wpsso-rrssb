@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) 1.4.16\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) 1.4.17\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2017-04-15 11:23+0200\n"
-"PO-Revision-Date: 2017-04-15 11:23+0200\n"
+"POT-Creation-Date: 2017-04-18 10:44+0200\n"
+"PO-Revision-Date: 2017-04-18 10:45+0200\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -459,8 +459,8 @@ msgid "WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)"
 msgstr "WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)"
 
 #. Plugin URI of the plugin/theme
-msgid "https://surniaulula.com/extend/plugins/wpsso-rrssb/"
-msgstr "https://surniaulula.com/extend/plugins/wpsso-rrssb/"
+msgid "https://wpsso.com/extend/plugins/wpsso-rrssb/"
+msgstr "https://wpsso.com/extend/plugins/wpsso-rrssb/"
 
 #. Description of the plugin/theme
 msgid "WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc."
