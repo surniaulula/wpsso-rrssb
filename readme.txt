@@ -143,6 +143,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* None
 * *Developer Notes*
 	* Updated all Pinterest option key prefixes from 'rp' to 'p' for WPSSO v3.41.0.
+	* Added support for the new WPSSO_VARY_USER_AGENT_DISABLE constant in WPSSO v3.41.0.
 
 **Version 1.4.16 (2017/04/16)**
 
@@ -227,7 +228,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 1.4.17-dev.4 =
 
-(2017/04/18) Updated all Pinterest option key prefixes from 'rp' to 'p' for WPSSO v3.41.0.
+(2017/04/18) Updated all Pinterest option key prefixes and added support for a new constant in WPSSO v3.41.0.
 
 = 1.4.16 =
 
