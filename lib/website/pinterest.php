@@ -42,9 +42,11 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsitePinterest' ) ) {
 			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_select( 'pin_order', range( 1, count( $submenu->website ) ) ).'</td>';
 
-			$table_rows[] = '<tr class="hide_in_basic">'.
-			$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'pin_platform', $this->p->cf['sharing']['platform'] ).'</td>';
+			if ( ! SucomUtil::get_const( 'WPSSO_VARY_USER_AGENT_DISABLE' ) ) {
+				$table_rows[] = '<tr class="hide_in_basic">'.
+				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
+				'<td>'.$form->get_select( 'pin_platform', $this->p->cf['sharing']['platform'] ).'</td>';
+			}
 
 			$table_rows[] = $form->get_th_html( _x( 'Image Dimensions', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_image_dimensions_input( 'pin_img' ).'</td>';	// $use_opts = false
@@ -159,10 +161,12 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 				}
 			}
 
-			if ( SucomUtil::is_mobile() )
+			if ( SucomUtil::get_const( 'WPSSO_VARY_USER_AGENT_DISABLE' ) || SucomUtil::is_mobile() ) {
 				$pinterest_button_html = $this->p->options['pin_rrssb_html'];
-			else $pinterest_button_html = preg_replace( '/(\/create)\/(button\/)/', '$1/+/$2', 
-				$this->p->options['pin_rrssb_html'] );
+			} else {
+				$pinterest_button_html = preg_replace( '/(\/create)\/(button\/)/', '$1/+/$2', 
+					$this->p->options['pin_rrssb_html'] );
+			}
 
 			return $this->p->util->replace_inline_vars( '<!-- Pinterest Button -->'.
 				$pinterest_button_html, $mod, $atts, array(

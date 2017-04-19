@@ -107,7 +107,6 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					'option_type' => 2,			// identify option type for sanitation
 					'post_social_settings_tabs' => 2,	// $tabs, $mod
 					'post_cache_transients' => 3,		// clear transients on post save
-					'secondary_action_buttons' => 4,	// add a reload default styles button
 					'messages_info' => 2,
 					'messages_tooltip' => 2,
 					'messages_tooltip_plugin' => 2,
@@ -250,13 +249,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			return $features;
 		}
 
-		public function filter_secondary_action_buttons( $actions, $menu_id, $menu_name, $menu_lib ) {
-			if ( $menu_id === 'rrssb-styles' )
-				$actions['reload_default_sharing_rrssb_styles'] = __( 'Reload Default Styles', 'submit button', 'wpsso-rrssb' );
-			return $actions;
-		}
-		
 		public function action_load_setting_page_reload_default_sharing_rrssb_styles( $pagehook, $menu_id, $menu_name, $menu_lib ) {
+
 			$opts =& $this->p->options;
 			$def_opts = $this->p->opt->get_defaults();
 			$tabs = apply_filters( $this->p->cf['lca'].'_rrssb_styles_tabs', 
@@ -617,12 +611,14 @@ $buttons_array[$buttons_index].
 		}
 
 		public function get_buttons_cache_index( $type, $atts = false, $ids = false ) {
-			if ( $this->p->debug->enabled )
+			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
+			}
 			return 'locale:'.SucomUtil::get_locale( 'current' ).
 				'_type:'.( empty( $type ) ? 'none' : $type ).
 				'_https:'.( SucomUtil::is_https() ? 'true' : 'false' ).
-				'_mobile:'.( SucomUtil::is_mobile() ? 'true' : 'false' ).
+				( SucomUtil::get_const( 'WPSSO_VARY_USER_AGENT_DISABLE' ) ?
+					'' : '_mobile:'.( SucomUtil::is_mobile() ? 'true' : 'false' ) ).
 				( $atts !== false ? '_atts:'.http_build_query( $atts, '', '_' ) : '' ).
 				( $ids !== false ? '_ids:'.http_build_query( $ids, '', '_' ) : '' );
 		}
@@ -688,19 +684,29 @@ $buttons_array[$buttons_index].
 		}
 
 		public function have_buttons_for_type( $type ) {
-			if ( isset( $this->buttons_for_type[$type] ) )
+			if ( isset( $this->buttons_for_type[$type] ) ) {
 				return $this->buttons_for_type[$type];
+			}
+
 			foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre ) {
 				if ( ! empty( $this->p->options[$opt_pre.'_on_'.$type] ) &&	// check if button is enabled
 					$this->allow_for_platform( $id ) )			// check if allowed on platform
 						return $this->buttons_for_type[$type] = true;
 			}
+
 			return $this->buttons_for_type[$type] = false;
 		}
 
 		public function allow_for_platform( $id ) {
+
+			// always return allow if the content does not vary by user agent
+			if ( SucomUtil::get_const( 'WPSSO_VARY_USER_AGENT_DISABLE' ) ) {
+				return true;
+			}
+
 			$opt_pre = isset( $this->p->cf['opt']['cm_prefix'][$id] ) ?
 				$this->p->cf['opt']['cm_prefix'][$id] : $id;
+
 			if ( isset( $this->p->options[$opt_pre.'_platform'] ) ) {
 				switch( $this->p->options[$opt_pre.'_platform'] ) {
 					case 'any':
@@ -713,6 +719,7 @@ $buttons_array[$buttons_index].
 						return true;
 				}
 			}
+
 			return true;
 		}
 
