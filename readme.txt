@@ -133,7 +133,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = Changelog / Release Notes =
 
-**Version 1.4.17-b.1 (2017/04/20)**
+**Version 1.4.17-a.1 (2017/04/21)**
 
 * *New Features*
 	* None
@@ -226,9 +226,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.4.17-b.1 =
+= 1.4.17-a.1 =
 
-(2017/04/20) Updated all Pinterest option key prefixes and added support for a new constant in WPSSO v3.41.0.
+(2017/04/21) Updated all Pinterest option key prefixes and added support for a new constant in WPSSO v3.41.0.
 
 = 1.4.16 =
 
