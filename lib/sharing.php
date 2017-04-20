@@ -738,14 +738,16 @@ $buttons_array[$buttons_index].
 			if ( isset( $this->post_buttons_disabled[$post_id] ) )
 				return $this->post_buttons_disabled[$post_id];
 
+			// get_options() returns null if an index key is not found
 			if ( $this->p->m['util']['post']->get_options( $post_id, 'buttons_disabled' ) ) {
-				if ( $this->p->debug->enabled )
+				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'post '.$post_id.': sharing buttons disabled by meta data option' );
+				}
 				$ret = true;
-			} elseif ( ! empty( $post_obj->post_type ) && 
-				empty( $this->p->options['buttons_add_to_'.$post_obj->post_type] ) ) {
-				if ( $this->p->debug->enabled )
+			} elseif ( ! empty( $post_obj->post_type ) && empty( $this->p->options['buttons_add_to_'.$post_obj->post_type] ) ) {
+				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'post '.$post_id.': sharing buttons not enabled for post type '.$post_obj->post_type );
+				}
 				$ret = true;
 			}
 
