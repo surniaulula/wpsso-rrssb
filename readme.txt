@@ -142,8 +142,8 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * *Bugfixes*
 	* None
 * *Developer Notes*
-	* Renamed the $is_avail array to $avail for WPSSO v3.42.0.
-	* Replaced WPSSO_VARY_USER_AGENT_DISABLE constant checks by $avail['*']['vary_ua'].
+	* Code refactoring to rename the $is_avail array to $avail for WPSSO v3.42.0.
+	* Replaced WPSSO_VARY_USER_AGENT_DISABLE constant checks by $avail array checks.
 
 **Version 1.4.17 (2017/04/22)**
 
@@ -237,6 +237,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Maintenance release.
 
 == Upgrade Notice ==
+
+= 1.4.18-dev.1 =
+
+(2017/04/24) Code refactoring to rename the $is_avail array to $avail, and replace the WPSSO_VARY_USER_AGENT_DISABLE constant checks by $avail array checks for WPSSO v3.42.0.
 
 = 1.4.17 =
 
