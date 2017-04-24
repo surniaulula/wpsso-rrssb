@@ -28,7 +28,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteLinkedin' ) ) {
 			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_select( 'linkedin_order', range( 1, count( $submenu->website ) ) ).'</td>';
 
-			if ( ! SucomUtil::get_const( 'WPSSO_VARY_USER_AGENT_DISABLE' ) ) {
+			if ( $this->p->avail['*']['vary_ua'] ) {
 				$table_rows[] = '<tr class="hide_in_basic">'.
 				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
 				'<td>'.$form->get_select( 'linkedin_platform', $this->p->cf['sharing']['platform'] ).'</td>';
@@ -104,9 +104,9 @@ if ( ! class_exists( 'WpssoRrssbWebsiteLinkedin' ) ) {
 
 			return $this->p->util->replace_inline_vars( '<!-- LinkedIn Button -->'.
 				$this->p->options['linkedin_rrssb_html'], $mod, $atts, array(
-				 	'linkedin_title' => rawurlencode( $this->p->webpage->get_caption( 'title', 0,
+				 	'linkedin_title' => rawurlencode( $this->p->page->get_caption( 'title', 0,
 						$mod, true, false, false, 'linkedin_title', 'linkedin' ) ),
-				 	'linkedin_caption' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['linkedin_cap_len'],
+				 	'linkedin_caption' => rawurlencode( $this->p->page->get_caption( 'excerpt', $opts['linkedin_cap_len'],
 						$mod, true, $atts['add_hashtags'], false, 'linkedin_desc', 'linkedin' ) ),
 				 )
 			 );

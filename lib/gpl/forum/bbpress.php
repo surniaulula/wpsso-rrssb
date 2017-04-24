@@ -24,7 +24,7 @@ if ( ! class_exists( 'WpssoRrssbGplForumBbpress' ) ) {
 			}
 
 			if ( class_exists( 'bbpress' ) ) {	// is_bbpress() is not available here
-				if ( ! empty( $this->p->is_avail['p_ext']['rrssb'] ) ) {
+				if ( ! empty( $this->p->avail['p_ext']['rrssb'] ) ) {
 					$classname = __CLASS__.'Sharing';
 					if ( class_exists( $classname ) ) {
 						$this->sharing = new $classname( $this->p );

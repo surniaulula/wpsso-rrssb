@@ -42,7 +42,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsitePinterest' ) ) {
 			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_select( 'pin_order', range( 1, count( $submenu->website ) ) ).'</td>';
 
-			if ( ! SucomUtil::get_const( 'WPSSO_VARY_USER_AGENT_DISABLE' ) ) {
+			if ( $this->p->avail['*']['vary_ua'] ) {
 				$table_rows[] = '<tr class="hide_in_basic">'.
 				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
 				'<td>'.$form->get_select( 'pin_platform', $this->p->cf['sharing']['platform'] ).'</td>';
@@ -161,7 +161,7 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 				}
 			}
 
-			if ( SucomUtil::get_const( 'WPSSO_VARY_USER_AGENT_DISABLE' ) || SucomUtil::is_mobile() ) {
+			if ( ! $this->p->avail['*']['vary_ua'] || SucomUtil::is_mobile() ) {
 				$pinterest_button_html = $this->p->options['pin_rrssb_html'];
 			} else {
 				$pinterest_button_html = preg_replace( '/(\/create)\/(button\/)/', '$1/+/$2', 
@@ -171,7 +171,7 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 			return $this->p->util->replace_inline_vars( '<!-- Pinterest Button -->'.
 				$pinterest_button_html, $mod, $atts, array(
 					'media_url' => rawurlencode( $atts['photo'] ),
-				 	'pinterest_caption' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['pin_cap_len'],
+				 	'pinterest_caption' => rawurlencode( $this->p->page->get_caption( 'excerpt', $opts['pin_cap_len'],
 						$mod, true, $atts['add_hashtags'], false, 'pin_desc', 'pinterest' ) ),
 				)
 			);

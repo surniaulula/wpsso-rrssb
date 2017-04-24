@@ -28,7 +28,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteTwitter' ) ) {
 			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_select( 'twitter_order', range( 1, count( $submenu->website ) ) ).'</td>';
 
-			if ( ! SucomUtil::get_const( 'WPSSO_VARY_USER_AGENT_DISABLE' ) ) {
+			if ( $this->p->avail['*']['vary_ua'] ) {
 				$table_rows[] = '<tr class="hide_in_basic">'.
 				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
 				'<td>'.$form->get_select( 'twitter_platform', $this->p->cf['sharing']['platform'] ).'</td>';
@@ -136,7 +136,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 
 			$extra_inline_vars = array();
 
-			if ( SucomUtil::get_const( 'WPSSO_VARY_USER_AGENT_DISABLE' ) || SucomUtil::is_mobile() ) {
+			if ( ! $this->p->avail['*']['vary_ua'] || SucomUtil::is_mobile() ) {
 				$twitter_button_html = $this->p->options['twitter_rrssb_html'];
 			} else {
 				$twitter_button_html = preg_replace( '/(\/intent)\/(tweet\?)/', '$1/+/$2', 

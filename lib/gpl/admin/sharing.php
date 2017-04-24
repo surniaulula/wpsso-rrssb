@@ -51,7 +51,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			}
 
 			$size_info = SucomUtil::get_size_info( 'thumbnail' );
-			$title_caption = $this->p->webpage->get_caption( 'title', 0, $mod, true, false );
+			$title_caption = $this->p->page->get_caption( 'title', 0, $mod, true, false );
 
 			$table_rows[] = '<td colspan="3" align="center">'.
 				$this->p->msgs->get( 'pro-feature-msg', 
@@ -61,7 +61,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			 * Email
 			 */
 			$caption_len = $this->p->options['email_cap_len'];
-			$caption_text = $this->p->webpage->get_caption( 'excerpt', $caption_len, 
+			$caption_text = $this->p->page->get_caption( 'excerpt', $caption_len, 
 				$mod, true, $this->p->options['email_cap_hashtags'], true, 'none' );
 
 			$form_rows['email_title'] = array(
@@ -79,7 +79,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			 * Twitter
 			 */
 			$caption_len = $this->p->rrssb_sharing->get_tweet_max_len();
-			$caption_text = $this->p->webpage->get_caption( 'title', $caption_len, 
+			$caption_text = $this->p->page->get_caption( 'title', $caption_len, 
 				$mod, true, $this->p->options['twitter_cap_hashtags'] );
 
 			$form_rows['twitter_desc'] = array(
@@ -92,7 +92,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			 * Pinterest
 			 */
 			$caption_len = $this->p->options['pin_cap_len'];
-			$caption_text = $this->p->webpage->get_caption( 'excerpt', $caption_len, $mod, true, $this->p->options['pin_cap_hashtags'] );
+			$caption_text = $this->p->page->get_caption( 'excerpt', $caption_len, $mod, true, $this->p->options['pin_cap_hashtags'] );
 			$force_regen = $this->p->util->is_force_regen( $mod, 'p' );	// false by default
 			$media = $this->p->og->get_media_info( $this->p->cf['lca'].'-pinterest-button',
 				array( 'pid', 'img_url' ), $mod, 'p' );
@@ -125,7 +125,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			) as $opt_prefix => $name ) {
 
 				$caption_len = $this->p->options[$opt_prefix.'_cap_len'];
-				$caption_text = $this->p->webpage->get_caption( 'excerpt', $caption_len,
+				$caption_text = $this->p->page->get_caption( 'excerpt', $caption_len,
 					$mod, true, $this->p->options[$opt_prefix.'_cap_hashtags'] );
 
 				$form_rows[$opt_prefix.'_title'] = array(

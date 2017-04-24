@@ -28,7 +28,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteEmail' ) ) {
 			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_select( 'email_order', range( 1, count( $submenu->website ) ) ).'</td>';
 
-			if ( ! SucomUtil::get_const( 'WPSSO_VARY_USER_AGENT_DISABLE' ) ) {
+			if ( $this->p->avail['*']['vary_ua'] ) {
 				$table_rows[] = '<tr class="hide_in_basic">'.
 				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
 				'<td>'.$form->get_select( 'email_platform', $this->p->cf['sharing']['platform'] ).'</td>';
@@ -104,9 +104,9 @@ if ( ! class_exists( 'WpssoRrssbWebsiteEmail' ) ) {
 
 			return $this->p->util->replace_inline_vars( '<!-- Email Button -->'.
 				$this->p->options['email_rrssb_html'], $mod, $atts, array(
-				 	'email_title' => rawurlencode( $this->p->webpage->get_title( 0, '',
+				 	'email_title' => rawurlencode( $this->p->page->get_title( 0, '',
 						$mod, true, false, false, 'email_title', 'email' ) ),
-			 		'email_excerpt' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['email_cap_len'],
+			 		'email_excerpt' => rawurlencode( $this->p->page->get_caption( 'excerpt', $opts['email_cap_len'],
 						$mod, true, $atts['add_hashtags'], false, 'email_desc', 'email' ) ),
 				 )
 			 );

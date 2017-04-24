@@ -28,7 +28,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteTumblr' ) ) {
 			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_select( 'tumblr_order', range( 1, count( $submenu->website ) ) ).'</td>';
 
-			if ( ! SucomUtil::get_const( 'WPSSO_VARY_USER_AGENT_DISABLE' ) ) {
+			if ( $this->p->avail['*']['vary_ua'] ) {
 				$table_rows[] = '<tr class="hide_in_basic">'.
 				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
 				'<td>'.$form->get_select( 'tumblr_platform', $this->p->cf['sharing']['platform'] ).'</td>';
@@ -104,9 +104,9 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTumblr' ) ) {
 
 			return $this->p->util->replace_inline_vars( '<!-- Tumblr Button -->'.
 				$this->p->options['tumblr_rrssb_html'], $mod, $atts, array(
-				 	'tumblr_title' => rawurlencode( $this->p->webpage->get_caption( 'title', 0,
+				 	'tumblr_title' => rawurlencode( $this->p->page->get_caption( 'title', 0,
 						$mod, true, false, false, 'tumblr_title', 'tumblr' ) ),
-				 	'tumblr_summary' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['tumblr_cap_len'],
+				 	'tumblr_summary' => rawurlencode( $this->p->page->get_caption( 'excerpt', $opts['tumblr_cap_len'],
 						$mod, true, $atts['add_hashtags'], false, 'tumblr_desc', 'tumblr' ) ),
 				 )
 			 );

@@ -28,7 +28,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteReddit' ) ) {
 			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_select( 'reddit_order', range( 1, count( $submenu->website ) ) ).'</td>';
 
-			if ( ! SucomUtil::get_const( 'WPSSO_VARY_USER_AGENT_DISABLE' ) ) {
+			if ( $this->p->avail['*']['vary_ua'] ) {
 				$table_rows[] = '<tr class="hide_in_basic">'.
 				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
 				'<td>'.$form->get_select( 'reddit_platform', $this->p->cf['sharing']['platform'] ).'</td>';
@@ -105,9 +105,9 @@ if ( ! class_exists( 'WpssoRrssbWebsiteReddit' ) ) {
 
 			return $this->p->util->replace_inline_vars( '<!-- Reddit Button -->'.
 				$this->p->options['reddit_rrssb_html'], $mod, $atts, array(
-				 	'reddit_title' => rawurlencode( $this->p->webpage->get_caption( 'title', 0,
+				 	'reddit_title' => rawurlencode( $this->p->page->get_caption( 'title', 0,
 						$mod, true, false, false, 'reddit_title', 'reddit' ) ),
-				 	'reddit_summary' => rawurlencode( $this->p->webpage->get_caption( 'excerpt', $opts['reddit_cap_len'],
+				 	'reddit_summary' => rawurlencode( $this->p->page->get_caption( 'excerpt', $opts['reddit_cap_len'],
 						$mod, true, $atts['add_hashtags'], false, 'reddit_desc', 'reddit' ) ),
 				 )
 			 );

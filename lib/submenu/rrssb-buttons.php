@@ -164,7 +164,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			$max = 6;
 			$html = '<table>';
 			$lca = $this->p->cf['lca'];
-			$aop = $this->p->check->aop( 'wpssorrssb', true, $this->p->is_avail['aop'] );
+			$aop = $this->p->check->aop( 'wpssorrssb', true, $this->p->avail['*']['p_dir'] );
 			$show_on = apply_filters( $lca.'_rrssb_buttons_show_on', 
 				$this->p->cf['sharing']['show_on'], $opt_prefix );
 

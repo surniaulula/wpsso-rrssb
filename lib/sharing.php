@@ -143,7 +143,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			$def_opts = $this->p->util->add_ptns_to_opts( $def_opts, 'buttons_add_to', 1 );
 			$plugin_dir = trailingslashit( realpath( dirname( $this->plugin_filepath ) ) );
 			$url_path = parse_url( trailingslashit( plugins_url( '', $this->plugin_filepath ) ), PHP_URL_PATH );	// relative URL
-			$tabs = apply_filters( $this->p->cf['lca'].'_rrssb_styles_tabs', $this->p->cf['sharing']['rrssb-styles'] );
+			$tabs = apply_filters( $this->p->cf['lca'].'_rrssb_styles_tabs', $this->p->cf['sharing']['rrssb_styles'] );
 
 			foreach ( $tabs as $id => $name ) {
 				$buttons_css_file = $plugin_dir.'css/'.$id.'.css';
@@ -254,7 +254,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			$opts =& $this->p->options;
 			$def_opts = $this->p->opt->get_defaults();
 			$tabs = apply_filters( $this->p->cf['lca'].'_rrssb_styles_tabs', 
-				$this->p->cf['sharing']['rrssb-styles'] );
+				$this->p->cf['sharing']['rrssb_styles'] );
 
 			foreach ( $tabs as $id => $name )
 				if ( isset( $opts['buttons_css_'.$id] ) &&
@@ -311,7 +311,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			}
 
 			$lca = $this->p->cf['lca'];
-			$tabs = apply_filters( $lca.'_rrssb_styles_tabs', $this->p->cf['sharing']['rrssb-styles'] );
+			$tabs = apply_filters( $lca.'_rrssb_styles_tabs', $this->p->cf['sharing']['rrssb_styles'] );
 			$sharing_css_data = '';
 
 			foreach ( $tabs as $id => $name ) {
@@ -617,8 +617,7 @@ $buttons_array[$buttons_index].
 			return 'locale:'.SucomUtil::get_locale( 'current' ).
 				'_type:'.( empty( $type ) ? 'none' : $type ).
 				'_https:'.( SucomUtil::is_https() ? 'true' : 'false' ).
-				( SucomUtil::get_const( 'WPSSO_VARY_USER_AGENT_DISABLE' ) ?
-					'' : '_mobile:'.( SucomUtil::is_mobile() ? 'true' : 'false' ) ).
+				( $this->p->avail['*']['vary_ua'] ? '_mobile:'.( SucomUtil::is_mobile() ? 'true' : 'false' ) : '' ).
 				( $atts !== false ? '_atts:'.http_build_query( $atts, '', '_' ) : '' ).
 				( $ids !== false ? '_ids:'.http_build_query( $ids, '', '_' ) : '' );
 		}
@@ -699,8 +698,8 @@ $buttons_array[$buttons_index].
 
 		public function allow_for_platform( $id ) {
 
-			// always return allow if the content does not vary by user agent
-			if ( SucomUtil::get_const( 'WPSSO_VARY_USER_AGENT_DISABLE' ) ) {
+			// always allow if the content does not vary by user agent
+			if ( ! $this->p->avail['*']['vary_ua'] ) {
 				return true;
 			}
 
@@ -786,7 +785,7 @@ $buttons_array[$buttons_index].
 				$atts['use_post'] = isset( $atts['use_post'] ) ? $atts['use_post'] : true;
 				$atts['add_page'] = isset( $atts['add_page'] ) ? $atts['add_page'] : true;	// used by get_sharing_url()
 				$atts['add_hashtags'] = isset( $atts['add_hashtags'] ) ? $atts['add_hashtags'] : true;
-				return $this->p->webpage->get_caption( ( empty( $this->p->options[$opt_pre.'_caption'] ) ?
+				return $this->p->page->get_caption( ( empty( $this->p->options[$opt_pre.'_caption'] ) ?
 					'title' : $this->p->options[$opt_pre.'_caption'] ), $this->get_tweet_max_len( $opt_pre ),
 						$mod, true, $atts['add_hashtags'], false, $md_pre.'_desc' );	// $encode = false
 			} else return $atts['tweet'];
