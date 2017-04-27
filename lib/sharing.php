@@ -463,8 +463,9 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function get_buttons_the_excerpt( $text ) {
-			if ( $this->p->debug->enabled )
+			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
+			}
 			$id = $this->p->cf['lca'].' excerpt-buttons';
 			$text = preg_replace_callback( '/(<!-- '.$id.' begin -->.*<!-- '.$id.' end -->)(<\/p>)?/Usi', 
 				array( __CLASS__, 'remove_paragraph_tags' ), $text );
@@ -472,23 +473,28 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function get_buttons_get_the_excerpt( $text ) {
-			if ( $this->p->debug->enabled )
+			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
+			}
 			return $this->get_buttons( $text, 'excerpt' );
 		}
 
 		public function get_buttons_the_content( $text ) {
-			if ( $this->p->debug->enabled )
+			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
+			}
 			return $this->get_buttons( $text, 'content' );
 		}
 
 		// $mod = true | false | post_id | $mod array
 		public function get_buttons( $text, $type = 'content', $mod = true, $location = '', $atts = array() ) {
-			if ( $this->p->debug->enabled )
+
+			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
+			}
 
 			$error_msg = false;
+
 			if ( is_admin() ) {
 				if ( strpos( $type, 'admin_' ) !== 0 ) {
 					$error_msg = $type.' ignored in back-end';
@@ -511,12 +517,14 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				}
 			}
 
-			if ( ! $this->have_buttons_for_type( $type ) )
+			if ( ! $this->have_buttons_for_type( $type ) ) {
 				$error_msg = 'no sharing buttons enabled';
+			}
 
 			if ( $error_msg !== false ) {
-				if ( $this->p->debug->enabled )
+				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( $type.' filter skipped: '.$error_msg );
+				}
 				return $text."\n".'<!-- '.__METHOD__.' '.$type.' filter skipped: '.$error_msg.' -->'."\n";
 			}
 
@@ -549,20 +557,25 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			if ( $cache_exp > 0 ) {
 				$buttons_array = get_transient( $cache_id );
 				if ( isset( $buttons_array[$buttons_index] ) ) {
-					if ( $this->p->debug->enabled )
+					if ( $this->p->debug->enabled ) {
 						$this->p->debug->log( $type.' buttons index found in array from transient '.$cache_id );
-				} elseif ( $this->p->debug->enabled )
+					}
+				} elseif ( $this->p->debug->enabled ) {
 					$this->p->debug->log( $type.' buttons index not in array from transient '.$cache_id );
-			} elseif ( $this->p->debug->enabled )
+				}
+			} elseif ( $this->p->debug->enabled ) {
 				$this->p->debug->log( $type.' buttons array transient is disabled' );
+			}
 
 			if ( ! isset( $buttons_array[$buttons_index] ) ) {
 
 				// sort enabled sharing buttons by their preferred order
 				$sorted_ids = array();
-				foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre )
-					if ( ! empty( $this->p->options[$opt_pre.'_on_'.$type] ) )
+				foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre ) {
+					if ( ! empty( $this->p->options[$opt_pre.'_on_'.$type] ) ) {
 						$sorted_ids[ zeroise( $this->p->options[$opt_pre.'_order'], 3 ).'-'.$id ] = $id;
+					}
+				}
 				ksort( $sorted_ids );
 
 				$atts['use_post'] = $mod['use_post'];
@@ -583,9 +596,10 @@ $buttons_array[$buttons_index].
 					if ( $cache_exp > 0 ) {
 						// update the transient array and keep the original expiration time
 						$cache_exp = SucomUtil::update_transient_array( $cache_id, $buttons_array, $cache_exp );
-						if ( $this->p->debug->enabled )
+						if ( $this->p->debug->enabled ) {
 							$this->p->debug->log( $type.' buttons html saved to transient '.
 								$cache_id.' ('.$cache_exp.' seconds)' );
+						}
 					}
 				}
 			}
