@@ -466,9 +466,11 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
 			}
-			$id = $this->p->cf['lca'].' excerpt-buttons';
-			$text = preg_replace_callback( '/(<!-- '.$id.' begin -->.*<!-- '.$id.' end -->)(<\/p>)?/Usi', 
-				array( __CLASS__, 'remove_paragraph_tags' ), $text );
+			$lca = $this->p->cf['lca'];
+			$css_type_name = 'rrssb-excerpt';
+			$text = preg_replace_callback( '/(<!-- '.$lca.' '.$css_type_name.' begin -->'.
+				'.*<!-- '.$lca.' '.$css_type_name.' end -->)(<\/p>)?/Usi', 
+					array( __CLASS__, 'remove_paragraph_tags' ), $text );
 			return $text;
 		}
 
@@ -567,6 +569,11 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				$this->p->debug->log( $type.' buttons array transient is disabled' );
 			}
 
+			if ( empty( $location ) ) {
+				$location = empty( $this->p->options['buttons_pos_'.$type] ) ? 
+					'bottom' : $this->p->options['buttons_pos_'.$type];
+			} 
+
 			if ( ! isset( $buttons_array[$buttons_index] ) ) {
 
 				// sort enabled sharing buttons by their preferred order
@@ -585,13 +592,13 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				$buttons_array[$buttons_index] = $this->get_html( $sorted_ids, $atts, $mod );
 
 				if ( ! empty( $buttons_array[$buttons_index] ) ) {
-					$buttons_array[$buttons_index] = '
+					$buttons_array[$buttons_index] = apply_filters( $lca.'_rrssb_buttons_html', '
 <!-- '.$lca.' '.$css_type_name.' begin -->
 <!-- generated on '.date( 'c' ).' -->
 <div class="'.$lca.'-rrssb'.( $mod['use_post'] ? ' '.$lca.'-'.$css_type_name.'"' : '" id="'.$lca.'-'.$css_type_name.'"' ).'>'."\n".
 $buttons_array[$buttons_index].
 '</div><!-- .'.$lca.'-rrssb '.( $mod['use_post'] ? '.' : '#' ).$lca.'-'.$css_type_name.' -->
-<!-- '.$lca.' '.$css_type_name.' end -->'."\n\n";
+<!-- '.$lca.' '.$css_type_name.' end -->'."\n\n", $type, $mod, $location, $atts );
 
 					if ( $cache_exp > 0 ) {
 						// update the transient array and keep the original expiration time
@@ -603,11 +610,6 @@ $buttons_array[$buttons_index].
 					}
 				}
 			}
-
-			if ( empty( $location ) ) {
-				$location = empty( $this->p->options['buttons_pos_'.$type] ) ? 
-					'bottom' : $this->p->options['buttons_pos_'.$type];
-			} 
 
 			switch ( $location ) {
 				case 'top': 
