@@ -29,7 +29,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'req' => array(
 						'short' => 'WPSSO',
 						'name' => 'WordPress Social Sharing Optimization (WPSSO)',
-						'min_version' => '3.42.0-dev.3',
+						'min_version' => '3.42.0-dev.2',
 					),
 					'img' => array(
 						'icons' => array(
