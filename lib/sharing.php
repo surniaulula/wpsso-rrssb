@@ -837,8 +837,9 @@ $buttons_array[$buttons_index].
 		}
 
 		public function filter_messages_tooltip( $text, $idx ) {
-			if ( strpos( $idx, 'tooltip-buttons_' ) !== 0 )
+			if ( strpos( $idx, 'tooltip-buttons_' ) !== 0 ) {
 				return $text;
+			}
 			switch ( $idx ) {
 				case ( strpos( $idx, 'tooltip-buttons_pos_' ) === false ? false : true ):
 					$text = sprintf( __( 'Social sharing buttons can be added to the top, bottom, or both. Each sharing button must also be enabled below (see the <em>%s</em> options).', 'wpsso-rrssb' ), _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) );
