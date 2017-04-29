@@ -133,7 +133,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = Changelog / Release Notes =
 
-**Version 1.4.18-dev.4 (2017/04/28)**
+**Version 1.4.18-b.1 (2017/04/29)**
 
 * *New Features*
 	* None
@@ -239,9 +239,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.4.18-dev.4 =
+= 1.4.18-b.1 =
 
-(2017/04/28) Code refactoring to rename the $is_avail array to $avail, and replace the WPSSO_VARY_USER_AGENT_DISABLE constant checks by $avail array checks for WPSSO v3.42.0.
+(2017/04/29) Code refactoring to rename the $is_avail array to $avail, and replace the WPSSO_VARY_USER_AGENT_DISABLE constant checks by $avail array checks for WPSSO v3.42.0.
 
 = 1.4.17 =
 

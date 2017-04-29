@@ -1,0 +1,2 @@
+'wpsso_rrssb_buttons_html' ( $type, $mod, $location, $atts );
+'wpsso_rrssb_sharing_shortcode_atts' ( $atts, $content );
