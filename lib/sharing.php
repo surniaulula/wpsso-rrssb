@@ -420,12 +420,11 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				$this->p->debug->mark();
 			}
 			$lca = $this->p->cf['lca'];
-			$sharing_css_data = '#side-sortables #_'.$lca.'_rrssb_share .inside table.sucom-settings { padding:0; }'.
-				$this->p->options['buttons_css_rrssb-admin_edit'];
+			$sharing_css_data = $this->p->options['buttons_css_rrssb-admin_edit'];
 			$sharing_css_data = SucomUtil::minify_css( $sharing_css_data, $lca );
 
 			echo '<style type="text/css">'.$sharing_css_data.'</style>', "\n";
-			echo '<table class="sucom-settings '.$lca.' side"><tr><td>';
+			echo '<table class="sucom-settings '.$lca.' post-side-metabox"><tr><td>';
 
 			if ( get_post_status( $post_obj->ID ) === 'publish' || $post_obj->post_type === 'attachment' ) {
 				echo $this->get_buttons( '', 'admin_edit' );
