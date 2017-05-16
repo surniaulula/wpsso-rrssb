@@ -24,7 +24,7 @@
 <p>Using WPSSO as its framework, WPSSO RRSSB provides customized and <em>accurate</em> information to social websites.</p>
 
 <blockquote>
-<p><strong>Prerequisite</strong> &mdash; WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) is an extension for the <a href="https://wordpress.org/plugins/wpsso/">WordPress Social Sharing Optimization (WPSSO)</a> plugin, which <em>automatically</em> generates complete and accurate meta tags + Schema markup from your content for Social Sharing Optimization (SSO) and Search Engine Optimization (SEO).</p>
+<p><strong>Prerequisite</strong> &mdash; WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) is an extension for the <a href="https://wordpress.org/plugins/wpsso/">WPSSO</a> plugin, which <em>automatically</em> generates complete and accurate meta tags + Schema markup from your content for Social Sharing Optimization (SSO) and Search Engine Optimization (SEO).</p>
 </blockquote>
 
 <h4>Quick List of Features</h4>
@@ -93,7 +93,7 @@
 
 <h4>Extends the WPSSO Plugin</h4>
 
-<p>The WordPress Social Sharing Optimization (WPSSO) plugin is required to use the WPSSO RRSSB extension.</p>
+<p>The WPSSO plugin is required to use the WPSSO RRSSB extension.</p>
 
 <blockquote>
 <p>The <a href="https://wordpress.org/plugins/wpsso-rrssb/">WPSSO RRSSB Free extension</a> works with the WPSSO Free or Pro plugin. The <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-extends">WPSSO RRSSB Pro extension</a> (along with all WPSSO Pro extensions) requires the <a href="https://wpsso.com/extend/plugins/wpsso/?utm_source=wpssorrssb-readme-extends">WPSSO Pro plugin</a> as well.</p>
