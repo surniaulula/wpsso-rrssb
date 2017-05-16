@@ -80,7 +80,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 = Extends the WPSSO Plugin =
 
-The WPSSO plugin is required to use the WPSSO RRSSB extension.
+The WPSSO (WordPress Social Sharing Optimization) plugin is required to use the WPSSO RRSSB extension.
 
 <blockquote>
 <p>The <a href="https://wordpress.org/plugins/wpsso-rrssb/">WPSSO RRSSB Free extension</a> works with the WPSSO Free or Pro plugin. The <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-extends">WPSSO RRSSB Pro extension</a> (along with all WPSSO Pro extensions) requires the <a href="https://wpsso.com/extend/plugins/wpsso/?utm_source=wpssorrssb-readme-extends">WPSSO Pro plugin</a> as well.</p>
