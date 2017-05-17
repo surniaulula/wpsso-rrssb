@@ -127,17 +127,20 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 		}
 
 		public function get_html( array $atts, array $opts, array $mod ) {
-			if ( $this->p->debug->enabled )
+
+			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
+			}
 
 			$atts['add_hashtags'] = empty( $this->p->options['pin_cap_hashtags'] ) ?
 				false : $this->p->options['pin_cap_hashtags'];
 
-			if ( empty( $atts['size'] ) )
+			if ( empty( $atts['size'] ) ) {
 				$atts['size'] = $this->p->cf['lca'].'-pinterest-button';
+			}
 
 			if ( ! empty( $atts['pid'] ) ) {
-				$force_regen = $this->p->util->is_force_regen( $mod, 'p' );	// false by default
+				$force_regen = $this->p->util->is_force_regen( $mod, 'schema' );	// false by default
 
 				list(
 					$atts['photo'],
@@ -147,16 +150,21 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 					$atts['pid']
 				) = $this->p->media->get_attachment_image_src( $atts['pid'], $atts['size'], false, $force_regen );
 
-				if ( $this->p->debug->enabled )
+				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'returned image '.$atts['photo'].' ('.$atts['width'].'x'.$atts['height'].')' );
+				}
 			}
 
 			if ( empty( $atts['photo'] ) ) {
-				$media_info = $this->p->og->get_media_info( $atts['size'], array( 'img_url' ), $mod, 'p' );
+				$media_info = $this->p->og->get_media_info( $atts['size'], 
+					array( 'img_url' ), $mod, 'schema' );	// $md_pre = 'schema'
+
 				$atts['photo'] = $media_info['img_url'];
+
 				if ( empty( $atts['photo'] ) ) {
-					if ( $this->p->debug->enabled )
+					if ( $this->p->debug->enabled ) {
 						$this->p->debug->log( 'exiting early: no photo available' );
+					}
 					return '<!-- Pinterest Button: no photo available -->';	// abort
 				}
 			}

@@ -93,9 +93,9 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			 */
 			$caption_len = $this->p->options['pin_cap_len'];
 			$caption_text = $this->p->page->get_caption( 'excerpt', $caption_len, $mod, true, $this->p->options['pin_cap_hashtags'] );
-			$force_regen = $this->p->util->is_force_regen( $mod, 'p' );	// false by default
+			$force_regen = $this->p->util->is_force_regen( $mod, 'schema' );	// false by default
 			$media = $this->p->og->get_media_info( $this->p->cf['lca'].'-pinterest-button',
-				array( 'pid', 'img_url' ), $mod, 'p' );
+				array( 'pid', 'img_url' ), $mod, 'schema' );	// $md_pre = 'schema'
 
 			if ( ! empty( $media['pid'] ) ) {
 				list(
