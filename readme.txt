@@ -133,7 +133,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = Changelog / Release Notes =
 
-**Version 1.4.19-dev.1 (2017/05/17)**
+**Version 1.4.19-dev.2 (2017/05/17)**
 
 * *New Features*
 	* None
@@ -250,7 +250,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.4.19-dev.1 =
+= 1.4.19-dev.2 =
 
 (2017/05/17) The Pinterest custom image in the Social Settings has been moved to the Structured Data / Schema Markup / Pinterest custom image for WPSSO v3.44.0.
 
