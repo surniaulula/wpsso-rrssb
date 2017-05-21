@@ -28,7 +28,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'domain_path' => '/languages',
 					'req' => array(
 						'short' => 'WPSSO',
-						'name' => 'WPSSO (Social Sharing Optimization)',
+						'name' => 'WPSSO',
 						'min_version' => '3.44.0',
 					),
 					'img' => array(
