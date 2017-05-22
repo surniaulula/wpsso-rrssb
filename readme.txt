@@ -30,7 +30,7 @@ WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in y
 
 = Quick List of Features =
 
-**WPSSO RRSSB Free / Core Features**
+**WPSSO RRSSB Free / Basic Features**
 
 * Extends the features of WPSSO Free or Pro.
 * Allows you to include a selection of **Ridiculously Responsive Social Sharing Buttons** in multiple locations:
