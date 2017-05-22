@@ -1,5 +1,5 @@
 === WPSSO Ridiculously Responsive Social Sharing Buttons - including WhatsApp for Mobile ===
-Plugin Name: WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)
+Plugin Name: WPSSO Ridiculously Responsive Social Sharing Buttons
 Plugin Slug: wpsso-rrssb
 Text Domain: wpsso-rrssb
 Domain Path: /languages
@@ -25,7 +25,7 @@ WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in y
 <p>The <strong>Scalable Vector Graphics (SVG) social icons</strong> used by WPSSO RRSSB automatically resize to their container, so they always look great on any device (phone, tablet, laptop, etc.), including high resolution retina displays.</p>
 
 <blockquote>
-<p><strong>Prerequisite</strong> &mdash; WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) is an extension for the <a href="https://wordpress.org/plugins/wpsso/">WPSSO</a> plugin, which <em>automatically</em> generates complete and accurate meta tags + Schema markup from your content for Social Sharing Optimization (SSO) and Search Engine Optimization (SEO).</p>
+<p><strong>Prerequisite</strong> &mdash; WPSSO Ridiculously Responsive Social Sharing Buttons is an extension for the <a href="https://wordpress.org/plugins/wpsso/">WPSSO</a> plugin, which <em>automatically</em> generates complete and accurate meta tags + Schema markup from your content for Social Sharing Optimization (SSO) and Search Engine Optimization (SEO).</p>
 </blockquote>
 
 = Quick List of Features =
@@ -80,7 +80,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 <p>The <a href="https://wordpress.org/plugins/wpsso-rrssb/">WPSSO RRSSB Free extension</a> works with the WPSSO Free or Pro plugin. The <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-extends">WPSSO RRSSB Pro extension</a> (along with all WPSSO Pro extensions) requires the <a href="https://wpsso.com/extend/plugins/wpsso/?utm_source=wpssorrssb-readme-extends">WPSSO Pro plugin</a> as well.</p>
 
-[Purchase the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) Pro extension here](https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-purchase) (all purchases include a *No Risk 30 Day Refund Policy*).
+[Purchase the WPSSO Ridiculously Responsive Social Sharing Buttons Pro extension here](https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-purchase) (all purchases include a *No Risk 30 Day Refund Policy*).
 
 == Installation ==
 
