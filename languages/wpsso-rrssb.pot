@@ -1,9 +1,9 @@
-# Copyright (C) 2017 WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)
-# This file is distributed under the same license as the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) package.
+# Copyright (C) 2017 WPSSO Ridiculously Responsive Social Sharing Buttons
+# This file is distributed under the same license as the WPSSO Ridiculously Responsive Social Sharing Buttons package.
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"(WPSSO RRSSB) 1.4.19\n"
+"1.4.19\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2017-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -494,7 +494,7 @@ msgid ""
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-msgid "WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB)"
+msgid "WPSSO Ridiculously Responsive Social Sharing Buttons"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
