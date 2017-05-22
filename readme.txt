@@ -30,7 +30,7 @@ WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in y
 
 = Quick List of Features =
 
-**WPSSO RRSSB Free / Basic Features**
+**WPSSO RRSSB Free / Standard Features**
 
 * Extends the features of WPSSO Free or Pro.
 * Allows you to include a selection of **Ridiculously Responsive Social Sharing Buttons** in multiple locations:
@@ -57,7 +57,7 @@ WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in y
 * A built-in stylesheet editor allows you to fine-tune the CSS for each social sharing button location easily (content, excerpt, shortcode, widget, etc.).
 * Uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.
 
-**WPSSO RRSSB Pro / Power-User Features**
+**WPSSO RRSSB Pro / Additional Features**
 
 * Extends the features of WPSSO Pro (requires a licensed WPSSO Pro plugin).
 * Custom titles and text in the Social Settings metabox for:

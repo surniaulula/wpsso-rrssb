@@ -27,7 +27,7 @@
 
 <h4>Quick List of Features</h4>
 
-<p><strong>WPSSO RRSSB Free / Basic Features</strong></p>
+<p><strong>WPSSO RRSSB Free / Standard Features</strong></p>
 
 <ul>
 <li>Extends the features of WPSSO Free or Pro.</li>
@@ -62,7 +62,7 @@
 <li>Uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.</li>
 </ul>
 
-<p><strong>WPSSO RRSSB Pro / Power-User Features</strong></p>
+<p><strong>WPSSO RRSSB Pro / Additional Features</strong></p>
 
 <ul>
 <li>Extends the features of WPSSO Pro (requires a licensed WPSSO Pro plugin).</li>
