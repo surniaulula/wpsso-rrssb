@@ -127,6 +127,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = Changelog / Release Notes =
 
+**Version 1.4.20 (2017/05/25)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* Added a new Advanced Settings tab in the Responsible Buttons settings page with a "Sharing Buttons Cache Expiry" option.
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* None
+
 **Version 1.4.19 (2017/05/19)**
 
 * *New Features*
@@ -243,6 +254,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Maintenance release.
 
 == Upgrade Notice ==
+
+= 1.4.20 =
+
+(2017/05/25) Added a new Advanced Settings tab in the Responsible Buttons settings page with a "Sharing Buttons Cache Expiry" option.
 
 = 1.4.19 =
 
