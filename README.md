@@ -22,7 +22,7 @@
 <p>The <strong>Scalable Vector Graphics (SVG) social icons</strong> used by WPSSO RRSSB automatically resize to their container, so they always look great on any device (phone, tablet, laptop, etc.), including high resolution retina displays.</p>
 
 <blockquote>
-<p><strong>Prerequisite</strong> &mdash; WPSSO Ridiculously Responsive Social Sharing Buttons is an extension for the <a href="https://wordpress.org/plugins/wpsso/">WPSSO</a> plugin, which <em>automatically</em> generates complete and accurate meta tags + Schema markup from your content for Social Sharing Optimization (SSO) and Search Engine Optimization (SEO).</p>
+<p><strong>Prerequisite</strong> &mdash; WPSSO Ridiculously Responsive Social Sharing Buttons is an extension for the <a href="https://wordpress.org/plugins/wpsso/">WPSSO</a> plugin, which <em>automatically</em> generates complete and accurate meta tags + Schema markup from your content for social media optimization (SMO) and SEO.</p>
 </blockquote>
 
 <h4>Quick List of Features</h4>
