@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 1.4.19\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2017-05-23 07:39-0400\n"
-"PO-Revision-Date: 2017-05-24 22:46-0400\n"
+"POT-Creation-Date: 2017-05-25 10:14-0400\n"
+"PO-Revision-Date: 2017-05-25 10:14-0400\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -95,52 +95,54 @@ msgctxt "plugin description"
 msgid "WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc."
 msgstr "Extension WPSSO pour ajouter des boutons de partage sociaux ridiculement réactif (SVG) dans le contenu, extraits, barre flottante CSS, widget, etc."
 
-#: lib/gpl/admin/sharing.php:32 lib/pro/admin/sharing.php:40
+#: lib/gpl/admin/sharing.php:35 lib/gpl/admin/sharing.php:51
+#: lib/pro/admin/sharing.php:43 lib/pro/admin/sharing.php:59
 msgctxt "option label"
 msgid "Sharing Buttons Cache Expiry"
 msgstr "Expiration cache boutons de partage"
 
-#: lib/gpl/admin/sharing.php:35 lib/pro/admin/sharing.php:43
+#: lib/gpl/admin/sharing.php:38 lib/gpl/admin/sharing.php:54
+#: lib/pro/admin/sharing.php:46 lib/pro/admin/sharing.php:62
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr "secondes (0 pour désactiver)"
 
 # Ignore the post type to avoid gender issues in the French translation.
-#: lib/gpl/admin/sharing.php:48 lib/pro/admin/sharing.php:56
+#: lib/gpl/admin/sharing.php:67 lib/pro/admin/sharing.php:75
 msgid "Save a draft version or publish the %s to display these options."
 msgstr "Enregistrer un brouillon ou publier pour activer ces options."
 
-#: lib/gpl/admin/sharing.php:68 lib/pro/admin/sharing.php:72
+#: lib/gpl/admin/sharing.php:87 lib/pro/admin/sharing.php:91
 msgctxt "option label"
 msgid "Email Subject"
 msgstr "Sujet du couriel"
 
-#: lib/gpl/admin/sharing.php:73 lib/pro/admin/sharing.php:78
+#: lib/gpl/admin/sharing.php:92 lib/pro/admin/sharing.php:97
 msgctxt "option label"
 msgid "Email Message"
 msgstr "Message du courriel"
 
-#: lib/gpl/admin/sharing.php:86 lib/pro/admin/sharing.php:92
+#: lib/gpl/admin/sharing.php:105 lib/pro/admin/sharing.php:111
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr "Texte du Tweet"
 
-#: lib/gpl/admin/sharing.php:111 lib/pro/admin/sharing.php:118
+#: lib/gpl/admin/sharing.php:130 lib/pro/admin/sharing.php:137
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr "Texte légende Pinterest"
 
-#: lib/gpl/admin/sharing.php:132 lib/pro/admin/sharing.php:140
+#: lib/gpl/admin/sharing.php:151 lib/pro/admin/sharing.php:159
 msgctxt "option label"
 msgid "%s Title"
 msgstr "Titre %s"
 
-#: lib/gpl/admin/sharing.php:138 lib/pro/admin/sharing.php:147
+#: lib/gpl/admin/sharing.php:157 lib/pro/admin/sharing.php:166
 msgctxt "option label"
 msgid "%s Caption"
 msgstr "Légende %s"
 
-#: lib/gpl/admin/sharing.php:148 lib/pro/admin/sharing.php:158
+#: lib/gpl/admin/sharing.php:167 lib/pro/admin/sharing.php:177
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr "Désactiver les boutons"
@@ -290,27 +292,32 @@ msgctxt "metabox tab"
 msgid "Buttons Position"
 msgstr "Position des Boutons"
 
-#: lib/submenu/rrssb-buttons.php:123
+#: lib/submenu/rrssb-buttons.php:89
+msgctxt "metabox tab"
+msgid "Advanced Settings"
+msgstr "Réglages Avancés"
+
+#: lib/submenu/rrssb-buttons.php:124
 msgctxt "option label"
 msgid "Include on Archive Webpages"
 msgstr "Inclure sur les pages d'archive"
 
-#: lib/submenu/rrssb-buttons.php:127
+#: lib/submenu/rrssb-buttons.php:128
 msgctxt "option label"
 msgid "Include on Static Front Page"
 msgstr "Inclure sur la page statique d'avant"
 
-#: lib/submenu/rrssb-buttons.php:138
+#: lib/submenu/rrssb-buttons.php:139
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr "Inclure sur les articles de type"
 
-#: lib/submenu/rrssb-buttons.php:146
+#: lib/submenu/rrssb-buttons.php:147
 msgctxt "option label"
 msgid "Position in Content Text"
 msgstr "Position dans le texte de contenu"
 
-#: lib/submenu/rrssb-buttons.php:151
+#: lib/submenu/rrssb-buttons.php:152
 msgctxt "option label"
 msgid "Position in Excerpt Text"
 msgstr "Position dans le texte d'extrait"
