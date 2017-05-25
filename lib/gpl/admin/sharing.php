@@ -20,13 +20,16 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 
 			$this->p->util->add_plugin_filters( $this, array( 
 				'plugin_cache_rows' => 3,		// $table_rows, $form, $network
+				'rrssb_buttons_advanced_rows' => 2,	// $table_rows, $form
 				'post_buttons_rows' => 4,		// $table_rows, $form, $head, $mod
 			), 40 );
 		}
 
 		public function filter_plugin_cache_rows( $table_rows, $form, $network = false ) {
-			if ( $this->p->debug->enabled )
+
+			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
+			}
 
 			SucomUtil::add_before_key( $table_rows, 'plugin_show_purge_count', array(
 				'plugin_sharing_buttons_cache_exp' => $form->get_th_html( _x( 'Sharing Buttons Cache Expiry',
@@ -39,9 +42,25 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			return $table_rows;
 		}
 
-		public function filter_post_buttons_rows( $table_rows, $form, $head, $mod ) {
-			if ( $this->p->debug->enabled )
+		public function filter_rrssb_buttons_advanced_rows( $table_rows, $form ) {
+
+			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
+			}
+
+			$table_rows['plugin_sharing_buttons_cache_exp'] = $form->get_th_html( _x( 'Sharing Buttons Cache Expiry',
+				'option label', 'wpsso-rrssb' ), null, 'plugin_sharing_buttons_cache_exp' ).
+			'<td nowrap class="blank">'.$this->p->options['plugin_sharing_buttons_cache_exp'].' '.
+				_x( 'seconds (0 to disable)', 'option comment', 'wpsso-rrssb' ).'</td>';
+
+			return $table_rows;
+		}
+
+		public function filter_post_buttons_rows( $table_rows, $form, $head, $mod ) {
+
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->mark();
+			}
 
 			if ( empty( $mod['post_status'] ) || $mod['post_status'] === 'auto-draft' ) {
 				$table_rows['save_a_draft'] = '<td><blockquote class="status-info"><p class="centered">'.
