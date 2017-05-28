@@ -19,7 +19,8 @@ ul.rrssb-buttons a:hover {
 	box-shadow:none;
 	-webkit-box-shadow:none;
 }
-ul.rrssb-buttons li {
+ul.rrssb-buttons li,
+.content ul.rrssb-buttons li {
 	list-style-type:none;
 	list-style-image:none;
 	margin: 0;
