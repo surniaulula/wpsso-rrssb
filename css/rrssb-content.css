@@ -7,3 +7,9 @@
 .wpsso-rrssb-content {
 	margin:10px 0;
 }
+.content ul.rrssb-buttons li {
+	list-style-type:none;
+	list-style-image:none;
+	margin: 0;
+	padding: 0 2px;
+}
