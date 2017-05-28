@@ -21,6 +21,10 @@ ul.rrssb-buttons a:hover {
 }
 ul.rrssb-buttons li {
 	list-style-type:none;
+	list-style-image:none;
+	list-style-position:none;
+	margin: 0;
+	padding: 0 2px;
 }
 .rrssb-icon {
 }
