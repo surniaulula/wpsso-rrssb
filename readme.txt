@@ -127,6 +127,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = Changelog / Release Notes =
 
+**Version 1.4.21-dev.2 (2017/07/20)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Added more debug messages to the WpssoRrssbSharing::get_buttons() method.
+
 **Version 1.4.20 (2017/05/25)**
 
 * *New Features*
@@ -254,6 +265,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Maintenance release.
 
 == Upgrade Notice ==
+
+= 1.4.21-dev.2 =
+
+(2017/07/20) Added more debug messages to the WpssoRrssbSharing::get_buttons() method.
 
 = 1.4.20 =
 
