@@ -127,7 +127,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = Changelog / Release Notes =
 
-**Version 1.4.21-dev.2 (2017/07/20)**
+**Version 1.4.21-dev.3 (2017/07/20)**
 
 * *New Features*
 	* None
@@ -266,7 +266,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.4.21-dev.2 =
+= 1.4.21-dev.3 =
 
 (2017/07/20) Added more debug messages to the WpssoRrssbSharing::get_buttons() method.
 
