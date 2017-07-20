@@ -395,10 +395,22 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function filter_text_filter_begin( $bool, $filter_name ) {
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->log_args( array( 
+					'bool' => $bool,
+					'filter_name' => $filter_name,
+				) );
+			}
 			return $this->remove_buttons_filter( $filter_name ) ? true : $bool;
 		}
 
 		public function filter_text_filter_end( $bool, $filter_name ) {
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->log_args( array( 
+					'bool' => $bool,
+					'filter_name' => $filter_name,
+				) );
+			}
 			return $this->add_buttons_filter( $filter_name ) ? true : $bool;
 		}
 
