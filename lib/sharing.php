@@ -506,7 +506,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		public function get_buttons( $text, $type = 'content', $mod = true, $location = '', $atts = array() ) {
 
 			if ( $this->p->debug->enabled ) {
-				$this->p->debug->mark();
+				$this->p->debug->mark( 'getting buttons for '.$type );	// start timer
 			}
 
 			$error_msg = false;
@@ -558,8 +558,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 			if ( $error_msg !== false ) {
 				if ( $this->p->debug->enabled ) {
-					$this->p->debug->mark();
 					$this->p->debug->log( $type.' filter skipped: '.$error_msg );
+					$this->p->debug->mark( 'getting buttons for '.$type );	// end timer
 				}
 				return $text."\n".'<!-- '.__METHOD__.' '.$type.' filter skipped: '.$error_msg.' -->'."\n";
 			}
@@ -655,6 +655,10 @@ $buttons_array[$buttons_index].
 				case 'both': 
 					$text = $buttons_array[$buttons_index].$text.$buttons_array[$buttons_index]; 
 					break;
+			}
+
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->mark( 'getting buttons for '.$type );	// end timer
 			}
 
 			return $text;
