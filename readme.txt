@@ -10,7 +10,7 @@ Tags: responsive, share buttons, sharing buttons, retina, facebook, google, twit
 Contributors: jsmoriss
 Requires At Least: 3.7
 Tested Up To: 4.8
-Stable Tag: 1.4.20
+Stable Tag: 1.4.21
 
 WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
 
@@ -127,7 +127,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = Changelog / Release Notes =
 
-**Version 1.4.21 (2017/07/22)**
+**Version 1.4.21 (2017/07/23)**
 
 * *New Features*
 	* None
@@ -268,7 +268,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 1.4.21 =
 
-(2017/07/22) Added more debug messages to the WpssoRrssbSharing::get_buttons() method.
+(2017/07/23) Added more debug messages to the WpssoRrssbSharing::get_buttons() method.
 
 = 1.4.20 =
 
