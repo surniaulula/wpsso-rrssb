@@ -8,6 +8,8 @@ _x( 'Content', 'option value', 'wpsso-rrssb' );
 _x( 'CSS Sidebar', 'option value', 'wpsso-rrssb' );
 _x( 'Desktop Only', 'option value', 'wpsso-rrssb' );
 _x( 'Excerpt', 'option value', 'wpsso-rrssb' );
+_x( 'HTTP', 'option value', 'wpsso-rrssb' );
+_x( 'HTTPS', 'option value', 'wpsso-rrssb' );
 _x( 'Mobile Only', 'option value', 'wpsso-rrssb' );
 _x( 'Responsive Buttons', 'lib file description', 'wpsso-rrssb' );
 _x( 'Responsive Styles', 'lib file description', 'wpsso-rrssb' );

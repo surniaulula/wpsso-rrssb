@@ -43,6 +43,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					// Buttons Position Tab
 					'buttons_pos_content' => 'bottom',
 					'buttons_pos_excerpt' => 'bottom',
+					// Buttons Advanced
+					'buttons_force_prot' => '',
 					/*
 					 * Sharing Styles
 					 */
@@ -211,6 +213,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					return 'pos_int';
 					break;
 				// text strings that can be blank
+				case 'buttons_force_prot':
 				case ( preg_match( '/_(desc|title)$/', $key ) ? true : false ):
 					return 'ok_blank';
 					break;
@@ -704,27 +707,47 @@ $buttons_array[$buttons_index].
 						if ( $this->allow_for_platform( $id ) ) {
 
 							$atts['src_id'] = SucomUtil::get_atts_src_id( $atts, $id );	// uses 'css_id' and 'use_post'
-							$atts['url'] = empty( $atts['url'] ) ? 				// used by get_inline_vals()
-								$this->p->util->get_sharing_url( $mod, 
-									$atts['add_page'], $atts['src_id'] ) : 
-								apply_filters( $lca.'_sharing_url', $atts['url'], 
-									$mod, $atts['add_page'], $atts['src_id'] );
+
+							if ( empty( $atts['url'] ) ) {
+								$atts['url'] = $this->p->util->get_sharing_url( $mod,
+									$atts['add_page'], $atts['src_id'] );
+							} else {
+								$atts['url'] = apply_filters( $lca.'_sharing_url',
+									$atts['url'], $mod, $atts['add_page'], $atts['src_id'] );
+							}
+
+							// filter to add custom tracking arguments
+							$atts['url'] = apply_filters( $lca.'_rrssb_buttons_shared_url',
+								$atts['url'], $mod, $id );
+
+							$force_prot = apply_filters( $lca.'_rrssb_buttons_force_prot',
+								$this->p->options['buttons_force_prot'], $mod, $id, $atts['url'] );
+
+							if ( ! empty( $force_prot ) && $force_prot !== 'none' ) {
+								$atts['url'] = preg_replace( '/^.*:\/\//', $force_prot.'://', $atts['url'] );
+							}
+
 							$buttons_part = $this->website[$id]->get_html( $atts, $this->p->options, $mod )."\n";
+
 							$atts = $saved_atts;	// restore the common $atts array
 
 							if ( trim( $buttons_part ) !== '' ) {
-								if ( empty( $atts['container_each'] ) )
+								if ( empty( $atts['container_each'] ) ) {
 									$buttons_html .= $buttons_part;
-								else $buttons_html .= '<!-- adding buttons as individual containers -->'."\n".
-									$buttons_begin.$buttons_part.$buttons_end;
+								} else {
+									$buttons_html .= '<!-- adding buttons as individual containers -->'."\n".
+										$buttons_begin.$buttons_part.$buttons_end;
+								}
 							}
-
-						} elseif ( $this->p->debug->enabled )
+						} elseif ( $this->p->debug->enabled ) {
 							$this->p->debug->log( $id.' not allowed for platform' );
-					} elseif ( $this->p->debug->enabled )
+						}
+					} elseif ( $this->p->debug->enabled ) {
 						$this->p->debug->log( 'get_html method missing for '.$id );
-				} elseif ( $this->p->debug->enabled )
+					}
+				} elseif ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'website object missing for '.$id );
+				}
 			}
 
 			$buttons_html = trim( $buttons_html );
@@ -898,6 +921,9 @@ $buttons_array[$buttons_index].
 					break;
 				case 'tooltip-buttons_add_to':
 					$text = __( 'Enabled social sharing buttons are added to the Post, Page, Media, and Product webpages by default. If your theme (or another plugin) supports additional custom post types, and you would like to include social sharing buttons on these webpages, check the appropriate option(s) here.', 'wpsso-rrssb' );
+					break;
+				case 'tooltip-buttons_force_prot':
+					$text = __( 'Modify URLs shared by the sharing buttons to use a specific protocol.', 'wpsso-rrssb' );
 					break;
 				case 'tooltip-buttons_use_social_style':
 					$text = sprintf( __( 'Add the CSS of all <em>%1$s</em> to webpages (default is checked). The CSS will be <strong>minimized</strong>, and saved to a single stylesheet with a URL of <a href="%2$s">%3$s</a>. The minimized stylesheet can be enqueued or added directly to the webpage HTML.', 'wpsso-rrssb' ), _x( 'Sharing Styles', 'lib file description', 'wpsso-rrssb' ), WpssoRrssbSharing::$sharing_css_url, WpssoRrssbSharing::$sharing_css_url );
