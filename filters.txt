@@ -1,2 +1,4 @@
-'wpsso_rrssb_buttons_html' ( $type, $mod, $location, $atts );
+'wpsso_rrssb_buttons_html' ( $html, $mod, $location, $atts );
+'wpsso_rrssb_buttons_shared_url' ( $url, $mod, $button_id );
+'wpsso_rrssb_buttons_force_prot' ( $prot, $mod, $url );	// $prot = '', 'http', or 'https'
 'wpsso_rrssb_sharing_shortcode_atts' ( $atts, $content );
