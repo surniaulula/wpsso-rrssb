@@ -127,7 +127,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = Changelog / Release Notes =
 
-**Version 1.4.22-dev.1 (2017/08/01)**
+**Version 1.4.22-dev.2 (2017/08/01)**
 
 * *New Features*
 	* None
@@ -277,7 +277,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.4.22-dev.1 =
+= 1.4.22-dev.2 =
 
 (2017/08/01) Added a new 'wpsso_rrssb_buttons_shared_url' filter.
 
