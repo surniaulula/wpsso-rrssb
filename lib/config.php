@@ -43,6 +43,12 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 							'rrssb-buttons' => 'Responsive Buttons',
 							'rrssb-styles' => 'Responsive Styles',
 						),
+						'shortcode' => array(
+							'sharing' => 'Sharing Shortcode',
+						),
+						'widget' => array(
+							'sharing' => 'Sharing Widget',
+						),
 						'website' => array(
 							'email' => 'Email', 
 							'facebook' => 'Facebook', 
@@ -55,12 +61,6 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 							'tumblr' => 'Tumblr', 
 							'vk' => 'VK', 
 							'whatsapp' => 'WhatsApp', 
-						),
-						'shortcode' => array(
-							'sharing' => 'Sharing Shortcode',
-						),
-						'widget' => array(
-							'sharing' => 'Sharing Widget',
 						),
 						'gpl' => array(
 							'admin' => array(

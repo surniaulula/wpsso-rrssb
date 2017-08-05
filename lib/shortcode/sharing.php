@@ -63,12 +63,14 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 		public function shortcode( $atts, $content = null ) { 
 
 			if ( SucomUtil::is_amp() ) {
-				if ( $this->p->debug->enabled )
+				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'exiting early: buttons not allowed in amp endpoint'  );
+				}
 				return $content;
 			} elseif ( is_feed() ) {
-				if ( $this->p->debug->enabled )
+				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'exiting early: buttons not allowed in rss feeds'  );
+				}
 				return $content;
 			}
 
@@ -105,12 +107,15 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			if ( $cache_exp > 0 ) {
 				$buttons_array = get_transient( $cache_id );
 				if ( isset( $buttons_array[$buttons_index] ) ) {
-					if ( $this->p->debug->enabled )
+					if ( $this->p->debug->enabled ) {
 						$this->p->debug->log( $type.' buttons index found in array from transient '.$cache_id );
-				} elseif ( $this->p->debug->enabled )
+					}
+				} elseif ( $this->p->debug->enabled ) {
 					$this->p->debug->log( $type.' buttons index not in array from transient '.$cache_id );
-			} elseif ( $this->p->debug->enabled )
+				}
+			} elseif ( $this->p->debug->enabled ) {
 				$this->p->debug->log( $type.' buttons array transient is disabled' );
+			}
 
 			if ( ! isset( $buttons_array[$buttons_index] ) ) {
 
@@ -132,9 +137,10 @@ $buttons_array[$buttons_index]."\n".	// buttons html is trimmed, so add newline
 					if ( $cache_exp > 0 ) {
 						// update the transient array and keep the original expiration time
 						$cache_exp = SucomUtil::update_transient_array( $cache_id, $buttons_array, $cache_exp );
-						if ( $this->p->debug->enabled )
+						if ( $this->p->debug->enabled ) {
 							$this->p->debug->log( $type.' buttons html saved to transient '.
 								$cache_id.' ('.$cache_exp.' seconds)' );
+						}
 					}
 				}
 			}
