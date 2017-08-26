@@ -64,8 +64,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 			) );
 
 			$table_rows = array();
-			$tabs = apply_filters( $this->p->cf['lca'].'_rrssb_styles_tabs', 
-				$this->p->cf['sharing']['rrssb_styles'] );
+			$tabs = apply_filters( $this->p->cf['lca'].'_rrssb_styles_tabs', $this->p->cf['sharing']['rrssb_styles'] );
 
 			foreach ( $tabs as $key => $title ) {
 				$tabs[$key] = _x( $title, 'metabox tab', 'wpsso-ssb' );	// translate the tab title

@@ -263,8 +263,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 			$opts =& $this->p->options;
 			$def_opts = $this->p->opt->get_defaults();
-			$tabs = apply_filters( $this->p->cf['lca'].'_rrssb_styles_tabs', 
-				$this->p->cf['sharing']['rrssb_styles'] );
+			$tabs = apply_filters( $this->p->cf['lca'].'_rrssb_styles_tabs', $this->p->cf['sharing']['rrssb_styles'] );
 
 			foreach ( $tabs as $id => $name )
 				if ( isset( $opts['buttons_css_'.$id] ) &&
