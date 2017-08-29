@@ -10,6 +10,7 @@ Tags: responsive, share buttons, sharing buttons, retina, facebook, google, twit
 Contributors: jsmoriss
 Requires At Least: 3.7
 Tested Up To: 4.8.1
+Requires PHP: 5.3
 Stable Tag: 1.4.22
 
 WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
