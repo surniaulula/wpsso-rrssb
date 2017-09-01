@@ -24,7 +24,10 @@
 <blockquote>
 <p><strong>Prerequisite</strong> &mdash; WPSSO Ridiculously Responsive Social Sharing Buttons is an extension for the <a href="https://wordpress.org/plugins/wpsso/">WPSSO core plugin</a>, which <em>automatically</em> generates complete and accurate meta tags + Schema markup from your content for social media optimization (SMO) and SEO.</p>
 
-<p>The <a href="https://wordpress.org/plugins/wpsso-rrssb/">WPSSO RRSSB Free extension</a> works with either the WPSSO Free or Pro core plugin. The <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-prereq">WPSSO RRSSB Pro extension</a> (along with all WPSSO Pro extensions) requires the <a href="https://wpsso.com/extend/plugins/wpsso/?utm_source=wpssorrssb-readme-prereq">WPSSO Pro core plugin</a>.</p>
+<ul>
+<li>The <a href="https://wordpress.org/plugins/wpsso-rrssb/">WPSSO RRSSB Free extension</a> works with either the WPSSO Free or Pro core plugin.</li>
+<li>The <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-prereq">WPSSO RRSSB Pro extension</a> (along with all WPSSO Pro extensions) requires the <a href="https://wpsso.com/extend/plugins/wpsso/?utm_source=wpssorrssb-readme-prereq">WPSSO Pro core plugin</a>.</li>
+</ul>
 </blockquote>
 
 <h4>Quick List of Features</h4>
@@ -93,7 +96,10 @@
 
 <h4>Extends the WPSSO Plugin</h4>
 
-<p>The <a href="https://wordpress.org/plugins/wpsso-rrssb/">WPSSO RRSSB Free extension</a> works with either the WPSSO Free or Pro core plugin. The <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-extends">WPSSO RRSSB Pro extension</a> (along with all WPSSO Pro extensions) requires the <a href="https://wpsso.com/extend/plugins/wpsso/?utm_source=wpssorrssb-readme-extends">WPSSO Pro core plugin</a>.</p>
+<ul>
+<li>The <a href="https://wordpress.org/plugins/wpsso-rrssb/">WPSSO RRSSB Free extension</a> works with either the WPSSO Free or Pro core plugin.</li>
+<li>The <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-extends">WPSSO RRSSB Pro extension</a> (along with all WPSSO Pro extensions) requires the <a href="https://wpsso.com/extend/plugins/wpsso/?utm_source=wpssorrssb-readme-extends">WPSSO Pro core plugin</a>.</li>
+</ul>
 
 <p><a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-purchase">Purchase the WPSSO Ridiculously Responsive Social Sharing Buttons Pro extension here</a> (all purchases include a <em>No Risk 30 Day Refund Policy</em>).</p>
 
