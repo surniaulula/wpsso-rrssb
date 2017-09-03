@@ -136,6 +136,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = Changelog / Release Notes =
 
+**Version 1.4.23-b.2 (2017/09/03)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Renamed the SucomForm get_image_dimensions_input() method to get_input_image_dimensions().
+
 **Version 1.4.22 (2017/08/08)**
 
 * *New Features*
@@ -285,6 +296,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Maintenance release.
 
 == Upgrade Notice ==
+
+= 1.4.23-b.2 =
+
+(2017/09/03) Renamed some SucomForm methods for WPSSO v3.45.8.
 
 = 1.4.22 =
 
