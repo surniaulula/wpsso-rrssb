@@ -95,8 +95,8 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 = Install and Uninstall =
 
-* [Install the Plugin (Free and Pro version)](https://wpsso.com/docs/plugins/wpsso-rrssb/installation/install-the-plugin/)
-* [Uninstall the Plugin](https://wpsso.com/docs/plugins/wpsso-rrssb/installation/uninstall-the-plugin/)
+* [Install the WPSSO RRSSB Plugin (Free and Pro version)](https://wpsso.com/docs/plugins/wpsso-rrssb/installation/install-the-plugin/)
+* [Uninstall the WPSSO RRSSB Plugin](https://wpsso.com/docs/plugins/wpsso-rrssb/installation/uninstall-the-plugin/)
 
 == Frequently Asked Questions ==
 
