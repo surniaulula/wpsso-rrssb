@@ -32,8 +32,8 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 			) );
 		}
 
+		// called by the extended WpssoAdmin class
 		protected function add_meta_boxes() {
-			// add_meta_box( $id, $title, $callback, $post_type, $context, $priority, $callback_args );
 			add_meta_box( $this->pagehook.'_sharing_styles',
 				_x( 'Social Sharing Styles', 'metabox title', 'wpsso-rrssb' ),
 					array( &$this, 'show_metabox_sharing_styles' ), $this->pagehook, 'normal' );
@@ -46,7 +46,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 		}
 
 		public function show_metabox_sharing_styles() {
-			$metabox = 'sharing-styles';
+			$metabox_id = 'sharing-styles';
 
 			if ( file_exists( WpssoRrssbSharing::$sharing_css_file ) &&
 				( $fsize = filesize( WpssoRrssbSharing::$sharing_css_file ) ) !== false )
@@ -68,13 +68,13 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 
 			foreach ( $tabs as $key => $title ) {
 				$tabs[$key] = _x( $title, 'metabox tab', 'wpsso-ssb' );	// translate the tab title
-				$table_rows[$key] = array_merge( $this->get_table_rows( $metabox, $key ), 
-					apply_filters( $this->p->cf['lca'].'_'.$metabox.'_'.$key.'_rows', array(), $this->form ) );
+				$table_rows[$key] = array_merge( $this->get_table_rows( $metabox_id, $key ), 
+					apply_filters( $this->p->cf['lca'].'_'.$metabox_id.'_'.$key.'_rows', array(), $this->form ) );
 			}
-			$this->p->util->do_metabox_tabs( $metabox, $tabs, $table_rows );
+			$this->p->util->do_metabox_tabs( $metabox_id, $tabs, $table_rows );
 		}
 
-		protected function get_table_rows( $metabox, $key ) {
+		protected function get_table_rows( $metabox_id, $key ) {
 			$table_rows['buttons_css_'.$key] = '<th class="textinfo">'.$this->p->msgs->get( 'info-styles-'.$key ).'</th>'.
 			'<td'.( isset( $this->p->options['buttons_css_'.$key.':is'] ) &&
 				$this->p->options['buttons_css_'.$key.':is'] === 'disabled' ? ' class="blank"' : '' ).'>'.

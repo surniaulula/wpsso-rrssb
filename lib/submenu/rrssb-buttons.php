@@ -42,9 +42,9 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			}
 		}
 
+		// called by the extended WpssoAdmin class
 		protected function add_meta_boxes() {
 
-			// add_meta_box( $id, $title, $callback, $post_type, $context, $priority, $callback_args );
 			add_meta_box( $this->pagehook.'_rrssb_buttons',
 				_x( 'Social Sharing Buttons', 'metabox title', 'wpsso-rrssb' ),
 					array( &$this, 'show_metabox_rrssb_buttons' ),
@@ -82,7 +82,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 
 		public function show_metabox_rrssb_buttons() {
 			$lca = $this->p->cf['lca'];
-			$metabox = 'rrssb_buttons';
+			$metabox_id = 'rrssb_buttons';
 			$tabs = apply_filters( $lca.'_rrssb_buttons_tabs', array(
 				'include' => _x( 'Include Buttons', 'metabox tab', 'wpsso-rrssb' ),
 				'position' => _x( 'Buttons Position', 'metabox tab', 'wpsso-rrssb' ),
@@ -90,34 +90,34 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			) );
 			$table_rows = array();
 			foreach ( $tabs as $key => $title ) {
-				$table_rows[$key] = array_merge( $this->get_table_rows( $metabox, $key ), 
-					apply_filters( $lca.'_'.$metabox.'_'.$key.'_rows', array(), $this->form ) );
+				$table_rows[$key] = array_merge( $this->get_table_rows( $metabox_id, $key ), 
+					apply_filters( $lca.'_'.$metabox_id.'_'.$key.'_rows', array(), $this->form ) );
 			}
-			$this->p->util->do_metabox_tabs( $metabox, $tabs, $table_rows );
+			$this->p->util->do_metabox_tabs( $metabox_id, $tabs, $table_rows );
 		}
 
 		public function show_metabox_rrssb_website( $post, $callback ) {
 
 			$lca = $this->p->cf['lca'];
 			$args = $callback['args'];
-			$metabox = 'rrssb_website';
-			$tabs = apply_filters( $lca.'_'.$metabox.'_'.$args['id'].'_tabs', array() );
+			$metabox_id = 'rrssb_website';
+			$tabs = apply_filters( $lca.'_'.$metabox_id.'_'.$args['id'].'_tabs', array() );
 
 			if ( empty( $tabs ) ) {
-				$this->p->util->do_table_rows( apply_filters( $lca.'_'.$metabox.'_'.$args['id'].'_rows',
-					array(), $this->form, $this ), 'metabox-'.$metabox.'-'.$args['id'], 'metabox-'.$metabox );
+				$this->p->util->do_table_rows( apply_filters( $lca.'_'.$metabox_id.'_'.$args['id'].'_rows',
+					array(), $this->form, $this ), 'metabox-'.$metabox_id.'-'.$args['id'], 'metabox-'.$metabox_id );
 			} else {
 				foreach ( $tabs as $tab => $title ) {
-					$table_rows[$tab] = apply_filters( $lca.'_'.$metabox.'_'.$args['id'].'_'.$tab.'_rows',
+					$table_rows[$tab] = apply_filters( $lca.'_'.$metabox_id.'_'.$args['id'].'_'.$tab.'_rows',
 						array(), $this->form, $this );
 				}
-				$this->p->util->do_metabox_tabs( $metabox.'_'.$args['id'], $tabs, $table_rows );
+				$this->p->util->do_metabox_tabs( $metabox_id.'_'.$args['id'], $tabs, $table_rows );
 			}
 		}
 
-		protected function get_table_rows( $metabox, $key ) {
+		protected function get_table_rows( $metabox_id, $key ) {
 			$table_rows = array();
-			switch ( $metabox.'-'.$key ) {
+			switch ( $metabox_id.'-'.$key ) {
 
 				case 'rrssb_buttons-include':
 

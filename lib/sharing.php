@@ -109,7 +109,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				$this->p->util->add_plugin_filters( $this, array( 
 					'save_options' => 3,			// update the sharing css file
 					'option_type' => 2,			// identify option type for sanitation
-					'post_social_settings_tabs' => 2,	// $tabs, $mod
+					'post_custom_meta_tabs' => 3,		// $tabs, $mod, $metabox_id
 					'post_cache_transients' => 3,		// clear transients on post save
 					'messages_info' => 2,
 					'messages_tooltip' => 2,
@@ -226,9 +226,12 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			return $type;
 		}
 
-		public function filter_post_social_settings_tabs( $tabs, $mod ) {
-			return SucomUtil::get_after_key( $tabs, 'media', 'buttons',
-				_x( 'Sharing Buttons', 'metabox tab', 'wpsso-rrssb' ) );
+		public function filter_post_custom_meta_tabs( $tabs, $mod, $metabox_id ) {
+			if ( $metabox_id === $this->p->cf['meta']['id'] ) {
+				SucomUtil::add_after_key( $tabs, 'media', 'buttons',
+					_x( 'Sharing Buttons', 'metabox tab', 'wpsso-rrssb' ) );
+			}
+			return $tabs;
 		}
 
 		public function filter_post_cache_transients( $transients, $mod, $sharing_url ) {
