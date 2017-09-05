@@ -136,6 +136,18 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = Changelog / Release Notes =
 
+**Version 1.4.24-dev.1 (2017/09/05)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Renamed the following filters for WPSSO v3.45.10 and added a 3rd argument for the metabox id:
+		* 'wpsso_post_social_settings_tabs' to 'wpsso_post_custom_meta_tabs'.
+
 **Version 1.4.23 (2017/09/03)**
 
 * *New Features*
@@ -296,6 +308,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Maintenance release.
 
 == Upgrade Notice ==
+
+= 1.4.24-dev.1 =
+
+(2017/09/05) Code refactoring to renamed filters for WPSSO v3.45.10.
 
 = 1.4.23 =
 
