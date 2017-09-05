@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 1.4.24\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2017-09-05 14:05-0400\n"
-"PO-Revision-Date: 2017-09-05 14:05-0400\n"
+"POT-Creation-Date: 2017-09-05 15:30-0400\n"
+"PO-Revision-Date: 2017-09-05 15:58-0400\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -18,17 +18,17 @@ msgstr ""
 #: lib/config-gettext-extract.php:3
 msgctxt "option value"
 msgid "Admin Edit"
-msgstr "Edit Admin"
+msgstr "Edit admin"
 
 #: lib/config-gettext-extract.php:4
 msgctxt "option value"
 msgid "All Buttons"
-msgstr "Tous les Boutons"
+msgstr "Tous les boutons"
 
 #: lib/config-gettext-extract.php:5
 msgctxt "option value"
 msgid "Any Platform"
-msgstr "Toute Plateformes"
+msgstr "Toute plateformes"
 
 #: lib/config-gettext-extract.php:6
 msgctxt "option value"
@@ -43,12 +43,12 @@ msgstr "Contenu"
 #: lib/config-gettext-extract.php:8
 msgctxt "option value"
 msgid "CSS Sidebar"
-msgstr "Barre Latérale"
+msgstr "Barre latérale"
 
 #: lib/config-gettext-extract.php:9
 msgctxt "option value"
 msgid "Desktop Only"
-msgstr "Plateforme de Bureau"
+msgstr "Ordinateur seulement"
 
 #: lib/config-gettext-extract.php:10
 msgctxt "option value"
@@ -73,12 +73,12 @@ msgstr "Mobile Seulement"
 #: lib/config-gettext-extract.php:14
 msgctxt "lib file description"
 msgid "Responsive Buttons"
-msgstr "Boutons Réactifs"
+msgstr "Boutons réactifs"
 
 #: lib/config-gettext-extract.php:15
 msgctxt "lib file description"
 msgid "Responsive Styles"
-msgstr "Styles Réactifs"
+msgstr "Styles réactifs"
 
 #: lib/config-gettext-extract.php:16
 msgctxt "option value"
@@ -88,7 +88,7 @@ msgstr "Shortcode"
 #: lib/config-gettext-extract.php:17
 msgctxt "option value"
 msgid "Top and Bottom"
-msgstr "Haut et Bas"
+msgstr "Haut et bas"
 
 #: lib/config-gettext-extract.php:18
 msgctxt "option value"
@@ -179,7 +179,7 @@ msgstr "Impossible d'ouvrir le fichier css %s pour lecture."
 #: lib/sharing.php:232
 msgctxt "metabox tab"
 msgid "Sharing Buttons"
-msgstr "Boutons de Partage"
+msgstr "Boutons de partage"
 
 #: lib/sharing.php:278
 msgid "All sharing styles have been reloaded with their default value and saved."
@@ -212,7 +212,7 @@ msgstr "Erreur en retirant la feuille de style minimisé &mdash; le serveur Web 
 #: lib/sharing.php:402
 msgctxt "metabox title"
 msgid "Sharing Buttons"
-msgstr "Boutons de Partage Social"
+msgstr "Boutons de partage"
 
 #: lib/sharing.php:457
 msgid "%s must be published<br/>before it can be shared."
@@ -241,7 +241,7 @@ msgstr "Si un Article ou une Page statique a été sélectionnée pour la page d
 
 #: lib/sharing.php:930
 msgid "Enabled social sharing buttons are added to the Post, Page, Media, and Product webpages by default. If your theme (or another plugin) supports additional custom post types, and you would like to include social sharing buttons on these webpages, check the appropriate option(s) here."
-msgstr "Les boutons de partage social activés sont ajoutés par défaut au pages Web d'Articles, Pages, Médias, et Produits. Si votre thème (ou une autre extension) supporte des types d'articles personnalisé supplémentaires, et que vous souhaitez ajouter des boutons de partage social sur ces pages Web, cochez les options appropriées ici."
+msgstr "Les boutons de partage social activés sont ajoutés par défaut au articles, pages, médias, et produits. Si votre thème (ou une autre extension) supporte des articles de types personnalisé supplémentaires, et que vous souhaitez ajouter des boutons de partage social sur ces pages Web, cochez les options appropriées ici."
 
 #: lib/sharing.php:933
 msgid "Modify URLs shared by the sharing buttons to use a specific protocol."
@@ -254,15 +254,15 @@ msgstr "Ajouter le CSS de tous les <em>%1$s</em> au pages Web (cochée par défa
 #: lib/sharing.php:936
 msgctxt "lib file description"
 msgid "Sharing Styles"
-msgstr "Styles de Partage"
+msgstr "Styles de partage"
 
 #: lib/sharing.php:939
 msgid "Have WordPress enqueue the social stylesheet instead of adding the CSS to in the webpage HTML (default is unchecked). Enqueueing the stylesheet may be desirable if you use a plugin to concatenate all enqueued styles into a single stylesheet URL."
 msgstr "Demander a WordPress de mettre la feuille de style en queue au lieu d'ajouter le CSS au HTML des pages Web (décochée par défaut). Mettre la feuille de style en queue peut être souhaitable si vous utilisez une extension pour assembler tous le contenu des feuilles de styles dans un seul URL."
 
 #: lib/sharing.php:942
-msgid "Append the %1$s to the tweet (see <a href=\"%2$s\">the Twitter options tab</a> in the %3$s settings page). The %1$s will be displayed and recommended after the webpage is shared."
-msgstr "Ajouter le %1$s au Tweet (voir <a href=\"%2$s\">l'onglet d'options Twitter</a> sur la page de réglages %3$s). Le %1$s sera affichés et recommandé après que la page Web est été partagée."
+msgid "Append the %1$s to the tweet (see <a href=\"%2$s\">the Twitter options tab</a> in the %3$s page). The %1$s will be displayed and recommended after the webpage is shared."
+msgstr "Ajouter le %1$s au Tweet (voir <a href=\"%2$s\">l'onglet d'options Twitter</a> sur la page de %3$s). Le %1$s sera affichés et recommandé après que la page Web est été partagée."
 
 #: lib/sharing.php:942 lib/sharing.php:945
 msgctxt "option label"
@@ -271,8 +271,8 @@ msgstr "Le @nom d'affaires Twitter"
 
 #: lib/sharing.php:942
 msgctxt "lib file description"
-msgid "General"
-msgstr "Général"
+msgid "General Settings"
+msgstr "Réglages généraux"
 
 #: lib/sharing.php:945
 msgid "Recommend following the author's Twitter @username after sharing a webpage. If the %1$s option (above) is also checked, the %2$s is suggested first."
@@ -299,22 +299,22 @@ msgstr "La valeur d'expiration de cache suggérée est de %1$s secondes (%2$s)."
 #: lib/submenu/rrssb-buttons.php:49
 msgctxt "metabox title"
 msgid "Social Sharing Buttons"
-msgstr "Boutons de Partage Social"
+msgstr "Boutons de partage social"
 
 #: lib/submenu/rrssb-buttons.php:87
 msgctxt "metabox tab"
 msgid "Include Buttons"
-msgstr "Ajout de Boutons"
+msgstr "Ajout de boutons"
 
 #: lib/submenu/rrssb-buttons.php:88
 msgctxt "metabox tab"
 msgid "Buttons Position"
-msgstr "Position des Boutons"
+msgstr "Position des boutons"
 
 #: lib/submenu/rrssb-buttons.php:89
 msgctxt "metabox tab"
 msgid "Advanced Settings"
-msgstr "Réglages Avancés"
+msgstr "Réglages avancés"
 
 #: lib/submenu/rrssb-buttons.php:124
 msgctxt "option label"
@@ -344,12 +344,12 @@ msgstr "Position dans le texte d'extrait"
 #: lib/submenu/rrssb-styles.php:38
 msgctxt "metabox title"
 msgid "Social Sharing Styles"
-msgstr "Styles de Partage Social"
+msgstr "Styles de partage social"
 
 #: lib/submenu/rrssb-styles.php:43
 msgctxt "submit button"
 msgid "Reload Default Styles"
-msgstr "Recharger Styles par Défaut"
+msgstr "Recharger styles par défaut"
 
 #: lib/submenu/rrssb-styles.php:57
 msgctxt "option label"
@@ -377,7 +377,7 @@ msgstr "Ordre de préférence"
 #: lib/website/twitter.php:33 lib/website/vk.php:33 lib/website/whatsapp.php:33
 msgctxt "option label"
 msgid "Allow for Platform"
-msgstr "Pour Plateforme"
+msgstr "Pour plateforme"
 
 #: lib/website/email.php:38
 msgctxt "option label"

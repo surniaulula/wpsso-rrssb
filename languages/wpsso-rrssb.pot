@@ -286,8 +286,8 @@ msgstr ""
 #: lib/sharing.php:942
 msgid ""
 "Append the %1$s to the tweet (see <a href=\"%2$s\">the Twitter options tab</"
-"a> in the %3$s settings page). The %1$s will be displayed and recommended "
-"after the webpage is shared."
+"a> in the %3$s page). The %1$s will be displayed and recommended after the "
+"webpage is shared."
 msgstr ""
 
 #: lib/sharing.php:942 lib/sharing.php:945
@@ -297,7 +297,7 @@ msgstr ""
 
 #: lib/sharing.php:942
 msgctxt "lib file description"
-msgid "General"
+msgid "General Settings"
 msgstr ""
 
 #: lib/sharing.php:945
