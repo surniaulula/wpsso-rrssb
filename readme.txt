@@ -66,7 +66,7 @@ WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in y
 **WPSSO RRSSB Pro / Additional Features**
 
 * Extends the features of WPSSO Pro (requires a licensed WPSSO Pro plugin).
-* Custom titles and text in the Social Settings metabox for:
+* Custom titles and text in the Social / Search Optimization metabox for:
 	* Email
 	* LinkedIn
 	* Pinterest
@@ -114,7 +114,7 @@ WPSSO and WPSSO RRSSB are *fast and coded for performance*, making full use of a
 
 01. WPSSO RRSSB example showing the **Ridiculously Responsive Social Sharing Buttons** enabled (with the default stylesheet) in the CSS sidebar, content text, and widget.
 02. WPSSO RRSSB example showing a WooCommerce product page with **Ridiculously Responsive Social Sharing Buttons** in the CSS sidebar, short and long product descriptions (Pro version).
-03. WPSSO RRSSB Sharing Buttons tab in the Social Settings metabox allows you to fine-tune and customize the text used by several social sharing websites (Pro version).
+03. WPSSO RRSSB Sharing Buttons tab in the Social / Search Optimization metabox allows you to fine-tune and customize the text used by several social sharing websites (Pro version).
 04. WPSSO RRSSB Responsive Buttons settings page.
 05. WPSSO RRSSB Responsive Styles settings page.
 
@@ -197,7 +197,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * *New Features*
 	* None
 * *Improvements*
-	* The Pinterest custom image in the Social Settings has been moved to the Structured Data / Schema Markup / Pinterest custom image for WPSSO v3.44.0.
+	* The Pinterest custom image has been moved to the Structured Data / Schema Markup / Pinterest custom image for WPSSO v3.44.0.
 * *Bugfixes*
 	* None
 * *Developer Notes*
@@ -331,7 +331,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 1.4.19 =
 
-(2017/05/19) The Pinterest custom image in the Social Settings has been moved to the Structured Data / Schema Markup / Pinterest custom image for WPSSO v3.44.0.
+(2017/05/19) The Pinterest custom image has been moved to the Structured Data / Schema Markup / Pinterest custom image for WPSSO v3.44.0.
 
 = 1.4.18 =
 
