@@ -74,19 +74,22 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 		public static function required_notice( $deactivate = false ) {
 			self::wpsso_init_textdomain();
 			$info = WpssoRrssbConfig::$cf['plugin']['wpssorrssb'];
-			$die_msg = __( '%1$s is an extension for the %2$s plugin &mdash; please install and activate the %3$s plugin before activating %4$s.',
-				'wpsso-rrssb' );
-			$err_msg = __( 'The %1$s extension requires the %2$s plugin &mdash; please install and activate the %3$s plugin.',
-				'wpsso-rrssb' );
+			$die_msg = __( '%1$s is an extension for the %2$s plugin &mdash; please install and activate the %3$s plugin before activating %4$s.', 'wpsso-rrssb' );
+			$err_msg = __( 'The %1$s extension requires the %2$s plugin &mdash; install and activate the %3$s plugin or <a href="%4$s">deactivate the %5$s extension</a>.', 'wpsso-rrssb' );
 			if ( $deactivate === true ) {
 				if ( ! function_exists( 'deactivate_plugins' ) ) {
 					require_once trailingslashit( ABSPATH ).'wp-admin/includes/plugin.php';
 				}
 				deactivate_plugins( $info['base'], true );	// $silent = true
-				wp_die( '<p>'.sprintf( $die_msg, $info['name'], $info['req']['name'], $info['req']['short'], $info['short'] ).'</p>' );
+				wp_die( '<p>'.sprintf( $die_msg, $info['name'], $info['req']['name'],
+					$info['req']['short'], $info['short'] ).'</p>' );
 			} else {
+				$deactivate_url = wp_nonce_url( 'plugins.php?action=deactivate&amp;'.
+					'plugin='.$info['base'].'&amp;plugin_status=active&amp;paged=1&amp;s=',
+						'deactivate-plugin_'.$info['base'] );
 				echo '<div class="notice notice-error error"><p>'.
-					sprintf( $err_msg, $info['name'], $info['req']['name'], $info['req']['short'] ).'</p></div>';
+					sprintf( $err_msg, $info['name'], $info['req']['name'],
+						$info['req']['short'], $deactivate_url, $info['short'] ).'</p></div>';
 			}
 		}
 
