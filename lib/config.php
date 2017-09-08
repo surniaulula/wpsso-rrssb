@@ -16,7 +16,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(
-					'version' => '1.4.24-dev.3',		// plugin version
+					'version' => '1.4.24-b.1',		// plugin version
 					'opt_version' => '12',		// increment when changing default options
 					'short' => 'WPSSO RRSSB',	// short plugin name
 					'name' => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
@@ -29,7 +29,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'req' => array(
 						'short' => 'WPSSO',
 						'name' => 'WPSSO',
-						'min_version' => '3.45.10-dev.3',
+						'min_version' => '3.45.10-b.1',
 					),
 					'img' => array(
 						'icons' => array(
@@ -131,11 +131,16 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		}
 
 		public static function set_constants( $plugin_filepath ) { 
+			if ( defined( 'WPSSORRSSB_VERSION' ) ) {			// execute and define constants only once
+				return;
+			}
+			define( 'WPSSORRSSB_VERSION', self::$cf['plugin']['wpssorrssb']['version'] );						
 			define( 'WPSSORRSSB_FILEPATH', $plugin_filepath );						
 			define( 'WPSSORRSSB_PLUGINDIR', trailingslashit( realpath( dirname( $plugin_filepath ) ) ) );
 			define( 'WPSSORRSSB_PLUGINSLUG', self::$cf['plugin']['wpssorrssb']['slug'] );	// wpsso-rrssb
 			define( 'WPSSORRSSB_PLUGINBASE', self::$cf['plugin']['wpssorrssb']['base'] );	// wpsso-rrssb/wpsso-rrssb.php
 			define( 'WPSSORRSSB_URLPATH', trailingslashit( plugins_url( '', $plugin_filepath ) ) );
+
 			self::set_variable_constants();
 		}
 
