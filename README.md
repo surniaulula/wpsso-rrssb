@@ -15,27 +15,27 @@
 
 <p><img class="readme-icon" src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png"></p>
 
-<p>Add awesome <strong>Ridiculously Responsive Social Sharing Buttons</strong> to posts / pages, custom post types, <a href="https://wordpress.org/plugins/bbpress/">bbPress</a>, <a href="https://wordpress.org/plugins/buddypress/">BuddyPress</a>, <a href="https://wordpress.org/plugins/woocommerce/">WooCommerce</a> product pages, and much more.</p>
+<p>Add awesome <strong>Ridiculously Responsive Social Sharing Buttons</strong> to posts / pages, custom post types, <a href="https://wordpress.org/plugins/bbpress/">bbPress</a>, <a href="https://wordpress.org/plugins/buddypress/">BuddyPress</a>, <a href="https://wordpress.org/plugins/woocommerce/">WooCommerce</a> product pages, and much more.</p></p>
 
-<p><strong>WPSSO RRSSB can include social sharing buttons in the content, excerpt, widget, CSS sidebar, shortcodes, templates, and <em>admin editing pages</em></strong> &mdash; share your posts and pages directly from the editor! Do you use bbPress, BuddyPress, or WooCommerce? The Pro version of WPSSO RRSSB includes special integration modules to add social sharing buttons to even more locations!</p>
+<p>Include social sharing buttons in the content, excerpt, widget, CSS sidebar, shortcodes, templates, and <em>admin editing pages</em> &mdash; share your posts and pages directly from the editor! Do you use bbPress, BuddyPress, or WooCommerce? The Pro version of WPSSO RRSSB includes special integration modules to add social sharing buttons to even more locations!</p>
 
-<p>The <strong>Scalable Vector Graphics (SVG) social icons</strong> used by WPSSO RRSSB automatically resize to their container, so they always look great on any device (phone, tablet, laptop, etc.), including high resolution retina displays.</p>
+<p>The <strong>Scalable Vector Graphics (SVG) social icons</strong> used by WPSSO RRSSB automatically resize to their container, so they always look great on any device (phone, tablet, laptop, etc.), including high resolution retina displays!</p>
 
 <blockquote>
 <p><strong>Prerequisite</strong> &mdash; WPSSO Ridiculously Responsive Social Sharing Buttons is an extension for the WPSSO (Core Plugin), which <em>automatically</em> generates complete and accurate meta tags and Schema markup from your content for Social Media Optimization (SMO) and Search Engine Optimization (SEO).</p>
 
 <p>The WPSSO RRSSB Free extension works with either the Free or Pro version of WPSSO (Core Plugin).</p>
 
-<p>The <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-prereq">WPSSO RRSSB Pro extension</a> uses many WPSSO Pro core plugin features and requires the <a href="https://wpsso.com/extend/plugins/wpsso/?utm_source=wpssorrssb-readme-prereq">WPSSO Pro core plugin</a>.</p>
+<p>The <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-prereq">WPSSO RRSSB Pro extension</a> uses many WPSSO Pro (Core Plugin) features and requires the <a href="https://wpsso.com/extend/plugins/wpsso/?utm_source=wpssorrssb-readme-prereq">WPSSO Pro (Core Plugin)</a>.</p>
 </blockquote>
 
 <h4>Quick List of Features</h4>
 
 <p><strong>WPSSO RRSSB Free / Standard Features</strong></p>
 
-<ul>
-<li>Extends the features of WPSSO Free or Pro.</li>
-<li>Allows you to include a selection of <strong>Ridiculously Responsive Social Sharing Buttons</strong> in multiple locations:
+<p><span style="color:#33cc33">&#x0229b;</span> &nbsp; Extends the features of WPSSO Free or Pro.</p>
+
+<p><span style="color:#33cc33">&#x0229b;</span> &nbsp; Include a selection of <strong>Ridiculously Responsive Social Sharing Buttons</strong> in multiple locations:</p>
 
 <ul>
 <li>Above and/or below your post / page content and/or excerpt text.</li>
@@ -44,8 +44,9 @@
 <li>In a CSS / javascript sidebar.</li>
 <li>A shortcode within your content and/or excerpt.</li>
 <li>A function in your theme's template(s).</li>
-</ul></li>
-<li>Each of these social sharing buttons can be configured and styled individually:
+</ul>
+
+<p><span style="color:#33cc33">&#x0229b;</span> &nbsp; Each of these social sharing buttons can be configured and styled individually:</p>
 
 <ul>
 <li>Email</li>
@@ -59,18 +60,29 @@
 <li>Twitter</li>
 <li>VK</li>
 <li>WhatsApp (for mobile devices)</li>
-</ul></li>
-<li>Include / exclude individual social sharing buttons based on the viewing device (desktop and/or mobile).</li>
-<li>Support for Automattic's <a href="https://wordpress.org/plugins/amp/">Accelerated Mobile Pages (AMP)</a> plugin.</li>
-<li>A built-in stylesheet editor allows you to fine-tune the CSS for each social sharing button location easily (content, excerpt, shortcode, widget, etc.).</li>
-<li>Uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.</li>
 </ul>
+
+<p><span style="color:#33cc33">&#x0229b;</span> &nbsp; Include / exclude individual social sharing buttons based on the viewing device (desktop and/or mobile).</p>
+
+<p><span style="color:#33cc33">&#x0229b;</span> &nbsp; Automatically exclude buttons from <a href="https://wordpress.org/plugins/amp/">Accelerated Mobile Pages (AMP)</a> plugin pages.</p>
+
+<p><span style="color:#33cc33">&#x0229b;</span> &nbsp; A built-in stylesheet editor allows you to fine-tune the CSS for each social sharing button location easily (content, excerpt, shortcode, widget, etc.).</p>
+
+<p><span style="color:#33cc33">&#x0229b;</span> &nbsp; Uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.</p>
+
+<p><span style="color:#33cc33">&#x0229b;</span> &nbsp; <em>Fast and coded for performance</em>, WPSSO RRSSB makes full use of all available caching techniques (persistent / non-persistent object and disk caching).</p>
+
+<p><span style="color:#33cc33">&#x0229b;</span> &nbsp; Loads only the PHP library files and object classes it needs, keeping it small, fast, light, and still able to support a wide range of 3rd party integration features.</p>
+
+<p><span style="color:#33cc33">&#x0229b;</span> &nbsp; Fully tested and compatible with PHP v7.x (requires PHP v5.3 or better).</p>
+
+<h4>Quick List of Features (Continued)</h4>
 
 <p><strong>WPSSO RRSSB Pro / Additional Features</strong></p>
 
-<ul>
-<li>Extends the features of WPSSO Pro (requires a licensed WPSSO Pro plugin).</li>
-<li>Custom titles and text in the Social and Search Optimization metabox for:
+<p><span style="color:#33cc33">&#x0229b;</span> &nbsp; Extends the features of WPSSO Pro (requires a licensed WPSSO Pro plugin).</p>
+
+<p><span style="color:#33cc33">&#x0229b;</span> &nbsp; Custom titles and text in the Social and Search Optimization metabox for:</p>
 
 <ul>
 <li>Email</li>
@@ -79,19 +91,15 @@
 <li>Reddit</li>
 <li>Tumblr</li>
 <li>Twitter</li>
-</ul></li>
-<li>Additional sharing button locations and CSS styles for:
+</ul>
+
+<p><span style="color:#33cc33">&#x0229b;</span> &nbsp; Additional sharing button locations and CSS styles for:</p>
 
 <ul>
 <li><a href="https://wordpress.org/plugins/bbpress/">bbPress</a></li>
 <li><a href="https://wordpress.org/plugins/buddypress/">BuddyPress</a></li>
 <li><a href="https://wordpress.org/plugins/woocommerce/">WooCommerce</a></li>
-</ul></li>
 </ul>
-
-<h4>Proven Performance</h4>
-
-<p>WPSSO and WPSSO RRSSB are <em>fast and coded for performance</em>, making full use of all available caching techniques (persistent / non-persistent object and disk caching). WPSSO loads only the library files and object classes it needs, keeping it small, fast, and yet still able to support a wide range of 3rd party integration features.</p>
 
 <h4>Extends the WPSSO Plugin</h4>
 
