@@ -76,7 +76,9 @@ The [WPSSO RRSSB Pro extension](https://wpsso.com/extend/plugins/wpsso-rrssb/?ut
 
 <span style="color:#33cc33">&#x0229b;</span> &nbsp; A built-in stylesheet editor allows you to fine-tune the CSS for each social sharing button location easily (content, excerpt, shortcode, widget, etc.).
 
-<span style="color:#33cc33">&#x0229b;</span> &nbsp; Uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.
+<span style="color:#33cc33">&#x0229b;</span> &nbsp; Download the Free version from [GitHub](https://surniaulula.github.io/wpsso-rrssb/) or [WordPress.org](https://wordpress.org/plugins/wpsso-rrssb/).
+
+<span style="color:#33cc33">&#x0229b;</span> &nbsp; WPSSO RRSSB uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.
 
 = Quick List of Features (Continued) =
 
