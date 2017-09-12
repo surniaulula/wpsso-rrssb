@@ -27,15 +27,15 @@
 
 <p>WPSSO and its extensions make full use of all available caching techniques (persistent / non-persistent object and disk caching), and load only the PHP library files and object classes needed, keeping the code small, fast, light, and able to support a wide range of 3rd party integration features.</p>
 
-<p>WPSSO and its extensions are fully tested and compatible with PHP v7.x (requires PHP v5.3 or better).</p>
+<p>WPSSO and its extensions are fully tested and compatible with PHP v7.x (PHP v5.3 or better required).</p>
 
-<blockquote>
-<p><strong>Prerequisite</strong> &mdash; WPSSO Ridiculously Responsive Social Sharing Buttons is an extension for the WPSSO (Core Plugin), which <em>automatically</em> generates complete and accurate meta tags and Schema markup from your content for Social Media Optimization (SMO) and Search Engine Optimization (SEO).</p>
+<h4>WPSSO (Core Plugin) Prerequisite</h4>
+
+<p>WPSSO Ridiculously Responsive Social Sharing Buttons is an extension for the WPSSO (Core Plugin), which automatically generates complete and accurate meta tags and Schema markup from your content for Social Media Optimization (SMO) and Search Engine Optimization (SEO).</p>
 
 <p>The WPSSO RRSSB Free extension works with either the Free or Pro version of WPSSO (Core Plugin).</p>
 
 <p>The <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-prereq">WPSSO RRSSB Pro extension</a> uses many WPSSO Pro (Core Plugin) features and requires the <a href="https://wpsso.com/extend/plugins/wpsso/?utm_source=wpssorrssb-readme-prereq">WPSSO Pro (Core Plugin)</a>.</p>
-</blockquote>
 
 <h4>Quick List of Features</h4>
 
