@@ -21,7 +21,9 @@ WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in y
 
 Add awesome **Ridiculously Responsive Social Sharing Buttons** to posts / pages, custom post types, [bbPress](https://wordpress.org/plugins/bbpress/), [BuddyPress](https://wordpress.org/plugins/buddypress/), [WooCommerce](https://wordpress.org/plugins/woocommerce/) product pages, and much more.</p>
 
-Include social sharing buttons in the content, excerpt, widget, CSS sidebar, shortcodes, templates, and *admin editing pages* &mdash; share your posts and pages directly from the editor! Do you use bbPress, BuddyPress, or WooCommerce? The Pro version of WPSSO RRSSB includes special integration modules to add social sharing buttons to even more locations!
+Include social sharing buttons in the content, excerpt, widget, CSS sidebar, shortcodes, templates, and *admin editing pages* &mdash; share your posts and pages directly from the editor!
+
+Do you use bbPress, BuddyPress, or WooCommerce? The Pro version of WPSSO RRSSB includes special integration modules to add social sharing buttons to even more locations!
 
 The **Scalable Vector Graphics (SVG) social icons** used by WPSSO RRSSB automatically resize to their container, so they always look great on any device (phone, tablet, laptop, etc.), including high resolution retina displays!
 
@@ -70,9 +72,9 @@ The **Scalable Vector Graphics (SVG) social icons** used by WPSSO RRSSB automati
 
 <span style="color:#33cc33">&#x0229b;</span> &nbsp; Uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.
 
-<span style="color:#33cc33">&#x0229b;</span> &nbsp; *Fast and coded for performance*, WPSSO RRSSB makes full use of all available caching techniques (persistent / non-persistent object and disk caching).
+<span style="color:#33cc33">&#x0229b;</span> &nbsp; *Fast and coded for performance*, WPSSO and its extensions make full use of all available caching techniques (persistent / non-persistent object and disk caching).
 
-<span style="color:#33cc33">&#x0229b;</span> &nbsp; Loads only the PHP library files and object classes it needs, keeping it small, fast, light, and still able to support a wide range of 3rd party integration features.
+<span style="color:#33cc33">&#x0229b;</span> &nbsp; Loads only the PHP library files and object classes it needs, keeping the code small, fast, light, and still able to support a wide range of 3rd party integration features.
 
 <span style="color:#33cc33">&#x0229b;</span> &nbsp; Fully tested and compatible with PHP v7.x (requires PHP v5.3 or better).
 
