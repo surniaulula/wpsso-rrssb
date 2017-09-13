@@ -130,7 +130,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 					'<td>'.$this->form->get_checkbox( 'buttons_on_front' ).'</td>';
 
 					$add_to_checkboxes = '';
-					foreach ( $this->p->util->get_post_types( 'object' ) as $pt ) {
+					foreach ( $this->p->util->get_post_types( 'objects' ) as $pt ) {
 						$add_to_checkboxes .= '<p>'.$this->form->get_checkbox( 'buttons_add_to_'.$pt->name ).
 							' '.$pt->label.( empty( $pt->description ) ?
 								'' : ' ('.$pt->description.')' ).'</p>';
