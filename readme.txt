@@ -33,7 +33,7 @@ WPSSO and its extensions make full use of all available caching techniques (pers
 
 WPSSO and its extensions are fully tested and compatible with PHP v7.x (PHP v5.3 or better required).
 
-= WPSSO (Core Plugin) Prerequisite =
+<h3>WPSSO (Core Plugin) Prerequisite</h3>
 
 WPSSO Ridiculously Responsive Social Sharing Buttons is an extension for the WPSSO (Core Plugin), which automatically generates complete and accurate meta tags and Schema markup from your content for Social Media Optimization (SMO) and Search Engine Optimization (SEO).
 
@@ -41,9 +41,9 @@ The WPSSO RRSSB Free extension works with either the Free or Pro version of WPSS
 
 The [WPSSO RRSSB Pro extension](https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-prereq) uses many WPSSO Pro (Core Plugin) features and requires the [WPSSO Pro (Core Plugin)](https://wpsso.com/extend/plugins/wpsso/?utm_source=wpssorrssb-readme-prereq).
 
-= Quick List of Features =
+<h3>Quick List of Features</h3>
 
-**WPSSO RRSSB Free / Standard Features**
+<h4>WPSSO RRSSB Free / Standard Features</h4>
 
 <span style="color:#33cc33">&#x0229b;</span> &nbsp; Extends the features of WPSSO Free or Pro.
 
@@ -80,9 +80,9 @@ The [WPSSO RRSSB Pro extension](https://wpsso.com/extend/plugins/wpsso-rrssb/?ut
 
 <span style="color:#33cc33">&#x0229b;</span> &nbsp; WPSSO RRSSB uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.
 
-= Quick List of Features (Continued) =
+<h3>Quick List of Features (Continued)</h3>
 
-**WPSSO RRSSB Pro / Additional Features**
+<h4>WPSSO RRSSB Pro / Additional Features</h4>
 
 <span style="color:#33cc33">&#x0229b;</span> &nbsp; Extends the features of WPSSO Pro (requires a licensed WPSSO Pro plugin).
 
@@ -101,7 +101,7 @@ The [WPSSO RRSSB Pro extension](https://wpsso.com/extend/plugins/wpsso-rrssb/?ut
 * [BuddyPress](https://wordpress.org/plugins/buddypress/)
 * [WooCommerce](https://wordpress.org/plugins/woocommerce/)
 
-= Extends the WPSSO Plugin =
+<h3>Extends the WPSSO Plugin</h3>
 
 <span style="color:#33cc33">&#x0229b;</span> &nbsp; The WPSSO RRSSB Free extension works with either the Free or Pro version of WPSSO (Core Plugin).
 
@@ -111,20 +111,20 @@ The [WPSSO RRSSB Pro extension](https://wpsso.com/extend/plugins/wpsso-rrssb/?ut
 
 == Installation ==
 
-= Install and Uninstall =
+<h3>Install and Uninstall</h3>
 
 * [Install the WPSSO RRSSB Plugin (Free and Pro version)](https://wpsso.com/docs/plugins/wpsso-rrssb/installation/install-the-plugin/)
 * [Uninstall the WPSSO RRSSB Plugin](https://wpsso.com/docs/plugins/wpsso-rrssb/installation/uninstall-the-plugin/)
 
 == Frequently Asked Questions ==
 
-= Frequently Asked Questions =
+<h3>Frequently Asked Questions</h3>
 
 * None
 
 == Other Notes ==
 
-= Additional Documentation =
+<h3>Additional Documentation</h3>
 
 * [RRSSB Shortcode for Sharing Buttons](https://wpsso.com/docs/plugins/wpsso-rrssb/notes/rrssb-shortcode/)
 
@@ -138,12 +138,12 @@ The [WPSSO RRSSB Pro extension](https://wpsso.com/extend/plugins/wpsso-rrssb/?ut
 
 == Changelog ==
 
-= Free / Basic Version Repository =
+<h3>Free / Basic Version Repository</h3>
 
 * [GitHub](https://surniaulula.github.io/wpsso-rrssb/)
 * [WordPress.org](https://wordpress.org/plugins/wpsso-rrssb/developers/)
 
-= Version Numbering =
+<h3>Version Numbering</h3>
 
 Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
@@ -152,7 +152,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * {bugfix} = Backwards-compatible bug fixes or small improvements.
 * {stage}.{level} = Pre-production release: dev < a (alpha) < b (beta) < rc (release candidate).
 
-= Changelog / Release Notes =
+<h3>Changelog / Release Notes</h3>
 
 **Version 1.4.24 (2017/09/10)**
 
