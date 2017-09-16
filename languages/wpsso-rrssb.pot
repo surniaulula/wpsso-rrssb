@@ -230,8 +230,7 @@ msgstr ""
 #: lib/website/gplus.php:25 lib/website/linkedin.php:25
 #: lib/website/pinterest.php:39 lib/website/pocket.php:25
 #: lib/website/reddit.php:25 lib/website/tumblr.php:25
-#: lib/website/twitter.php:25 lib/website/vk.php:25
-#: lib/website/whatsapp.php:25
+#: lib/website/twitter.php:25 lib/website/vk.php:25 lib/website/whatsapp.php:25
 msgctxt "option label"
 msgid "Show Button in"
 msgstr ""
@@ -395,8 +394,7 @@ msgstr ""
 #: lib/website/gplus.php:28 lib/website/linkedin.php:28
 #: lib/website/pinterest.php:42 lib/website/pocket.php:28
 #: lib/website/reddit.php:28 lib/website/tumblr.php:28
-#: lib/website/twitter.php:28 lib/website/vk.php:28
-#: lib/website/whatsapp.php:28
+#: lib/website/twitter.php:28 lib/website/vk.php:28 lib/website/whatsapp.php:28
 msgctxt "option label"
 msgid "Preferred Order"
 msgstr ""
@@ -405,8 +403,7 @@ msgstr ""
 #: lib/website/gplus.php:33 lib/website/linkedin.php:33
 #: lib/website/pinterest.php:47 lib/website/pocket.php:33
 #: lib/website/reddit.php:33 lib/website/tumblr.php:33
-#: lib/website/twitter.php:33 lib/website/vk.php:33
-#: lib/website/whatsapp.php:33
+#: lib/website/twitter.php:33 lib/website/vk.php:33 lib/website/whatsapp.php:33
 msgctxt "option label"
 msgid "Allow for Platform"
 msgstr ""
