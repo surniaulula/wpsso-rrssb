@@ -23,7 +23,7 @@
 
 <p>The <strong>Scalable Vector Graphics (SVG) social icons</strong> used by WPSSO RRSSB automatically resize to their container, so they always look great on any device (phone, tablet, laptop, etc.), including high resolution retina displays!</p>
 
-<p><strong>WPSSO RRSSB is <em>fast</em> and coded for performance:</strong></p>
+<p><strong>WPSSO RRSSB is <em>super fast</em> and coded for performance:</strong></p>
 
 <p>WPSSO and its extensions make full use of all available caching techniques (persistent / non-persistent object and disk caching), and load only the PHP library files and object classes they need, keeping their code small, fast, and light.</p>
 

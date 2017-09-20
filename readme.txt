@@ -27,7 +27,7 @@ Do you use bbPress, BuddyPress, or WooCommerce? The Pro version of WPSSO RRSSB i
 
 The **Scalable Vector Graphics (SVG) social icons** used by WPSSO RRSSB automatically resize to their container, so they always look great on any device (phone, tablet, laptop, etc.), including high resolution retina displays!
 
-**WPSSO RRSSB is *fast* and coded for performance:**
+**WPSSO RRSSB is *super fast* and coded for performance:**
 
 WPSSO and its extensions make full use of all available caching techniques (persistent / non-persistent object and disk caching), and load only the PHP library files and object classes they need, keeping their code small, fast, and light.
 
