@@ -15,6 +15,11 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteEmail' ) ) {
 
 		public function __construct( &$plugin ) {
 			$this->p =& $plugin;
+
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->mark();
+			}
+
 			$this->p->util->add_plugin_filters( $this, array(
 				'rrssb_website_email_rows' => 3,	// $table_rows, $form, $submenu
 			) );
@@ -86,6 +91,11 @@ if ( ! class_exists( 'WpssoRrssbWebsiteEmail' ) ) {
 
 		public function __construct( &$plugin ) {
 			$this->p =& $plugin;
+
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->mark();
+			}
+
 			$this->p->util->add_plugin_filters( $this, array(
 				'get_defaults' => 1,
 			) );

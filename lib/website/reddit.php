@@ -15,6 +15,11 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteReddit' ) ) {
 
 		public function __construct( &$plugin ) {
 			$this->p =& $plugin;
+
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->mark();
+			}
+
 			$this->p->util->add_plugin_filters( $this, array(
 				'rrssb_website_reddit_rows' => 3,	// $table_rows, $form, $submenu
 			) );
@@ -87,6 +92,11 @@ if ( ! class_exists( 'WpssoRrssbWebsiteReddit' ) ) {
 
 		public function __construct( &$plugin ) {
 			$this->p =& $plugin;
+
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->mark();
+			}
+
 			$this->p->util->add_plugin_filters( $this, array(
 				'get_defaults' => 1,
 			) );
