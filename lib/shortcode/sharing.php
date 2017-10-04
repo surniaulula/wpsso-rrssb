@@ -50,22 +50,30 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 		public function add_shortcode() {
 			if ( ! empty( $this->p->options['plugin_shortcodes'] ) ) {
-        			add_shortcode( WPSSORRSSB_SHARING_SHORTCODE_NAME, array( &$this, 'do_shortcode' ) );
-				if ( $this->p->debug->enabled ) {
-					$this->p->debug->log( '['.WPSSORRSSB_SHARING_SHORTCODE_NAME.'] sharing shortcode added' );
+				if ( ! shortcode_exists( WPSSORRSSB_SHARING_SHORTCODE_NAME ) ) {
+        				add_shortcode( WPSSORRSSB_SHARING_SHORTCODE_NAME, array( &$this, 'do_shortcode' ) );
+					if ( $this->p->debug->enabled ) {
+						$this->p->debug->log( '['.WPSSORRSSB_SHARING_SHORTCODE_NAME.'] sharing shortcode added' );
+					}
+					return true;
+				} elseif ( $this->p->debug->enabled ) {
+					$this->p->debug->log( 'cannot add ['.WPSSORRSSB_SHARING_SHORTCODE_NAME.'] sharing shortcode - shortcode already exists' );
 				}
-				return true;
 			}
 			return false;
 		}
 
 		public function remove_shortcode() {
 			if ( ! empty( $this->p->options['plugin_shortcodes'] ) ) {
-				remove_shortcode( WPSSORRSSB_SHARING_SHORTCODE_NAME );
-				if ( $this->p->debug->enabled ) {
-					$this->p->debug->log( '['.WPSSORRSSB_SHARING_SHORTCODE_NAME.'] sharing shortcode removed' );
+				if ( shortcode_exists( WPSSORRSSB_SHARING_SHORTCODE_NAME ) ) {
+					remove_shortcode( WPSSORRSSB_SHARING_SHORTCODE_NAME );
+					if ( $this->p->debug->enabled ) {
+						$this->p->debug->log( '['.WPSSORRSSB_SHARING_SHORTCODE_NAME.'] sharing shortcode removed' );
+					}
+					return true;
+				} elseif ( $this->p->debug->enabled ) {
+					$this->p->debug->log( 'cannot remove ['.WPSSORRSSB_SHARING_SHORTCODE_NAME.'] sharing shortcode - shortcode does not exist' );
 				}
-				return true;
 			}
 			return false;
 		}
