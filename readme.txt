@@ -154,7 +154,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.4.25-dev.1 (2017/10/04)**
+**Version 1.4.25-dev.2 (2017/10/04)**
 
 * *New Features*
 	* None
@@ -163,6 +163,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * *Bugfixes*
 	* None
 * *Developer Notes*
+	* Added a shortcode_exists() call to the WpssoRrssbShortcodeSharing add_shortcode() and remove_shortcode() methods for more complete debug info.
 	* Added 'wpsso_text_filter_begin' and 'wpsso_text_filter_end' hooks in the WpssoRrssbShortcodeSharing class to remove / add the shortcode as required.
 
 **Version 1.4.24 (2017/09/10)**
@@ -338,9 +339,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.4.25-dev.1 =
+= 1.4.25-dev.2 =
 
-(2017/10/04) Added 'wpsso_text_filter_begin' and 'wpsso_text_filter_end' hooks in the WpssoRrssbShortcodeSharing class to remove / add the shortcode as required.
+(2017/10/04) Refactored the WpssoRrssbShortcodeSharing add / remove shortcode methods.
 
 = 1.4.24 =
 
