@@ -154,6 +154,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.4.25-dev.1 (2017/10/04)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Added 'wpsso_text_filter_begin' and 'wpsso_text_filter_end' hooks in the WpssoRrssbShortcodeSharing class to remove / add the shortcode as required.
+
 **Version 1.4.24 (2017/09/10)**
 
 * *New Features*
@@ -326,6 +337,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Maintenance release.
 
 == Upgrade Notice ==
+
+= 1.4.25-dev.1 =
+
+(2017/10/04) Added 'wpsso_text_filter_begin' and 'wpsso_text_filter_end' hooks in the WpssoRrssbShortcodeSharing class to remove / add the shortcode as required.
 
 = 1.4.24 =
 
