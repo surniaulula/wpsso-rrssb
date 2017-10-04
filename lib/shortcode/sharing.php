@@ -24,13 +24,13 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 			if ( ! is_admin() ) {
 				if ( $this->p->avail['p_ext']['rrssb'] ) {
-					$this->wpautop();
-					$this->add();
+					$this->check_wpautop();
+					$this->add_shortcode();
 				}
 			}
 		}
 
-		public function wpautop() {
+		public function check_wpautop() {
 			// make sure wpautop() does not have a higher priority than 10, otherwise it will 
 			// format the shortcode output (shortcode filters are run at priority 11).
 			if ( ! empty( $this->p->options['plugin_shortcodes'] ) ) {
@@ -40,27 +40,37 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 					if ( $filter_priority !== false && $filter_priority > $default_priority ) {
 						remove_filter( $filter_name, 'wpautop' );
 						add_filter( $filter_name, 'wpautop' , $default_priority );
-						$this->p->debug->log( 'wpautop() priority changed from '.$filter_priority.' to '.$default_priority );
+						if ( $this->p->debug->enabled ) {
+							$this->p->debug->log( 'wpautop() priority changed from '.$filter_priority.' to '.$default_priority );
+						}
 					}
 				}
 			}
 		}
 
-		public function add() {
+		public function add_shortcode() {
 			if ( ! empty( $this->p->options['plugin_shortcodes'] ) ) {
-        			add_shortcode( WPSSORRSSB_SHARING_SHORTCODE_NAME, array( &$this, 'shortcode' ) );
-				$this->p->debug->log( '['.WPSSORRSSB_SHARING_SHORTCODE_NAME.'] sharing shortcode added' );
+        			add_shortcode( WPSSORRSSB_SHARING_SHORTCODE_NAME, array( &$this, 'do_shortcode' ) );
+				if ( $this->p->debug->enabled ) {
+					$this->p->debug->log( '['.WPSSORRSSB_SHARING_SHORTCODE_NAME.'] sharing shortcode added' );
+				}
+				return true;
 			}
+			return false;
 		}
 
-		public function remove() {
+		public function remove_shortcode() {
 			if ( ! empty( $this->p->options['plugin_shortcodes'] ) ) {
 				remove_shortcode( WPSSORRSSB_SHARING_SHORTCODE_NAME );
-				$this->p->debug->log( '['.WPSSORRSSB_SHARING_SHORTCODE_NAME.'] sharing shortcode removed' );
+				if ( $this->p->debug->enabled ) {
+					$this->p->debug->log( '['.WPSSORRSSB_SHARING_SHORTCODE_NAME.'] sharing shortcode removed' );
+				}
+				return true;
 			}
+			return false;
 		}
 
-		public function shortcode( $atts, $content = null ) { 
+		public function do_shortcode( $atts, $content = null ) { 
 
 			if ( SucomUtil::is_amp() ) {
 				if ( $this->p->debug->enabled ) {

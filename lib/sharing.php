@@ -477,8 +477,9 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			$removed = false;
 			if ( method_exists( $this, 'get_buttons_'.$filter_name ) ) {
 				$removed = remove_filter( $filter_name, array( &$this, 'get_buttons_'.$filter_name ), WPSSORRSSB_SOCIAL_PRIORITY );
-				if ( $this->p->debug->enabled )
+				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'buttons filter '.$filter_name.' removed ('.( $removed  ? 'true' : 'false' ).')' );
+				}
 			}
 			return $removed;
 		}
