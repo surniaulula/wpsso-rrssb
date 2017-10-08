@@ -7,7 +7,7 @@
  * Plugin URI: https://wpsso.com/extend/plugins/wpsso-rrssb/
  * Assets URI: https://surniaulula.github.io/wpsso-rrssb/assets/
  * Author: JS Morisset
- * Author URI: https://surniaulula.com/
+ * Author URI: https://wpsso.com/
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Description: WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
@@ -23,7 +23,7 @@
  *	{bugfix}	Backwards-compatible bug fixes or small improvements.
  *	{stage}.{level}	Pre-production release: dev < a (alpha) < b (beta) < rc (release candidate).
  * 
- * Copyright 2014-2017 Jean-Sebastien Morisset (https://surniaulula.com/)
+ * Copyright 2014-2017 Jean-Sebastien Morisset (https://wpsso.com/)
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
