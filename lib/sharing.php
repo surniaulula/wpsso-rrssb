@@ -462,8 +462,20 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function add_buttons_filter( $filter_name = 'the_content' ) {
+
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->log_args( array( 
+					'filter_name' => $filter_name,
+				) );
+			}
+
 			$added = false;
-			if ( method_exists( $this, 'get_buttons_'.$filter_name ) ) {
+
+			if ( empty( $filter_name ) ) {
+				if ( $this->p->debug->enabled ) {
+					$this->p->debug->log( 'filter_name argument is empty' );
+				}
+			} elseif ( method_exists( $this, 'get_buttons_'.$filter_name ) ) {
 				$added = add_filter( $filter_name, array( &$this, 'get_buttons_'.$filter_name ), WPSSORRSSB_SOCIAL_PRIORITY );
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'buttons filter '.$filter_name.' added ('.( $added  ? 'true' : 'false' ).')' );
@@ -471,6 +483,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			} elseif ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'get_buttons_'.$filter_name.' method is missing' );
 			}
+
 			return $added;
 		}
 
