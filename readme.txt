@@ -33,13 +33,13 @@ WPSSO and its extensions make full use of all available caching techniques (pers
 
 WPSSO and its extensions are fully tested and compatible with PHP v7.x (PHP v5.3 or better required).
 
-<h3>WPSSO (Core Plugin) Prerequisite</h3>
+<h3>WPSSO Core Plugin Prerequisite</h3>
 
-WPSSO Ridiculously Responsive Social Sharing Buttons is an extension for the WPSSO (Core Plugin) &mdash; which creates complete &amp; accurate meta tags and Schema markup from your content for social sharing, social media / SMO, search / SEO / rich cards, and more.
+WPSSO Ridiculously Responsive Social Sharing Buttons is an extension for the WPSSO Core plugin &mdash; which creates complete &amp; accurate meta tags and Schema markup from your content for social sharing, social media / SMO, search / SEO / rich cards, and more.
 
-The WPSSO RRSSB Free extension works with either the Free or Pro version of WPSSO (Core Plugin).
+The WPSSO RRSSB Free extension works with either the Free or Pro version of WPSSO Core.
 
-The [WPSSO RRSSB Pro extension](https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-prereq) uses many WPSSO Pro (Core Plugin) features and requires the [WPSSO Pro (Core Plugin)](https://wpsso.com/extend/plugins/wpsso/?utm_source=wpssorrssb-readme-prereq).
+The [WPSSO RRSSB Pro extension](https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-prereq) uses many WPSSO Core Pro plugin features and requires the [WPSSO Core Pro](https://wpsso.com/extend/plugins/wpsso/?utm_source=wpssorrssb-readme-prereq) plugin.
 
 <h3>Quick List of Features</h3>
 
@@ -101,11 +101,11 @@ The [WPSSO RRSSB Pro extension](https://wpsso.com/extend/plugins/wpsso-rrssb/?ut
 * [BuddyPress](https://wordpress.org/plugins/buddypress/)
 * [WooCommerce](https://wordpress.org/plugins/woocommerce/)
 
-<h3>Extends the WPSSO Plugin</h3>
+<h3>Extends the WPSSO Core Plugin</h3>
 
-<span style="color:#33cc33">&#x0229b;</span> &nbsp; The WPSSO RRSSB Free extension works with either the Free or Pro version of WPSSO (Core Plugin).
+<span style="color:#33cc33">&#x0229b;</span> &nbsp; The WPSSO RRSSB Free extension works with either the Free or Pro version of WPSSO Core.
 
-<span style="color:#33cc33">&#x0229b;</span> &nbsp; The <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-extends">WPSSO RRSSB Pro extension</a> uses many WPSSO Pro (Core Plugin) features and requires the <a href="https://wpsso.com/extend/plugins/wpsso/?utm_source=wpssorrssb-readme-extends">WPSSO Pro (Core Plugin)</a>.
+<span style="color:#33cc33">&#x0229b;</span> &nbsp; The <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-extends">WPSSO RRSSB Pro extension</a> uses many WPSSO Core Pro plugin features and requires the <a href="https://wpsso.com/extend/plugins/wpsso/?utm_source=wpssorrssb-readme-extends">WPSSO Core Pro</a> plugin.
 
 <span style="color:#33cc33">&#x0229b;</span> &nbsp; <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-purchase">Purchase the WPSSO Ridiculously Responsive Social Sharing Buttons Pro extension here</a> (all purchases include a <em>No Risk 30 Day Refund Policy</em>).
 
@@ -154,7 +154,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.4.25-rc.5 (2017/10/08)**
+**Version 1.4.25-rc.6 (2017/10/10)**
 
 * *New Features*
 	* None
@@ -339,9 +339,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.4.25-rc.5 =
+= 1.4.25-rc.6 =
 
-(2017/10/08) Refactored the WpssoRrssbShortcodeSharing add / remove shortcode methods.
+(2017/10/10) Refactored the WpssoRrssbShortcodeSharing add / remove shortcode methods.
 
 = 1.4.24 =
 
