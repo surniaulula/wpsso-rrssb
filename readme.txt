@@ -154,7 +154,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.4.25-rc.7 (2017/10/12)**
+**Version 1.4.25-rc.8 (2017/10/13)**
 
 * *New Features*
 	* None
@@ -339,9 +339,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.4.25-rc.7 =
+= 1.4.25-rc.8 =
 
-(2017/10/12) Refactored the WpssoRrssbShortcodeSharing add / remove shortcode methods.
+(2017/10/13) Refactored the WpssoRrssbShortcodeSharing add / remove shortcode methods.
 
 = 1.4.24 =
 
