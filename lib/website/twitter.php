@@ -135,18 +135,15 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 
 			if ( ! isset( $atts['via'] ) ) {
 				if ( ! empty( $opts['twitter_via'] ) ) {
-					$atts['via'] = preg_replace( '/^@/', '', 
-						SucomUtil::get_locale_opt( 'tc_site', $opts ) );
+					$atts['via'] = preg_replace( '/^@/', '', SucomUtil::get_key_value( 'tc_site', $opts ) );
 				} else {
 					$atts['via'] = '';
 				}
 			}
 
 			if ( ! isset( $atts['related'] ) ) {
-				if ( ! empty( $opts['twitter_rel_author'] ) && 
-					! empty( $mod['post_author'] ) && $atts['use_post'] ) {
-					$atts['related'] = preg_replace( '/^@/', '', 
-						get_the_author_meta( $opts['plugin_cm_twitter_name'], $mod['post_author'] ) );
+				if ( ! empty( $opts['twitter_rel_author'] ) && ! empty( $mod['post_author'] ) && $atts['use_post'] ) {
+					$atts['related'] = preg_replace( '/^@/', '', get_the_author_meta( $opts['plugin_cm_twitter_name'], $mod['post_author'] ) );
 				} else {
 					$atts['related'] = '';
 				}
