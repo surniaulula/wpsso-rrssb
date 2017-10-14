@@ -147,6 +147,9 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 			$lca = $this->p->cf['lca'];
 			$def_opts = array_merge( $def_opts, self::$cf['opt']['defaults'] );
+			/*
+			 * Add options using a key prefix array and post type names.
+			 */
 			$def_opts = $this->p->util->add_ptns_to_opts( $def_opts, 'buttons_add_to', 1 );
 			$rel_url_path = parse_url( WPSSORRSSB_URLPATH, PHP_URL_PATH );	// returns a relative URL
 			$tabs = apply_filters( $lca.'_rrssb_styles_tabs', $this->p->cf['sharing']['rrssb_styles'] );
