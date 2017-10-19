@@ -101,8 +101,8 @@ msgstr ""
 #: lib/config-gettext-extract.php:20
 msgctxt "plugin description"
 msgid ""
-"WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons "
-"in your content, excerpts, CSS sidebar, widget, shortcode, etc."
+"WPSSO Core extension to add Ridiculously Responsive (SVG) Social Sharing "
+"Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc."
 msgstr ""
 
 #: lib/gpl/admin/sharing.php:37 lib/gpl/admin/sharing.php:58
@@ -526,8 +526,8 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons "
-"in your content, excerpts, CSS sidebar, widget, shortcode, etc."
+"WPSSO Core extension to add Ridiculously Responsive (SVG) Social Sharing "
+"Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc."
 msgstr ""
 
 #. Author of the plugin/theme

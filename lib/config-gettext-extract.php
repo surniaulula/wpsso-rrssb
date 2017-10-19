@@ -17,5 +17,5 @@ _x( 'Shortcode', 'option value', 'wpsso-rrssb' );
 _x( 'Top and Bottom', 'option value', 'wpsso-rrssb' );
 _x( 'Top', 'option value', 'wpsso-rrssb' );
 _x( 'Widget', 'option value', 'wpsso-rrssb' );
-_x( 'WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.', 'plugin description', 'wpsso-rrssb' );
+_x( 'WPSSO Core extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.', 'plugin description', 'wpsso-rrssb' );
 ?>
