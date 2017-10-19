@@ -13,7 +13,7 @@ Tested Up To: 4.8.2
 Requires PHP: 5.3
 Stable Tag: 1.4.25
 
-WPSSO extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
+WPSSO Core extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
 
 == Description ==
 
@@ -27,11 +27,11 @@ Do you use bbPress, BuddyPress, or WooCommerce? The Pro version of WPSSO RRSSB i
 
 The **Scalable Vector Graphics (SVG) social icons** used by WPSSO RRSSB automatically resize to their container, so they always look great on any device (phone, tablet, laptop, etc.), including high resolution retina displays!
 
-**WPSSO RRSSB is *super fast* and coded for performance:**
+**WPSSO RRSSB is *incredibly fast* and coded for performance:**
 
-WPSSO and its extensions make full use of all available caching techniques (persistent / non-persistent object and disk caching), and load only the PHP library files and object classes they need, keeping their code small, fast, and light.
+WPSSO Core and its extensions make full use of all available caching techniques (persistent / non-persistent object and disk caching), and load only the PHP library files and object classes they need, keeping their code small, fast, and light.
 
-WPSSO and its extensions are fully tested and compatible with PHP v7.x (PHP v5.3 or better required).
+WPSSO Core and its extensions are fully tested and compatible with PHP v7.x (PHP v5.3 or better required).
 
 <h3>WPSSO Core Plugin Prerequisite</h3>
 
