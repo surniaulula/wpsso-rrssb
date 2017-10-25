@@ -549,7 +549,6 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					$this->p->debug->log( 'is_amp is true' );
 				}
 				$error_text = 'buttons not allowed in amp endpoint';
-				$add_comment = false;	// google does not allow html comments in amp pages
 			} elseif ( is_feed() ) {
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'is_feed is true' );
