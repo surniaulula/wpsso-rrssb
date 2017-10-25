@@ -586,7 +586,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					$this->p->debug->log( $type.' filter skipped: '.$error_text );
 					$this->p->debug->mark( 'getting buttons for '.$type );	// end timer
 				}
-				if ( $add_html_comment ) {
+				if ( $add_comment ) {
 					return $text."\n".'<!-- '.__METHOD__.' '.$type.' filter skipped: '.$error_text.' -->'."\n";
 				} else {
 					return $text;
