@@ -534,58 +534,64 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				$this->p->debug->mark( 'getting buttons for '.$type );	// start timer
 			}
 
-			$error_msg = false;
+			$error_text = false;
+			$add_comment = true;
 
 			if ( is_admin() ) {
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'is_admin is true' );
 				}
 				if ( strpos( $type, 'admin_' ) !== 0 ) {
-					$error_msg = $type.' ignored in back-end';
+					$error_text = $type.' ignored in back-end';
 				}
 			} elseif ( SucomUtil::is_amp() ) {
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'is_amp is true' );
 				}
-				$error_msg = 'buttons not allowed in amp endpoint';
+				$error_text = 'buttons not allowed in amp endpoint';
+				$add_comment = false;	// google does not allow html comments in amp pages
 			} elseif ( is_feed() ) {
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'is_feed is true' );
 				}
-				$error_msg = 'buttons not allowed in rss feeds';
+				$error_text = 'buttons not allowed in rss feeds';
 			} elseif ( ! is_singular() ) {
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'is_singular is false' );
 				}
 				if ( empty( $this->p->options['buttons_on_index'] ) ) {
-					$error_msg = 'buttons_on_index not enabled';
+					$error_text = 'buttons_on_index not enabled';
 				}
 			} elseif ( is_front_page() ) {
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'is_front_page is true' );
 				}
 				if ( empty( $this->p->options['buttons_on_front'] ) ) {
-					$error_msg = 'buttons_on_front not enabled';
+					$error_text = 'buttons_on_front not enabled';
 				}
 			} elseif ( is_singular() ) {
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'is_singular is true' );
 				}
 				if ( $this->is_post_buttons_disabled() ) {
-					$error_msg = 'post buttons are disabled';
+					$error_text = 'post buttons are disabled';
 				}
 			}
 
-			if ( $error_msg === false && ! $this->have_buttons_for_type( $type ) ) {
-				$error_msg = 'no sharing buttons enabled';
+			if ( $error_text === false && ! $this->have_buttons_for_type( $type ) ) {
+				$error_text = 'no sharing buttons enabled';
 			}
 
-			if ( $error_msg !== false ) {
+			if ( $error_text !== false ) {
 				if ( $this->p->debug->enabled ) {
-					$this->p->debug->log( $type.' filter skipped: '.$error_msg );
+					$this->p->debug->log( $type.' filter skipped: '.$error_text );
 					$this->p->debug->mark( 'getting buttons for '.$type );	// end timer
 				}
-				return $text."\n".'<!-- '.__METHOD__.' '.$type.' filter skipped: '.$error_msg.' -->'."\n";
+				if ( $add_html_comment ) {
+					return $text."\n".'<!-- '.__METHOD__.' '.$type.' filter skipped: '.$error_text.' -->'."\n";
+				} else {
+					return $text;
+				}
 			}
 
 			$lca = $this->p->cf['lca'];
