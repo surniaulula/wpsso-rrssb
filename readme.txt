@@ -1,4 +1,4 @@
-=== WPSSO Ridiculously Responsive Social Sharing Buttons - including WhatsApp for Mobile ===
+=== WPSSO Ridiculously Responsive Social Sharing Buttons - including WhatsApp for Mobile and Admin Post / Page Edit Share Buttons ===
 Plugin Name: WPSSO Ridiculously Responsive Social Sharing Buttons
 Plugin Slug: wpsso-rrssb
 Text Domain: wpsso-rrssb
@@ -23,7 +23,7 @@ Add awesome **Ridiculously Responsive Social Sharing Buttons** to posts / pages,
 
 Include social sharing buttons in the content, excerpt, widget, CSS sidebar, shortcodes, templates, and *admin editing pages* &mdash; share your posts and pages directly from the editor!
 
-Do you use bbPress, BuddyPress, or WooCommerce? The Pro version of WPSSO RRSSB includes special integration modules to add social sharing buttons to even more locations!
+**Do you use bbPress, BuddyPress, or WooCommerce?** The Pro version of WPSSO RRSSB includes special integration modules to add social sharing buttons to even more locations!
 
 The **Scalable Vector Graphics (SVG) social icons** used by WPSSO RRSSB automatically resize to their container, so they always look great on any device (phone, tablet, laptop, etc.), including high resolution retina displays!
 
