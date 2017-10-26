@@ -1,4 +1,4 @@
-=== WPSSO Ridiculously Responsive Social Sharing Buttons - including WhatsApp for Mobile and Admin Post / Page Edit Share Buttons ===
+=== WPSSO Ridiculously Responsive Social Sharing Buttons - including WhatsApp for Mobile and Share Metabox for Admin Editing Page ===
 Plugin Name: WPSSO Ridiculously Responsive Social Sharing Buttons
 Plugin Slug: wpsso-rrssb
 Text Domain: wpsso-rrssb
