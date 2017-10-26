@@ -39,7 +39,7 @@ WPSSO Ridiculously Responsive Social Sharing Buttons is an extension for the WPS
 
 The WPSSO RRSSB Free extension works with either the Free or Pro version of WPSSO Core.
 
-The [WPSSO RRSSB Pro extension](https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-prereq) uses many WPSSO Core Pro plugin features and requires the [WPSSO Core Pro](https://wpsso.com/extend/plugins/wpsso/?utm_source=wpssorrssb-readme-prereq) plugin.
+The [WPSSO RRSSB Pro extension](https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-prereq) uses many WPSSO Core Pro plugin features and requires the [WPSSO Core Pro plugin](https://wpsso.com/extend/plugins/wpsso/?utm_source=wpssorrssb-readme-prereq).
 
 <h3>Quick List of Features</h3>
 
