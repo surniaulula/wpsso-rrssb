@@ -52,19 +52,20 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 
 			$title = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
 
-			$lca = $this->p->cf['lca'];
-			$type = 'sharing_widget_'.$this->id;
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'required call to get_page_mod()' );
 			}
 			$mod = $this->p->util->get_page_mod( $atts['use_post'] );
+
+			$lca = $this->p->cf['lca'];
+			$type = 'sharing_widget_'.$this->id;
 			$sharing_url = $this->p->util->get_sharing_url( $mod );
 			$buttons_array = array();
 			$buttons_index = $this->p->rrssb_sharing->get_buttons_cache_index( $type, $atts );
+
+			$cache_exp = (int) apply_filters( $lca.'_cache_expire_sharing_buttons', $this->p->options['plugin_sharing_buttons_cache_exp'] );
 			$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, $sharing_url ).')';
 			$cache_id = $lca.'_'.md5( $cache_salt );
-			$cache_exp = (int) apply_filters( $lca.'_cache_expire_sharing_buttons', 
-				$this->p->options['plugin_sharing_buttons_cache_exp'] );
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'sharing url = '.$sharing_url );

@@ -126,18 +126,19 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			$atts['use_post'] = SucomUtil::sanitize_use_post( $atts, true );	// $default = true
 			$atts['css_class'] = empty( $atts['css_class'] ) ? 'rrssb-shortcode' : $atts['css_class'];
 
-			$type = 'sharing_shortcode_'.WPSSORRSSB_SHARING_SHORTCODE_NAME;
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'required call to get_page_mod()' );
 			}
 			$mod = $this->p->util->get_page_mod( $atts['use_post'] );
+
+			$type = 'sharing_shortcode_'.WPSSORRSSB_SHARING_SHORTCODE_NAME;
 			$atts['url'] = empty( $atts['url'] ) ? $this->p->util->get_sharing_url( $mod ) : $atts['url'];
 			$buttons_array = array();
 			$buttons_index = $this->p->rrssb_sharing->get_buttons_cache_index( $type, $atts );
+
+			$cache_exp = (int) apply_filters( $lca.'_cache_expire_sharing_buttons', $this->p->options['plugin_sharing_buttons_cache_exp'] );
 			$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, $atts['url'] ).')';
 			$cache_id = $lca.'_'.md5( $cache_salt );
-			$cache_exp = (int) apply_filters( $lca.'_cache_expire_sharing_buttons', 
-				$this->p->options['plugin_sharing_buttons_cache_exp'] );
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'sharing url = '.$atts['url'] );

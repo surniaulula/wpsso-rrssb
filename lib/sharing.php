@@ -607,10 +607,10 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			$sharing_url = $this->p->util->get_sharing_url( $mod );
 			$buttons_array = array();
 			$buttons_index = $this->get_buttons_cache_index( $type );
+
+			$cache_exp = (int) apply_filters( $lca.'_cache_expire_sharing_buttons', $this->p->options['plugin_sharing_buttons_cache_exp'] );
 			$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, $sharing_url ).')';
 			$cache_id = $lca.'_'.md5( $cache_salt );
-			$cache_exp = (int) apply_filters( $lca.'_cache_expire_sharing_buttons', 
-				$this->p->options['plugin_sharing_buttons_cache_exp'] );
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'sharing url = '.$sharing_url );

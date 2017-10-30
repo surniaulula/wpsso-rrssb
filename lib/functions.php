@@ -40,19 +40,22 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 		}
 
 		$lca = $wpsso->cf['lca'];
-		$type = __FUNCTION__;
 		$atts['use_post'] = SucomUtil::sanitize_use_post( $atts ); 
+
 		if ( $wpsso->debug->enabled ) {
 			$wpsso->debug->log( 'required call to get_page_mod()' );
 		}
 		$mod = $wpsso->util->get_page_mod( $atts['use_post'] );
+
+		$type = __FUNCTION__;
 		$sharing_url = $wpsso->util->get_sharing_url( $mod );
 		$buttons_array = array();
 		$buttons_index = $wpsso->rrssb_sharing->get_buttons_cache_index( $type, $atts, $ids );
+
+		$cache_exp = $cache_exp === false ? $wpsso->options['plugin_sharing_buttons_cache_exp'] : $cache_exp;
+		$cache_exp = (int) apply_filters( $lca.'_cache_expire_sharing_buttons', $cache_exp );
 		$cache_salt = __FUNCTION__.'('.SucomUtil::get_mod_salt( $mod, $sharing_url ).')';
 		$cache_id = $lca.'_'.md5( $cache_salt );
-		$cache_exp = (int) apply_filters( $lca.'_cache_expire_sharing_buttons', 
-			( $cache_exp === false ? $wpsso->options['plugin_sharing_buttons_cache_exp'] : $cache_exp ) );
 
 		if ( $wpsso->debug->enabled ) {
 			$wpsso->debug->log( 'sharing url = '.$sharing_url );
