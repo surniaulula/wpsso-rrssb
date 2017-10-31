@@ -55,7 +55,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 		$cache_exp = $cache_exp === false ? $wpsso->options['plugin_sharing_buttons_cache_exp'] : $cache_exp;
 		$cache_exp = (int) apply_filters( $lca.'_cache_expire_sharing_buttons', $cache_exp );
 		$cache_salt = __FUNCTION__.'('.SucomUtil::get_mod_salt( $mod, $sharing_url ).')';
-		$cache_id = $lca.'_'.md5( $cache_salt );
+		$cache_id = $lca.'_b_'.md5( $cache_salt );
 
 		if ( $wpsso->debug->enabled ) {
 			$wpsso->debug->log( 'sharing url = '.$sharing_url );

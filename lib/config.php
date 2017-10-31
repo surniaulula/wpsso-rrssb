@@ -93,6 +93,14 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					),
 				),
 			),
+			'wp' => array(				// wordpress
+				'transients' => array(
+					'wpsso_b_' => array(
+						'label' => 'Sharing Buttons HTML',
+						'opt_key' => 'plugin_sharing_buttons_cache_exp',
+					),
+				),
+			),
 			'sharing' => array(
 				'show_on' => array( 
 					'content' => 'Content',

@@ -29,7 +29,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					 * Advanced Settings
 					 */
 					// Cache Settings Tab
-					'plugin_sharing_buttons_cache_exp' => WEEK_IN_SECONDS,	// Sharing Buttons Cache Expiry (7 days)
+					'plugin_sharing_buttons_cache_exp' => WEEK_IN_SECONDS,	// Sharing Buttons HTML Cache Expiry (7 days)
 					/*
 					 * Sharing Buttons
 					 */
@@ -58,7 +58,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					'buttons_css_rrssb-widget' => '',
 				),	// end of defaults
 				'site_defaults' => array(
-					'plugin_sharing_buttons_cache_exp' => WEEK_IN_SECONDS,	// Sharing Buttons Cache Expiry (7 days)
+					'plugin_sharing_buttons_cache_exp' => WEEK_IN_SECONDS,	// Sharing Buttons HTML Cache Expiry (7 days)
 					'plugin_sharing_buttons_cache_exp:use' => 'default',
 				),	// end of site defaults
 			),
@@ -107,6 +107,10 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					add_action( 'add_meta_boxes', array( &$this, 'add_post_buttons_metabox' ) );
 				}
 
+				$this->p->util->add_plugin_actions( $this, array(
+					'load_setting_page_reload_default_sharing_rrssb_styles' => 4,
+				) );
+
 				$this->p->util->add_plugin_filters( $this, array( 
 					'save_options' => 3,			// update the sharing css file
 					'option_type' => 2,			// identify option type for sanitation
@@ -120,10 +124,6 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				$this->p->util->add_plugin_filters( $this, array( 
 					'status_gpl_features' => 3,		// include sharing, shortcode, and widget status
 				), 10, 'wpssorrssb' );				// hook into the extension name instead
-
-				$this->p->util->add_plugin_actions( $this, array(
-					'load_setting_page_reload_default_sharing_rrssb_styles' => 4,
-				) );
 			}
 
 			if ( $this->p->debug->enabled ) {
@@ -610,7 +610,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 			$cache_exp = (int) apply_filters( $lca.'_cache_expire_sharing_buttons', $this->p->options['plugin_sharing_buttons_cache_exp'] );
 			$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, $sharing_url ).')';
-			$cache_id = $lca.'_'.md5( $cache_salt );
+			$cache_id = $lca.'_b_'.md5( $cache_salt );
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'sharing url = '.$sharing_url );

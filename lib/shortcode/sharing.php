@@ -138,7 +138,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 			$cache_exp = (int) apply_filters( $lca.'_cache_expire_sharing_buttons', $this->p->options['plugin_sharing_buttons_cache_exp'] );
 			$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, $atts['url'] ).')';
-			$cache_id = $lca.'_'.md5( $cache_salt );
+			$cache_id = $lca.'_b_'.md5( $cache_salt );
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'sharing url = '.$atts['url'] );
