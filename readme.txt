@@ -154,6 +154,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.4.26-dev.3 (2017/10/31)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* None
+
 **Version 1.4.25 (2017/10/15)**
 
 * *New Features*
@@ -338,6 +349,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Maintenance release.
 
 == Upgrade Notice ==
+
+= 1.4.26-dev.3 =
+
+(2017/10/31) None.
 
 = 1.4.25 =
 
