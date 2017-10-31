@@ -216,7 +216,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * *New Features*
 	* None
 * *Improvements*
-	* Added a new Advanced Settings tab in the Responsible Buttons settings page with a "Sharing Buttons Cache Expiry" option.
+	* Added a new Advanced Settings tab in the Responsible Buttons settings page with a "Sharing Buttons HTML Cache Expiry" option.
 * *Bugfixes*
 	* None
 * *Developer Notes*
@@ -361,7 +361,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 1.4.20 =
 
-(2017/05/25) Added a new Advanced Settings tab in the Responsible Buttons settings page with a "Sharing Buttons Cache Expiry" option.
+(2017/05/25) Added a new Advanced Settings tab in the Responsible Buttons settings page with a "Sharing Buttons HTML Cache Expiry" option.
 
 = 1.4.19 =
 
