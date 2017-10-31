@@ -498,19 +498,19 @@ msgctxt "option label"
 msgid "Widget Title (leave blank for no title)"
 msgstr ""
 
-#: wpsso-rrssb.php:77
+#: wpsso-rrssb.php:78
 msgid ""
 "%1$s is an extension for the %2$s plugin &mdash; please install and activate "
 "the %3$s plugin before activating %4$s."
 msgstr ""
 
-#: wpsso-rrssb.php:78
+#: wpsso-rrssb.php:79
 msgid ""
 "The %1$s extension requires the %2$s plugin &mdash; install and activate the "
 "%3$s plugin or <a href=\"%4$s\">deactivate the %5$s extension</a>."
 msgstr ""
 
-#: wpsso-rrssb.php:161
+#: wpsso-rrssb.php:162
 msgid ""
 "The %1$s extension v%2$s requires %3$s v%4$s or newer (v%5$s currently "
 "installed)."
