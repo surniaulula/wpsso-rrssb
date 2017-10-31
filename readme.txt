@@ -164,7 +164,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * *Bugfixes*
 	* None
 * *Developer Notes*
-	* None
+	* Refactored the post cache clearing filter for WPSSO v3.47.4.
 
 **Version 1.4.25 (2017/10/15)**
 
@@ -353,7 +353,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 1.4.26-dev.3 =
 
-(2017/10/31) None.
+(2017/10/31) Refactored the post cache clearing filter for WPSSO v3.47.4.
 
 = 1.4.25 =
 
