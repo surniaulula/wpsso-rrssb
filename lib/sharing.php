@@ -115,7 +115,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					'save_options' => 3,			// update the sharing css file
 					'option_type' => 2,			// identify option type for sanitation
 					'post_custom_meta_tabs' => 3,		// $tabs, $mod, $metabox_id
-					'post_cache_transient_array' => 3,	// clear transients on post save
+					'post_cache_transient_array' => 4,	// clear transients on post save
 					'messages_info' => 2,
 					'messages_tooltip' => 2,
 					'messages_tooltip_plugin' => 2,
@@ -239,11 +239,11 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			return $tabs;
 		}
 
-		public function filter_post_cache_transient_array( $transient_array, $mod, $sharing_url ) {
-			$cache_salt = SucomUtil::get_mod_salt( $mod, $sharing_url );
-			$transient_array['WpssoRrssbSharing::get_buttons'][] = $cache_salt;
-			$transient_array['WpssoRrssbShortcodeSharing::do_shortcode'][] = $cache_salt;
-			$transient_array['WpssoRrssbWidgetSharing::widget'][] = $cache_salt;
+		public function filter_post_cache_transient_array( $transient_array, $mod, $sharing_url, $mod_salt ) {
+			$buttons_md5_pre = $this->p->cf['lca'].'_b_';
+			$transient_array['WpssoRrssbSharing::get_buttons('.$mod_salt.')'] = $buttons_md5_pre;
+			$transient_array['WpssoRrssbShortcodeSharing::do_shortcode('.$mod_salt.')'] = $buttons_md5_pre;
+			$transient_array['WpssoRrssbWidgetSharing::widget('.$mod_salt.')'] = $buttons_md5_pre;
 			return $transient_array;
 		}
 
