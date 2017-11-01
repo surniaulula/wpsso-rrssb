@@ -115,7 +115,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					'save_options' => 3,			// update the sharing css file
 					'option_type' => 2,			// identify option type for sanitation
 					'post_custom_meta_tabs' => 3,		// $tabs, $mod, $metabox_id
-					'post_cache_transient_array' => 4,	// clear transients on post save
+					'post_cache_transient_keys' => 4,	// clear transients on post save
 					'messages_info' => 2,
 					'messages_tooltip' => 2,
 					'messages_tooltip_plugin' => 2,
@@ -239,12 +239,13 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			return $tabs;
 		}
 
-		public function filter_post_cache_transient_array( $transient_array, $mod, $sharing_url, $mod_salt ) {
-			$buttons_md5_pre = $this->p->cf['lca'].'_b_';
-			$transient_array['WpssoRrssbSharing::get_buttons('.$mod_salt.')'] = $buttons_md5_pre;
-			$transient_array['WpssoRrssbShortcodeSharing::do_shortcode('.$mod_salt.')'] = $buttons_md5_pre;
-			$transient_array['WpssoRrssbWidgetSharing::widget('.$mod_salt.')'] = $buttons_md5_pre;
-			return $transient_array;
+		public function filter_post_cache_transient_keys( $transient_keys, $mod, $sharing_url, $mod_salt ) {
+			$md5_pre = $this->p->cf['lca'].'_b_';
+			$class_pre = 'WpssoRrssb';
+			$transient_keys[] = $md5_pre.md5( $class_pre.'Sharing::get_buttons('.$mod_salt.')' );
+			$transient_keys[] = $md5_pre.md5( $class_pre.'ShortcodeSharing::do_shortcode('.$mod_salt.')' );
+			$transient_keys[] = $md5_pre.md5( $class_pre.'WidgetSharing::widget('.$mod_salt.')' );
+			return $transient_keys;
 		}
 
 		public function filter_status_gpl_features( $features, $lca, $info ) {
