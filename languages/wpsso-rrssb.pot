@@ -34,71 +34,76 @@ msgid "Bottom"
 msgstr ""
 
 #: lib/config-gettext-extract.php:7
-msgctxt "option value"
-msgid "Content"
+msgctxt "option label"
+msgid "Buttons HTML"
 msgstr ""
 
 #: lib/config-gettext-extract.php:8
 msgctxt "option value"
-msgid "CSS Sidebar"
+msgid "Content"
 msgstr ""
 
 #: lib/config-gettext-extract.php:9
 msgctxt "option value"
-msgid "Desktop Only"
+msgid "CSS Sidebar"
 msgstr ""
 
 #: lib/config-gettext-extract.php:10
 msgctxt "option value"
-msgid "Excerpt"
+msgid "Desktop Only"
 msgstr ""
 
 #: lib/config-gettext-extract.php:11
 msgctxt "option value"
-msgid "HTTP"
+msgid "Excerpt"
 msgstr ""
 
 #: lib/config-gettext-extract.php:12
 msgctxt "option value"
-msgid "HTTPS"
+msgid "HTTP"
 msgstr ""
 
 #: lib/config-gettext-extract.php:13
 msgctxt "option value"
-msgid "Mobile Only"
+msgid "HTTPS"
 msgstr ""
 
 #: lib/config-gettext-extract.php:14
-msgctxt "lib file description"
-msgid "Responsive Buttons"
+msgctxt "option value"
+msgid "Mobile Only"
 msgstr ""
 
 #: lib/config-gettext-extract.php:15
 msgctxt "lib file description"
-msgid "Responsive Styles"
+msgid "Responsive Buttons"
 msgstr ""
 
 #: lib/config-gettext-extract.php:16
-msgctxt "option value"
-msgid "Shortcode"
+msgctxt "lib file description"
+msgid "Responsive Styles"
 msgstr ""
 
 #: lib/config-gettext-extract.php:17
 msgctxt "option value"
-msgid "Top and Bottom"
+msgid "Shortcode"
 msgstr ""
 
 #: lib/config-gettext-extract.php:18
 msgctxt "option value"
-msgid "Top"
+msgid "Top and Bottom"
 msgstr ""
 
 #: lib/config-gettext-extract.php:19
 msgctxt "option value"
-msgid "Widget"
+msgid "Top"
 msgstr ""
 
 #: lib/config-gettext-extract.php:20
+msgctxt "option value"
+msgid "Widget"
+msgstr ""
+
+#: lib/config-gettext-extract.php:21
 msgctxt "plugin description"
 msgid ""
 "WPSSO Core extension to add Ridiculously Responsive (SVG) Social Sharing "

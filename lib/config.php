@@ -96,7 +96,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			'wp' => array(				// wordpress
 				'transient' => array(
 					'wpsso_b_' => array(
-						'label' => 'Sharing Buttons HTML',
+						'label' => 'Buttons HTML',
 						'opt_key' => 'plugin_sharing_buttons_cache_exp',
 					),
 				),

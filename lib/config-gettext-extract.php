@@ -4,6 +4,7 @@ _x( 'Admin Edit', 'option value', 'wpsso-rrssb' );
 _x( 'All Buttons', 'option value', 'wpsso-rrssb' );
 _x( 'Any Platform', 'option value', 'wpsso-rrssb' );
 _x( 'Bottom', 'option value', 'wpsso-rrssb' );
+_x( 'Buttons HTML', 'option label', 'wpsso-rrssb' );
 _x( 'Content', 'option value', 'wpsso-rrssb' );
 _x( 'CSS Sidebar', 'option value', 'wpsso-rrssb' );
 _x( 'Desktop Only', 'option value', 'wpsso-rrssb' );
