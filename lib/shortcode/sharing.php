@@ -54,7 +54,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			}
 		}
 
-		public function action_pre_apply_text_filter( $filter_name ) {
+		public function action_pre_apply_filters_text( $filter_name ) {
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log_args( array( 
 					'filter_name' => $filter_name,
@@ -63,7 +63,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			$this->remove_shortcode();	// remove before applying a text filter
 		}
 
-		public function action_after_apply_text_filter( $filter_name ) {
+		public function action_after_apply_filters_text( $filter_name ) {
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log_args( array( 
 					'filter_name' => $filter_name,
