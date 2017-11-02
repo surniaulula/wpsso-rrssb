@@ -708,8 +708,10 @@ $buttons_array[$buttons_index].
 
 		// get_html() can be called by a widget, shortcode, function, filter hook, etc.
 		public function get_html( array $ids, array $atts, $mod = false ) {
-			if ( $this->p->debug->enabled )
+
+			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
+			}
 
 			$lca = $this->p->cf['lca'];
 			$atts['use_post'] = isset( $atts['use_post'] ) ? $atts['use_post'] : true;	// maintain backwards compat
@@ -779,10 +781,12 @@ $buttons_array[$buttons_index].
 			}
 
 			$buttons_html = trim( $buttons_html );
+
 			if ( ! empty( $buttons_html ) ) {
 				if ( empty( $atts['container_each'] ) )
 					$buttons_html = $buttons_begin.$buttons_html.$buttons_end;
 			}
+
 			return $buttons_html;
 		}
 
