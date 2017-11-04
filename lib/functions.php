@@ -39,7 +39,6 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 			return '<!-- '.__FUNCTION__.' exiting early: '.$error_msg.' -->'."\n";
 		}
 
-		$lca = $wpsso->cf['lca'];
 		$atts['use_post'] = SucomUtil::sanitize_use_post( $atts ); 
 
 		if ( $wpsso->debug->enabled ) {
@@ -47,15 +46,17 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 		}
 		$mod = $wpsso->util->get_page_mod( $atts['use_post'] );
 
+		$lca = $wpsso->cf['lca'];
 		$type = __FUNCTION__;
 		$sharing_url = $wpsso->util->get_sharing_url( $mod );
+
 		$buttons_array = array();
 		$buttons_index = $wpsso->rrssb_sharing->get_buttons_cache_index( $type, $atts, $ids );
 
-		$cache_exp = $cache_exp === false ? $wpsso->options['plugin_sharing_buttons_cache_exp'] : $cache_exp;
-		$cache_exp = (int) apply_filters( $lca.'_cache_expire_sharing_buttons', $cache_exp );
+		$cache_pre = $lca.'_b_';
+		$cache_exp = $cache_exp === false ? WpssoRrssbSharing::get_buttons_cache_exp() : $cache_exp;
 		$cache_salt = __FUNCTION__.'('.SucomUtil::get_mod_salt( $mod, $sharing_url ).')';
-		$cache_id = $lca.'_b_'.md5( $cache_salt );
+		$cache_id = $cache_pre.md5( $cache_salt );
 
 		if ( $wpsso->debug->enabled ) {
 			$wpsso->debug->log( 'sharing url = '.$sharing_url );
