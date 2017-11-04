@@ -155,6 +155,18 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.5.0-dev.1 (2017/11/02)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* Optimized setting of the buttons cache expiration value by using a single static cache variable.
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Added a new WpssoRrssbSharing get_buttons_cache_exp() static method to apply the buttons expiration filter once (and cache the result in a static variable).
+	* Updated the WpssoRrssbShortcodeSharing and WpssoRrssbWidgetSharing class methods to use the new WpssoRrssbSharing get_buttons_cache_exp() method.
+
 **Version 1.4.26 (2017/11/02)**
 
 * *New Features*
@@ -351,6 +363,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Maintenance release.
 
 == Upgrade Notice ==
+
+= 1.5.0-dev.1 =
+
+(2017/11/04) Optimized setting of the buttons cache expiration value by using a single static cache variable. 
 
 = 1.4.26 =
 
