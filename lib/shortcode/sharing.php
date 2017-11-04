@@ -138,7 +138,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			$buttons_index = $this->p->rrssb_sharing->get_buttons_cache_index( $type, $atts );
 
 			$cache_pre = $lca.'_b_';
-			$cache_exp = WpssoSsbSharing::get_buttons_cache_exp();
+			$cache_exp = $this->p->rrssb_sharing->get_buttons_cache_exp();
 			$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, $atts['url'] ).')';
 			$cache_id = $cache_pre.md5( $cache_salt );
 
