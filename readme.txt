@@ -155,7 +155,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.5.0-dev.2 (2017/11/02)**
+**Version 1.5.0-dev.3 (2017/11/02)**
 
 * *New Features*
 	* None
@@ -364,7 +364,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.5.0-dev.2 =
+= 1.5.0-dev.3 =
 
 (2017/11/04) Optimized setting of the buttons cache expiration value by using a single static cache variable. 
 
