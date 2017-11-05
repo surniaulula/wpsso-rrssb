@@ -53,10 +53,10 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 		$buttons_array = array();
 		$buttons_index = $wpsso->rrssb_sharing->get_buttons_cache_index( $type, $atts, $ids );
 
-		$cache_pre = $lca.'_b_';
+		$cache_md5_pre = $lca.'_b_';
 		$cache_exp_secs = $cache_exp_secs === false ? $wpsso->rrssb_sharing->get_buttons_cache_exp() : $cache_exp_secs;
 		$cache_salt = __FUNCTION__.'('.SucomUtil::get_mod_salt( $mod, $sharing_url ).')';
-		$cache_id = $cache_pre.md5( $cache_salt );
+		$cache_id = $cache_md5_pre.md5( $cache_salt );
 
 		if ( $wpsso->debug->enabled ) {
 			$wpsso->debug->log( 'sharing url = '.$sharing_url );

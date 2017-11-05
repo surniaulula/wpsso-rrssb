@@ -241,11 +241,11 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 		public function filter_post_cache_transient_keys( $transient_keys, $mod, $sharing_url, $mod_salt ) {
 			$lca = $ngfb->cf['lca'];
-			$cache_pre = $lca.'_b_';
+			$cache_md5_pre = $lca.'_b_';
 			$classname_pre = 'WpssoRrssb';
-			$transient_keys[] = $cache_pre.md5( $classname_pre.'Sharing::get_buttons('.$mod_salt.')' );
-			$transient_keys[] = $cache_pre.md5( $classname_pre.'ShortcodeSharing::do_shortcode('.$mod_salt.')' );
-			$transient_keys[] = $cache_pre.md5( $classname_pre.'WidgetSharing::widget('.$mod_salt.')' );
+			$transient_keys[] = $cache_md5_pre.md5( $classname_pre.'Sharing::get_buttons('.$mod_salt.')' );
+			$transient_keys[] = $cache_md5_pre.md5( $classname_pre.'ShortcodeSharing::do_shortcode('.$mod_salt.')' );
+			$transient_keys[] = $cache_md5_pre.md5( $classname_pre.'WidgetSharing::widget('.$mod_salt.')' );
 			return $transient_keys;
 		}
 
@@ -610,10 +610,10 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			$buttons_array = array();
 			$buttons_index = $this->get_buttons_cache_index( $type );
 
-			$cache_pre = $lca.'_b_';
+			$cache_md5_pre = $lca.'_b_';
 			$cache_exp_secs = $this->get_buttons_cache_exp();
 			$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, $sharing_url ).')';
-			$cache_id = $cache_pre.md5( $cache_salt );
+			$cache_id = $cache_md5_pre.md5( $cache_salt );
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'sharing url = '.$sharing_url );
@@ -699,11 +699,11 @@ $buttons_array[$buttons_index].
 			static $cache_exp_secs = null;	// filter the cache expiration value only once
 			if ( ! isset( $cache_exp_secs ) ) {
 				$lca = $this->p->cf['lca'];
-				$cache_pre = $lca.'_b_';
-				$cache_filter = $this->p->cf['wp']['transient'][$cache_pre]['filter'];
-				$cache_opt_key = $this->p->cf['wp']['transient'][$cache_pre]['opt_key'];
+				$cache_md5_pre = $lca.'_b_';
+				$cache_exp_filter = $this->p->cf['wp']['transient'][$cache_md5_pre]['filter'];
+				$cache_opt_key = $this->p->cf['wp']['transient'][$cache_md5_pre]['opt_key'];
 				$cache_exp_secs = isset( $this->p->options[$cache_opt_key] ) ? $this->p->options[$cache_opt_key] : WEEK_IN_SECONDS;
-				$cache_exp_secs = (int) apply_filters( $cache_filter, $cache_exp_secs );
+				$cache_exp_secs = (int) apply_filters( $cache_exp_filter, $cache_exp_secs );
 			}
 			return $cache_exp_secs;
 		}
