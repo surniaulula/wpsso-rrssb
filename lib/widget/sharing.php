@@ -65,18 +65,18 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 			$buttons_index = $this->p->rrssb_sharing->get_buttons_cache_index( $type, $atts );
 
 			$cache_pre = $lca.'_b_';
-			$cache_exp = $this->p->rrssb_sharing->get_buttons_cache_exp();
+			$cache_exp_secs = $this->p->rrssb_sharing->get_buttons_cache_exp();
 			$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, $sharing_url ).')';
 			$cache_id = $cache_pre.md5( $cache_salt );
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'sharing url = '.$sharing_url );
 				$this->p->debug->log( 'buttons index = '.$buttons_index );
-				$this->p->debug->log( 'transient expire = '.$cache_exp );
+				$this->p->debug->log( 'transient expire = '.$cache_exp_secs );
 				$this->p->debug->log( 'transient salt = '.$cache_salt );
 			}
 
-			if ( $cache_exp > 0 ) {
+			if ( $cache_exp_secs > 0 ) {
 				$buttons_array = get_transient( $cache_id );
 				if ( isset( $buttons_array[$buttons_index] ) ) {
 					if ( $this->p->debug->enabled )
@@ -107,11 +107,11 @@ $buttons_array[$buttons_index]."\n".	// buttons html is trimmed, so add newline
 $after_widget.
 '<!-- '.$lca.' sharing widget '.$args['widget_id'].' end -->'."\n\n";
 
-					if ( $cache_exp > 0 ) {
+					if ( $cache_exp_secs > 0 ) {
 						// update the transient array and keep the original expiration time
-						$cache_exp = SucomUtil::update_transient_array( $cache_id, $buttons_array, $cache_exp );
+						$cache_exp_secs = SucomUtil::update_transient_array( $cache_id, $buttons_array, $cache_exp_secs );
 						if ( $this->p->debug->enabled ) {
-							$this->p->debug->log( $type.' buttons html saved to transient cache for '.$cache_exp.' seconds' );
+							$this->p->debug->log( $type.' buttons html saved to transient cache for '.$cache_exp_secs.' seconds' );
 						}
 					}
 				}

@@ -315,18 +315,18 @@ msgctxt "option label"
 msgid "Add via Business @username"
 msgstr ""
 
-#: lib/sharing.php:995
+#: lib/sharing.php:997
 msgctxt "option comment"
 msgid "disabled"
 msgstr ""
 
-#: lib/sharing.php:997
+#: lib/sharing.php:999
 msgid ""
 "The rendered HTML for social sharing buttons is saved to the WordPress "
 "transient cache to optimize performance."
 msgstr ""
 
-#: lib/sharing.php:998
+#: lib/sharing.php:1000
 msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
 msgstr ""
 
