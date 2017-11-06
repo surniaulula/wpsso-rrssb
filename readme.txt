@@ -160,7 +160,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * *New Features*
 	* None
 * *Improvements*
-	* Optimized setting of the buttons cache expiration value by using a single static cache variable.
+	* Optimized setting of the buttons cache expiration value by using a single method and static cache variable.
 * *Bugfixes*
 	* None
 * *Developer Notes*
@@ -366,7 +366,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 1.5.0-dev.4 =
 
-(2017/11/06) Optimized setting of the buttons cache expiration value by using a single static cache variable. 
+(2017/11/06) Optimized setting of the buttons cache expiration value by using a single method and static cache variable. 
 
 = 1.4.26 =
 
