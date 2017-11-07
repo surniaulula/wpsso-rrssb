@@ -240,7 +240,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function filter_post_cache_transient_keys( $transient_keys, $mod, $sharing_url, $mod_salt ) {
-			$lca = $ngfb->cf['lca'];
+			$lca = $this->p->cf['lca'];
 			$cache_md5_pre = $lca.'_b_';
 			$classname_pre = 'WpssoRrssb';
 			$transient_keys[] = $cache_md5_pre.md5( $classname_pre.'Sharing::get_buttons('.$mod_salt.')' );
