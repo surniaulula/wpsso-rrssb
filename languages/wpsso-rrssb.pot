@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"1.5.0-b.1\n"
+"1.5.0-b.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2017-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
