@@ -608,31 +608,31 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			$sharing_url = $this->p->util->get_sharing_url( $mod );
 
 			$buttons_array = array();
-			$buttons_index = $this->get_buttons_cache_index( $type );
 
 			$cache_md5_pre = $lca.'_b_';
 			$cache_exp_secs = $this->get_buttons_cache_exp();
 			$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, $sharing_url ).')';
 			$cache_id = $cache_md5_pre.md5( $cache_salt );
+			$cache_index = $this->get_buttons_cache_index( $type );
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'sharing url = '.$sharing_url );
-				$this->p->debug->log( 'buttons index = '.$buttons_index );
-				$this->p->debug->log( 'transient expire = '.$cache_exp_secs );
-				$this->p->debug->log( 'transient salt = '.$cache_salt );
+				$this->p->debug->log( 'cache expire = '.$cache_exp_secs );
+				$this->p->debug->log( 'cache salt = '.$cache_salt );
+				$this->p->debug->log( 'cache index = '.$cache_index );
 			}
 
 			if ( $cache_exp_secs > 0 ) {
 				$buttons_array = get_transient( $cache_id );
-				if ( isset( $buttons_array[$buttons_index] ) ) {
+				if ( isset( $buttons_array[$cache_index] ) ) {
 					if ( $this->p->debug->enabled ) {
-						$this->p->debug->log( $type.' buttons index found in array from transient '.$cache_id );
+						$this->p->debug->log( $type.' cache index found in array from transient '.$cache_id );
 					}
 				} elseif ( $this->p->debug->enabled ) {
-					$this->p->debug->log( $type.' buttons index not in array from transient '.$cache_id );
+					$this->p->debug->log( $type.' cache index not in array from transient '.$cache_id );
 				}
 			} elseif ( $this->p->debug->enabled ) {
-				$this->p->debug->log( $type.' buttons array transient is disabled' );
+				$this->p->debug->log( $type.' buttons array transient cache is disabled' );
 			}
 
 			if ( empty( $location ) ) {
@@ -640,7 +640,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					'bottom' : $this->p->options['buttons_pos_'.$type];
 			} 
 
-			if ( ! isset( $buttons_array[$buttons_index] ) ) {
+			if ( ! isset( $buttons_array[$cache_index] ) ) {
 
 				// sort enabled sharing buttons by their preferred order
 				$sorted_ids = array();
@@ -655,14 +655,14 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				$atts['css_id'] = $css_type_name = 'rrssb-'.$type;
 
 				// returns html or an empty string
-				$buttons_array[$buttons_index] = $this->get_html( $sorted_ids, $atts, $mod );
+				$buttons_array[$cache_index] = $this->get_html( $sorted_ids, $atts, $mod );
 
-				if ( ! empty( $buttons_array[$buttons_index] ) ) {
-					$buttons_array[$buttons_index] = apply_filters( $lca.'_rrssb_buttons_html', '
+				if ( ! empty( $buttons_array[$cache_index] ) ) {
+					$buttons_array[$cache_index] = apply_filters( $lca.'_rrssb_buttons_html', '
 <!-- '.$lca.' '.$css_type_name.' begin -->
 <!-- generated on '.date( 'c' ).' -->
 <div class="'.$lca.'-rrssb'.( $mod['use_post'] ? ' '.$lca.'-'.$css_type_name.'"' : '" id="'.$lca.'-'.$css_type_name.'"' ).'>'."\n".
-$buttons_array[$buttons_index].
+$buttons_array[$cache_index].
 '</div><!-- .'.$lca.'-rrssb '.( $mod['use_post'] ? '.' : '#' ).$lca.'-'.$css_type_name.' -->
 <!-- '.$lca.' '.$css_type_name.' end -->'."\n\n", $type, $mod, $location, $atts );
 
@@ -678,13 +678,13 @@ $buttons_array[$buttons_index].
 
 			switch ( $location ) {
 				case 'top': 
-					$text = $buttons_array[$buttons_index].$text; 
+					$text = $buttons_array[$cache_index].$text; 
 					break;
 				case 'bottom': 
-					$text = $text.$buttons_array[$buttons_index]; 
+					$text = $text.$buttons_array[$cache_index]; 
 					break;
 				case 'both': 
-					$text = $buttons_array[$buttons_index].$text.$buttons_array[$buttons_index]; 
+					$text = $buttons_array[$cache_index].$text.$buttons_array[$cache_index]; 
 					break;
 			}
 

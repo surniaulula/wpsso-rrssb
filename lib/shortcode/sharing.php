@@ -135,47 +135,47 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			$atts['url'] = empty( $atts['url'] ) ? $this->p->util->get_sharing_url( $mod ) : $atts['url'];
 
 			$buttons_array = array();
-			$buttons_index = $this->p->rrssb_sharing->get_buttons_cache_index( $type, $atts );
 
 			$cache_md5_pre = $lca.'_b_';
 			$cache_exp_secs = $this->p->rrssb_sharing->get_buttons_cache_exp();
 			$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, $atts['url'] ).')';
 			$cache_id = $cache_md5_pre.md5( $cache_salt );
+			$cache_index = $this->p->rrssb_sharing->get_buttons_cache_index( $type, $atts );
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'sharing url = '.$atts['url'] );
-				$this->p->debug->log( 'buttons index = '.$buttons_index );
-				$this->p->debug->log( 'transient expire = '.$cache_exp_secs );
-				$this->p->debug->log( 'transient salt = '.$cache_salt );
+				$this->p->debug->log( 'cache expire = '.$cache_exp_secs );
+				$this->p->debug->log( 'cache salt = '.$cache_salt );
+				$this->p->debug->log( 'cache index = '.$cache_index );
 			}
 
 			if ( $cache_exp_secs > 0 ) {
 				$buttons_array = get_transient( $cache_id );
-				if ( isset( $buttons_array[$buttons_index] ) ) {
+				if ( isset( $buttons_array[$cache_index] ) ) {
 					if ( $this->p->debug->enabled ) {
-						$this->p->debug->log( $type.' buttons index found in array from transient '.$cache_id );
+						$this->p->debug->log( $type.' cache index found in array from transient '.$cache_id );
 					}
 				} elseif ( $this->p->debug->enabled ) {
-					$this->p->debug->log( $type.' buttons index not in array from transient '.$cache_id );
+					$this->p->debug->log( $type.' cache index not in array from transient '.$cache_id );
 				}
 			} elseif ( $this->p->debug->enabled ) {
-				$this->p->debug->log( $type.' buttons array transient is disabled' );
+				$this->p->debug->log( $type.' buttons array transient cache is disabled' );
 			}
 
-			if ( ! isset( $buttons_array[$buttons_index] ) ) {
+			if ( ! isset( $buttons_array[$cache_index] ) ) {
 
 				$ids = array_map( 'trim', explode( ',', $atts['buttons'] ) );
 				unset ( $atts['buttons'] );
 
 				// returns html or an empty string
-				$buttons_array[$buttons_index] = $this->p->rrssb_sharing->get_html( $ids, $atts, $mod );
+				$buttons_array[$cache_index] = $this->p->rrssb_sharing->get_html( $ids, $atts, $mod );
 
-				if ( ! empty( $buttons_array[$buttons_index] ) ) {
-					$buttons_array[$buttons_index] = '
+				if ( ! empty( $buttons_array[$cache_index] ) ) {
+					$buttons_array[$cache_index] = '
 <!-- '.$lca.' '.$type.' begin -->
 <!-- generated on '.date( 'c' ).' -->
 <div class="'.$lca.'-rrssb '.$lca.'-'.$atts['css_class'].'">'."\n".
-$buttons_array[$buttons_index]."\n".	// buttons html is trimmed, so add newline
+$buttons_array[$cache_index]."\n".	// buttons html is trimmed, so add newline
 '</div><!-- .'.$lca.'-'.$atts['css_class'].' -->'."\n".
 '<!-- '.$lca.' '.$type.' end -->'."\n\n";
 
@@ -189,7 +189,7 @@ $buttons_array[$buttons_index]."\n".	// buttons html is trimmed, so add newline
 				}
 			}
 
-			return $buttons_array[$buttons_index];
+			return $buttons_array[$cache_index];
 		}
 	}
 }

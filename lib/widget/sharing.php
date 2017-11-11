@@ -62,31 +62,34 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 			$sharing_url = $this->p->util->get_sharing_url( $mod );
 
 			$buttons_array = array();
-			$buttons_index = $this->p->rrssb_sharing->get_buttons_cache_index( $type, $atts );
 
 			$cache_md5_pre = $lca.'_b_';
 			$cache_exp_secs = $this->p->rrssb_sharing->get_buttons_cache_exp();
 			$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, $sharing_url ).')';
 			$cache_id = $cache_md5_pre.md5( $cache_salt );
+			$cache_index = $this->p->rrssb_sharing->get_buttons_cache_index( $type, $atts );
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'sharing url = '.$sharing_url );
-				$this->p->debug->log( 'buttons index = '.$buttons_index );
-				$this->p->debug->log( 'transient expire = '.$cache_exp_secs );
-				$this->p->debug->log( 'transient salt = '.$cache_salt );
+				$this->p->debug->log( 'cache expire = '.$cache_exp_secs );
+				$this->p->debug->log( 'cache salt = '.$cache_salt );
+				$this->p->debug->log( 'cache index = '.$cache_index );
 			}
 
 			if ( $cache_exp_secs > 0 ) {
 				$buttons_array = get_transient( $cache_id );
-				if ( isset( $buttons_array[$buttons_index] ) ) {
-					if ( $this->p->debug->enabled )
-						$this->p->debug->log( $type.' buttons index found in array from transient '.$cache_id );
-				} elseif ( $this->p->debug->enabled )
-					$this->p->debug->log( $type.' buttons index not in array from transient '.$cache_id );
-			} elseif ( $this->p->debug->enabled )
-				$this->p->debug->log( $type.' buttons array transient is disabled' );
+				if ( isset( $buttons_array[$cache_index] ) ) {
+					if ( $this->p->debug->enabled ) {
+						$this->p->debug->log( $type.' cache index found in array from transient '.$cache_id );
+					}
+				} elseif ( $this->p->debug->enabled ) {
+					$this->p->debug->log( $type.' cache index not in array from transient '.$cache_id );
+				}
+			} elseif ( $this->p->debug->enabled ) {
+				$this->p->debug->log( $type.' buttons array transient cache is disabled' );
+			}
 
-			if ( ! isset( $buttons_array[$buttons_index] ) ) {
+			if ( ! isset( $buttons_array[$cache_index] ) ) {
 
 				// sort enabled sharing buttons by their preferred order
 				$sorted_ids = array();
@@ -96,14 +99,14 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 				ksort( $sorted_ids );
 
 				// returns html or an empty string
-				$buttons_array[$buttons_index] = $this->p->rrssb_sharing->get_html( $sorted_ids, $atts, $mod );
+				$buttons_array[$cache_index] = $this->p->rrssb_sharing->get_html( $sorted_ids, $atts, $mod );
 
-				if ( ! empty( $buttons_array[$buttons_index] ) ) {
-					$buttons_array[$buttons_index] = '
+				if ( ! empty( $buttons_array[$cache_index] ) ) {
+					$buttons_array[$cache_index] = '
 <!-- '.$lca.' sharing widget '.$args['widget_id'].' begin -->'."\n".
 $before_widget.
 ( empty( $title ) ? '' : $before_title.$title.$after_title ).
-$buttons_array[$buttons_index]."\n".	// buttons html is trimmed, so add newline
+$buttons_array[$cache_index]."\n".	// buttons html is trimmed, so add newline
 $after_widget.
 '<!-- '.$lca.' sharing widget '.$args['widget_id'].' end -->'."\n\n";
 
@@ -117,7 +120,7 @@ $after_widget.
 				}
 			}
 
-			echo $buttons_array[$buttons_index];
+			echo $buttons_array[$cache_index];
 		}
 	
 		public function update( $new_instance, $old_instance ) {
