@@ -102,7 +102,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			return false;
 		}
 
-		public function do_shortcode( $atts, $content = null ) { 
+		public function do_shortcode( $atts = array(), $content = null, $tag = '' ) { 
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
