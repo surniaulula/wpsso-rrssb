@@ -97,6 +97,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 				'transient' => array(
 					'wpsso_b_' => array(
 						'label' => 'Buttons HTML',
+						'text_domain' => 'wpsso-rrssb',
 						'opt_key' => 'plugin_sharing_buttons_cache_exp',
 						'filter' => 'wpsso_cache_expire_sharing_buttons',
 					),

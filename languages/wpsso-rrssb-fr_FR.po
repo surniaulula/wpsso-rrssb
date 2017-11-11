@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 1.5.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2017-11-01 11:34-0600\n"
-"PO-Revision-Date: 2017-11-05 08:40-0600\n"
+"PO-Revision-Date: 2017-11-11 10:02-0600\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -114,7 +114,7 @@ msgstr "Extension WPSSO Core pour ajouter des boutons de partage sociaux ridicul
 #: lib/pro/admin/sharing.php:45 lib/pro/admin/sharing.php:66
 msgctxt "option label"
 msgid "Sharing Buttons HTML Cache Expiry"
-msgstr "Expiration cache HTML boutons de partage"
+msgstr "Expiration cache HTML des boutons"
 
 #: lib/gpl/admin/sharing.php:40 lib/gpl/admin/sharing.php:61
 #: lib/pro/admin/sharing.php:48 lib/pro/admin/sharing.php:69
