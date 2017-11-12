@@ -91,10 +91,10 @@ $buttons_array[$cache_index]."\n".	// buttons html is trimmed, so add newline
 '<!-- '.$lca.' '.__FUNCTION__.' function end -->'."\n\n";
 
 				if ( $cache_exp_secs > 0 ) {
-					// update the transient array and keep the original expiration time
-					SucomUtil::update_transient_array( $cache_id, $buttons_array, $cache_exp_secs );
+					// update the cached array and maintain the existing transient expiration time
+					$expires_in_secs = SucomUtil::update_transient_array( $cache_id, $buttons_array, $cache_exp_secs );
 					if ( $wpsso->debug->enabled ) {
-						$wpsso->debug->log( $type.' buttons html saved to transient cache for '.$cache_exp_secs.' seconds' );
+						$wpsso->debug->log( $type.' buttons html saved to transient cache (expires in '.$expires_in_secs.' seconds)' );
 					}
 				}
 			}
