@@ -11,8 +11,8 @@
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Description: WPSSO Core extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
- * Requires PHP: 5.3
- * Requires At Least: 3.7
+ * Requires PHP: 5.4
+ * Requires At Least: 3.8
  * Tested Up To: 4.9
  * WC Tested Up To: 3.2.3
  * Version: 1.5.0
