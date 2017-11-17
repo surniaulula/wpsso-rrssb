@@ -79,7 +79,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 					'twitter_on_sidebar' => 0,
 					'twitter_on_admin_edit' => 1,
 					'twitter_platform' => 'any',
-					'twitter_cap_len' => 140,
+					'twitter_cap_len' => 280,	// changed from 140 to 280 on 2017/11/17
 					'twitter_cap_hashtags' => 0,
 					'twitter_via' => 1,
 					'twitter_rel_author' => 1,
