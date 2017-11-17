@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 5.4
 Requires At Least: 3.8
 Tested Up To: 4.9
-WC Tested Up To: 3.2.3
+WC Tested Up To: 3.2.4
 Stable Tag: 1.5.0
 
 WPSSO Core extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
@@ -155,6 +155,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.5.1-dev.4 (2017/11/17)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* Changed the maximum tweet text length from 140 to 280 characters.
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* None
+
 **Version 1.5.0 (2017/11/14)**
 
 * *New Features*
@@ -167,272 +178,13 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Added a new WpssoRrssbSharing get_buttons_cache_exp() method to apply the buttons expiration filter once (and cache the result in a static variable).
 	* Updated the WpssoRrssbShortcodeSharing and WpssoRrssbWidgetSharing class methods to use the new WpssoRrssbSharing get_buttons_cache_exp() method.
 
-**Version 1.4.26 (2017/11/02)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* Fixed order of add/remove shortcode when applying the content filter to prevent a circular loop. 
-	* Fixed clearing of the social sharing shortcode cache transient on post/page update.
-* *Developer Notes*
-	* Refactored the post cache clearing filter for WPSSO v3.48.0.
-
-**Version 1.4.25 (2017/10/15)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Added a shortcode_exists() call to the WpssoRrssbShortcodeSharing add_shortcode() and remove_shortcode() methods for more complete debug info.
-	* Added 'wpsso_pre_apply_filters_text' and 'wpsso_after_apply_filters_text' action hooks in the WpssoRrssbShortcodeSharing class to dynamically remove / add the sharing shortcode as required.
-
-**Version 1.4.24 (2017/09/10)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Renamed the following filters for WPSSO v3.46.0 and added a 3rd argument for the metabox id:
-		* 'wpsso_post_social_settings_tabs' to 'wpsso_post_custom_meta_tabs'.
-
-**Version 1.4.23 (2017/09/03)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Renamed the SucomForm get_image_dimensions_input() method to get_input_image_dimensions().
-
-**Version 1.4.22 (2017/08/08)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Added a new 'wpsso_rrssb_buttons_shared_url' filter.
-
-**Version 1.4.21 (2017/07/23)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Added more debug messages to the WpssoRrssbSharing::get_buttons() method.
-
-**Version 1.4.20 (2017/05/25)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* Added a new Advanced Settings tab in the Responsible Buttons settings page with a "Sharing Buttons HTML Cache Expiry" option.
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* None
-
-**Version 1.4.19 (2017/05/19)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* The Pinterest custom image has been moved to the Structured Data / Schema Markup / Pinterest custom image for WPSSO v3.44.0.
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* None
-
-**Version 1.4.18 (2017/04/30)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Code refactoring to rename the $is_avail array to $avail for WPSSO v3.42.0.
-	* Replaced WPSSO_VARY_USER_AGENT_DISABLE constant checks by $avail array checks.
-	* Added a new filter: 'wpsso_rrssb_sharing_buttons_html' ( $type, $mod, $location, $atts ).
-
-**Version 1.4.17 (2017/04/22)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Updated all Pinterest option key prefixes from 'rp' to 'p' for WPSSO v3.41.0.
-	* Added support for the new WPSSO_VARY_USER_AGENT_DISABLE constant in WPSSO v3.41.0.
-
-**Version 1.4.16 (2017/04/16)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Refactored the plugin init filters and moved/renamed the registration boolean from `is_avail[$name]` to `is_avail['p_ext'][$name]`.
-
-**Version 1.4.15 (2017/04/08)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Minor revision to move URLs in the extension config to the main WPSSO Core plugin config.
-	* Dropped the package number from the production version string.
-
-**Version 1.4.14-1 (2017/04/05)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* Updated the plugin icon images and the documentation URLs.
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Renamed WpssoAdmin get_site_use() to get_option_site_use() for WPSSO v3.40.11-1.
-	* Renamed the 'table.sucom-setting' CSS class to 'table.sucom-settings' for WPSSO v3.40.11-1.
-
-**Version 1.4.13-1 (2017/03/31)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Renamed calls to the WpssoOpenGraph get_the_media_info() method to get_media_info() for WPSSO v3.40.7-1.
-
-**Version 1.4.12-1 (2017/03/13)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* Fixed an incorrect variable name in WpssoRrssbSharing get_website_object_ids().
-* *Developer Notes*
-	* None
-
-**Version 1.4.11-1 (2017/03/06)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Added support for SucomUtil::is_amp() in WPSSO v3.40.2-1.
-
-**Version 1.4.10-1 (2017/02/04)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Maintenance release.
-
 == Upgrade Notice ==
+
+= 1.5.1-dev.4 =
+
+(2017/11/17) Changed the maximum tweet text length from 140 to 280 characters.
 
 = 1.5.0 =
 
 (2017/11/14) Optimized setting of the buttons cache expiration value by using a single method and static cache variable. 
-
-= 1.4.26 =
-
-(2017/11/02) Fixed order of add/remove shortcode when applying the content filter to prevent a circular loop. Fixed clearing of the social sharing shortcode cache transient on post/page update.
-
-= 1.4.25 =
-
-(2017/10/15) Refactored the WpssoRrssbShortcodeSharing add / remove shortcode methods.
-
-= 1.4.24 =
-
-(2017/09/10) Code refactoring to renamed filters for WPSSO v3.46.0.
-
-= 1.4.23 =
-
-(2017/09/03) Renamed some SucomForm methods for WPSSO v3.45.8.
-
-= 1.4.22 =
-
-(2017/08/08) Added a new 'wpsso_rrssb_buttons_shared_url' filter.
-
-= 1.4.21 =
-
-(2017/07/23) Added more debug messages to the WpssoRrssbSharing::get_buttons() method.
-
-= 1.4.20 =
-
-(2017/05/25) Added a new Advanced Settings tab in the Responsible Buttons settings page with a "Sharing Buttons HTML Cache Expiry" option.
-
-= 1.4.19 =
-
-(2017/05/19) The Pinterest custom image has been moved to the Structured Data / Schema Markup / Pinterest custom image for WPSSO v3.44.0.
-
-= 1.4.18 =
-
-(2017/04/30) Code refactoring to rename the $is_avail array to $avail, and replace the WPSSO_VARY_USER_AGENT_DISABLE constant checks by $avail array checks for WPSSO v3.42.0.
-
-= 1.4.17 =
-
-(2017/04/22) Updated all Pinterest option key prefixes and added support for a new constant in WPSSO v3.41.0.
-
-= 1.4.16 =
-
-(2017/04/16) Refactored the plugin init filters and moved/renamed the registration boolean.
-
-= 1.4.15 =
-
-(2017/04/08) Minor revision to move URLs in the extension config to the main WPSSO Core plugin config.
-
-= 1.4.14-1 =
-
-(2017/04/05) Updated the plugin icon images and the documentation URLs. Renamed a WpssoAdmin class method and renamed the 'table.sucom-setting' CSS class for WPSSO v3.40.11-1.
-
-= 1.4.13-1 =
-
-(2017/03/31) Renamed calls to the WpssoOpenGraph get_the_media_info() method to get_media_info() for WPSSO v3.40.7-1.
-
-= 1.4.12-1 =
-
-(2017/03/13) Fixed an incorrect variable name in WpssoRrssbSharing get_website_object_ids().
-
-= 1.4.11-1 =
-
-(2017/03/06) Added support for SucomUtil::is_amp() in WPSSO v3.40.2-1.
-
-= 1.4.10-1 =
-
-(2017/02/04) Maintenance release.
 
