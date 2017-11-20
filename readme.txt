@@ -155,7 +155,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.5.1-rc.7 (2017/11/20)**
+**Version 1.5.1 (2017/11/20)**
 
 * *New Features*
 	* None
@@ -180,7 +180,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.5.1-rc.7 =
+= 1.5.1 =
 
 (2017/11/20) Changed the default maximum tweet text length from 140 to 280 characters.
 
