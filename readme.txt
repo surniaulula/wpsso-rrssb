@@ -155,6 +155,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.5.2-dev.2 (2017/11/26)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* Optimized the definition of cache ids when the transient cache is disabled.
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* None
+
 **Version 1.5.1 (2017/11/20)**
 
 * *New Features*
@@ -179,6 +190,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Updated the WpssoRrssbShortcodeSharing and WpssoRrssbWidgetSharing class methods to use the new WpssoRrssbSharing get_buttons_cache_exp() method.
 
 == Upgrade Notice ==
+
+= 1.5.2-dev.2 =
+
+(2017/11/26) Optimized the definition of cache ids when the transient cache is disabled.
 
 = 1.5.1 =
 
