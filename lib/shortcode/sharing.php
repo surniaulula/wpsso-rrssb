@@ -146,28 +146,42 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 			$cache_md5_pre = $lca.'_b_';
 			$cache_exp_secs = $this->p->rrssb_sharing->get_buttons_cache_exp();
-			$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, $atts['url'] ).')';
-			$cache_id = $cache_md5_pre.md5( $cache_salt );
-			$cache_index = $this->p->rrssb_sharing->get_buttons_cache_index( $type, $atts );
+			$cache_index = 0;	// redefined if $cache_exp_secs > 0
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'sharing url = '.$atts['url'] );
 				$this->p->debug->log( 'cache expire = '.$cache_exp_secs );
-				$this->p->debug->log( 'cache salt = '.$cache_salt );
-				$this->p->debug->log( 'cache index = '.$cache_index );
 			}
 
 			if ( $cache_exp_secs > 0 ) {
+
+				$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, $atts['url'] ).')';
+				$cache_id = $cache_md5_pre.md5( $cache_salt );
+				$cache_index = $this->p->rrssb_sharing->get_buttons_cache_index( $type, $atts );
+
+				if ( $this->p->debug->enabled ) {
+					$this->p->debug->log( 'cache salt = '.$cache_salt );
+					$this->p->debug->log( 'cache index = '.$cache_index );
+				}
+
 				$buttons_array = get_transient( $cache_id );
+
 				if ( isset( $buttons_array[$cache_index] ) ) {
 					if ( $this->p->debug->enabled ) {
 						$this->p->debug->log( $type.' cache index found in array from transient '.$cache_id );
 					}
-				} elseif ( $this->p->debug->enabled ) {
-					$this->p->debug->log( $type.' cache index not in array from transient '.$cache_id );
+				} else {
+					if ( $this->p->debug->enabled ) {
+						$this->p->debug->log( $type.' cache index not in array from transient '.$cache_id );
+					}
+					if ( ! is_array( $buttons_array ) ) {	// just in case
+						$buttons_array = array();
+					}
 				}
-			} elseif ( $this->p->debug->enabled ) {
-				$this->p->debug->log( $type.' buttons array transient cache is disabled' );
+			} else {
+				if ( $this->p->debug->enabled ) {
+					$this->p->debug->log( $type.' buttons array transient cache is disabled' );
+				}
 			}
 
 			if ( ! isset( $buttons_array[$cache_index] ) ) {
