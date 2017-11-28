@@ -155,7 +155,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.5.2-b.1 (2017/11/28)**
+**Version 1.5.2-rc.1 (2017/11/28)**
 
 * *New Features*
 	* None
@@ -191,7 +191,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.5.2-b.1 =
+= 1.5.2-rc.1 =
 
 (2017/11/28) Optimized the definition of cache ids when the transient cache is disabled.
 
