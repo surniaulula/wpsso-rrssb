@@ -1087,4 +1087,3 @@ div.wpsso-rrssb
 	}
 }
 
-?>

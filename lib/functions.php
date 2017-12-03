@@ -117,4 +117,3 @@ $buttons_array[$cache_index]."\n".	// buttons html is trimmed, so add newline
 	}
 }
 
-?>

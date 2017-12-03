@@ -92,4 +92,3 @@ if ( ! class_exists( 'WpssoRrssbGplEcomWoocommerceSharing' ) ) {
 	}
 }
 
-?>

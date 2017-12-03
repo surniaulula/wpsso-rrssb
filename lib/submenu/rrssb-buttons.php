@@ -194,4 +194,3 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 	}
 }
 
-?>

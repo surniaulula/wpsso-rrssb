@@ -170,4 +170,3 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 	$wpssorrssb =& WpssoRrssb::get_instance();
 }
 
-?>

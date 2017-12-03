@@ -179,4 +179,3 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 	}
 }
 
-?>

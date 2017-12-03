@@ -173,4 +173,3 @@ $after_widget.
 	}
 }
 
-?>

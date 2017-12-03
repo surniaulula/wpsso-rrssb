@@ -199,4 +199,3 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 	}
 }
 
-?>

@@ -104,4 +104,3 @@ if ( ! class_exists( 'WpssoRrssbWebsiteFacebook' ) ) {
 	}
 }
 
-?>
