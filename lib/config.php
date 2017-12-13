@@ -136,8 +136,10 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			),
 		);
 
-		public static function get_version() { 
-			return self::$cf['plugin']['wpssorrssb']['version'];
+		public static function get_version( $add_slug = false ) {
+			$ext = 'wpssorrssb';
+			$info =& self::$cf['plugin'][$ext];
+			return $add_slug ? $info['slug'].'-'.$info['version'] : $info['version'];
 		}
 
 		public static function set_constants( $plugin_filepath ) { 
