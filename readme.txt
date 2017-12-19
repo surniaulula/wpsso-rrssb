@@ -139,7 +139,7 @@ The [WPSSO RRSSB Pro extension](https://wpsso.com/extend/plugins/wpsso-rrssb/?ut
 
 == Changelog ==
 
-<h3>Free / Basic Version Repository</h3>
+<h3>Free / Basic Version Repositories</h3>
 
 * [GitHub](https://surniaulula.github.io/wpsso-rrssb/)
 * [WordPress.org](https://wordpress.org/plugins/wpsso-rrssb/developers/)
