@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name: WPSSO Ridiculously Responsive Social Sharing Buttons
  * Plugin Slug: wpsso-rrssb

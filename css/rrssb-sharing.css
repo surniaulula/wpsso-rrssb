@@ -1,4 +1,5 @@
-/*
+
+/**
  * Save an empty style text box to reload the default example styles.
  * These styles are provided as examples only - modifications may be
  * necessary to customize the layout for your website.
@@ -40,3 +41,4 @@ ul.rrssb-buttons li:before,
 .rrssb-text {
 	white-space:nowrap;
 }
+
