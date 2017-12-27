@@ -117,12 +117,12 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 
 				if ( ! empty( $buttons_array[$cache_index] ) ) {
 					$buttons_array[$cache_index] = '
-<!-- '.$lca.' sharing widget '.$args['widget_id'].' begin -->'."\n".
+<!-- '.$lca.' sharing widget '.$args['widget_id'].' begin -->' . "\n" . 
 $before_widget.
 ( empty( $title ) ? '' : $before_title.$title.$after_title ).
-$buttons_array[$cache_index]."\n".	// buttons html is trimmed, so add newline
+$buttons_array[$cache_index] . "\n" . 	// buttons html is trimmed, so add newline
 $after_widget.
-'<!-- '.$lca.' sharing widget '.$args['widget_id'].' end -->'."\n\n";
+'<!-- '.$lca.' sharing widget '.$args['widget_id'].' end -->' . "\n\n";
 
 					if ( $cache_exp_secs > 0 ) {
 						// update the cached array and maintain the existing transient expiration time
@@ -153,10 +153,10 @@ $after_widget.
 				esc_attr( $instance['title'] ) : 
 				_x( 'Share It', 'option value', 'wpsso-rrssb' );
 
-			echo "\n".'<p><label for="'.$this->get_field_id( 'title' ).'">'.
+			echo "\n" . '<p><label for="'.$this->get_field_id( 'title' ).'">'.
 			_x( 'Widget Title (leave blank for no title)', 'option label', 'wpsso-rrssb' ).':</label>'.
 			'<input class="widefat" id="'.$this->get_field_id( 'title' ).'" name="'.
-				$this->get_field_name( 'title' ).'" type="text" value="'.$title.'"/></p>'."\n";
+				$this->get_field_name( 'title' ).'" type="text" value="'.$title.'"/></p>' . "\n";
 	
 			if ( isset( $this->p->rrssb_sharing ) ) {
 				foreach ( $this->p->rrssb_sharing->get_website_object_ids() as $id => $name ) {
@@ -167,7 +167,7 @@ $after_widget.
 						'" value="1" type="checkbox" ';
 					if ( ! empty( $instance[$id] ) )
 						echo checked( 1, $instance[$id] );
-					echo '/> '.$name.'</label></p>'."\n";
+					echo '/> '.$name.'</label></p>' . "\n";
 				}
 			}
 		}

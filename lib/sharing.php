@@ -590,7 +590,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					$this->p->debug->mark( 'getting buttons for '.$type );	// end timer
 				}
 				if ( $add_comment ) {
-					return $text."\n".'<!-- '.__METHOD__.' '.$type.' filter skipped: '.$error_text.' -->'."\n";
+					return $text . "\n" . '<!-- '.__METHOD__.' '.$type.' filter skipped: '.$error_text.' -->' . "\n";
 				} else {
 					return $text;
 				}
@@ -675,10 +675,10 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					$buttons_array[$cache_index] = apply_filters( $lca.'_rrssb_buttons_html', '
 <!-- '.$lca.' '.$css_type_name.' begin -->
 <!-- generated on '.date( 'c' ).' -->
-<div class="'.$lca.'-rrssb'.( $mod['use_post'] ? ' '.$lca.'-'.$css_type_name.'"' : '" id="'.$lca.'-'.$css_type_name.'"' ).'>'."\n".
+<div class="'.$lca.'-rrssb'.( $mod['use_post'] ? ' '.$lca.'-'.$css_type_name.'"' : '" id="'.$lca.'-'.$css_type_name.'"' ).'>' . "\n" . 
 $buttons_array[$cache_index].
 '</div><!-- .'.$lca.'-rrssb '.( $mod['use_post'] ? '.' : '#' ).$lca.'-'.$css_type_name.' -->
-<!-- '.$lca.' '.$css_type_name.' end -->'."\n\n", $type, $mod, $location, $atts );
+<!-- '.$lca.' '.$css_type_name.' end -->' . "\n\n", $type, $mod, $location, $atts );
 
 					if ( $cache_exp_secs > 0 ) {
 						// update the cached array and maintain the existing transient expiration time
@@ -755,8 +755,8 @@ $buttons_array[$cache_index].
 			}
 
 			$buttons_html = '';
-			$buttons_begin = '<ul class="rrssb-buttons '.SucomUtil::get_locale( $mod ).' clearfix">'."\n";
-			$buttons_end = '</ul><!-- .rrssb-buttons.'.SucomUtil::get_locale( $mod ).'.clearfix -->'."\n";
+			$buttons_begin = '<ul class="rrssb-buttons '.SucomUtil::get_locale( $mod ).' clearfix">' . "\n";
+			$buttons_end = '</ul><!-- .rrssb-buttons.'.SucomUtil::get_locale( $mod ).'.clearfix -->' . "\n";
 
 			$saved_atts = $atts;
 			foreach ( $ids as $id ) {
@@ -785,7 +785,7 @@ $buttons_array[$cache_index].
 								$atts['url'] = preg_replace( '/^.*:\/\//', $force_prot.'://', $atts['url'] );
 							}
 
-							$buttons_part = $this->website[$id]->get_html( $atts, $this->p->options, $mod )."\n";
+							$buttons_part = $this->website[$id]->get_html( $atts, $this->p->options, $mod ) . "\n";
 
 							$atts = $saved_atts;	// restore the common $atts array
 
@@ -793,8 +793,8 @@ $buttons_array[$cache_index].
 								if ( empty( $atts['container_each'] ) ) {
 									$buttons_html .= $buttons_part;
 								} else {
-									$buttons_html .= '<!-- adding buttons as individual containers -->'."\n".
-										$buttons_begin.$buttons_part.$buttons_end;
+									$buttons_html .= '<!-- adding buttons as individual containers -->' . "\n" . 
+										$buttons_begin . $buttons_part . $buttons_end;
 								}
 							}
 						} elseif ( $this->p->debug->enabled ) {

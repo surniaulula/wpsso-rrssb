@@ -37,7 +37,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 			if ( $wpsso->debug->enabled ) {
 				$wpsso->debug->log( 'exiting early: '.$error_msg );
 			}
-			return '<!-- '.__FUNCTION__.' exiting early: '.$error_msg.' -->'."\n";
+			return '<!-- '.__FUNCTION__.' exiting early: '.$error_msg.' -->' . "\n";
 		}
 
 		$atts['use_post'] = SucomUtil::sanitize_use_post( $atts ); 
@@ -100,9 +100,9 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 			if ( ! empty( $buttons_array[$cache_index] ) ) {
 				$buttons_array[$cache_index] = '
 <!-- '.$lca.' '.__FUNCTION__.' function begin -->
-<!-- generated on '.date( 'c' ).' -->'."\n".
-$buttons_array[$cache_index]."\n".	// buttons html is trimmed, so add newline
-'<!-- '.$lca.' '.__FUNCTION__.' function end -->'."\n\n";
+<!-- generated on '.date( 'c' ).' -->' . "\n" . 
+$buttons_array[$cache_index] . "\n" . 	// buttons html is trimmed, so add newline
+'<!-- '.$lca.' '.__FUNCTION__.' function end -->' . "\n\n";
 
 				if ( $cache_exp_secs > 0 ) {
 					// update the cached array and maintain the existing transient expiration time

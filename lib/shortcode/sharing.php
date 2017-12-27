@@ -129,7 +129,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			$atts = (array) apply_filters( $lca.'_rrssb_sharing_shortcode_atts', $atts, $content );
 
 			if ( empty( $atts['buttons'] ) ) {	// nothing to do
-				return '<!-- '.$lca.' sharing shortcode: no buttons defined -->'."\n\n";
+				return '<!-- '.$lca.' sharing shortcode: no buttons defined -->' . "\n\n";
 			}
 
 			$atts['use_post'] = SucomUtil::sanitize_use_post( $atts, true );	// $default = true
@@ -197,10 +197,10 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 					$buttons_array[$cache_index] = '
 <!-- '.$lca.' '.$type.' begin -->
 <!-- generated on '.date( 'c' ).' -->
-<div class="'.$lca.'-rrssb '.$lca.'-'.$atts['css_class'].'">'."\n".
-$buttons_array[$cache_index]."\n".	// buttons html is trimmed, so add newline
-'</div><!-- .'.$lca.'-'.$atts['css_class'].' -->'."\n".
-'<!-- '.$lca.' '.$type.' end -->'."\n\n";
+<div class="'.$lca.'-rrssb '.$lca.'-'.$atts['css_class'].'">' . "\n" . 
+$buttons_array[$cache_index] . "\n" . 	// buttons html is trimmed, so add newline
+'</div><!-- .'.$lca.'-'.$atts['css_class'].' -->' . "\n" . 
+'<!-- '.$lca.' '.$type.' end -->' . "\n\n";
 
 					if ( $cache_exp_secs > 0 ) {
 						// update the cached array and maintain the existing transient expiration time
