@@ -149,14 +149,13 @@ $after_widget.
 		}
 	
 		public function form( $instance ) {
-			$title = isset( $instance['title'] ) ?
-				esc_attr( $instance['title'] ) : 
-				_x( 'Share It', 'option value', 'wpsso-rrssb' );
+
+			$title = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : _x( 'Share It', 'option value', 'wpsso-rrssb' );
 
 			echo "\n" . '<p><label for="'.$this->get_field_id( 'title' ).'">'.
-			_x( 'Widget Title (leave blank for no title)', 'option label', 'wpsso-rrssb' ).':</label>'.
-			'<input class="widefat" id="'.$this->get_field_id( 'title' ).'" name="'.
-				$this->get_field_name( 'title' ).'" type="text" value="'.$title.'"/></p>' . "\n";
+				_x( 'Widget Title (leave blank for no title)', 'option label', 'wpsso-rrssb' ).':</label>'.
+				'<input class="widefat" id="'.$this->get_field_id( 'title' ).'" name="'.
+					$this->get_field_name( 'title' ).'" type="text" value="'.$title.'"/></p>' . "\n";
 	
 			if ( isset( $this->p->rrssb_sharing ) ) {
 				foreach ( $this->p->rrssb_sharing->get_website_object_ids() as $id => $name ) {
@@ -165,8 +164,9 @@ $after_widget.
 						'<input id="'.$this->get_field_id( $id ).
 						'" name="'.$this->get_field_name( $id ).
 						'" value="1" type="checkbox" ';
-					if ( ! empty( $instance[$id] ) )
+					if ( ! empty( $instance[$id] ) ) {
 						echo checked( 1, $instance[$id] );
+					}
 					echo '/> '.$name.'</label></p>' . "\n";
 				}
 			}
