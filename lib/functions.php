@@ -1,5 +1,4 @@
 <?php
-
 /**
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
@@ -53,7 +52,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 		$buttons_array = array();
 
 		$cache_md5_pre = $lca.'_b_';
-		$cache_exp_secs = $cache_exp_secs === false ? $wpsso->rrssb_sharing->get_buttons_cache_exp() : $cache_exp_secs;
+		$cache_exp_secs = false === $cache_exp_secs ? $wpsso->rrssb_sharing->get_buttons_cache_exp() : $cache_exp_secs;
 		$cache_index = 0;	// redefined if $cache_exp_secs > 0
 
 		if ( $wpsso->debug->enabled ) {

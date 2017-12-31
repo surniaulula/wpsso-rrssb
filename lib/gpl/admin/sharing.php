@@ -1,5 +1,4 @@
 <?php
-
 /**
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
@@ -84,7 +83,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 				$this->p->msgs->get( 'pro-feature-msg', 
 					array( 'lca' => 'wpssorrssb' ) ).'</td>';
 
-			/*
+			/**
 			 * Email
 			 */
 			$caption_len = $this->p->options['email_cap_len'];
@@ -102,7 +101,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 				'content' => $form->get_no_textarea_value( $caption_text, '', '', $caption_len ),
 			);
 
-			/*
+			/**
 			 * Twitter
 			 */
 			$caption_len = $this->p->rrssb_sharing->get_tweet_max_len();
@@ -115,7 +114,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 				'content' => $form->get_no_textarea_value( $caption_text, '', '', $caption_len ),
 			);
 
-			/*
+			/**
 			 * Pinterest
 			 */
 			$caption_len = $this->p->options['pin_cap_len'];
@@ -142,7 +141,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 						'<img src="'.$media['img_url'].'" style="max-width:'.$size_info['width'].'px;">' ),
 			);
 
-			/*
+			/**
 			 * Generic Title / Caption Input
 			 */
 			Foreach ( array(
@@ -168,7 +167,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 				);
 			}
 
-			/*
+			/**
 			 * Disable Buttons Checkbox
 			 */
 			$form_rows['buttons_disabled'] = array(
