@@ -142,7 +142,7 @@ The [WPSSO RRSSB Pro extension](https://wpsso.com/extend/plugins/wpsso-rrssb/?ut
 <h3>Free / Basic Version Repositories</h3>
 
 * [GitHub](https://surniaulula.github.io/wpsso-rrssb/)
-* [WordPress.org](https://wordpress.org/plugins/wpsso-rrssb/developers/)
+* [WordPress.org](https://plugins.trac.wordpress.org/browser/wpsso-rrssb/)
 
 <h3>Version Numbering</h3>
 
