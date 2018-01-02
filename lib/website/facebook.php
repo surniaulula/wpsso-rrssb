@@ -21,7 +21,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteFacebook' ) ) {
 			}
 
 			$this->p->util->add_plugin_filters( $this, array(
-				'rrssb_website_facebook_rows' => 3,	// $table_rows, $form, $submenu
+				'rrssb_website_facebook_rows' => 3,
 			) );
 		}
 

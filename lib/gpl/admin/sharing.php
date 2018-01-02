@@ -21,9 +21,9 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			}
 
 			$this->p->util->add_plugin_filters( $this, array( 
-				'plugin_cache_rows' => 3,		// $table_rows, $form, $network
-				'rrssb_buttons_advanced_rows' => 2,	// $table_rows, $form
-				'post_buttons_rows' => 4,		// $table_rows, $form, $head, $mod
+				'plugin_cache_rows' => 3,
+				'rrssb_buttons_advanced_rows' => 2,
+				'post_buttons_rows' => 4,
 			), 40 );
 		}
 

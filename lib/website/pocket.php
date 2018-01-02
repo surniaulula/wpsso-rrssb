@@ -21,7 +21,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsitePocket' ) ) {
 			}
 
 			$this->p->util->add_plugin_filters( $this, array(
-				'rrssb_website_pocket_rows' => 3,	// $table_rows, $form, $submenu
+				'rrssb_website_pocket_rows' => 3,
 			) );
 		}
 

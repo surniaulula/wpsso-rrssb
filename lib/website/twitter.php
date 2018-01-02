@@ -21,7 +21,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteTwitter' ) ) {
 			}
 
 			$this->p->util->add_plugin_filters( $this, array(
-				'rrssb_website_twitter_rows' => 3,	// $table_rows, $form, $submenu
+				'rrssb_website_twitter_rows' => 3,
 			) );
 		}
 
