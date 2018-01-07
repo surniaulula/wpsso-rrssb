@@ -155,6 +155,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.5.3 (2018/01/07)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* Minor update for the default sharing buttons CSS.
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* None
+
 **Version 1.5.2 (2017/11/29)**
 
 * *New Features*
@@ -190,6 +201,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Updated the WpssoRrssbShortcodeSharing and WpssoRrssbWidgetSharing class methods to use the new WpssoRrssbSharing get_buttons_cache_exp() method.
 
 == Upgrade Notice ==
+
+= 1.5.3 =
+
+(2018/01/07) Minor update for the default sharing buttons CSS.
 
 = 1.5.2 =
 
