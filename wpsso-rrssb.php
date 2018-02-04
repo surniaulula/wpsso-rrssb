@@ -35,11 +35,18 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 	class WpssoRrssb {
 
+		/**
+		 * Class Object Variables
+		 */
 		public $p;			// Wpsso
 		public $reg;			// WpssoRrssbRegister
 
+		/**
+		 * Reference Variables (config, options, modules, etc.).
+		 */
+		private $have_req_min = true;	// Have minimum wpsso version.
+
 		private static $instance;
-		private static $have_min = true;	// have minimum wpsso version
 
 		public function __construct() {
 
@@ -73,24 +80,38 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 		// also called from the activate_plugin method with $deactivate = true
 		public static function required_notice( $deactivate = false ) {
+
 			self::wpsso_init_textdomain();
+
 			$info = WpssoRrssbConfig::$cf['plugin']['wpssorrssb'];
+
 			$die_msg = __( '%1$s is an extension for the %2$s plugin &mdash; please install and activate the %3$s plugin before activating %4$s.', 'wpsso-rrssb' );
-			$err_msg = __( 'The %1$s extension requires the %2$s plugin &mdash; install and activate the %3$s plugin or <a href="%4$s">deactivate the %5$s extension</a>.', 'wpsso-rrssb' );
+
+			$error_msg = __( 'The %1$s extension requires the %2$s plugin &mdash; install and activate the %3$s plugin or <a href="%4$s">deactivate the %5$s extension</a>.', 'wpsso-rrssb' );
+
 			if ( true === $deactivate ) {
+
 				if ( ! function_exists( 'deactivate_plugins' ) ) {
 					require_once trailingslashit( ABSPATH ) . 'wp-admin/includes/plugin.php';
 				}
+
 				deactivate_plugins( $info['base'], true );	// $silent = true
-				wp_die( '<p>' . sprintf( $die_msg, $info['name'], $info['req']['name'],
-					$info['req']['short'], $info['short'] ) . '</p>' );
+
+				wp_die( '<p>' . sprintf( $die_msg, $info['name'], $info['req']['name'], $info['req']['short'], $info['short'] ) . '</p>' );
+
 			} else {
-				$deactivate_url = wp_nonce_url( 'plugins.php?action=deactivate&amp;' . 
-					'plugin=' . $info['base'] . '&amp;plugin_status=active&amp;paged=1&amp;s=',
-						'deactivate-plugin_' . $info['base'] );
-				echo '<div class="notice notice-error error"><p>' . 
-					sprintf( $err_msg, $info['name'], $info['req']['name'],
-						$info['req']['short'], $deactivate_url, $info['short'] ) . '</p></div>';
+
+				$deactivate_url = html_entity_decode( wp_nonce_url( add_query_arg( array(
+					'action' => 'deactivate',
+					'plugin' => $info['base'],
+					'plugin_status' => 'all',
+					'paged' => 1,
+					's' => '',
+				), admin_url( 'plugins.php' ) ), 'deactivate-plugin_' . $info['base'] ) );
+
+				echo '<div class="notice notice-error error"><p>';
+				echo sprintf( $error_msg, $info['name'], $info['req']['name'], $info['req']['short'], $deactivate_url, $info['short'] );
+				echo '</p></div>';
 			}
 		}
 
@@ -102,7 +123,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 			$info = WpssoRrssbConfig::$cf['plugin']['wpssorrssb'];
 
 			if ( version_compare( $plugin_version, $info['req']['min_version'], '<' ) ) {
-				self::$have_min = false;
+				$this->have_req_min = false;
 				return $cf;
 			}
 
@@ -120,7 +141,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 				$this->p->debug->mark();
 			}
 
-			if ( self::$have_min ) {
+			if ( $this->have_req_min ) {
 				$this->p->avail['p_ext']['rrssb'] = true;
 				if ( is_admin() ) {
 					$this->p->avail['admin']['sharing'] = true;
@@ -134,7 +155,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 			if ( $this->p->debug->enabled )
 				$this->p->debug->mark();
 
-			if ( self::$have_min ) {
+			if ( $this->have_req_min ) {
 				$this->p->rrssb_sharing = new WpssoRrssbSharing( $this->p, __FILE__ );
 			}
 		}
@@ -144,7 +165,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 				$this->p->debug->mark();
 			}
 
-			if ( ! self::$have_min ) {
+			if ( ! $this->have_req_min ) {
 				return $this->min_version_notice();	// stop here
 			}
 		}
