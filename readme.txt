@@ -155,66 +155,20 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.5.3 (2018/01/07)**
+**Version 1.5.4 (2018/02/04)**
 
 * *New Features*
 	* None
 * *Improvements*
-	* Minor update for the default sharing buttons CSS.
+	* None
 * *Bugfixes*
 	* None
 * *Developer Notes*
-	* None
-
-**Version 1.5.2 (2017/11/29)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* Optimized the definition of cache ids when the transient cache is disabled.
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* None
-
-**Version 1.5.1 (2017/11/20)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* Changed the default maximum tweet text length from 140 to 280 characters.
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* None
-
-**Version 1.5.0 (2017/11/14)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* Optimized setting of the buttons cache expiration value by using a single method and static cache variable.
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Added a new WpssoRrssbSharing get_buttons_cache_exp() method to apply the buttons expiration filter once (and cache the result in a static variable).
-	* Updated the WpssoRrssbShortcodeSharing and WpssoRrssbWidgetSharing class methods to use the new WpssoRrssbSharing get_buttons_cache_exp() method.
+	* Maintenance release.
 
 == Upgrade Notice ==
 
-= 1.5.3 =
+= 1.5.4 =
 
-(2018/01/07) Minor update for the default sharing buttons CSS.
-
-= 1.5.2 =
-
-(2017/11/29) Optimized the definition of cache ids when the transient cache is disabled.
-
-= 1.5.1 =
-
-(2017/11/20) Changed the default maximum tweet text length from 140 to 280 characters.
-
-= 1.5.0 =
-
-(2017/11/14) Optimized setting of the buttons cache expiration value by using a single method and static cache variable. 
+(2018/02/04) Maintenance release.
 
