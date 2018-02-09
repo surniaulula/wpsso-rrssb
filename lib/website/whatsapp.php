@@ -93,8 +93,10 @@ if ( ! class_exists( 'WpssoRrssbWebsiteWhatsApp' ) ) {
 		}
 
 		public function get_html( array $atts, array $opts, array $mod ) {
-			if ( $this->p->debug->enabled )
+
+			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
+			}
 
 			return $this->p->util->replace_inline_vars( '<!-- WhatsApp Button -->'.
 				$this->p->options['wa_rrssb_html'], $mod, $atts, array(
