@@ -15,7 +15,7 @@
 
 <p><img class="readme-icon" src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png"></p>
 
-<p>Add awesome <strong>Ridiculously Responsive Social Sharing Buttons</strong> to posts / pages, custom post types, <a href="https://wordpress.org/plugins/bbpress/">bbPress</a>, <a href="https://wordpress.org/plugins/buddypress/">BuddyPress</a>, <a href="https://wordpress.org/plugins/woocommerce/">WooCommerce</a> product pages, and much more.</p></p>
+<p>Add awesome <strong>Ridiculously Responsive Social Sharing Buttons</strong> (RRSSB) to posts / pages, custom post types, <a href="https://wordpress.org/plugins/bbpress/">bbPress</a>, <a href="https://wordpress.org/plugins/buddypress/">BuddyPress</a>, <a href="https://wordpress.org/plugins/woocommerce/">WooCommerce</a> product pages, and much more.</p></p>
 
 <p>Include social sharing buttons in the content, excerpt, widget, CSS sidebar, shortcodes, templates, and <em>admin editor page</em> &mdash; share your posts, pages, and custom post types directly from the admin editor page!</p>
 
@@ -23,15 +23,15 @@
 
 <p>The <strong>Scalable Vector Graphics (SVG) social icons</strong> used by WPSSO RRSSB automatically resize to their container, so they always look great on any device (phone, tablet, laptop, etc.), including high resolution retina displays!</p>
 
-<p><strong>WPSSO RRSSB is <em>incredibly fast</em> and coded for performance:</strong></p>
+<p><strong>WPSSO Ridiculously Responsive Social Sharing Buttons is <em>incredibly fast</em> and coded for performance:</strong></p>
 
 <p>WPSSO Core and its extensions make full use of all available caching techniques (persistent / non-persistent object and disk caching), and load only the PHP library files and object classes they need, keeping their code small, fast, and light.</p>
 
-<p>WPSSO Core and its extensions are fully tested and compatible with PHP v7.x (PHP v5.3 or better required).</p>
+<p>WPSSO Core and its extensions are fully tested and compatible with PHP v7.x (PHP v5.4 or better required).</p>
 
 <h3>WPSSO Core Plugin Prerequisite</h3>
 
-<p>WPSSO Ridiculously Responsive Social Sharing Buttons is an extension for the WPSSO Core plugin &mdash; which creates complete &amp; accurate meta tags and Schema markup from your existing content for social sharing, Social Media Optimization (SMO), Search Engine Optimization (SEO), Google Rich Cards, Pinterest Rich Pins, etc.</p>
+<p>WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an extension for the WPSSO Core plugin &mdash; which creates complete &amp; accurate meta tags and Schema markup from your existing content for social sharing, Social Media Optimization (SMO), Search Engine Optimization (SEO), Google Rich Cards, Pinterest Rich Pins, etc.</p>
 
 <p>The WPSSO RRSSB Free extension works with either the Free or Pro version of WPSSO Core (Main Plugin).</p>
 
@@ -107,7 +107,7 @@
 
 <h3>Extends the WPSSO Core Plugin</h3>
 
-<p><span style="color:#33cc33">&#x0229b;</span> &nbsp; The WPSSO RRSSB Free extension works with either the Free or Pro version of WPSSO Core (Main Plugin).</p>
+<p><span style="color:#33cc33">&#x0229b;</span> &nbsp; The WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) Free extension works with either the Free or Pro version of WPSSO Core (Main Plugin).</p>
 
 <p><span style="color:#33cc33">&#x0229b;</span> &nbsp; The <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-extends">WPSSO RRSSB Pro extension</a> uses many WPSSO Core Pro features, which requires an active and licensed <a href="https://wpsso.com/?utm_source=wpssorrssb-readme-extends">WPSSO Core Pro plugin</a>.</p>
 
