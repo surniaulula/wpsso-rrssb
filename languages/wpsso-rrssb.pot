@@ -370,7 +370,7 @@ msgctxt "option label"
 msgid "Position in Content Text"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:145
+#: lib/submenu/rrssb-buttons.php:144
 msgctxt "option label"
 msgid "Position in Excerpt Text"
 msgstr ""

@@ -122,11 +122,11 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 				case 'rrssb_buttons-include':
 
 					$table_rows[] = $this->form->get_th_html( _x( 'Include on Archive Webpages',
-						'option label', 'wpsso-rrssb' ), null, 'buttons_on_index' ).
+						'option label', 'wpsso-rrssb' ), '', 'buttons_on_index' ).
 					'<td>'.$this->form->get_checkbox( 'buttons_on_index' ).'</td>';
 
 					$table_rows[] = $this->form->get_th_html( _x( 'Include on Static Front Page',
-						'option label', 'wpsso-rrssb' ), null, 'buttons_on_front' ).
+						'option label', 'wpsso-rrssb' ), '', 'buttons_on_front' ).
 					'<td>'.$this->form->get_checkbox( 'buttons_on_front' ).'</td>';
 
 					$table_rows[] = $this->form->get_th_html( _x( 'Include on Post Types',
@@ -138,14 +138,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 				case 'rrssb_buttons-position':
 
 					$table_rows[] = $this->form->get_th_html( _x( 'Position in Content Text',
-						'option label', 'wpsso-rrssb' ), null, 'buttons_pos_content' ).
-					'<td>'.$this->form->get_select( 'buttons_pos_content',
-						$this->p->cf['sharing']['position'] ).'</td>';
+						'option label', 'wpsso-rrssb' ), '', 'buttons_pos_content' ).
+					'<td>'.$this->form->get_select( 'buttons_pos_content', $this->p->cf['sharing']['position'] ).'</td>';
 
 					$table_rows[] = $this->form->get_th_html( _x( 'Position in Excerpt Text',
-						'option label', 'wpsso-rrssb' ), null, 'buttons_pos_excerpt' ).
-					'<td>'.$this->form->get_select( 'buttons_pos_excerpt', 
-						$this->p->cf['sharing']['position'] ).'</td>';
+						'option label', 'wpsso-rrssb' ), '', 'buttons_pos_excerpt' ).
+					'<td>'.$this->form->get_select( 'buttons_pos_excerpt', $this->p->cf['sharing']['position'] ).'</td>';
 
 					break;
 			}
