@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 1.5.4\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 1.5.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2018-02-11 16:47-0600\n"
-"PO-Revision-Date: 2018-02-11 16:47-0600\n"
+"POT-Creation-Date: 2018-02-13 14:28-0600\n"
+"PO-Revision-Date: 2018-02-13 14:28-0600\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -283,7 +283,7 @@ msgstr "Réglages généraux"
 msgid "Recommend following the author's Twitter @username after sharing a webpage. If the %1$s option (above) is also checked, the %2$s is suggested first."
 msgstr "Conseiller de suivre le @nom Twitter de l'auteur après avoir partagé une page Web. Si l'option %1$s (ci-dessus) est également cochée, le %2$s sera recommandé en premier."
 
-#: lib/sharing.php:997 lib/website/twitter.php:53
+#: lib/sharing.php:997 lib/website/twitter.php:52
 msgctxt "option label"
 msgid "Add via Business @username"
 msgstr "Ajouter via @nom d'affaires"
@@ -401,9 +401,9 @@ msgctxt "option label"
 msgid "Append Hashtags to Message"
 msgstr "Ajout de hashtags au message"
 
-#: lib/website/email.php:51 lib/website/linkedin.php:51
-#: lib/website/pinterest.php:68 lib/website/reddit.php:51
-#: lib/website/tumblr.php:51 lib/website/twitter.php:51
+#: lib/website/email.php:50 lib/website/linkedin.php:50
+#: lib/website/pinterest.php:67 lib/website/reddit.php:50
+#: lib/website/tumblr.php:50 lib/website/twitter.php:50
 msgctxt "option comment"
 msgid "tag names"
 msgstr "noms d'étiquettes"
@@ -430,7 +430,7 @@ msgctxt "option label"
 msgid "Image Dimensions"
 msgstr "Dimensions de l’image"
 
-#: lib/website/pinterest.php:134
+#: lib/website/pinterest.php:133
 msgctxt "image size label"
 msgid "Pinterest Sharing Button"
 msgstr "Bouton de partage Pinterest"
@@ -455,7 +455,7 @@ msgctxt "option label"
 msgid "Append Hashtags to Tweet"
 msgstr "Ajout de hashtags au Tweet"
 
-#: lib/website/twitter.php:57
+#: lib/website/twitter.php:56
 msgctxt "option label"
 msgid "Recommend Author @username"
 msgstr "Recommander @nom d'auteur"
