@@ -34,12 +34,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteVk' ) ) {
 			'<td>'.$form->get_select( 'vk_order', range( 1, count( $submenu->website ) ) ).'</td>';
 
 			if ( $this->p->avail['*']['vary_ua'] ) {
-				$table_rows[] = '<tr class="hide_in_basic">'.
+				$table_rows[] = $form->get_tr_hide( 'basic', 'vk_platform' ).
 				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
 				'<td>'.$form->get_select( 'vk_platform', $this->p->cf['sharing']['platform'] ).'</td>';
 			}
 
-			$table_rows[] = '<tr class="hide_in_basic">'.
+			$table_rows[] = $form->get_tr_hide( 'basic', 'vk_rrssb_html' ).
 			'<td colspan="2">'.$form->get_textarea( 'vk_rrssb_html', 'average code' ).'</td>';
 
 			return $table_rows;
@@ -93,8 +93,10 @@ if ( ! class_exists( 'WpssoRrssbWebsiteVk' ) ) {
 		}
 
 		public function get_html( array $atts, array $opts, array $mod ) {
-			if ( $this->p->debug->enabled )
+
+			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
+			}
 
 			return $this->p->util->replace_inline_vars( '<!-- VK Button -->'.
 				$this->p->options['vk_rrssb_html'], $mod, $atts );

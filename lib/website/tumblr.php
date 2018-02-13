@@ -34,23 +34,22 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteTumblr' ) ) {
 			'<td>'.$form->get_select( 'tumblr_order', range( 1, count( $submenu->website ) ) ).'</td>';
 
 			if ( $this->p->avail['*']['vary_ua'] ) {
-				$table_rows[] = '<tr class="hide_in_basic">'.
+				$table_rows[] = $form->get_tr_hide( 'basic', 'tumblr_platform' ).
 				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
 				'<td>'.$form->get_select( 'tumblr_platform', $this->p->cf['sharing']['platform'] ).'</td>';
 			}
 
-			$table_rows[] = '<tr class="hide_in_basic">'.
+			$table_rows[] = $form->get_tr_hide( 'basic', 'tumblr_cap_len' ).
                         $form->get_th_html( _x( 'Summary Text Length', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_input( 'tumblr_cap_len', 'short' ).' '.
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ).'</td>';
 
-			$table_rows[] = '<tr class="hide_in_basic">'.
+			$table_rows[] = $form->get_tr_hide( 'basic', 'tumblr_cap_hashtags' ).
 			$form->get_th_html( _x( 'Append Hashtags to Summary', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'tumblr_cap_hashtags',
-				range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', null, true ).' '.
-					_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
+			'<td>'.$form->get_select( 'tumblr_cap_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ).' '.
+				_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
-			$table_rows[] = '<tr class="hide_in_basic">'.
+			$table_rows[] = $form->get_tr_hide( 'basic', 'tumblr_rrssb_html' ).
 			'<td colspan="2">'.$form->get_textarea( 'tumblr_rrssb_html', 'average code' ).'</td>';
 
 			return $table_rows;

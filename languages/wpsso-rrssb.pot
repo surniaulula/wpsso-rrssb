@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"1.5.4\n"
+"1.5.5-dev.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2018-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -310,7 +310,7 @@ msgid ""
 "If the %1$s option (above) is also checked, the %2$s is suggested first."
 msgstr ""
 
-#: lib/sharing.php:997 lib/website/twitter.php:53
+#: lib/sharing.php:997 lib/website/twitter.php:52
 msgctxt "option label"
 msgid "Add via Business @username"
 msgstr ""
@@ -430,9 +430,9 @@ msgctxt "option label"
 msgid "Append Hashtags to Message"
 msgstr ""
 
-#: lib/website/email.php:51 lib/website/linkedin.php:51
-#: lib/website/pinterest.php:68 lib/website/reddit.php:51
-#: lib/website/tumblr.php:51 lib/website/twitter.php:51
+#: lib/website/email.php:50 lib/website/linkedin.php:50
+#: lib/website/pinterest.php:67 lib/website/reddit.php:50
+#: lib/website/tumblr.php:50 lib/website/twitter.php:50
 msgctxt "option comment"
 msgid "tag names"
 msgstr ""
@@ -459,7 +459,7 @@ msgctxt "option label"
 msgid "Image Dimensions"
 msgstr ""
 
-#: lib/website/pinterest.php:134
+#: lib/website/pinterest.php:133
 msgctxt "image size label"
 msgid "Pinterest Sharing Button"
 msgstr ""
@@ -484,7 +484,7 @@ msgctxt "option label"
 msgid "Append Hashtags to Tweet"
 msgstr ""
 
-#: lib/website/twitter.php:57
+#: lib/website/twitter.php:56
 msgctxt "option label"
 msgid "Recommend Author @username"
 msgstr ""

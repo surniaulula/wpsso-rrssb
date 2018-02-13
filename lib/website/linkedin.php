@@ -34,23 +34,22 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteLinkedin' ) ) {
 			'<td>'.$form->get_select( 'linkedin_order', range( 1, count( $submenu->website ) ) ).'</td>';
 
 			if ( $this->p->avail['*']['vary_ua'] ) {
-				$table_rows[] = '<tr class="hide_in_basic">'.
+				$table_rows[] = $form->get_tr_hide( 'basic', 'linkedin_platform' ).
 				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
 				'<td>'.$form->get_select( 'linkedin_platform', $this->p->cf['sharing']['platform'] ).'</td>';
 			}
 
-			$table_rows[] = '<tr class="hide_in_basic">'.
+			$table_rows[] = $form->get_tr_hide( 'basic', 'linkedin_cap_len' ).
                         $form->get_th_html( _x( 'Caption Text Length', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_input( 'linkedin_cap_len', 'short' ).' '.
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ).'</td>';
 
-			$table_rows[] = '<tr class="hide_in_basic">'.
+			$table_rows[] = $form->get_tr_hide( 'basic', 'linkedin_cap_hashtags' ).
 			$form->get_th_html( _x( 'Append Hashtags to Caption', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'linkedin_cap_hashtags',
-				range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', null, true ).' '.
-					_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
+			'<td>'.$form->get_select( 'linkedin_cap_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ).' '.
+				_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
-			$table_rows[] = '<tr class="hide_in_basic">'.
+			$table_rows[] = $form->get_tr_hide( 'basic', 'linkedin_rrssb_html' ).
 			'<td colspan="2">'.$form->get_textarea( 'linkedin_rrssb_html', 'average code' ).'</td>';
 
 			return $table_rows;
@@ -106,8 +105,10 @@ if ( ! class_exists( 'WpssoRrssbWebsiteLinkedin' ) ) {
 		}
 
 		public function get_html( array $atts, array $opts, array $mod ) {
-			if ( $this->p->debug->enabled )
+
+			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
+			}
 
 			$atts['add_hashtags'] = empty( $this->p->options['linkedin_cap_hashtags'] ) ?
 				false : $this->p->options['linkedin_cap_hashtags'];
