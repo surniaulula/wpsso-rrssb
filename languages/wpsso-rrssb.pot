@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"1.5.5-b.1\n"
+"1.5.5-rc.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2018-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -131,39 +131,39 @@ msgstr ""
 msgid "Save a draft version or publish the %s to display these options."
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:94 lib/pro/admin/sharing.php:98
+#: lib/gpl/admin/sharing.php:89 lib/pro/admin/sharing.php:94
+msgctxt "option label"
+msgid "Disable Sharing Buttons"
+msgstr ""
+
+#: lib/gpl/admin/sharing.php:102 lib/pro/admin/sharing.php:107
 msgctxt "option label"
 msgid "Email Subject"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:99 lib/pro/admin/sharing.php:104
+#: lib/gpl/admin/sharing.php:108 lib/pro/admin/sharing.php:113
 msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:112 lib/pro/admin/sharing.php:118
+#: lib/gpl/admin/sharing.php:121 lib/pro/admin/sharing.php:126
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:137 lib/pro/admin/sharing.php:144
+#: lib/gpl/admin/sharing.php:146 lib/pro/admin/sharing.php:151
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:158 lib/pro/admin/sharing.php:166
+#: lib/gpl/admin/sharing.php:167 lib/pro/admin/sharing.php:172
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:164 lib/pro/admin/sharing.php:173
+#: lib/gpl/admin/sharing.php:173 lib/pro/admin/sharing.php:178
 msgctxt "option label"
 msgid "%s Caption"
-msgstr ""
-
-#: lib/gpl/admin/sharing.php:174 lib/pro/admin/sharing.php:184
-msgctxt "option label"
-msgid "Disable Sharing Buttons"
 msgstr ""
 
 #: lib/gpl/ecom/woocommerce.php:87 lib/pro/ecom/woocommerce.php:92
