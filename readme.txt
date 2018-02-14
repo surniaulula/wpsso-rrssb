@@ -155,16 +155,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.5.5-b.1 (2018/02/13)**
+**Version 1.5.5-rc.1 (2018/02/14)**
 
 * *New Features*
 	* None
 * *Improvements*
 	* Options hidden in the "Basic Options" view that have a different value than their default will no longer be hidden.
+	* Moved the "Disable Sharing Buttons" option in the Social and Search Optimization metabox to the top.
 * *Bugfixes*
 	* None
 * *Developer Notes*
-	* None
+	* Refactored the 'wpsso_post_buttons_rows' filter (aka "Sharing Buttons" tab in the Social and Search Optimization metabox).
 
 **Version 1.5.4 (2018/02/04)**
 
@@ -179,9 +180,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.5.5-b.1 =
+= 1.5.5-rc.1 =
 
-(2018/02/13) Options hidden in the "Basic Options" view that have a different value than their default will no longer be hidden.
+(2018/02/14) Options hidden in the "Basic Options" view that have a different value than their default will no longer be hidden.
 
 = 1.5.4 =
 
