@@ -27,7 +27,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'text_domain' => 'wpsso-rrssb',
 					'domain_path' => '/languages',
 					'req' => array(
-						'short' => 'WPSSO',
+						'short' => 'WPSSO Core',
 						'name' => 'WPSSO Core',
 						'min_version' => '3.53.0',
 					),
