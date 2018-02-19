@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"1.5.5\n"
+"1.6.0-dev.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2018-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -517,8 +517,12 @@ msgstr ""
 
 #: wpsso-rrssb.php:183
 msgid ""
-"The %1$s extension v%2$s requires %3$s v%4$s or newer (v%5$s currently "
-"installed)."
+"The %1$s version %2$s extension requires %3$s version %4$s or newer (version "
+"%5$s is currently installed)."
+msgstr ""
+
+#: wpsso-rrssb.php:186
+msgid "%s warning:"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
