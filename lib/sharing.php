@@ -683,7 +683,7 @@ $buttons_array[$cache_index].
 						// update the cached array and maintain the existing transient expiration time
 						$expires_in_secs = SucomUtil::update_transient_array( $cache_id, $buttons_array, $cache_exp_secs );
 						if ( $this->p->debug->enabled ) {
-							$this->p->debug->log( $type.' buttons html saved to transient cache (expires in '.$expires_in_secs.' seconds)' );
+							$this->p->debug->log( $type.' buttons html saved to transient cache (expires in '.$expires_in_secs.' secs)' );
 						}
 					}
 				}
