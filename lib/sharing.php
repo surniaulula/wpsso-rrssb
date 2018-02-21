@@ -898,14 +898,20 @@ $buttons_array[$cache_index].
 		}
 
 		public function remove_paragraph_tags( $match = array() ) {
-			if ( empty( $match ) || ! is_array( $match ) ) return;
+
+			if ( empty( $match ) || ! is_array( $match ) ) {
+				return;
+			}
+
 			$text = empty( $match[1] ) ? '' : $match[1];
 			$suff = empty( $match[2] ) ? '' : $match[2];
 			$ret = preg_replace( '/(<\/*[pP]>|\n)/', '', $text );
+
 			return $suff.$ret; 
 		}
 
 		public function get_website_object_ids( $website = array() ) {
+
 			$website_ids = array();
 
 			if ( empty( $website ) ) {
@@ -917,8 +923,7 @@ $buttons_array[$cache_index].
 			$website_lib = $this->p->cf['plugin']['wpssorrssb']['lib']['website'];
 
 			foreach ( $keys as $id ) {
-				$website_ids[$id] = isset( $website_lib[$id] ) ?
-					$website_lib[$id] : ucfirst( $id );
+				$website_ids[$id] = isset( $website_lib[$id] ) ? $website_lib[$id] : ucfirst( $id );
 			}
 
 			return $website_ids;
@@ -932,23 +937,29 @@ $buttons_array[$cache_index].
 				return $this->p->page->get_caption( ( empty( $this->p->options[$opt_pre.'_caption'] ) ?
 					'title' : $this->p->options[$opt_pre.'_caption'] ), $this->get_tweet_max_len( $opt_pre ),
 						$mod, true, $atts['add_hashtags'], false, $md_pre.'_desc' );	// $encode = false
-			} else return $atts['tweet'];
+			} else {
+				return $atts['tweet'];
+			}
 		}
 
 		// $opt_pre can be twitter, buffer, etc.
 		public function get_tweet_max_len( $opt_pre = 'twitter' ) {
+
 			$short_len = 23;	// twitter counts 23 characters for any url
 
 			if ( isset( $this->p->options['tc_site'] ) && ! empty( $this->p->options[$opt_pre.'_via'] ) ) {
 				$tc_site = preg_replace( '/^@/', '', $this->p->options['tc_site'] );
 				$site_len = empty( $tc_site ) ? 0 : strlen( $tc_site ) + 6;
-			} else $site_len = 0;
+			} else {
+				$site_len = 0;
+			}
 
 			$max_len = $this->p->options[$opt_pre.'_cap_len'] - $site_len - $short_len;
 
-			if ( $this->p->debug->enabled )
+			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'max tweet length is '.$max_len.' chars ('.$this->p->options[$opt_pre.'_cap_len'].
 					' less '.$site_len.' for site name and '.$short_len.' for url)' );
+			}
 
 			return $max_len;
 		}
@@ -965,9 +976,11 @@ $buttons_array[$cache_index].
 		}
 
 		public function filter_messages_tooltip( $text, $idx ) {
+
 			if ( strpos( $idx, 'tooltip-buttons_' ) !== 0 ) {
 				return $text;
 			}
+
 			switch ( $idx ) {
 				case ( strpos( $idx, 'tooltip-buttons_pos_' ) === false ? false : true ):
 					$text = sprintf( __( 'Social sharing buttons can be added to the top, bottom, or both. Each sharing button must also be enabled below (see the <em>%s</em> options).', 'wpsso-rrssb' ), _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) );
@@ -997,6 +1010,7 @@ $buttons_array[$cache_index].
 					$text = sprintf( __( 'Recommend following the author\'s Twitter @username after sharing a webpage. If the %1$s option (above) is also checked, the %2$s is suggested first.', 'wpsso-rrssb' ), _x( 'Add via Business @username', 'option label', 'wpsso-rrssb' ), _x( 'Twitter Business @username', 'option label', 'wpsso-rrssb' ) );
 					break;
 			}
+
 			return $text;
 		}
 
