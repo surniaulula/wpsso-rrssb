@@ -521,7 +521,8 @@ msgid ""
 "%5$s is currently installed)."
 msgstr ""
 
-#: wpsso-rrssb.php:195
+#. translators: %s is the short plugin name
+#: wpsso-rrssb.php:196
 msgid "%s warning:"
 msgstr ""
 

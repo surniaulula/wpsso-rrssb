@@ -192,7 +192,8 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 				}
 			}
 
-			trigger_error( sprintf( __( '%s warning:', 'wpsso-rrssb' ), $info['short'] ).' '.$error_msg, E_USER_WARNING );
+			// translators: %s is the short plugin name
+			trigger_error( sprintf( __( '%s warning:', 'wpsso-rrssb' ), $info['short'] ).' '.rtrim( $error_msg, '.' ), E_USER_WARNING );
 		}
 	}
 
