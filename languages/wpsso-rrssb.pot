@@ -521,7 +521,7 @@ msgid ""
 "%5$s is currently installed)."
 msgstr ""
 
-#: wpsso-rrssb.php:186
+#: wpsso-rrssb.php:193
 msgid "%s warning:"
 msgstr ""
 
