@@ -40,18 +40,19 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 		}
 
 		public function filter_action_buttons( $action_buttons ) {
-			$action_buttons[0]['reload_default_sharing_rrssb_styles'] = _x( 'Reload Default Styles',
-				'submit button', 'wpsso-rrssb' );
+			$action_buttons[0]['reload_default_sharing_rrssb_styles'] = _x( 'Reload Default Styles', 'submit button', 'wpsso-rrssb' );
 			return $action_buttons;
 		}
 
 		public function show_metabox_sharing_styles() {
+
 			$metabox_id = 'sharing-styles';
 
-			if ( file_exists( WpssoRrssbSharing::$sharing_css_file ) &&
-				( $fsize = filesize( WpssoRrssbSharing::$sharing_css_file ) ) !== false )
-					$css_min_msg = ' <a href="'.WpssoRrssbSharing::$sharing_css_url.'">minimized css is '.$fsize.' bytes</a>';
-			else $css_min_msg = '';
+			if ( file_exists( WpssoRrssbSharing::$sharing_css_file ) && ( $fsize = filesize( WpssoRrssbSharing::$sharing_css_file ) ) !== false ) {
+				$css_min_msg = ' <a href="'.WpssoRrssbSharing::$sharing_css_url.'">minimized css is '.$fsize.' bytes</a>';
+			} else {
+				$css_min_msg = '';
+			}
 
 			$this->p->util->do_table_rows( array( 
 				$this->form->get_th_html( _x( 'Use the Social Stylesheet',
@@ -71,14 +72,17 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 				$table_rows[$key] = array_merge( $this->get_table_rows( $metabox_id, $key ), 
 					apply_filters( $this->p->cf['lca'].'_'.$metabox_id.'_'.$key.'_rows', array(), $this->form ) );
 			}
+
 			$this->p->util->do_metabox_tabs( $metabox_id, $tabs, $table_rows );
 		}
 
 		protected function get_table_rows( $metabox_id, $key ) {
+
 			$table_rows['buttons_css_'.$key] = '<th class="textinfo">'.$this->p->msgs->get( 'info-styles-'.$key ).'</th>'.
 			'<td'.( isset( $this->p->options['buttons_css_'.$key.':is'] ) &&
 				$this->p->options['buttons_css_'.$key.':is'] === 'disabled' ? ' class="blank"' : '' ).'>'.
 			$this->form->get_textarea( 'buttons_css_'.$key, 'tall code' ).'</td>';
+
 			return $table_rows;
 		}
 	}

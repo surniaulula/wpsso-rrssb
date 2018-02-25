@@ -185,7 +185,7 @@ msgctxt "metabox tab"
 msgid "Sharing Buttons"
 msgstr ""
 
-#: lib/sharing.php:285
+#: lib/sharing.php:286
 msgid ""
 "All sharing styles have been reloaded with their default value and saved."
 msgstr ""
@@ -335,42 +335,42 @@ msgctxt "metabox title"
 msgid "Social Sharing Buttons"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:87
+#: lib/submenu/rrssb-buttons.php:85
 msgctxt "metabox tab"
 msgid "Include Buttons"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:88
+#: lib/submenu/rrssb-buttons.php:86
 msgctxt "metabox tab"
 msgid "Buttons Position"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:89
+#: lib/submenu/rrssb-buttons.php:87
 msgctxt "metabox tab"
 msgid "Advanced Settings"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:124
+#: lib/submenu/rrssb-buttons.php:122
 msgctxt "option label"
 msgid "Include on Archive Webpages"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:128
+#: lib/submenu/rrssb-buttons.php:126
 msgctxt "option label"
 msgid "Include on Static Front Page"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:132
+#: lib/submenu/rrssb-buttons.php:130
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:140
+#: lib/submenu/rrssb-buttons.php:138
 msgctxt "option label"
 msgid "Position in Content Text"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:144
+#: lib/submenu/rrssb-buttons.php:142
 msgctxt "option label"
 msgid "Position in Excerpt Text"
 msgstr ""
@@ -385,12 +385,12 @@ msgctxt "submit button"
 msgid "Reload Default Styles"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:57
+#: lib/submenu/rrssb-styles.php:58
 msgctxt "option label"
 msgid "Use the Social Stylesheet"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:61
+#: lib/submenu/rrssb-styles.php:62
 msgctxt "option label"
 msgid "Enqueue the Stylesheet"
 msgstr ""
