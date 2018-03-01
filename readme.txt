@@ -155,6 +155,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.6.1-b.2 (2018/03/01)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Added the $wp_query->query array elements to the buttons cache index.
+
 **Version 1.6.0 (2018/02/24)**
 
 * *New Features*
@@ -166,19 +177,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * *Developer Notes*
 	* Refactored the WpssoRrssb `min_version_notice()` method to use PHP's `trigger_error()` and include a notice to refresh plugin update information.
 
-**Version 1.5.5 (2018/02/17)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* Options hidden in the "Basic Options" view that have a different value than their default will no longer be hidden.
-	* Moved the "Disable Sharing Buttons" option in the Social and Search Optimization metabox to the top.
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Refactored the 'wpsso_post_buttons_rows' filter (aka "Sharing Buttons" tab in the Social and Search Optimization metabox).
-
 == Upgrade Notice ==
+
+= 1.6.1-b.2 =
+
+(2018/03/01) Added the $wp_query->query array elements to the buttons cache index.
 
 = 1.6.0 =
 
