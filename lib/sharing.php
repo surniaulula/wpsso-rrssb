@@ -537,7 +537,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			}
 
 			$error_text = false;
-			$add_comment = true;
+			$add_html_error = true;
 
 			if ( is_admin() ) {
 				if ( $this->p->debug->enabled ) {
@@ -588,7 +588,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					$this->p->debug->log( $type.' filter skipped: '.$error_text );
 					$this->p->debug->mark( 'getting buttons for '.$type );	// end timer
 				}
-				if ( $add_comment ) {
+				if ( $add_html_error ) {
 					return $text . "\n" . '<!-- '.__METHOD__.' '.$type.' filter skipped: '.$error_text.' -->' . "\n";
 				} else {
 					return $text;
@@ -604,48 +604,43 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				$mod = $this->p->util->get_page_mod( $mod );
 			}
 
-			$lca = $this->p->cf['lca'];
+			$lca = $this->p->lca;
 			$sharing_url = $this->p->util->get_sharing_url( $mod );
-			$buttons_array = array();
 
-			$cache_md5_pre = $lca.'_b_';
+			$cache_md5_pre  = $lca.'_b_';
 			$cache_exp_secs = $this->get_buttons_cache_exp();
-			$cache_index = 0;	// redefined if $cache_exp_secs > 0
+			$cache_salt     = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, $sharing_url ).')';
+			$cache_id       = $cache_md5_pre.md5( $cache_salt );
+			$cache_index    = $this->get_buttons_cache_index( $type );	// returns salt with locale, mobile, wp_query, etc.
+			$cache_array    = array();
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'sharing url = '.$sharing_url );
 				$this->p->debug->log( 'cache expire = '.$cache_exp_secs );
+				$this->p->debug->log( 'cache salt = '.$cache_salt );
+				$this->p->debug->log( 'cache id = '.$cache_id );
+				$this->p->debug->log( 'cache index = '.$cache_index );
 			}
 
 			if ( $cache_exp_secs > 0 ) {
 
-				$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, $sharing_url ).')';
-				$cache_id = $cache_md5_pre.md5( $cache_salt );
-				$cache_index = $this->get_buttons_cache_index( $type );
+				$cache_array = get_transient( $cache_id );
 
-				if ( $this->p->debug->enabled ) {
-					$this->p->debug->log( 'cache salt = '.$cache_salt );
-					$this->p->debug->log( 'cache index = '.$cache_index );
-				}
-
-				$buttons_array = get_transient( $cache_id );
-
-				if ( isset( $buttons_array[$cache_index] ) ) {
+				if ( isset( $cache_array[$cache_index] ) ) {	// can be an empty string
 					if ( $this->p->debug->enabled ) {
-						$this->p->debug->log( $type.' cache index found in array from transient '.$cache_id );
+						$this->p->debug->log( $type.' cache index found in transient cache' );
 					}
+					// continue and add buttons relative to the content (top, bottom, or both)
 				} else {
 					if ( $this->p->debug->enabled ) {
-						$this->p->debug->log( $type.' cache index not in array from transient '.$cache_id );
+						$this->p->debug->log( $type.' cache index not in transient cache' );
 					}
-					if ( ! is_array( $buttons_array ) ) {	// just in case
-						$buttons_array = array();
+					if ( ! is_array( $cache_array ) ) {
+						$cache_array = array();
 					}
 				}
-			} else {
-				if ( $this->p->debug->enabled ) {
-					$this->p->debug->log( $type.' buttons array transient cache is disabled' );
-				}
+			} elseif ( $this->p->debug->enabled ) {
+				$this->p->debug->log( $type.' buttons array transient cache is disabled' );
 			}
 
 			if ( empty( $location ) ) {
@@ -653,7 +648,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					'bottom' : $this->p->options['buttons_pos_'.$type];
 			} 
 
-			if ( ! isset( $buttons_array[$cache_index] ) ) {
+			if ( ! isset( $cache_array[$cache_index] ) ) {
 
 				// sort enabled sharing buttons by their preferred order
 				$sorted_ids = array();
@@ -668,36 +663,36 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				$atts['css_id'] = $css_type_name = 'rrssb-'.$type;
 
 				// returns html or an empty string
-				$buttons_array[$cache_index] = $this->get_html( $sorted_ids, $atts, $mod );
+				$cache_array[$cache_index] = $this->get_html( $sorted_ids, $atts, $mod );
 
-				if ( ! empty( $buttons_array[$cache_index] ) ) {
-					$buttons_array[$cache_index] = apply_filters( $lca.'_rrssb_buttons_html', '
+				if ( ! empty( $cache_array[$cache_index] ) ) {
+					$cache_array[$cache_index] = apply_filters( $lca.'_rrssb_buttons_html', '
 <!-- '.$lca.' '.$css_type_name.' begin -->
 <!-- generated on '.date( 'c' ).' -->
 <div class="'.$lca.'-rrssb'.( $mod['use_post'] ? ' '.$lca.'-'.$css_type_name.'"' : '" id="'.$lca.'-'.$css_type_name.'"' ).'>' . "\n" . 
-$buttons_array[$cache_index].
+$cache_array[$cache_index].
 '</div><!-- .'.$lca.'-rrssb '.( $mod['use_post'] ? '.' : '#' ).$lca.'-'.$css_type_name.' -->
 <!-- '.$lca.' '.$css_type_name.' end -->' . "\n\n", $type, $mod, $location, $atts );
+				}
 
-					if ( $cache_exp_secs > 0 ) {
-						// update the cached array and maintain the existing transient expiration time
-						$expires_in_secs = SucomUtil::update_transient_array( $cache_id, $buttons_array, $cache_exp_secs );
-						if ( $this->p->debug->enabled ) {
-							$this->p->debug->log( $type.' buttons html saved to transient cache (expires in '.$expires_in_secs.' secs)' );
-						}
+				if ( $cache_exp_secs > 0 ) {
+					// update the cached array and maintain the existing transient expiration time
+					$expires_in_secs = SucomUtil::update_transient_array( $cache_id, $cache_array, $cache_exp_secs );
+					if ( $this->p->debug->enabled ) {
+						$this->p->debug->log( $type.' buttons html saved to transient cache (expires in '.$expires_in_secs.' secs)' );
 					}
 				}
 			}
 
 			switch ( $location ) {
 				case 'top': 
-					$text = $buttons_array[$cache_index].$text; 
+					$text = $cache_array[$cache_index].$text; 
 					break;
 				case 'bottom': 
-					$text = $text.$buttons_array[$cache_index]; 
+					$text = $text.$cache_array[$cache_index]; 
 					break;
 				case 'both': 
-					$text = $buttons_array[$cache_index].$text.$buttons_array[$cache_index]; 
+					$text = $cache_array[$cache_index].$text.$cache_array[$cache_index]; 
 					break;
 			}
 
@@ -722,15 +717,24 @@ $buttons_array[$cache_index].
 		}
 
 		public function get_buttons_cache_index( $type, $atts = false, $ids = false ) {
+
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
 			}
-			return 'locale:'.SucomUtil::get_locale( 'current' ).
-				'_type:'.( empty( $type ) ? 'none' : $type ).
-				'_https:'.( SucomUtil::is_https() ? 'true' : 'false' ).
-				( $this->p->avail['*']['vary_ua'] ? '_mobile:'.( SucomUtil::is_mobile() ? 'true' : 'false' ) : '' ).
-				( $atts !== false ? '_atts:'.http_build_query( $atts, '', '_' ) : '' ).
-				( $ids !== false ? '_ids:'.http_build_query( $ids, '', '_' ) : '' );
+
+			$cache_index = 'locale:'.SucomUtil::get_locale( 'current' );
+
+			$cache_index .= '_type:'.( empty( $type ) ? 'none' : $type );
+
+			$cache_index .= '_https:'.( SucomUtil::is_https() ? 'true' : 'false' );
+
+			$cache_index .= $this->p->avail['*']['vary_ua'] ? '_mobile:'.( SucomUtil::is_mobile() ? 'true' : 'false' ) : '';
+
+			$cache_index .= $atts !== false ? '_atts:'.http_build_query( $atts, '', '_' ) : '';
+
+			$cache_index .= $ids !== false ? '_ids:'.http_build_query( $ids, '', '_' ) : '';
+
+			return SucomUtil::get_query_salt( $cache_index );	// add $wp_query args
 		}
 
 		// get_html() can be called by a widget, shortcode, function, filter hook, etc.
@@ -1100,4 +1104,3 @@ div.wpsso-rrssb
 
 	}
 }
-

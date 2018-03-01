@@ -142,77 +142,67 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			$type = 'sharing_shortcode_'.WPSSORRSSB_SHARING_SHORTCODE_NAME;
 			$atts['url'] = empty( $atts['url'] ) ? $this->p->util->get_sharing_url( $mod ) : $atts['url'];
 
-			$buttons_array = array();
-
-			$cache_md5_pre = $lca.'_b_';
+			$cache_md5_pre  = $lca.'_b_';
 			$cache_exp_secs = $this->p->rrssb_sharing->get_buttons_cache_exp();
-			$cache_index = 0;	// redefined if $cache_exp_secs > 0
+			$cache_salt     = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, $atts['url'] ).')';
+			$cache_id       = $cache_md5_pre.md5( $cache_salt );
+			$cache_index    = $this->p->rrssb_sharing->get_buttons_cache_index( $type, $atts );	// returns salt with locale, mobile, wp_query, etc.
+			$cache_array    = array();
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'sharing url = '.$atts['url'] );
 				$this->p->debug->log( 'cache expire = '.$cache_exp_secs );
+				$this->p->debug->log( 'cache salt = '.$cache_salt );
+				$this->p->debug->log( 'cache id = '.$cache_id );
+				$this->p->debug->log( 'cache index = '.$cache_index );
 			}
 
 			if ( $cache_exp_secs > 0 ) {
 
-				$cache_salt = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, $atts['url'] ).')';
-				$cache_id = $cache_md5_pre.md5( $cache_salt );
-				$cache_index = $this->p->rrssb_sharing->get_buttons_cache_index( $type, $atts );
+				$cache_array = get_transient( $cache_id );
 
-				if ( $this->p->debug->enabled ) {
-					$this->p->debug->log( 'cache salt = '.$cache_salt );
-					$this->p->debug->log( 'cache index = '.$cache_index );
-				}
-
-				$buttons_array = get_transient( $cache_id );
-
-				if ( isset( $buttons_array[$cache_index] ) ) {
+				if ( isset( $cache_array[$cache_index] ) ) {	// can be an empty string
 					if ( $this->p->debug->enabled ) {
-						$this->p->debug->log( $type.' cache index found in array from transient '.$cache_id );
+						$this->p->debug->log( $type.' cache index found in transient cache' );
 					}
+					return $cache_array[$cache_index];	// stop here
 				} else {
 					if ( $this->p->debug->enabled ) {
-						$this->p->debug->log( $type.' cache index not in array from transient '.$cache_id );
+						$this->p->debug->log( $type.' cache index not in transient cache' );
 					}
-					if ( ! is_array( $buttons_array ) ) {	// just in case
-						$buttons_array = array();
+					if ( ! is_array( $cache_array ) ) {
+						$cache_array = array();
 					}
 				}
-			} else {
-				if ( $this->p->debug->enabled ) {
-					$this->p->debug->log( $type.' buttons array transient cache is disabled' );
-				}
+			} elseif ( $this->p->debug->enabled ) {
+				$this->p->debug->log( $type.' buttons transient cache is disabled' );
 			}
 
-			if ( ! isset( $buttons_array[$cache_index] ) ) {
+			$ids = array_map( 'trim', explode( ',', $atts['buttons'] ) );
+			unset ( $atts['buttons'] );
 
-				$ids = array_map( 'trim', explode( ',', $atts['buttons'] ) );
-				unset ( $atts['buttons'] );
+			// returns html or an empty string
+			$cache_array[$cache_index] = $this->p->rrssb_sharing->get_html( $ids, $atts, $mod );
 
-				// returns html or an empty string
-				$buttons_array[$cache_index] = $this->p->rrssb_sharing->get_html( $ids, $atts, $mod );
-
-				if ( ! empty( $buttons_array[$cache_index] ) ) {
-					$buttons_array[$cache_index] = '
+			if ( ! empty( $cache_array[$cache_index] ) ) {
+				$cache_array[$cache_index] = '
 <!-- '.$lca.' '.$type.' begin -->
 <!-- generated on '.date( 'c' ).' -->
 <div class="'.$lca.'-rrssb '.$lca.'-'.$atts['css_class'].'">' . "\n" . 
-$buttons_array[$cache_index] . "\n" . 	// buttons html is trimmed, so add newline
+$cache_array[$cache_index] . "\n" . 	// buttons html is trimmed, so add newline
 '</div><!-- .'.$lca.'-'.$atts['css_class'].' -->' . "\n" . 
 '<!-- '.$lca.' '.$type.' end -->' . "\n\n";
+			}
 
-					if ( $cache_exp_secs > 0 ) {
-						// update the cached array and maintain the existing transient expiration time
-						$expires_in_secs = SucomUtil::update_transient_array( $cache_id, $buttons_array, $cache_exp_secs );
-						if ( $this->p->debug->enabled ) {
-							$this->p->debug->log( $type.' buttons html saved to transient cache (expires in '.$expires_in_secs.' secs)' );
-						}
-					}
+			if ( $cache_exp_secs > 0 ) {
+				// update the cached array and maintain the existing transient expiration time
+				$expires_in_secs = SucomUtil::update_transient_array( $cache_id, $cache_array, $cache_exp_secs );
+				if ( $this->p->debug->enabled ) {
+					$this->p->debug->log( $type.' buttons saved to transient cache (expires in '.$expires_in_secs.' secs)' );
 				}
 			}
 
-			return $buttons_array[$cache_index];
+			return $cache_array[$cache_index];
 		}
 	}
 }
-
