@@ -95,7 +95,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			 * Email
 			 */
 			$email_cap_len  = $this->p->options['email_cap_len'];
-			$email_cap_hash = $this->p->options['email_cap_hashtags'];
+			$email_cap_htags = $this->p->options['email_cap_hashtags'];
 			$email_cap_text = $this->p->page->get_caption( 'excerpt', $email_cap_len, $mod, true, $email_cap_hash, true, 'none' );
 
 			$form_rows['email_title'] = array(
@@ -114,8 +114,8 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			 * Twitter
 			 */
 			$twitter_cap_len  = $this->p->rrssb_sharing->get_tweet_max_len();
-			$twitter_cap_hash = $this->p->options['twitter_cap_hashtags'];
-			$twitter_cap_text = $this->p->page->get_caption( 'title', $twitter_cap_len, $mod, true, $twitter_cap_hash );
+			$twitter_cap_htags = $this->p->options['twitter_cap_hashtags'];
+			$twitter_cap_text = $this->p->page->get_caption( 'title', $twitter_cap_len, $mod, true, $twitter_cap_htags );
 
 			$form_rows['twitter_desc'] = array(
 				'label' => _x( 'Tweet Text', 'option label', 'wpsso-rrssb' ),
@@ -127,9 +127,9 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			 * Pinterest
 			 */
 			$pin_cap_len  = $this->p->options['pin_cap_len'];
-			$pin_cap_hash = $this->p->options['twitter_cap_hashtags'];
-			$pin_cap_text = $this->p->page->get_caption( 'excerpt', $pin_cap_len, $mod, true, $pin_cap_hash );
-			$pin_media    = $this->p->og->get_media_info( $this->p->lca.'-pinterest-button', array( 'pid', 'img_url' ), $mod, 'schema' );	// $md_pre = 'schema'
+			$pin_cap_htags = $this->p->options['twitter_cap_hashtags'];
+			$pin_cap_text = $this->p->page->get_caption( 'excerpt', $pin_cap_len, $mod, true, $pin_cap_htags );
+			$pin_media    = $this->p->og->get_media_info( $this->p->lca.'-pinterest-button', array( 'pid', 'img_url' ), $mod, 'schema' );
 			$force_regen  = $this->p->util->is_force_regen( $mod, 'schema' );	// false by default
 
 			if ( ! empty( $pin_media['pid'] ) ) {
@@ -160,8 +160,8 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			) as $opt_prefix => $name ) {
 
 				$other_cap_len  = $this->p->options[$opt_prefix.'_cap_len'];
-				$other_cap_hash = $this->p->options[$opt_prefix.'_cap_hashtags'];
-				$other_cap_text = $this->p->page->get_caption( 'excerpt', $other_cap_len, $mod, true, $other_cap_hash );
+				$other_cap_htags = $this->p->options[$opt_prefix.'_cap_hashtags'];
+				$other_cap_text = $this->p->page->get_caption( 'excerpt', $other_cap_len, $mod, true, $other_cap_htags );
 
 				$form_rows[$opt_prefix.'_title'] = array(
 					'label' => sprintf( _x( '%s Title', 'option label', 'wpsso-rrssb' ), $name ),

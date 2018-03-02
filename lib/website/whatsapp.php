@@ -98,13 +98,13 @@ if ( ! class_exists( 'WpssoRrssbWebsiteWhatsApp' ) ) {
 				$this->p->debug->mark();
 			}
 
+			$wa_title = $this->p->page->get_caption( 'title', 0, $mod, true, false, false, 'og_title' );
+
 			return $this->p->util->replace_inline_vars( '<!-- WhatsApp Button -->'.
 				$this->p->options['wa_rrssb_html'], $mod, $atts, array(
-				 	'title' => rawurlencode( $this->p->page->get_title( 0, '',
-						$mod, true, false, false, 'og_title', 'whatsapp' ) ),
+				 	'title' => rawurlencode( $wa_title ),
 				)
 			);
 		}
 	}
 }
-

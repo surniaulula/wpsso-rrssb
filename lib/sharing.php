@@ -934,13 +934,21 @@ $cache_array[$cache_index].
 		}
 
 		public function get_tweet_text( array $mod, $atts = array(), $opt_pre = 'twitter', $md_pre = 'twitter' ) {
+
 			if ( ! isset( $atts['tweet'] ) ) {	// just in case
+
 				$atts['use_post'] = isset( $atts['use_post'] ) ? $atts['use_post'] : true;
 				$atts['add_page'] = isset( $atts['add_page'] ) ? $atts['add_page'] : true;	// used by get_sharing_url()
 				$atts['add_hashtags'] = isset( $atts['add_hashtags'] ) ? $atts['add_hashtags'] : true;
-				return $this->p->page->get_caption( ( empty( $this->p->options[$opt_pre.'_caption'] ) ?
-					'title' : $this->p->options[$opt_pre.'_caption'] ), $this->get_tweet_max_len( $opt_pre ),
-						$mod, true, $atts['add_hashtags'], false, $md_pre.'_desc' );	// $encode = false
+
+				$cap_type = empty( $this->p->options[$opt_pre.'_caption'] ) ? 'title' : $this->p->options[$opt_pre.'_caption'];
+				$max_len = $this->get_tweet_max_len( $opt_pre );
+				$r_cache = true;
+				$do_encode = false;
+				$md_idx = $md_pre.'_desc';
+
+				return $this->p->page->get_caption( $cap_type, $max_len, $mod, $r_cache, $atts['add_hashtags'], $do_encode, $md_idx );
+
 			} else {
 				return $atts['tweet'];
 			}

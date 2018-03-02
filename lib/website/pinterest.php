@@ -141,8 +141,7 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts['add_hashtags'] = empty( $this->p->options['pin_cap_hashtags'] ) ?
-				false : $this->p->options['pin_cap_hashtags'];
+			$atts['add_hashtags'] = empty( $this->p->options['pin_cap_hashtags'] ) ? false : $this->p->options['pin_cap_hashtags'];
 
 			if ( empty( $atts['size'] ) ) {
 				$atts['size'] = $this->p->cf['lca'].'-pinterest-button';
@@ -165,8 +164,7 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 			}
 
 			if ( empty( $atts['photo'] ) ) {
-				$media_info = $this->p->og->get_media_info( $atts['size'], 
-					array( 'img_url' ), $mod, 'schema' );	// $md_pre = 'schema'
+				$media_info = $this->p->og->get_media_info( $atts['size'], array( 'img_url' ), $mod, 'schema' ); // $md_pre = 'schema'
 
 				$atts['photo'] = $media_info['img_url'];
 
@@ -181,18 +179,17 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 			if ( ! $this->p->avail['*']['vary_ua'] || SucomUtil::is_mobile() ) {
 				$pinterest_button_html = $this->p->options['pin_rrssb_html'];
 			} else {
-				$pinterest_button_html = preg_replace( '/(\/create)\/(button\/)/', '$1/+/$2', 
-					$this->p->options['pin_rrssb_html'] );
+				$pinterest_button_html = preg_replace( '/(\/create)\/(button\/)/', '$1/+/$2', $this->p->options['pin_rrssb_html'] );
 			}
+
+			$pinterest_caption = $this->p->page->get_caption( 'excerpt', $opts['pin_cap_len'], $mod, true, $atts['add_hashtags'], false, 'pin_desc' );
 
 			return $this->p->util->replace_inline_vars( '<!-- Pinterest Button -->'.
 				$pinterest_button_html, $mod, $atts, array(
 					'media_url' => rawurlencode( $atts['photo'] ),
-				 	'pinterest_caption' => rawurlencode( $this->p->page->get_caption( 'excerpt', $opts['pin_cap_len'],
-						$mod, true, $atts['add_hashtags'], false, 'pin_desc', 'pinterest' ) ),
+				 	'pinterest_caption' => rawurlencode( $pinterest_caption ),
 				)
 			);
 		}
 	}
 }
-

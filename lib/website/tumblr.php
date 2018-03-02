@@ -105,21 +105,22 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTumblr' ) ) {
 		}
 
 		public function get_html( array $atts, array $opts, array $mod ) {
-			if ( $this->p->debug->enabled )
-				$this->p->debug->mark();
 
-			$atts['add_hashtags'] = empty( $this->p->options['tumblr_cap_hashtags'] ) ?
-				false : $this->p->options['tumblr_cap_hashtags'];
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->mark();
+			}
+
+			$atts['add_hashtags'] = empty( $this->p->options['tumblr_cap_hashtags'] ) ? false : $this->p->options['tumblr_cap_hashtags'];
+
+			$tumblr_title = $this->p->page->get_caption( 'title', 0, $mod, true, false, false, 'tumblr_title' );
+			$tumblr_summary = $this->p->page->get_caption( 'excerpt', $opts['tumblr_cap_len'], $mod, true, $atts['add_hashtags'], false, 'tumblr_desc' );
 
 			return $this->p->util->replace_inline_vars( '<!-- Tumblr Button -->'.
 				$this->p->options['tumblr_rrssb_html'], $mod, $atts, array(
-				 	'tumblr_title' => rawurlencode( $this->p->page->get_caption( 'title', 0,
-						$mod, true, false, false, 'tumblr_title', 'tumblr' ) ),
-				 	'tumblr_summary' => rawurlencode( $this->p->page->get_caption( 'excerpt', $opts['tumblr_cap_len'],
-						$mod, true, $atts['add_hashtags'], false, 'tumblr_desc', 'tumblr' ) ),
+				 	'tumblr_title' => rawurlencode( $tumblr_title ),
+				 	'tumblr_summary' => rawurlencode( $tumblr_summary ),
 				 )
 			 );
 		}
 	}
 }
-

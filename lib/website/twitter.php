@@ -121,8 +121,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts['add_hashtags'] = empty( $this->p->options['twitter_cap_hashtags'] ) ?
-				false : $this->p->options['twitter_cap_hashtags'];
+			$atts['add_hashtags'] = empty( $this->p->options['twitter_cap_hashtags'] ) ? false : $this->p->options['twitter_cap_hashtags'];
 
 			if ( ! isset( $atts['tweet'] ) ) {
 				$atts['tweet'] = $this->p->rrssb_sharing->get_tweet_text( $mod, $atts, 'twitter', 'twitter' );
@@ -153,8 +152,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 			if ( ! $this->p->avail['*']['vary_ua'] || SucomUtil::is_mobile() ) {
 				$twitter_button_html = $this->p->options['twitter_rrssb_html'];
 			} else {
-				$twitter_button_html = preg_replace( '/(\/intent)\/(tweet\?)/', '$1/+/$2', 
-					$this->p->options['twitter_rrssb_html'] );
+				$twitter_button_html = preg_replace( '/(\/intent)\/(tweet\?)/', '$1/+/$2', $this->p->options['twitter_rrssb_html'] );
 			}
 
 			// remove empty query arguments from the twitter button html
@@ -177,4 +175,3 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 		}
 	}
 }
-

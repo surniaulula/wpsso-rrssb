@@ -110,15 +110,15 @@ if ( ! class_exists( 'WpssoRrssbWebsiteEmail' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts['add_hashtags'] = empty( $this->p->options['email_cap_hashtags'] ) ? 
-				false : $this->p->options['email_cap_hashtags'];
+			$atts['add_hashtags'] = empty( $this->p->options['email_cap_hashtags'] ) ? false : $this->p->options['email_cap_hashtags'];
+
+			$email_title = $this->p->page->get_caption( 'title', 0, $mod, true, false, false, 'email_title' );
+			$email_excerpt = $this->p->page->get_caption( 'excerpt', $opts['email_cap_len'], $mod, true, $atts['add_hashtags'], false, 'email_desc' );
 
 			return $this->p->util->replace_inline_vars( '<!-- Email Button -->'.
 				$this->p->options['email_rrssb_html'], $mod, $atts, array(
-				 	'email_title' => rawurlencode( $this->p->page->get_title( 0, '',
-						$mod, true, false, false, 'email_title', 'email' ) ),
-			 		'email_excerpt' => rawurlencode( $this->p->page->get_caption( 'excerpt', $opts['email_cap_len'],
-						$mod, true, $atts['add_hashtags'], false, 'email_desc', 'email' ) ),
+				 	'email_title' => rawurlencode( $email_title ),
+			 		'email_excerpt' => rawurlencode( $email_excerpt ),
 				 )
 			 );
 		}
