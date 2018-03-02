@@ -155,7 +155,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.6.1-rc.1 (2018/03/02)**
+**Version 1.6.1-rc.2 (2018/03/02)**
 
 * *New Features*
 	* None
@@ -180,7 +180,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.6.1-rc.1 =
+= 1.6.1-rc.2 =
 
 (2018/03/02) Refactored transient cache index values to include WP query variables for extra uniqueness.
 
