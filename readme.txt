@@ -155,7 +155,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.6.1-b.2 (2018/03/01)**
+**Version 1.6.1-rc.1 (2018/03/02)**
 
 * *New Features*
 	* None
@@ -165,6 +165,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* None
 * *Developer Notes*
 	* Refactored transient cache index values to include WP query variables for extra uniqueness.
+	* Refactored the WpssoRrssbSharing get_tweet_text() method to make the code more readable.
 
 **Version 1.6.0 (2018/02/24)**
 
@@ -179,9 +180,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.6.1-b.2 =
+= 1.6.1-rc.1 =
 
-(2018/03/01) Refactored transient cache index values to include WP query variables for extra uniqueness.
+(2018/03/02) Refactored transient cache index values to include WP query variables for extra uniqueness.
 
 = 1.6.0 =
 
