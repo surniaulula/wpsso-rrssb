@@ -155,7 +155,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.6.1-rc.3 (2018/03/03)**
+**Version 1.6.1 (2018/03/04)**
 
 * *New Features*
 	* None
@@ -180,11 +180,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.6.1-rc.3 =
+= 1.6.1 =
 
-(2018/03/03) Refactored transient cache index values to include WP query variables for extra uniqueness.
-
-= 1.6.0 =
-
-(2018/02/24) Refactored the WpssoRrssb min_version_notice() method to use PHP's trigger_error() and include a notice to refresh plugin update information.
+(2018/03/04) Refactored transient cache index values to include WP query variables for extra uniqueness.
 
