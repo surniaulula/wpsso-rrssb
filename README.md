@@ -1,4 +1,4 @@
-<h1>WPSSO Ridiculously Responsive Social Sharing Buttons + WhatsApp for Mobile + Share Buttons for the Admin Editor</h1>
+<h1>WPSSO Ridiculously Responsive Social Sharing Buttons + WhatsApp for Mobile and Share Buttons for the Admin Editor</h1>
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Ridiculously Responsive Social Sharing Buttons</td></tr>
