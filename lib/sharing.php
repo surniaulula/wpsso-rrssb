@@ -240,12 +240,28 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function filter_post_cache_transient_keys( $transient_keys, $mod, $sharing_url, $mod_salt ) {
-			$lca = $this->p->cf['lca'];
-			$cache_md5_pre = $lca.'_b_';
+
+			$cache_md5_pre = $this->p->lca.'_b_';
 			$classname_pre = 'WpssoRrssb';
-			$transient_keys[] = $cache_md5_pre.md5( $classname_pre.'Sharing::get_buttons('.$mod_salt.')' );
-			$transient_keys[] = $cache_md5_pre.md5( $classname_pre.'ShortcodeSharing::do_shortcode('.$mod_salt.')' );
-			$transient_keys[] = $cache_md5_pre.md5( $classname_pre.'WidgetSharing::widget('.$mod_salt.')' );
+
+			$transient_keys[] = array(
+				'id' => $cache_md5_pre.md5( $classname_pre.'Sharing::get_buttons('.$mod_salt.')' ),
+				'pre' => $cache_md5_pre,
+				'salt' => $classname_pre.'Sharing::get_buttons('.$mod_salt.')',
+			);
+
+			$transient_keys[] = array(
+				'id' => $cache_md5_pre.md5( $classname_pre.'ShortcodeSharing::do_shortcode('.$mod_salt.')' ),
+				'pre' => $cache_md5_pre,
+				'salt' => $classname_pre.'ShortcodeSharing::do_shortcode('.$mod_salt.')',
+			);
+
+			$transient_keys[] = array(
+				'id' => $cache_md5_pre.md5( $classname_pre.'WidgetSharing::widget('.$mod_salt.')' ),
+				'pre' => $cache_md5_pre,
+				'salt' => $classname_pre.'WidgetSharing::widget('.$mod_salt.')',
+			);
+
 			return $transient_keys;
 		}
 
