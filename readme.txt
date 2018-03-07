@@ -155,6 +155,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.6.2-b.1 (2018/03/07)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* Added a list of human-readable checked IDs when the "Show Cache Purge Count on Update" option is checked *and* the WP_DEBUG contant is true.
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* None
+
 **Version 1.6.1 (2018/03/04)**
 
 * *New Features*
@@ -179,6 +190,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Refactored the WpssoRrssb `min_version_notice()` method to use PHP's `trigger_error()` and include a notice to refresh plugin update information.
 
 == Upgrade Notice ==
+
+= 1.6.2-b.1 =
+
+(2018/03/07) Added a list of human-readable checked IDs when the "Show Cache Purge Count on Update" option is checked *and* the WP_DEBUG contant is true.
 
 = 1.6.1 =
 
