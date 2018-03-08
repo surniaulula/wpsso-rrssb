@@ -20,13 +20,11 @@ WPSSO Core extension to add Ridiculously Responsive (SVG) Social Sharing Buttons
 
 <img class="readme-icon" src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png">
 
-**WPSSO Core extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.**
+**WPSSO Core extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, post edit pages, etc.**
 
 Add awesome *Ridiculously Responsive Social Sharing Buttons* (RRSSB) to posts / pages, custom post types, [bbPress](https://wordpress.org/plugins/bbpress/), [BuddyPress](https://wordpress.org/plugins/buddypress/), [WooCommerce](https://wordpress.org/plugins/woocommerce/) product pages, and much more.</p>
 
-Include social sharing buttons in the content, excerpt, widget, CSS sidebar, shortcodes, templates, and *admin editor page* &mdash; share your posts, pages, and custom post types directly from the admin editor page!
-
-Do you use bbPress, BuddyPress, or WooCommerce? The Pro version of WPSSO RRSSB includes special integration modules to add social sharing buttons to even more locations!
+Include social sharing buttons in the content, excerpt, widget, CSS sidebar, shortcodes, templates, and *admin editor page* &mdash; share your posts, pages, and custom post types directly from the admin editor page! Do you use bbPress, BuddyPress, or WooCommerce? The Pro version of WPSSO RRSSB includes special integration modules to add social sharing buttons to even more locations!
 
 The *Scalable Vector Graphics (SVG) social icons* used by WPSSO RRSSB automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), including high resolution retina displays!
 
