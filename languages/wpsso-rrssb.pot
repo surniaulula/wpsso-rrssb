@@ -107,7 +107,8 @@ msgstr ""
 msgctxt "plugin description"
 msgid ""
 "WPSSO Core extension to add Ridiculously Responsive (SVG) Social Sharing "
-"Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc."
+"Buttons in your content, excerpts, CSS sidebar, widget, shortcode, post edit "
+"pages, etc."
 msgstr ""
 
 #: lib/gpl/admin/sharing.php:37 lib/gpl/admin/sharing.php:58
