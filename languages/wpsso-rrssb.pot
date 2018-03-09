@@ -538,7 +538,8 @@ msgstr ""
 #. Description of the plugin/theme
 msgid ""
 "WPSSO Core extension to add Ridiculously Responsive (SVG) Social Sharing "
-"Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc."
+"Buttons in your content, excerpts, CSS sidebar, widget, shortcode, post edit "
+"pages, etc."
 msgstr ""
 
 #. Author of the plugin/theme
