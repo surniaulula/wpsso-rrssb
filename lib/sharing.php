@@ -611,8 +611,10 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				}
 			}
 
-			// $mod is preferred but not required
-			// $mod = true | false | post_id | $mod array
+			/**
+			 * The $mod array argument is preferred but not required.
+			 * $mod = true | false | post_id | $mod array
+			 */
 			if ( ! is_array( $mod ) ) {
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'optional call to get_page_mod()' );
@@ -764,8 +766,10 @@ $cache_array[$cache_index].
 			$atts['use_post'] = isset( $atts['use_post'] ) ? $atts['use_post'] : true;	// maintain backwards compat
 			$atts['add_page'] = isset( $atts['add_page'] ) ? $atts['add_page'] : true;	// used by get_sharing_url()
 
-			// $mod is preferred but not required
-			// $mod = true | false | post_id | $mod array
+			/**
+			 * The $mod array argument is preferred but not required.
+			 * $mod = true | false | post_id | $mod array
+			 */
 			if ( ! is_array( $mod ) ) {
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'optional call to get_page_mod()' );
