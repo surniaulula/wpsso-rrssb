@@ -118,7 +118,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteLinkedin' ) ) {
 			return $this->p->util->replace_inline_vars( '<!-- LinkedIn Button -->'.
 				$this->p->options['linkedin_rrssb_html'], $mod, $atts, array(
 				 	'linkedin_title' => rawurlencode( $linkedin_title ),
-			 		'linkedin_caption' => rawurlencode( $linkedin_excerpt ),
+			 		'linkedin_caption' => rawurlencode( $linkedin_caption ),
 				 )
 			 );
 		}
