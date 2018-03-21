@@ -123,7 +123,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 				$this->p->util->add_plugin_filters( $this, array( 
 					'status_gpl_features' => 3,
-				), 10, 'wpssorrssb' ); // hook into the extension name instead
+				), 10, 'wpssorrssb' );
 			}
 
 			if ( $this->p->debug->enabled ) {

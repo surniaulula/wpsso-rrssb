@@ -10,12 +10,12 @@
  * Author URI: https://wpsso.com/
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
- * Description: WPSSO Core extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, post edit pages, etc.
+ * Description: WPSSO Core add-on to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, post edit pages, etc.
  * Requires PHP: 5.4
  * Requires At Least: 3.8
  * Tested Up To: 4.9.4
  * WC Tested Up To: 3.3.3
- * Version: 1.6.2
+ * Version: 1.6.3-dev.2
  * 
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -85,9 +85,9 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 			$info = WpssoRrssbConfig::$cf['plugin']['wpssorrssb'];
 
-			$die_msg = __( '%1$s is an extension for the %2$s plugin &mdash; please install and activate the %3$s plugin before activating %4$s.', 'wpsso-rrssb' );
+			$die_msg = __( '%1$s is an add-on for the %2$s plugin &mdash; please install and activate the %3$s plugin before activating %4$s.', 'wpsso-rrssb' );
 
-			$error_msg = __( 'The %1$s extension requires the %2$s plugin &mdash; install and activate the %3$s plugin or <a href="%4$s">deactivate the %5$s extension</a>.', 'wpsso-rrssb' );
+			$error_msg = __( 'The %1$s add-on requires the %2$s plugin &mdash; install and activate the %3$s plugin or <a href="%4$s">deactivate the %5$s add-on</a>.', 'wpsso-rrssb' );
 
 			if ( true === $deactivate ) {
 
@@ -179,7 +179,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 			$info = WpssoRrssbConfig::$cf['plugin']['wpssorrssb'];
 			$have_version = $this->p->cf['plugin']['wpsso']['version'];
-			$error_msg = sprintf( __( 'The %1$s version %2$s extension requires %3$s version %4$s or newer (version %5$s is currently installed).',
+			$error_msg = sprintf( __( 'The %1$s version %2$s add-on requires %3$s version %4$s or newer (version %5$s is currently installed).',
 				'wpsso-rrssb' ), $info['name'], $info['version'], $info['req']['short'], $info['req']['min_version'], $have_version );
 
 			if ( is_admin() ) {
@@ -200,4 +200,3 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
         global $wpssorrssb;
 	$wpssorrssb =& WpssoRrssb::get_instance();
 }
-
