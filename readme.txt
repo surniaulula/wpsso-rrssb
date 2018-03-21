@@ -14,13 +14,13 @@ Tested Up To: 4.9.4
 WC Tested Up To: 3.3.3
 Stable Tag: 1.6.2
 
-WPSSO Core extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
+WPSSO Core add-on to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
 
 == Description ==
 
 <img class="readme-icon" src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png">
 
-**WPSSO Core extension to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, post edit pages, etc.**
+**WPSSO Core add-on to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, post edit pages, etc.**
 
 Add awesome *Ridiculously Responsive Social Sharing Buttons* (RRSSB) to posts / pages, custom post types, [bbPress](https://wordpress.org/plugins/bbpress/), [BuddyPress](https://wordpress.org/plugins/buddypress/), [WooCommerce](https://wordpress.org/plugins/woocommerce/) product pages, and much more.</p>
 
@@ -28,13 +28,13 @@ Include social sharing buttons in the content, excerpt, widget, CSS sidebar, sho
 
 The *Scalable Vector Graphics (SVG) social icons* used by WPSSO RRSSB automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), including high resolution retina displays!
 
-WPSSO Ridiculously Responsive Social Sharing Buttons is *incredibly fast* and coded for performance &mdash; WPSSO Core and its extensions make full use of all available caching techniques (persistent / non-persistent object and disk caching), and load only the PHP library files and object classes they need, keeping their code small, fast, and light. WPSSO Core and its extensions are also fully tested and compatible with PHP v7.x (PHP v5.4 or better required).
+WPSSO Ridiculously Responsive Social Sharing Buttons is *incredibly fast* and coded for performance &mdash; WPSSO Core and its add-ons make full use of all available caching techniques (persistent / non-persistent object and disk caching), and load only the PHP library files and object classes they need, keeping their code small, fast, and light. WPSSO Core and its add-ons are also fully tested and compatible with PHP v7.x (PHP v5.4 or better required).
 
 <h3>WPSSO Core Plugin Prerequisite</h3>
 
-WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an extension for the WPSSO Core plugin &mdash; which creates complete &amp; accurate meta tags and Schema markup from your existing content for social sharing, Social Media Optimization (SMO), Search Engine Optimization (SEO), Google Rich Cards, Pinterest Rich Pins, etc.
+WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an add-on for the WPSSO Core plugin &mdash; which creates complete &amp; accurate meta tags and Schema markup from your existing content for social sharing, Social Media Optimization (SMO), Search Engine Optimization (SEO), Google Rich Cards, Pinterest Rich Pins, etc.
 
-The Free extension works with either the Free or Pro version of WPSSO Core. The [WPSSO RRSSB Pro extension](https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-prereq) uses many WPSSO Core Pro features and requires an active and licensed [WPSSO Core Pro plugin](https://wpsso.com/?utm_source=wpssorrssb-readme-prereq).
+The Free add-on plugin works with either the Free or Pro version of WPSSO Core. The [WPSSO RRSSB Pro add-on](https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-prereq) uses many WPSSO Core Pro features and requires an active and licensed [WPSSO Core Pro plugin](https://wpsso.com/?utm_source=wpssorrssb-readme-prereq).
 
 <h3>Quick List of Features</h3>
 
@@ -98,18 +98,18 @@ The Free extension works with either the Free or Pro version of WPSSO Core. The 
 
 <h3>Extends the WPSSO Core Plugin</h3>
 
-<span style="color:#33cc33">&#x0229b;</span> &nbsp; The WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) Free extension works with either the Free or Pro version of WPSSO Core.
+<span style="color:#33cc33">&#x0229b;</span> &nbsp; The WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) Free add-on plugin works with either the Free or Pro version of WPSSO Core.
 
-<span style="color:#33cc33">&#x0229b;</span> &nbsp; The <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-extends">WPSSO RRSSB Pro extension</a> uses many WPSSO Core Pro features, which requires an active and licensed <a href="https://wpsso.com/?utm_source=wpssorrssb-readme-extends">WPSSO Core Pro plugin</a>.
+<span style="color:#33cc33">&#x0229b;</span> &nbsp; The <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-extends">WPSSO RRSSB Pro add-on</a> uses many WPSSO Core Pro features, which requires an active and licensed <a href="https://wpsso.com/?utm_source=wpssorrssb-readme-extends">WPSSO Core Pro plugin</a>.
 
-<span style="color:#33cc33">&#x0229b;</span> &nbsp; <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-purchase">Purchase the WPSSO Ridiculously Responsive Social Sharing Buttons Pro extension here</a> (all plugin purchases include a <em>No Risk 30 Day Refund Policy</em>).
+<span style="color:#33cc33">&#x0229b;</span> &nbsp; <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-purchase">Purchase the WPSSO Ridiculously Responsive Social Sharing Buttons Pro add-on here</a> (all plugin purchases include a <em>No Risk 30 Day Refund Policy</em>).
 
 == Installation ==
 
 <h3>Install and Uninstall</h3>
 
-* [Install the WPSSO RRSSB Extension](https://wpsso.com/docs/plugins/wpsso-rrssb/installation/install-the-plugin/)
-* [Uninstall the WPSSO RRSSB Extension](https://wpsso.com/docs/plugins/wpsso-rrssb/installation/uninstall-the-plugin/)
+* [Install the WPSSO RRSSB Add-on](https://wpsso.com/docs/plugins/wpsso-rrssb/installation/install-the-plugin/)
+* [Uninstall the WPSSO RRSSB Add-on](https://wpsso.com/docs/plugins/wpsso-rrssb/installation/uninstall-the-plugin/)
 
 == Frequently Asked Questions ==
 
@@ -149,6 +149,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.6.3-dev.2 (2018/03/21)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* Renamed plugin "Extensions" to "Add-ons" to avoid confusion and improve / simplify translations.
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* None
+
 **Version 1.6.2 (2018/03/10)**
 
 * *New Features*
@@ -185,11 +196,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
+= 1.6.3-dev.2 =
+
+(2018/03/21) Renamed plugin "Extensions" to "Add-ons" to avoid confusion and improve / simplify translations.
+
 = 1.6.2 =
 
 (2018/03/10) Fixed the missing LinkedIn button inline caption value. Added a list of human-readable checked IDs when the "Show Cache Purge Count on Update" option is checked *and* the WP_DEBUG contant is true.
-
-= 1.6.1 =
-
-(2018/03/04) Refactored transient cache index values to include WP query variables for extra uniqueness.
 
