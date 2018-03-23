@@ -16,11 +16,11 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(			// Plugin acronym.
-					'version' => '1.6.3-b.1',		// Plugin version.
+					'version' => '1.6.3-rc.1',		// Plugin version.
 					'opt_version' => '12',		// Increment when changing default option values.
 					'short' => 'WPSSO RRSSB',	// Short plugin name.
 					'name' => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
-					'desc' => 'WPSSO Core add-on to add Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, post edit pages, etc.',
+					'desc' => 'WPSSO Core add-on to provide Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, post edit pages, etc.',
 					'slug' => 'wpsso-rrssb',
 					'base' => 'wpsso-rrssb/wpsso-rrssb.php',
 					'update_auth' => 'tid',
@@ -29,7 +29,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'req' => array(
 						'short' => 'WPSSO Core',
 						'name' => 'WPSSO Core',
-						'min_version' => '3.56.2-b.1',
+						'min_version' => '3.56.2-rc.1',
 					),
 					'img' => array(
 						'icons' => array(
