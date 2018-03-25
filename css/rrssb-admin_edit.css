@@ -9,7 +9,7 @@ table.sucom-settings ul.rrssb-buttons {
 	padding:0 !important;
 	list-style:none;
 }
-table.sucom-settings ul.rrssb-buttons:before,
-table.sucom-settings ul.rrssb-buttons:after {
+table.sucom-settings ul.rrssb-buttons::before,
+table.sucom-settings ul.rrssb-buttons::after {
 	display:none;
 }
