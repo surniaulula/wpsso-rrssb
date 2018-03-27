@@ -213,21 +213,24 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			return $opts;
 		}
 
-		public function filter_option_type( $type, $key ) {
+		public function filter_option_type( $type, $base_key ) {
+
 			if ( ! empty( $type ) ) {
 				return $type;
 			}
-			switch ( $key ) {
+
+			switch ( $base_key ) {
 				// integer options that must be 1 or more (not zero)
-				case ( preg_match( '/_order$/', $key ) ? true : false ):
+				case ( preg_match( '/_order$/', $base_key ) ? true : false ):
 					return 'pos_int';
 					break;
 				// text strings that can be blank
 				case 'buttons_force_prot':
-				case ( preg_match( '/_(desc|title)$/', $key ) ? true : false ):
+				case ( preg_match( '/_(desc|title)$/', $base_key ) ? true : false ):
 					return 'ok_blank';
 					break;
 			}
+
 			return $type;
 		}
 

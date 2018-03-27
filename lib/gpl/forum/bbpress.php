@@ -23,7 +23,7 @@ if ( ! class_exists( 'WpssoRrssbGplForumBbpress' ) ) {
 				$this->p->debug->mark();
 			}
 
-			if ( class_exists( 'bbpress' ) ) {	// is_bbpress() is not available here
+			if ( class_exists( 'bbpress' ) ) {
 				if ( ! empty( $this->p->avail['p_ext']['rrssb'] ) ) {
 					$classname = __CLASS__.'Sharing';
 					if ( class_exists( $classname ) ) {
