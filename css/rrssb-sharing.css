@@ -3,6 +3,7 @@
  * These styles are provided as examples only - modifications may be
  * necessary to customize the layout for your website.
  */
+
 ul.rrssb-buttons {
 	visibility:visible;
 	margin:0 !important;
@@ -10,16 +11,19 @@ ul.rrssb-buttons {
 	list-style:none;
 	clear:both;
 }
+
 ul.rrssb-buttons a {
 	border:none;
 	box-shadow:none;
 	-webkit-box-shadow:none;
 	line-height:1em;
 }
+
 ul.rrssb-buttons a:hover {
 	box-shadow:none;
 	-webkit-box-shadow:none;
 }
+
 ul.rrssb-buttons li,
 .content ul.rrssb-buttons li,
 .list-data ul.rrssb-buttons li {
@@ -31,13 +35,16 @@ ul.rrssb-buttons li,
 	margin:0;
 	padding:0 2px !important;
 }
+
 ul.rrssb-buttons li::before,
 .content ul.rrssb-buttons li::before,
 .list-data ul.rrssb-buttons li::before {
 	content:none !important;
 }
+
 .rrssb-icon {
 }
+
 .rrssb-text {
 	white-space:nowrap;
 }

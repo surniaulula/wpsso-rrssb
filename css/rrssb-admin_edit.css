@@ -3,12 +3,14 @@
  * These styles are provided as examples only - modifications may be
  * necessary to customize the layout for your website.
  */
+
 table.sucom-settings ul.rrssb-buttons {
 	visibility:visible;
 	margin:0 !important;
 	padding:0 !important;
 	list-style:none;
 }
+
 table.sucom-settings ul.rrssb-buttons::before,
 table.sucom-settings ul.rrssb-buttons::after {
 	display:none;
