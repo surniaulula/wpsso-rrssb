@@ -29,13 +29,13 @@
 
 <p>WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an add-on for the WPSSO Core plugin &mdash; which creates complete &amp; accurate meta tags and Schema markup from your existing content for social sharing, Social Media Optimization (SMO), Search Engine Optimization (SEO), Google Rich Cards, Pinterest Rich Pins, etc.</p>
 
-<p>The Free add-on plugin works with either the Free or Pro version of WPSSO Core. The <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-prereq">WPSSO RRSSB Pro add-on</a> uses many WPSSO Core Pro features and requires an active and licensed <a href="https://wpsso.com/?utm_source=wpssorrssb-readme-prereq">WPSSO Core Pro plugin</a>.</p>
+<p>The Free add-on works with either the Free or Pro version of WPSSO Core. The <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-prereq">WPSSO RRSSB Pro add-on</a> uses many WPSSO Core Pro features and requires an active and licensed <a href="https://wpsso.com/?utm_source=wpssorrssb-readme-prereq">WPSSO Core Pro plugin</a>.</p>
 
 <h3>Quick List of Features</h3>
 
 <h4>WPSSO RRSSB Free / Standard Features</h4>
 
-<p><span style="color:#33cc33">&#x0229b;</span> &nbsp; Extends the features of WPSSO Free or Pro.</p>
+<p><span style="color:#33cc33">&#x0229b;</span> &nbsp; Extends the features of WPSSO Core Free or Pro.</p>
 
 <p><span style="color:#33cc33">&#x0229b;</span> &nbsp; Include a selection of <strong>Ridiculously Responsive Social Sharing Buttons</strong> in multiple locations:</p>
 
@@ -101,7 +101,7 @@
 
 <h3>Extends the WPSSO Core Plugin</h3>
 
-<p><span style="color:#33cc33">&#x0229b;</span> &nbsp; The WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) Free add-on plugin works with either the Free or Pro version of WPSSO Core.</p>
+<p><span style="color:#33cc33">&#x0229b;</span> &nbsp; The WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) Free add-on works with either the Free or Pro version of WPSSO Core.</p>
 
 <p><span style="color:#33cc33">&#x0229b;</span> &nbsp; The <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme-extends">WPSSO RRSSB Pro add-on</a> uses many WPSSO Core Pro features, which requires an active and licensed <a href="https://wpsso.com/?utm_source=wpssorrssb-readme-extends">WPSSO Core Pro plugin</a>.</p>
 
