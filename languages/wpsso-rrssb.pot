@@ -331,47 +331,47 @@ msgstr ""
 msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:49
+#: lib/submenu/rrssb-buttons.php:51
 msgctxt "metabox title"
 msgid "Social Sharing Buttons"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:85
+#: lib/submenu/rrssb-buttons.php:86
 msgctxt "metabox tab"
 msgid "Include Buttons"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:86
+#: lib/submenu/rrssb-buttons.php:87
 msgctxt "metabox tab"
 msgid "Buttons Position"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:87
+#: lib/submenu/rrssb-buttons.php:88
 msgctxt "metabox tab"
 msgid "Advanced Settings"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:122
+#: lib/submenu/rrssb-buttons.php:124
 msgctxt "option label"
 msgid "Include on Archive Webpages"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:126
+#: lib/submenu/rrssb-buttons.php:128
 msgctxt "option label"
 msgid "Include on Static Front Page"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:130
+#: lib/submenu/rrssb-buttons.php:132
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:138
+#: lib/submenu/rrssb-buttons.php:140
 msgctxt "option label"
 msgid "Position in Content Text"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:142
+#: lib/submenu/rrssb-buttons.php:144
 msgctxt "option label"
 msgid "Position in Excerpt Text"
 msgstr ""
