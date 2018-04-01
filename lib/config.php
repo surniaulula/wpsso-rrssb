@@ -16,7 +16,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(			// Plugin acronym.
-					'version' => '1.6.3',		// Plugin version.
+					'version' => '1.6.4-dev.1',		// Plugin version.
 					'opt_version' => '12',		// Increment when changing default option values.
 					'short' => 'WPSSO RRSSB',	// Short plugin name.
 					'name' => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
@@ -29,7 +29,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'req' => array(
 						'short' => 'WPSSO Core',
 						'name' => 'WPSSO Core',
-						'min_version' => '3.56.2',
+						'min_version' => '3.57.0-dev.1',
 					),
 					'img' => array(
 						'icons' => array(
