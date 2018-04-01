@@ -35,7 +35,7 @@
 
 <h4>WPSSO RRSSB Free / Standard Features</h4>
 
-<p><span style="color:#33cc33">&#x0229b;</span> &nbsp; Extends the features of WPSSO Core Free or Pro.</p>
+<p><span style="color:#33cc33">&#x0229b;</span> &nbsp; Extends the features of the WPSSO Core Free or Pro plugin.</p>
 
 <p><span style="color:#33cc33">&#x0229b;</span> &nbsp; Include a selection of <strong>Ridiculously Responsive Social Sharing Buttons</strong> in multiple locations:</p>
 
