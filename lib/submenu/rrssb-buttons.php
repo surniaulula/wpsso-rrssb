@@ -81,18 +81,23 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 		}
 
 		public function show_metabox_rrssb_buttons() {
+
 			$metabox_id = 'rrssb_buttons';
+
 			$tabs = apply_filters( $this->p->lca.'_rrssb_buttons_tabs', array(
 				'include' => _x( 'Include Buttons', 'metabox tab', 'wpsso-rrssb' ),
 				'position' => _x( 'Buttons Position', 'metabox tab', 'wpsso-rrssb' ),
 				'advanced' => _x( 'Advanced Settings', 'metabox tab', 'wpsso-rrssb' ),
 			) );
+
 			$table_rows = array();
+
 			foreach ( $tabs as $tab_key => $title ) {
 				$table_rows[$tab_key] = array_merge( $this->get_table_rows( $metabox_id, $tab_key ), 
 					apply_filters( $this->p->lca.'_'.$metabox_id.'_'.$tab_key.'_rows', array(), $this->form ) );
 			}
-			$this->p->util->do_metabox_tabs( $metabox_id, $tabs, $table_rows );
+
+			$this->p->util->do_metabox_tabbed( $metabox_id, $tabs, $table_rows );
 		}
 
 		public function show_metabox_rrssb_website( $post, $callback ) {
@@ -109,7 +114,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 					$table_rows[$tab] = apply_filters( $this->p->lca.'_'.$metabox_id.'_'.$args['id'].'_'.$tab.'_rows',
 						array(), $this->form, $this );
 				}
-				$this->p->util->do_metabox_tabs( $metabox_id.'_'.$args['id'], $tabs, $table_rows );
+				$this->p->util->do_metabox_tabbed( $metabox_id.'_'.$args['id'], $tabs, $table_rows );
 			}
 		}
 

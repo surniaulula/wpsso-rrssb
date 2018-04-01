@@ -336,42 +336,42 @@ msgctxt "metabox title"
 msgid "Social Sharing Buttons"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:86
+#: lib/submenu/rrssb-buttons.php:88
 msgctxt "metabox tab"
 msgid "Include Buttons"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:87
+#: lib/submenu/rrssb-buttons.php:89
 msgctxt "metabox tab"
 msgid "Buttons Position"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:88
+#: lib/submenu/rrssb-buttons.php:90
 msgctxt "metabox tab"
 msgid "Advanced Settings"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:124
+#: lib/submenu/rrssb-buttons.php:129
 msgctxt "option label"
 msgid "Include on Archive Webpages"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:128
+#: lib/submenu/rrssb-buttons.php:133
 msgctxt "option label"
 msgid "Include on Static Front Page"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:132
+#: lib/submenu/rrssb-buttons.php:137
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:140
+#: lib/submenu/rrssb-buttons.php:145
 msgctxt "option label"
 msgid "Position in Content Text"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:144
+#: lib/submenu/rrssb-buttons.php:149
 msgctxt "option label"
 msgid "Position in Excerpt Text"
 msgstr ""
