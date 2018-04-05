@@ -211,7 +211,3 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 (2018/04/05) Renamed some WpssoUtil methods for Gutenberg changes in WPSSO v3.57.0.
 
-= 1.6.3 =
-
-(2018/03/24) Renamed plugin "Extensions" to "Add-ons" to avoid confusion and improve / simplify translations.
-
