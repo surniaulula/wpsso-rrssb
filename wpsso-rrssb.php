@@ -101,7 +101,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 					require_once trailingslashit( ABSPATH ) . 'wp-admin/includes/plugin.php';
 				}
 
-				deactivate_plugins( $info['base'], true );	// $silent = true
+				deactivate_plugins( $info['base'], true );	// $silent is true
 
 				wp_die( '<p>' . sprintf( $die_msg, $info['name'], $info['req']['name'], $info['req']['short'], $info['short'] ) . '</p>' );
 
