@@ -36,13 +36,11 @@ WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an add
 
 The Free add-on works with either the Free or Pro version of WPSSO Core. The [WPSSO RRSSB Pro add-on](https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme) uses many WPSSO Core Pro features and requires an active and licensed [WPSSO Core Pro plugin](https://wpsso.com/?utm_source=wpssorrssb-readme).
 
-<h3>Quick List of Features</h3>
+<h3>WPSSO RRSSB Free / Standard Features</h3>
 
-<h4>WPSSO RRSSB Free / Standard Features</h4>
+&#x0229b; &nbsp; Extends the features of the WPSSO Core Free or Pro plugin.
 
-<span style="color:#33cc33">&#x0229b;</span> &nbsp; Extends the features of the WPSSO Core Free or Pro plugin.
-
-<span style="color:#33cc33">&#x0229b;</span> &nbsp; Include a selection of **Ridiculously Responsive Social Sharing Buttons** in multiple locations:
+&#x0229b; &nbsp; Include a selection of **Ridiculously Responsive Social Sharing Buttons** in multiple locations:
 
 * Above and/or below your post / page content and/or excerpt text.
 * Admin editing pages &ndash; including media, product pages, and custom post types.
@@ -51,7 +49,7 @@ The Free add-on works with either the Free or Pro version of WPSSO Core. The [WP
 * A shortcode within your content and/or excerpt.
 * A function in your theme's template(s).
 
-<span style="color:#33cc33">&#x0229b;</span> &nbsp; Each of these social sharing buttons can be configured and styled individually:
+&#x0229b; &nbsp; Each of these social sharing buttons can be configured and styled individually:
 
 * Email
 * Facebook
@@ -65,23 +63,21 @@ The Free add-on works with either the Free or Pro version of WPSSO Core. The [WP
 * VK
 * WhatsApp (for mobile devices)
 
-<span style="color:#33cc33">&#x0229b;</span> &nbsp; Include / exclude individual social sharing buttons based on the viewing device (desktop and/or mobile).
+&#x0229b; &nbsp; Include / exclude individual social sharing buttons based on the viewing device (desktop and/or mobile).
 
-<span style="color:#33cc33">&#x0229b;</span> &nbsp; Automatically exclude buttons from [Accelerated Mobile Pages (AMP)](https://wordpress.org/plugins/amp/) plugin pages.
+&#x0229b; &nbsp; Automatically exclude buttons from [Accelerated Mobile Pages (AMP)](https://wordpress.org/plugins/amp/) plugin pages.
 
-<span style="color:#33cc33">&#x0229b;</span> &nbsp; A built-in stylesheet editor allows you to fine-tune the CSS for each social sharing button location easily (content, excerpt, shortcode, widget, etc.).
+&#x0229b; &nbsp; A built-in stylesheet editor allows you to fine-tune the CSS for each social sharing button location easily (content, excerpt, shortcode, widget, etc.).
 
-<span style="color:#33cc33">&#x0229b;</span> &nbsp; Download the Free version from [GitHub](https://surniaulula.github.io/wpsso-rrssb/) or [WordPress.org](https://wordpress.org/plugins/wpsso-rrssb/).
+&#x0229b; &nbsp; Download the Free version from [GitHub](https://surniaulula.github.io/wpsso-rrssb/) or [WordPress.org](https://wordpress.org/plugins/wpsso-rrssb/).
 
-<span style="color:#33cc33">&#x0229b;</span> &nbsp; WPSSO RRSSB uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.
+&#x0229b; &nbsp; WPSSO RRSSB uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.
 
-<h3>Quick List of Features (Continued)</h3>
+<h3>WPSSO RRSSB Pro / Additional Features</h3>
 
-<h4>WPSSO RRSSB Pro / Additional Features</h4>
+&#x0229b; &nbsp; Extends the features of WPSSO Core Pro (requires an active and licensed <a href="https://wpsso.com/">WPSSO Core Pro plugin</a>).
 
-<span style="color:#33cc33">&#x0229b;</span> &nbsp; Extends the features of WPSSO Core Pro (requires an active and licensed <a href="https://wpsso.com/">WPSSO Core Pro plugin</a>).
-
-<span style="color:#33cc33">&#x0229b;</span> &nbsp; Custom titles and text in the Social and Search Optimization metabox for:
+&#x0229b; &nbsp; Custom titles and text in the Social and Search Optimization metabox for:
 
 * Email
 * LinkedIn
@@ -90,7 +86,7 @@ The Free add-on works with either the Free or Pro version of WPSSO Core. The [WP
 * Tumblr
 * Twitter
 
-<span style="color:#33cc33">&#x0229b;</span> &nbsp; Additional sharing button locations and CSS styles for:
+&#x0229b; &nbsp; Additional sharing button locations and CSS styles for:
 
 * [bbPress](https://wordpress.org/plugins/bbpress/)
 * [BuddyPress](https://wordpress.org/plugins/buddypress/)
@@ -98,11 +94,15 @@ The Free add-on works with either the Free or Pro version of WPSSO Core. The [WP
 
 <h3>Extends the WPSSO Core Plugin</h3>
 
-<span style="color:#33cc33">&#x0229b;</span> &nbsp; The WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) Free add-on works with either the Free or Pro version of WPSSO Core.
+&#x0229b; &nbsp; The WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) Free add-on works with either the Free or Pro version of WPSSO Core.
 
-<span style="color:#33cc33">&#x0229b;</span> &nbsp; The <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme">WPSSO RRSSB Pro add-on</a> uses many WPSSO Core Pro features, which requires an active and licensed <a href="https://wpsso.com/?utm_source=wpssorrssb-readme">WPSSO Core Pro plugin</a>.
+&#x0229b; &nbsp; The <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme">WPSSO RRSSB Pro add-on</a> uses many WPSSO Core Pro features, which requires an active and licensed <a href="https://wpsso.com/?utm_source=wpssorrssb-readme">WPSSO Core Pro plugin</a>.
 
-<span style="color:#33cc33">&#x0229b;</span> &nbsp; <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme">Purchase the WPSSO Ridiculously Responsive Social Sharing Buttons Pro add-on here</a> (all plugin purchases include a <em>No Risk 30 Day Refund Policy</em>).
+<!--smp-ignore-->
+
+&#x0229b; &nbsp; <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme">Purchase the WPSSO Ridiculously Responsive Social Sharing Buttons Pro add-on here</a> (all purchases include a <em>No Risk 30 Day Refund Policy</em>).
+
+<!--/smp-ignore-->
 
 == Installation ==
 
