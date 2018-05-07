@@ -244,25 +244,25 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 		public function filter_post_cache_transient_keys( $transient_keys, $mod, $sharing_url, $mod_salt ) {
 
-			$cache_md5_pre = $this->p->lca.'_b_';
+			$cache_md5_pre = $this->p->lca . '_b_';
 			$classname_pre = 'WpssoRrssb';
 
 			$transient_keys[] = array(
-				'id' => $cache_md5_pre.md5( $classname_pre.'Sharing::get_buttons('.$mod_salt.')' ),
-				'pre' => $cache_md5_pre,
-				'salt' => $classname_pre.'Sharing::get_buttons('.$mod_salt.')',
+				'id'   => $cache_md5_pre . md5( $classname_pre . 'Sharing::get_buttons(' . $mod_salt . ')' ),
+				'pre'   => $cache_md5_pre,
+				'salt' => $classname_pre . 'Sharing::get_buttons(' . $mod_salt . ')',
 			);
 
 			$transient_keys[] = array(
-				'id' => $cache_md5_pre.md5( $classname_pre.'ShortcodeSharing::do_shortcode('.$mod_salt.')' ),
-				'pre' => $cache_md5_pre,
-				'salt' => $classname_pre.'ShortcodeSharing::do_shortcode('.$mod_salt.')',
+				'id'   => $cache_md5_pre . md5( $classname_pre . 'ShortcodeSharing::do_shortcode(' . $mod_salt . ')' ),
+				'pre'  => $cache_md5_pre,
+				'salt' => $classname_pre . 'ShortcodeSharing::do_shortcode(' . $mod_salt . ')',
 			);
 
 			$transient_keys[] = array(
-				'id' => $cache_md5_pre.md5( $classname_pre.'WidgetSharing::widget('.$mod_salt.')' ),
-				'pre' => $cache_md5_pre,
-				'salt' => $classname_pre.'WidgetSharing::widget('.$mod_salt.')',
+				'id'   => $cache_md5_pre . md5( $classname_pre . 'WidgetSharing::widget(' . $mod_salt . ')' ),
+				'pre'  => $cache_md5_pre,
+				'salt' => $classname_pre . 'WidgetSharing::widget(' . $mod_salt . ')',
 			);
 
 			return $transient_keys;
@@ -271,7 +271,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		public function filter_status_gpl_features( $features, $lca, $info ) {
 			if ( ! empty( $info['lib']['submenu']['rrssb-buttons'] ) )
 				$features['(sharing) Sharing Buttons'] = array(
-					'classname' => $lca.'Sharing',
+					'classname' => $lca . 'Sharing',
 				);
 			if ( ! empty( $info['lib']['submenu']['rrssb-styles'] ) )
 				$features['(sharing) Sharing Stylesheet'] = array(
@@ -279,11 +279,11 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				);
 			if ( ! empty( $info['lib']['shortcode']['sharing'] ) )
 				$features['(sharing) Sharing Shortcode'] = array(
-					'classname' => $lca.'ShortcodeSharing',
+					'classname' => $lca . 'ShortcodeSharing',
 				);
 			if ( ! empty( $info['lib']['widget']['sharing'] ) )
 				$features['(sharing) Sharing Widget'] = array(
-					'classname' => $lca.'WidgetSharing',
+					'classname' => $lca . 'WidgetSharing',
 				);
 			return $features;
 		}
@@ -292,11 +292,11 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 			$opts =& $this->p->options;
 			$def_opts = $this->p->opt->get_defaults();
-			$tabs = apply_filters( $this->p->cf['lca'].'_rrssb_styles_tabs', $this->p->cf['sharing']['rrssb_styles'] );
+			$tabs = apply_filters( $this->p->cf['lca'] . '_rrssb_styles_tabs', $this->p->cf['sharing']['rrssb_styles'] );
 
 			foreach ( $tabs as $id => $name ) {
-				if ( isset( $opts['buttons_css_'.$id] ) && isset( $def_opts['buttons_css_'.$id] ) ) {
-					$opts['buttons_css_'.$id] = $def_opts['buttons_css_'.$id];
+				if ( isset( $opts['buttons_css_' . $id] ) && isset( $def_opts['buttons_css_' . $id] ) ) {
+					$opts['buttons_css_' . $id] = $def_opts['buttons_css_' . $id];
 				}
 			}
 
@@ -309,20 +309,20 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			if ( ! empty( $this->p->options['buttons_use_social_style'] ) ) {
 				if ( ! file_exists( self::$sharing_css_file ) ) {
 					if ( $this->p->debug->enabled ) {
-						$this->p->debug->log( 'updating '.self::$sharing_css_file );
+						$this->p->debug->log( 'updating ' . self::$sharing_css_file );
 					}
 					$this->update_sharing_css( $this->p->options );
 				}
 				if ( ! empty( $this->p->options['buttons_enqueue_social_style'] ) ) {
 					if ( $this->p->debug->enabled ) {
-						$this->p->debug->log( 'wp_enqueue_style = '.$this->p->cf['lca'].'_rrssb_sharing_css' );
+						$this->p->debug->log( 'wp_enqueue_style = ' . $this->p->cf['lca'] . '_rrssb_sharing_css' );
 					}
-					wp_enqueue_style( $this->p->cf['lca'].'_rrssb_sharing_css', self::$sharing_css_url, 
+					wp_enqueue_style( $this->p->cf['lca'] . '_rrssb_sharing_css', self::$sharing_css_url, 
 						false, $this->p->cf['plugin'][$this->p->cf['lca']]['version'] );
 				} else {
 					if ( ! is_readable( self::$sharing_css_file ) ) {
 						if ( $this->p->debug->enabled ) {
-							$this->p->debug->log( self::$sharing_css_file.' is not readable' );
+							$this->p->debug->log( self::$sharing_css_file . ' is not readable' );
 						}
 						if ( is_admin() ) {
 							$this->p->notice->err( sprintf( __( 'The %s file is not readable.',
@@ -349,12 +349,12 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			}
 
 			$lca = $this->p->cf['lca'];
-			$tabs = apply_filters( $lca.'_rrssb_styles_tabs', $this->p->cf['sharing']['rrssb_styles'] );
+			$tabs = apply_filters( $lca . '_rrssb_styles_tabs', $this->p->cf['sharing']['rrssb_styles'] );
 			$sharing_css_data = '';
 
 			foreach ( $tabs as $id => $name ) {
-				if ( isset( $opts['buttons_css_'.$id] ) ) {
-					$sharing_css_data .= $opts['buttons_css_'.$id];
+				if ( isset( $opts['buttons_css_' . $id] ) ) {
+					$sharing_css_data .= $opts['buttons_css_' . $id];
 				}
 			}
 
@@ -363,25 +363,25 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			if ( $fh = @fopen( self::$sharing_css_file, 'wb' ) ) {
 				if ( ( $written = fwrite( $fh, $sharing_css_data ) ) === false ) {
 					if ( $this->p->debug->enabled ) {
-						$this->p->debug->log( 'failed writing the css file '.self::$sharing_css_file );
+						$this->p->debug->log( 'failed writing the css file ' . self::$sharing_css_file );
 					}
 					if ( is_admin() ) {
 						$this->p->notice->err( sprintf( __( 'Failed writing the css file %s.',
 							'wpsso-rrssb' ), self::$sharing_css_file ) );
 					}
 				} elseif ( $this->p->debug->enabled ) {
-					$this->p->debug->log( 'updated css file '.self::$sharing_css_file.' ('.$written.' bytes written)' );
+					$this->p->debug->log( 'updated css file ' . self::$sharing_css_file . ' (' . $written . ' bytes written)' );
 					if ( is_admin() ) {
 						$this->p->notice->upd( sprintf( __( 'Updated the <a href="%1$s">%2$s</a> stylesheet (%3$d bytes written).',
 							'wpsso-rrssb' ), self::$sharing_css_url, self::$sharing_css_file, $written ), 
-								true, 'updated_'.self::$sharing_css_file, true );	// allow dismiss
+								true, 'updated_' . self::$sharing_css_file, true );	// allow dismiss
 					}
 				}
 				fclose( $fh );
 			} else {
 				if ( ! is_writable( WPSSO_CACHEDIR ) ) {
 					if ( $this->p->debug->enabled ) {
-						$this->p->debug->log( 'cache folder '.WPSSO_CACHEDIR.' is not writable' );
+						$this->p->debug->log( 'cache folder ' . WPSSO_CACHEDIR . ' is not writable' );
 					}
 					if ( is_admin() ) {
 						$this->p->notice->err( sprintf( __( 'Cache folder %s is not writable.',
@@ -389,7 +389,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					}
 				}
 				if ( $this->p->debug->enabled ) {
-					$this->p->debug->log( 'failed to open the css file '.self::$sharing_css_file.' for writing' );
+					$this->p->debug->log( 'failed to open the css file ' . self::$sharing_css_file . ' for writing' );
 				}
 				if ( is_admin() ) {
 					$this->p->notice->err( sprintf( __( 'Failed to open the css file %s for writing.',
@@ -423,8 +423,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				return;
 			}
 
-			if ( ! empty( $this->p->options['buttons_add_to_'.$post_obj->post_type] ) ) {
-				add_meta_box( '_'.$this->p->cf['lca'].'_rrssb_share', 
+			if ( ! empty( $this->p->options['buttons_add_to_' . $post_obj->post_type] ) ) {
+				add_meta_box( '_' . $this->p->cf['lca'] . '_rrssb_share', 
 					_x( 'Sharing Buttons', 'metabox title', 'wpsso-rrssb' ),
 						array( &$this, 'show_admin_sharing' ), $post_obj->post_type, 'side', 'high' );
 			}
@@ -472,14 +472,14 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			$sharing_css_data = $this->p->options['buttons_css_rrssb-admin_edit'];
 			$sharing_css_data = SucomUtil::minify_css( $sharing_css_data, $lca );
 
-			echo '<style type="text/css">'.$sharing_css_data.'</style>', "\n";
-			echo '<table class="sucom-settings '.$lca.' post-side-metabox"><tr><td>';
+			echo '<style type="text/css">' . $sharing_css_data . '</style>', "\n";
+			echo '<table class="sucom-settings ' . $lca . ' post-side-metabox"><tr><td>';
 
 			if ( get_post_status( $post_obj->ID ) === 'publish' || $post_obj->post_type === 'attachment' ) {
 				echo $this->get_buttons( '', 'admin_edit' );
 			} else {
-				echo '<p class="centered">'.sprintf( __( '%s must be published<br/>before it can be shared.',
-					'wpsso-rrssb' ), SucomUtil::titleize( $post_obj->post_type ) ).'</p>';
+				echo '<p class="centered">' . sprintf( __( '%s must be published<br/>before it can be shared.',
+					'wpsso-rrssb' ), SucomUtil::titleize( $post_obj->post_type ) ) . '</p>';
 			}
 
 			echo '</td></tr></table>';
@@ -499,13 +499,13 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'filter_name argument is empty' );
 				}
-			} elseif ( method_exists( $this, 'get_buttons_'.$filter_name ) ) {
-				$added = add_filter( $filter_name, array( &$this, 'get_buttons_'.$filter_name ), WPSSORRSSB_SOCIAL_PRIORITY );
+			} elseif ( method_exists( $this, 'get_buttons_' . $filter_name ) ) {
+				$added = add_filter( $filter_name, array( &$this, 'get_buttons_' . $filter_name ), WPSSORRSSB_SOCIAL_PRIORITY );
 				if ( $this->p->debug->enabled ) {
-					$this->p->debug->log( 'buttons filter '.$filter_name.' added ('.( $added  ? 'true' : 'false' ).')' );
+					$this->p->debug->log( 'buttons filter ' . $filter_name . ' added (' . ( $added  ? 'true' : 'false' ) . ')' );
 				}
 			} elseif ( $this->p->debug->enabled ) {
-				$this->p->debug->log( 'get_buttons_'.$filter_name.' method is missing' );
+				$this->p->debug->log( 'get_buttons_' . $filter_name . ' method is missing' );
 			}
 
 			return $added;
@@ -513,10 +513,10 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 		public function remove_buttons_filter( $filter_name = 'the_content' ) {
 			$removed = false;
-			if ( method_exists( $this, 'get_buttons_'.$filter_name ) ) {
-				$removed = remove_filter( $filter_name, array( &$this, 'get_buttons_'.$filter_name ), WPSSORRSSB_SOCIAL_PRIORITY );
+			if ( method_exists( $this, 'get_buttons_' . $filter_name ) ) {
+				$removed = remove_filter( $filter_name, array( &$this, 'get_buttons_' . $filter_name ), WPSSORRSSB_SOCIAL_PRIORITY );
 				if ( $this->p->debug->enabled ) {
-					$this->p->debug->log( 'buttons filter '.$filter_name.' removed ('.( $removed  ? 'true' : 'false' ).')' );
+					$this->p->debug->log( 'buttons filter ' . $filter_name . ' removed (' . ( $removed  ? 'true' : 'false' ) . ')' );
 				}
 			}
 			return $removed;
@@ -528,8 +528,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			}
 			$lca = $this->p->cf['lca'];
 			$css_type_name = 'rrssb-excerpt';
-			$text = preg_replace_callback( '/(<!-- '.$lca.' '.$css_type_name.' begin -->'.
-				'.*<!-- '.$lca.' '.$css_type_name.' end -->)(<\/p>)?/Usi', 
+			$text = preg_replace_callback( '/(<!-- ' . $lca . ' ' . $css_type_name . ' begin -->' . 
+				'.*<!-- ' . $lca . ' ' . $css_type_name . ' end -->)(<\/p>)?/Usi', 
 					array( __CLASS__, 'remove_paragraph_tags' ), $text );
 			return $text;
 		}
@@ -552,7 +552,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		public function get_buttons( $text, $type = 'content', $mod = true, $location = '', $atts = array() ) {
 
 			if ( $this->p->debug->enabled ) {
-				$this->p->debug->mark( 'getting buttons for '.$type );	// start timer
+				$this->p->debug->mark( 'getting buttons for ' . $type );	// start timer
 			}
 
 			$error_text = false;
@@ -563,7 +563,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					$this->p->debug->log( 'is_admin is true' );
 				}
 				if ( strpos( $type, 'admin_' ) !== 0 ) {
-					$error_text = $type.' ignored in back-end';
+					$error_text = $type . ' ignored in back-end';
 				}
 			} elseif ( SucomUtil::is_amp() ) {
 				if ( $this->p->debug->enabled ) {
@@ -604,11 +604,11 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 			if ( $error_text !== false ) {
 				if ( $this->p->debug->enabled ) {
-					$this->p->debug->log( $type.' filter skipped: '.$error_text );
-					$this->p->debug->mark( 'getting buttons for '.$type );	// end timer
+					$this->p->debug->log( $type . ' filter skipped: ' . $error_text );
+					$this->p->debug->mark( 'getting buttons for ' . $type );	// end timer
 				}
 				if ( $add_html_error ) {
-					return $text . "\n" . '<!-- '.__METHOD__.' '.$type.' filter skipped: '.$error_text.' -->' . "\n";
+					return $text . "\n" . '<!-- ' . __METHOD__ . ' ' . $type . ' filter skipped: ' . $error_text . ' -->' . "\n";
 				} else {
 					return $text;
 				}
@@ -628,19 +628,19 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			$lca = $this->p->lca;
 			$sharing_url = $this->p->util->get_sharing_url( $mod );
 
-			$cache_md5_pre  = $lca.'_b_';
+			$cache_md5_pre  = $lca . '_b_';
 			$cache_exp_secs = $this->get_buttons_cache_exp();
-			$cache_salt     = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, $sharing_url ).')';
-			$cache_id       = $cache_md5_pre.md5( $cache_salt );
+			$cache_salt     = __METHOD__ . '(' . SucomUtil::get_mod_salt( $mod, $sharing_url ) . ')';
+			$cache_id       = $cache_md5_pre . md5( $cache_salt );
 			$cache_index    = $this->get_buttons_cache_index( $type );	// returns salt with locale, mobile, wp_query, etc.
 			$cache_array    = array();
 
 			if ( $this->p->debug->enabled ) {
-				$this->p->debug->log( 'sharing url = '.$sharing_url );
-				$this->p->debug->log( 'cache expire = '.$cache_exp_secs );
-				$this->p->debug->log( 'cache salt = '.$cache_salt );
-				$this->p->debug->log( 'cache id = '.$cache_id );
-				$this->p->debug->log( 'cache index = '.$cache_index );
+				$this->p->debug->log( 'sharing url = ' . $sharing_url );
+				$this->p->debug->log( 'cache expire = ' . $cache_exp_secs );
+				$this->p->debug->log( 'cache salt = ' . $cache_salt );
+				$this->p->debug->log( 'cache id = ' . $cache_id );
+				$this->p->debug->log( 'cache index = ' . $cache_index );
 			}
 
 			if ( $cache_exp_secs > 0 ) {
@@ -649,24 +649,24 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 				if ( isset( $cache_array[$cache_index] ) ) {	// can be an empty string
 					if ( $this->p->debug->enabled ) {
-						$this->p->debug->log( $type.' cache index found in transient cache' );
+						$this->p->debug->log( $type . ' cache index found in transient cache' );
 					}
 					// continue and add buttons relative to the content (top, bottom, or both)
 				} else {
 					if ( $this->p->debug->enabled ) {
-						$this->p->debug->log( $type.' cache index not in transient cache' );
+						$this->p->debug->log( $type . ' cache index not in transient cache' );
 					}
 					if ( ! is_array( $cache_array ) ) {
 						$cache_array = array();
 					}
 				}
 			} elseif ( $this->p->debug->enabled ) {
-				$this->p->debug->log( $type.' buttons array transient cache is disabled' );
+				$this->p->debug->log( $type . ' buttons array transient cache is disabled' );
 			}
 
 			if ( empty( $location ) ) {
-				$location = empty( $this->p->options['buttons_pos_'.$type] ) ? 
-					'bottom' : $this->p->options['buttons_pos_'.$type];
+				$location = empty( $this->p->options['buttons_pos_' . $type] ) ? 
+					'bottom' : $this->p->options['buttons_pos_' . $type];
 			} 
 
 			if ( ! isset( $cache_array[$cache_index] ) ) {
@@ -674,51 +674,51 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				// sort enabled sharing buttons by their preferred order
 				$sorted_ids = array();
 				foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre ) {
-					if ( ! empty( $this->p->options[$opt_pre.'_on_'.$type] ) ) {
-						$sorted_ids[ zeroise( $this->p->options[$opt_pre.'_order'], 3 ).'-'.$id ] = $id;
+					if ( ! empty( $this->p->options[$opt_pre . '_on_' . $type] ) ) {
+						$sorted_ids[ zeroise( $this->p->options[$opt_pre . '_order'], 3 ) . '-' . $id ] = $id;
 					}
 				}
 				ksort( $sorted_ids );
 
 				$atts['use_post'] = $mod['use_post'];
-				$atts['css_id'] = $css_type_name = 'rrssb-'.$type;
+				$atts['css_id'] = $css_type_name = 'rrssb-' . $type;
 
 				// returns html or an empty string
 				$cache_array[$cache_index] = $this->get_html( $sorted_ids, $atts, $mod );
 
 				if ( ! empty( $cache_array[$cache_index] ) ) {
-					$cache_array[$cache_index] = apply_filters( $lca.'_rrssb_buttons_html', '
-<!-- '.$lca.' '.$css_type_name.' begin -->
-<!-- generated on '.date( 'c' ).' -->
-<div class="'.$lca.'-rrssb'.( $mod['use_post'] ? ' '.$lca.'-'.$css_type_name.'"' : '" id="'.$lca.'-'.$css_type_name.'"' ).'>' . "\n" . 
-$cache_array[$cache_index].
-'</div><!-- .'.$lca.'-rrssb '.( $mod['use_post'] ? '.' : '#' ).$lca.'-'.$css_type_name.' -->
-<!-- '.$lca.' '.$css_type_name.' end -->' . "\n\n", $type, $mod, $location, $atts );
+					$cache_array[$cache_index] = apply_filters( $lca . '_rrssb_buttons_html', '
+<!-- ' . $lca . ' ' . $css_type_name . ' begin -->
+<!-- generated on ' . date( 'c' ) . ' -->
+<div class="' . $lca . '-rrssb' . ( $mod['use_post'] ? ' ' . $lca . '-' . $css_type_name . '"' : '" id="' . $lca . '-' . $css_type_name . '"' ) . '>' . "\n" . 
+$cache_array[$cache_index] . 
+'</div><!-- .' . $lca . '-rrssb ' . ( $mod['use_post'] ? '.' : '#' ) . $lca . '-' . $css_type_name . ' -->
+<!-- ' . $lca . ' ' . $css_type_name . ' end -->' . "\n\n", $type, $mod, $location, $atts );
 				}
 
 				if ( $cache_exp_secs > 0 ) {
 					// update the cached array and maintain the existing transient expiration time
 					$expires_in_secs = SucomUtil::update_transient_array( $cache_id, $cache_array, $cache_exp_secs );
 					if ( $this->p->debug->enabled ) {
-						$this->p->debug->log( $type.' buttons html saved to transient cache (expires in '.$expires_in_secs.' secs)' );
+						$this->p->debug->log( $type . ' buttons html saved to transient cache (expires in ' . $expires_in_secs . ' secs)' );
 					}
 				}
 			}
 
 			switch ( $location ) {
 				case 'top': 
-					$text = $cache_array[$cache_index].$text; 
+					$text = $cache_array[$cache_index] . $text; 
 					break;
 				case 'bottom': 
-					$text = $text.$cache_array[$cache_index]; 
+					$text = $text . $cache_array[$cache_index]; 
 					break;
 				case 'both': 
-					$text = $cache_array[$cache_index].$text.$cache_array[$cache_index]; 
+					$text = $cache_array[$cache_index] . $text . $cache_array[$cache_index]; 
 					break;
 			}
 
 			if ( $this->p->debug->enabled ) {
-				$this->p->debug->mark( 'getting buttons for '.$type );	// end timer
+				$this->p->debug->mark( 'getting buttons for ' . $type );	// end timer
 			}
 
 			return $text;
@@ -728,7 +728,7 @@ $cache_array[$cache_index].
 			static $cache_exp_secs = null;	// filter the cache expiration value only once
 			if ( ! isset( $cache_exp_secs ) ) {
 				$lca = $this->p->cf['lca'];
-				$cache_md5_pre = $lca.'_b_';
+				$cache_md5_pre = $lca . '_b_';
 				$cache_exp_filter = $this->p->cf['wp']['transient'][$cache_md5_pre]['filter'];
 				$cache_opt_key = $this->p->cf['wp']['transient'][$cache_md5_pre]['opt_key'];
 				$cache_exp_secs = isset( $this->p->options[$cache_opt_key] ) ? $this->p->options[$cache_opt_key] : WEEK_IN_SECONDS;
@@ -743,17 +743,17 @@ $cache_array[$cache_index].
 				$this->p->debug->mark();
 			}
 
-			$cache_index = 'locale:'.SucomUtil::get_locale( 'current' );
+			$cache_index = 'locale:' . SucomUtil::get_locale( 'current' );
 
-			$cache_index .= '_type:'.( empty( $type ) ? 'none' : $type );
+			$cache_index .= '_type:' . ( empty( $type ) ? 'none' : $type );
 
-			$cache_index .= '_https:'.( SucomUtil::is_https() ? 'true' : 'false' );
+			$cache_index .= '_https:' . ( SucomUtil::is_https() ? 'true' : 'false' );
 
-			$cache_index .= $this->p->avail['*']['vary_ua'] ? '_mobile:'.( SucomUtil::is_mobile() ? 'true' : 'false' ) : '';
+			$cache_index .= $this->p->avail['*']['vary_ua'] ? '_mobile:' . ( SucomUtil::is_mobile() ? 'true' : 'false' ) : '';
 
-			$cache_index .= $atts !== false ? '_atts:'.http_build_query( $atts, '', '_' ) : '';
+			$cache_index .= $atts !== false ? '_atts:' . http_build_query( $atts, '', '_' ) : '';
 
-			$cache_index .= $ids !== false ? '_ids:'.http_build_query( $ids, '', '_' ) : '';
+			$cache_index .= $ids !== false ? '_ids:' . http_build_query( $ids, '', '_' ) : '';
 
 			return SucomUtil::get_query_salt( $cache_index );	// add $wp_query args
 		}
@@ -781,8 +781,8 @@ $cache_array[$cache_index].
 			}
 
 			$buttons_html = '';
-			$buttons_begin = '<ul class="rrssb-buttons '.SucomUtil::get_locale( $mod ).' clearfix">' . "\n";
-			$buttons_end = '</ul><!-- .rrssb-buttons.'.SucomUtil::get_locale( $mod ).'.clearfix -->' . "\n";
+			$buttons_begin = '<ul class="rrssb-buttons ' . SucomUtil::get_locale( $mod ) . ' clearfix">' . "\n";
+			$buttons_end = '</ul><!-- .rrssb-buttons.' . SucomUtil::get_locale( $mod ) . '.clearfix -->' . "\n";
 
 			$saved_atts = $atts;
 			foreach ( $ids as $id ) {
@@ -796,19 +796,19 @@ $cache_array[$cache_index].
 								$atts['url'] = $this->p->util->get_sharing_url( $mod,
 									$atts['add_page'], $atts['src_id'] );
 							} else {
-								$atts['url'] = apply_filters( $lca.'_sharing_url',
+								$atts['url'] = apply_filters( $lca . '_sharing_url',
 									$atts['url'], $mod, $atts['add_page'], $atts['src_id'] );
 							}
 
 							// filter to add custom tracking arguments
-							$atts['url'] = apply_filters( $lca.'_rrssb_buttons_shared_url',
+							$atts['url'] = apply_filters( $lca . '_rrssb_buttons_shared_url',
 								$atts['url'], $mod, $id );
 
-							$force_prot = apply_filters( $lca.'_rrssb_buttons_force_prot',
+							$force_prot = apply_filters( $lca . '_rrssb_buttons_force_prot',
 								$this->p->options['buttons_force_prot'], $mod, $id, $atts['url'] );
 
 							if ( ! empty( $force_prot ) && $force_prot !== 'none' ) {
-								$atts['url'] = preg_replace( '/^.*:\/\//', $force_prot.'://', $atts['url'] );
+								$atts['url'] = preg_replace( '/^.*:\/\//', $force_prot . '://', $atts['url'] );
 							}
 
 							$buttons_part = $this->website[$id]->get_html( $atts, $this->p->options, $mod ) . "\n";
@@ -824,13 +824,13 @@ $cache_array[$cache_index].
 								}
 							}
 						} elseif ( $this->p->debug->enabled ) {
-							$this->p->debug->log( $id.' not allowed for platform' );
+							$this->p->debug->log( $id . ' not allowed for platform' );
 						}
 					} elseif ( $this->p->debug->enabled ) {
-						$this->p->debug->log( 'get_html method missing for '.$id );
+						$this->p->debug->log( 'get_html method missing for ' . $id );
 					}
 				} elseif ( $this->p->debug->enabled ) {
-					$this->p->debug->log( 'website object missing for '.$id );
+					$this->p->debug->log( 'website object missing for ' . $id );
 				}
 			}
 
@@ -838,7 +838,7 @@ $cache_array[$cache_index].
 
 			if ( ! empty( $buttons_html ) ) {
 				if ( empty( $atts['container_each'] ) )
-					$buttons_html = $buttons_begin.$buttons_html.$buttons_end;
+					$buttons_html = $buttons_begin . $buttons_html . $buttons_end;
 			}
 
 			return $buttons_html;
@@ -849,7 +849,7 @@ $cache_array[$cache_index].
 				return $this->buttons_for_type[$type];
 			}
 			foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre ) {
-				if ( ! empty( $this->p->options[$opt_pre.'_on_'.$type] ) &&	// check if button is enabled
+				if ( ! empty( $this->p->options[$opt_pre . '_on_' . $type] ) &&	// check if button is enabled
 					$this->allow_for_platform( $id ) ) {			// check if allowed on platform
 					return $this->buttons_for_type[$type] = true;
 				}
@@ -867,8 +867,8 @@ $cache_array[$cache_index].
 			$opt_pre = isset( $this->p->cf['opt']['cm_prefix'][$id] ) ?
 				$this->p->cf['opt']['cm_prefix'][$id] : $id;
 
-			if ( isset( $this->p->options[$opt_pre.'_platform'] ) ) {
-				switch( $this->p->options[$opt_pre.'_platform'] ) {
+			if ( isset( $this->p->options[$opt_pre . '_platform'] ) ) {
+				switch( $this->p->options[$opt_pre . '_platform'] ) {
 					case 'any':
 						return true;
 					case 'desktop':
@@ -911,17 +911,17 @@ $cache_array[$cache_index].
 			// get_options() returns null if an index key is not found
 			if ( $this->p->m['util']['post']->get_options( $post_id, 'buttons_disabled' ) ) {
 				if ( $this->p->debug->enabled ) {
-					$this->p->debug->log( 'post '.$post_id.': sharing buttons disabled by meta data option' );
+					$this->p->debug->log( 'post ' . $post_id . ': sharing buttons disabled by meta data option' );
 				}
 				$ret = true;
-			} elseif ( ! empty( $post_obj->post_type ) && empty( $this->p->options['buttons_add_to_'.$post_obj->post_type] ) ) {
+			} elseif ( ! empty( $post_obj->post_type ) && empty( $this->p->options['buttons_add_to_' . $post_obj->post_type] ) ) {
 				if ( $this->p->debug->enabled ) {
-					$this->p->debug->log( 'post '.$post_id.': sharing buttons not enabled for post type '.$post_obj->post_type );
+					$this->p->debug->log( 'post ' . $post_id . ': sharing buttons not enabled for post type ' . $post_obj->post_type );
 				}
 				$ret = true;
 			}
 
-			return $this->post_buttons_disabled[$post_id] = apply_filters( $this->p->cf['lca'].'_post_buttons_disabled', $ret, $post_id );
+			return $this->post_buttons_disabled[$post_id] = apply_filters( $this->p->cf['lca'] . '_post_buttons_disabled', $ret, $post_id );
 		}
 
 		public function remove_paragraph_tags( $match = array() ) {
@@ -934,7 +934,7 @@ $cache_array[$cache_index].
 			$suff = empty( $match[2] ) ? '' : $match[2];
 			$ret = preg_replace( '/(<\/*[pP]>|\n)/', '', $text );
 
-			return $suff.$ret; 
+			return $suff . $ret; 
 		}
 
 		public function get_website_object_ids( $website = array() ) {
@@ -964,11 +964,11 @@ $cache_array[$cache_index].
 				$atts['add_page'] = isset( $atts['add_page'] ) ? $atts['add_page'] : true;	// used by get_sharing_url()
 				$atts['add_hashtags'] = isset( $atts['add_hashtags'] ) ? $atts['add_hashtags'] : true;
 
-				$cap_type = empty( $this->p->options[$opt_pre.'_caption'] ) ? 'title' : $this->p->options[$opt_pre.'_caption'];
+				$cap_type = empty( $this->p->options[$opt_pre . '_caption'] ) ? 'title' : $this->p->options[$opt_pre . '_caption'];
 				$max_len = $this->get_tweet_max_len( $opt_pre );
 				$r_cache = true;
 				$do_encode = false;
-				$md_idx = $md_pre.'_desc';
+				$md_idx = $md_pre . '_desc';
 
 				return $this->p->page->get_caption( $cap_type, $max_len, $mod, $r_cache, $atts['add_hashtags'], $do_encode, $md_idx );
 
@@ -982,18 +982,18 @@ $cache_array[$cache_index].
 
 			$short_len = 23;	// twitter counts 23 characters for any url
 
-			if ( isset( $this->p->options['tc_site'] ) && ! empty( $this->p->options[$opt_pre.'_via'] ) ) {
+			if ( isset( $this->p->options['tc_site'] ) && ! empty( $this->p->options[$opt_pre . '_via'] ) ) {
 				$tc_site = preg_replace( '/^@/', '', $this->p->options['tc_site'] );
 				$site_len = empty( $tc_site ) ? 0 : strlen( $tc_site ) + 6;
 			} else {
 				$site_len = 0;
 			}
 
-			$max_len = $this->p->options[$opt_pre.'_cap_len'] - $site_len - $short_len;
+			$max_len = $this->p->options[$opt_pre . '_cap_len'] - $site_len - $short_len;
 
 			if ( $this->p->debug->enabled ) {
-				$this->p->debug->log( 'max tweet length is '.$max_len.' chars ('.$this->p->options[$opt_pre.'_cap_len'].
-					' less '.$site_len.' for site name and '.$short_len.' for url)' );
+				$this->p->debug->log( 'max tweet length is ' . $max_len . ' chars (' . $this->p->options[$opt_pre . '_cap_len'] . 
+					' less ' . $site_len . ' for site name and ' . $short_len . ' for url)' );
 			}
 
 			return $max_len;
@@ -1003,10 +1003,10 @@ $cache_array[$cache_index].
 
 			$plugin_version = $this->p->cf['plugin']['wpssorrssb']['version'];
 
-			wp_register_script( 'rrssb', WPSSORRSSB_URLPATH.'js/ext/rrssb.min.js', array( 'jquery' ), $plugin_version, true );	// in footer
+			wp_register_script( 'rrssb', WPSSORRSSB_URLPATH . 'js/ext/rrssb.min.js', array( 'jquery' ), $plugin_version, true );	// in footer
 			wp_enqueue_script( 'rrssb' );
 
-			wp_register_style( 'rrssb', WPSSORRSSB_URLPATH.'css/ext/rrssb.min.css', array(), $plugin_version );
+			wp_register_style( 'rrssb', WPSSORRSSB_URLPATH . 'css/ext/rrssb.min.css', array(), $plugin_version );
 			wp_enqueue_style( 'rrssb' );
 		}
 
@@ -1059,7 +1059,7 @@ $cache_array[$cache_index].
 						_x( 'disabled', 'option comment', 'wpsso-rrssb' );
 
 					$text = __( 'The rendered HTML for social sharing buttons is saved to the WordPress transient cache to optimize performance.',
-						'wpsso-rrssb' ).' '.sprintf( __( 'The suggested cache expiration value is %1$s seconds (%2$s).',
+						'wpsso-rrssb' ) . ' ' . sprintf( __( 'The suggested cache expiration value is %1$s seconds (%2$s).',
 							'wpsso-rrssb' ), $cache_exp_secs, $cache_exp_human );
 
 					break;

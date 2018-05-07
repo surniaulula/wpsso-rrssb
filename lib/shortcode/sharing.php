@@ -142,19 +142,19 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			$type = 'sharing_shortcode_'.WPSSORRSSB_SHARING_SHORTCODE_NAME;
 			$atts['url'] = empty( $atts['url'] ) ? $this->p->util->get_sharing_url( $mod ) : $atts['url'];
 
-			$cache_md5_pre  = $lca.'_b_';
+			$cache_md5_pre  = $lca . '_b_';
 			$cache_exp_secs = $this->p->rrssb_sharing->get_buttons_cache_exp();
-			$cache_salt     = __METHOD__.'('.SucomUtil::get_mod_salt( $mod, $atts['url'] ).')';
-			$cache_id       = $cache_md5_pre.md5( $cache_salt );
+			$cache_salt     = __METHOD__ . '(' . SucomUtil::get_mod_salt( $mod, $atts['url'] ) . ')';
+			$cache_id       = $cache_md5_pre . md5( $cache_salt );
 			$cache_index    = $this->p->rrssb_sharing->get_buttons_cache_index( $type, $atts );	// returns salt with locale, mobile, wp_query, etc.
 			$cache_array    = array();
 
 			if ( $this->p->debug->enabled ) {
-				$this->p->debug->log( 'sharing url = '.$atts['url'] );
-				$this->p->debug->log( 'cache expire = '.$cache_exp_secs );
-				$this->p->debug->log( 'cache salt = '.$cache_salt );
-				$this->p->debug->log( 'cache id = '.$cache_id );
-				$this->p->debug->log( 'cache index = '.$cache_index );
+				$this->p->debug->log( 'sharing url = ' . $atts['url'] );
+				$this->p->debug->log( 'cache expire = ' . $cache_exp_secs );
+				$this->p->debug->log( 'cache salt = ' . $cache_salt );
+				$this->p->debug->log( 'cache id = ' . $cache_id );
+				$this->p->debug->log( 'cache index = ' . $cache_index );
 			}
 
 			if ( $cache_exp_secs > 0 ) {
@@ -163,19 +163,19 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 				if ( isset( $cache_array[$cache_index] ) ) {	// can be an empty string
 					if ( $this->p->debug->enabled ) {
-						$this->p->debug->log( $type.' cache index found in transient cache' );
+						$this->p->debug->log( $type . ' cache index found in transient cache' );
 					}
 					return $cache_array[$cache_index];	// stop here
 				} else {
 					if ( $this->p->debug->enabled ) {
-						$this->p->debug->log( $type.' cache index not in transient cache' );
+						$this->p->debug->log( $type . ' cache index not in transient cache' );
 					}
 					if ( ! is_array( $cache_array ) ) {
 						$cache_array = array();
 					}
 				}
 			} elseif ( $this->p->debug->enabled ) {
-				$this->p->debug->log( $type.' buttons transient cache is disabled' );
+				$this->p->debug->log( $type . ' buttons transient cache is disabled' );
 			}
 
 			$ids = array_map( 'trim', explode( ',', $atts['buttons'] ) );
