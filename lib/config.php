@@ -63,7 +63,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 						),
 						'gpl' => array(
 							'admin' => array(
-								'sharing' => 'Sharing Settings',
+								'sharing' => 'Extend Sharing Settings',
 							),
 							'ecom' => array(
 								'woocommerce' => '(plugin) WooCommerce',
@@ -77,7 +77,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 						),
 						'pro' => array(
 							'admin' => array(
-								'sharing' => 'Sharing Settings',
+								'sharing' => 'Extend Sharing Settings',
 							),
 							'ecom' => array(
 								'woocommerce' => '(plugin) WooCommerce',
