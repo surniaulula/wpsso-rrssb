@@ -1,4 +1,4 @@
-<h1>WPSSO Ridiculously Responsive Social Sharing Buttons (including Share Buttons for the Admin Editor)</h1>
+<h1>WPSSO Ridiculously Responsive Social Sharing Buttons</h1><h3>including Share Buttons for the Admin Editor</h3>
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Ridiculously Responsive Social Sharing Buttons</td></tr>
