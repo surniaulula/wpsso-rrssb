@@ -37,7 +37,7 @@
 
 <ul>
 <li><p>Extends the features of the WPSSO Core Free or Pro plugin.</p></li>
-<li><p>Include a selection of <strong>Ridiculously Responsive Social Sharing Buttons</strong> in multiple locations:</p>
+<li><p>Include a selection of <em>Ridiculously Responsive Social Sharing Buttons</em> in multiple locations:</p>
 
 <ul>
 <li>Above and/or below your post / page content and/or excerpt text.</li>
