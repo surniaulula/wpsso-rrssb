@@ -20,87 +20,81 @@ WPSSO Core add-on to provide Ridiculously Responsive (SVG) Social Sharing Button
 
 <img class="readme-icon" src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png">
 
-**A WPSSO Core add-on to provide Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, post edit pages, etc.**
+**Add *Ridiculously Responsive Social Sharing Buttons* to:**
 
-Add awesome *Ridiculously Responsive Social Sharing Buttons* (RRSSB) to posts / pages, custom post types, [bbPress](https://wordpress.org/plugins/bbpress/), [BuddyPress](https://wordpress.org/plugins/buddypress/), [WooCommerce](https://wordpress.org/plugins/woocommerce/) product pages, and much more.</p>
+Posts, Pages, custom post types, [bbPress](https://wordpress.org/plugins/bbpress/), [BuddyPress](https://wordpress.org/plugins/buddypress/), [WooCommerce](https://wordpress.org/plugins/woocommerce/) product pages, and much more.</p>
 
-Include social sharing buttons in the content, excerpt, widget, CSS sidebar, shortcodes, templates, and *admin editor page* &mdash; share your posts, pages, and custom post types directly from the admin editor page! Do you use bbPress, BuddyPress, or WooCommerce? The Pro version of WPSSO RRSSB includes special integration modules to add social sharing buttons to even more locations!
+**Add *Ridiculously Responsive Social Sharing Buttons* in:**
 
-The *Scalable Vector Graphics (SVG) social icons* used by WPSSO RRSSB automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), including high resolution retina displays!
+The content, excerpt, widget, CSS sidebar, shortcodes, templates, and *admin editor page* &mdash; so you can share directly from the admin editor page!
 
-<h3>WPSSO Core Plugin Prerequisite</h3>
+Do you use bbPress, BuddyPress, or WooCommerce? The Pro version of WPSSO RRSSB includes special integration modules to add social sharing buttons to even more locations!
 
-WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an add-on for the WPSSO Core plugin &mdash; which creates complete &amp; accurate meta tags and Schema markup from your existing content for social sharing, Social Media Optimization (SMO), Search Engine Optimization (SEO), Google Rich Cards, Pinterest Rich Pins, etc.
+**Uses *Scalable Vector Graphics* (SVG) social icons:**
 
-The Free add-on works with either the Free or Pro version of WPSSO Core. The [WPSSO RRSSB Pro add-on](https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme) uses many WPSSO Core Pro features and requires an active and licensed [WPSSO Core Pro plugin](https://wpsso.com/?utm_source=wpssorrssb-readme).
+The *Ridiculously Responsive Social Sharing Buttons* automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), no matter its size or resolution &mdash; including high resolution retina displays!
+
+<div style="clear:both"></div>
 
 <h3>WPSSO RRSSB Free / Standard Features</h3>
 
-&#x0229b; &nbsp; Extends the features of the WPSSO Core Free or Pro plugin.
+* Extends the features of the WPSSO Core Free or Pro plugin.
 
-&#x0229b; &nbsp; Include a selection of **Ridiculously Responsive Social Sharing Buttons** in multiple locations:
+* Include a selection of **Ridiculously Responsive Social Sharing Buttons** in multiple locations:
 
-* Above and/or below your post / page content and/or excerpt text.
-* Admin editing pages &ndash; including media, product pages, and custom post types.
-* In a WordPress sharing widget.
-* In a CSS / javascript sidebar.
-* A shortcode within your content and/or excerpt.
-* A function in your theme's template(s).
+	* Above and/or below your post / page content and/or excerpt text.
+	* Admin editing pages &ndash; including media, product pages, and custom post types.
+	* In a WordPress sharing widget.
+	* In a CSS / javascript sidebar.
+	* A shortcode within your content and/or excerpt.
+	* A function in your theme's template(s).
 
-&#x0229b; &nbsp; Each of these social sharing buttons can be configured and styled individually:
+* Each of these social sharing buttons can be configured and styled individually:
 
-* Email
-* Facebook
-* Google+
-* LinkedIn
-* Pinterest
-* Pocket
-* Reddit
-* Tumblr
-* Twitter
-* VK
-* WhatsApp (for mobile devices)
+	* Email
+	* Facebook
+	* Google+
+	* LinkedIn
+	* Pinterest
+	* Pocket
+	* Reddit
+	* Tumblr
+	* Twitter
+	* VK
+	* WhatsApp (for mobile devices)
 
-&#x0229b; &nbsp; Include / exclude individual social sharing buttons based on the viewing device (desktop and/or mobile).
+* Include / exclude individual social sharing buttons based on the viewing device (desktop and/or mobile).
 
-&#x0229b; &nbsp; Automatically exclude buttons from [Accelerated Mobile Pages (AMP)](https://wordpress.org/plugins/amp/) plugin pages.
+* Automatically exclude buttons from [Accelerated Mobile Pages (AMP)](https://wordpress.org/plugins/amp/) plugin pages.
 
-&#x0229b; &nbsp; A built-in stylesheet editor allows you to fine-tune the CSS for each social sharing button location easily (content, excerpt, shortcode, widget, etc.).
+* A built-in stylesheet editor allows you to fine-tune the CSS for each social sharing button location easily (content, excerpt, shortcode, widget, etc.).
 
-&#x0229b; &nbsp; Download the Free version from [GitHub](https://surniaulula.github.io/wpsso-rrssb/) or [WordPress.org](https://wordpress.org/plugins/wpsso-rrssb/).
+* Uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.
 
-&#x0229b; &nbsp; WPSSO RRSSB uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.
+* Download the Free version from [GitHub](https://surniaulula.github.io/wpsso-rrssb/) or [WordPress.org](https://wordpress.org/plugins/wpsso-rrssb/).
 
 <h3>WPSSO RRSSB Pro / Additional Features</h3>
 
-&#x0229b; &nbsp; Extends the features of WPSSO Core Pro (requires an active and licensed <a href="https://wpsso.com/">WPSSO Core Pro plugin</a>).
+* Extends the features of WPSSO Core Pro (requires an active and licensed <a href="https://wpsso.com/">WPSSO Core Pro plugin</a>).
 
-&#x0229b; &nbsp; Custom titles and text in the Social and Search Optimization metabox for:
+* Custom titles and text in the Social and Search Optimization metabox for:
 
-* Email
-* LinkedIn
-* Pinterest
-* Reddit
-* Tumblr
-* Twitter
+	* Email
+	* LinkedIn
+	* Pinterest
+	* Reddit
+	* Tumblr
+	* Twitter
 
-&#x0229b; &nbsp; Additional sharing button locations and CSS styles for:
+* Additional sharing button locations and CSS styles for:
 
-* [bbPress](https://wordpress.org/plugins/bbpress/)
-* [BuddyPress](https://wordpress.org/plugins/buddypress/)
-* [WooCommerce](https://wordpress.org/plugins/woocommerce/)
+	* [bbPress](https://wordpress.org/plugins/bbpress/)
+	* [BuddyPress](https://wordpress.org/plugins/buddypress/)
+	* [WooCommerce](https://wordpress.org/plugins/woocommerce/)
 
-<h3>Extends the WPSSO Core Plugin</h3>
+<h3>WPSSO Core Plugin Prerequisite</h3>
 
-&#x0229b; &nbsp; The WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) Free add-on works with either the Free or Pro version of WPSSO Core.
-
-&#x0229b; &nbsp; The <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme">WPSSO RRSSB Pro add-on</a> uses many WPSSO Core Pro features, which requires an active and licensed <a href="https://wpsso.com/?utm_source=wpssorrssb-readme">WPSSO Core Pro plugin</a>.
-
-<!--smp-ignore-->
-
-&#x0229b; &nbsp; <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/?utm_source=wpssorrssb-readme">Purchase the WPSSO Ridiculously Responsive Social Sharing Buttons Pro add-on here</a> (all purchases include a <em>No Risk 30 Day Refund Policy</em>).
-
-<!--/smp-ignore-->
+WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an add-on for the WPSSO Core plugin. The Free add-on works with either the Free or Pro versions of WPSSO Core. The [WPSSO RRSSB Pro add-on](https://wpsso.com/extend/plugins/wpsso-rrssb/) uses many WPSSO Core Pro features and requires an active and licensed [WPSSO Core Pro plugin](https://wpsso.com/).
 
 == Installation ==
 
