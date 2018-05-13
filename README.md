@@ -15,6 +15,10 @@
 
 <p><img class="readme-icon" src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png"></p>
 
+<p><strong>Uses <em>Scalable Vector Graphics</em> (SVG) social icons:</strong></p>
+
+<p>The <em>Ridiculously Responsive Social Sharing Buttons</em> automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), no matter its size or resolution &mdash; including high resolution retina displays!</p>
+
 <p><strong>Add <em>Ridiculously Responsive Social Sharing Buttons</em> to:</strong></p>
 
 <p>Posts, Pages, custom post types, <a href="https://wordpress.org/plugins/bbpress/">bbPress</a>, <a href="https://wordpress.org/plugins/buddypress/">BuddyPress</a>, <a href="https://wordpress.org/plugins/woocommerce/">WooCommerce</a> product pages, and much more.</p></p>
@@ -23,11 +27,9 @@
 
 <p>The content, excerpt, widget, CSS sidebar, shortcodes, templates, and <em>admin editor page</em> &mdash; so you can share directly from the admin editor page!</p>
 
-<p>Do you use bbPress, BuddyPress, or WooCommerce? The Pro version of WPSSO RRSSB includes special integration modules to add social sharing buttons to even more locations!</p>
+<p><strong>Do you use bbPress, BuddyPress, or WooCommerce?</strong></p>
 
-<p><strong>Uses <em>Scalable Vector Graphics</em> (SVG) social icons:</strong></p>
-
-<p>The <em>Ridiculously Responsive Social Sharing Buttons</em> automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), no matter its size or resolution &mdash; including high resolution retina displays!</p>
+<p>The Pro version of WPSSO RRSSB includes special integration modules to add social sharing buttons to even more locations!</p>
 
 <div style="clear:both"></div>
 
