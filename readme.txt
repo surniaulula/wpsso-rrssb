@@ -44,11 +44,11 @@ The Pro version of WPSSO RRSSB includes special integration modules to add socia
 
 * Include a selection of *Ridiculously Responsive Social Sharing Buttons* in multiple locations:
 
-	* Above and/or below your post / page content and/or excerpt text.
-	* Admin editing pages &ndash; including media, product pages, and custom post types.
-	* In a WordPress sharing widget.
+	* Above or below your Post / Page content or excerpt text.
+	* In admin editing pages &ndash; including media, product pages, and custom post types.
 	* In a CSS / javascript sidebar.
-	* A shortcode within your content and/or excerpt.
+	* In a WordPress sharing widget.
+	* A shortcode in your content or excerpt.
 	* A function in your theme's template(s).
 
 * Each of these social sharing buttons can be configured and styled individually:
@@ -96,7 +96,7 @@ The Pro version of WPSSO RRSSB includes special integration modules to add socia
 
 <h3>WPSSO Core Plugin Prerequisite</h3>
 
-WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an add-on for the WPSSO Core plugin. The Free add-on works with either the Free or Pro versions of WPSSO Core. The [WPSSO RRSSB Pro add-on](https://wpsso.com/extend/plugins/wpsso-rrssb/) uses many WPSSO Core Pro features and requires an active and licensed [WPSSO Core Pro plugin](https://wpsso.com/).
+WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an add-on for the WPSSO Core plugin. The WPSSO RRSSB Free add-on works with either the Free or Pro versions of WPSSO Core. The [WPSSO RRSSB Pro add-on](https://wpsso.com/extend/plugins/wpsso-rrssb/) uses WPSSO Core Pro features and requires an active and licensed [WPSSO Core Pro plugin](https://wpsso.com/).
 
 == Installation ==
 
