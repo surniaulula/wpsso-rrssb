@@ -31,8 +31,6 @@
 
 <p>The Pro version of WPSSO RRSSB includes special integration modules to add social sharing buttons to even more locations!</p>
 
-<div style="clear:both"></div>
-
 <h3>WPSSO RRSSB Free / Standard Features</h3>
 
 <ul>

@@ -36,8 +36,6 @@ The content, excerpt, widget, CSS sidebar, shortcodes, templates, and *admin edi
 
 The Pro version of WPSSO RRSSB includes special integration modules to add social sharing buttons to even more locations!
 
-<div style="clear:both"></div>
-
 <h3>WPSSO RRSSB Free / Standard Features</h3>
 
 * Extends the features of the WPSSO Core Free or Pro plugin.
@@ -152,56 +150,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * *Bugfixes*
 	* None
 * *Developer Notes*
-	* Renamed some WpssoUtil methods for Gutenberg changes in WPSSO v3.57.0.
-
-**Version 1.6.3 (2018/03/24)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* Renamed plugin "Extensions" to "Add-ons" to avoid confusion and improve / simplify translations.
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* None
-
-**Version 1.6.2 (2018/03/10)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* Added a list of human-readable checked IDs when the "Show Cache Purge Count on Update" option is checked *and* the WP_DEBUG contant is true.
-* *Bugfixes*
-	* Fixed the missing LinkedIn button inline caption value.
-* *Developer Notes*
-	* None
-
-**Version 1.6.1 (2018/03/04)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Refactored transient cache index values to include WP query variables for extra uniqueness.
-	* Refactored the WpssoRrssbSharing get_tweet_text() method to make the code more readable.
-
-**Version 1.6.0 (2018/02/24)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Refactored the WpssoRrssb `min_version_notice()` method to use PHP's `trigger_error()` and include a notice to refresh plugin update information.
+	* Renamed some WpssoUtil methods for Gutenberg related changes in WPSSO v3.57.0.
 
 == Upgrade Notice ==
 
 = 1.6.4 =
 
-(2018/04/05) Renamed some WpssoUtil methods for Gutenberg changes in WPSSO v3.57.0.
+(2018/04/05) Renamed some WpssoUtil methods for Gutenberg related changes in WPSSO v3.57.0.
 
