@@ -10,7 +10,7 @@ Tags: responsive, share buttons, sharing buttons, retina, facebook, google, twit
 Contributors: jsmoriss
 Requires PHP: 5.4
 Requires At Least: 3.8
-Tested Up To: 4.9.5
+Tested Up To: 4.9.6
 WC Tested Up To: 3.3.5
 Stable Tag: 1.6.4
 
