@@ -4,6 +4,14 @@
  * necessary to customize the layout for your website.
  */
 
+#_wpsso_rrssb_share .inside {
+	padding:6px 8px;
+}
+
+#_wpsso_rrssb_share .inside table.sucom-settings {
+	border-spacing:0;
+}
+
 table.sucom-settings ul.rrssb-buttons {
 	visibility:visible;
 	margin:0 !important;

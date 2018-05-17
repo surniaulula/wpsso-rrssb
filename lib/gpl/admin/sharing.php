@@ -98,6 +98,10 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			$email_cap_ht   = $this->p->options['email_cap_hashtags'];
 			$email_cap_text = $this->p->page->get_caption( 'excerpt', $email_cap_len, $mod, true, $email_cap_ht, true, 'none' );
 
+			$form_rows['subsection_email'] = array(
+				'td_class' => 'subsection', 'header' => 'h5', 'label' => 'Email',
+			);
+
 			$form_rows['email_title'] = array(
 				'label' => _x( 'Email Subject', 'option label', 'wpsso-rrssb' ),
 				'th_class' => 'medium', 'tooltip' => 'post-email_title', 'td_class' => 'blank',
@@ -116,6 +120,10 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			$twitter_cap_len  = $this->p->rrssb_sharing->get_tweet_max_len();
 			$twitter_cap_ht   = $this->p->options['twitter_cap_hashtags'];
 			$twitter_cap_text = $this->p->page->get_caption( 'title', $twitter_cap_len, $mod, true, $twitter_cap_ht );
+
+			$form_rows['subsection_twitter'] = array(
+				'td_class' => 'subsection', 'header' => 'h5', 'label' => 'Twitter',
+			);
 
 			$form_rows['twitter_desc'] = array(
 				'label' => _x( 'Tweet Text', 'option label', 'wpsso-rrssb' ),
@@ -142,6 +150,10 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 				) = $this->p->media->get_attachment_image_src( $pin_media['pid'], 'thumbnail', false, $force_regen ); 
 			}
 
+			$form_rows['subsection_pinterest'] = array(
+				'td_class' => 'subsection', 'header' => 'h5', 'label' => 'Pinterest',
+			);
+
 			$form_rows['pin_desc'] = array(
 				'label' => _x( 'Pinterest Caption', 'option label', 'wpsso-rrssb' ),
 				'th_class' => 'medium', 'tooltip' => 'post-pin_desc', 'td_class' => 'blank top',
@@ -162,6 +174,10 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 				$other_cap_len  = $this->p->options[$opt_prefix.'_cap_len'];
 				$other_cap_ht   = $this->p->options[$opt_prefix.'_cap_hashtags'];
 				$other_cap_text = $this->p->page->get_caption( 'excerpt', $other_cap_len, $mod, true, $other_cap_ht );
+
+				$form_rows['subsection_'.$opt_prefix] = array(
+					'td_class' => 'subsection', 'header' => 'h5', 'label' => $name,
+				);
 
 				$form_rows[$opt_prefix.'_title'] = array(
 					'label' => sprintf( _x( '%s Title', 'option label', 'wpsso-rrssb' ), $name ),
