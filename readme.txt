@@ -36,6 +36,14 @@ The content, excerpt, widget, CSS sidebar, shortcodes, templates, and *admin edi
 
 The Pro version of WPSSO RRSSB includes special integration modules to add social sharing buttons to even more locations!
 
+<h3>Users Love the WPSSO RRSSB Add-on</h3>
+
+&#x2605;&#x2605;&#x2605;&#x2605;&#x2605; &mdash; "Fast and sleek! These buttons are the bees knees for real. They look great across all platforms, play nice with w3-total-cache and doesn’t impact my 100/100 pagespeed score." - [renoduck](https://wordpress.org/support/topic/fast-and-sleek/)
+
+&#x2605;&#x2605;&#x2605;&#x2605;&#x2605; &mdash; "FANTASTIC! This plugin is one of my favorites! This plugin makes it SOOO simple to add social sharing to wordpress posts!" - [mikegoubeaux](https://wordpress.org/support/topic/fantastic-1214/)
+
+&#x2605;&#x2605;&#x2605;&#x2605;&#x2605; &mdash; "These buttons are great, work on mobile phones as well as desktops, and they load super fast!" - [undergroundnetwork](https://wordpress.org/support/topic/best-sharing-buttons-out-there/)
+
 <h3>WPSSO RRSSB Free / Standard Features</h3>
 
 * Extends the features of the WPSSO Core Free or Pro plugin.
