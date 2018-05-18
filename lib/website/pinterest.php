@@ -166,7 +166,8 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 			}
 
 			if ( empty( $atts['photo'] ) ) {
-				$media_info = $this->p->og->get_media_info( $atts['size'], array( 'img_url' ), $mod, 'schema' ); // $md_pre = 'schema'
+
+				$media_info = $this->p->og->get_media_info( $atts['size'], array( 'img_url' ), $mod, 'schema' );
 
 				$atts['photo'] = $media_info['img_url'];
 

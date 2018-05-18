@@ -128,41 +128,41 @@ msgctxt "option label"
 msgid "Force Protocol for Shared URLs"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:74 lib/pro/admin/sharing.php:82
+#: lib/gpl/admin/sharing.php:75 lib/pro/admin/sharing.php:83
 msgid "Save a draft version or publish the %s to display these options."
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:89 lib/pro/admin/sharing.php:94
+#: lib/gpl/admin/sharing.php:91 lib/pro/admin/sharing.php:96
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:106 lib/pro/admin/sharing.php:111
+#: lib/gpl/admin/sharing.php:108 lib/pro/admin/sharing.php:113
 msgctxt "option label"
 msgid "Email Subject"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:112 lib/pro/admin/sharing.php:117
+#: lib/gpl/admin/sharing.php:114 lib/pro/admin/sharing.php:119
 msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:129 lib/pro/admin/sharing.php:134
+#: lib/gpl/admin/sharing.php:131 lib/pro/admin/sharing.php:136
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:158 lib/pro/admin/sharing.php:163
+#: lib/gpl/admin/sharing.php:160 lib/pro/admin/sharing.php:165
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:183 lib/pro/admin/sharing.php:188
+#: lib/gpl/admin/sharing.php:185 lib/pro/admin/sharing.php:190
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:189 lib/pro/admin/sharing.php:194
+#: lib/gpl/admin/sharing.php:191 lib/pro/admin/sharing.php:196
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
