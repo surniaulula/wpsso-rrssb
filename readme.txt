@@ -85,7 +85,7 @@ The Pro version of WPSSO RRSSB includes special integration modules to add socia
 
 * Extends the features of WPSSO Core Pro (requires an active and licensed <a href="https://wpsso.com/">WPSSO Core Pro plugin</a>).
 
-* Custom titles and text in the Social and Search Optimization metabox for:
+* Custom titles and text in the Document SSO metabox for:
 
 	* Email
 	* LinkedIn
