@@ -18,7 +18,7 @@ WPSSO Core add-on to provide Ridiculously Responsive (SVG) Social Sharing Button
 
 == Description ==
 
-<img class="readme-icon" src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png">
+<p style="margin:0;"><img class="readme-icon" src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png"></p>
 
 **Uses *Scalable Vector Graphics* (SVG) social icons:**
 
