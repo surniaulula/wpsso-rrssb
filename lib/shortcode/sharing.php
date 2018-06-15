@@ -75,7 +75,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 		public function add_shortcode() {
 			if ( ! empty( $this->p->options['plugin_shortcodes'] ) ) {
 				if ( ! shortcode_exists( WPSSORRSSB_SHARING_SHORTCODE_NAME ) ) {
-        				add_shortcode( WPSSORRSSB_SHARING_SHORTCODE_NAME, array( &$this, 'do_shortcode' ) );
+        				add_shortcode( WPSSORRSSB_SHARING_SHORTCODE_NAME, array( $this, 'do_shortcode' ) );
 					if ( $this->p->debug->enabled ) {
 						$this->p->debug->log( '['.WPSSORRSSB_SHARING_SHORTCODE_NAME.'] sharing shortcode added' );
 					}

@@ -15,12 +15,12 @@ if ( ! class_exists( 'WpssoRrssbRegister' ) ) {
 
 		public function __construct() {
 
-			register_activation_hook( WPSSORRSSB_FILEPATH, array( &$this, 'network_activate' ) );
-			//register_deactivation_hook( WPSSORRSSB_FILEPATH, array( &$this, 'network_deactivate' ) );	// Deactivation method not required.
+			register_activation_hook( WPSSORRSSB_FILEPATH, array( $this, 'network_activate' ) );
+			//register_deactivation_hook( WPSSORRSSB_FILEPATH, array( $this, 'network_deactivate' ) );	// Deactivation method not required.
 
 			if ( is_multisite() ) {
-				add_action( 'wpmu_new_blog', array( &$this, 'wpmu_new_blog' ), 10, 6 );
-				add_action( 'wpmu_activate_blog', array( &$this, 'wpmu_activate_blog' ), 10, 5 );
+				add_action( 'wpmu_new_blog', array( $this, 'wpmu_new_blog' ), 10, 6 );
+				add_action( 'wpmu_activate_blog', array( $this, 'wpmu_activate_blog' ), 10, 5 );
 			}
 		}
 
@@ -43,11 +43,11 @@ if ( ! class_exists( 'WpssoRrssbRegister' ) ) {
 		}
 
 		public function network_activate( $sitewide ) {
-			self::do_multisite( $sitewide, array( &$this, 'activate_plugin' ) );
+			self::do_multisite( $sitewide, array( $this, 'activate_plugin' ) );
 		}
 
 		public function network_deactivate( $sitewide ) {
-			self::do_multisite( $sitewide, array( &$this, 'deactivate_plugin' ) );
+			self::do_multisite( $sitewide, array( $this, 'deactivate_plugin' ) );
 		}
 
 		/**

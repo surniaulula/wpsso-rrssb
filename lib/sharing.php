@@ -77,10 +77,10 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 			$this->set_objects();
 
-			add_action( 'admin_enqueue_scripts', array( &$this, 'enqueue_rrssb_ext' ) );
-			add_action( 'wp_enqueue_scripts', array( &$this, 'enqueue_rrssb_ext' ) );
-			add_action( 'wp_enqueue_scripts', array( &$this, 'wp_enqueue_styles' ) );
-			add_action( 'wp_footer', array( &$this, 'show_footer' ), WPSSORRSSB_FOOTER_PRIORITY );
+			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_rrssb_ext' ) );
+			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_rrssb_ext' ) );
+			add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_styles' ) );
+			add_action( 'wp_footer', array( $this, 'show_footer' ), WPSSORRSSB_FOOTER_PRIORITY );
 
 			if ( $this->have_buttons_for_type( 'content' ) ) {
 				$this->add_buttons_filter( 'the_content' );
@@ -104,7 +104,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 			if ( is_admin() ) {
 				if ( $this->have_buttons_for_type( 'admin_edit' ) ) {
-					add_action( 'add_meta_boxes', array( &$this, 'add_post_buttons_metabox' ) );
+					add_action( 'add_meta_boxes', array( $this, 'add_post_buttons_metabox' ) );
 				}
 
 				$this->p->util->add_plugin_actions( $this, array(
@@ -430,7 +430,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			if ( ! empty( $this->p->options['buttons_add_to_' . $post_obj->post_type] ) ) {
 				add_meta_box( '_' . $this->p->lca . '_rrssb_share', 
 					_x( 'Sharing Buttons', 'metabox title', 'wpsso-rrssb' ),
-						array( &$this, 'show_admin_sharing' ), $post_obj->post_type, 'side', 'high' );
+						array( $this, 'show_admin_sharing' ), $post_obj->post_type, 'side', 'high' );
 			}
 		}
 
@@ -502,7 +502,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					$this->p->debug->log( 'filter_name argument is empty' );
 				}
 			} elseif ( method_exists( $this, 'get_buttons_' . $filter_name ) ) {
-				$added = add_filter( $filter_name, array( &$this, 'get_buttons_' . $filter_name ), WPSSORRSSB_SOCIAL_PRIORITY );
+				$added = add_filter( $filter_name, array( $this, 'get_buttons_' . $filter_name ), WPSSORRSSB_SOCIAL_PRIORITY );
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'buttons filter ' . $filter_name . ' added (' . ( $added  ? 'true' : 'false' ) . ')' );
 				}
@@ -516,7 +516,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		public function remove_buttons_filter( $filter_name = 'the_content' ) {
 			$removed = false;
 			if ( method_exists( $this, 'get_buttons_' . $filter_name ) ) {
-				$removed = remove_filter( $filter_name, array( &$this, 'get_buttons_' . $filter_name ), WPSSORRSSB_SOCIAL_PRIORITY );
+				$removed = remove_filter( $filter_name, array( $this, 'get_buttons_' . $filter_name ), WPSSORRSSB_SOCIAL_PRIORITY );
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'buttons filter ' . $filter_name . ' removed (' . ( $removed  ? 'true' : 'false' ) . ')' );
 				}

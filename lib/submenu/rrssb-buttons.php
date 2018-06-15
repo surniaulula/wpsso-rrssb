@@ -49,7 +49,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 
 			add_meta_box( $this->pagehook.'_rrssb_buttons',
 				_x( 'Social Sharing Buttons', 'metabox title', 'wpsso-rrssb' ),
-					array( &$this, 'show_metabox_rrssb_buttons' ), $this->pagehook, 'normal' );
+					array( $this, 'show_metabox_rrssb_buttons' ), $this->pagehook, 'normal' );
 
 			$ids = $this->p->rrssb_sharing->get_website_object_ids( $this->website );
 
@@ -61,10 +61,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 				$args = array( 'id' => $id, 'name' => $name );
 
 				add_meta_box( $this->pagehook.'_'.$id, $name, 
-					array( &$this, 'show_metabox_rrssb_website' ), $this->pagehook, $pos_id, $prio, $args );
+					array( $this, 'show_metabox_rrssb_website' ), $this->pagehook, $pos_id, $prio, $args );
 
 				add_filter( 'postbox_classes_'.$this->pagehook.'_'.$this->pagehook.'_'.$id, 
-					array( &$this, 'add_class_postbox_rrssb_website' ) );
+					array( $this, 'add_class_postbox_rrssb_website' ) );
 			}
 
 			// close all website metaboxes by default
