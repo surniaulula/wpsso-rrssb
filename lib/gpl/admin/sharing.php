@@ -81,8 +81,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			$thumb_size_info = SucomUtil::get_size_info( 'thumbnail' );
 			$def_cap_title = $this->p->page->get_caption( 'title', 0, $mod, true, false );
 
-			$table_rows[] = '<td colspan="3" align="center">'.$this->p->msgs->get( 'pro-feature-msg', 
-				array( 'lca' => 'wpssorrssb' ) ).'</td>';
+			$table_rows[] = '<td colspan="3">' . $this->p->msgs->get( 'pro-feature-msg', array( 'lca' => 'wpssorrssb' ) ) . '</td>';
 
 			/**
 			 * Disable Buttons Checkbox
