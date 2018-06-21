@@ -106,20 +106,20 @@ WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an add
 
 == Installation ==
 
-<h3>Install and Uninstall</h3>
+<h3 class="top">Install and Uninstall</h3>
 
 * [Install the WPSSO RRSSB Add-on](https://wpsso.com/docs/plugins/wpsso-rrssb/installation/install-the-plugin/)
 * [Uninstall the WPSSO RRSSB Add-on](https://wpsso.com/docs/plugins/wpsso-rrssb/installation/uninstall-the-plugin/)
 
 == Frequently Asked Questions ==
 
-<h3>Frequently Asked Questions</h3>
+<h3 class="top">Frequently Asked Questions</h3>
 
 * None
 
 == Other Notes ==
 
-<h3>Additional Documentation</h3>
+<h3 class="top">Additional Documentation</h3>
 
 * [RRSSB Shortcode for Sharing Buttons](https://wpsso.com/docs/plugins/wpsso-rrssb/notes/rrssb-shortcode/)
 
@@ -133,7 +133,7 @@ WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an add
 
 == Changelog ==
 
-<h3>Version Numbering</h3>
+<h3 class="top">Version Numbering</h3>
 
 Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 

@@ -105,7 +105,7 @@
 
 <h2>Installation</h2>
 
-<h3>Install and Uninstall</h3>
+<h3 class="top">Install and Uninstall</h3>
 
 <ul>
 <li><a href="https://wpsso.com/docs/plugins/wpsso-rrssb/installation/install-the-plugin/">Install the WPSSO RRSSB Add-on</a></li>
@@ -115,7 +115,7 @@
 
 <h2>Frequently Asked Questions</h2>
 
-<h3>Frequently Asked Questions</h3>
+<h3 class="top">Frequently Asked Questions</h3>
 
 <ul>
 <li>None</li>
@@ -125,7 +125,7 @@
 <h2>Other Notes</h2>
 
 <h3>Other Notes</h3>
-<h3>Additional Documentation</h3>
+<h3 class="top">Additional Documentation</h3>
 
 <ul>
 <li><a href="https://wpsso.com/docs/plugins/wpsso-rrssb/notes/rrssb-shortcode/">RRSSB Shortcode for Sharing Buttons</a></li>
