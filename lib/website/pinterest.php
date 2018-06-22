@@ -27,7 +27,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsitePinterest' ) ) {
 		}
 
 		/**
-		 * Add an option to the WordPress > Settings > Image Dimensions settings page.
+		 * Add an option to the WordPress > Settings > SSO Image Sizes settings page.
 		 */
 		public function filter_image_dimensions_general_rows( $table_rows, $form ) {
 
