@@ -143,7 +143,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 
 		public static function set_constants( $plugin_filepath ) { 
 
-			if ( defined( 'WPSSORRSSB_VERSION' ) ) {			// execute and define constants only once
+			if ( defined( 'WPSSORRSSB_VERSION' ) ) {	// Define constants only once.
 				return;
 			}
 
