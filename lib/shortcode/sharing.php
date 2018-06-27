@@ -30,7 +30,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 					$this->p->util->add_plugin_actions( $this, array( 
 						'text_filter_before' => 1,
-						'text_filter_after' => 1,
+						'text_filter_after'  => 1,
 					) );
 				}
 			}
