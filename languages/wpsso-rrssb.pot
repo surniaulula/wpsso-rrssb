@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"1.6.5\n"
+"1.7.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2018-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -147,22 +147,22 @@ msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:130 lib/pro/admin/sharing.php:136
+#: lib/gpl/admin/sharing.php:131 lib/pro/admin/sharing.php:137
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:159 lib/pro/admin/sharing.php:165
+#: lib/gpl/admin/sharing.php:160 lib/pro/admin/sharing.php:166
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:184 lib/pro/admin/sharing.php:190
+#: lib/gpl/admin/sharing.php:185 lib/pro/admin/sharing.php:191
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:190 lib/pro/admin/sharing.php:196
+#: lib/gpl/admin/sharing.php:191 lib/pro/admin/sharing.php:197
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
@@ -311,7 +311,7 @@ msgid ""
 "If the %1$s option (above) is also checked, the %2$s is suggested first."
 msgstr ""
 
-#: lib/sharing.php:1072 lib/website/twitter.php:52
+#: lib/sharing.php:1072 lib/website/twitter.php:56
 msgctxt "option label"
 msgid "Add via Business @username"
 msgstr ""
@@ -421,7 +421,7 @@ msgstr ""
 
 #: lib/website/email.php:45 lib/website/linkedin.php:45
 #: lib/website/pinterest.php:64 lib/website/reddit.php:45
-#: lib/website/tumblr.php:45 lib/website/twitter.php:45
+#: lib/website/tumblr.php:45 lib/website/twitter.php:49
 msgctxt "option comment"
 msgid "characters or less"
 msgstr ""
@@ -433,7 +433,7 @@ msgstr ""
 
 #: lib/website/email.php:50 lib/website/linkedin.php:50
 #: lib/website/pinterest.php:69 lib/website/reddit.php:50
-#: lib/website/tumblr.php:50 lib/website/twitter.php:50
+#: lib/website/tumblr.php:50 lib/website/twitter.php:54
 msgctxt "option comment"
 msgid "tag names"
 msgstr ""
@@ -477,15 +477,20 @@ msgstr ""
 
 #: lib/website/twitter.php:43
 msgctxt "option label"
+msgid "Tweet Text Source"
+msgstr ""
+
+#: lib/website/twitter.php:47
+msgctxt "option label"
 msgid "Tweet Text Length"
 msgstr ""
 
-#: lib/website/twitter.php:48
+#: lib/website/twitter.php:52
 msgctxt "option label"
 msgid "Append Hashtags to Tweet"
 msgstr ""
 
-#: lib/website/twitter.php:56
+#: lib/website/twitter.php:60
 msgctxt "option label"
 msgid "Recommend Author @username"
 msgstr ""

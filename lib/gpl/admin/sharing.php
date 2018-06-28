@@ -93,7 +93,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			);
 
 			/**
-			 * Email
+			 * Email.
 			 */
 			$email_cap_len  = $this->p->options['email_cap_len'];
 			$email_cap_ht   = $this->p->options['email_cap_hashtags'];
@@ -116,11 +116,12 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			);
 
 			/**
-			 * Twitter
+			 * Twitter.
 			 */
+			$twitter_cap_type = empty( $this->p->options[$opt_pre . '_caption'] ) ? 'title' : $this->p->options[$opt_pre . '_caption'];
 			$twitter_cap_len  = $this->p->rrssb_sharing->get_tweet_max_len();
 			$twitter_cap_ht   = $this->p->options['twitter_cap_hashtags'];
-			$twitter_cap_text = $this->p->page->get_caption( 'title', $twitter_cap_len, $mod, true, $twitter_cap_ht );
+			$twitter_cap_text = $this->p->page->get_caption( $twitter_cap_type, $twitter_cap_len, $mod, true, $twitter_cap_ht );
 
 			$form_rows['subsection_twitter'] = array(
 				'td_class' => 'subsection', 'header' => 'h5', 'label' => 'Twitter',
@@ -133,13 +134,13 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			);
 
 			/**
-			 * Pinterest
+			 * Pinterest.
 			 */
 			$pin_cap_len  = $this->p->options['pin_cap_len'];
-			$pin_cap_ht   = $this->p->options['twitter_cap_hashtags'];
+			$pin_cap_ht   = $this->p->options['pin_cap_hashtags'];
 			$pin_cap_text = $this->p->page->get_caption( 'excerpt', $pin_cap_len, $mod, true, $pin_cap_ht );
 			$pin_media    = $this->p->og->get_media_info( $this->p->lca . '-pinterest-button', array( 'pid', 'img_url' ), $mod, 'schema' );
-			$force_regen  = $this->p->util->is_force_regen( $mod, 'schema' );	// false by default
+			$force_regen  = $this->p->util->is_force_regen( $mod, 'schema' );	// False by default.
 
 			if ( ! empty( $pin_media['pid'] ) ) {
 				list(

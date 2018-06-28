@@ -39,9 +39,13 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteTwitter' ) ) {
 				'<td>'.$form->get_select( 'twitter_platform', $this->p->cf['sharing']['platform'] ).'</td>';
 			}
 
+			$table_rows[] = ''.
+			$form->get_th_html( _x( 'Tweet Text Source', 'option label', 'wpsso-rrssb' ) ).
+			'<td>'.$form->get_select( 'twitter_caption', $this->p->cf['form']['caption_types'] ).'</td>';
+
 			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_cap_len' ).
-			$form->get_th_html( _x( 'Tweet Text Length', 'option label', 'wpsso-rrssb' ) ).'<td>'.
-			$form->get_input( 'twitter_cap_len', 'short' ).' '.
+			$form->get_th_html( _x( 'Tweet Text Length', 'option label', 'wpsso-rrssb' ) ).
+			'<td>'.$form->get_input( 'twitter_cap_len', 'short' ).' '.
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_cap_hashtags' ).
@@ -78,6 +82,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 					'twitter_on_sidebar' => 0,
 					'twitter_on_admin_edit' => 1,
 					'twitter_platform' => 'any',
+					'twitter_caption' => 'excerpt',
 					'twitter_cap_len' => 280,	// changed from 140 to 280 on 2017/11/17
 					'twitter_cap_hashtags' => 0,
 					'twitter_via' => 1,
@@ -111,7 +116,9 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 		}
 
 		public function filter_get_defaults( $def_opts ) {
+
 			self::$cf['opt']['defaults']['twitter_cap_hashtags'] = $def_opts['og_desc_hashtags'];
+
 			return array_merge( $def_opts, self::$cf['opt']['defaults'] );
 		}
 
@@ -158,10 +165,10 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 			// remove empty query arguments from the twitter button html
 			// prevents twitter from appending an empty 'via' word to the tweet
 			foreach ( array( 
-				'text' => 'tweet',
+				'text'     => 'tweet',
 				'hashtags' => 'hashtags',
-				'via' => 'via',
-				'related' => 'related',
+				'via'      => 'via',
+				'related'  => 'related',
 			) as $query_key => $atts_key  ) {
 				if ( ! empty( $atts[$atts_key] ) ) {
 					$extra_inline_vars['twitter_'.$query_key] = rawurlencode( $atts[$atts_key] );
