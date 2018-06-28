@@ -12,7 +12,7 @@ Requires PHP: 5.4
 Requires At Least: 3.8
 Tested Up To: 4.9.6
 WC Tested Up To: 3.4.2
-Stable Tag: 1.6.5
+Stable Tag: 1.7.0
 
 WPSSO Core add-on to provide Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
 
@@ -149,31 +149,20 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.6.5 (2018/05/17)**
+**Version 1.7.0 (2018/06/28)**
 
 * *New Features*
 	* None
 * *Improvements*
-	* Added section headings in the SSO Sharing Buttons tab.
+	* Added a new "Tweet Text Source" option in the Responsive Buttons settings page for Twitter.
 * *Bugfixes*
 	* None
 * *Developer Notes*
 	* None
-
-**Version 1.6.4 (2018/04/05)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Renamed some WpssoUtil methods for Gutenberg related changes in WPSSO v3.57.0.
 
 == Upgrade Notice ==
 
-= 1.6.5 =
+= 1.7.0 =
 
-(2018/05/17) Added section headings in the SSO Sharing Buttons tab.
+(2018/06/28) Added a new "Tweet Text Source" option in the Responsive Buttons settings page for Twitter.
 
