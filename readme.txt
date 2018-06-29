@@ -149,6 +149,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.7.1-dev.1 (TBD)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Removed a check for the deprecated "Enable Plugin Shortcode(s)" option.
+
 **Version 1.7.0 (2018/06/28)**
 
 * *New Features*
@@ -161,6 +172,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* None
 
 == Upgrade Notice ==
+
+= 1.7.1-dev.1 =
+
+(TBD) Removed a check for the deprecated "Enable Plugin Shortcode(s)" option.
 
 = 1.7.0 =
 
