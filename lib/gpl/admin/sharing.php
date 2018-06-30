@@ -35,9 +35,9 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 
 			SucomUtil::add_before_key( $table_rows, 'plugin_show_purge_count', array(
 				'plugin_sharing_buttons_cache_exp' => $form->get_th_html( _x( 'Sharing Buttons HTML Cache Expiry',
-					'option label', 'wpsso-rrssb' ), '', 'plugin_sharing_buttons_cache_exp' ).
-				'<td nowrap class="blank">'.$this->p->options['plugin_sharing_buttons_cache_exp'].' '.
-				_x( 'seconds (0 to disable)', 'option comment', 'wpsso-rrssb' ).'</td>'.
+					'option label', 'wpsso-rrssb' ), '', 'plugin_sharing_buttons_cache_exp' ) . 
+				'<td nowrap class="blank">' . $this->p->options['plugin_sharing_buttons_cache_exp'] . ' ' . 
+				_x( 'seconds (0 to disable)', 'option comment', 'wpsso-rrssb' ) . '</td>' . 
 				WpssoAdmin::get_option_site_use( 'plugin_sharing_buttons_cache_exp', $form, $network ),
 			) );
 
@@ -51,14 +51,14 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			}
 
 			$table_rows['buttons_force_prot'] = $form->get_th_html( _x( 'Force Protocol for Shared URLs',
-				'option label', 'wpsso-rrssb' ), '', 'buttons_force_prot' ).
-			'<td class="blank">'.$form->get_no_select( 'buttons_force_prot', 
-				array_merge( array( '' => 'none' ), $this->p->cf['sharing']['force_prot'] ) ).'</td>';
+				'option label', 'wpsso-rrssb' ), '', 'buttons_force_prot' ) . 
+			'<td class="blank">' . $form->get_no_select( 'buttons_force_prot', 
+				array_merge( array( '' => 'none' ), $this->p->cf['sharing']['force_prot'] ) ) . '</td>';
 
 			$table_rows['plugin_sharing_buttons_cache_exp'] = $form->get_th_html( _x( 'Sharing Buttons HTML Cache Expiry',
-				'option label', 'wpsso-rrssb' ), '', 'plugin_sharing_buttons_cache_exp' ).
-			'<td nowrap class="blank">'.$this->p->options['plugin_sharing_buttons_cache_exp'].' '.
-				_x( 'seconds (0 to disable)', 'option comment', 'wpsso-rrssb' ).'</td>';
+				'option label', 'wpsso-rrssb' ), '', 'plugin_sharing_buttons_cache_exp' ) . 
+			'<td nowrap class="blank">' . $this->p->options['plugin_sharing_buttons_cache_exp'] . ' ' . 
+				_x( 'seconds (0 to disable)', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
 			return $table_rows;
 		}
@@ -71,9 +71,9 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 
 			if ( empty( $mod['post_status'] ) || $mod['post_status'] === 'auto-draft' ) {
 
-				$table_rows['save_a_draft'] = '<td><blockquote class="status-info"><p class="centered">'.
+				$table_rows['save_a_draft'] = '<td><blockquote class="status-info"><p class="centered">' . 
 					sprintf( __( 'Save a draft version or publish the %s to display these options.',
-						'wpsso-rrssb' ), SucomUtil::titleize( $mod['post_type'] ) ).'</p></td>';
+						'wpsso-rrssb' ), SucomUtil::titleize( $mod['post_type'] ) ) . '</p></td>';
 
 				return $table_rows;	// abort
 			}
@@ -118,7 +118,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			/**
 			 * Twitter.
 			 */
-			$twitter_cap_type = empty( $this->p->options[$opt_pre . '_caption'] ) ? 'title' : $this->p->options[$opt_pre . '_caption'];
+			$twitter_cap_type = empty( $this->p->options['twitter_caption'] ) ? 'title' : $this->p->options['twitter_caption'];
 			$twitter_cap_len  = $this->p->rrssb_sharing->get_tweet_max_len();
 			$twitter_cap_ht   = $this->p->options['twitter_cap_hashtags'];
 			$twitter_cap_text = $this->p->page->get_caption( $twitter_cap_type, $twitter_cap_len, $mod, true, $twitter_cap_ht );
@@ -159,9 +159,9 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			$form_rows['pin_desc'] = array(
 				'label' => _x( 'Pinterest Caption', 'option label', 'wpsso-rrssb' ),
 				'th_class' => 'medium', 'tooltip' => 'post-pin_desc', 'td_class' => 'blank top',
-				'content' => $form->get_no_textarea_value( $pin_cap_text, '', '', $pin_cap_len ).
-					( empty( $pin_media['img_url'] ) ? '' : '</td><td class="top thumb_preview">'.
-						'<img src="'.$pin_media['img_url'].'" style="max-width:'.$thumb_size_info['width'].'px;">' ),
+				'content' => $form->get_no_textarea_value( $pin_cap_text, '', '', $pin_cap_len ) . 
+					( empty( $pin_media['img_url'] ) ? '' : '</td><td class="top thumb_preview">' . 
+						'<img src="' . $pin_media['img_url'] . '" style="max-width:' . $thumb_size_info['width'] . 'px;">' ),
 			);
 
 			/**
@@ -171,25 +171,25 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 				'linkedin' => 'LinkedIn',
 				'reddit' => 'Reddit',
 				'tumblr' => 'Tumblr',
-			) as $opt_prefix => $name ) {
+			) as $opt_pre => $name ) {
 
-				$other_cap_len  = $this->p->options[$opt_prefix.'_cap_len'];
-				$other_cap_ht   = $this->p->options[$opt_prefix.'_cap_hashtags'];
+				$other_cap_len  = $this->p->options[$opt_pre . '_cap_len'];
+				$other_cap_ht   = $this->p->options[$opt_pre . '_cap_hashtags'];
 				$other_cap_text = $this->p->page->get_caption( 'excerpt', $other_cap_len, $mod, true, $other_cap_ht );
 
-				$form_rows['subsection_'.$opt_prefix] = array(
+				$form_rows['subsection_' . $opt_pre] = array(
 					'td_class' => 'subsection', 'header' => 'h5', 'label' => $name,
 				);
 
-				$form_rows[$opt_prefix.'_title'] = array(
+				$form_rows[$opt_pre . '_title'] = array(
 					'label' => sprintf( _x( '%s Title', 'option label', 'wpsso-rrssb' ), $name ),
-					'th_class' => 'medium', 'tooltip' => 'post-'.$opt_prefix.'_title', 'td_class' => 'blank',
+					'th_class' => 'medium', 'tooltip' => 'post-' . $opt_pre . '_title', 'td_class' => 'blank',
 					'content' => $form->get_no_input_value( $def_cap_title, 'wide' ),
 				);
 
-				$form_rows[$opt_prefix.'_desc'] = array(
+				$form_rows[$opt_pre . '_desc'] = array(
 					'label' => sprintf( _x( '%s Caption', 'option label', 'wpsso-rrssb' ), $name ),
-					'th_class' => 'medium', 'tooltip' => 'post-'.$opt_prefix.'_desc', 'td_class' => 'blank',
+					'th_class' => 'medium', 'tooltip' => 'post-' . $opt_pre . '_desc', 'td_class' => 'blank',
 					'content' => $form->get_no_textarea_value( $other_cap_text, '', '', $other_cap_len ),
 				);
 			}
