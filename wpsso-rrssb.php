@@ -15,7 +15,7 @@
  * Requires At Least: 3.8
  * Tested Up To: 4.9.6
  * WC Tested Up To: 3.4.2
- * Version: 1.7.0
+ * Version: 1.7.1-dev.1
  * 
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -110,11 +110,11 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 			} else {
 
 				$deactivate_url = html_entity_decode( wp_nonce_url( add_query_arg( array(
-					'action' => 'deactivate',
-					'plugin' => $info['base'],
+					'action'        => 'deactivate',
+					'plugin'        => $info['base'],
 					'plugin_status' => 'all',
-					'paged' => 1,
-					's' => '',
+					'paged'         => 1,
+					's'             => '',
 				), admin_url( 'plugins.php' ) ), 'deactivate-plugin_' . $info['base'] ) );
 
 				echo '<div class="notice notice-error error"><p>';

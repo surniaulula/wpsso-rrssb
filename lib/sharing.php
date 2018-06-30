@@ -132,10 +132,15 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		private function set_objects() {
+
 			foreach ( $this->p->cf['plugin']['wpssorrssb']['lib']['website'] as $id => $name ) {
+
 				$classname = WpssoRrssbConfig::load_lib( false, 'website/'.$id, 'wpssorrssbwebsite'.$id );
+
 				if ( $classname !== false && class_exists( $classname ) ) {
+
 					$this->website[$id] = new $classname( $this->p );
+
 					if ( $this->p->debug->enabled ) {
 						$this->p->debug->log( $classname.' class loaded' );
 					}

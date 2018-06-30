@@ -36,69 +36,97 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			}
 		}
 
+		/**
+		 * Make sure wpautop() does not have a higher priority than 10, otherwise it will
+		 * format the shortcode output (shortcode filters are run at priority 11).
+		 */
 		public function check_wpautop() {
-			// make sure wpautop() does not have a higher priority than 10, otherwise it will 
-			// format the shortcode output (shortcode filters are run at priority 11).
-			if ( ! empty( $this->p->options['plugin_shortcodes'] ) ) {
-				$default_priority = 10;
-				foreach ( array( 'get_the_excerpt', 'the_excerpt', 'the_content' ) as $filter_name ) {
-					$filter_priority = has_filter( $filter_name, 'wpautop' );
-					if ( $filter_priority !== false && $filter_priority > $default_priority ) {
-						remove_filter( $filter_name, 'wpautop' );
-						add_filter( $filter_name, 'wpautop' , $default_priority );
-						if ( $this->p->debug->enabled ) {
-							$this->p->debug->log( 'wpautop() priority changed from '.$filter_priority.' to '.$default_priority );
-						}
+
+			$default_priority = 10;
+
+			foreach ( array( 'get_the_excerpt', 'the_excerpt', 'the_content' ) as $filter_name ) {
+
+				$filter_priority = has_filter( $filter_name, 'wpautop' );
+
+				if ( $filter_priority !== false && $filter_priority > $default_priority ) {
+
+					remove_filter( $filter_name, 'wpautop' );
+
+					add_filter( $filter_name, 'wpautop' , $default_priority );
+
+					if ( $this->p->debug->enabled ) {
+						$this->p->debug->log( 'wpautop() priority changed from '.$filter_priority.' to '.$default_priority );
 					}
 				}
 			}
 		}
 
+		/**
+		 * Remove our shortcode before applying a text filter.
+		 */
 		public function action_pre_apply_filters_text( $filter_name ) {
+
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log_args( array( 
 					'filter_name' => $filter_name,
 				) );
 			}
-			$this->remove_shortcode();	// remove before applying a text filter
+
+			$this->remove_shortcode();
 		}
 
+		/**
+		 * Re-add our shortcode after applying a text filter.
+		 */
 		public function action_after_apply_filters_text( $filter_name ) {
+
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log_args( array( 
 					'filter_name' => $filter_name,
 				) );
 			}
-			$this->add_shortcode();		// re-add after applying a text filter
+
+			$this->add_shortcode();
 		}
 
 		public function add_shortcode() {
-			if ( ! empty( $this->p->options['plugin_shortcodes'] ) ) {
-				if ( ! shortcode_exists( WPSSORRSSB_SHARING_SHORTCODE_NAME ) ) {
-        				add_shortcode( WPSSORRSSB_SHARING_SHORTCODE_NAME, array( $this, 'do_shortcode' ) );
-					if ( $this->p->debug->enabled ) {
-						$this->p->debug->log( '['.WPSSORRSSB_SHARING_SHORTCODE_NAME.'] sharing shortcode added' );
-					}
-					return true;
-				} elseif ( $this->p->debug->enabled ) {
+
+			if ( shortcode_exists( WPSSORRSSB_SHARING_SHORTCODE_NAME ) ) {
+
+				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'cannot add ['.WPSSORRSSB_SHARING_SHORTCODE_NAME.'] sharing shortcode - shortcode already exists' );
 				}
+
+				return false;
 			}
-			return false;
+
+        		add_shortcode( WPSSORRSSB_SHARING_SHORTCODE_NAME, array( $this, 'do_shortcode' ) );
+
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->log( '['.WPSSORRSSB_SHARING_SHORTCODE_NAME.'] sharing shortcode added' );
+			}
+
+			return true;
 		}
 
 		public function remove_shortcode() {
-			if ( ! empty( $this->p->options['plugin_shortcodes'] ) ) {
-				if ( shortcode_exists( WPSSORRSSB_SHARING_SHORTCODE_NAME ) ) {
-					remove_shortcode( WPSSORRSSB_SHARING_SHORTCODE_NAME );
-					if ( $this->p->debug->enabled ) {
-						$this->p->debug->log( '['.WPSSORRSSB_SHARING_SHORTCODE_NAME.'] sharing shortcode removed' );
-					}
-					return true;
-				} elseif ( $this->p->debug->enabled ) {
-					$this->p->debug->log( 'cannot remove ['.WPSSORRSSB_SHARING_SHORTCODE_NAME.'] sharing shortcode - shortcode does not exist' );
+
+			if ( shortcode_exists( WPSSORRSSB_SHARING_SHORTCODE_NAME ) ) {
+
+				remove_shortcode( WPSSORRSSB_SHARING_SHORTCODE_NAME );
+
+				if ( $this->p->debug->enabled ) {
+					$this->p->debug->log( '['.WPSSORRSSB_SHARING_SHORTCODE_NAME.'] sharing shortcode removed' );
 				}
+
+				return true;
+
 			}
+			
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->log( 'cannot remove ['.WPSSORRSSB_SHARING_SHORTCODE_NAME.'] sharing shortcode - shortcode does not exist' );
+			}
+
 			return false;
 		}
 
@@ -124,11 +152,10 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				return $content;
 			}
 
-			$lca = $this->p->cf['lca'];
-			$atts = (array) apply_filters( $lca.'_rrssb_sharing_shortcode_atts', $atts, $content );
+			$atts = (array) apply_filters( $this->p->lca.'_rrssb_sharing_shortcode_atts', $atts, $content );
 
 			if ( empty( $atts['buttons'] ) ) {	// nothing to do
-				return '<!-- '.$lca.' sharing shortcode: no buttons defined -->' . "\n\n";
+				return '<!-- '.$this->p->lca.' sharing shortcode: no buttons defined -->' . "\n\n";
 			}
 
 			$atts['use_post'] = SucomUtil::sanitize_use_post( $atts, true );	// $default = true
@@ -137,12 +164,12 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'required call to get_page_mod()' );
 			}
-			$mod = $this->p->util->get_page_mod( $atts['use_post'] );
 
+			$mod = $this->p->util->get_page_mod( $atts['use_post'] );
 			$type = 'sharing_shortcode_'.WPSSORRSSB_SHARING_SHORTCODE_NAME;
 			$atts['url'] = empty( $atts['url'] ) ? $this->p->util->get_sharing_url( $mod ) : $atts['url'];
 
-			$cache_md5_pre  = $lca . '_b_';
+			$cache_md5_pre  = $this->p->lca . '_b_';
 			$cache_exp_secs = $this->p->rrssb_sharing->get_buttons_cache_exp();
 			$cache_salt     = __METHOD__ . '(' . SucomUtil::get_mod_salt( $mod, $atts['url'] ) . ')';
 			$cache_id       = $cache_md5_pre . md5( $cache_salt );
@@ -186,12 +213,12 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 			if ( ! empty( $cache_array[$cache_index] ) ) {
 				$cache_array[$cache_index] = '
-<!-- '.$lca.' '.$type.' begin -->
+<!-- '.$this->p->lca.' '.$type.' begin -->
 <!-- generated on '.date( 'c' ).' -->
-<div class="'.$lca.'-rrssb '.$lca.'-'.$atts['css_class'].'">' . "\n" . 
+<div class="'.$this->p->lca.'-rrssb '.$this->p->lca.'-'.$atts['css_class'].'">' . "\n" . 
 $cache_array[$cache_index] . "\n" . 	// buttons html is trimmed, so add newline
-'</div><!-- .'.$lca.'-'.$atts['css_class'].' -->' . "\n" . 
-'<!-- '.$lca.' '.$type.' end -->' . "\n\n";
+'</div><!-- .'.$this->p->lca.'-'.$atts['css_class'].' -->' . "\n" . 
+'<!-- '.$this->p->lca.' '.$type.' end -->' . "\n\n";
 			}
 
 			if ( $cache_exp_secs > 0 ) {
