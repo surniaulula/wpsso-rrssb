@@ -149,7 +149,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.7.1-rc.1 (2018/07/01)**
+**Version 1.7.1 (2018/07/01)**
 
 * *New Features*
 	* None
@@ -173,7 +173,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.7.1-rc.1 =
+= 1.7.1 =
 
 (2018/07/01) Removed a check for the deprecated "Enable Plugin Shortcode(s)" option.
 
