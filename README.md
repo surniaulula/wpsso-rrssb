@@ -121,13 +121,10 @@
 <li>None</li>
 </ul>
 
-
-<h2>Other Notes</h2>
-
-<h3>Other Notes</h3>
-<h3 class="top">Additional Documentation</h3>
+<h3>Documentation and Notes</h3>
 
 <ul>
 <li><a href="https://wpsso.com/docs/plugins/wpsso-rrssb/notes/rrssb-shortcode/">RRSSB Shortcode for Sharing Buttons</a></li>
 </ul>
+
 

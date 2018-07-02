@@ -117,9 +117,7 @@ WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an add
 
 * None
 
-== Other Notes ==
-
-<h3 class="top">Additional Documentation</h3>
+<h3>Documentation and Notes</h3>
 
 * [RRSSB Shortcode for Sharing Buttons](https://wpsso.com/docs/plugins/wpsso-rrssb/notes/rrssb-shortcode/)
 
