@@ -16,7 +16,8 @@ if ( ! class_exists( 'WpssoRrssbRegister' ) ) {
 		public function __construct() {
 
 			register_activation_hook( WPSSORRSSB_FILEPATH, array( $this, 'network_activate' ) );
-			//register_deactivation_hook( WPSSORRSSB_FILEPATH, array( $this, 'network_deactivate' ) );	// Deactivation method not required.
+
+			//register_deactivation_hook( WPSSORRSSB_FILEPATH, array( $this, 'network_deactivate' ) );
 
 			if ( is_multisite() ) {
 				add_action( 'wpmu_new_blog', array( $this, 'wpmu_new_blog' ), 10, 6 );
