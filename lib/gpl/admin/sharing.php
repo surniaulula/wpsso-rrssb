@@ -78,7 +78,6 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 				return $table_rows;	// abort
 			}
 
-			$thumb_size_info = SucomUtil::get_size_info( 'thumbnail' );
 			$def_cap_title = $this->p->page->get_caption( 'title', 0, $mod, true, false );
 
 			$table_rows[] = '<td colspan="3">' . $this->p->msgs->get( 'pro-feature-msg', array( 'lca' => 'wpssorrssb' ) ) . '</td>';
@@ -160,8 +159,8 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 				'label' => _x( 'Pinterest Caption', 'option label', 'wpsso-rrssb' ),
 				'th_class' => 'medium', 'tooltip' => 'post-pin_desc', 'td_class' => 'blank top',
 				'content' => $form->get_no_textarea_value( $pin_cap_text, '', '', $pin_cap_len ) . 
-					( empty( $pin_media['img_url'] ) ? '' : '</td><td class="top thumb_preview">' . 
-						'<img src="' . $pin_media['img_url'] . '" style="max-width:' . $thumb_size_info['width'] . 'px;">' ),
+					( empty( $pin_media['img_url'] ) ? '' : '</td><td class="top thumb_preview">' .
+						'<img src="' . $pin_media['img_url'] . '">' ),
 			);
 
 			/**
