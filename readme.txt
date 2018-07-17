@@ -115,7 +115,7 @@ WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an add
 
 <h3 class="top">Frequently Asked Questions</h3>
 
-* None
+* None.
 
 <h3>Documentation and Notes</h3>
 
@@ -150,24 +150,24 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 **Version 1.7.1 (2018/07/02)**
 
 * *New Features*
-	* None
+	* None.
 * *Improvements*
-	* None
+	* None.
 * *Bugfixes*
-	* None
+	* None.
 * *Developer Notes*
 	* Removed a check for the deprecated "Enable Plugin Shortcode(s)" option.
 
 **Version 1.7.0 (2018/06/28)**
 
 * *New Features*
-	* None
+	* None.
 * *Improvements*
 	* Added a new "Tweet Text Source" option in the Responsive Buttons settings page for Twitter.
 * *Bugfixes*
-	* None
+	* None.
 * *Developer Notes*
-	* None
+	* None.
 
 == Upgrade Notice ==
 
