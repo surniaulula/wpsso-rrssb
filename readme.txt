@@ -147,6 +147,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.8.0-b.1 (2018/07/19)**
+
+* *New Features*
+	* None.
+* *Improvements*
+	* None.
+* *Bugfixes*
+	* None.
+* *Developer Notes*
+	* None.
+
 **Version 1.7.1 (2018/07/02)**
 
 * *New Features*
@@ -171,11 +182,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
+= 1.8.0-b.1 =
+
+(2018/07/19) None.
+
 = 1.7.1 =
 
 (2018/07/02) Removed a check for the deprecated "Enable Plugin Shortcode(s)" option.
-
-= 1.7.0 =
-
-(2018/06/28) Added a new "Tweet Text Source" option in the Responsive Buttons settings page for Twitter.
 
