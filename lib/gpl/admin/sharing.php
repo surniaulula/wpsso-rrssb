@@ -147,7 +147,8 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 					$img_width,
 					$img_height,
 					$img_cropped,
-					$img_pid
+					$img_pid,
+					$img_alt
 				) = $this->p->media->get_attachment_image_src( $pin_media['pid'], 'thumbnail', false, $force_regen ); 
 			}
 

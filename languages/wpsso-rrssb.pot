@@ -152,17 +152,17 @@ msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:159 lib/pro/admin/sharing.php:165
+#: lib/gpl/admin/sharing.php:160 lib/pro/admin/sharing.php:166
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:184 lib/pro/admin/sharing.php:190
+#: lib/gpl/admin/sharing.php:185 lib/pro/admin/sharing.php:191
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:190 lib/pro/admin/sharing.php:196
+#: lib/gpl/admin/sharing.php:191 lib/pro/admin/sharing.php:197
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
