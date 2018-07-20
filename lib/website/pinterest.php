@@ -148,10 +148,11 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 			$atts['add_hashtags'] = empty( $this->p->options['pin_cap_hashtags'] ) ? false : $this->p->options['pin_cap_hashtags'];
 
 			if ( empty( $atts['size'] ) ) {
-				$atts['size'] = $this->p->cf['lca'].'-pinterest-button';
+				$atts['size'] = $this->p->lca.'-pinterest-button';
 			}
 
 			if ( ! empty( $atts['pid'] ) ) {
+
 				$force_regen = $this->p->util->is_force_regen( $mod, 'schema' );	// false by default
 
 				list(
