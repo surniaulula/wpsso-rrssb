@@ -16,31 +16,31 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(			// Plugin acronym.
-					'version' => '1.8.0-b.2',		// Plugin version.
+					'version'     => '1.8.0-rc.1',	// Plugin version.
 					'opt_version' => '13',		// Increment when changing default option values.
-					'short' => 'WPSSO RRSSB',	// Short plugin name.
-					'name' => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
-					'desc' => 'WPSSO Core add-on to provide Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, post edit pages, etc.',
-					'slug' => 'wpsso-rrssb',
-					'base' => 'wpsso-rrssb/wpsso-rrssb.php',
+					'short'       => 'WPSSO RRSSB',	// Short plugin name.
+					'name'        => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
+					'desc'        => 'WPSSO Core add-on to provide Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, post edit pages, etc.',
+					'slug'        => 'wpsso-rrssb',
+					'base'        => 'wpsso-rrssb/wpsso-rrssb.php',
 					'update_auth' => 'tid',
 					'text_domain' => 'wpsso-rrssb',
 					'domain_path' => '/languages',
 					'req' => array(
-						'short' => 'WPSSO Core',
-						'name' => 'WPSSO Core',
-						'min_version' => '4.9.0-b.2',
+						'short'       => 'WPSSO Core',
+						'name'        => 'WPSSO Core',
+						'min_version' => '4.9.0-rc.1',
 					),
 					'img' => array(
 						'icons' => array(
-							'low' => 'images/icon-128x128.png',
+							'low'  => 'images/icon-128x128.png',
 							'high' => 'images/icon-256x256.png',
 						),
 					),
 					'lib' => array(
 						'submenu' => array(	// Note that submenu elements must have unique keys.
 							'rrssb-buttons' => 'Responsive Buttons',
-							'rrssb-styles' => 'Responsive Styles',
+							'rrssb-styles'  => 'Responsive Styles',
 						),
 						'shortcode' => array(
 							'sharing' => 'Sharing Shortcode',
@@ -49,17 +49,17 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 							'sharing' => 'Sharing Widget',
 						),
 						'website' => array(
-							'email' => 'Email', 
-							'facebook' => 'Facebook', 
-							'gplus' => 'GooglePlus', 
-							'twitter' => 'Twitter', 
+							'email'     => 'Email', 
+							'facebook'  => 'Facebook', 
+							'gplus'     => 'GooglePlus', 
+							'twitter'   => 'Twitter', 
 							'pinterest' => 'Pinterest', 
-							'linkedin' => 'LinkedIn', 
-							'reddit' => 'Reddit', 
-							'pocket' => 'Pocket', 
-							'tumblr' => 'Tumblr', 
-							'vk' => 'VK', 
-							'whatsapp' => 'WhatsApp', 
+							'linkedin'  => 'LinkedIn', 
+							'reddit'    => 'Reddit', 
+							'pocket'    => 'Pocket', 
+							'tumblr'    => 'Tumblr', 
+							'vk'        => 'VK', 
+							'whatsapp'  => 'WhatsApp', 
 						),
 						'gpl' => array(
 							'admin' => array(
@@ -95,42 +95,42 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			'wp' => array(				// WordPress
 				'transient' => array(
 					'wpsso_b_' => array(
-						'label' => 'Buttons HTML',
+						'label'       => 'Buttons HTML',
 						'text_domain' => 'wpsso-rrssb',
-						'opt_key' => 'plugin_sharing_buttons_cache_exp',
-						'filter' => 'wpsso_cache_expire_sharing_buttons',
+						'opt_key'     => 'plugin_sharing_buttons_cache_exp',
+						'filter'      => 'wpsso_cache_expire_sharing_buttons',
 					),
 				),
 			),
 			'sharing' => array(
 				'show_on' => array( 
-					'content' => 'Content',
-					'excerpt' => 'Excerpt', 
-					'sidebar' => 'CSS Sidebar', 
+					'content'    => 'Content',
+					'excerpt'    => 'Excerpt', 
+					'sidebar'    => 'CSS Sidebar', 
 					'admin_edit' => 'Admin Edit',
 				),
 				'force_prot' => array( 
-					'http' => 'HTTP',
+					'http'  => 'HTTP',
 					'https' => 'HTTPS',
 				),
 				'rrssb_styles' => array(
-					'rrssb-sharing' => 'All Buttons',
-					'rrssb-content' => 'Content',
-					'rrssb-excerpt' => 'Excerpt',
-					'rrssb-sidebar' => 'CSS Sidebar',
+					'rrssb-sharing'    => 'All Buttons',
+					'rrssb-content'    => 'Content',
+					'rrssb-excerpt'    => 'Excerpt',
+					'rrssb-sidebar'    => 'CSS Sidebar',
 					'rrssb-admin_edit' => 'Admin Edit',
-					'rrssb-shortcode' => 'Shortcode',
-					'rrssb-widget' => 'Widget',
+					'rrssb-shortcode'  => 'Shortcode',
+					'rrssb-widget'     => 'Widget',
 				),
 				'position' => array(
-					'top' => 'Top',
+					'top'    => 'Top',
 					'bottom' => 'Bottom',
-					'both' => 'Top and Bottom',
+					'both'   => 'Top and Bottom',
 				),
 				'platform' => array(
 					'desktop' => 'Desktop Only',
-					'mobile' => 'Mobile Only',
-					'any' => 'Any Platform',
+					'mobile'  => 'Mobile Only',
+					'any'     => 'Any Platform',
 				),
 			),
 		);
