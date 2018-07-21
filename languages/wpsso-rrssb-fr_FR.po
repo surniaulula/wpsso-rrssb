@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 1.7.0\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 1.8.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2018-07-02 12:31-0600\n"
-"PO-Revision-Date: 2018-07-02 12:31-0600\n"
+"POT-Creation-Date: 2018-07-21 08:50-0400\n"
+"PO-Revision-Date: 2018-07-21 08:50-0400\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -132,37 +132,37 @@ msgstr "Forcer protocole pour URLs partagées"
 msgid "Save a draft version or publish the %s to display these options."
 msgstr "Enregistrer un brouillon ou publier pour activer ces options."
 
-#: lib/gpl/admin/sharing.php:90 lib/pro/admin/sharing.php:96
+#: lib/gpl/admin/sharing.php:89 lib/pro/admin/sharing.php:95
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr "Désactiver les boutons"
 
-#: lib/gpl/admin/sharing.php:107 lib/pro/admin/sharing.php:113
+#: lib/gpl/admin/sharing.php:106 lib/pro/admin/sharing.php:112
 msgctxt "option label"
 msgid "Email Subject"
 msgstr "Sujet du couriel"
 
-#: lib/gpl/admin/sharing.php:113 lib/pro/admin/sharing.php:119
+#: lib/gpl/admin/sharing.php:112 lib/pro/admin/sharing.php:118
 msgctxt "option label"
 msgid "Email Message"
 msgstr "Message du courriel"
 
-#: lib/gpl/admin/sharing.php:131 lib/pro/admin/sharing.php:137
+#: lib/gpl/admin/sharing.php:130 lib/pro/admin/sharing.php:136
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr "Texte du Tweet"
 
-#: lib/gpl/admin/sharing.php:160 lib/pro/admin/sharing.php:166
+#: lib/gpl/admin/sharing.php:153 lib/pro/admin/sharing.php:159
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr "Texte légende Pinterest"
 
-#: lib/gpl/admin/sharing.php:185 lib/pro/admin/sharing.php:191
+#: lib/gpl/admin/sharing.php:178 lib/pro/admin/sharing.php:184
 msgctxt "option label"
 msgid "%s Title"
 msgstr "Titre %s"
 
-#: lib/gpl/admin/sharing.php:191 lib/pro/admin/sharing.php:197
+#: lib/gpl/admin/sharing.php:184 lib/pro/admin/sharing.php:190
 msgctxt "option label"
 msgid "%s Caption"
 msgstr "Légende %s"
@@ -430,7 +430,7 @@ msgctxt "option label"
 msgid "Image Dimensions"
 msgstr "Dimensions de l’image"
 
-#: lib/website/pinterest.php:135
+#: lib/website/pinterest.php:136
 msgctxt "image size label"
 msgid "Pinterest Sharing Button"
 msgstr "Bouton de partage Pinterest"
@@ -465,16 +465,16 @@ msgctxt "option label"
 msgid "Recommend Author @username"
 msgstr "Recommander @nom d'auteur"
 
-#: lib/widget/sharing.php:32
+#: lib/widget/sharing.php:31
 msgid "The %s widget."
 msgstr "Le widget de %s."
 
-#: lib/widget/sharing.php:147
+#: lib/widget/sharing.php:145
 msgctxt "option value"
 msgid "Share It"
 msgstr "Partager"
 
-#: lib/widget/sharing.php:150
+#: lib/widget/sharing.php:148
 msgctxt "option label"
 msgid "Widget Title (leave blank for no title)"
 msgstr "Titre du Widget (laisser vide pour aucun titre)"
