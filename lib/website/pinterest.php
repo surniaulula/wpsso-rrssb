@@ -22,7 +22,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsitePinterest' ) ) {
 
 			$this->p->util->add_plugin_filters( $this, array(
 				'image_dimensions_general_rows' => 2,
-				'rrssb_website_pinterest_rows' => 3,
+				'rrssb_website_pinterest_rows'  => 3,
 			) );
 		}
 

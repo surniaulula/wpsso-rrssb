@@ -92,14 +92,14 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			}
 
 			$this->p->util->add_plugin_filters( $this, array( 
-				'get_defaults' => 1,
+				'get_defaults'      => 1,
 				'get_site_defaults' => 1,
-				'get_md_defaults' => 1,
+				'get_md_defaults'   => 1,
 			) );
 
 			$this->p->util->add_plugin_actions( $this, array( 
 				'text_filter_before' => 1,
-				'text_filter_after' => 1,
+				'text_filter_after'  => 1,
 			) );
 
 			if ( is_admin() ) {
@@ -112,13 +112,13 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				) );
 
 				$this->p->util->add_plugin_filters( $this, array( 
-					'save_options' => 3,
-					'option_type' => 2,
-					'post_custom_meta_tabs' => 3,
+					'save_options'              => 3,
+					'option_type'               => 2,
+					'post_custom_meta_tabs'     => 3,
 					'post_cache_transient_keys' => 4,
-					'messages_info' => 2,
-					'messages_tooltip' => 2,
-					'messages_tooltip_plugin' => 2,
+					'messages_info'             => 2,
+					'messages_tooltip'          => 2,
+					'messages_tooltip_plugin'   => 2,
 				) );
 
 				$this->p->util->add_plugin_filters( $this, array( 
