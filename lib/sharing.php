@@ -196,16 +196,16 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 		public function filter_get_md_defaults( $md_defs ) {
 			return array_merge( $md_defs, array(
-				'email_title' => '',		// Email Subject
-				'email_desc' => '',		// Email Message
-				'twitter_desc' => '',		// Tweet Text
-				'pin_desc' => '',		// Pinterest Caption
-				'linkedin_title' => '',		// LinkedIn Title
-				'linkedin_desc' => '',		// LinkedIn Caption
-				'reddit_title' => '',		// Reddit Title
-				'reddit_desc' => '',		// Reddit Caption
-				'tumblr_title' => '',		// Tumblr Title
-				'tumblr_desc' => '',		// Tumblr Caption
+				'email_title'      => '',	// Email Subject
+				'email_desc'       => '',	// Email Message
+				'twitter_desc'     => '',	// Tweet Text
+				'pin_desc'         => '',	// Pinterest Caption
+				'linkedin_title'   => '',	// LinkedIn Title
+				'linkedin_desc'    => '',	// LinkedIn Caption
+				'reddit_title'     => '',	// Reddit Title
+				'reddit_desc'      => '',	// Reddit Caption
+				'tumblr_title'     => '',	// Tumblr Title
+				'tumblr_desc'      => '',	// Tumblr Caption
 				'buttons_disabled' => 0,	// Disable Sharing Buttons
 			) );
 		}
@@ -983,7 +983,9 @@ $cache_array[$cache_index] .
 			}
 		}
 
-		// $opt_pre can be twitter, buffer, etc.
+		/**
+		 * $opt_pre can be twitter, buffer, etc.
+		 */
 		public function get_tweet_max_len( $opt_pre = 'twitter' ) {
 
 			$short_len = 23;	// twitter counts 23 characters for any url
