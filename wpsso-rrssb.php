@@ -14,8 +14,8 @@
  * Requires PHP: 5.4
  * Requires At Least: 3.8
  * Tested Up To: 4.9.8
- * WC Tested Up To: 3.4.4
- * Version: 1.8.1-dev.2
+ * WC Tested Up To: 3.4.5
+ * Version: 1.8.1-dev.4
  * 
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -206,5 +206,6 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 	}
 
         global $wpssorrssb;
+
 	$wpssorrssb =& WpssoRrssb::get_instance();
 }
