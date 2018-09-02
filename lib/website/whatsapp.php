@@ -13,7 +13,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteWhatsApp' ) ) {
 
 	class WpssoRrssbSubmenuWebsiteWhatsApp {
 
+		private $p;
+
 		public function __construct( &$plugin ) {
+
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
@@ -51,6 +54,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteWhatsApp' ) ) {
 
 	class WpssoRrssbWebsiteWhatsApp {
 
+		private $p;
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
@@ -74,9 +78,8 @@ if ( ! class_exists( 'WpssoRrssbWebsiteWhatsApp' ) ) {
 			),
 		);
 
-		protected $p;
-
 		public function __construct( &$plugin ) {
+
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {

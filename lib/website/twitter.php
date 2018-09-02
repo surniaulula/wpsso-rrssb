@@ -13,7 +13,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteTwitter' ) ) {
 
 	class WpssoRrssbSubmenuWebsiteTwitter {
 
+		private $p;
+
 		public function __construct( &$plugin ) {
+
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
@@ -73,6 +76,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 
 	class WpssoRrssbWebsiteTwitter {
 
+		private $p;
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
@@ -101,9 +105,8 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 			),
 		);
 
-		protected $p;
-
 		public function __construct( &$plugin ) {
+
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {

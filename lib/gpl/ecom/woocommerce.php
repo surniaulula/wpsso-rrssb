@@ -17,6 +17,7 @@ if ( ! class_exists( 'WpssoRrssbGplEcomWoocommerce' ) ) {
 		private $sharing;
 
 		public function __construct( &$plugin ) {
+
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
@@ -40,6 +41,7 @@ if ( ! class_exists( 'WpssoRrssbGplEcomWoocommerceSharing' ) ) {
 		private $p;
 
 		public function __construct( &$plugin ) {
+
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {

@@ -13,7 +13,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteVk' ) ) {
 
 	class WpssoRrssbSubmenuWebsiteVk {
 
+		private $p;
+
 		public function __construct( &$plugin ) {
+
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
@@ -51,6 +54,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteVk' ) ) {
 
 	class WpssoRrssbWebsiteVk {
 
+		private $p;
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
@@ -74,9 +78,8 @@ if ( ! class_exists( 'WpssoRrssbWebsiteVk' ) ) {
 			),
 		);
 
-		protected $p;
-
 		public function __construct( &$plugin ) {
+
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {

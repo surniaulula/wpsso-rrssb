@@ -13,7 +13,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsitePinterest' ) ) {
 
 	class WpssoRrssbSubmenuWebsitePinterest {
 
+		private $p;
+
 		public function __construct( &$plugin ) {
+
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
@@ -80,6 +83,7 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 
 	class WpssoRrssbWebsitePinterest {
 
+		private $p;
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
@@ -110,9 +114,8 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 			),
 		);
 
-		protected $p;
-
 		public function __construct( &$plugin ) {
+
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {

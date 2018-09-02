@@ -13,7 +13,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsitePocket' ) ) {
 
 	class WpssoRrssbSubmenuWebsitePocket {
 
+		private $p;
+
 		public function __construct( &$plugin ) {
+
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
@@ -51,6 +54,7 @@ if ( ! class_exists( 'WpssoRrssbWebsitePocket' ) ) {
 
 	class WpssoRrssbWebsitePocket {
 
+		private $p;
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
@@ -74,9 +78,8 @@ if ( ! class_exists( 'WpssoRrssbWebsitePocket' ) ) {
 			),
 		);
 
-		protected $p;
-
 		public function __construct( &$plugin ) {
+
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {

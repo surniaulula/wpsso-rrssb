@@ -13,7 +13,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteReddit' ) ) {
 
 	class WpssoRrssbSubmenuWebsiteReddit {
 
+		private $p;
+
 		public function __construct( &$plugin ) {
+
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
@@ -61,6 +64,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteReddit' ) ) {
 
 	class WpssoRrssbWebsiteReddit {
 
+		private $p;
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
@@ -87,9 +91,8 @@ if ( ! class_exists( 'WpssoRrssbWebsiteReddit' ) ) {
 			),
 		);
 
-		protected $p;
-
 		public function __construct( &$plugin ) {
+
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
