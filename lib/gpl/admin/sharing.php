@@ -34,7 +34,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 				$this->p->debug->mark();
 			}
 
-			SucomUtil::add_before_key( $table_rows, 'plugin_show_purge_count', array(
+			SucomUtil::add_after_key( $table_rows, 'plugin_types_cache_exp', array(
 				'plugin_sharing_buttons_cache_exp' => $form->get_th_html( _x( 'Sharing Buttons HTML Cache Expiry',
 					'option label', 'wpsso-rrssb' ), '', 'plugin_sharing_buttons_cache_exp' ) . 
 				'<td nowrap class="blank">' . $this->p->options['plugin_sharing_buttons_cache_exp'] . ' ' . 
