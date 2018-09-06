@@ -147,7 +147,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.8.1-dev.11 (2018/09/05)**
+**Version 1.8.1-b.1 (2018/09/05)**
 
 * *New Features*
 	* None.
@@ -193,7 +193,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.8.1-dev.11 =
+= 1.8.1-b.1 =
 
 (2018/09/05) Minor update for code style and changes in WPSSO v4.12.0.
 
