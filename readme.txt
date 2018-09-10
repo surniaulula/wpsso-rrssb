@@ -197,7 +197,3 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 (2018/09/09) Minor update for code style and changes in WPSSO v4.12.0.
 
-= 1.8.0 =
-
-(2018/07/22) Replaced some calls to WpssoMedia `get_attachment_image_src()` with `get_attachment_image_url()` (available in WPSSO v4.9.0).
-
