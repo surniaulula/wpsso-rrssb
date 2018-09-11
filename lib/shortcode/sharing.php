@@ -24,14 +24,15 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			}
 
 			if ( ! is_admin() ) {
+
 				if ( $this->p->avail['p_ext']['rrssb'] ) {
 
 					$this->check_wpautop();
 					$this->add_shortcode();
 
 					$this->p->util->add_plugin_actions( $this, array( 
-						'text_filter_before' => 1,
-						'text_filter_after'  => 1,
+						'pre_apply_filters_text'   => 1,
+						'after_apply_filters_text' => 1,
 					) );
 				}
 			}
@@ -207,6 +208,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			}
 
 			$ids = array_map( 'trim', explode( ',', $atts['buttons'] ) );
+
 			unset ( $atts['buttons'] );
 
 			// returns html or an empty string

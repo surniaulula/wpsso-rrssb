@@ -99,11 +99,12 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			) );
 
 			$this->p->util->add_plugin_actions( $this, array( 
-				'text_filter_before' => 1,
-				'text_filter_after'  => 1,
+				'pre_apply_filters_text'   => 1,
+				'after_apply_filters_text' => 1,
 			) );
 
 			if ( is_admin() ) {
+
 				if ( $this->have_buttons_for_type( 'admin_edit' ) ) {
 					add_action( 'add_meta_boxes', array( $this, 'add_post_buttons_metabox' ) );
 				}
@@ -504,14 +505,19 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			$added = false;
 
 			if ( empty( $filter_name ) ) {
+
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'filter_name argument is empty' );
 				}
+
 			} elseif ( method_exists( $this, 'get_buttons_' . $filter_name ) ) {
+
 				$added = add_filter( $filter_name, array( $this, 'get_buttons_' . $filter_name ), WPSSORRSSB_SOCIAL_PRIORITY );
+
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'buttons filter ' . $filter_name . ' added (' . ( $added  ? 'true' : 'false' ) . ')' );
 				}
+
 			} elseif ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'get_buttons_' . $filter_name . ' method is missing' );
 			}
@@ -520,38 +526,51 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function remove_buttons_filter( $filter_name = 'the_content' ) {
+
 			$removed = false;
+
 			if ( method_exists( $this, 'get_buttons_' . $filter_name ) ) {
+
 				$removed = remove_filter( $filter_name, array( $this, 'get_buttons_' . $filter_name ), WPSSORRSSB_SOCIAL_PRIORITY );
+
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'buttons filter ' . $filter_name . ' removed (' . ( $removed  ? 'true' : 'false' ) . ')' );
 				}
 			}
+
 			return $removed;
 		}
 
 		public function get_buttons_the_excerpt( $text ) {
+
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
 			}
+
 			$css_type_name = 'rrssb-excerpt';
+
 			$text = preg_replace_callback( '/(<!-- ' . $this->p->lca . ' ' . $css_type_name . ' begin -->' . 
 				'.*<!-- ' . $this->p->lca . ' ' . $css_type_name . ' end -->)(<\/p>)?/Usi', 
 					array( __CLASS__, 'remove_paragraph_tags' ), $text );
+
 			return $text;
 		}
 
 		public function get_buttons_get_the_excerpt( $text ) {
+
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
 			}
+
 			return $this->get_buttons( $text, 'excerpt' );
 		}
 
 		public function get_buttons_the_content( $text ) {
+
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
 			}
+
 			return $this->get_buttons( $text, 'content' );
 		}
 
@@ -562,44 +581,61 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				$this->p->debug->mark( 'getting buttons for ' . $type );	// start timer
 			}
 
-			$error_text = false;
+			$error_text     = false;
 			$add_html_error = true;
 
 			if ( is_admin() ) {
+
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'is_admin is true' );
 				}
+
 				if ( strpos( $type, 'admin_' ) !== 0 ) {
 					$error_text = $type . ' ignored in back-end';
 				}
+
 			} elseif ( SucomUtil::is_amp() ) {
+
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'is_amp is true' );
 				}
+
 				$error_text = 'buttons not allowed in amp endpoint';
+
 			} elseif ( is_feed() ) {
+
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'is_feed is true' );
 				}
+
 				$error_text = 'buttons not allowed in rss feeds';
+
 			} elseif ( ! is_singular() ) {
+
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'is_singular is false' );
 				}
+
 				if ( empty( $this->p->options['buttons_on_index'] ) ) {
 					$error_text = 'buttons_on_index not enabled';
 				}
+
 			} elseif ( is_front_page() ) {
+
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'is_front_page is true' );
 				}
+
 				if ( empty( $this->p->options['buttons_on_front'] ) ) {
 					$error_text = 'buttons_on_front not enabled';
 				}
+
 			} elseif ( is_singular() ) {
+
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'is_singular is true' );
 				}
+
 				if ( $this->is_post_buttons_disabled() ) {
 					$error_text = 'post buttons are disabled';
 				}
@@ -610,10 +646,12 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			}
 
 			if ( $error_text !== false ) {
+
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( $type . ' filter skipped: ' . $error_text );
 					$this->p->debug->mark( 'getting buttons for ' . $type );	// end timer
 				}
+
 				if ( $add_html_error ) {
 					return $text . "\n" . '<!-- ' . __METHOD__ . ' ' . $type . ' filter skipped: ' . $error_text . ' -->' . "\n";
 				} else {
@@ -679,15 +717,17 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 				// sort enabled sharing buttons by their preferred order
 				$sorted_ids = array();
+
 				foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre ) {
 					if ( ! empty( $this->p->options[$opt_pre . '_on_' . $type] ) ) {
 						$sorted_ids[ zeroise( $this->p->options[$opt_pre . '_order'], 3 ) . '-' . $id ] = $id;
 					}
 				}
+
 				ksort( $sorted_ids );
 
 				$atts['use_post'] = $mod['use_post'];
-				$atts['css_id'] = $css_type_name = 'rrssb-' . $type;
+				$atts['css_id']   = $css_type_name = 'rrssb-' . $type;
 
 				// returns html or an empty string
 				$cache_array[$cache_index] = $this->get_html( $sorted_ids, $atts, $mod );
@@ -705,8 +745,10 @@ $cache_array[$cache_index] .
 				}
 
 				if ( $cache_exp_secs > 0 ) {
+
 					// update the cached array and maintain the existing transient expiration time
 					$expires_in_secs = SucomUtil::update_transient_array( $cache_id, $cache_array, $cache_exp_secs );
+
 					if ( $this->p->debug->enabled ) {
 						$this->p->debug->log( $type . ' buttons html saved to transient cache (expires in ' . $expires_in_secs . ' secs)' );
 					}
@@ -733,14 +775,17 @@ $cache_array[$cache_index] .
 		}
 
 		public function get_buttons_cache_exp() {
+
 			static $cache_exp_secs = null;	// filter the cache expiration value only once
+
 			if ( ! isset( $cache_exp_secs ) ) {
-				$cache_md5_pre = $this->p->lca . '_b_';
+				$cache_md5_pre    = $this->p->lca . '_b_';
 				$cache_exp_filter = $this->p->cf['wp']['transient'][$cache_md5_pre]['filter'];
-				$cache_opt_key = $this->p->cf['wp']['transient'][$cache_md5_pre]['opt_key'];
-				$cache_exp_secs = isset( $this->p->options[$cache_opt_key] ) ? $this->p->options[$cache_opt_key] : WEEK_IN_SECONDS;
-				$cache_exp_secs = (int) apply_filters( $cache_exp_filter, $cache_exp_secs );
+				$cache_opt_key    = $this->p->cf['wp']['transient'][$cache_md5_pre]['opt_key'];
+				$cache_exp_secs   = isset( $this->p->options[$cache_opt_key] ) ? $this->p->options[$cache_opt_key] : WEEK_IN_SECONDS;
+				$cache_exp_secs   = (int) apply_filters( $cache_exp_filter, $cache_exp_secs );
 			}
+
 			return $cache_exp_secs;
 		}
 
