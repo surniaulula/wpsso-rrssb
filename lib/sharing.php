@@ -581,8 +581,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				$this->p->debug->mark( 'getting buttons for ' . $type );	// start timer
 			}
 
-			$error_text     = false;
-			$add_html_error = true;
+			$error_text   = false;
+			$append_error = true;
 
 			if ( is_admin() ) {
 
@@ -652,7 +652,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					$this->p->debug->mark( 'getting buttons for ' . $type );	// end timer
 				}
 
-				if ( $add_html_error ) {
+				if ( $append_error ) {
 					return $text . "\n" . '<!-- ' . __METHOD__ . ' ' . $type . ' filter skipped: ' . $error_text . ' -->' . "\n";
 				} else {
 					return $text;
@@ -1012,17 +1012,17 @@ $cache_array[$cache_index] .
 
 			if ( ! isset( $atts['tweet'] ) ) {	// just in case
 
-				$atts['use_post'] = isset( $atts['use_post'] ) ? $atts['use_post'] : true;
-				$atts['add_page'] = isset( $atts['add_page'] ) ? $atts['add_page'] : true;	// used by get_sharing_url()
-				$atts['add_ht']   = isset( $atts['add_ht'] ) ? $atts['add_ht'] : true;
+				$atts['use_post']     = isset( $atts['use_post'] ) ? $atts['use_post'] : true;
+				$atts['add_page']     = isset( $atts['add_page'] ) ? $atts['add_page'] : true;	// used by get_sharing_url()
+				$atts['add_hashtags'] = isset( $atts['add_hashtags'] ) ? $atts['add_hashtags'] : true;
 
-				$cap_type  = empty( $this->p->options[$opt_pre . '_caption'] ) ? 'title' : $this->p->options[$opt_pre . '_caption'];
-				$max_len   = $this->get_tweet_max_len( $opt_pre );
-				$r_cache   = true;
-				$do_encode = false;
-				$md_idx    = $md_pre . '_desc';
+				$cap_type   = empty( $this->p->options[$opt_pre . '_caption'] ) ? 'title' : $this->p->options[$opt_pre . '_caption'];
+				$max_len    = $this->get_tweet_max_len( $opt_pre );
+				$read_cache = true;
+				$do_encode  = false;
+				$md_idx     = $md_pre . '_desc';
 
-				return $this->p->page->get_caption( $cap_type, $max_len, $mod, $r_cache, $atts['add_ht'], $do_encode, $md_idx );
+				return $this->p->page->get_caption( $cap_type, $max_len, $mod, $read_cache, $atts['add_hashtags'], $do_encode, $md_idx );
 
 			} else {
 				return $atts['tweet'];

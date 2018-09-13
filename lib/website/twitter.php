@@ -131,7 +131,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts['add_ht'] = empty( $this->p->options['twitter_cap_hashtags'] ) ? false : $this->p->options['twitter_cap_hashtags'];
+			$atts['add_hashtags'] = empty( $this->p->options['twitter_cap_hashtags'] ) ? false : $this->p->options['twitter_cap_hashtags'];
 
 			if ( ! isset( $atts['tweet'] ) ) {
 				$atts['tweet'] = $this->p->rrssb_sharing->get_tweet_text( $mod, $atts, 'twitter', 'twitter' );
