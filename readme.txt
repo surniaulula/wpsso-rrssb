@@ -147,7 +147,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.8.2-dev.2 (2018/09/11)**
+**Version 1.8.2-dev.4 (2018/09/13)**
 
 * *New Features*
 	* None.
@@ -204,9 +204,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.8.2-dev.2 =
+= 1.8.2-dev.4 =
 
-(2018/09/11) Corrected the pre/after text filter action hook names.
+(2018/09/13) Corrected the pre/after text filter action hook names.
 
 = 1.8.1 =
 
