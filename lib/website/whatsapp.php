@@ -58,7 +58,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteWhatsApp' ) ) {
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
-					'wa_order' => 2,
+					'wa_order' => 11,
 					'wa_on_content' => 1,
 					'wa_on_excerpt' => 0,
 					'wa_on_sidebar' => 0,

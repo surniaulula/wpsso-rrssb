@@ -102,4 +102,3 @@ if ( ! class_exists( 'WpssoRrssbGplForumBbpressSharing' ) ) {
 		}
 	}
 }
-
