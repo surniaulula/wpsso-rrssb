@@ -65,16 +65,19 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 				'<td>'.$this->form->get_checkbox( 'buttons_enqueue_social_style' ).'</td>',
 			) );
 
-			$table_rows = array();
-			$tabs = apply_filters( $this->p->lca.'_rrssb_styles_tabs', $this->p->cf['sharing']['rrssb_styles'] );
+			$table_rows  = array();
 
-			foreach ( $tabs as $tab_key => $title ) {
-				$tabs[$tab_key] = _x( $title, 'metabox tab', 'wpsso-ssb' );	// translate the tab title
+			$styles_tabs = apply_filters( $this->p->lca.'_rrssb_styles_tabs', $this->p->cf['sharing']['rrssb_styles'] );
+
+			foreach ( $styles_tabs as $tab_key => $title ) {
+
+				$styles_tabs[$tab_key] = _x( $title, 'metabox tab', 'wpsso-ssb' );	// translate the tab title
+
 				$table_rows[$tab_key] = array_merge( $this->get_table_rows( $metabox_id, $tab_key ), 
 					apply_filters( $this->p->lca.'_'.$metabox_id.'_'.$tab_key.'_rows', array(), $this->form ) );
 			}
 
-			$this->p->util->do_metabox_tabbed( $metabox_id, $tabs, $table_rows );
+			$this->p->util->do_metabox_tabbed( $metabox_id, $styles_tabs, $table_rows );
 		}
 
 		protected function get_table_rows( $metabox_id, $tab_key ) {

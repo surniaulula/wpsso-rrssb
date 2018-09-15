@@ -28,34 +28,30 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					/**
 					 * Advanced Settings
 					 */
-					// Cache Settings Tab
 					'plugin_sharing_buttons_cache_exp' => WEEK_IN_SECONDS,	// Sharing Buttons HTML Cache Expiry (7 days)
 					/**
 					 * Sharing Buttons
 					 */
-					// Include Buttons Tab
-					'buttons_on_index' => 0,
-					'buttons_on_front' => 0,
-					'buttons_add_to_post' => 1,
-					'buttons_add_to_page' => 1,
+					'buttons_on_index'          => 0,
+					'buttons_on_front'          => 0,
+					'buttons_add_to_post'       => 1,
+					'buttons_add_to_page'       => 1,
 					'buttons_add_to_attachment' => 1,
-					// Buttons Position Tab
-					'buttons_pos_content' => 'bottom',
-					'buttons_pos_excerpt' => 'bottom',
-					// Buttons Advanced
-					'buttons_force_prot' => '',
+					'buttons_pos_content'       => 'bottom',
+					'buttons_pos_excerpt'       => 'bottom',
+					'buttons_force_prot'        => '',
 					/**
 					 * Sharing Styles
 					 */
-					'buttons_use_social_style' => 1,
-					'buttons_enqueue_social_style' => 1,
-					'buttons_css_rrssb-sharing' => '',		// all buttons
-					'buttons_css_rrssb-content' => '',		// post/page content
-					'buttons_css_rrssb-excerpt' => '',		// post/page excerpt
-					'buttons_css_rrssb-admin_edit' => '',
-					'buttons_css_rrssb-sidebar' => '',
-					'buttons_css_rrssb-shortcode' => '',
-					'buttons_css_rrssb-widget' => '',
+					'buttons_use_social_style'      => 1,
+					'buttons_enqueue_social_style'  => 1,
+					'buttons_css_rrssb-admin_edit'  => '',
+					'buttons_css_rrssb-content'     => '',		// post/page content
+					'buttons_css_rrssb-excerpt'     => '',		// post/page excerpt
+					'buttons_css_rrssb-sharing'     => '',		// all buttons
+					'buttons_css_rrssb-shortcode'   => '',
+					'buttons_css_rrssb-sidebar'     => '',
+					'buttons_css_rrssb-widget'      => '',
 				),	// end of defaults
 				'site_defaults' => array(
 					'plugin_sharing_buttons_cache_exp' => WEEK_IN_SECONDS,	// Sharing Buttons HTML Cache Expiry (7 days)
@@ -157,11 +153,11 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			/**
 			 * Add options using a key prefix array and post type names.
 			 */
-			$def_opts = $this->p->util->add_ptns_to_opts( $def_opts, 'buttons_add_to', 1 );
+			$def_opts     = $this->p->util->add_ptns_to_opts( $def_opts, 'buttons_add_to', 1 );
 			$rel_url_path = parse_url( WPSSORRSSB_URLPATH, PHP_URL_PATH );	// returns a relative URL
-			$tabs = apply_filters( $this->p->lca.'_rrssb_styles_tabs', $this->p->cf['sharing']['rrssb_styles'] );
+			$styles       = apply_filters( $this->p->lca.'_rrssb_styles', $this->p->cf['sharing']['rrssb_styles'] );
 
-			foreach ( $tabs as $id => $name ) {
+			foreach ( $styles as $id => $name ) {
 
 				$buttons_css_file = WPSSORRSSB_PLUGINDIR.'css/'.$id.'.css';
 
@@ -201,6 +197,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					}
 				}
 			}
+
 			return $def_opts;
 		}
 
@@ -258,10 +255,12 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function filter_post_custom_meta_tabs( $tabs, $mod, $metabox_id ) {
+
 			if ( $metabox_id === $this->p->cf['meta']['id'] ) {
 				SucomUtil::add_after_key( $tabs, 'media', 'buttons',
 					_x( 'Sharing Buttons', 'metabox tab', 'wpsso-rrssb' ) );
 			}
+
 			return $tabs;
 		}
 
@@ -322,11 +321,11 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 		public function action_load_setting_page_reload_default_sharing_rrssb_styles( $pagehook, $menu_id, $menu_name, $menu_lib ) {
 
-			$opts =& $this->p->options;
+			$opts     =& $this->p->options;
 			$def_opts = $this->p->opt->get_defaults();
-			$tabs = apply_filters( $this->p->lca . '_rrssb_styles_tabs', $this->p->cf['sharing']['rrssb_styles'] );
+			$styles   = apply_filters( $this->p->lca . '_rrssb_styles', $this->p->cf['sharing']['rrssb_styles'] );
 
-			foreach ( $tabs as $id => $name ) {
+			foreach ( $styles as $id => $name ) {
 				if ( isset( $opts['buttons_css_' . $id] ) && isset( $def_opts['buttons_css_' . $id] ) ) {
 					$opts['buttons_css_' . $id] = $def_opts['buttons_css_' . $id];
 				}
@@ -393,15 +392,17 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		public function update_sharing_css( &$opts ) {
 
 			if ( empty( $opts['buttons_use_social_style'] ) ) {
+
 				$this->unlink_sharing_css();
+
 				return;
 			}
 
-			$tabs = apply_filters( $this->p->lca . '_rrssb_styles_tabs', $this->p->cf['sharing']['rrssb_styles'] );
+			$styles = apply_filters( $this->p->lca . '_rrssb_styles', $this->p->cf['sharing']['rrssb_styles'] );
 
 			$sharing_css_data = '';
 
-			foreach ( $tabs as $id => $name ) {
+			foreach ( $styles as $id => $name ) {
 				if ( isset( $opts['buttons_css_' . $id] ) ) {
 					$sharing_css_data .= $opts['buttons_css_' . $id];
 				}
@@ -461,11 +462,13 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function unlink_sharing_css() {
+
 			if ( file_exists( self::$sharing_css_file ) ) {
+
 				if ( ! @unlink( self::$sharing_css_file ) ) {
+
 					if ( is_admin() ) {
-						$this->p->notice->err( __( 'Error removing the minimized stylesheet &mdash; does the web server have sufficient privileges?',
-							'wpsso-rrssb' ) );
+						$this->p->notice->err( __( 'Error removing the minimized stylesheet &mdash; does the web server have sufficient privileges?', 'wpsso-rrssb' ) );
 					}
 				}
 			}
@@ -526,9 +529,11 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function show_admin_sharing( $post_obj ) {
+
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
 			}
+
 			$sharing_css_data = $this->p->options['buttons_css_rrssb-admin_edit'];
 			$sharing_css_data = SucomUtil::minify_css( $sharing_css_data, $this->p->lca );
 
@@ -536,7 +541,9 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			echo '<table class="sucom-settings ' . $this->p->lca . ' post-side-metabox"><tr><td>';
 
 			if ( get_post_status( $post_obj->ID ) === 'publish' || $post_obj->post_type === 'attachment' ) {
+
 				echo $this->get_buttons( '', 'admin_edit' );
+
 			} else {
 				echo '<p class="centered">' . sprintf( __( '%s must be published<br/>before it can be shared.',
 					'wpsso-rrssb' ), SucomUtil::titleize( $post_obj->post_type ) ) . '</p>';
@@ -632,17 +639,24 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				$this->p->debug->mark( 'getting buttons for ' . $type );	// start timer
 			}
 
-			$error_text   = false;
-			$append_error = true;
+			$doing_ajax    = defined( 'DOING_AJAX' ) && DOING_AJAX ? true : false;
+			$error_message = '';
+			$append_error  = true;
 
-			if ( is_admin() ) {
+			if ( $doing_ajax ) {
+
+				if ( $this->p->debug->enabled ) {
+					$this->p->debug->log( 'doing_ajax is true' );
+				}
+
+			} elseif ( is_admin() ) {
 
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'is_admin is true' );
 				}
 
 				if ( strpos( $type, 'admin_' ) !== 0 ) {
-					$error_text = $type . ' ignored in back-end';
+					$error_message = $type . ' ignored in back-end';
 				}
 
 			} elseif ( SucomUtil::is_amp() ) {
@@ -651,7 +665,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					$this->p->debug->log( 'is_amp is true' );
 				}
 
-				$error_text = 'buttons not allowed in amp endpoint';
+				$error_message = 'buttons not allowed in amp endpoint';
 
 			} elseif ( is_feed() ) {
 
@@ -659,7 +673,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					$this->p->debug->log( 'is_feed is true' );
 				}
 
-				$error_text = 'buttons not allowed in rss feeds';
+				$error_message = 'buttons not allowed in rss feeds';
 
 			} elseif ( ! is_singular() ) {
 
@@ -668,7 +682,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				}
 
 				if ( empty( $this->p->options['buttons_on_index'] ) ) {
-					$error_text = 'buttons_on_index not enabled';
+					$error_message = 'buttons_on_index not enabled';
 				}
 
 			} elseif ( is_front_page() ) {
@@ -678,7 +692,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				}
 
 				if ( empty( $this->p->options['buttons_on_front'] ) ) {
-					$error_text = 'buttons_on_front not enabled';
+					$error_message = 'buttons_on_front not enabled';
 				}
 
 			} elseif ( is_singular() ) {
@@ -688,23 +702,23 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				}
 
 				if ( $this->is_post_buttons_disabled() ) {
-					$error_text = 'post buttons are disabled';
+					$error_message = 'post buttons are disabled';
 				}
 			}
 
-			if ( false === $error_text && ! $this->have_buttons_for_type( $type ) ) {
-				$error_text = 'no sharing buttons enabled';
+			if ( empty( $error_message ) && ! $this->have_buttons_for_type( $type ) ) {
+				$error_message = 'no sharing buttons enabled';
 			}
 
-			if ( $error_text !== false ) {
+			if ( ! empty( $error_message ) ) {
 
 				if ( $this->p->debug->enabled ) {
-					$this->p->debug->log( $type . ' filter skipped: ' . $error_text );
+					$this->p->debug->log( $type . ' filter skipped: ' . $error_message );
 					$this->p->debug->mark( 'getting buttons for ' . $type );	// end timer
 				}
 
 				if ( $append_error ) {
-					return $text . "\n" . '<!-- ' . __METHOD__ . ' ' . $type . ' filter skipped: ' . $error_text . ' -->' . "\n";
+					return $text . "\n" . '<!-- ' . __METHOD__ . ' ' . $type . ' filter skipped: ' . $error_message . ' -->' . "\n";
 				} else {
 					return $text;
 				}
@@ -1013,14 +1027,19 @@ $cache_array[$cache_index] .
 
 			// get_options() returns null if an index key is not found
 			if ( $this->p->m['util']['post']->get_options( $post_id, 'buttons_disabled' ) ) {
+
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'post ' . $post_id . ': sharing buttons disabled by meta data option' );
 				}
+
 				$ret = true;
+
 			} elseif ( ! empty( $post_obj->post_type ) && empty( $this->p->options['buttons_add_to_' . $post_obj->post_type] ) ) {
+
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'post ' . $post_id . ': sharing buttons not enabled for post type ' . $post_obj->post_type );
 				}
+
 				$ret = true;
 			}
 

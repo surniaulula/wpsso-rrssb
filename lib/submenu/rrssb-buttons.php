@@ -86,7 +86,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			$metabox_id = 'rrssb_buttons';
 
 			$tabs = apply_filters( $this->p->lca.'_rrssb_buttons_tabs', array(
-				'include' => _x( 'Include Buttons', 'metabox tab', 'wpsso-rrssb' ),
+				'include'  => _x( 'Include Buttons', 'metabox tab', 'wpsso-rrssb' ),
 				'position' => _x( 'Buttons Position', 'metabox tab', 'wpsso-rrssb' ),
 				'advanced' => _x( 'Advanced Settings', 'metabox tab', 'wpsso-rrssb' ),
 			) );
