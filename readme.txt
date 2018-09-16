@@ -147,7 +147,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.9.0-rc.1 (2018/09/15)**
+**Version 1.9.0 (2018/09/16)**
 
 * *New Features*
 	* None.
@@ -160,57 +160,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * *Developer Notes*
 	* None.
 
-**Version 1.8.1 (2018/09/09)**
-
-* *New Features*
-	* None.
-* *Improvements*
-	* None.
-* *Bugfixes*
-	* None.
-* *Developer Notes*
-	* Minor update for code style and changes in WPSSO v4.12.0.
-
-**Version 1.8.0 (2018/07/22)**
-
-* *New Features*
-	* None.
-* *Improvements*
-	* None.
-* *Bugfixes*
-	* None.
-* *Developer Notes*
-	* Replaced some calls to WpssoMedia `get_attachment_image_src()` with `get_attachment_image_url()` (available in WPSSO v4.9.0).
-
-**Version 1.7.1 (2018/07/02)**
-
-* *New Features*
-	* None.
-* *Improvements*
-	* None.
-* *Bugfixes*
-	* None.
-* *Developer Notes*
-	* Removed a check for the deprecated "Enable Plugin Shortcode(s)" option.
-
-**Version 1.7.0 (2018/06/28)**
-
-* *New Features*
-	* None.
-* *Improvements*
-	* Added a new "Tweet Text Source" option in the Responsive Buttons settings page for Twitter.
-* *Bugfixes*
-	* None.
-* *Developer Notes*
-	* None.
-
 == Upgrade Notice ==
 
-= 1.9.0-rc.1 =
+= 1.9.0 =
 
-(2018/09/15) Added a new "Reload Default Buttons HTML" button on the SSO &gt; Responsive Buttons settings page. Refactored the BuddyPress integration modules to support ajax queries in the new BuddyPress templates (Pro version). Fixed the pre/after text filter action hook names.
-
-= 1.8.1 =
-
-(2018/09/09) Minor update for code style and changes in WPSSO v4.12.0.
+(2018/09/16) Added a new "Reload Default Buttons HTML" button on the SSO &gt; Responsive Buttons settings page. Refactored the BuddyPress integration modules to support ajax queries in the new BuddyPress templates (Pro version). Fixed the pre/after text filter action hook names.
 
