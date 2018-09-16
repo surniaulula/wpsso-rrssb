@@ -1,3 +1,4 @@
+
 /**
  * Save an empty style text box to reload the default example styles.
  * These styles are provided as examples only - modifications may be
@@ -50,3 +51,16 @@ ul.rrssb-buttons li::before,
 	display:block;
 	white-space:nowrap;
 }
+
+.rrssb-email      a .rrssb-text::before { content:" E-Mail"; }
+.rrssb-facebook   a .rrssb-text::before { content:" Facebook"; }
+.rrssb-googleplus a .rrssb-text::before { content:" Google+"; }
+.rrssb-linkedin   a .rrssb-text::before { content:" LinkedIn"; }
+.rrssb-pinterest  a .rrssb-text::before { content:" Pinterest"; }
+.rrssb-pocket     a .rrssb-text::before { content:" Pocket"; }
+.rrssb-reddit     a .rrssb-text::before { content:" Reddit"; }
+.rrssb-tumblr     a .rrssb-text::before { content:" Tumblr"; }
+.rrssb-twitter    a .rrssb-text::before { content:" Twitter"; }
+.rrssb-vk         a .rrssb-text::before { content:" Vk"; }
+.rrssb-whatsapp   a .rrssb-text::before { content:" WhatsApp"; }
+

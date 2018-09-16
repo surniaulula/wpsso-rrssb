@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"1.9.0-b.1\n"
+"1.9.0-rc.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2018-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -177,62 +177,68 @@ msgctxt "option label"
 msgid "Position in bbPress Single"
 msgstr ""
 
-#: lib/sharing.php:178
+#: lib/sharing.php:179
 msgid "Failed to open the css file %s for reading."
 msgstr ""
 
-#: lib/sharing.php:261
+#: lib/sharing.php:274
 msgctxt "metabox tab"
 msgid "Sharing Buttons"
 msgstr ""
 
-#: lib/sharing.php:338
+#: lib/sharing.php:348
 msgid ""
-"All sharing styles have been reloaded with their default value and saved."
+"All sharing buttons HTML has been reloaded with their default values and "
+"saved."
 msgstr ""
 
-#: lib/sharing.php:372
+#: lib/sharing.php:366
+msgid ""
+"All sharing styles have been reloaded with their default values and saved."
+msgstr ""
+
+#: lib/sharing.php:400
 msgid "The %s file is not readable."
 msgstr ""
 
-#: lib/sharing.php:422
+#: lib/sharing.php:450
 msgid "Failed writing the css file %s."
 msgstr ""
 
-#: lib/sharing.php:431
+#: lib/sharing.php:459
 msgid "Updated the <a href=\"%1$s\">%2$s</a> stylesheet (%3$d bytes written)."
 msgstr ""
 
-#: lib/sharing.php:448
+#: lib/sharing.php:476
 msgid "Cache folder %s is not writable."
 msgstr ""
 
-#: lib/sharing.php:458
+#: lib/sharing.php:486
 msgid "Failed to open the css file %s for writing."
 msgstr ""
 
-#: lib/sharing.php:471
+#: lib/sharing.php:499
 msgid ""
 "Error removing the minified stylesheet &mdash; does the web server have "
 "sufficient privileges?"
 msgstr ""
 
-#: lib/sharing.php:493
+#: lib/sharing.php:521
 msgctxt "metabox title"
 msgid "Sharing Buttons"
 msgstr ""
 
-#: lib/sharing.php:552
+#: lib/sharing.php:580
 msgid "%s must be published<br/>before it can be shared."
 msgstr ""
 
-#: lib/sharing.php:1190
+#: lib/sharing.php:1218
 msgid ""
 "Social sharing buttons can be added to the top, bottom, or both. Each "
 "sharing button must also be enabled below (see the <em>%s</em> options)."
 msgstr ""
 
-#: lib/sharing.php:1190 lib/website/email.php:33 lib/website/facebook.php:33
+#: lib/sharing.php:1218 lib/website/email.php:33 lib/website/facebook.php:33
 #: lib/website/gplus.php:33 lib/website/linkedin.php:33
 #: lib/website/pinterest.php:49 lib/website/pocket.php:33
 #: lib/website/reddit.php:33 lib/website/tumblr.php:33
@@ -241,21 +247,21 @@ msgctxt "option label"
 msgid "Show Button in"
 msgstr ""
 
-#: lib/sharing.php:1196
+#: lib/sharing.php:1224
 msgid ""
 "Add the social sharing buttons to each entry of an index webpage (blog front "
 "page, category, archive, etc.). Social sharing buttons are not included on "
 "index webpages by default."
 msgstr ""
 
-#: lib/sharing.php:1202
+#: lib/sharing.php:1230
 msgid ""
 "If a static Post or Page has been selected for the front page, you can add "
 "the social sharing buttons to that static front page as well (default is "
 "unchecked)."
 msgstr ""
 
-#: lib/sharing.php:1208
+#: lib/sharing.php:1236
 msgid ""
 "Enabled social sharing buttons are added to the Post, Page, Media, and "
 "Product webpages by default. If your theme (or another plugin) supports "
@@ -263,11 +269,11 @@ msgid ""
 "buttons on these webpages, check the appropriate option(s) here."
 msgstr ""
 
-#: lib/sharing.php:1214
+#: lib/sharing.php:1242
 msgid "Modify URLs shared by the sharing buttons to use a specific protocol."
 msgstr ""
 
-#: lib/sharing.php:1220
+#: lib/sharing.php:1248
 msgid ""
 "Add the CSS of all <em>%1$s</em> to webpages (default is checked). The CSS "
 "will be <strong>minified</strong>, and saved to a single stylesheet with a "
@@ -275,12 +281,12 @@ msgid ""
 "added directly to the webpage HTML."
 msgstr ""
 
-#: lib/sharing.php:1220
+#: lib/sharing.php:1248
 msgctxt "lib file description"
 msgid "Sharing Styles"
 msgstr ""
 
-#: lib/sharing.php:1226
+#: lib/sharing.php:1254
 msgid ""
 "Have WordPress enqueue the social stylesheet instead of adding the CSS to in "
 "the webpage HTML (default is unchecked). Enqueueing the stylesheet may be "
@@ -288,110 +294,115 @@ msgid ""
 "single stylesheet URL."
 msgstr ""
 
-#: lib/sharing.php:1232
+#: lib/sharing.php:1260
 msgid ""
 "Append the %1$s to the tweet (see <a href=\"%2$s\">the Twitter options tab</"
 "a> in the %3$s settings page). The %1$s will be displayed and recommended "
 "after the webpage is shared."
 msgstr ""
 
-#: lib/sharing.php:1232 lib/sharing.php:1238
+#: lib/sharing.php:1260 lib/sharing.php:1266
 msgctxt "option label"
 msgid "Twitter Business @username"
 msgstr ""
 
-#: lib/sharing.php:1232
+#: lib/sharing.php:1260
 msgctxt "lib file description"
 msgid "General"
 msgstr ""
 
-#: lib/sharing.php:1238
+#: lib/sharing.php:1266
 msgid ""
 "Recommend following the author's Twitter @username after sharing a webpage. "
 "If the %1$s option (above) is also checked, the %2$s is suggested first."
 msgstr ""
 
-#: lib/sharing.php:1238 lib/website/twitter.php:59
+#: lib/sharing.php:1266 lib/website/twitter.php:59
 msgctxt "option label"
 msgid "Add via Business @username"
 msgstr ""
 
-#: lib/sharing.php:1253
+#: lib/sharing.php:1281
 msgctxt "option comment"
 msgid "disabled"
 msgstr ""
 
-#: lib/sharing.php:1255
+#: lib/sharing.php:1283
 msgid ""
 "The rendered HTML for social sharing buttons is saved to the WordPress "
 "transient cache to optimize performance."
 msgstr ""
 
-#: lib/sharing.php:1256
+#: lib/sharing.php:1284
 msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:52
+#: lib/submenu/rrssb-buttons.php:63
 msgctxt "metabox title"
 msgid "Social Sharing Buttons"
 msgstr ""
 
 #: lib/submenu/rrssb-buttons.php:89
+msgctxt "submit button"
+msgid "Reload Default Buttons HTML"
+msgstr ""
+
+#: lib/submenu/rrssb-buttons.php:112
 msgctxt "metabox tab"
 msgid "Include Buttons"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:90
+#: lib/submenu/rrssb-buttons.php:113
 msgctxt "metabox tab"
 msgid "Buttons Position"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:91
+#: lib/submenu/rrssb-buttons.php:114
 msgctxt "metabox tab"
 msgid "Advanced Settings"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:130
+#: lib/submenu/rrssb-buttons.php:157
 msgctxt "option label"
 msgid "Include on Archive Webpages"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:134
+#: lib/submenu/rrssb-buttons.php:161
 msgctxt "option label"
 msgid "Include on Static Front Page"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:138
+#: lib/submenu/rrssb-buttons.php:165
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:146
+#: lib/submenu/rrssb-buttons.php:173
 msgctxt "option label"
 msgid "Position in Content Text"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:150
+#: lib/submenu/rrssb-buttons.php:177
 msgctxt "option label"
 msgid "Position in Excerpt Text"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:39
+#: lib/submenu/rrssb-styles.php:41
 msgctxt "metabox title"
 msgid "Social Sharing Styles"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:44
+#: lib/submenu/rrssb-styles.php:47
 msgctxt "submit button"
 msgid "Reload Default Styles"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:59
+#: lib/submenu/rrssb-styles.php:63
 msgctxt "option label"
 msgid "Use the Social Stylesheet"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:63
+#: lib/submenu/rrssb-styles.php:67
 msgctxt "option label"
 msgid "Enqueue the Stylesheet"
 msgstr ""

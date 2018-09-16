@@ -33,7 +33,9 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 			) );
 		}
 
-		// called by the extended WpssoAdmin class
+		/**
+		 * Called by the extended WpssoAdmin class.
+		 */
 		protected function add_meta_boxes() {
 			add_meta_box( $this->pagehook.'_sharing_styles',
 				_x( 'Social Sharing Styles', 'metabox title', 'wpsso-rrssb' ),
@@ -41,7 +43,9 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 		}
 
 		public function filter_action_buttons( $action_buttons ) {
+
 			$action_buttons[0]['reload_default_sharing_rrssb_styles'] = _x( 'Reload Default Styles', 'submit button', 'wpsso-rrssb' );
+
 			return $action_buttons;
 		}
 

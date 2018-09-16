@@ -106,7 +106,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				}
 
 				$this->p->util->add_plugin_actions( $this, array(
-					'load_setting_page_reload_default_sharing_rrssb_styles' => 4,
+					'load_setting_page_reload_default_sharing_rrssb_buttons_html' => 4,
+					'load_setting_page_reload_default_sharing_rrssb_styles'       => 4,
 				) );
 
 				$this->p->util->add_plugin_filters( $this, array( 
@@ -202,10 +203,12 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function filter_get_site_defaults( $site_def_opts ) {
+
 			return array_merge( $site_def_opts, self::$cf['opt']['site_defaults'] );
 		}
 
 		public function filter_get_md_defaults( $md_defs ) {
+
 			return array_merge( $md_defs, array(
 				'email_title'      => '',	// Email Subject
 				'email_desc'       => '',	// Email Message
@@ -240,14 +243,24 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			}
 
 			switch ( $base_key ) {
-				// integer options that must be 1 or more (not zero)
+
+				/**
+				 * Integer options that must be 1 or more (not zero).
+				 */
 				case ( preg_match( '/_order$/', $base_key ) ? true : false ):
+
 					return 'pos_int';
+
 					break;
-				// text strings that can be blank
+
+				/**
+				 * Text strings that can be blank.
+				 */
 				case 'buttons_force_prot':
 				case ( preg_match( '/_(desc|title)$/', $base_key ) ? true : false ):
+
 					return 'ok_blank';
+
 					break;
 			}
 
@@ -319,23 +332,38 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			return $features;
 		}
 
-		public function action_load_setting_page_reload_default_sharing_rrssb_styles( $pagehook, $menu_id, $menu_name, $menu_lib ) {
+		public function action_load_setting_page_reload_default_sharing_rrssb_buttons_html( $pagehook, $menu_id, $menu_name, $menu_lib ) {
 
 			$opts     =& $this->p->options;
+			$def_opts = $this->p->opt->get_defaults();
+
+			foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre ) {
+				if ( isset( $this->p->options[$opt_pre . '_rrssb_html'] ) && isset( $def_opts[$opt_pre . '_rrssb_html'] ) ) {
+					$this->p->options[$opt_pre . '_rrssb_html'] = $def_opts[$opt_pre . '_rrssb_html'];
+				}
+			}
+
+			$this->p->opt->save_options( WPSSO_OPTIONS_NAME, $this->p->options, false );	// $network is false.
+
+			$this->p->notice->upd( __( 'All sharing buttons HTML has been reloaded with their default values and saved.', 'wpsso-rrssb' ) );
+		}
+
+		public function action_load_setting_page_reload_default_sharing_rrssb_styles( $pagehook, $menu_id, $menu_name, $menu_lib ) {
+
 			$def_opts = $this->p->opt->get_defaults();
 			$styles   = apply_filters( $this->p->lca . '_rrssb_styles', $this->p->cf['sharing']['rrssb_styles'] );
 
 			foreach ( $styles as $id => $name ) {
-				if ( isset( $opts['buttons_css_' . $id] ) && isset( $def_opts['buttons_css_' . $id] ) ) {
-					$opts['buttons_css_' . $id] = $def_opts['buttons_css_' . $id];
+				if ( isset( $this->p->options['buttons_css_' . $id] ) && isset( $def_opts['buttons_css_' . $id] ) ) {
+					$this->p->options['buttons_css_' . $id] = $def_opts['buttons_css_' . $id];
 				}
 			}
 
-			$this->update_sharing_css( $opts );
+			$this->update_sharing_css( $this->p->options );
 
-			$this->p->opt->save_options( WPSSO_OPTIONS_NAME, $opts, false );	// $network is false.
+			$this->p->opt->save_options( WPSSO_OPTIONS_NAME, $this->p->options, false );	// $network is false.
 
-			$this->p->notice->upd( __( 'All sharing styles have been reloaded with their default value and saved.', 'wpsso-rrssb' ) );
+			$this->p->notice->upd( __( 'All sharing styles have been reloaded with their default values and saved.', 'wpsso-rrssb' ) );
 		}
 
 		public function wp_enqueue_styles() {
