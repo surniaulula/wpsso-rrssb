@@ -147,11 +147,13 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.9.0-b.1 (2018/09/15)**
+**Version 1.9.0-rc.1 (2018/09/15)**
 
 * *New Features*
 	* None.
 * *Improvements*
+	* Added a new "Reload Default Buttons HTML" button on the SSO &gt; Responsive Buttons settings page.
+	* Moved the sharing buttons text to CSS (reload the default buttons HTML and styles to update).
 	* Refactored the BuddyPress integration modules to support ajax queries in the new BuddyPress templates (Pro version).
 * *Bugfixes*
 	* Fixed the pre/after text filter action hook names.
@@ -204,9 +206,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.9.0-b.1 =
+= 1.9.0-rc.1 =
 
-(2018/09/15) Refactored the BuddyPress integration modules to support ajax queries in the new BuddyPress templates (Pro version). Fixed the pre/after text filter action hook names.
+(2018/09/15) Added a new "Reload Default Buttons HTML" button on the SSO &gt; Responsive Buttons settings page. Refactored the BuddyPress integration modules to support ajax queries in the new BuddyPress templates (Pro version). Fixed the pre/after text filter action hook names.
 
 = 1.8.1 =
 
