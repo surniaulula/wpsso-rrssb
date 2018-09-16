@@ -50,7 +50,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 			$metabox_id = 'sharing-styles';
 
 			if ( file_exists( WpssoRrssbSharing::$sharing_css_file ) && ( $fsize = filesize( WpssoRrssbSharing::$sharing_css_file ) ) !== false ) {
-				$css_min_msg = ' <a href="'.WpssoRrssbSharing::$sharing_css_url.'">minimized css is '.$fsize.' bytes</a>';
+				$css_min_msg = ' <a href="'.WpssoRrssbSharing::$sharing_css_url.'">minified css is '.$fsize.' bytes</a>';
 			} else {
 				$css_min_msg = '';
 			}

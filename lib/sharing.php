@@ -154,7 +154,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			 * Add options using a key prefix array and post type names.
 			 */
 			$def_opts     = $this->p->util->add_ptns_to_opts( $def_opts, 'buttons_add_to', 1 );
-			$rel_url_path = parse_url( WPSSORRSSB_URLPATH, PHP_URL_PATH );	// returns a relative URL
+			$rel_url_path = parse_url( WPSSORRSSB_URLPATH, PHP_URL_PATH );	// Returns a relative URL.
 			$styles       = apply_filters( $this->p->lca.'_rrssb_styles', $this->p->cf['sharing']['rrssb_styles'] );
 
 			foreach ( $styles as $id => $name ) {
@@ -224,7 +224,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		public function filter_save_options( $opts, $options_name, $network ) {
 
 			/**
-			 * Update the combined and minimized social stylesheet.
+			 * Update the combined and minified social stylesheet.
 			 */
 			if ( false === $network ) {
 				$this->update_sharing_css( $opts );
@@ -468,7 +468,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				if ( ! @unlink( self::$sharing_css_file ) ) {
 
 					if ( is_admin() ) {
-						$this->p->notice->err( __( 'Error removing the minimized stylesheet &mdash; does the web server have sufficient privileges?', 'wpsso-rrssb' ) );
+						$this->p->notice->err( __( 'Error removing the minified stylesheet &mdash; does the web server have sufficient privileges?', 'wpsso-rrssb' ) );
 					}
 				}
 			}
@@ -496,20 +496,24 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function action_pre_apply_filters_text( $filter_name ) {
+
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log_args( array( 
 					'filter_name' => $filter_name,
 				) );
 			}
+
 			$this->remove_buttons_filter( $filter_name );
 		}
 
 		public function action_after_apply_filters_text( $filter_name ) {
+
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log_args( array( 
 					'filter_name' => $filter_name,
 				) );
 			}
+
 			$this->add_buttons_filter( $filter_name );
 		}
 
@@ -632,16 +636,19 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			return $this->get_buttons( $text, 'content' );
 		}
 
-		// $mod = true | false | post_id | $mod array
+		/**
+		 * $mod = true | false | post_id | $mod array
+		 */
 		public function get_buttons( $text, $type = 'content', $mod = true, $location = '', $atts = array() ) {
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark( 'getting buttons for ' . $type );	// start timer
 			}
 
-			$doing_ajax    = defined( 'DOING_AJAX' ) && DOING_AJAX ? true : false;
 			$error_message = '';
 			$append_error  = true;
+			$doing_dev     = SucomUtil::get_const( 'WPSSO_DEV' );
+			$doing_ajax    = SucomUtil::get_const( 'DOING_AJAX' );
 
 			if ( $doing_ajax ) {
 
@@ -729,9 +736,11 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			 * $mod = true | false | post_id | $mod array
 			 */
 			if ( ! is_array( $mod ) ) {
+
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'optional call to get_page_mod()' );
 				}
+
 				$mod = $this->p->util->get_page_mod( $mod );
 			}
 
@@ -741,7 +750,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			$cache_exp_secs = $this->get_buttons_cache_exp();
 			$cache_salt     = __METHOD__ . '(' . SucomUtil::get_mod_salt( $mod, $sharing_url ) . ')';
 			$cache_id       = $cache_md5_pre . md5( $cache_salt );
-			$cache_index    = $this->get_buttons_cache_index( $type );	// returns salt with locale, mobile, wp_query, etc.
+			$cache_index    = $this->get_buttons_cache_index( $type );	// Returns salt with locale, mobile, wp_query, etc.
 			$cache_array    = array();
 
 			if ( $this->p->debug->enabled ) {
@@ -757,18 +766,26 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				$cache_array = get_transient( $cache_id );
 
 				if ( isset( $cache_array[$cache_index] ) ) {	// can be an empty string
+
 					if ( $this->p->debug->enabled ) {
 						$this->p->debug->log( $type . ' cache index found in transient cache' );
 					}
-					// continue and add buttons relative to the content (top, bottom, or both)
+
+					/**
+					 * Continue and add buttons relative to the content (top, bottom, or both).
+					 */
+
 				} else {
+
 					if ( $this->p->debug->enabled ) {
 						$this->p->debug->log( $type . ' cache index not in transient cache' );
 					}
+
 					if ( ! is_array( $cache_array ) ) {
 						$cache_array = array();
 					}
 				}
+
 			} elseif ( $this->p->debug->enabled ) {
 				$this->p->debug->log( $type . ' buttons array transient cache is disabled' );
 			}
@@ -794,19 +811,24 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				$atts['use_post'] = $mod['use_post'];
 				$atts['css_id']   = $css_type_name = 'rrssb-' . $type;
 
-				// returns html or an empty string
+				/**
+				 * Returns html or an empty string.
+				 */
 				$cache_array[$cache_index] = $this->get_html( $sorted_ids, $atts, $mod );
 
 				if ( ! empty( $cache_array[$cache_index] ) ) {
-					$cache_array[$cache_index] = apply_filters( $this->p->lca . '_rrssb_buttons_html', '
+
+					$cache_array[$cache_index] = '
 <!-- ' . $this->p->lca . ' ' . $css_type_name . ' begin -->
 <!-- generated on ' . date( 'c' ) . ' -->
-<div class="' . $this->p->lca . '-rrssb' . ( $mod['use_post'] ?
-	' ' . $this->p->lca . '-' . $css_type_name . '"' :
-	'" id="' . $this->p->lca . '-' . $css_type_name . '"' ) . '>' . "\n" . 
+<div class="' . $this->p->lca . '-rrssb' .
+	( $mod['use_post'] ? ' ' . $this->p->lca . '-' . $css_type_name . '"' : '" id="' . $this->p->lca . '-' . $css_type_name . '"' ) . '>' . "\n" . 
 $cache_array[$cache_index] . 
 '</div><!-- .' . $this->p->lca . '-rrssb ' . ( $mod['use_post'] ? '.' : '#' ) . $this->p->lca . '-' . $css_type_name . ' -->
-<!-- ' . $this->p->lca . ' ' . $css_type_name . ' end -->' . "\n\n", $type, $mod, $location, $atts );
+<!-- ' . $this->p->lca . ' ' . $css_type_name . ' end -->' . "\n\n";
+
+					$cache_array[$cache_index] = apply_filters( $this->p->lca . '_rrssb_buttons_html',
+						$cache_array[$cache_index], $type, $mod, $location, $atts );
 				}
 
 				if ( $cache_exp_secs > 0 ) {
@@ -821,14 +843,23 @@ $cache_array[$cache_index] .
 			}
 
 			switch ( $location ) {
+
 				case 'top': 
+
 					$text = $cache_array[$cache_index] . $text; 
+
 					break;
+
 				case 'bottom': 
+
 					$text = $text . $cache_array[$cache_index]; 
+
 					break;
+
 				case 'both': 
+
 					$text = $cache_array[$cache_index] . $text . $cache_array[$cache_index]; 
+
 					break;
 			}
 
@@ -872,10 +903,16 @@ $cache_array[$cache_index] .
 
 			$cache_index .= $ids !== false ? '_ids:' . http_build_query( $ids, '', '_' ) : '';
 
-			return SucomUtil::get_query_salt( $cache_index );	// add $wp_query args
+			$cache_index = SucomUtil::get_query_salt( $cache_index );	// Add $wp_query args.
+
+			$cache_index = apply_filters( $this->p->lca . '_rrssb_buttons_cache_index', $cache_index );
+
+			return $cache_index;
 		}
 
-		// get_html() can be called by a widget, shortcode, function, filter hook, etc.
+		/**
+		 * get_html() can be called by a widget, shortcode, function, filter hook, etc.
+		 */
 		public function get_html( array $ids, array $atts, $mod = false ) {
 
 			if ( $this->p->debug->enabled ) {
@@ -903,8 +940,11 @@ $cache_array[$cache_index] .
 			$saved_atts = $atts;
 
 			foreach ( $ids as $id ) {
+
 				if ( isset( $this->website[$id] ) ) {
+
 					if ( method_exists( $this->website[$id], 'get_html' ) ) {
+
 						if ( $this->allow_for_platform( $id ) ) {
 
 							$atts['src_id'] = SucomUtil::get_atts_src_id( $atts, $id );	// uses 'css_id' and 'use_post'
@@ -962,15 +1002,18 @@ $cache_array[$cache_index] .
 		}
 
 		public function have_buttons_for_type( $type ) {
+
 			if ( isset( $this->buttons_for_type[$type] ) ) {
 				return $this->buttons_for_type[$type];
 			}
+
 			foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre ) {
 				if ( ! empty( $this->p->options[$opt_pre . '_on_' . $type] ) &&	// check if button is enabled
 					$this->allow_for_platform( $id ) ) {			// check if allowed on platform
 					return $this->buttons_for_type[$type] = true;
 				}
 			}
+
 			return $this->buttons_for_type[$type] = false;
 		}
 
@@ -1174,7 +1217,7 @@ $cache_array[$cache_index] .
 
 				case 'tooltip-buttons_use_social_style':
 
-					$text = sprintf( __( 'Add the CSS of all <em>%1$s</em> to webpages (default is checked). The CSS will be <strong>minimized</strong>, and saved to a single stylesheet with a URL of <a href="%2$s">%3$s</a>. The minimized stylesheet can be enqueued or added directly to the webpage HTML.', 'wpsso-rrssb' ), _x( 'Sharing Styles', 'lib file description', 'wpsso-rrssb' ), WpssoRrssbSharing::$sharing_css_url, WpssoRrssbSharing::$sharing_css_url );
+					$text = sprintf( __( 'Add the CSS of all <em>%1$s</em> to webpages (default is checked). The CSS will be <strong>minified</strong>, and saved to a single stylesheet with a URL of <a href="%2$s">%3$s</a>. The minified stylesheet can be enqueued or added directly to the webpage HTML.', 'wpsso-rrssb' ), _x( 'Sharing Styles', 'lib file description', 'wpsso-rrssb' ), WpssoRrssbSharing::$sharing_css_url, WpssoRrssbSharing::$sharing_css_url );
 
 					break;
 

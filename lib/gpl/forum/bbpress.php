@@ -25,8 +25,11 @@ if ( ! class_exists( 'WpssoRrssbGplForumBbpress' ) ) {
 			}
 
 			if ( class_exists( 'bbpress' ) ) {
+
 				if ( ! empty( $this->p->avail['p_ext']['rrssb'] ) ) {
+
 					$classname = __CLASS__.'Sharing';
+
 					if ( class_exists( $classname ) ) {
 						$this->sharing = new $classname( $this->p );
 					}
@@ -56,6 +59,7 @@ if ( ! class_exists( 'WpssoRrssbGplForumBbpressSharing' ) ) {
 			) );
 
 			if ( is_admin() && empty( $this->p->options['plugin_hide_pro'] ) ) {
+
 				$this->p->util->add_plugin_filters( $this, array( 
 					'rrssb_buttons_show_on'       => 2,
 					'rrssb_styles_tabs'           => 1,

@@ -25,13 +25,13 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 
 			$error_msg = 'sharing button ids must be an array';
 
-			error_log( __FUNCTION__.'() error: '.$error_msg );
+			error_log( __FUNCTION__ . '() error: ' . $error_msg );
 
 		} elseif ( ! is_array( $atts ) ) {
 
 			$error_msg = 'sharing button attributes must be an array';
 
-			error_log( __FUNCTION__.'() error: '.$error_msg );
+			error_log( __FUNCTION__ . '() error: ' . $error_msg );
 
 		} elseif ( ! $wpsso->avail['p_ext']['rrssb'] ) {
 
@@ -44,9 +44,9 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 
 		if ( $error_msg !== false ) {
 			if ( $wpsso->debug->enabled ) {
-				$wpsso->debug->log( 'exiting early: '.$error_msg );
+				$wpsso->debug->log( 'exiting early: ' . $error_msg );
 			}
-			return '<!-- '.__FUNCTION__.' exiting early: '.$error_msg.' -->' . "\n";
+			return '<!-- ' . __FUNCTION__ . ' exiting early: ' . $error_msg . ' -->' . "\n";
 		}
 
 		$atts['use_post'] = SucomUtil::sanitize_use_post( $atts ); 
