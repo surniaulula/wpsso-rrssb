@@ -187,14 +187,11 @@ msgid "Sharing Buttons"
 msgstr ""
 
 #: lib/sharing.php:348
-msgid ""
-"All sharing buttons HTML has been reloaded with their default values and "
-"saved."
+msgid "The default HTML for all sharing buttons has been reloaded and saved."
 msgstr ""
 
 #: lib/sharing.php:366
-msgid ""
-"All sharing styles have been reloaded with their default values and saved."
+msgid "The default sharing styles have been reloaded and saved."
 msgstr ""
 
 #: lib/sharing.php:400

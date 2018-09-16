@@ -345,7 +345,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 			$this->p->opt->save_options( WPSSO_OPTIONS_NAME, $this->p->options, false );	// $network is false.
 
-			$this->p->notice->upd( __( 'All sharing buttons HTML has been reloaded with their default values and saved.', 'wpsso-rrssb' ) );
+			$this->p->notice->upd( __( 'The default HTML for all sharing buttons has been reloaded and saved.', 'wpsso-rrssb' ) );
 		}
 
 		public function action_load_setting_page_reload_default_sharing_rrssb_styles( $pagehook, $menu_id, $menu_name, $menu_lib ) {
@@ -363,7 +363,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 			$this->p->opt->save_options( WPSSO_OPTIONS_NAME, $this->p->options, false );	// $network is false.
 
-			$this->p->notice->upd( __( 'All sharing styles have been reloaded with their default values and saved.', 'wpsso-rrssb' ) );
+			$this->p->notice->upd( __( 'The default sharing styles have been reloaded and saved.', 'wpsso-rrssb' ) );
 		}
 
 		public function wp_enqueue_styles() {
