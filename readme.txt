@@ -147,6 +147,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.10.0-dev.3 (2018/09/21)**
+
+* *New Features*
+	* None.
+* *Improvements*
+	* Added a new BuddyBlog integration module (Pro version).
+* *Bugfixes*
+	* None.
+* *Developer Notes*
+	* None.
+
 **Version 1.9.0 (2018/09/16)**
 
 * *New Features*
@@ -161,6 +172,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* None.
 
 == Upgrade Notice ==
+
+= 1.10.0-dev.3 =
+
+(2018/09/21) Added a new BuddyBlog integration module (Pro version).
 
 = 1.9.0 =
 
