@@ -39,6 +39,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					'buttons_add_to_attachment' => 1,
 					'buttons_pos_content'       => 'bottom',
 					'buttons_pos_excerpt'       => 'bottom',
+					'buttons_pos_bb_post'       => 'bottom',
 					'buttons_force_prot'        => '',
 					/**
 					 * Sharing Styles

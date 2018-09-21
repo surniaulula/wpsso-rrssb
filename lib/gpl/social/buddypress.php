@@ -79,7 +79,7 @@ if ( ! class_exists( 'WpssoRrssbGplSocialBuddypressSharing' ) ) {
 				/**
 				 * Remove sharing filters on WordPress content and excerpt.
 				 */
-				add_action( $this->p->lca . '_init_plugin', array( $this, 'remove_wp_sharing_buttons' ), 100 );
+				add_action( $this->p->lca . '_init_plugin', array( $this, 'remove_wp_buttons' ), 100 );
 			}
 		}
 
@@ -94,20 +94,9 @@ if ( ! class_exists( 'WpssoRrssbGplSocialBuddypressSharing' ) ) {
 
 		public function filter_rrssb_buttons_show_on( $show_on = array(), $opt_pre = '' ) {
 
-			switch ( $opt_pre ) {
+			$show_on['bp_activity'] = 'BP Activity';
 
-				case 'pin':
-
-					break;
-
-				default:
-
-					$show_on['bp_activity'] = 'BP Activity';
-
-					$this->p->options[$opt_pre.'_on_bp_activity:is'] = 'disabled';
-
-					break;
-			}
+			$this->p->options[$opt_pre.'_on_bp_activity:is'] = 'disabled';
 
 			return $show_on;
 		}
@@ -126,7 +115,7 @@ if ( ! class_exists( 'WpssoRrssbGplSocialBuddypressSharing' ) ) {
 			return $styles;
 		}
 
-		public function remove_wp_sharing_buttons() {
+		public function remove_wp_buttons() {
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();

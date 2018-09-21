@@ -28,7 +28,7 @@ if ( ! class_exists( 'WpssoRrssbGplForumBbpress' ) ) {
 
 				if ( ! empty( $this->p->avail['p_ext']['rrssb'] ) ) {
 
-					$classname = __CLASS__.'Sharing';
+					$classname = __CLASS__ . 'Sharing';
 
 					if ( class_exists( $classname ) ) {
 						$this->sharing = new $classname( $this->p );
@@ -71,7 +71,7 @@ if ( ! class_exists( 'WpssoRrssbGplForumBbpressSharing' ) ) {
 		public function filter_get_defaults( $opts_def ) {
 
 			foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre ) {
-				$opts_def[$opt_pre.'_on_bbp_single'] = 0;
+				$opts_def[$opt_pre . '_on_bbp_single'] = 0;
 			}
 
 			$opts_def['buttons_pos_bbp_single'] = 'top';
@@ -81,20 +81,9 @@ if ( ! class_exists( 'WpssoRrssbGplForumBbpressSharing' ) ) {
 
 		public function filter_rrssb_buttons_show_on( $show_on = array(), $opt_pre = '' ) {
 
-			switch ( $opt_pre ) {
+			$show_on['bbp_single'] = 'bbPress Single';
 
-				case 'pin':
-
-					break;
-
-				default:
-
-					$show_on['bbp_single'] = 'bbPress Single';
-
-					$this->p->options[$opt_pre.'_on_bbp_single:is'] = 'disabled';
-
-					break;
-			}
+			$this->p->options[$opt_pre . '_on_bbp_single:is'] = 'disabled';
 
 			return $show_on;
 		}
@@ -118,8 +107,8 @@ if ( ! class_exists( 'WpssoRrssbGplForumBbpressSharing' ) ) {
 			$table_rows[] = '<td colspan="2">' . $this->p->msgs->get( 'pro-feature-msg', array( 'lca' => 'wpssorrssb' ) ) . '</td>';
 
 			$table_rows['buttons_pos_bbp_single'] = $form->get_th_html( _x( 'Position in bbPress Single',
-				'option label', 'wpsso-rrssb' ), null, 'buttons_pos_bbp_single' ).
-			'<td class="blank">'.$this->p->cf['sharing']['position'][$this->p->options['buttons_pos_bbp_single']].'</td>';
+				'option label', 'wpsso-rrssb' ), null, 'buttons_pos_bbp_single' ) . 
+			'<td class="blank">' . $this->p->cf['sharing']['position'][$this->p->options['buttons_pos_bbp_single']] . '</td>';
 
 			return $table_rows;
 		}
