@@ -1,4 +1,3 @@
-
 /**
  * Save an empty style text box to reload the default example styles.
  * These styles are provided as examples only - modifications may be
@@ -63,4 +62,3 @@ ul.rrssb-buttons li::before,
 .rrssb-twitter    a .rrssb-text::before { content:" Twitter"; }
 .rrssb-vk         a .rrssb-text::before { content:" Vk"; }
 .rrssb-whatsapp   a .rrssb-text::before { content:" WhatsApp"; }
-
