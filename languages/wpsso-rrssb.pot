@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"1.10.0-dev.4\n"
+"1.10.0-dev.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2018-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -349,6 +349,60 @@ msgstr ""
 msgid ""
 "Social sharing buttons, enabled / added to the content text from the %1$s "
 "settings page, are assigned the \"%2$s\" class."
+msgstr ""
+
+#: lib/sharing.php:1335
+msgid ""
+"Social sharing buttons, enabled / added to the excerpt text from the %1$s "
+"settings page, are assigned the \"%2$s\" class."
+msgstr ""
+
+#: lib/sharing.php:1347
+msgid ""
+"Social sharing buttons, enabled / added to the CSS sidebar from the %1$s "
+"settings page, are assigned the \"%2$s\" ID."
+msgstr ""
+
+#: lib/sharing.php:1368
+msgid ""
+"Social sharing buttons added from a shortcode are assigned the \"%1$s\" "
+"class by default."
+msgstr ""
+
+#: lib/sharing.php:1380
+msgid ""
+"Social sharing buttons enabled in the %1$s widget are assigned the \"%2$s\" "
+"class (along with additional unique CSS ID names)."
+msgstr ""
+
+#: lib/sharing.php:1398
+msgid ""
+"Social sharing buttons, enabled / added to the admin editing pages from the "
+"%1$s settings page, are assigned the \"%2$s\" class."
+msgstr ""
+
+#: lib/sharing.php:1410
+msgid ""
+"Social sharing buttons, enabled / added to the WooCommerce Short Description "
+"text from the %1$s settings page, are assigned the \"%2$s\" class."
+msgstr ""
+
+#: lib/sharing.php:1422
+msgid ""
+"Social sharing buttons, enabled / added at the top of bbPress Single "
+"Templates from the %1$s settings page, are assigned the \"%2$s\" class."
+msgstr ""
+
+#: lib/sharing.php:1434
+msgid ""
+"Social sharing buttons, enabled / added to BuddyBlog Posts from the %1$s "
+"settings page, are assigned the \"%2$s\" class."
+msgstr ""
+
+#: lib/sharing.php:1446
+msgid ""
+"Social sharing buttons, enabled / added to BuddyPress Activities from the "
+"%1$s settings page, are assigned the \"%2$s\" class."
 msgstr ""
 
 #: lib/submenu/rrssb-buttons.php:63

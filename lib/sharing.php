@@ -1330,7 +1330,11 @@ $cache_array[$cache_index] .
 
 				case 'info-styles-rrssb-excerpt':
 
-					$text = '<p>Social sharing buttons, enabled / added to the excerpt text from the '.$this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ).' settings page, are assigned the \'wpsso-rrssb-excerpt\' class.</p>';
+					$text = '<p>';
+					
+					$text .= sprintf( __( 'Social sharing buttons, enabled / added to the excerpt text from the %1$s settings page, are assigned the "%2$s" class.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-excerpt' );
+					
+					$text .= '</p>';
 
 					$text .= $this->get_info_css_example( 'excerpt', true );
 
@@ -1338,37 +1342,62 @@ $cache_array[$cache_index] .
 
 				case 'info-styles-rrssb-sidebar':
 
-					$text = '<p>Social sharing buttons, enabled / added to the CSS sidebar from the '.$this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ).' settings page, are assigned the \'wpsso-rrssb-sidebar\' ID.</p> 
-					<p>In order to achieve a vertical display, each un-ordered list (UL) contains a single list item (LI).</p>
-					<p>Example:</p><pre>
+					$text = '<p>';
+					
+					$text .= sprintf( __( 'Social sharing buttons, enabled / added to the CSS sidebar from the %1$s settings page, are assigned the "%2$s" ID.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-sidebar' );
+					
+					$text .= '</p><p>';
+
+					$text .= 'In order to achieve a vertical display, each unordered list (UL) contains a single list item (LI).';
+
+					$text .= '</p>';
+
+					$text .= '<p>Example CSS:</p>
+<pre>
 div.wpsso-rrssb 
   #wpsso-rrssb-sidebar
     ul.rrssb-buttons
-      li.rrssb-facebook {}</pre>';
+      li.rrssb-facebook {}
+</pre>';
 					break;
 
 				case 'info-styles-rrssb-shortcode':
 
-					$text = '<p>Social sharing buttons added from a shortcode are assigned the \'wpsso-rrssb-shortcode\' class by default.</p>';
+					$text = '<p>';
+					
+					$text .= sprintf( __( 'Social sharing buttons added from a shortcode are assigned the "%1$s" class by default.', 'wpsso-rrssb' ), 'wpsso-rrssb-shortcode' );
+					
+					$text .= '</p>';
 
-					$text .= $this->get_info_css_example( 'admin_edit', true );
+					$text .= $this->get_info_css_example( 'shortcode', true );
 
 					break;
 
 				case 'info-styles-rrssb-widget':
 
-					$text = '<p>Social sharing buttons enabled in the '.$short.' widget are assigned the \'wpsso-rrssb-widget\' class (along with additional unique CSS ID names).</p> 
-					<p>Example:</p><pre>
+					$text = '<p>';
+					
+					$text .= sprintf( __( 'Social sharing buttons enabled in the %1$s widget are assigned the "%2$s" class (along with additional unique CSS ID names).', 'wpsso-rrssb' ), $short, 'wpsso-rrssb-widget' );
+					
+					$text .= '</p>';
+
+					$text .= '<p>Example CSS:</p>
+<pre>
 aside.widget 
   .wpsso-rrssb-widget 
     ul.rrssb-buttons
-        li.rrssb-facebook {}</pre>';
+        li.rrssb-facebook {}
+</pre>';
 
 					break;
 
 				case 'info-styles-rrssb-admin_edit':
 
-					$text = '<p>Social sharing buttons, enabled / added to the admin editing pages from the '.$this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ).' settings page, are assigned the \'wpsso-rrssb-admin_edit\' class.</p>';
+					$text = '<p>';
+
+					$text .= sprintf( __( 'Social sharing buttons, enabled / added to the admin editing pages from the %1$s settings page, are assigned the "%2$s" class.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-admin_edit' );
+
+					$text .= '</p>';
 
 					$text .= $this->get_info_css_example( 'admin_edit', true );
 
@@ -1376,7 +1405,11 @@ aside.widget
 
 				case 'info-styles-rrssb-woo_short': 
 
-					$text = '<p>Social sharing buttons, enabled / added to the WooCommerce Short Description text from the '.$this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ).' settings page, are assigned the \'wpsso-rrssb-woo_short\' class.</p>';
+					$text = '<p>';
+
+					$text .= sprintf( __( 'Social sharing buttons, enabled / added to the WooCommerce Short Description text from the %1$s settings page, are assigned the "%2$s" class.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-woo_short' );
+
+					$text .= '</p>';
 
 					$text .= $this->get_info_css_example( 'woo_short' );
 
@@ -1384,15 +1417,35 @@ aside.widget
 
 				case 'info-styles-rrssb-bbp_single': 
 
-					$text = '<p>Social sharing buttons, enabled / added at the top of bbPress Single Templates from the '.$this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ).' settings page, are assigned the \'wpsso-rrssb-bbp_single\' class.</p>';
+					$text = '<p>';
+
+					$text .= sprintf( __( 'Social sharing buttons, enabled / added at the top of bbPress Single Templates from the %1$s settings page, are assigned the "%2$s" class.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-bbp_single' );
+
+					$text .= '</p>';
 
 					$text .= $this->get_info_css_example( 'bbp_single' );
 
       					break;
 
+				case 'info-styles-rrssb-bblog_post': 
+
+					$text = '<p>';
+
+					$text .= sprintf( __( 'Social sharing buttons, enabled / added to BuddyBlog Posts from the %1$s settings page, are assigned the "%2$s" class.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-bblog_post' );
+
+					$text .= '</p>';
+
+					$text .= $this->get_info_css_example( 'bblog_post' );
+
+      					break;
+
 				case 'info-styles-rrssb-bp_activity': 
 
-					$text = '<p>Social sharing buttons, enabled / added to BuddyPress Activities from the '.$this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ).' settings page, are assigned the \'wpsso-rrssb-bp_activity\' class.</p>';
+					$text = '<p>';
+
+					$text .= sprintf( __( 'Social sharing buttons, enabled / added to BuddyPress Activities from the %1$s settings page, are assigned the "%2$s" class.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-bp_activity' );
+
+					$text .= '</p>';
 
 					$text .= $this->get_info_css_example( 'bp_activity' );
 
@@ -1403,7 +1456,7 @@ aside.widget
 
 		protected function get_info_css_example( $type ) {
 
-			$text = '<p>Example:</p>
+			$text = '<p>Example CSS:</p>
 <pre>
 div.wpsso-rrssb
   .wpsso-rrssb-'.$type.'
