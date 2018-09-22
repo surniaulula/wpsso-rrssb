@@ -147,12 +147,15 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.10.0-dev.4 (2018/09/21)**
+**Version 1.10.0-dev.4 (2018/09/22)**
 
 * *New Features*
 	* None.
 * *Improvements*
 	* Added a new BuddyBlog integration module (Pro version).
+	* Added a new "Position in BuddyBlog Post" option under the SSO &gt; Responsive Buttons &gt; Buttons Position tab.
+	* Added a new "BBlog Post" checkbox for all sharing buttons in the SSO &gt; Responsive Buttons settings page.
+	* Added a new "BBlog Post" tab in the SSO &gt; Responsive Styles settings page.
 * *Bugfixes*
 	* None.
 * *Developer Notes*
@@ -175,7 +178,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 1.10.0-dev.4 =
 
-(2018/09/21) Added a new BuddyBlog integration module (Pro version).
+(2018/09/22) Added a new BuddyBlog integration module (Pro version).
 
 = 1.9.0 =
 
