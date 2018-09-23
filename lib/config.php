@@ -16,7 +16,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(			// Plugin acronym.
-					'version'     => '1.10.0-dev.5',	// Plugin version.
+					'version'     => '1.10.0-dev.6',	// Plugin version.
 					'opt_version' => '14',		// Increment when changing default option values.
 					'short'       => 'WPSSO RRSSB',	// Short plugin name.
 					'name'        => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
@@ -29,7 +29,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'req' => array(
 						'short'       => 'WPSSO Core',
 						'name'        => 'WPSSO Core',
-						'min_version' => '4.13.1-b.2',
+						'min_version' => '4.13.1',
 					),
 					'img' => array(
 						'icons' => array(
@@ -93,6 +93,49 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 						),
 					),
 				),
+			),
+			'opt' => array(				// options
+				'defaults' => array(
+
+					/**
+					 * Advanced Settings
+					 */
+					'plugin_sharing_buttons_cache_exp' => WEEK_IN_SECONDS,	// Sharing Buttons HTML Cache Expiry (7 days)
+
+					/**
+					 * Responsive Buttons
+					 */
+					'buttons_on_index'          => 0,
+					'buttons_on_front'          => 0,
+					'buttons_add_to_post'       => 1,
+					'buttons_add_to_page'       => 1,
+					'buttons_add_to_attachment' => 1,
+					'buttons_pos_content'       => 'bottom',
+					'buttons_pos_excerpt'       => 'bottom',
+					'buttons_pos_bblog_post'    => 'bottom',
+					'buttons_force_prot'        => '',
+
+					/**
+					 * Responsive Styles
+					 */
+					'buttons_use_social_style'      => 1,
+					'buttons_enqueue_social_style'  => 1,
+					'buttons_css_rrssb-admin_edit'  => '',
+					'buttons_css_rrssb-content'     => '',		// post/page content
+					'buttons_css_rrssb-excerpt'     => '',		// post/page excerpt
+					'buttons_css_rrssb-sharing'     => '',		// all buttons
+					'buttons_css_rrssb-shortcode'   => '',
+					'buttons_css_rrssb-sidebar'     => '',
+					'buttons_css_rrssb-widget'      => '',
+				),	// end of defaults
+				'site_defaults' => array(
+
+					/**
+					 * Advanced Settings
+					 */
+					'plugin_sharing_buttons_cache_exp'     => WEEK_IN_SECONDS,	// Sharing Buttons HTML Cache Expiry (7 days)
+					'plugin_sharing_buttons_cache_exp:use' => 'default',
+				),	// end of site defaults
 			),
 			'wp' => array(				// WordPress
 				'transient' => array(

@@ -22,45 +22,6 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		public static $sharing_css_file = '';
 		public static $sharing_css_url = '';
 
-		public static $cf = array(
-			'opt' => array(				// options
-				'defaults' => array(
-					/**
-					 * Advanced Settings
-					 */
-					'plugin_sharing_buttons_cache_exp' => WEEK_IN_SECONDS,	// Sharing Buttons HTML Cache Expiry (7 days)
-					/**
-					 * Responsive Buttons
-					 */
-					'buttons_on_index'          => 0,
-					'buttons_on_front'          => 0,
-					'buttons_add_to_post'       => 1,
-					'buttons_add_to_page'       => 1,
-					'buttons_add_to_attachment' => 1,
-					'buttons_pos_content'       => 'bottom',
-					'buttons_pos_excerpt'       => 'bottom',
-					'buttons_pos_bb_post'       => 'bottom',
-					'buttons_force_prot'        => '',
-					/**
-					 * Responsive Styles
-					 */
-					'buttons_use_social_style'      => 1,
-					'buttons_enqueue_social_style'  => 1,
-					'buttons_css_rrssb-admin_edit'  => '',
-					'buttons_css_rrssb-content'     => '',		// post/page content
-					'buttons_css_rrssb-excerpt'     => '',		// post/page excerpt
-					'buttons_css_rrssb-sharing'     => '',		// all buttons
-					'buttons_css_rrssb-shortcode'   => '',
-					'buttons_css_rrssb-sidebar'     => '',
-					'buttons_css_rrssb-widget'      => '',
-				),	// end of defaults
-				'site_defaults' => array(
-					'plugin_sharing_buttons_cache_exp' => WEEK_IN_SECONDS,	// Sharing Buttons HTML Cache Expiry (7 days)
-					'plugin_sharing_buttons_cache_exp:use' => 'default',
-				),	// end of site defaults
-			),
-		);
-
 		public function __construct( &$plugin ) {
 
 			$this->p =& $plugin;
@@ -91,7 +52,6 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 			$this->p->util->add_plugin_filters( $this, array( 
 				'get_defaults'      => 1,
-				'get_site_defaults' => 1,
 				'get_md_defaults'   => 1,
 			) );
 
@@ -150,8 +110,6 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 		public function filter_get_defaults( $def_opts ) {
 
-			$def_opts = array_merge( $def_opts, self::$cf['opt']['defaults'] );
-
 			/**
 			 * Add options using a key prefix array and post type names.
 			 */
@@ -163,7 +121,9 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 				$buttons_css_file = WPSSORRSSB_PLUGINDIR . 'css/' . $id . '.css';
 
-				// css files are only loaded once (when variable is empty) into defaults to minimize disk i/o
+				/**
+				 * CSS files are only loaded once (when variable is empty) into defaults to minimize disk I/O.
+				 */
 				if ( empty( $def_opts['buttons_css_' . $id] ) ) {
 
 					if ( ! file_exists( $buttons_css_file ) ) {
@@ -201,11 +161,6 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			}
 
 			return $def_opts;
-		}
-
-		public function filter_get_site_defaults( $site_def_opts ) {
-
-			return array_merge( $site_def_opts, self::$cf['opt']['site_defaults'] );
 		}
 
 		public function filter_get_md_defaults( $md_defs ) {
@@ -509,7 +464,9 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				return;
 			}
 
-			// get the current object / post type
+			/**
+			 * Get the current object / post type.
+			 */
 			if ( ( $post_obj = SucomUtil::get_post_object() ) === false ) {
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'exiting early: invalid post object' );
@@ -547,6 +504,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function show_footer() {
+
 			if ( $this->have_buttons_for_type( 'sidebar' ) ) {
 				$this->show_sidebar();
 			} elseif ( $this->p->debug->enabled ) {
@@ -555,10 +513,12 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 		}
 
 		public function show_sidebar() {
+
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
 			}
-			echo $this->get_buttons( '', 'sidebar', false, '', array( 'container_each' => true ) );	// $use_post = false
+
+			echo $this->get_buttons( '', 'sidebar', false, '', array( 'container_each' => true ) );	// $use_post is false.
 		}
 
 		public function show_admin_sharing( $post_obj ) {
@@ -1279,7 +1239,7 @@ $cache_array[$cache_index] .
 
 				case 'tooltip-plugin_sharing_buttons_cache_exp':
 
-					$cache_exp_secs  = WpssoRrssbSharing::$cf['opt']['defaults']['plugin_sharing_buttons_cache_exp'];
+					$cache_exp_secs  = WpssoRrssbConfig::$cf['opt']['defaults']['plugin_sharing_buttons_cache_exp'];
 					$cache_exp_human = $cache_exp_secs ? human_time_diff( 0, $cache_exp_secs ) : _x( 'disabled', 'option comment', 'wpsso-rrssb' );
 
 					$text = __( 'The rendered HTML for social sharing buttons is saved to the WordPress transient cache to optimize performance.',
