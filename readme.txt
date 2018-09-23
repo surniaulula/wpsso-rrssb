@@ -147,7 +147,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.10.0-dev.5 (2018/09/23)**
+**Version 1.10.0-dev.6 (2018/09/23)**
 
 * *New Features*
 	* None.
@@ -159,7 +159,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * *Bugfixes*
 	* None.
 * *Developer Notes*
-	* None.
+	* Minor refactoring of WpssoRrssbSharing class methods for conformity.
 
 **Version 1.9.0 (2018/09/16)**
 
@@ -176,9 +176,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.10.0-dev.5 =
+= 1.10.0-dev.6 =
 
-(2018/09/23) Added a new BuddyBlog integration module (Pro version).
+(2018/09/23) Added a new BuddyBlog integration module (Pro version). Minor refactoring of WpssoRrssbSharing class methods for conformity.
 
 = 1.9.0 =
 
