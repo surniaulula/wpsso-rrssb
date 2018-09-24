@@ -337,7 +337,7 @@ msgstr ""
 #: lib/sharing.php:1269
 msgid ""
 "The %1$s add-on uses the \"%2$s\" class to wrap all sharing buttons, and "
-"each button has it's own individual class name as well."
+"each button has its own individual class name as well."
 msgstr ""
 
 #: lib/sharing.php:1273
@@ -347,20 +347,20 @@ msgstr ""
 
 #: lib/sharing.php:1283
 msgid ""
-"Social sharing buttons, enabled / added to the content text from the %1$s "
-"settings page, are assigned the \"%2$s\" class."
+"Social sharing buttons enabled in the %1$s settings page for the WordPress "
+"content are assigned the \"%2$s\" class."
 msgstr ""
 
 #: lib/sharing.php:1295
 msgid ""
-"Social sharing buttons, enabled / added to the excerpt text from the %1$s "
-"settings page, are assigned the \"%2$s\" class."
+"Social sharing buttons enabled in the %1$s settings page for the WordPress "
+"excerpt are assigned the \"%2$s\" class."
 msgstr ""
 
 #: lib/sharing.php:1307
 msgid ""
-"Social sharing buttons, enabled / added to the CSS sidebar from the %1$s "
-"settings page, are assigned the \"%2$s\" ID."
+"Social sharing buttons enabled in the %1$s settings page for the CSS sidebar "
+"are assigned the \"%2$s\" ID."
 msgstr ""
 
 #: lib/sharing.php:1328
@@ -377,32 +377,32 @@ msgstr ""
 
 #: lib/sharing.php:1358
 msgid ""
-"Social sharing buttons, enabled / added to the admin editing pages from the "
-"%1$s settings page, are assigned the \"%2$s\" class."
+"Social sharing buttons enabled in the %1$s settings page for admin editing "
+"pages are assigned the \"%2$s\" class."
 msgstr ""
 
 #: lib/sharing.php:1370
 msgid ""
-"Social sharing buttons, enabled / added to the WooCommerce Short Description "
-"text from the %1$s settings page, are assigned the \"%2$s\" class."
+"Social sharing buttons enabled in the %1$s settings page for WooCommerce "
+"short descriptions are assigned the \"%2$s\" class."
 msgstr ""
 
 #: lib/sharing.php:1382
 msgid ""
-"Social sharing buttons, enabled / added at the top of bbPress Single "
-"Templates from the %1$s settings page, are assigned the \"%2$s\" class."
+"Social sharing buttons enabled in the %1$s settings page for bbPress single "
+"templates are assigned the \"%2$s\" class."
 msgstr ""
 
 #: lib/sharing.php:1394
 msgid ""
-"Social sharing buttons, enabled / added to BuddyBlog Posts from the %1$s "
-"settings page, are assigned the \"%2$s\" class."
+"Social sharing buttons enabled in the %1$s settings page for BuddyBlog posts "
+"are assigned the \"%2$s\" class."
 msgstr ""
 
 #: lib/sharing.php:1406
 msgid ""
-"Social sharing buttons, enabled / added to BuddyPress Activities from the "
-"%1$s settings page, are assigned the \"%2$s\" class."
+"Social sharing buttons enabled in the %1$s settings page for BuddyPress "
+"activities are assigned the \"%2$s\" class."
 msgstr ""
 
 #: lib/submenu/rrssb-buttons.php:63
