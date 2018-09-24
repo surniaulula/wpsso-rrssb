@@ -96,7 +96,7 @@ The Pro version of WPSSO RRSSB includes special integration modules to add socia
 
 * Additional sharing button locations and CSS styles for:
 
-	* bbPress
+	* bbPress Single
 	* BuddyBlog Posts
 	* BuddyPress Activities
 	* WooCommerce Short Description

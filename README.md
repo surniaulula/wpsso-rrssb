@@ -92,7 +92,7 @@
 <li><p>Additional sharing button locations and CSS styles for:</p>
 
 <ul>
-<li>bbPress</li>
+<li>bbPress Single</li>
 <li>BuddyBlog Posts</li>
 <li>BuddyPress Activities</li>
 <li>WooCommerce Short Description</li>
