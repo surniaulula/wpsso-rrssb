@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 1.10.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2018-09-24 09:15-0600\n"
-"PO-Revision-Date: 2018-09-24 09:16-0600\n"
+"PO-Revision-Date: 2018-09-24 10:56-0600\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -307,7 +307,7 @@ msgstr "La valeur d'expiration de cache suggérée est de %1$s secondes (%2$s)."
 
 #: lib/sharing.php:1269
 msgid "The %1$s add-on uses the \"%2$s\" class to wrap all sharing buttons, and each button has its own individual class name as well."
-msgstr "L'ajout %1$ utilise la classe \"%2$s\" pour envelopper tous les boutons de partage, et chaque bouton possède également son propre nom de classe."
+msgstr "L'ajout %1$s utilise la classe \"%2$s\" pour envelopper tous les boutons de partage, et chaque bouton possède également son propre nom de classe."
 
 #: lib/sharing.php:1273
 msgid "This tab can be used to edit the CSS common to all sharing button locations."
