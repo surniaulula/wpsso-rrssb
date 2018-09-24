@@ -158,7 +158,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Added a new "BBlog Post" checkbox for all sharing buttons in the SSO &gt; Responsive Buttons settings page.
 	* Added a new "BBlog Post" tab in the SSO &gt; Responsive Styles settings page.
 * *Bugfixes*
-	* None.
+	* Fixed the missing removal of "/+/" from share URLs in the rrssb.js library.
 * *Developer Notes*
 	* Minor refactoring of WpssoRrssbSharing class methods for conformity.
 
@@ -179,5 +179,5 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 1.10.0 =
 
-(2018/09/24) Added a new BuddyBlog integration module (Pro version). Minor refactoring of WpssoRrssbSharing class methods for conformity.
+(2018/09/24) Added a new BuddyBlog integration module (Pro version). Minor refactoring of WpssoRrssbSharing class methods for conformity. Fixed the missing removal of "/+/" from share URLs in the rrssb.js library.
 
