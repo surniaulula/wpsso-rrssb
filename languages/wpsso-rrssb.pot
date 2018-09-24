@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"1.10.0-dev.6\n"
+"1.10.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2018-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -177,7 +177,7 @@ msgctxt "option label"
 msgid "Position in bbPress Single"
 msgstr ""
 
-#: lib/gpl/social/buddyblog.php:82 lib/pro/social/buddyblog.php:119
+#: lib/gpl/social/buddyblog.php:82 lib/pro/social/buddyblog.php:118
 msgctxt "option label"
 msgid "Position in BuddyBlog Post"
 msgstr ""
