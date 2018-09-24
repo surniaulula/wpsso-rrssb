@@ -26,13 +26,13 @@ The *Ridiculously Responsive Social Sharing Buttons* automatically resize to the
 
 **Add *Ridiculously Responsive Social Sharing Buttons* to:**
 
-Posts, Pages, custom post types, [bbPress](https://wordpress.org/plugins/bbpress/), [BuddyPress](https://wordpress.org/plugins/buddypress/), [WooCommerce](https://wordpress.org/plugins/woocommerce/) product pages, and much more.</p>
+Posts, Pages, custom post types, bbPress, BuddyBlog posts, BuddyPress activities, WooCommerce product pages, and much more.</p>
 
 **Add *Ridiculously Responsive Social Sharing Buttons* in:**
 
 The content, excerpt, widget, CSS sidebar, shortcodes, templates, and *admin editor page* &mdash; so you can share directly from the admin editor page!
 
-**Do you use bbPress, BuddyPress, or WooCommerce?**
+**Do you use bbPress, BuddyPress, BuddyBlog, or WooCommerce?**
 
 The Pro version of WPSSO RRSSB includes special integration modules to add social sharing buttons to even more locations!
 
@@ -96,9 +96,10 @@ The Pro version of WPSSO RRSSB includes special integration modules to add socia
 
 * Additional sharing button locations and CSS styles for:
 
-	* [bbPress](https://wordpress.org/plugins/bbpress/)
-	* [BuddyPress](https://wordpress.org/plugins/buddypress/)
-	* [WooCommerce](https://wordpress.org/plugins/woocommerce/)
+	* bbPress
+	* BuddyBlog Posts
+	* BuddyPress Activities
+	* WooCommerce Short Description
 
 <h3>WPSSO Core Plugin Prerequisite</h3>
 
