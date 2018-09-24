@@ -12,7 +12,7 @@ Requires PHP: 5.4
 Requires At Least: 3.8
 Tested Up To: 4.9.8
 WC Tested Up To: 3.4.5
-Stable Tag: 1.9.0
+Stable Tag: 1.10.0
 
 WPSSO Core add-on to provide Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
 
@@ -147,7 +147,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.10.0-dev.6 (2018/09/23)**
+**Version 1.10.0 (2018/09/24)**
 
 * *New Features*
 	* None.
@@ -176,11 +176,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.10.0-dev.6 =
+= 1.10.0 =
 
-(2018/09/23) Added a new BuddyBlog integration module (Pro version). Minor refactoring of WpssoRrssbSharing class methods for conformity.
-
-= 1.9.0 =
-
-(2018/09/16) Added a new "Reload Default Buttons HTML" button on the SSO &gt; Responsive Buttons settings page. Refactored the BuddyPress integration modules to support ajax queries in the new BuddyPress templates (Pro version). Fixed the pre/after text filter action hook names.
+(2018/09/24) Added a new BuddyBlog integration module (Pro version). Minor refactoring of WpssoRrssbSharing class methods for conformity.
 
