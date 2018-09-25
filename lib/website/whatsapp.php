@@ -43,7 +43,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteWhatsApp' ) ) {
 			}
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'wa_rrssb_html' ).
-			'<td colspan="2">'.$form->get_textarea( 'wa_rrssb_html', 'average code' ).'</td>';
+			'<td colspan="2">'.$form->get_textarea( 'wa_rrssb_html', 'button_html code' ).'</td>';
 
 			return $table_rows;
 		}

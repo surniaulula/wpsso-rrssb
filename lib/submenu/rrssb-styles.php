@@ -89,7 +89,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 			$table_rows['buttons_css_'.$tab_key] = '<th class="textinfo">'.$this->p->msgs->get( 'info-styles-'.$tab_key ).'</th>'.
 			'<td'.( isset( $this->p->options['buttons_css_'.$tab_key.':is'] ) &&
 				$this->p->options['buttons_css_'.$tab_key.':is'] === 'disabled' ? ' class="blank"' : '' ).'>'.
-			$this->form->get_textarea( 'buttons_css_'.$tab_key, 'tall code' ).'</td>';
+			$this->form->get_textarea( 'buttons_css_'.$tab_key, 'button_css code' ).'</td>';
 
 			return $table_rows;
 		}

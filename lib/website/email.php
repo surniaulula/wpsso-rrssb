@@ -53,7 +53,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteEmail' ) ) {
 				_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'email_rrssb_html' ).
-			'<td colspan="2">'.$form->get_textarea( 'email_rrssb_html', 'average code' ).'</td>';
+			'<td colspan="2">'.$form->get_textarea( 'email_rrssb_html', 'button_html code' ).'</td>';
 
 			return $table_rows;
 		}

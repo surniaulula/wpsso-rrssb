@@ -65,7 +65,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteTwitter' ) ) {
 			'<td>'.$form->get_checkbox( 'twitter_rel_author' ).'</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_rrssb_html' ).
-			'<td colspan="2">'.$form->get_textarea( 'twitter_rrssb_html', 'average code' ).'</td>';
+			'<td colspan="2">'.$form->get_textarea( 'twitter_rrssb_html', 'button_html code' ).'</td>';
 
 			return $table_rows;
 		}
