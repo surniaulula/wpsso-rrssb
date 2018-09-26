@@ -167,7 +167,7 @@ msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
 
-#: lib/gpl/ecom/woocommerce.php:105 lib/pro/ecom/woocommerce.php:105
+#: lib/gpl/ecom/woocommerce.php:105 lib/pro/ecom/woocommerce.php:112
 msgctxt "option label"
 msgid "Position in Woo Short Text"
 msgstr ""
