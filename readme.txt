@@ -12,7 +12,7 @@ Requires PHP: 5.4
 Requires At Least: 3.8
 Tested Up To: 4.9.8
 WC Tested Up To: 3.4.5
-Stable Tag: 1.10.0
+Stable Tag: 1.10.1
 
 WPSSO Core add-on to provide Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
 
@@ -191,8 +191,4 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 = 1.10.1 =
 
 (2018/09/26) Minor CSS update for WPSSO Core v4.14.0.
-
-= 1.10.0 =
-
-(2018/09/24) Added a new BuddyBlog integration module (Pro version). Minor refactoring of WpssoRrssbSharing class methods for conformity. Fixed the missing removal of "/+/" from share URLs in the rrssb.js library.
 
