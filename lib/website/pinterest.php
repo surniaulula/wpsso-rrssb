@@ -87,20 +87,20 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
-					'pin_order' => 5,
-					'pin_on_content' => 1,
-					'pin_on_excerpt' => 0,
-					'pin_on_sidebar' => 0,
+					'pin_order'         => 5,
+					'pin_on_content'    => 1,
+					'pin_on_excerpt'    => 0,
+					'pin_on_sidebar'    => 0,
 					'pin_on_admin_edit' => 1,
-					'pin_platform' => 'any',
-					'pin_img_width' => 800,
-					'pin_img_height' => 1600,
-					'pin_img_crop' => 0,
-					'pin_img_crop_x' => 'center',
-					'pin_img_crop_y' => 'center',
-					'pin_cap_len' => 300,
-					'pin_cap_hashtags' => 0,
-					'pin_rrssb_html' => '<li class="rrssb-pinterest">
+					'pin_platform'      => 'any',
+					'pin_img_width'     => 800,
+					'pin_img_height'    => 1600,
+					'pin_img_crop'      => 0,
+					'pin_img_crop_x'    => 'center',
+					'pin_img_crop_y'    => 'center',
+					'pin_cap_len'       => 300,
+					'pin_cap_hashtags'  => 0,
+					'pin_rrssb_html'    => '<li class="rrssb-pinterest">
 	<a href="http://pinterest.com/pin/create/button/?url=%%sharing_url%%&media=%%media_url%%&description=%%pinterest_caption%%" class="popup">
 		<span class="rrssb-icon">
 			<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
@@ -174,9 +174,13 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 
 			if ( empty( $atts['photo'] ) ) {
 
-				$media_info = $this->p->og->get_media_info( $atts['size'], array( 'img_url' ), $mod, 'schema' );
+				$media_info = $this->p->og->get_media_info( $atts['size'], array( 'img_url', 'prev_url' ), $mod, 'schema' );
 
-				$atts['photo'] = $media_info['img_url'];
+				if ( ! empty( $media_info['img_url'] ) ) {
+					$atts['photo'] = $media_info['img_url'];
+				} elseif ( ! empty( $media_info['prev_url'] ) ) {
+					$atts['photo'] = $media_info['prev_url'];
+				}
 
 				if ( empty( $atts['photo'] ) ) {
 					if ( $this->p->debug->enabled ) {

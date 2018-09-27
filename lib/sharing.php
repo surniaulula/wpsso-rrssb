@@ -538,8 +538,8 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				echo $this->get_buttons( '', 'admin_edit' );
 
 			} else {
-				echo '<p class="centered">' . sprintf( __( '%s must be published<br/>before it can be shared.',
-					'wpsso-rrssb' ), SucomUtil::titleize( $post_obj->post_type ) ) . '</p>';
+				echo '<p class="centered">' . __( 'This content must be published<br/>before it can be shared.',
+					'wpsso-rrssb' ) . '</p>';
 			}
 
 			echo '</td></tr></table>';
