@@ -87,9 +87,11 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			 * Disable Buttons Checkbox
 			 */
 			$form_rows['buttons_disabled'] = array(
-				'label' => _x( 'Disable Sharing Buttons', 'option label', 'wpsso-rrssb' ),
-				'th_class' => 'medium', 'tooltip' => 'post-buttons_disabled', 'td_class' => 'blank',
-				'content' => $form->get_no_checkbox( 'buttons_disabled' ),
+				'th_class' => 'medium',
+				'td_class' => 'blank',
+				'label'    => _x( 'Disable Sharing Buttons', 'option label', 'wpsso-rrssb' ),
+				'tooltip'  => 'post-buttons_disabled',
+				'content'  => $form->get_no_checkbox( 'buttons_disabled' ),
 			);
 
 			/**
@@ -100,19 +102,25 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			$email_cap_text = $this->p->page->get_caption( 'excerpt', $email_cap_len, $mod, true, $email_cap_ht, true, 'none' );
 
 			$form_rows['subsection_email'] = array(
-				'td_class' => 'subsection', 'header' => 'h5', 'label' => 'Email',
+				'td_class' => 'subsection',
+				'header'   => 'h5',
+				'label'    => 'Email',
 			);
 
 			$form_rows['email_title'] = array(
-				'label' => _x( 'Email Subject', 'option label', 'wpsso-rrssb' ),
-				'th_class' => 'medium', 'tooltip' => 'post-email_title', 'td_class' => 'blank',
-				'content' => $form->get_no_input_value( $def_cap_title, 'wide' ),
+				'th_class' => 'medium',
+				'td_class' => 'blank',
+				'label'    => _x( 'Email Subject', 'option label', 'wpsso-rrssb' ),
+				'tooltip'  => 'post-email_title',
+				'content'  => $form->get_no_input_value( $def_cap_title, 'wide' ),
 			);
 
 			$form_rows['email_desc'] = array(
-				'label' => _x( 'Email Message', 'option label', 'wpsso-rrssb' ),
-				'th_class' => 'medium', 'tooltip' => 'post-email_desc', 'td_class' => 'blank',
-				'content' => $form->get_no_textarea_value( $email_cap_text, '', '', $email_cap_len ),
+				'th_class' => 'medium',
+				'td_class' => 'blank',
+				'label'    => _x( 'Email Message', 'option label', 'wpsso-rrssb' ),
+				'tooltip'  => 'post-email_desc',
+				'content'  => $form->get_no_textarea_value( $email_cap_text, '', '', $email_cap_len ),
 			);
 
 			/**
@@ -124,13 +132,17 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			$twitter_cap_text = $this->p->page->get_caption( $twitter_cap_type, $twitter_cap_len, $mod, true, $twitter_cap_ht );
 
 			$form_rows['subsection_twitter'] = array(
-				'td_class' => 'subsection', 'header' => 'h5', 'label' => 'Twitter',
+				'td_class' => 'subsection',
+				'header'   => 'h5',
+				'label'    => 'Twitter',
 			);
 
 			$form_rows['twitter_desc'] = array(
-				'label' => _x( 'Tweet Text', 'option label', 'wpsso-rrssb' ),
-				'th_class' => 'medium', 'tooltip' => 'post-twitter_desc', 'td_class' => 'blank',
-				'content' => $form->get_no_textarea_value( $twitter_cap_text, '', '', $twitter_cap_len ),
+				'th_class' => 'medium',
+				'td_class' => 'blank',
+				'label'    => _x( 'Tweet Text', 'option label', 'wpsso-rrssb' ),
+				'tooltip'  => 'post-twitter_desc',
+				'content'  => $form->get_no_textarea_value( $twitter_cap_text, '', '', $twitter_cap_len ),
 			);
 
 			/**
@@ -147,13 +159,17 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			}
 
 			$form_rows['subsection_pinterest'] = array(
-				'td_class' => 'subsection', 'header' => 'h5', 'label' => 'Pinterest',
+				'td_class' => 'subsection',
+				'header'   => 'h5',
+				'label'    => 'Pinterest',
 			);
 
 			$form_rows['pin_desc'] = array(
-				'label' => _x( 'Pinterest Caption', 'option label', 'wpsso-rrssb' ),
-				'th_class' => 'medium', 'tooltip' => 'post-pin_desc', 'td_class' => 'blank top',
-				'content' => $form->get_no_textarea_value( $pin_cap_text, '', '', $pin_cap_len ) . 
+				'th_class' => 'medium',
+				'td_class' => 'blank top',
+				'label'    => _x( 'Pinterest Caption', 'option label', 'wpsso-rrssb' ),
+				'tooltip'  => 'post-pin_desc',
+				'content'  => $form->get_no_textarea_value( $pin_cap_text, '', '', $pin_cap_len ) . 
 					( empty( $pin_media['img_url'] ) ? '' : '</td><td class="top thumb_preview">' .
 						'<img src="' . $pin_media['img_url'] . '">' ),
 			);
@@ -172,19 +188,25 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 				$other_cap_text = $this->p->page->get_caption( 'excerpt', $other_cap_len, $mod, true, $other_cap_ht );
 
 				$form_rows['subsection_' . $opt_pre] = array(
-					'td_class' => 'subsection', 'header' => 'h5', 'label' => $name,
+					'td_class' => 'subsection',
+					'header'   => 'h5',
+					'label'    => $name,
 				);
 
 				$form_rows[$opt_pre . '_title'] = array(
-					'label' => sprintf( _x( '%s Title', 'option label', 'wpsso-rrssb' ), $name ),
-					'th_class' => 'medium', 'tooltip' => 'post-' . $opt_pre . '_title', 'td_class' => 'blank',
-					'content' => $form->get_no_input_value( $def_cap_title, 'wide' ),
+					'th_class' => 'medium',
+					'td_class' => 'blank',
+					'label'    => sprintf( _x( '%s Title', 'option label', 'wpsso-rrssb' ), $name ),
+					'tooltip'  => 'post-' . $opt_pre . '_title',
+					'content'  => $form->get_no_input_value( $def_cap_title, 'wide' ),
 				);
 
 				$form_rows[$opt_pre . '_desc'] = array(
-					'label' => sprintf( _x( '%s Caption', 'option label', 'wpsso-rrssb' ), $name ),
-					'th_class' => 'medium', 'tooltip' => 'post-' . $opt_pre . '_desc', 'td_class' => 'blank',
-					'content' => $form->get_no_textarea_value( $other_cap_text, '', '', $other_cap_len ),
+					'th_class' => 'medium',
+					'td_class' => 'blank',
+					'label'    => sprintf( _x( '%s Caption', 'option label', 'wpsso-rrssb' ), $name ),
+					'tooltip'  => 'post-' . $opt_pre . '_desc',
+					'content'  => $form->get_no_textarea_value( $other_cap_text, '', '', $other_cap_len ),
 				);
 			}
 
