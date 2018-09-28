@@ -61,11 +61,11 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 
 			$this->p->util->do_metabox_table( array( 
 				$this->form->get_th_html( _x( 'Use the Social Stylesheet',
-					'option label', 'wpsso-rrssb' ), 'highlight', 'buttons_use_social_style' ).
+					'option label', 'wpsso-rrssb' ), '', 'buttons_use_social_style' ).
 				'<td>'.$this->form->get_checkbox( 'buttons_use_social_style' ).$css_min_msg.'</td>',
 
 				$this->form->get_th_html( _x( 'Enqueue the Stylesheet',
-					'option label', 'wpsso-rrssb' ), null, 'buttons_enqueue_social_style' ).
+					'option label', 'wpsso-rrssb' ), '', 'buttons_enqueue_social_style' ).
 				'<td>'.$this->form->get_checkbox( 'buttons_enqueue_social_style' ).'</td>',
 			) );
 
