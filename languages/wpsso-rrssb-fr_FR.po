@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 1.10.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2018-09-25 14:01-0600\n"
-"PO-Revision-Date: 2018-09-25 14:01-0600\n"
+"POT-Creation-Date: 2018-09-28 06:39-0600\n"
+"PO-Revision-Date: 2018-09-28 06:39-0600\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -132,42 +132,42 @@ msgstr "Forcer protocole pour URLs partagées"
 msgid "Save a draft version or publish the %s to display these options."
 msgstr "Enregistrer un brouillon ou publier pour activer ces options."
 
-#: lib/gpl/admin/sharing.php:90 lib/pro/admin/sharing.php:96
+#: lib/gpl/admin/sharing.php:92 lib/pro/admin/sharing.php:97
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr "Désactiver les boutons"
 
-#: lib/gpl/admin/sharing.php:107 lib/pro/admin/sharing.php:113
+#: lib/gpl/admin/sharing.php:113 lib/pro/admin/sharing.php:117
 msgctxt "option label"
 msgid "Email Subject"
 msgstr "Sujet du couriel"
 
-#: lib/gpl/admin/sharing.php:113 lib/pro/admin/sharing.php:119
+#: lib/gpl/admin/sharing.php:121 lib/pro/admin/sharing.php:124
 msgctxt "option label"
 msgid "Email Message"
 msgstr "Message du courriel"
 
-#: lib/gpl/admin/sharing.php:131 lib/pro/admin/sharing.php:137
+#: lib/gpl/admin/sharing.php:143 lib/pro/admin/sharing.php:145
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr "Texte du Tweet"
 
-#: lib/gpl/admin/sharing.php:154 lib/pro/admin/sharing.php:160
+#: lib/gpl/admin/sharing.php:170 lib/pro/admin/sharing.php:172
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr "Texte légende Pinterest"
 
-#: lib/gpl/admin/sharing.php:179 lib/pro/admin/sharing.php:185
+#: lib/gpl/admin/sharing.php:199 lib/pro/admin/sharing.php:200
 msgctxt "option label"
 msgid "%s Title"
 msgstr "Titre %s"
 
-#: lib/gpl/admin/sharing.php:185 lib/pro/admin/sharing.php:191
+#: lib/gpl/admin/sharing.php:207 lib/pro/admin/sharing.php:207
 msgctxt "option label"
 msgid "%s Caption"
 msgstr "Légende %s"
 
-#: lib/gpl/ecom/woocommerce.php:105 lib/pro/ecom/woocommerce.php:105
+#: lib/gpl/ecom/woocommerce.php:105 lib/pro/ecom/woocommerce.php:112
 msgctxt "option label"
 msgid "Position in Woo Short Text"
 msgstr "Position dans le texte Woo Short"
@@ -229,8 +229,8 @@ msgid "Sharing Buttons"
 msgstr "Boutons de partage"
 
 #: lib/sharing.php:541
-msgid "%s must be published<br/>before it can be shared."
-msgstr "%s doit être publié<br/>avant d'être partagé."
+msgid "This content must be published<br/>before it can be shared."
+msgstr "Ce contenu doit être publié<br/>avant d'être partagé."
 
 #: lib/sharing.php:1180
 msgid "Social sharing buttons can be added to the top, bottom, or both. Each sharing button must also be enabled below (see the <em>%s</em> options)."
