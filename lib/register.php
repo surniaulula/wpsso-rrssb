@@ -29,8 +29,11 @@ if ( ! class_exists( 'WpssoRrssbRegister' ) ) {
 		 * Fires immediately after a new site is created.
 		 */
 		public function wpmu_new_blog( $blog_id, $user_id, $domain, $path, $site_id, $meta ) {
+
 			switch_to_blog( $blog_id );
+
 			$this->activate_plugin();
+
 			restore_current_blog();
 		}
 
@@ -38,16 +41,21 @@ if ( ! class_exists( 'WpssoRrssbRegister' ) ) {
 		 * Fires immediately after a site is activated (not called when users and sites are created by a Super Admin).
 		 */
 		public function wpmu_activate_blog( $blog_id, $user_id, $password, $signup_title, $meta ) {
+
 			switch_to_blog( $blog_id );
+
 			$this->activate_plugin();
+
 			restore_current_blog();
 		}
 
 		public function network_activate( $sitewide ) {
+
 			self::do_multisite( $sitewide, array( $this, 'activate_plugin' ) );
 		}
 
 		public function network_deactivate( $sitewide ) {
+
 			self::do_multisite( $sitewide, array( $this, 'deactivate_plugin' ) );
 		}
 
@@ -55,6 +63,7 @@ if ( ! class_exists( 'WpssoRrssbRegister' ) ) {
 		 * uninstall.php defines constants before calling network_uninstall().
 		 */
 		public static function network_uninstall() {
+
 			$sitewide = true;
 
 			/**
@@ -64,16 +73,26 @@ if ( ! class_exists( 'WpssoRrssbRegister' ) ) {
 		}
 
 		private static function do_multisite( $sitewide, $method, $args = array() ) {
+
 			if ( is_multisite() && $sitewide ) {
+
 				global $wpdb;
-				$dbquery = 'SELECT blog_id FROM '.$wpdb->blogs;
-				$ids = $wpdb->get_col( $dbquery );
-				foreach ( $ids as $id ) {
-					switch_to_blog( $id );
+
+				$db_query = 'SELECT blog_id FROM '.$wpdb->blogs;
+				$blog_ids = $wpdb->get_col( $db_query );
+
+				foreach ( $blog_ids as $blog_id ) {
+
+					switch_to_blog( $blog_id );
+
 					call_user_func_array( $method, array( $args ) );
 				}
+
 				restore_current_blog();
-			} else call_user_func_array( $method, array( $args ) );
+
+			} else {
+				call_user_func_array( $method, array( $args ) );
+			}
 		}
 
 		private function activate_plugin() {
