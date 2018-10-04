@@ -16,7 +16,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(			// Plugin acronym.
-					'version'     => '1.10.2-dev.6',	// Plugin version.
+					'version'     => '1.10.2',	// Plugin version.
 					'opt_version' => '14',		// Increment when changing default option values.
 					'short'       => 'WPSSO RRSSB',	// Short plugin name.
 					'name'        => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
@@ -29,7 +29,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'req' => array(
 						'short'       => 'WPSSO Core',
 						'name'        => 'WPSSO Core',
-						'min_version' => '4.15.0-dev.6',
+						'min_version' => '4.15.0',
 					),
 					'img' => array(
 						'icons' => array(
@@ -181,9 +181,11 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		);
 
 		public static function get_version( $add_slug = false ) {
-			$ext = 'wpssorrssb';
+
+			$ext  = 'wpssorrssb';
 			$info =& self::$cf['plugin'][$ext];
-			return $add_slug ? $info['slug'].'-'.$info['version'] : $info['version'];
+
+			return $add_slug ? $info['slug'] . '-' . $info['version'] : $info['version'];
 		}
 
 		public static function set_constants( $plugin_filepath ) { 
@@ -238,25 +240,31 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 
 		public static function require_libs( $plugin_filepath ) {
 
-			require_once WPSSORRSSB_PLUGINDIR.'lib/register.php';
-			require_once WPSSORRSSB_PLUGINDIR.'lib/functions.php';
-			require_once WPSSORRSSB_PLUGINDIR.'lib/sharing.php';
+			require_once WPSSORRSSB_PLUGINDIR . 'lib/register.php';
+			require_once WPSSORRSSB_PLUGINDIR . 'lib/functions.php';
+			require_once WPSSORRSSB_PLUGINDIR . 'lib/sharing.php';
 
 			add_filter( 'wpssorrssb_load_lib', array( 'WpssoRrssbConfig', 'load_lib' ), 10, 3 );
 		}
 
 		public static function load_lib( $ret = false, $filespec = '', $classname = '' ) {
+
 			if ( false === $ret && ! empty( $filespec ) ) {
-				$filepath = WPSSORRSSB_PLUGINDIR.'lib/'.$filespec.'.php';
+
+				$filepath = WPSSORRSSB_PLUGINDIR . 'lib/' . $filespec . '.php';
+
 				if ( file_exists( $filepath ) ) {
+
 					require_once $filepath;
+
 					if ( empty( $classname ) ) {
-						return SucomUtil::sanitize_classname( 'wpssorrssb'.$filespec, false );	// $underscore = false
+						return SucomUtil::sanitize_classname( 'wpssorrssb' . $filespec, $allow_underscore = false );
 					} else {
 						return $classname;
 					}
 				}
 			}
+
 			return $ret;
 		}
 	}
