@@ -227,7 +227,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 			if ( $metabox_id === $this->p->cf['meta']['id'] ) {
 				SucomUtil::add_after_key( $tabs, 'media', 'buttons',
-					_x( 'Sharing Buttons', 'metabox tab', 'wpsso-rrssb' ) );
+					_x( 'Share Buttons', 'metabox tab', 'wpsso-rrssb' ) );
 			}
 
 			return $tabs;
@@ -476,7 +476,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 			if ( ! empty( $this->p->options['buttons_add_to_' . $post_obj->post_type] ) ) {
 				add_meta_box( '_' . $this->p->lca . '_rrssb_share', 
-					_x( 'Sharing Buttons', 'metabox title', 'wpsso-rrssb' ),
+					_x( 'Share Buttons', 'metabox title', 'wpsso-rrssb' ),
 						array( $this, 'show_admin_sharing' ), $post_obj->post_type, 'side', 'high' );
 			}
 		}
