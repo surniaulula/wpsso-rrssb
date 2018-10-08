@@ -16,6 +16,7 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 		protected $p;
 
 		public function __construct() {
+
 			$this->p =& Wpsso::get_instance();
 
 			if ( ! is_object( $this->p ) ) {
@@ -46,7 +47,7 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 
 			$atts = array( 
 				'use_post' => false,		// don't use the post ID on indexes
-				'css_id' => $args['widget_id'],
+				'css_id'   => $args['widget_id'],
 			);
 
 			$title = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
@@ -54,9 +55,9 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'required call to get_page_mod()' );
 			}
-			$mod = $this->p->util->get_page_mod( $atts['use_post'] );
 
-			$type = 'sharing_widget_' . $this->id;
+			$mod         = $this->p->util->get_page_mod( $atts['use_post'] );
+			$type        = 'sharing_widget_' . $this->id;
 			$sharing_url = $this->p->util->get_sharing_url( $mod );
 
 			$cache_md5_pre  = $this->p->lca . '_b_';
@@ -79,33 +80,46 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 				$cache_array = get_transient( $cache_id );
 
 				if ( isset( $cache_array[$cache_index] ) ) {	// can be an empty string
+
 					if ( $this->p->debug->enabled ) {
 						$this->p->debug->log( $type . ' cache index found in transient cache' );
 					}
+
 					echo $cache_array[$cache_index];	// stop here
+
 					return;
+
 				} else {
+
 					if ( $this->p->debug->enabled ) {
 						$this->p->debug->log( $type . ' cache index not in transient cache' );
 					}
+
 					if ( ! is_array( $cache_array ) ) {
 						$cache_array = array();
 					}
 				}
+
 			} elseif ( $this->p->debug->enabled ) {
 				$this->p->debug->log( $type . ' buttons array transient cache is disabled' );
 			}
 
-			// sort enabled sharing buttons by their preferred order
+			/**
+			 * Sort enabled sharing buttons by their preferred order.
+			 */
 			$sorted_ids = array();
+
 			foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre ) {
 				if ( array_key_exists( $id, $instance ) && (int) $instance[$id] ) {
 					$sorted_ids[ zeroise( $this->p->options[$opt_pre . '_order'], 3 ) . '-' . $id] = $id;
 				}
 			}
+
 			ksort( $sorted_ids );
 
-			// returns html or an empty string
+			/**
+			 * Returns html or an empty string.
+			 */
 			$cache_array[$cache_index] = $this->p->rrssb_sharing->get_html( $sorted_ids, $atts, $mod );
 
 			if ( ! empty( $cache_array[$cache_index] ) ) {
@@ -119,8 +133,12 @@ $after_widget .
 			}
 
 			if ( $cache_exp_secs > 0 ) {
-				// update the cached array and maintain the existing transient expiration time
+
+				/**
+				 * Update the cached array and maintain the existing transient expiration time.
+				 */
 				$expires_in_secs = SucomUtil::update_transient_array( $cache_id, $cache_array, $cache_exp_secs );
+
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( $type . ' buttons html saved to transient cache (expires in ' . $expires_in_secs . ' secs)' );
 				}
@@ -130,13 +148,17 @@ $after_widget .
 		}
 	
 		public function update( $new_instance, $old_instance ) {
+
 			$instance = $old_instance;
+
 			$instance['title'] = strip_tags( $new_instance['title'] );
+
 			if ( isset( $this->p->rrssb_sharing ) ) {
 				foreach ( $this->p->rrssb_sharing->get_website_object_ids() as $id => $name ) {
 					$instance[$id] = empty( $new_instance[$id] ) ? 0 : 1;
 				}
 			}
+
 			return $instance;
 		}
 	

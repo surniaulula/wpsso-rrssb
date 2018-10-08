@@ -17,6 +17,9 @@ table.sucom-settings ul.rrssb-buttons {
 	margin:0 !important;
 	padding:0 !important;
 	list-style:none;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
 }
 
 table.sucom-settings ul.rrssb-buttons::before,

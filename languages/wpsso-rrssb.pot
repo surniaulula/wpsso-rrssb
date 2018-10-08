@@ -430,27 +430,27 @@ msgctxt "metabox tab"
 msgid "Advanced Settings"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:157
+#: lib/submenu/rrssb-buttons.php:162
 msgctxt "option label"
 msgid "Include on Archive Webpages"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:161
+#: lib/submenu/rrssb-buttons.php:166
 msgctxt "option label"
 msgid "Include on Static Front Page"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:165
+#: lib/submenu/rrssb-buttons.php:170
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:173
+#: lib/submenu/rrssb-buttons.php:178
 msgctxt "option label"
 msgid "Position in Content Text"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:177
+#: lib/submenu/rrssb-buttons.php:182
 msgctxt "option label"
 msgid "Position in Excerpt Text"
 msgstr ""
@@ -574,16 +574,16 @@ msgctxt "option label"
 msgid "Recommend Author @username"
 msgstr ""
 
-#: lib/widget/sharing.php:31
+#: lib/widget/sharing.php:32
 msgid "The %s widget."
 msgstr ""
 
-#: lib/widget/sharing.php:145
+#: lib/widget/sharing.php:167
 msgctxt "option value"
 msgid "Share It"
 msgstr ""
 
-#: lib/widget/sharing.php:148
+#: lib/widget/sharing.php:170
 msgctxt "option label"
 msgid "Widget Title (leave blank for no title)"
 msgstr ""
