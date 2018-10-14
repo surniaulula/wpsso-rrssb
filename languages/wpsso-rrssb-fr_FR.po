@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 1.10.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2018-10-01 11:14-0700\n"
-"PO-Revision-Date: 2018-10-01 11:14-0700\n"
+"POT-Creation-Date: 2018-10-14 07:37-0600\n"
+"PO-Revision-Date: 2018-10-14 07:38-0600\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -188,7 +188,7 @@ msgstr "Impossible d'ouvrir le fichier css %s pour lecture."
 
 #: lib/sharing.php:230
 msgctxt "metabox tab"
-msgid "Sharing Buttons"
+msgid "Share Buttons"
 msgstr "Boutons de partage"
 
 #: lib/sharing.php:304
@@ -225,7 +225,7 @@ msgstr "Erreur en retirant la feuille de style minimisé &mdash; le serveur Web 
 
 #: lib/sharing.php:479
 msgctxt "metabox title"
-msgid "Sharing Buttons"
+msgid "Share Buttons"
 msgstr "Boutons de partage"
 
 #: lib/sharing.php:541
@@ -378,27 +378,27 @@ msgctxt "metabox tab"
 msgid "Advanced Settings"
 msgstr "Réglages avancés"
 
-#: lib/submenu/rrssb-buttons.php:157
+#: lib/submenu/rrssb-buttons.php:162
 msgctxt "option label"
 msgid "Include on Archive Webpages"
 msgstr "Inclure sur les pages d'archive"
 
-#: lib/submenu/rrssb-buttons.php:161
+#: lib/submenu/rrssb-buttons.php:166
 msgctxt "option label"
 msgid "Include on Static Front Page"
 msgstr "Inclure sur la page statique d'avant"
 
-#: lib/submenu/rrssb-buttons.php:165
+#: lib/submenu/rrssb-buttons.php:170
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr "Inclure sur les articles de type"
 
-#: lib/submenu/rrssb-buttons.php:173
+#: lib/submenu/rrssb-buttons.php:178
 msgctxt "option label"
 msgid "Position in Content Text"
 msgstr "Position dans le texte de contenu"
 
-#: lib/submenu/rrssb-buttons.php:177
+#: lib/submenu/rrssb-buttons.php:182
 msgctxt "option label"
 msgid "Position in Excerpt Text"
 msgstr "Position dans le texte d'extrait"
@@ -522,16 +522,16 @@ msgctxt "option label"
 msgid "Recommend Author @username"
 msgstr "Recommander @nom d'auteur"
 
-#: lib/widget/sharing.php:31
+#: lib/widget/sharing.php:32
 msgid "The %s widget."
 msgstr "Le widget de %s."
 
-#: lib/widget/sharing.php:145
+#: lib/widget/sharing.php:167
 msgctxt "option value"
 msgid "Share It"
 msgstr "Partager"
 
-#: lib/widget/sharing.php:148
+#: lib/widget/sharing.php:170
 msgctxt "option label"
 msgid "Widget Title (leave blank for no title)"
 msgstr "Titre du Widget (laisser vide pour aucun titre)"
