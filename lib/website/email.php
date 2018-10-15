@@ -44,12 +44,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteEmail' ) ) {
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'email_cap_len' ).
                         $form->get_th_html( _x( 'Email Message Length', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_input( 'email_cap_len', 'short' ).' '.
+			'<td>'.$form->get_input( 'email_cap_len', 'short' ) . ' ' . 
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'email_cap_hashtags' ).
 			$form->get_th_html( _x( 'Append Hashtags to Message', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'email_cap_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ).' '.
+			'<td>'.$form->get_select( 'email_cap_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ) . ' ' . 
 				_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'email_rrssb_html' ).

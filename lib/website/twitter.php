@@ -48,12 +48,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteTwitter' ) ) {
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_cap_len' ).
 			$form->get_th_html( _x( 'Tweet Text Length', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_input( 'twitter_cap_len', 'short' ).' '.
+			'<td>'.$form->get_input( 'twitter_cap_len', 'short' ) . ' ' . 
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_cap_hashtags' ).
 			$form->get_th_html( _x( 'Append Hashtags to Tweet', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'twitter_cap_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ).' '.
+			'<td>'.$form->get_select( 'twitter_cap_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ) . ' ' . 
 				_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = $form->get_th_html( _x( 'Add via Business @username',

@@ -44,12 +44,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteReddit' ) ) {
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_cap_len' ).
                         $form->get_th_html( _x( 'Caption Text Length', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_input( 'reddit_cap_len', 'short' ).' '.
+			'<td>'.$form->get_input( 'reddit_cap_len', 'short' ) . ' ' . 
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_cap_hashtags' ).
 			$form->get_th_html( _x( 'Append Hashtags to Caption', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'reddit_cap_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ).' '.
+			'<td>'.$form->get_select( 'reddit_cap_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ) . ' ' . 
 				_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_rrssb_html' ).

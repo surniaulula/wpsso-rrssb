@@ -216,12 +216,12 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 			if ( ! empty( $cache_array[$cache_index] ) ) {
 				$cache_array[$cache_index] = '
-<!-- '.$this->p->lca.' '.$type.' begin -->
+<!-- '.$this->p->lca . ' ' . $type.' begin -->
 <!-- generated on '.date( 'c' ).' -->
 <div class="'.$this->p->lca.'-rrssb '.$this->p->lca.'-'.$atts['css_class'].'">' . "\n" . 
 $cache_array[$cache_index] . "\n" . 	// buttons html is trimmed, so add newline
 '</div><!-- .'.$this->p->lca.'-'.$atts['css_class'].' -->' . "\n" . 
-'<!-- '.$this->p->lca.' '.$type.' end -->' . "\n\n";
+'<!-- '.$this->p->lca . ' ' . $type.' end -->' . "\n\n";
 			}
 
 			if ( $cache_exp_secs > 0 ) {

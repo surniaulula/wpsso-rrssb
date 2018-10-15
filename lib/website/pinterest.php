@@ -35,7 +35,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsitePinterest' ) ) {
 		public function filter_image_dimensions_general_rows( $table_rows, $form ) {
 
 			$def_dimensions = $this->p->opt->get_defaults( 'pin_img_width' ).'x'.
-				$this->p->opt->get_defaults( 'pin_img_height' ).' '.
+				$this->p->opt->get_defaults( 'pin_img_height' ) . ' ' . 
 				( $this->p->opt->get_defaults( 'pin_img_crop' ) == 0 ? 'uncropped' : 'cropped' );
 
 			$table_rows['pin_img_dimensions'] = $form->get_th_html( _x( 'Pinterest <em>Sharing Button</em>', 'option label', 'wpsso-rrssb' ), null, 'pin_img_dimensions', 'The image dimensions that the Pinterest Pin It button will share (defaults is '.$def_dimensions.'). Images in the Facebook / Open Graph meta tags are usually cropped, where-as images on Pinterest often look better in their original aspect ratio (uncropped) and/or cropped using portrait photo dimensions.' ).
@@ -63,12 +63,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsitePinterest' ) ) {
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'pin_cap_len' ).
                         $form->get_th_html( _x( 'Caption Text Length', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_input( 'pin_cap_len', 'short' ).' '.
+			'<td>'.$form->get_input( 'pin_cap_len', 'short' ) . ' ' . 
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'pin_cap_hashtags' ).
 			$form->get_th_html( _x( 'Append Hashtags to Caption', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'pin_cap_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ).' '.
+			'<td>'.$form->get_select( 'pin_cap_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ) . ' ' . 
 				_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'pin_rrssb_html' ).
