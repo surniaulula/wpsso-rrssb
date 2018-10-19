@@ -78,7 +78,7 @@ msgctxt "lib file description"
 msgid "Responsive Buttons"
 msgstr ""
 
-#: lib/config-gettext-extract.php:16 lib/sharing.php:1210
+#: lib/config-gettext-extract.php:16 lib/sharing.php:1211
 msgctxt "lib file description"
 msgid "Responsive Styles"
 msgstr ""
@@ -234,13 +234,13 @@ msgstr ""
 msgid "This content must be published<br/>before it can be shared."
 msgstr ""
 
-#: lib/sharing.php:1180
+#: lib/sharing.php:1181
 msgid ""
 "Social sharing buttons can be added to the top, bottom, or both. Each "
 "sharing button must also be enabled below (see the <em>%s</em> options)."
 msgstr ""
 
-#: lib/sharing.php:1180 lib/website/email.php:33 lib/website/facebook.php:33
+#: lib/sharing.php:1181 lib/website/email.php:33 lib/website/facebook.php:33
 #: lib/website/gplus.php:33 lib/website/linkedin.php:33
 #: lib/website/pinterest.php:49 lib/website/pocket.php:33
 #: lib/website/reddit.php:33 lib/website/tumblr.php:33
@@ -249,21 +249,21 @@ msgctxt "option label"
 msgid "Show Button in"
 msgstr ""
 
-#: lib/sharing.php:1186
+#: lib/sharing.php:1187
 msgid ""
 "Add the social sharing buttons to each entry of an index webpage (blog front "
 "page, category, archive, etc.). Social sharing buttons are not included on "
 "index webpages by default."
 msgstr ""
 
-#: lib/sharing.php:1192
+#: lib/sharing.php:1193
 msgid ""
 "If a static Post or Page has been selected for the front page, you can add "
 "the social sharing buttons to that static front page as well (default is "
 "unchecked)."
 msgstr ""
 
-#: lib/sharing.php:1198
+#: lib/sharing.php:1199
 msgid ""
 "Enabled social sharing buttons are added to the Post, Page, Media, and "
 "Product webpages by default. If your theme (or another plugin) supports "
@@ -271,11 +271,11 @@ msgid ""
 "buttons on these webpages, check the appropriate option(s) here."
 msgstr ""
 
-#: lib/sharing.php:1204
+#: lib/sharing.php:1205
 msgid "Modify URLs shared by the sharing buttons to use a specific protocol."
 msgstr ""
 
-#: lib/sharing.php:1210
+#: lib/sharing.php:1211
 msgid ""
 "Add the CSS of all <em>%1$s</em> to webpages (default is checked). The CSS "
 "will be <strong>minified</strong>, and saved to a single stylesheet with a "
@@ -283,7 +283,7 @@ msgid ""
 "added directly to the webpage HTML."
 msgstr ""
 
-#: lib/sharing.php:1216
+#: lib/sharing.php:1217
 msgid ""
 "Have WordPress enqueue the social stylesheet instead of adding the CSS to in "
 "the webpage HTML (default is unchecked). Enqueueing the stylesheet may be "
@@ -291,115 +291,115 @@ msgid ""
 "single stylesheet URL."
 msgstr ""
 
-#: lib/sharing.php:1222
+#: lib/sharing.php:1223
 msgid ""
 "Append the %1$s to the tweet (see <a href=\"%2$s\">the Twitter options tab</"
 "a> in the %3$s settings page). The %1$s will be displayed and recommended "
 "after the webpage is shared."
 msgstr ""
 
-#: lib/sharing.php:1222 lib/sharing.php:1228
+#: lib/sharing.php:1223 lib/sharing.php:1229
 msgctxt "option label"
 msgid "Twitter Business @username"
 msgstr ""
 
-#: lib/sharing.php:1222
+#: lib/sharing.php:1223
 msgctxt "lib file description"
 msgid "General"
 msgstr ""
 
-#: lib/sharing.php:1228
+#: lib/sharing.php:1229
 msgid ""
 "Recommend following the author's Twitter @username after sharing a webpage. "
 "If the %1$s option (above) is also checked, the %2$s is suggested first."
 msgstr ""
 
-#: lib/sharing.php:1228 lib/website/twitter.php:59
+#: lib/sharing.php:1229 lib/website/twitter.php:59
 msgctxt "option label"
 msgid "Add via Business @username"
 msgstr ""
 
-#: lib/sharing.php:1243
+#: lib/sharing.php:1244
 msgctxt "option comment"
 msgid "disabled"
 msgstr ""
 
-#: lib/sharing.php:1245
+#: lib/sharing.php:1246
 msgid ""
 "The rendered HTML for social sharing buttons is saved to the WordPress "
 "transient cache to optimize performance."
 msgstr ""
 
-#: lib/sharing.php:1246
+#: lib/sharing.php:1247
 msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
 msgstr ""
 
-#: lib/sharing.php:1269
+#: lib/sharing.php:1270
 msgid ""
 "The %1$s add-on uses the \"%2$s\" class to wrap all sharing buttons, and "
 "each button has its own individual class name as well."
 msgstr ""
 
-#: lib/sharing.php:1273
+#: lib/sharing.php:1274
 msgid ""
 "This tab can be used to edit the CSS common to all sharing button locations."
 msgstr ""
 
-#: lib/sharing.php:1283
+#: lib/sharing.php:1284
 msgid ""
 "Social sharing buttons enabled in the %1$s settings page for the WordPress "
 "content are assigned the \"%2$s\" class."
 msgstr ""
 
-#: lib/sharing.php:1295
+#: lib/sharing.php:1296
 msgid ""
 "Social sharing buttons enabled in the %1$s settings page for the WordPress "
 "excerpt are assigned the \"%2$s\" class."
 msgstr ""
 
-#: lib/sharing.php:1307
+#: lib/sharing.php:1308
 msgid ""
 "Social sharing buttons enabled in the %1$s settings page for the CSS sidebar "
 "are assigned the \"%2$s\" ID."
 msgstr ""
 
-#: lib/sharing.php:1328
+#: lib/sharing.php:1329
 msgid ""
 "Social sharing buttons added from a shortcode are assigned the \"%1$s\" "
 "class by default."
 msgstr ""
 
-#: lib/sharing.php:1340
+#: lib/sharing.php:1341
 msgid ""
 "Social sharing buttons enabled in the %1$s widget are assigned the \"%2$s\" "
 "class (along with additional unique CSS ID names)."
 msgstr ""
 
-#: lib/sharing.php:1358
+#: lib/sharing.php:1359
 msgid ""
 "Social sharing buttons enabled in the %1$s settings page for admin editing "
 "pages are assigned the \"%2$s\" class."
 msgstr ""
 
-#: lib/sharing.php:1370
+#: lib/sharing.php:1371
 msgid ""
 "Social sharing buttons enabled in the %1$s settings page for WooCommerce "
 "short descriptions are assigned the \"%2$s\" class."
 msgstr ""
 
-#: lib/sharing.php:1382
+#: lib/sharing.php:1383
 msgid ""
 "Social sharing buttons enabled in the %1$s settings page for bbPress single "
 "templates are assigned the \"%2$s\" class."
 msgstr ""
 
-#: lib/sharing.php:1394
+#: lib/sharing.php:1395
 msgid ""
 "Social sharing buttons enabled in the %1$s settings page for BuddyBlog posts "
 "are assigned the \"%2$s\" class."
 msgstr ""
 
-#: lib/sharing.php:1406
+#: lib/sharing.php:1407
 msgid ""
 "Social sharing buttons enabled in the %1$s settings page for BuddyPress "
 "activities are assigned the \"%2$s\" class."
