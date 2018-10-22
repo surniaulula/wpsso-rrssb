@@ -97,9 +97,9 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			/**
 			 * Email.
 			 */
-			$email_cap_len  = $this->p->options['email_cap_len'];
-			$email_cap_ht   = $this->p->options['email_cap_hashtags'];
-			$email_cap_text = $this->p->page->get_caption( 'excerpt', $email_cap_len, $mod, true, $email_cap_ht, true, 'none' );
+			$email_caption_max_len  = $this->p->options['email_caption_max_len'];
+			$email_caption_hashtags = $this->p->options['email_caption_hashtags'];
+			$email_caption_text     = $this->p->page->get_caption( 'excerpt', $email_caption_max_len, $mod, true, $email_caption_hashtags, true, 'none' );
 
 			$form_rows['subsection_email'] = array(
 				'td_class' => 'subsection',
@@ -120,16 +120,16 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 				'td_class' => 'blank',
 				'label'    => _x( 'Email Message', 'option label', 'wpsso-rrssb' ),
 				'tooltip'  => 'post-email_desc',
-				'content'  => $form->get_no_textarea_value( $email_cap_text, '', '', $email_cap_len ),
+				'content'  => $form->get_no_textarea_value( $email_caption_text, '', '', $email_caption_max_len ),
 			);
 
 			/**
 			 * Twitter.
 			 */
-			$twitter_cap_type = empty( $this->p->options['twitter_caption'] ) ? 'title' : $this->p->options['twitter_caption'];
-			$twitter_cap_len  = $this->p->rrssb_sharing->get_tweet_max_len();
-			$twitter_cap_ht   = $this->p->options['twitter_cap_hashtags'];
-			$twitter_cap_text = $this->p->page->get_caption( $twitter_cap_type, $twitter_cap_len, $mod, true, $twitter_cap_ht );
+			$twitter_caption_type     = empty( $this->p->options['twitter_caption'] ) ? 'title' : $this->p->options['twitter_caption'];
+			$twitter_caption_max_len  = $this->p->rrssb_sharing->get_tweet_max_len();
+			$twitter_caption_hashtags = $this->p->options['twitter_caption_hashtags'];
+			$twitter_caption_text     = $this->p->page->get_caption( $twitter_caption_type, $twitter_caption_max_len, $mod, true, $twitter_caption_hashtags );
 
 			$form_rows['subsection_twitter'] = array(
 				'td_class' => 'subsection',
@@ -142,17 +142,19 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 				'td_class' => 'blank',
 				'label'    => _x( 'Tweet Text', 'option label', 'wpsso-rrssb' ),
 				'tooltip'  => 'post-twitter_desc',
-				'content'  => $form->get_no_textarea_value( $twitter_cap_text, '', '', $twitter_cap_len ),
+				'content'  => $form->get_no_textarea_value( $twitter_caption_text, '', '', $twitter_caption_max_len ),
 			);
 
 			/**
 			 * Pinterest.
 			 */
-			$pin_cap_len  = $this->p->options['pin_cap_len'];
-			$pin_cap_ht   = $this->p->options['pin_cap_hashtags'];
-			$pin_cap_text = $this->p->page->get_caption( 'excerpt', $pin_cap_len, $mod, true, $pin_cap_ht );
-			$pin_media    = $this->p->og->get_media_info( $this->p->lca . '-pinterest-button', array( 'pid', 'img_url' ), $mod, 'schema' );
-			$force_regen  = $this->p->util->is_force_regen( $mod, 'schema' );	// False by default.
+			$pin_caption_max_len  = $this->p->options['pin_caption_max_len'];
+			$pin_caption_hashtags = $this->p->options['pin_caption_hashtags'];
+			$pin_caption_text     = $this->p->page->get_caption( 'excerpt', $pin_caption_max_len, $mod, true, $pin_caption_hashtags );
+
+			$pin_media = $this->p->og->get_media_info( $this->p->lca . '-pinterest-button', array( 'pid', 'img_url' ), $mod, 'schema' );
+
+			$force_regen = $this->p->util->is_force_regen( $mod, 'schema' );	// False by default.
 
 			if ( ! empty( $pin_media['pid'] ) ) {
 				$pin_media['img_url'] = $this->p->media->get_attachment_image_url( $pin_media['pid'], 'thumbnail', false, $force_regen );
@@ -169,7 +171,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 				'td_class' => 'blank top',
 				'label'    => _x( 'Pinterest Caption', 'option label', 'wpsso-rrssb' ),
 				'tooltip'  => 'post-pin_desc',
-				'content'  => $form->get_no_textarea_value( $pin_cap_text, '', '', $pin_cap_len ) . 
+				'content'  => $form->get_no_textarea_value( $pin_caption_text, '', '', $pin_caption_max_len ) . 
 					( empty( $pin_media['img_url'] ) ? '' : '</td><td class="top thumb_preview">' .
 						'<img src="' . $pin_media['img_url'] . '">' ),
 			);
@@ -179,13 +181,13 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			 */
 			foreach ( array(
 				'linkedin' => 'LinkedIn',
-				'reddit' => 'Reddit',
-				'tumblr' => 'Tumblr',
+				'reddit'   => 'Reddit',
+				'tumblr'   => 'Tumblr',
 			) as $opt_pre => $name ) {
 
-				$other_cap_len  = $this->p->options[$opt_pre . '_cap_len'];
-				$other_cap_ht   = $this->p->options[$opt_pre . '_cap_hashtags'];
-				$other_cap_text = $this->p->page->get_caption( 'excerpt', $other_cap_len, $mod, true, $other_cap_ht );
+				$other_caption_max_len  = $this->p->options[$opt_pre . '_caption_max_len'];
+				$other_caption_hashtags = $this->p->options[$opt_pre . '_caption_hashtags'];
+				$other_caption_text     = $this->p->page->get_caption( 'excerpt', $other_caption_max_len, $mod, true, $other_caption_hashtags );
 
 				$form_rows['subsection_' . $opt_pre] = array(
 					'td_class' => 'subsection',
@@ -206,7 +208,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 					'td_class' => 'blank',
 					'label'    => sprintf( _x( '%s Caption', 'option label', 'wpsso-rrssb' ), $name ),
 					'tooltip'  => 'post-' . $opt_pre . '_desc',
-					'content'  => $form->get_no_textarea_value( $other_cap_text, '', '', $other_cap_len ),
+					'content'  => $form->get_no_textarea_value( $other_caption_text, '', '', $other_caption_max_len ),
 				);
 			}
 

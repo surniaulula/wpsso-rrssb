@@ -42,14 +42,14 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteLinkedin' ) ) {
 				'<td>'.$form->get_select( 'linkedin_platform', $this->p->cf['sharing']['platform'] ).'</td>';
 			}
 
-			$table_rows[] = $form->get_tr_hide( 'basic', 'linkedin_cap_len' ).
+			$table_rows[] = $form->get_tr_hide( 'basic', 'linkedin_caption_max_len' ).
                         $form->get_th_html( _x( 'Caption Text Length', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_input( 'linkedin_cap_len', 'short' ) . ' ' . 
+			'<td>'.$form->get_input( 'linkedin_caption_max_len', 'short' ) . ' ' . 
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ).'</td>';
 
-			$table_rows[] = $form->get_tr_hide( 'basic', 'linkedin_cap_hashtags' ).
+			$table_rows[] = $form->get_tr_hide( 'basic', 'linkedin_caption_hashtags' ).
 			$form->get_th_html( _x( 'Append Hashtags to Caption', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'linkedin_cap_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ) . ' ' . 
+			'<td>'.$form->get_select( 'linkedin_caption_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ) . ' ' . 
 				_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'linkedin_rrssb_html' ).
@@ -68,15 +68,15 @@ if ( ! class_exists( 'WpssoRrssbWebsiteLinkedin' ) ) {
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
-					'linkedin_order' => 6,
-					'linkedin_on_content' => 1,
-					'linkedin_on_excerpt' => 0,
-					'linkedin_on_sidebar' => 0,
-					'linkedin_on_admin_edit' => 1,
-					'linkedin_platform' => 'any',
-					'linkedin_cap_len' => 300,
-					'linkedin_cap_hashtags' => 0,
-					'linkedin_rrssb_html' => '<li class="rrssb-linkedin">
+					'linkedin_order'            => 6,
+					'linkedin_on_content'       => 1,
+					'linkedin_on_excerpt'       => 0,
+					'linkedin_on_sidebar'       => 0,
+					'linkedin_on_admin_edit'    => 1,
+					'linkedin_platform'         => 'any',
+					'linkedin_caption_max_len'  => 300,
+					'linkedin_caption_hashtags' => 0,
+					'linkedin_rrssb_html'       => '<li class="rrssb-linkedin">
 	<a href="http://www.linkedin.com/shareArticle?mini=true&url=%%sharing_url%%&title=%%linkedin_title%%&summary=%%linkedin_caption%%" class="popup">
 		<span class="rrssb-icon">
 			<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
@@ -113,10 +113,11 @@ if ( ! class_exists( 'WpssoRrssbWebsiteLinkedin' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts['add_hashtags'] = empty( $this->p->options['linkedin_cap_hashtags'] ) ? false : $this->p->options['linkedin_cap_hashtags'];
+			$atts['add_hashtags'] = empty( $this->p->options['linkedin_caption_hashtags'] ) ? false : $this->p->options['linkedin_caption_hashtags'];
 
 		 	$linkedin_title = $this->p->page->get_caption( 'title', 0, $mod, true, false, false, 'linkedin_title' );
-			$linkedin_caption = $this->p->page->get_caption( 'excerpt', $opts['linkedin_cap_len'], $mod, true, $atts['add_hashtags'], false, 'linkedin_desc' );
+			$linkedin_caption = $this->p->page->get_caption( 'excerpt', $opts['linkedin_caption_max_len'], $mod, true,
+				$atts['add_hashtags'], false, 'linkedin_desc' );
 
 			return $this->p->util->replace_inline_vars( '<!-- LinkedIn Button -->'.
 				$this->p->options['linkedin_rrssb_html'], $mod, $atts, array(

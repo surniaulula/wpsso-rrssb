@@ -42,14 +42,14 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteEmail' ) ) {
 				'<td>'.$form->get_select( 'email_platform', $this->p->cf['sharing']['platform'] ).'</td>';
 			}
 
-			$table_rows[] = $form->get_tr_hide( 'basic', 'email_cap_len' ).
+			$table_rows[] = $form->get_tr_hide( 'basic', 'email_caption_max_len' ).
                         $form->get_th_html( _x( 'Email Message Length', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_input( 'email_cap_len', 'short' ) . ' ' . 
+			'<td>'.$form->get_input( 'email_caption_max_len', 'short' ) . ' ' . 
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ).'</td>';
 
-			$table_rows[] = $form->get_tr_hide( 'basic', 'email_cap_hashtags' ).
+			$table_rows[] = $form->get_tr_hide( 'basic', 'email_caption_hashtags' ).
 			$form->get_th_html( _x( 'Append Hashtags to Message', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'email_cap_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ) . ' ' . 
+			'<td>'.$form->get_select( 'email_caption_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ) . ' ' . 
 				_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'email_rrssb_html' ).
@@ -68,15 +68,15 @@ if ( ! class_exists( 'WpssoRrssbWebsiteEmail' ) ) {
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
-					'email_order'         => 1,
-					'email_on_content'    => 1,
-					'email_on_excerpt'    => 0,
-					'email_on_sidebar'    => 0,
-					'email_on_admin_edit' => 0,
-					'email_platform'      => 'any',
-					'email_cap_len'       => 500,
-					'email_cap_hashtags'  => 0,
-					'email_rrssb_html'    => '<li class="rrssb-email">
+					'email_order'            => 1,
+					'email_on_content'       => 1,
+					'email_on_excerpt'       => 0,
+					'email_on_sidebar'       => 0,
+					'email_on_admin_edit'    => 0,
+					'email_platform'         => 'any',
+					'email_caption_max_len'  => 500,
+					'email_caption_hashtags' => 0,
+					'email_rrssb_html'       => '<li class="rrssb-email">
 	<a href="mailto:?subject=Share:%20%%email_title%%&body=%%email_excerpt%%%0D%0A%0D%0AShared%20from%20%%sharing_url%%%0D%0A">
 		<span class="rrssb-icon">
 			<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
@@ -113,10 +113,11 @@ if ( ! class_exists( 'WpssoRrssbWebsiteEmail' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts['add_hashtags'] = empty( $this->p->options['email_cap_hashtags'] ) ? false : $this->p->options['email_cap_hashtags'];
+			$atts['add_hashtags'] = empty( $this->p->options['email_caption_hashtags'] ) ? false : $this->p->options['email_caption_hashtags'];
 
 			$email_title   = $this->p->page->get_caption( 'title', 0, $mod, true, false, false, 'email_title' );
-			$email_excerpt = $this->p->page->get_caption( 'both', $opts['email_cap_len'], $mod, true, $atts['add_hashtags'], false, 'email_desc' );
+			$email_excerpt = $this->p->page->get_caption( 'both', $opts['email_caption_max_len'], $mod, true,
+				$atts['add_hashtags'], false, 'email_desc' );
 
 			return $this->p->util->replace_inline_vars( '<!-- Email Button -->'.
 				$this->p->options['email_rrssb_html'], $mod, $atts, array(

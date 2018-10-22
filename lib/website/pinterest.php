@@ -61,14 +61,14 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsitePinterest' ) ) {
 			$table_rows[] = $form->get_th_html( _x( 'Image Dimensions', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_input_image_dimensions( 'pin_img' ).'</td>';	// $use_opts = false
 
-			$table_rows[] = $form->get_tr_hide( 'basic', 'pin_cap_len' ).
+			$table_rows[] = $form->get_tr_hide( 'basic', 'pin_caption_max_len' ).
                         $form->get_th_html( _x( 'Caption Text Length', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_input( 'pin_cap_len', 'short' ) . ' ' . 
+			'<td>'.$form->get_input( 'pin_caption_max_len', 'short' ) . ' ' . 
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ).'</td>';
 
-			$table_rows[] = $form->get_tr_hide( 'basic', 'pin_cap_hashtags' ).
+			$table_rows[] = $form->get_tr_hide( 'basic', 'pin_caption_hashtags' ).
 			$form->get_th_html( _x( 'Append Hashtags to Caption', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'pin_cap_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ) . ' ' . 
+			'<td>'.$form->get_select( 'pin_caption_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ) . ' ' . 
 				_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'pin_rrssb_html' ).
@@ -87,20 +87,20 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
-					'pin_order'         => 5,
-					'pin_on_content'    => 1,
-					'pin_on_excerpt'    => 0,
-					'pin_on_sidebar'    => 0,
-					'pin_on_admin_edit' => 1,
-					'pin_platform'      => 'any',
-					'pin_img_width'     => 800,
-					'pin_img_height'    => 1600,
-					'pin_img_crop'      => 0,
-					'pin_img_crop_x'    => 'center',
-					'pin_img_crop_y'    => 'center',
-					'pin_cap_len'       => 300,
-					'pin_cap_hashtags'  => 0,
-					'pin_rrssb_html'    => '<li class="rrssb-pinterest">
+					'pin_order'            => 5,
+					'pin_on_content'       => 1,
+					'pin_on_excerpt'       => 0,
+					'pin_on_sidebar'       => 0,
+					'pin_on_admin_edit'    => 1,
+					'pin_platform'         => 'any',
+					'pin_img_width'        => 800,
+					'pin_img_height'       => 1600,
+					'pin_img_crop'         => 0,
+					'pin_img_crop_x'       => 'center',
+					'pin_img_crop_y'       => 'center',
+					'pin_caption_max_len'  => 300,
+					'pin_caption_hashtags' => 0,
+					'pin_rrssb_html'       => '<li class="rrssb-pinterest">
 	<a href="http://pinterest.com/pin/create/button/?url=%%sharing_url%%&media=%%media_url%%&description=%%pinterest_caption%%" class="popup">
 		<span class="rrssb-icon">
 			<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
@@ -148,7 +148,7 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts['add_hashtags'] = empty( $this->p->options['pin_cap_hashtags'] ) ? false : $this->p->options['pin_cap_hashtags'];
+			$atts['add_hashtags'] = empty( $this->p->options['pin_caption_hashtags'] ) ? false : $this->p->options['pin_caption_hashtags'];
 
 			if ( empty( $atts['size'] ) ) {
 				$atts['size'] = $this->p->lca.'-pinterest-button';
@@ -196,7 +196,8 @@ if ( ! class_exists( 'WpssoRrssbWebsitePinterest' ) ) {
 				$pinterest_button_html = preg_replace( '/(\/create)\/(button\/)/', '$1/+/$2', $this->p->options['pin_rrssb_html'] );
 			}
 
-			$pinterest_caption = $this->p->page->get_caption( 'excerpt', $opts['pin_cap_len'], $mod, true, $atts['add_hashtags'], false, 'pin_desc' );
+			$pinterest_caption = $this->p->page->get_caption( 'excerpt', $opts['pin_caption_max_len'], $mod, true,
+				$atts['add_hashtags'], false, 'pin_desc' );
 
 			return $this->p->util->replace_inline_vars( '<!-- Pinterest Button -->'.
 				$pinterest_button_html, $mod, $atts, array(

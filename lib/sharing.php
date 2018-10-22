@@ -1118,13 +1118,11 @@ $cache_array[$cache_index] .
 				$atts['add_page']     = isset( $atts['add_page'] ) ? $atts['add_page'] : true;	// used by get_sharing_url()
 				$atts['add_hashtags'] = isset( $atts['add_hashtags'] ) ? $atts['add_hashtags'] : true;
 
-				$cap_type   = empty( $this->p->options[$opt_pre . '_caption'] ) ? 'title' : $this->p->options[$opt_pre . '_caption'];
-				$max_len    = $this->get_tweet_max_len( $opt_pre );
-				$read_cache = true;
-				$do_encode  = false;
-				$md_idx     = $md_pre . '_desc';
+				$caption_type    = empty( $this->p->options[ $opt_pre . '_caption' ] ) ? 'title' : $this->p->options[ $opt_pre . '_caption' ];
+				$caption_max_len = $this->get_tweet_max_len( $opt_pre );
 
-				return $this->p->page->get_caption( $cap_type, $max_len, $mod, $read_cache, $atts['add_hashtags'], $do_encode, $md_idx );
+				return $this->p->page->get_caption( $caption_type, $caption_max_len, $mod, $read_cache = true,
+					$atts['add_hashtags'], $do_encode = false, $md_idx = $md_pre . '_desc');
 
 			} else {
 				return $atts['tweet'];
@@ -1145,14 +1143,14 @@ $cache_array[$cache_index] .
 				$site_len = 0;
 			}
 
-			$max_len = $this->p->options[$opt_pre . '_cap_len'] - $site_len - $short_len;
+			$caption_max_len = $this->p->options[$opt_pre . '_caption_max_len'] - $site_len - $short_len;
 
 			if ( $this->p->debug->enabled ) {
-				$this->p->debug->log( 'max tweet length is ' . $max_len . ' chars (' . $this->p->options[$opt_pre . '_cap_len'] . 
+				$this->p->debug->log( 'max tweet length is ' . $caption_max_len . ' chars (' . $this->p->options[$opt_pre . '_caption_max_len'] . 
 					' less ' . $site_len . ' for site name and ' . $short_len . ' for url)' );
 			}
 
-			return $max_len;
+			return $caption_max_len;
 		}
 
 		public function enqueue_rrssb_ext( $hook_name ) {

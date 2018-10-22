@@ -42,14 +42,14 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteReddit' ) ) {
 				'<td>'.$form->get_select( 'reddit_platform', $this->p->cf['sharing']['platform'] ).'</td>';
 			}
 
-			$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_cap_len' ).
+			$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_caption_max_len' ).
                         $form->get_th_html( _x( 'Caption Text Length', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_input( 'reddit_cap_len', 'short' ) . ' ' . 
+			'<td>'.$form->get_input( 'reddit_caption_max_len', 'short' ) . ' ' . 
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ).'</td>';
 
-			$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_cap_hashtags' ).
+			$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_caption_hashtags' ).
 			$form->get_th_html( _x( 'Append Hashtags to Caption', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'reddit_cap_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ) . ' ' . 
+			'<td>'.$form->get_select( 'reddit_caption_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ) . ' ' . 
 				_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_rrssb_html' ).
@@ -68,15 +68,15 @@ if ( ! class_exists( 'WpssoRrssbWebsiteReddit' ) ) {
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
-					'reddit_order'         => 7,
-					'reddit_on_content'    => 0,
-					'reddit_on_excerpt'    => 0,
-					'reddit_on_sidebar'    => 0,
-					'reddit_on_admin_edit' => 0,
-					'reddit_platform'      => 'any',
-					'reddit_cap_len'       => 300,
-					'reddit_cap_hashtags'  => 0,
-					'reddit_rrssb_html'    => '<li class="rrssb-reddit">
+					'reddit_order'            => 7,
+					'reddit_on_content'       => 0,
+					'reddit_on_excerpt'       => 0,
+					'reddit_on_sidebar'       => 0,
+					'reddit_on_admin_edit'    => 0,
+					'reddit_platform'         => 'any',
+					'reddit_caption_max_len'  => 300,
+					'reddit_caption_hashtags' => 0,
+					'reddit_rrssb_html'       => '<li class="rrssb-reddit">
 	<a href="http://www.reddit.com/submit?url=%%sharing_url%%&title=%%reddit_title%%&text=%%reddit_summary%%">
 		<span class="rrssb-icon">
 			<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
@@ -114,10 +114,11 @@ if ( ! class_exists( 'WpssoRrssbWebsiteReddit' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts['add_hashtags'] = empty( $this->p->options['reddit_cap_hashtags'] ) ? false : $this->p->options['reddit_cap_hashtags'];
+			$atts['add_hashtags'] = empty( $this->p->options['reddit_caption_hashtags'] ) ? false : $this->p->options['reddit_caption_hashtags'];
 
 			$reddit_title   = $this->p->page->get_caption( 'title', 0, $mod, true, false, false, 'reddit_title' );
-			$reddit_summary = $this->p->page->get_caption( 'excerpt', $opts['reddit_cap_len'], $mod, true, $atts['add_hashtags'], false, 'reddit_desc' );
+			$reddit_summary = $this->p->page->get_caption( 'excerpt', $opts['reddit_caption_max_len'], $mod, true,
+				$atts['add_hashtags'], false, 'reddit_desc' );
 
 			return $this->p->util->replace_inline_vars( '<!-- Reddit Button -->'.
 				$this->p->options['reddit_rrssb_html'], $mod, $atts, array(

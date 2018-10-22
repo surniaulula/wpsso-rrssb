@@ -42,14 +42,14 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteTumblr' ) ) {
 				'<td>'.$form->get_select( 'tumblr_platform', $this->p->cf['sharing']['platform'] ).'</td>';
 			}
 
-			$table_rows['tumblr_cap_len'] = $form->get_tr_hide( 'basic', 'tumblr_cap_len' ).
+			$table_rows['tumblr_caption_max_len'] = $form->get_tr_hide( 'basic', 'tumblr_caption_max_len' ).
                         $form->get_th_html( _x( 'Summary Text Length', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_input( 'tumblr_cap_len', 'short' ) . ' ' . 
+			'<td>'.$form->get_input( 'tumblr_caption_max_len', 'short' ) . ' ' . 
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ).'</td>';
 
-			$table_rows['tumblr_cap_hashtags'] = $form->get_tr_hide( 'basic', 'tumblr_cap_hashtags' ).
+			$table_rows['tumblr_caption_hashtags'] = $form->get_tr_hide( 'basic', 'tumblr_caption_hashtags' ).
 			$form->get_th_html( _x( 'Append Hashtags to Summary', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'tumblr_cap_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ) . ' ' . 
+			'<td>'.$form->get_select( 'tumblr_caption_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ) . ' ' . 
 				_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows['tumblr_rrssb_html'] = $form->get_tr_hide( 'basic', 'tumblr_rrssb_html' ).
@@ -68,15 +68,15 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTumblr' ) ) {
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
-					'tumblr_order' => 9,
-					'tumblr_on_content' => 0,
-					'tumblr_on_excerpt' => 0,
-					'tumblr_on_sidebar' => 0,
-					'tumblr_on_admin_edit' => 0,
-					'tumblr_platform' => 'any',
-					'tumblr_cap_len' => 300,
-					'tumblr_cap_hashtags' => 0,
-					'tumblr_rrssb_html' => '<li class="rrssb-tumblr">
+					'tumblr_order'            => 9,
+					'tumblr_on_content'       => 0,
+					'tumblr_on_excerpt'       => 0,
+					'tumblr_on_sidebar'       => 0,
+					'tumblr_on_admin_edit'    => 0,
+					'tumblr_platform'         => 'any',
+					'tumblr_caption_max_len'  => 300,
+					'tumblr_caption_hashtags' => 0,
+					'tumblr_rrssb_html'       => '<li class="rrssb-tumblr">
 	<a href="http://tumblr.com/share/link?url=%%sharing_url%%&name=%%tumblr_title%%&description=%%tumblr_summary%%" class="popup">
 		<span class="rrssb-icon">
 			<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
@@ -113,10 +113,11 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTumblr' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts['add_hashtags'] = empty( $this->p->options['tumblr_cap_hashtags'] ) ? false : $this->p->options['tumblr_cap_hashtags'];
+			$atts['add_hashtags'] = empty( $this->p->options['tumblr_caption_hashtags'] ) ? false : $this->p->options['tumblr_caption_hashtags'];
 
 			$tumblr_title   = $this->p->page->get_caption( 'title', 0, $mod, true, false, false, 'tumblr_title' );
-			$tumblr_summary = $this->p->page->get_caption( 'excerpt', $opts['tumblr_cap_len'], $mod, true, $atts['add_hashtags'], false, 'tumblr_desc' );
+			$tumblr_summary = $this->p->page->get_caption( 'excerpt', $opts['tumblr_caption_max_len'], $mod, true,
+				$atts['add_hashtags'], false, 'tumblr_desc' );
 
 			return $this->p->util->replace_inline_vars( '<!-- Tumblr Button -->'.
 				$this->p->options['tumblr_rrssb_html'], $mod, $atts, array(

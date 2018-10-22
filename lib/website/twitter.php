@@ -46,14 +46,14 @@ if ( ! class_exists( 'WpssoRrssbSubmenuWebsiteTwitter' ) ) {
 			$form->get_th_html( _x( 'Tweet Text Source', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_select( 'twitter_caption', $this->p->cf['form']['caption_types'] ).'</td>';
 
-			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_cap_len' ).
+			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_caption_max_len' ).
 			$form->get_th_html( _x( 'Tweet Text Length', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_input( 'twitter_cap_len', 'short' ) . ' ' . 
+			'<td>'.$form->get_input( 'twitter_caption_max_len', 'short' ) . ' ' . 
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ).'</td>';
 
-			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_cap_hashtags' ).
+			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_caption_hashtags' ).
 			$form->get_th_html( _x( 'Append Hashtags to Tweet', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'twitter_cap_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ) . ' ' . 
+			'<td>'.$form->get_select( 'twitter_caption_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ) . ' ' . 
 				_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = $form->get_th_html( _x( 'Add via Business @username',
@@ -80,18 +80,18 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
-					'twitter_order' => 4,
-					'twitter_on_content' => 1,
-					'twitter_on_excerpt' => 0,
-					'twitter_on_sidebar' => 0,
-					'twitter_on_admin_edit' => 1,
-					'twitter_platform' => 'any',
-					'twitter_caption' => 'excerpt',
-					'twitter_cap_len' => 280,	// changed from 140 to 280 on 2017/11/17
-					'twitter_cap_hashtags' => 0,
-					'twitter_via' => 1,
-					'twitter_rel_author' => 1,
-					'twitter_rrssb_html' => '<li class="rrssb-twitter">
+					'twitter_order'            => 4,
+					'twitter_on_content'       => 1,
+					'twitter_on_excerpt'       => 0,
+					'twitter_on_sidebar'       => 0,
+					'twitter_on_admin_edit'    => 1,
+					'twitter_platform'         => 'any',
+					'twitter_caption'          => 'excerpt',
+					'twitter_caption_max_len'  => 280,	// changed from 140 to 280 on 2017/11/17
+					'twitter_caption_hashtags' => 0,
+					'twitter_via'              => 1,
+					'twitter_rel_author'       => 1,
+					'twitter_rrssb_html'       => '<li class="rrssb-twitter">
 	<a href="https://twitter.com/intent/tweet?original_referer=%%sharing_url%%&url=%%short_url%%&text=%%twitter_text%%&hashtags=%%twitter_hashtags%%&via=%%twitter_via%%&related=%%twitter_related%%" class="popup">
 		<span class="rrssb-icon">
 			<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
@@ -120,7 +120,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 
 		public function filter_get_defaults( $def_opts ) {
 
-			self::$cf['opt']['defaults']['twitter_cap_hashtags'] = $def_opts['og_desc_hashtags'];
+			self::$cf['opt']['defaults']['twitter_caption_hashtags'] = $def_opts['og_desc_hashtags'];
 
 			return array_merge( $def_opts, self::$cf['opt']['defaults'] );
 		}
@@ -131,7 +131,7 @@ if ( ! class_exists( 'WpssoRrssbWebsiteTwitter' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts['add_hashtags'] = empty( $this->p->options['twitter_cap_hashtags'] ) ? false : $this->p->options['twitter_cap_hashtags'];
+			$atts['add_hashtags'] = empty( $this->p->options['twitter_caption_hashtags'] ) ? false : $this->p->options['twitter_caption_hashtags'];
 
 			if ( ! isset( $atts['tweet'] ) ) {
 				$atts['tweet'] = $this->p->rrssb_sharing->get_tweet_text( $mod, $atts, 'twitter', 'twitter' );
