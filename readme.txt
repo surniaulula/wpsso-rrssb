@@ -148,6 +148,29 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.10.3-dev.7 (2018/10/22)**
+
+* *New Features*
+	* None.
+* *Improvements*
+	* None.
+* *Bugfixes*
+	* None.
+* *Developer Notes*
+	* Renamed option keys for standardization with Core plugin and add-ons:
+		* 'email_cap_len'         to 'email_caption_max_len',
+		* 'twitter_cap_len'       to 'twitter_caption_max_len',
+		* 'pin_cap_len'           to 'pin_caption_max_len',
+		* 'linkedin_cap_len'      to 'linkedin_caption_max_len',
+		* 'reddit_cap_len'        to 'reddit_caption_max_len',
+		* 'tumblr_cap_len'        to 'tumblr_caption_max_len',
+		* 'email_cap_hashtags'    to 'email_caption_hashtags',
+		* 'twitter_cap_hashtags'  to 'twitter_caption_hashtags',
+		* 'pin_cap_hashtags'      to 'pin_caption_hashtags',
+		* 'linkedin_cap_hashtags' to 'linkedin_caption_hashtags',
+		* 'reddit_cap_hashtags'   to 'reddit_caption_hashtags',
+		* 'tumblr_cap_hashtags'   to 'tumblr_caption_hashtags',
+
 **Version 1.10.2 (2018/10/04)**
 
 * *New Features*
@@ -198,6 +221,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* None.
 
 == Upgrade Notice ==
+
+= 1.10.3-dev.7 =
+
+(2018/10/22) Renamed option keys for standardization with Core plugin and add-ons:
 
 = 1.10.2 =
 
