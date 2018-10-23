@@ -148,7 +148,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.10.3-dev.8 (2018/10/23)**
+**Version 1.10.3-b.1 (2018/10/23)**
 
 * *New Features*
 	* None.
@@ -222,7 +222,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.10.3-dev.8 =
+= 1.10.3-b.1 =
 
 (2018/10/23) Renamed option keys for standardization with the Core plugin and other add-ons.
 
