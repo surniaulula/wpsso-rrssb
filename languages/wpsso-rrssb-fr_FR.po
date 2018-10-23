@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 1.10.2\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 1.10.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2018-10-14 07:37-0600\n"
-"PO-Revision-Date: 2018-10-14 07:38-0600\n"
+"PO-Revision-Date: 2018-10-22 10:31-0600\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
