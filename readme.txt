@@ -148,7 +148,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.10.3-b.1 (2018/10/23)**
+**Version 1.10.3 (2018/10/24)**
 
 * *New Features*
 	* None.
@@ -171,62 +171,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 		* 'reddit_cap_hashtags'   to 'reddit_caption_hashtags',
 		* 'tumblr_cap_hashtags'   to 'tumblr_caption_hashtags',
 
-**Version 1.10.2 (2018/10/04)**
-
-* *New Features*
-	* None.
-* *Improvements*
-	* None.
-* *Bugfixes*
-	* None.
-* *Developer Notes*
-	* Minor changes for code style and standardization.
-
-**Version 1.10.1 (2018/09/26)**
-
-* *New Features*
-	* None.
-* *Improvements*
-	* Minor CSS update for WPSSO Core v4.14.0.
-* *Bugfixes*
-	* None.
-* *Developer Notes*
-	* None.
-
-**Version 1.10.0 (2018/09/24)**
-
-* *New Features*
-	* None.
-* *Improvements*
-	* Added a new BuddyBlog integration module (Pro version).
-	* Added a new "Position in BuddyBlog Post" option under the SSO &gt; Responsive Buttons &gt; Buttons Position tab.
-	* Added a new "BBlog Post" checkbox for all sharing buttons in the SSO &gt; Responsive Buttons settings page.
-	* Added a new "BBlog Post" tab in the SSO &gt; Responsive Styles settings page.
-* *Bugfixes*
-	* Fixed the missing removal of "/+/" from share URLs in the rrssb.js library.
-* *Developer Notes*
-	* Minor refactoring of WpssoRrssbSharing class methods for conformity.
-
-**Version 1.9.0 (2018/09/16)**
-
-* *New Features*
-	* None.
-* *Improvements*
-	* Added a new "Reload Default Buttons HTML" button on the SSO &gt; Responsive Buttons settings page.
-	* Moved the sharing buttons text to CSS (reload the default buttons HTML and styles to update).
-	* Refactored the BuddyPress integration modules to support ajax queries in the new BuddyPress templates (Pro version).
-* *Bugfixes*
-	* Fixed the pre/after text filter action hook names.
-* *Developer Notes*
-	* None.
-
 == Upgrade Notice ==
 
-= 1.10.3-b.1 =
+= 1.10.3 =
 
-(2018/10/23) Renamed option keys for standardization with the Core plugin and other add-ons.
-
-= 1.10.2 =
-
-(2018/10/04) Minor changes for code style and standardization.
+(2018/10/24) Renamed option keys for standardization with the Core plugin and other add-ons.
 
