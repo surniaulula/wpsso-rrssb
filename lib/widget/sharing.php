@@ -50,7 +50,7 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 				'css_id'   => $args['widget_id'],
 			);
 
-			$title = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
+			$widget_title = apply_filters( 'widget_title', $instance[ 'title' ], $instance, $this->id_base );
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'required call to get_page_mod()' );
@@ -110,8 +110,8 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 			$sorted_ids = array();
 
 			foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre ) {
-				if ( array_key_exists( $id, $instance ) && (int) $instance[$id] ) {
-					$sorted_ids[ zeroise( $this->p->options[$opt_pre . '_order'], 3 ) . '-' . $id] = $id;
+				if ( array_key_exists( $id, $instance ) && (int) $instance[ $id ] ) {
+					$sorted_ids[ zeroise( $this->p->options[ $opt_pre . '_order' ], 3 ) . '-' . $id ] = $id;
 				}
 			}
 
@@ -126,7 +126,7 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 				$cache_array[$cache_index] = '
 <!-- ' . $this->p->lca . ' sharing widget ' . $args['widget_id'] . ' begin -->' . "\n" . 
 $before_widget . 
-( empty( $title ) ? '' : $before_title . $title . $after_title ) . 
+( empty( $widget_title ) ? '' : $before_title . $widget_title . $after_title ) . 
 $cache_array[$cache_index] . "\n" . 	// buttons html is trimmed, so add newline
 $after_widget . 
 '<!-- ' . $this->p->lca . ' sharing widget ' . $args['widget_id'] . ' end -->' . "\n\n";
@@ -151,11 +151,11 @@ $after_widget .
 
 			$instance = $old_instance;
 
-			$instance['title'] = strip_tags( $new_instance['title'] );
+			$instance[ 'title' ] = strip_tags( $new_instance[ 'title' ] );
 
 			if ( isset( $this->p->rrssb_sharing ) ) {
-				foreach ( $this->p->rrssb_sharing->get_website_object_ids() as $id => $name ) {
-					$instance[$id] = empty( $new_instance[$id] ) ? 0 : 1;
+				foreach ( $this->p->rrssb_sharing->get_website_object_ids() as $website_id => $website_title ) {
+					$instance[ $website_id ] = empty( $new_instance[ $website_id ] ) ? 0 : 1;
 				}
 			}
 
@@ -164,29 +164,29 @@ $after_widget .
 	
 		public function form( $instance ) {
 
-			$title = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : _x( 'Share It', 'option value', 'wpsso-rrssb' );
+			$widget_title = isset( $instance[ 'title' ] ) ? esc_attr( $instance[ 'title' ] ) : _x( 'Share It', 'option value', 'wpsso-rrssb' );
 
 			echo "\n" . '<p><label for="' . $this->get_field_id( 'title' ) . '">' . 
 				_x( 'Widget Title (leave blank for no title)', 'option label', 'wpsso-rrssb' ) . ':</label>' . 
 				'<input class="widefat" id="' . $this->get_field_id( 'title' ) . '" name="' . 
-					$this->get_field_name( 'title' ) . '" type="text" value="' . $title . '"/></p>' . "\n";
+					$this->get_field_name( 'title' ) . '" type="text" value="' . $widget_title . '"/></p>' . "\n";
 	
-			if ( isset( $this->p->rrssb_sharing ) ) {
+			if ( isset( $this->p->rrssb_sharing ) ) {	// Just in case.
 
-				foreach ( $this->p->rrssb_sharing->get_website_object_ids() as $id => $name ) {
+				foreach ( $this->p->rrssb_sharing->get_website_object_ids() as $website_id => $website_title ) {
 
-					$name = $name == 'GooglePlus' ? 'Google+' : $name;
+					$website_title = $website_title == 'GooglePlus' ? 'Google+' : $website_title;
 
-					echo '<p><label for="' . $this->get_field_id( $id ) . '">' . 
-						'<input id="' . $this->get_field_id( $id ) . 
-						'" name="' . $this->get_field_name( $id ) . 
+					echo '<p><label for="' . $this->get_field_id( $website_id ) . '">' . 
+						'<input id="' . $this->get_field_id( $website_id ) . 
+						'" name="' . $this->get_field_name( $website_id ) . 
 						'" value="1" type="checkbox" ';
 
-					if ( ! empty( $instance[$id] ) ) {
-						echo checked( 1, $instance[$id] );
+					if ( ! empty( $instance[ $website_id ] ) ) {
+						echo checked( 1, $instance[ $website_id ] );
 					}
 
-					echo '/> ' . $name . '</label></p>' . "\n";
+					echo '/> ' . $website_title . '</label></p>' . "\n";
 				}
 			}
 		}

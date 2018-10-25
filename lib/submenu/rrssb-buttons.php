@@ -23,10 +23,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 				$this->p->debug->mark();
 			}
 
-			$this->menu_id = $id;
+			$this->menu_id   = $id;
 			$this->menu_name = $name;
-			$this->menu_lib = $lib;
-			$this->menu_ext = $ext;
+			$this->menu_lib  = $lib;
+			$this->menu_ext  = $ext;
 
 			$this->set_objects();
 		}
@@ -59,29 +59,38 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 		 */
 		protected function add_meta_boxes() {
 
-			add_meta_box( $this->pagehook . '_rrssb_buttons',
-				_x( 'Social Sharing Buttons', 'metabox title', 'wpsso-rrssb' ),
-					array( $this, 'show_metabox_rrssb_buttons' ), $this->pagehook, 'normal' );
+			$metabox_id      = 'rrssb_buttons';
+			$metabox_title   = _x( 'Social Sharing Buttons', 'metabox title', 'wpsso-rrssb' );
+			$metabox_screen  = $this->pagehook;
+			$metabox_context = 'normal';
+			$metabox_prio    = 'default';
 
-			$ids = $this->p->rrssb_sharing->get_website_object_ids( $this->website );
+			add_meta_box( $this->pagehook . '_' . $metabox_id, $metabox_title,
+				array( $this, 'show_metabox_rrssb_buttons' ), $metabox_screen,
+					$metabox_context, $metabox_prio );
 
-			foreach ( $ids as $id => $name ) {
+			$website_ids = $this->p->rrssb_sharing->get_website_object_ids( $this->website );
 
-				$name   = $name == 'GooglePlus' ? 'Google+' : $name;
-				$pos_id = 'normal';
-				$prio   = 'default';
-				$args   = array( 'id' => $id, 'name' => $name );
+			foreach ( $website_ids as $website_id => $website_title ) {
 
-				add_meta_box( $this->pagehook . '_' . $id, $name, 
-					array( $this, 'show_metabox_rrssb_website' ),
-						$this->pagehook, $pos_id, $prio, $args );
+				$website_title   = $website_title == 'GooglePlus' ? 'Google+' : $website_title;
+				$metabox_screen  = $this->pagehook;
+				$metabox_context = 'normal';
+				$metabox_prio    = 'default';
+				$callback_args   = array( 'website_id' => $website_id, 'website_title' => $website_title );
 
-				add_filter( 'postbox_classes_' . $this->pagehook . '_' . $this->pagehook . '_' . $id, 
+				add_meta_box( $this->pagehook . '_' . $website_id, $website_title, 
+					array( $this, 'show_metabox_rrssb_website' ), $metabox_screen,
+						$metabox_context, $metabox_prio, $callback_args );
+
+				add_filter( 'postbox_classes_' . $this->pagehook . '_' . $this->pagehook . '_' . $website_id, 
 					array( $this, 'add_class_postbox_rrssb_website' ) );
 			}
 
-			// close all website metaboxes by default
-			WpssoUser::reset_metabox_prefs( $this->pagehook, array_keys( $ids ), 'closed' );
+			/**
+			 * Close all website metaboxes by default.
+			 */
+			WpssoUser::reset_metabox_prefs( $this->pagehook, array_keys( $website_ids ), 'closed' );
 		}
 
 		public function filter_action_buttons( $action_buttons ) {
@@ -108,7 +117,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 
 			$metabox_id = 'rrssb_buttons';
 
-			$tabs = apply_filters( $this->p->lca . '_rrssb_buttons_tabs', array(
+			$metabox_tabs = apply_filters( $this->p->lca . '_rrssb_buttons_tabs', array(
 				'include'  => _x( 'Include Buttons', 'metabox tab', 'wpsso-rrssb' ),
 				'position' => _x( 'Buttons Position', 'metabox tab', 'wpsso-rrssb' ),
 				'advanced' => _x( 'Advanced Settings', 'metabox tab', 'wpsso-rrssb' ),
@@ -116,7 +125,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 
 			$table_rows = array();
 
-			foreach ( $tabs as $tab_key => $title ) {
+			foreach ( $metabox_tabs as $tab_key => $title ) {
 
 				$filter_name = $this->p->lca . '_' . $metabox_id . '_' . $tab_key . '_rows';
 
@@ -126,28 +135,28 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 				);
 			}
 
-			$this->p->util->do_metabox_tabbed( $metabox_id, $tabs, $table_rows );
+			$this->p->util->do_metabox_tabbed( $metabox_id, $metabox_tabs, $table_rows );
 		}
 
 		public function show_metabox_rrssb_website( $post, $callback ) {
 
-			$args       = $callback['args'];
-			$metabox_id = 'rrssb_website';
-			$tabs       = apply_filters( $this->p->lca . '_' . $metabox_id . '_' . $args['id'] . '_tabs', array() );
+			$callback_args = $callback[ 'args' ];
+			$metabox_id    = 'rrssb_website';
+			$metabox_tabs  = apply_filters( $this->p->lca . '_' . $metabox_id . '_' . $callback_args[ 'website_id' ] . '_tabs', array() );
 
-			if ( empty( $tabs ) ) {
+			if ( empty( $metabox_tabs ) ) {
 
-				$this->p->util->do_metabox_table( apply_filters( $this->p->lca . '_' . $metabox_id . '_' . $args['id'] . '_rows',
-					array(), $this->form, $this ), 'metabox-' . $metabox_id . '-' . $args['id'], 'metabox-' . $metabox_id );
+				$this->p->util->do_metabox_table( apply_filters( $this->p->lca . '_' . $metabox_id . '_' . $callback_args[ 'website_id' ] . '_rows',
+					array(), $this->form, $this ), 'metabox-' . $metabox_id . '-' . $callback_args[ 'website_id' ], 'metabox-' . $metabox_id );
 
 			} else {
 
-				foreach ( $tabs as $tab => $title ) {
-					$table_rows[$tab] = apply_filters( $this->p->lca . '_' . $metabox_id . '_' . $args['id'] . '_' . $tab . '_rows',
+				foreach ( $metabox_tabs as $tab => $title ) {
+					$table_rows[$tab] = apply_filters( $this->p->lca . '_' . $metabox_id . '_' . $callback_args[ 'website_id' ] . '_' . $tab . '_rows',
 						array(), $this->form, $this );
 				}
 
-				$this->p->util->do_metabox_tabbed( $metabox_id . '_' . $args['id'], $tabs, $table_rows );
+				$this->p->util->do_metabox_tabbed( $metabox_id . '_' . $callback_args[ 'website_id' ], $metabox_tabs, $table_rows );
 			}
 		}
 
