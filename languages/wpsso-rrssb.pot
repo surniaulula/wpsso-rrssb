@@ -455,22 +455,22 @@ msgctxt "option label"
 msgid "Position in Excerpt Text"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:41
+#: lib/submenu/rrssb-styles.php:42
 msgctxt "metabox title"
 msgid "Social Sharing Styles"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:47
+#: lib/submenu/rrssb-styles.php:48
 msgctxt "submit button"
 msgid "Reload Default Styles"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:63
+#: lib/submenu/rrssb-styles.php:64
 msgctxt "option label"
 msgid "Use the Social Stylesheet"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:67
+#: lib/submenu/rrssb-styles.php:68
 msgctxt "option label"
 msgid "Enqueue the Stylesheet"
 msgstr ""

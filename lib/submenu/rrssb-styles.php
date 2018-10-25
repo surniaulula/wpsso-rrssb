@@ -37,6 +37,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 		 * Called by the extended WpssoAdmin class.
 		 */
 		protected function add_meta_boxes() {
+
 			add_meta_box( $this->pagehook . '_sharing_styles',
 				_x( 'Social Sharing Styles', 'metabox title', 'wpsso-rrssb' ),
 					array( $this, 'show_metabox_sharing_styles' ), $this->pagehook, 'normal' );
