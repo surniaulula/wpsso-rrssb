@@ -64,10 +64,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			$metabox_screen  = $this->pagehook;
 			$metabox_context = 'normal';
 			$metabox_prio    = 'default';
+			$callback_args   = array(	// Second argument passed to the callback function / method.
+			);
 
 			add_meta_box( $this->pagehook . '_' . $metabox_id, $metabox_title,
 				array( $this, 'show_metabox_rrssb_buttons' ), $metabox_screen,
-					$metabox_context, $metabox_prio );
+					$metabox_context, $metabox_prio, $callback_args );
 
 			$website_ids = $this->p->rrssb_sharing->get_website_object_ids( $this->website );
 
@@ -77,7 +79,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 				$metabox_screen  = $this->pagehook;
 				$metabox_context = 'normal';
 				$metabox_prio    = 'default';
-				$callback_args   = array( 'website_id' => $website_id, 'website_title' => $website_title );
+				$callback_args   = array(	// Second argument passed to the callback function / method.
+					'website_id'    => $website_id,
+					'website_title' => $website_title,
+				);
 
 				add_meta_box( $this->pagehook . '_' . $website_id, $website_title, 
 					array( $this, 'show_metabox_rrssb_website' ), $metabox_screen,

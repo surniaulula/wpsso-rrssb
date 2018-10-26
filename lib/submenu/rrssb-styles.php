@@ -38,9 +38,17 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 		 */
 		protected function add_meta_boxes() {
 
-			add_meta_box( $this->pagehook . '_sharing_styles',
-				_x( 'Social Sharing Styles', 'metabox title', 'wpsso-rrssb' ),
-					array( $this, 'show_metabox_sharing_styles' ), $this->pagehook, 'normal' );
+			$metabox_id      = 'sharing_styles';
+			$metabox_title   = _x( 'Social Sharing Styles', 'metabox title', 'wpsso-rrssb' );
+			$metabox_screen  = $this->pagehook;
+			$metabox_context = 'normal';
+			$metabox_prio    = 'default';
+			$callback_args   = array(	// Second argument passed to the callback function / method.
+			);
+
+			add_meta_box( $this->pagehook . '_' . $metabox_id, $metabox_title,
+				array( $this, 'show_metabox_sharing_styles' ), $metabox_screen,
+					$metabox_context, $metabox_prio, $callback_args );
 		}
 
 		public function filter_action_buttons( $action_buttons ) {
@@ -52,7 +60,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 
 		public function show_metabox_sharing_styles() {
 
-			$metabox_id = 'sharing-styles';
+			$metabox_id = 'rrssb_styles';
 
 			if ( file_exists( WpssoRrssbSharing::$sharing_css_file ) && ( $fsize = filesize( WpssoRrssbSharing::$sharing_css_file ) ) !== false ) {
 				$css_min_msg = ' <a href="' . WpssoRrssbSharing::$sharing_css_url . '">minified css is ' . $fsize . ' bytes</a>';
@@ -61,18 +69,17 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 			}
 
 			$this->p->util->do_metabox_table( array( 
-				$this->form->get_th_html( _x( 'Use the Social Stylesheet',
-					'option label', 'wpsso-rrssb' ), '', 'buttons_use_social_style' ) . 
+
+				$this->form->get_th_html( _x( 'Use the Social Stylesheet', 'option label', 'wpsso-rrssb' ), '', 'buttons_use_social_style' ) . 
 				'<td>' . $this->form->get_checkbox( 'buttons_use_social_style' ) . $css_min_msg . '</td>',
 
-				$this->form->get_th_html( _x( 'Enqueue the Stylesheet',
-					'option label', 'wpsso-rrssb' ), '', 'buttons_enqueue_social_style' ) . 
+				$this->form->get_th_html( _x( 'Enqueue the Stylesheet', 'option label', 'wpsso-rrssb' ), '', 'buttons_enqueue_social_style' ) . 
 				'<td>' . $this->form->get_checkbox( 'buttons_enqueue_social_style' ) . '</td>',
 			) );
 
 			$table_rows  = array();
 
-			$styles_tabs = apply_filters( $this->p->lca . '_rrssb_styles_tabs', $this->p->cf['sharing']['rrssb_styles'] );
+			$styles_tabs = apply_filters( $this->p->lca . '_' . $metabox_id . '_tabs', $this->p->cf['sharing']['rrssb_styles'] );
 
 			foreach ( $styles_tabs as $tab_key => $title ) {
 

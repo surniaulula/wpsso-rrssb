@@ -468,16 +468,28 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			 * Get the current object / post type.
 			 */
 			if ( ( $post_obj = SucomUtil::get_post_object() ) === false ) {
+
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'exiting early: invalid post object' );
 				}
+
 				return;
 			}
 
-			if ( ! empty( $this->p->options['buttons_add_to_' . $post_obj->post_type] ) ) {
-				add_meta_box( '_' . $this->p->lca . '_rrssb_share', 
-					_x( 'Share Buttons', 'metabox title', 'wpsso-rrssb' ),
-						array( $this, 'show_admin_sharing' ), $post_obj->post_type, 'side', 'high' );
+			if ( ! empty( $this->p->options[ 'buttons_add_to_' . $post_obj->post_type ] ) ) {
+
+				$metabox_id      = 'rrssb_share';
+				$metabox_title   = _x( 'Share Buttons', 'metabox title', 'wpsso-rrssb' );
+				$metabox_screen  = $post_obj->post_type;
+				$metabox_context = 'side';
+				$metabox_prio    = 'high';
+				$callback_args   = array(	// Second argument passed to the callback function / method.
+					'__block_editor_compatible_meta_box' => true,
+				);
+
+				add_meta_box( '_' . $this->p->lca . '_' . $metabox_id, $metabox_title,
+					array( $this, 'show_metabox_rrssb_share' ), $metabox_screen,
+						$metabox_context, $metabox_prio, $callback_args );
 			}
 		}
 
@@ -521,7 +533,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 			echo $this->get_buttons( '', 'sidebar', false, '', array( 'container_each' => true ) );	// $use_post is false.
 		}
 
-		public function show_admin_sharing( $post_obj ) {
+		public function show_metabox_rrssb_share( $post_obj ) {
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
