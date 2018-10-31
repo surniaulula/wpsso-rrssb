@@ -1134,7 +1134,7 @@ $cache_array[$cache_index] .
 				$caption_max_len = $this->get_tweet_max_len( $opt_pre );
 
 				return $this->p->page->get_caption( $caption_type, $caption_max_len, $mod, $read_cache = true,
-					$atts['add_hashtags'], $do_encode = false, $md_idx = $md_pre . '_desc');
+					$atts['add_hashtags'], $do_encode = false, $md_key = $md_pre . '_desc');
 
 			} else {
 				return $atts['tweet'];
@@ -1178,15 +1178,15 @@ $cache_array[$cache_index] .
 			wp_enqueue_style( 'rrssb' );
 		}
 
-		public function filter_messages_tooltip( $text, $idx ) {
+		public function filter_messages_tooltip( $text, $msg_key ) {
 
-			if ( strpos( $idx, 'tooltip-buttons_' ) !== 0 ) {
+			if ( strpos( $msg_key, 'tooltip-buttons_' ) !== 0 ) {
 				return $text;
 			}
 
-			switch ( $idx ) {
+			switch ( $msg_key ) {
 
-				case ( strpos( $idx, 'tooltip-buttons_pos_' ) === false ? false : true ):
+				case ( strpos( $msg_key, 'tooltip-buttons_pos_' ) === false ? false : true ):
 
 					$text = sprintf( __( 'Social sharing buttons can be added to the top, bottom, or both. Each sharing button must also be enabled below (see the <em>%s</em> options).', 'wpsso-rrssb' ), _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) );
 
@@ -1244,9 +1244,9 @@ $cache_array[$cache_index] .
 			return $text;
 		}
 
-		public function filter_messages_tooltip_plugin( $text, $idx ) {
+		public function filter_messages_tooltip_plugin( $text, $msg_key ) {
 
-			switch ( $idx ) {
+			switch ( $msg_key ) {
 
 				case 'tooltip-plugin_sharing_buttons_cache_exp':
 
@@ -1263,15 +1263,15 @@ $cache_array[$cache_index] .
 			return $text;
 		}
 
-		public function filter_messages_info( $text, $idx ) {
+		public function filter_messages_info( $text, $msg_key ) {
 
-			if ( strpos( $idx, 'info-styles-rrssb-' ) !== 0 ) {
+			if ( strpos( $msg_key, 'info-styles-rrssb-' ) !== 0 ) {
 				return $text;
 			}
 
 			$short = $this->p->cf['plugin']['wpssorrssb']['short'];
 
-			switch ( $idx ) {
+			switch ( $msg_key ) {
 
 				case 'info-styles-rrssb-sharing':
 
