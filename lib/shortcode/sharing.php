@@ -28,6 +28,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				if ( $this->p->avail['p_ext']['rrssb'] ) {
 
 					$this->check_wpautop();
+
 					$this->add_shortcode();
 
 					$this->p->util->add_plugin_actions( $this, array( 
@@ -143,14 +144,19 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			}
 
 			if ( SucomUtil::is_amp() ) {
+
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'exiting early: buttons not allowed in amp endpoint'  );
 				}
+
 				return $content;
+
 			} elseif ( is_feed() ) {
+
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'exiting early: buttons not allowed in rss feeds'  );
 				}
+
 				return $content;
 			}
 
@@ -160,7 +166,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				return '<!-- '.$this->p->lca.' sharing shortcode: no buttons defined -->' . "\n\n";
 			}
 
-			$atts['use_post'] = SucomUtil::sanitize_use_post( $atts, true );	// $default = true
+			$atts['use_post']  = SucomUtil::sanitize_use_post( $atts, true );	// $default = true
 			$atts['css_class'] = empty( $atts['css_class'] ) ? 'rrssb-shortcode' : $atts['css_class'];
 
 			if ( $this->p->debug->enabled ) {
@@ -168,7 +174,9 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			}
 
 			$mod = $this->p->util->get_page_mod( $atts['use_post'] );
+
 			$type = 'sharing_shortcode_'.WPSSORRSSB_SHARING_SHORTCODE_NAME;
+
 			$atts['url'] = empty( $atts['url'] ) ? $this->p->util->get_sharing_url( $mod ) : $atts['url'];
 
 			$cache_md5_pre  = $this->p->lca . '_b_';
@@ -191,18 +199,24 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				$cache_array = get_transient( $cache_id );
 
 				if ( isset( $cache_array[$cache_index] ) ) {	// can be an empty string
+
 					if ( $this->p->debug->enabled ) {
 						$this->p->debug->log( $type . ' cache index found in transient cache' );
 					}
+
 					return $cache_array[$cache_index];	// stop here
+
 				} else {
+
 					if ( $this->p->debug->enabled ) {
 						$this->p->debug->log( $type . ' cache index not in transient cache' );
 					}
+
 					if ( ! is_array( $cache_array ) ) {
 						$cache_array = array();
 					}
 				}
+
 			} elseif ( $this->p->debug->enabled ) {
 				$this->p->debug->log( $type . ' buttons transient cache is disabled' );
 			}
