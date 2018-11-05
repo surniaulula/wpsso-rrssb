@@ -886,7 +886,7 @@ $cache_array[$cache_index] .
 			return $cache_exp_secs;
 		}
 
-		public function get_buttons_cache_index( $type, $atts = false, $ids = false ) {
+		public function get_buttons_cache_index( $type, $atts = false, $website_ids = false ) {
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
@@ -902,7 +902,7 @@ $cache_array[$cache_index] .
 
 			$cache_index .= $atts !== false ? '_atts:' . http_build_query( $atts, '', '_' ) : '';
 
-			$cache_index .= $ids !== false ? '_ids:' . http_build_query( $ids, '', '_' ) : '';
+			$cache_index .= $website_ids !== false ? '_website_ids:' . http_build_query( $website_ids, '', ',' ) : '';
 
 			$cache_index = SucomUtil::get_query_salt( $cache_index );	// Add $wp_query args.
 
@@ -914,33 +914,35 @@ $cache_array[$cache_index] .
 		/**
 		 * get_html() can be called by a widget, shortcode, function, filter hook, etc.
 		 */
-		public function get_html( array $ids, array $atts, $mod = false ) {
+		public function get_html( array $website_ids, array $atts, $mod = false ) {
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
 			}
 
-			$atts['use_post'] = isset( $atts['use_post'] ) ? $atts['use_post'] : true;	// maintain backwards compat
-			$atts['add_page'] = isset( $atts['add_page'] ) ? $atts['add_page'] : true;	// used by get_sharing_url()
+			$atts['use_post'] = isset( $atts['use_post'] ) ? $atts['use_post'] : true;	// Maintain backwards compat.
+			$atts['add_page'] = isset( $atts['add_page'] ) ? $atts['add_page'] : true;	// Used by get_sharing_url().
 
 			/**
 			 * The $mod array argument is preferred but not required.
 			 * $mod = true | false | post_id | $mod array
 			 */
 			if ( ! is_array( $mod ) ) {
+
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'optional call to get_page_mod()' );
 				}
+
 				$mod = $this->p->util->get_page_mod( $atts['use_post'] );
 			}
 
-			$buttons_html = '';
+			$buttons_html  = '';
 			$buttons_begin = '<ul class="rrssb-buttons ' . SucomUtil::get_locale( $mod ) . ' clearfix">' . "\n";
-			$buttons_end = '</ul><!-- .rrssb-buttons.' . SucomUtil::get_locale( $mod ) . '.clearfix -->' . "\n";
+			$buttons_end   = '</ul><!-- .rrssb-buttons.' . SucomUtil::get_locale( $mod ) . '.clearfix -->' . "\n";
 
 			$saved_atts = $atts;
 
-			foreach ( $ids as $id ) {
+			foreach ( $website_ids as $id ) {
 
 				if ( isset( $this->website[$id] ) ) {
 
@@ -948,7 +950,7 @@ $cache_array[$cache_index] .
 
 						if ( $this->allow_for_platform( $id ) ) {
 
-							$atts['src_id'] = SucomUtil::get_atts_src_id( $atts, $id );	// uses 'css_id' and 'use_post'
+							$atts['src_id'] = SucomUtil::get_atts_src_id( $atts, $id );	// Uses 'css_id' and 'use_post'.
 
 							if ( empty( $atts['url'] ) ) {
 								$atts['url'] = $this->p->util->get_sharing_url( $mod,
@@ -958,7 +960,9 @@ $cache_array[$cache_index] .
 									$atts['url'], $mod, $atts['add_page'], $atts['src_id'] );
 							}
 
-							// filter to add custom tracking arguments
+							/**
+							 * Filter to add custom tracking arguments.
+							 */
 							$atts['url'] = apply_filters( $this->p->lca . '_rrssb_buttons_shared_url',
 								$atts['url'], $mod, $id );
 
@@ -995,8 +999,9 @@ $cache_array[$cache_index] .
 			$buttons_html = trim( $buttons_html );
 
 			if ( ! empty( $buttons_html ) ) {
-				if ( empty( $atts['container_each'] ) )
+				if ( empty( $atts['container_each'] ) ) {
 					$buttons_html = $buttons_begin . $buttons_html . $buttons_end;
+				}
 			}
 
 			return $buttons_html;
@@ -1021,7 +1026,9 @@ $cache_array[$cache_index] .
 
 		public function allow_for_platform( $id ) {
 
-			// always allow if the content does not vary by user agent
+			/**
+			 * Always allow if the content does not vary by user agent.
+			 */
 			if ( ! $this->p->avail['*']['vary_ua'] ) {
 				return true;
 			}
@@ -1030,14 +1037,23 @@ $cache_array[$cache_index] .
 				$this->p->cf['opt']['cm_prefix'][$id] : $id;
 
 			if ( isset( $this->p->options[$opt_pre . '_platform'] ) ) {
+
 				switch( $this->p->options[$opt_pre . '_platform'] ) {
+
 					case 'any':
+
 						return true;
+
 					case 'desktop':
+
 						return SucomUtil::is_desktop();
+
 					case 'mobile':
+
 						return SucomUtil::is_mobile();
+
 					default:
+
 						return true;
 				}
 			}
