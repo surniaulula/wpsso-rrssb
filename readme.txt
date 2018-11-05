@@ -148,6 +148,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.11.0-dev.1 (TBD)**
+
+* *New Features*
+	* None.
+* *Improvements*
+	* None.
+* *Bugfixes*
+	* None.
+* *Developer Notes*
+	* None.
+
 **Version 1.10.3 (2018/10/24)**
 
 * *New Features*
@@ -172,6 +183,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 		* 'tumblr_cap_hashtags'   to 'tumblr_caption_hashtags',
 
 == Upgrade Notice ==
+
+= 1.11.0-dev.1 =
+
+(TBD) None.
 
 = 1.10.3 =
 
