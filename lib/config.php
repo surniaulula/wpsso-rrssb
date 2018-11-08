@@ -38,29 +38,6 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 						),
 					),
 					'lib' => array(
-						'submenu' => array(	// Note that submenu elements must have unique keys.
-							'rrssb-buttons' => 'Responsive Buttons',
-							'rrssb-styles'  => 'Responsive Styles',
-						),
-						'shortcode' => array(
-							'sharing' => 'Sharing Shortcode',
-						),
-						'widget' => array(
-							'sharing' => 'Sharing Widget',
-						),
-						'website' => array(
-							'email'     => 'Email', 
-							'facebook'  => 'Facebook', 
-							'gplus'     => 'GooglePlus', 
-							'twitter'   => 'Twitter', 
-							'pinterest' => 'Pinterest', 
-							'linkedin'  => 'LinkedIn', 
-							'reddit'    => 'Reddit', 
-							'pocket'    => 'Pocket', 
-							'tumblr'    => 'Tumblr', 
-							'vk'        => 'VK', 
-							'whatsapp'  => 'WhatsApp', 
-						),
 						'gpl' => array(
 							'admin' => array(
 								'sharing' => 'Extend Sharing Settings',
@@ -90,6 +67,29 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 								'buddyblog'  => '(plugin) BuddyBlog',
 								'buddypress' => '(plugin) BuddyPress',
 							),
+						),
+						'share' => array(
+							'email'     => 'Email', 
+							'facebook'  => 'Facebook', 
+							'gplus'     => 'GooglePlus', 
+							'twitter'   => 'Twitter', 
+							'pinterest' => 'Pinterest', 
+							'linkedin'  => 'LinkedIn', 
+							'reddit'    => 'Reddit', 
+							'pocket'    => 'Pocket', 
+							'tumblr'    => 'Tumblr', 
+							'vk'        => 'VK', 
+							'whatsapp'  => 'WhatsApp', 
+						),
+						'shortcode' => array(
+							'sharing' => 'Sharing Shortcode',
+						),
+						'submenu' => array(	// Note that submenu elements must have unique keys.
+							'rrssb-buttons' => 'Responsive Buttons',
+							'rrssb-styles'  => 'Responsive Styles',
+						),
+						'widget' => array(
+							'sharing' => 'Sharing Widget',
 						),
 					),
 				),
@@ -240,9 +240,13 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 
 		public static function require_libs( $plugin_filepath ) {
 
-			require_once WPSSORRSSB_PLUGINDIR . 'lib/register.php';
+			require_once WPSSORRSSB_PLUGINDIR . 'lib/actions.php';
+			require_once WPSSORRSSB_PLUGINDIR . 'lib/filters.php';
 			require_once WPSSORRSSB_PLUGINDIR . 'lib/functions.php';
+			require_once WPSSORRSSB_PLUGINDIR . 'lib/register.php';
+			require_once WPSSORRSSB_PLUGINDIR . 'lib/script.php';
 			require_once WPSSORRSSB_PLUGINDIR . 'lib/sharing.php';
+			require_once WPSSORRSSB_PLUGINDIR . 'lib/style.php';
 
 			add_filter( 'wpssorrssb_load_lib', array( 'WpssoRrssbConfig', 'load_lib' ), 10, 3 );
 		}

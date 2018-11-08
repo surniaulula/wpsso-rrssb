@@ -154,8 +154,8 @@ $after_widget .
 			$instance[ 'title' ] = strip_tags( $new_instance[ 'title' ] );
 
 			if ( isset( $this->p->rrssb_sharing ) ) {
-				foreach ( $this->p->rrssb_sharing->get_website_object_ids() as $website_id => $website_title ) {
-					$instance[ $website_id ] = empty( $new_instance[ $website_id ] ) ? 0 : 1;
+				foreach ( $this->p->rrssb_sharing->get_share_object_ids() as $share_id => $share_title ) {
+					$instance[ $share_id ] = empty( $new_instance[ $share_id ] ) ? 0 : 1;
 				}
 			}
 
@@ -173,20 +173,20 @@ $after_widget .
 	
 			if ( isset( $this->p->rrssb_sharing ) ) {	// Just in case.
 
-				foreach ( $this->p->rrssb_sharing->get_website_object_ids() as $website_id => $website_title ) {
+				foreach ( $this->p->rrssb_sharing->get_website_object_ids() as $share_id => $share_title ) {
 
-					$website_title = $website_title == 'GooglePlus' ? 'Google+' : $website_title;
+					$share_title = $share_title == 'GooglePlus' ? 'Google+' : $share_title;
 
-					echo '<p><label for="' . $this->get_field_id( $website_id ) . '">' . 
-						'<input id="' . $this->get_field_id( $website_id ) . 
-						'" name="' . $this->get_field_name( $website_id ) . 
+					echo '<p><label for="' . $this->get_field_id( $share_id ) . '">' . 
+						'<input id="' . $this->get_field_id( $share_id ) . 
+						'" name="' . $this->get_field_name( $share_id ) . 
 						'" value="1" type="checkbox" ';
 
-					if ( ! empty( $instance[ $website_id ] ) ) {
-						echo checked( 1, $instance[ $website_id ] );
+					if ( ! empty( $instance[ $share_id ] ) ) {
+						echo checked( 1, $instance[ $share_id ] );
 					}
 
-					echo '/> ' . $website_title . '</label></p>' . "\n";
+					echo '/> ' . $share_title . '</label></p>' . "\n";
 				}
 			}
 		}

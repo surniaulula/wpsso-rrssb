@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 
-	function wpssorrssb_get_sharing_buttons( $website_ids = array(), $atts = array(), $cache_exp_secs = false ) {
+	function wpssorrssb_get_sharing_buttons( $share_ids = array(), $atts = array(), $cache_exp_secs = false ) {
 
 		$wpsso =& Wpsso::get_instance();
 
@@ -21,7 +21,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 
 		$error_msg = false;
 
-		if ( ! is_array( $website_ids ) ) {
+		if ( ! is_array( $share_ids ) ) {
 
 			$error_msg = 'sharing button ids must be an array';
 
@@ -37,7 +37,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 
 			$error_msg = 'sharing buttons are disabled';
 
-		} elseif ( empty( $website_ids ) ) {	// nothing to do
+		} elseif ( empty( $share_ids ) ) {	// nothing to do
 
 			$error_msg = 'no buttons requested';
 		}
@@ -63,7 +63,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 		$cache_exp_secs = false === $cache_exp_secs ? $wpsso->rrssb_sharing->get_buttons_cache_exp() : $cache_exp_secs;
 		$cache_salt     = __FUNCTION__ . '(' . SucomUtil::get_mod_salt( $mod, $sharing_url ) . ')';
 		$cache_id       = $cache_md5_pre . md5( $cache_salt );
-		$cache_index    = $wpsso->rrssb_sharing->get_buttons_cache_index( $type, $atts, $website_ids );	// Returns salt with locale, mobile, wp_query, etc.
+		$cache_index    = $wpsso->rrssb_sharing->get_buttons_cache_index( $type, $atts, $share_ids );	// Returns salt with locale, mobile, wp_query, etc.
 		$cache_array    = array();
 
 		if ( $wpsso->debug->enabled ) {
@@ -98,7 +98,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 		/**
 		 * Returns html or an empty string.
 		 */
-		$cache_array[$cache_index] = $wpsso->rrssb_sharing->get_html( $website_ids, $atts, $mod );
+		$cache_array[$cache_index] = $wpsso->rrssb_sharing->get_html( $share_ids, $atts, $mod );
 
 		if ( ! empty( $cache_array[$cache_index] ) ) {
 
