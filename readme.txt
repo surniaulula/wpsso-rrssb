@@ -148,7 +148,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.11.0-dev.1 (TBD)**
+**Version 1.11.0-dev.3 (TBD)**
 
 * *New Features*
 	* None.
@@ -184,7 +184,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.11.0-dev.1 =
+= 1.11.0-dev.3 =
 
 (TBD) None.
 
