@@ -157,7 +157,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * *Bugfixes*
 	* None.
 * *Developer Notes*
-	* None.
+	* Renamed the lib/websites/ folder to lib/share/.
+	* Moved actions from the WpssoRrssbSharing class to a new WpssoRrssbActions class.
+	* Moved filters from the WpssoRrssbSharing class to a new WpssoRrssbFilters class.
+	* Moved script enqueuing from the WpssoRrssbSharing class to a new WpssoRrssbScript class.
+	* Moved stylesheet enqueuing from the WpssoRrssbSharing class to a new WpssoRrssbStyle class.
 
 **Version 1.10.3 (2018/10/24)**
 
@@ -186,7 +190,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 1.11.0-dev.3 =
 
-(TBD) None.
+(TBD) Moved several methods from the WpssoRrssbSharing method to new classes.
 
 = 1.10.3 =
 
