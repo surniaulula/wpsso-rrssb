@@ -29,13 +29,20 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			) );
 
 			if ( is_admin() ) {
+
 				$this->p->util->add_plugin_filters( $this, array( 
 					'save_options'              => 3,
 					'option_type'               => 2,
+					'post_custom_meta_tabs'     => 3,
+					'post_cache_transient_keys' => 4,
 					'messages_info'             => 2,
 					'messages_tooltip'          => 2,
 					'messages_tooltip_plugin'   => 2,
 				) );
+
+				$this->p->util->add_plugin_filters( $this, array( 
+					'status_gpl_features' => 3,
+				), 10, 'wpssorrssb' );
 			}
 		}
 
@@ -109,6 +116,84 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				'tumblr_desc'      => '',	// Tumblr Caption
 				'buttons_disabled' => 0,	// Disable Sharing Buttons
 			) );
+		}
+
+		public function filter_save_options( $opts, $options_name, $network ) {
+
+			/**
+			 * Update the combined and minified social stylesheet.
+			 */
+			if ( false === $network ) {
+				WpssoRrssbSharing::update_sharing_css( $opts );
+			}
+
+			return $opts;
+		}
+
+		public function filter_option_type( $type, $base_key ) {
+
+			if ( ! empty( $type ) ) {
+				return $type;
+			}
+
+			switch ( $base_key ) {
+
+				/**
+				 * Integer options that must be 1 or more (not zero).
+				 */
+				case ( preg_match( '/_order$/', $base_key ) ? true : false ):
+
+					return 'pos_int';
+
+					break;
+
+				/**
+				 * Text strings that can be blank.
+				 */
+				case 'buttons_force_prot':
+				case ( preg_match( '/_(desc|title)$/', $base_key ) ? true : false ):
+
+					return 'ok_blank';
+
+					break;
+			}
+
+			return $type;
+		}
+
+		public function filter_post_custom_meta_tabs( $tabs, $mod, $metabox_id ) {
+
+			if ( $metabox_id === $this->p->cf['meta']['id'] ) {
+				SucomUtil::add_after_key( $tabs, 'media', 'buttons',
+					_x( 'Share Buttons', 'metabox tab', 'wpsso-rrssb' ) );
+			}
+
+			return $tabs;
+		}
+
+		public function filter_post_cache_transient_keys( $transient_keys, $mod, $sharing_url, $mod_salt ) {
+
+			$cache_md5_pre = $this->p->lca . '_b_';
+
+			$transient_keys[] = array(
+				'id'   => $cache_md5_pre . md5( 'WpssoRrssbSharing::get_buttons(' . $mod_salt . ')' ),
+				'pre'   => $cache_md5_pre,
+				'salt' => 'WpssoRrssbSharing::get_buttons(' . $mod_salt . ')',
+			);
+
+			$transient_keys[] = array(
+				'id'   => $cache_md5_pre . md5( 'WpssoRrssbShortcodeSharing::do_shortcode(' . $mod_salt . ')' ),
+				'pre'  => $cache_md5_pre,
+				'salt' => 'WpssoRrssbShortcodeSharing::do_shortcode(' . $mod_salt . ')',
+			);
+
+			$transient_keys[] = array(
+				'id'   => $cache_md5_pre . md5( 'WpssoRrssbWidgetSharing::widget(' . $mod_salt . ')' ),
+				'pre'  => $cache_md5_pre,
+				'salt' => 'WpssoRrssbWidgetSharing::widget(' . $mod_salt . ')',
+			);
+
+			return $transient_keys;
 		}
 
 		public function filter_messages_info( $text, $msg_key ) {
@@ -287,49 +372,6 @@ div.wpsso-rrssb
 			return $text;
 		}
 
-		public function filter_save_options( $opts, $options_name, $network ) {
-
-			/**
-			 * Update the combined and minified social stylesheet.
-			 */
-			if ( false === $network ) {
-				WpssoRrssbSharing::update_sharing_css( $opts );
-			}
-
-			return $opts;
-		}
-
-		public function filter_option_type( $type, $base_key ) {
-
-			if ( ! empty( $type ) ) {
-				return $type;
-			}
-
-			switch ( $base_key ) {
-
-				/**
-				 * Integer options that must be 1 or more (not zero).
-				 */
-				case ( preg_match( '/_order$/', $base_key ) ? true : false ):
-
-					return 'pos_int';
-
-					break;
-
-				/**
-				 * Text strings that can be blank.
-				 */
-				case 'buttons_force_prot':
-				case ( preg_match( '/_(desc|title)$/', $base_key ) ? true : false ):
-
-					return 'ok_blank';
-
-					break;
-			}
-
-			return $type;
-		}
-
 		public function filter_messages_tooltip( $text, $msg_key ) {
 
 			if ( strpos( $msg_key, 'tooltip-buttons_' ) !== 0 ) {
@@ -413,6 +455,35 @@ div.wpsso-rrssb
 			}
 
 			return $text;
+		}
+
+		public function filter_status_gpl_features( $features, $ext, $info ) {
+
+			if ( ! empty( $info['lib']['submenu']['rrssb-buttons'] ) ) {
+				$features['(sharing) Sharing Buttons'] = array(
+					'classname' => $ext . 'Sharing',
+				);
+			}
+
+			if ( ! empty( $info['lib']['submenu']['rrssb-styles'] ) ) {
+				$features['(sharing) Sharing Stylesheet'] = array(
+					'status' => empty( $this->p->options['buttons_use_social_style'] ) ? 'off' : 'on',
+				);
+			}
+
+			if ( ! empty( $info['lib']['shortcode']['sharing'] ) ) {
+				$features['(sharing) Sharing Shortcode'] = array(
+					'classname' => $ext . 'ShortcodeSharing',
+				);
+			}
+
+			if ( ! empty( $info['lib']['widget']['sharing'] ) ) {
+				$features['(sharing) Sharing Widget'] = array(
+					'classname' => $ext . 'WidgetSharing',
+				);
+			}
+
+			return $features;
 		}
 	}
 }

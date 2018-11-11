@@ -55,14 +55,6 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					add_action( 'add_meta_boxes', array( $this, 'add_post_buttons_metabox' ) );
 				}
 
-				$this->p->util->add_plugin_filters( $this, array( 
-					'post_custom_meta_tabs'     => 3,
-					'post_cache_transient_keys' => 4,
-				) );
-
-				$this->p->util->add_plugin_filters( $this, array( 
-					'status_gpl_features' => 3,
-				), 10, 'wpssorrssb' );
 			}
 
 			if ( $this->p->debug->enabled ) {
@@ -85,71 +77,6 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 					}
 				}
 			}
-		}
-
-		public function filter_post_custom_meta_tabs( $tabs, $mod, $metabox_id ) {
-
-			if ( $metabox_id === $this->p->cf['meta']['id'] ) {
-				SucomUtil::add_after_key( $tabs, 'media', 'buttons',
-					_x( 'Share Buttons', 'metabox tab', 'wpsso-rrssb' ) );
-			}
-
-			return $tabs;
-		}
-
-		public function filter_post_cache_transient_keys( $transient_keys, $mod, $sharing_url, $mod_salt ) {
-
-			$cache_md5_pre = $this->p->lca . '_b_';
-			$classname_pre = 'WpssoRrssb';
-
-			$transient_keys[] = array(
-				'id'   => $cache_md5_pre . md5( $classname_pre . 'Sharing::get_buttons(' . $mod_salt . ')' ),
-				'pre'   => $cache_md5_pre,
-				'salt' => $classname_pre . 'Sharing::get_buttons(' . $mod_salt . ')',
-			);
-
-			$transient_keys[] = array(
-				'id'   => $cache_md5_pre . md5( $classname_pre . 'ShortcodeSharing::do_shortcode(' . $mod_salt . ')' ),
-				'pre'  => $cache_md5_pre,
-				'salt' => $classname_pre . 'ShortcodeSharing::do_shortcode(' . $mod_salt . ')',
-			);
-
-			$transient_keys[] = array(
-				'id'   => $cache_md5_pre . md5( $classname_pre . 'WidgetSharing::widget(' . $mod_salt . ')' ),
-				'pre'  => $cache_md5_pre,
-				'salt' => $classname_pre . 'WidgetSharing::widget(' . $mod_salt . ')',
-			);
-
-			return $transient_keys;
-		}
-
-		public function filter_status_gpl_features( $features, $ext, $info ) {
-
-			if ( ! empty( $info['lib']['submenu']['rrssb-buttons'] ) ) {
-				$features['(sharing) Sharing Buttons'] = array(
-					'classname' => $ext . 'Sharing',
-				);
-			}
-
-			if ( ! empty( $info['lib']['submenu']['rrssb-styles'] ) ) {
-				$features['(sharing) Sharing Stylesheet'] = array(
-					'status' => empty( $this->p->options['buttons_use_social_style'] ) ? 'off' : 'on',
-				);
-			}
-
-			if ( ! empty( $info['lib']['shortcode']['sharing'] ) ) {
-				$features['(sharing) Sharing Shortcode'] = array(
-					'classname' => $ext . 'ShortcodeSharing',
-				);
-			}
-
-			if ( ! empty( $info['lib']['widget']['sharing'] ) ) {
-				$features['(sharing) Sharing Widget'] = array(
-					'classname' => $ext . 'WidgetSharing',
-				);
-			}
-
-			return $features;
 		}
 
 		public static function update_sharing_css( &$opts ) {
