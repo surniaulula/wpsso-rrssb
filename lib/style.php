@@ -36,6 +36,12 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 
 		public function enqueue_styles() {
 
+			$plugin_version = $this->p->cf[ 'plugin' ]['wpssorrssb'][ 'version' ];
+
+			wp_register_style( 'rrssb', WPSSORRSSB_URLPATH . 'css/ext/rrssb.min.css', array(), $plugin_version );
+
+			wp_enqueue_style( 'rrssb' );
+
 			if ( ! empty( $this->p->options['buttons_use_social_style'] ) ) {
 
 				if ( ! file_exists( self::$sharing_css_file ) ) {
@@ -53,8 +59,7 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 						$this->p->debug->log( 'wp_enqueue_style = ' . $this->p->lca . '_rrssb_sharing_css' );
 					}
 
-					wp_enqueue_style( $this->p->lca . '_rrssb_sharing_css', self::$sharing_css_url, 
-						false, $this->p->cf['plugin'][$this->p->lca]['version'] );
+					wp_enqueue_style( $this->p->lca . '_rrssb_sharing_css', self::$sharing_css_url, false, $plugin_version );
 
 				} else {
 

@@ -15,7 +15,6 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 		private $p;
 		private $share = array();
-		private $buttons_for_type = array();		// cache for have_buttons_for_type()
 		private $post_buttons_disabled = array();	// cache for is_post_buttons_disabled()
 
 		public static $sharing_css_name = '';
@@ -36,22 +35,20 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 			$this->set_objects();
 
-			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_rrssb_ext' ) );
-			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_rrssb_ext' ) );
 			add_action( 'wp_footer', array( $this, 'show_footer' ), WPSSORRSSB_FOOTER_PRIORITY );
 
-			if ( $this->have_buttons_for_type( 'content' ) ) {
+			if ( self::have_buttons_for_type( 'content' ) ) {
 				$this->add_buttons_filter( 'the_content' );
 			}
 
-			if ( $this->have_buttons_for_type( 'excerpt' ) ) {
+			if ( self::have_buttons_for_type( 'excerpt' ) ) {
 				$this->add_buttons_filter( 'get_the_excerpt' );
 				$this->add_buttons_filter( 'the_excerpt' );
 			}
 
 			if ( is_admin() ) {
 
-				if ( $this->have_buttons_for_type( 'admin_edit' ) ) {
+				if ( self::have_buttons_for_type( 'admin_edit' ) ) {
 					add_action( 'add_meta_boxes', array( $this, 'add_post_buttons_metabox' ) );
 				}
 
@@ -213,7 +210,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 
 		public function show_footer() {
 
-			if ( $this->have_buttons_for_type( 'sidebar' ) ) {
+			if ( self::have_buttons_for_type( 'sidebar' ) ) {
 				$this->show_sidebar();
 			} elseif ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'no buttons enabled for sidebar' );
@@ -377,7 +374,7 @@ if ( ! class_exists( 'WpssoRrssbSharing' ) ) {
 				}
 			}
 
-			if ( empty( $error_message ) && ! $this->have_buttons_for_type( $type ) ) {
+			if ( empty( $error_message ) && ! self::have_buttons_for_type( $type ) ) {
 				$error_message = 'no sharing buttons enabled';
 			}
 
@@ -561,7 +558,7 @@ $cache_array[$cache_index] .
 
 			$cache_index .= '_https:' . ( SucomUtil::is_https() ? 'true' : 'false' );
 
-			$cache_index .= $this->p->avail['*']['vary_ua'] ? '_mobile:' . ( SucomUtil::is_mobile() ? 'true' : 'false' ) : '';
+			$cache_index .= $this->p->avail[ '*' ]['vary_ua'] ? '_mobile:' . ( SucomUtil::is_mobile() ? 'true' : 'false' ) : '';
 
 			$cache_index .= $atts !== false ? '_atts:' . http_build_query( $atts, '', '_' ) : '';
 
@@ -644,7 +641,7 @@ $cache_array[$cache_index] .
 
 					if ( method_exists( $this->share[$id], 'get_html' ) ) {
 
-						if ( $this->allow_for_platform( $id ) ) {
+						if ( self::allow_for_platform( $id ) ) {
 
 							$atts['src_id'] = SucomUtil::get_atts_src_id( $atts, $id );	// Uses 'css_id' and 'use_post'.
 
@@ -671,16 +668,17 @@ $cache_array[$cache_index] .
 
 							$buttons_part = $this->share[$id]->get_html( $atts, $this->p->options, $mod ) . "\n";
 
-							$atts = $saved_atts;	// restore the common $atts array
+							$atts = $saved_atts;	// Restore the common $atts array.
 
-							if ( trim( $buttons_part ) !== '' ) {
+							if ( strpos( $buttons_part, '<li' ) !== false ) {
 								if ( empty( $atts['container_each'] ) ) {
 									$buttons_html .= $buttons_part;
 								} else {
-									$buttons_html .= '<!-- adding buttons as individual containers -->' . "\n" . 
+									$buttons_html .= '<!-- adding button as individual containers -->' . "\n" . 
 										$buttons_begin . $buttons_part . $buttons_end;
 								}
 							}
+
 						} elseif ( $this->p->debug->enabled ) {
 							$this->p->debug->log( $id . ' not allowed for platform' );
 						}
@@ -703,38 +701,47 @@ $cache_array[$cache_index] .
 			return $buttons_html;
 		}
 
-		public function have_buttons_for_type( $type ) {
+		public static function have_buttons_for_type( $type ) {
 
-			if ( isset( $this->buttons_for_type[$type] ) ) {
-				return $this->buttons_for_type[$type];
+			static $local_cache = array();
+
+			if ( isset( $local_cache[ $type ] ) ) {
+				return $local_cache[ $type ];
 			}
 
-			foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre ) {
-				if ( ! empty( $this->p->options[$opt_pre . '_on_' . $type] ) &&	// check if button is enabled
-					$this->allow_for_platform( $id ) ) {			// check if allowed on platform
+			$wpsso =& Wpsso::get_instance();
 
-					return $this->buttons_for_type[$type] = true;
+			foreach ( $wpsso->cf[ 'opt' ][ 'cm_prefix' ] as $id => $opt_pre ) {
+
+				if ( ! empty( $wpsso->options[ $opt_pre . '_on_' . $type ] ) ) {	// Check if button is enabled.
+
+					if ( self::allow_for_platform( $id ) ) {	// Check if allowed on platform.
+
+						return $local_cache[ $type ] = true;	// Stop here.
+					}
 				}
 			}
 
-			return $this->buttons_for_type[$type] = false;
+			return $local_cache[ $type ] = false;
 		}
 
-		public function allow_for_platform( $id ) {
+		public static function allow_for_platform( $id ) {
+
+			$wpsso =& Wpsso::get_instance();
 
 			/**
 			 * Always allow if the content does not vary by user agent.
 			 */
-			if ( ! $this->p->avail['*']['vary_ua'] ) {
+			if ( empty( $wpsso->avail[ '*' ][ 'vary_ua' ] ) ) {
 				return true;
 			}
 
-			$opt_pre = isset( $this->p->cf['opt']['cm_prefix'][$id] ) ?
-				$this->p->cf['opt']['cm_prefix'][$id] : $id;
+			$opt_pre = isset( $wpsso->cf[ 'opt' ][ 'cm_prefix' ][ $id ] ) ?
+				$wpsso->cf[ 'opt' ][ 'cm_prefix' ][ $id ] : $id;
 
-			if ( isset( $this->p->options[$opt_pre . '_platform'] ) ) {
+			if ( isset( $wpsso->options[ $opt_pre . '_platform' ] ) ) {
 
-				switch( $this->p->options[$opt_pre . '_platform'] ) {
+				switch( $wpsso->options[ $opt_pre . '_platform' ] ) {
 
 					case 'any':
 
@@ -875,19 +882,6 @@ $cache_array[$cache_index] .
 			}
 
 			return $caption_max_len;
-		}
-
-		public function enqueue_rrssb_ext( $hook_name ) {
-
-			$plugin_version = $this->p->cf['plugin']['wpssorrssb']['version'];
-
-			wp_register_script( 'rrssb', WPSSORRSSB_URLPATH . 'js/ext/rrssb.min.js', array( 'jquery' ), $plugin_version, true );	// in footer
-
-			wp_enqueue_script( 'rrssb' );
-
-			wp_register_style( 'rrssb', WPSSORRSSB_URLPATH . 'css/ext/rrssb.min.css', array(), $plugin_version );
-
-			wp_enqueue_style( 'rrssb' );
 		}
 	}
 }

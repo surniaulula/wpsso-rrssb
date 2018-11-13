@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"1.11.0-dev.5\n"
+"1.11.0-dev.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2018-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -462,38 +462,38 @@ msgctxt "option label"
 msgid "Recommend Author @username"
 msgstr ""
 
-#: lib/sharing.php:118
+#: lib/sharing.php:115
 msgid "Failed writing the css file %s."
 msgstr ""
 
-#: lib/sharing.php:127
+#: lib/sharing.php:124
 msgid "Updated the <a href=\"%1$s\">%2$s</a> stylesheet (%3$d bytes written)."
 msgstr ""
 
-#: lib/sharing.php:144
+#: lib/sharing.php:141
 msgid "Cache folder %s is not writable."
 msgstr ""
 
-#: lib/sharing.php:154
+#: lib/sharing.php:151
 msgid "Failed to open the css file %s for writing."
 msgstr ""
 
-#: lib/sharing.php:173
+#: lib/sharing.php:170
 msgid ""
 "Error removing the minified stylesheet &mdash; does the web server have "
 "sufficient privileges?"
 msgstr ""
 
-#: lib/sharing.php:200
+#: lib/sharing.php:197
 msgctxt "metabox title"
 msgid "Share Buttons"
 msgstr ""
 
-#: lib/sharing.php:249
+#: lib/sharing.php:246
 msgid "This content must be published<br/>before it can be shared."
 msgstr ""
 
-#: lib/style.php:68
+#: lib/style.php:73
 msgid "The %s file is not readable."
 msgstr ""
 
@@ -593,7 +593,7 @@ msgid ""
 "%3$s plugin or <a href=\"%4$s\">deactivate the %5$s add-on</a>."
 msgstr ""
 
-#: wpsso-rrssb.php:211
+#: wpsso-rrssb.php:213
 msgid ""
 "The %1$s version %2$s add-on requires %3$s version %4$s or newer (version "
 "%5$s is currently installed)."

@@ -16,7 +16,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(			// Plugin acronym.
-					'version'     => '1.11.0-dev.5',	// Plugin version.
+					'version'     => '1.11.0-dev.6',	// Plugin version.
 					'opt_version' => '15',		// Increment when changing default option values.
 					'short'       => 'WPSSO RRSSB',	// Short plugin name.
 					'name'        => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
@@ -29,7 +29,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'req' => array(
 						'short'       => 'WPSSO Core',
 						'name'        => 'WPSSO Core',
-						'min_version' => '4.16.5-dev.5',
+						'min_version' => '4.16.5-dev.6',
 					),
 					'img' => array(
 						'icons' => array(
@@ -183,9 +183,9 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static function get_version( $add_slug = false ) {
 
 			$ext  = 'wpssorrssb';
-			$info =& self::$cf['plugin'][$ext];
+			$info =& self::$cf[ 'plugin' ][$ext];
 
-			return $add_slug ? $info['slug'] . '-' . $info['version'] : $info['version'];
+			return $add_slug ? $info[ 'slug' ] . '-' . $info[ 'version' ] : $info[ 'version' ];
 		}
 
 		public static function set_constants( $plugin_filepath ) { 
@@ -195,11 +195,11 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			}
 
 			define( 'WPSSORRSSB_FILEPATH', $plugin_filepath );						
-			define( 'WPSSORRSSB_PLUGINBASE', self::$cf['plugin']['wpssorrssb']['base'] );	// wpsso-rrssb/wpsso-rrssb.php
+			define( 'WPSSORRSSB_PLUGINBASE', self::$cf[ 'plugin' ]['wpssorrssb'][ 'base' ] );	// wpsso-rrssb/wpsso-rrssb.php
 			define( 'WPSSORRSSB_PLUGINDIR', trailingslashit( realpath( dirname( $plugin_filepath ) ) ) );
-			define( 'WPSSORRSSB_PLUGINSLUG', self::$cf['plugin']['wpssorrssb']['slug'] );	// wpsso-rrssb
+			define( 'WPSSORRSSB_PLUGINSLUG', self::$cf[ 'plugin' ]['wpssorrssb'][ 'slug' ] );	// wpsso-rrssb
 			define( 'WPSSORRSSB_URLPATH', trailingslashit( plugins_url( '', $plugin_filepath ) ) );
-			define( 'WPSSORRSSB_VERSION', self::$cf['plugin']['wpssorrssb']['version'] );						
+			define( 'WPSSORRSSB_VERSION', self::$cf[ 'plugin' ]['wpssorrssb'][ 'version' ] );						
 
 			self::set_variable_constants();
 		}

@@ -163,7 +163,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 		public function filter_post_custom_meta_tabs( $tabs, $mod, $metabox_id ) {
 
-			if ( $metabox_id === $this->p->cf['meta']['id'] ) {
+			if ( $metabox_id === $this->p->cf['meta'][ 'id' ] ) {
 				SucomUtil::add_after_key( $tabs, 'media', 'buttons',
 					_x( 'Share Buttons', 'metabox tab', 'wpsso-rrssb' ) );
 			}
@@ -202,7 +202,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				return $text;
 			}
 
-			$short = $this->p->cf['plugin']['wpssorrssb']['short'];
+			$short = $this->p->cf[ 'plugin' ]['wpssorrssb'][ 'short' ];
 
 			switch ( $msg_key ) {
 
@@ -459,25 +459,25 @@ div.wpsso-rrssb
 
 		public function filter_status_gpl_features( $features, $ext, $info ) {
 
-			if ( ! empty( $info['lib']['submenu']['rrssb-buttons'] ) ) {
+			if ( ! empty( $info[ 'lib' ]['submenu']['rrssb-buttons'] ) ) {
 				$features['(sharing) Sharing Buttons'] = array(
 					'classname' => $ext . 'Sharing',
 				);
 			}
 
-			if ( ! empty( $info['lib']['submenu']['rrssb-styles'] ) ) {
+			if ( ! empty( $info[ 'lib' ]['submenu']['rrssb-styles'] ) ) {
 				$features['(sharing) Sharing Stylesheet'] = array(
 					'status' => empty( $this->p->options['buttons_use_social_style'] ) ? 'off' : 'on',
 				);
 			}
 
-			if ( ! empty( $info['lib']['shortcode']['sharing'] ) ) {
+			if ( ! empty( $info[ 'lib' ]['shortcode']['sharing'] ) ) {
 				$features['(sharing) Sharing Shortcode'] = array(
 					'classname' => $ext . 'ShortcodeSharing',
 				);
 			}
 
-			if ( ! empty( $info['lib']['widget']['sharing'] ) ) {
+			if ( ! empty( $info[ 'lib' ]['widget']['sharing'] ) ) {
 				$features['(sharing) Sharing Widget'] = array(
 					'classname' => $ext . 'WidgetSharing',
 				);

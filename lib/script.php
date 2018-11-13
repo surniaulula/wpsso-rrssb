@@ -22,6 +22,18 @@ if ( ! class_exists( 'WpssoRrssbScript' ) ) {
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
 			}
+
+			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+		}
+
+		public function enqueue_scripts( $hook_name ) {
+
+			$plugin_version = $this->p->cf[ 'plugin' ]['wpssorrssb'][ 'version' ];
+
+			wp_register_script( 'rrssb', WPSSORRSSB_URLPATH . 'js/ext/rrssb.min.js', array( 'jquery' ), $plugin_version, true );
+
+			wp_enqueue_script( 'rrssb' );
 		}
 	}
 }
