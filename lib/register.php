@@ -97,7 +97,7 @@ if ( ! class_exists( 'WpssoRrssbRegister' ) ) {
 
 		private function activate_plugin() {
 
-			$version = WpssoRrssbConfig::$cf[ 'plugin' ]['wpssorrssb'][ 'version' ];	// only our config
+			$version = WpssoRrssbConfig::$cf[ 'plugin' ][ 'wpssorrssb' ][ 'version' ];	// only our config
 
 			if ( class_exists( 'WpssoUtil' ) ) {
 				WpssoUtil::save_all_times( 'wpssorrssb', $version );

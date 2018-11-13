@@ -23,8 +23,8 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 				return;
 			}
 
-			$short        = $this->p->cf[ 'plugin' ]['wpssorrssb'][ 'short' ];
-			$name         = $this->p->cf[ 'plugin' ]['wpssorrssb'][ 'name' ];
+			$short        = $this->p->cf[ 'plugin' ][ 'wpssorrssb' ][ 'short' ];
+			$name         = $this->p->cf[ 'plugin' ][ 'wpssorrssb' ][ 'name' ];
 			$widget_name  = $short;
 			$widget_class = $this->p->lca . '-rrssb-widget';
 			$widget_ops   = array( 

@@ -202,7 +202,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				return $text;
 			}
 
-			$short = $this->p->cf[ 'plugin' ]['wpssorrssb'][ 'short' ];
+			$short = $this->p->cf[ 'plugin' ][ 'wpssorrssb' ][ 'short' ];
 
 			switch ( $msg_key ) {
 

@@ -29,7 +29,7 @@ if ( ! class_exists( 'WpssoRrssbScript' ) ) {
 
 		public function enqueue_scripts( $hook_name ) {
 
-			$plugin_version = $this->p->cf[ 'plugin' ]['wpssorrssb'][ 'version' ];
+			$plugin_version = $this->p->cf[ 'plugin' ][ 'wpssorrssb' ][ 'version' ];
 
 			wp_register_script( 'rrssb', WPSSORRSSB_URLPATH . 'js/ext/rrssb.min.js', array( 'jquery' ), $plugin_version, true );
 

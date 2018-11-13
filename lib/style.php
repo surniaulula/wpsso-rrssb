@@ -36,7 +36,7 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 
 		public function enqueue_styles() {
 
-			$plugin_version = $this->p->cf[ 'plugin' ]['wpssorrssb'][ 'version' ];
+			$plugin_version = $this->p->cf[ 'plugin' ][ 'wpssorrssb' ][ 'version' ];
 
 			wp_register_style( 'rrssb', WPSSORRSSB_URLPATH . 'css/ext/rrssb.min.css', array(), $plugin_version );
 
