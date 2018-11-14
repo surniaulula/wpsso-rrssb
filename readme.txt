@@ -148,7 +148,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.11.0-dev.6 (2018/11/13)**
+**Version 1.11.0-dev.7 (2018/11/13)**
 
 * *New Features*
 	* None.
@@ -188,7 +188,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.11.0-dev.6 =
+= 1.11.0-dev.7 =
 
 (2018/11/13) Moved several methods from the WpssoRrssbSharing method to new classes.
 
