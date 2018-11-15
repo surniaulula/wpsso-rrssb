@@ -148,7 +148,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.11.0-dev.7 (2018/11/14)**
+**Version 1.11.0-b.1 (2018/11/15)**
 
 * *New Features*
 	* None.
@@ -158,10 +158,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* None.
 * *Developer Notes*
 	* Renamed the lib/websites/ folder to lib/share/.
-	* Moved actions from the WpssoRrssbSharing class to a new WpssoRrssbActions class.
-	* Moved filters from the WpssoRrssbSharing class to a new WpssoRrssbFilters class.
-	* Moved script enqueuing from the WpssoRrssbSharing class to a new WpssoRrssbScript class.
-	* Moved stylesheet enqueuing from the WpssoRrssbSharing class to a new WpssoRrssbStyle class.
+	* Renamed the WpssoRrssbSharing class to WpssoRrssbSocial.
+	* Moved actions from the WpssoRrssbSocial class to a new WpssoRrssbActions class.
+	* Moved filters from the WpssoRrssbSocial class to a new WpssoRrssbFilters class.
+	* Moved script enqueuing from the WpssoRrssbSocial class to a new WpssoRrssbScript class.
+	* Moved stylesheet enqueuing from the WpssoRrssbSocial class to a new WpssoRrssbStyle class.
 
 **Version 1.10.3 (2018/10/24)**
 
@@ -188,9 +189,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.11.0-dev.7 =
+= 1.11.0-b.1 =
 
-(2018/11/14) Moved several methods from the WpssoRrssbSharing method to new classes.
+(2018/11/15) Moved several methods from the WpssoRrssbSocial method to new classes.
 
 = 1.10.3 =
 
