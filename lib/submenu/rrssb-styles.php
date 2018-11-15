@@ -62,8 +62,8 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 
 			$metabox_id = 'rrssb_styles';
 
-			if ( file_exists( WpssoRrssbSharing::$sharing_css_file ) && ( $fsize = filesize( WpssoRrssbSharing::$sharing_css_file ) ) !== false ) {
-				$css_min_msg = ' <a href="' . WpssoRrssbSharing::$sharing_css_url . '">minified css is ' . $fsize . ' bytes</a>';
+			if ( file_exists( WpssoRrssbSocial::$sharing_css_file ) && ( $fsize = filesize( WpssoRrssbSocial::$sharing_css_file ) ) !== false ) {
+				$css_min_msg = ' <a href="' . WpssoRrssbSocial::$sharing_css_url . '">minified css is ' . $fsize . ' bytes</a>';
 			} else {
 				$css_min_msg = '';
 			}

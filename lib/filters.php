@@ -124,7 +124,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			 * Update the combined and minified social stylesheet.
 			 */
 			if ( false === $network ) {
-				WpssoRrssbSharing::update_sharing_css( $opts );
+				WpssoRrssbSocial::update_sharing_css( $opts );
 			}
 
 			return $opts;
@@ -176,9 +176,9 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			$cache_md5_pre = $this->p->lca . '_b_';
 
 			$transient_keys[] = array(
-				'id'   => $cache_md5_pre . md5( 'WpssoRrssbSharing::get_buttons(' . $mod_salt . ')' ),
+				'id'   => $cache_md5_pre . md5( 'WpssoRrssbSocial::get_buttons(' . $mod_salt . ')' ),
 				'pre'   => $cache_md5_pre,
-				'salt' => 'WpssoRrssbSharing::get_buttons(' . $mod_salt . ')',
+				'salt' => 'WpssoRrssbSocial::get_buttons(' . $mod_salt . ')',
 			);
 
 			$transient_keys[] = array(
@@ -412,7 +412,7 @@ div.wpsso-rrssb
 
 				case 'tooltip-buttons_use_social_style':
 
-					$text = sprintf( __( 'Add the CSS of all <em>%1$s</em> to webpages (default is checked). The CSS will be <strong>minified</strong>, and saved to a single stylesheet with a URL of <a href="%2$s">%3$s</a>. The minified stylesheet can be enqueued or added directly to the webpage HTML.', 'wpsso-rrssb' ), _x( 'Responsive Styles', 'lib file description', 'wpsso-rrssb' ), WpssoRrssbSharing::$sharing_css_url, WpssoRrssbSharing::$sharing_css_url );
+					$text = sprintf( __( 'Add the CSS of all <em>%1$s</em> to webpages (default is checked). The CSS will be <strong>minified</strong>, and saved to a single stylesheet with a URL of <a href="%2$s">%3$s</a>. The minified stylesheet can be enqueued or added directly to the webpage HTML.', 'wpsso-rrssb' ), _x( 'Responsive Styles', 'lib file description', 'wpsso-rrssb' ), WpssoRrssbSocial::$sharing_css_url, WpssoRrssbSocial::$sharing_css_url );
 
 					break;
 

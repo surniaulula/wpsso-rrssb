@@ -16,7 +16,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(			// Plugin acronym.
-					'version'     => '1.11.0-dev.7',	// Plugin version.
+					'version'     => '1.11.0-b.1',	// Plugin version.
 					'opt_version' => '15',		// Increment when changing default option values.
 					'short'       => 'WPSSO RRSSB',	// Short plugin name.
 					'name'        => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
@@ -245,7 +245,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			require_once WPSSORRSSB_PLUGINDIR . 'lib/functions.php';
 			require_once WPSSORRSSB_PLUGINDIR . 'lib/register.php';
 			require_once WPSSORRSSB_PLUGINDIR . 'lib/script.php';
-			require_once WPSSORRSSB_PLUGINDIR . 'lib/sharing.php';
+			require_once WPSSORRSSB_PLUGINDIR . 'lib/social.php';
 			require_once WPSSORRSSB_PLUGINDIR . 'lib/style.php';
 
 			add_filter( 'wpssorrssb_load_lib', array( 'WpssoRrssbConfig', 'load_lib' ), 10, 3 );

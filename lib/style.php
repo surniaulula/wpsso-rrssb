@@ -50,7 +50,7 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 						$this->p->debug->log( 'updating ' . self::$sharing_css_file );
 					}
 
-					WpssoRrssbSharing::update_sharing_css( $this->p->options );
+					WpssoRrssbSocial::update_sharing_css( $this->p->options );
 				}
 
 				if ( ! empty( $this->p->options['buttons_enqueue_social_style'] ) ) {

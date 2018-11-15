@@ -39,7 +39,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 
 				if ( $classname !== false && class_exists( $classname ) ) {
 
-					$this->share[$id] = new $classname( $this->p );
+					$this->share[ $id ] = new $classname( $this->p );
 
 					if ( $this->p->debug->enabled ) {
 						$this->p->debug->log( $classname . ' class loaded' );
@@ -59,6 +59,8 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 		 */
 		protected function add_meta_boxes() {
 
+			$rrssb =& WpssoRrssb::get_instance();
+
 			$metabox_id      = 'rrssb_buttons';
 			$metabox_title   = _x( 'Social Sharing Buttons', 'metabox title', 'wpsso-rrssb' );
 			$metabox_screen  = $this->pagehook;
@@ -71,7 +73,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 				array( $this, 'show_metabox_rrssb_buttons' ), $metabox_screen,
 					$metabox_context, $metabox_prio, $callback_args );
 
-			$share_ids = $this->p->rrssb_sharing->get_share_object_ids( $this->share );
+			$share_ids = $rrssb->social->get_share_ids( $this->share );
 
 			foreach ( $share_ids as $share_id => $share_title ) {
 

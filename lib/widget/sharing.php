@@ -13,7 +13,7 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 
 	class WpssoRrssbWidgetSharing extends WP_Widget {
 
-		protected $p;
+		private $p;
 
 		public function __construct() {
 
@@ -37,16 +37,16 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 	
 		public function widget( $args, $instance ) {
 
-			if ( ! isset( $this->p->rrssb_sharing ) ) {	// just in case
+			if ( is_feed() ) {
 				return;
-			} elseif ( is_feed() ) {
-				return;	// nothing to do in the feeds
 			}
+
+			$rrssb =& WpssoRrssb::get_instance();
 
 			extract( $args );
 
 			$atts = array( 
-				'use_post' => false,		// don't use the post ID on indexes
+				'use_post' => false,		// Don't use the post ID on indexes.
 				'css_id'   => $args['widget_id'],
 			);
 
@@ -61,10 +61,10 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 			$sharing_url = $this->p->util->get_sharing_url( $mod );
 
 			$cache_md5_pre  = $this->p->lca . '_b_';
-			$cache_exp_secs = $this->p->rrssb_sharing->get_buttons_cache_exp();
+			$cache_exp_secs = $rrssb->social->get_buttons_cache_exp();
 			$cache_salt     = __METHOD__ . '(' . SucomUtil::get_mod_salt( $mod, $sharing_url ) . ')';
 			$cache_id       = $cache_md5_pre . md5( $cache_salt );
-			$cache_index    = $this->p->rrssb_sharing->get_buttons_cache_index( $type, $atts );	// Returns salt with locale, mobile, wp_query, etc.
+			$cache_index    = $rrssb->social->get_buttons_cache_index( $type, $atts );	// Returns salt with locale, mobile, wp_query, etc.
 			$cache_array    = array();
 
 			if ( $this->p->debug->enabled ) {
@@ -79,13 +79,13 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 
 				$cache_array = get_transient( $cache_id );
 
-				if ( isset( $cache_array[$cache_index] ) ) {	// can be an empty string
+				if ( isset( $cache_array[ $cache_index ] ) ) {	// can be an empty string
 
 					if ( $this->p->debug->enabled ) {
 						$this->p->debug->log( $type . ' cache index found in transient cache' );
 					}
 
-					echo $cache_array[$cache_index];	// stop here
+					echo $cache_array[ $cache_index ];	// stop here
 
 					return;
 
@@ -120,14 +120,14 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 			/**
 			 * Returns html or an empty string.
 			 */
-			$cache_array[$cache_index] = $this->p->rrssb_sharing->get_html( $sorted_ids, $atts, $mod );
+			$cache_array[ $cache_index ] = $rrssb->social->get_html( $sorted_ids, $atts, $mod );
 
-			if ( ! empty( $cache_array[$cache_index] ) ) {
-				$cache_array[$cache_index] = '
+			if ( ! empty( $cache_array[ $cache_index ] ) ) {
+				$cache_array[ $cache_index ] = '
 <!-- ' . $this->p->lca . ' sharing widget ' . $args['widget_id'] . ' begin -->' . "\n" . 
 $before_widget . 
 ( empty( $widget_title ) ? '' : $before_title . $widget_title . $after_title ) . 
-$cache_array[$cache_index] . "\n" . 	// buttons html is trimmed, so add newline
+$cache_array[ $cache_index ] . "\n" . 	// Buttons html is trimmed, so add newline.
 $after_widget . 
 '<!-- ' . $this->p->lca . ' sharing widget ' . $args['widget_id'] . ' end -->' . "\n\n";
 			}
@@ -144,25 +144,29 @@ $after_widget .
 				}
 			}
 
-			echo $cache_array[$cache_index];
+			echo $cache_array[ $cache_index ];
 		}
 	
 		public function update( $new_instance, $old_instance ) {
+
+			$rrssb =& WpssoRrssb::get_instance();
 
 			$instance = $old_instance;
 
 			$instance[ 'title' ] = strip_tags( $new_instance[ 'title' ] );
 
-			if ( isset( $this->p->rrssb_sharing ) ) {
-				foreach ( $this->p->rrssb_sharing->get_share_object_ids() as $share_id => $share_title ) {
-					$instance[ $share_id ] = empty( $new_instance[ $share_id ] ) ? 0 : 1;
-				}
+			$share_ids = $rrssb->social->get_share_ids();
+
+			foreach ( $share_ids as $share_id => $share_title ) {
+				$instance[ $share_id ] = empty( $new_instance[ $share_id ] ) ? 0 : 1;
 			}
 
 			return $instance;
 		}
 	
 		public function form( $instance ) {
+
+			$rrssb =& WpssoRrssb::get_instance();
 
 			$widget_title = isset( $instance[ 'title' ] ) ? esc_attr( $instance[ 'title' ] ) : _x( 'Share It', 'option value', 'wpsso-rrssb' );
 
@@ -171,23 +175,22 @@ $after_widget .
 				'<input class="widefat" id="' . $this->get_field_id( 'title' ) . '" name="' . 
 					$this->get_field_name( 'title' ) . '" type="text" value="' . $widget_title . '"/></p>' . "\n";
 	
-			if ( isset( $this->p->rrssb_sharing ) ) {	// Just in case.
+			$share_ids = $rrssb->social->get_share_ids();
 
-				foreach ( $this->p->rrssb_sharing->get_website_object_ids() as $share_id => $share_title ) {
+			foreach ( $share_ids as $share_id => $share_title ) {
 
-					$share_title = $share_title == 'GooglePlus' ? 'Google+' : $share_title;
+				$share_title = $share_title === 'GooglePlus' ? 'Google+' : $share_title;
 
-					echo '<p><label for="' . $this->get_field_id( $share_id ) . '">' . 
-						'<input id="' . $this->get_field_id( $share_id ) . 
-						'" name="' . $this->get_field_name( $share_id ) . 
-						'" value="1" type="checkbox" ';
+				echo '<p><label for="' . $this->get_field_id( $share_id ) . '">' . 
+					'<input id="' . $this->get_field_id( $share_id ) . 
+					'" name="' . $this->get_field_name( $share_id ) . 
+					'" value="1" type="checkbox" ';
 
-					if ( ! empty( $instance[ $share_id ] ) ) {
-						echo checked( 1, $instance[ $share_id ] );
-					}
-
-					echo '/> ' . $share_title . '</label></p>' . "\n";
+				if ( ! empty( $instance[ $share_id ] ) ) {
+					echo checked( 1, $instance[ $share_id ] );
 				}
+
+				echo '/> ' . $share_title . '</label></p>' . "\n";
 			}
 		}
 	}

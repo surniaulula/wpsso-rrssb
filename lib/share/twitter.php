@@ -30,42 +30,43 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTwitter' ) ) {
 
 		public function filter_rrssb_share_twitter_rows( $table_rows, $form, $submenu ) {
 
-			$table_rows[] = $form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$submenu->show_on_checkboxes( 'twitter' ).'</td>';
+			$table_rows[] = '' .
+			$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
+			'<td>' . $submenu->show_on_checkboxes( 'twitter' ) . '</td>';
 
-			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'twitter_order', range( 1, count( $submenu->share ) ) ).'</td>';
+			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
+			'<td>' . $form->get_select( 'twitter_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
 			if ( $this->p->avail[ '*' ]['vary_ua'] ) {
-				$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_platform' ).
-				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
-				'<td>'.$form->get_select( 'twitter_platform', $this->p->cf['sharing']['platform'] ).'</td>';
+				$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_platform' ) . 
+				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ) . 
+				'<td>' . $form->get_select( 'twitter_platform', $this->p->cf['sharing']['platform'] ) . '</td>';
 			}
 
-			$table_rows[] = ''.
-			$form->get_th_html( _x( 'Tweet Text Source', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'twitter_caption', $this->p->cf['form']['caption_types'] ).'</td>';
+			$table_rows[] = '' . 
+			$form->get_th_html( _x( 'Tweet Text Source', 'option label', 'wpsso-rrssb' ) ) . 
+			'<td>' . $form->get_select( 'twitter_caption', $this->p->cf['form']['caption_types'] ) . '</td>';
 
-			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_caption_max_len' ).
-			$form->get_th_html( _x( 'Tweet Text Length', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_input( 'twitter_caption_max_len', 'short' ) . ' ' . 
-				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ).'</td>';
+			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_caption_max_len' ) . 
+			$form->get_th_html( _x( 'Tweet Text Length', 'option label', 'wpsso-rrssb' ) ) . 
+			'<td>' . $form->get_input( 'twitter_caption_max_len', 'short' ) . ' ' . 
+				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
-			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_caption_hashtags' ).
-			$form->get_th_html( _x( 'Append Hashtags to Tweet', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'twitter_caption_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ) . ' ' . 
-				_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
+			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_caption_hashtags' ) . 
+			$form->get_th_html( _x( 'Append Hashtags to Tweet', 'option label', 'wpsso-rrssb' ) ) . 
+			'<td>' . $form->get_select( 'twitter_caption_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ) . ' ' . 
+				_x( 'tag names', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
 			$table_rows[] = $form->get_th_html( _x( 'Add via Business @username',
-				'option label', 'wpsso-rrssb' ), '', 'buttons_add_via'  ).
-			'<td>'.$form->get_checkbox( 'twitter_via' ).'</td>';
+				'option label', 'wpsso-rrssb' ), '', 'buttons_add_via'  ) . 
+			'<td>' . $form->get_checkbox( 'twitter_via' ) . '</td>';
 
 			$table_rows[] = $form->get_th_html( _x( 'Recommend Author @username',
-				'option label', 'wpsso-rrssb' ), '', 'buttons_rec_author'  ).
-			'<td>'.$form->get_checkbox( 'twitter_rel_author' ).'</td>';
+				'option label', 'wpsso-rrssb' ), '', 'buttons_rec_author'  ) . 
+			'<td>' . $form->get_checkbox( 'twitter_rel_author' ) . '</td>';
 
-			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_rrssb_html' ).
-			'<td colspan="2">'.$form->get_textarea( 'twitter_rrssb_html', 'button_html code' ).'</td>';
+			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_rrssb_html' ) . 
+			'<td colspan="2">' . $form->get_textarea( 'twitter_rrssb_html', 'button_html code' ) . '</td>';
 
 			return $table_rows;
 		}
@@ -131,10 +132,13 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts['add_hashtags'] = empty( $this->p->options['twitter_caption_hashtags'] ) ? false : $this->p->options['twitter_caption_hashtags'];
+			if ( ! isset( $atts['add_hashtags'] ) ) {
+				$atts['add_hashtags'] = empty( $this->p->options['twitter_caption_hashtags'] ) ?
+					false : $this->p->options['twitter_caption_hashtags'];
+			}
 
 			if ( ! isset( $atts['tweet'] ) ) {
-				$atts['tweet'] = $this->p->rrssb_sharing->get_tweet_text( $mod, $atts, 'twitter', 'twitter' );
+				$atts['tweet'] = WpssoRrssbSocial::get_tweet_text( $mod, $atts, 'twitter', 'twitter' );
 			}
 
 			if ( ! isset( $atts['hashtags'] ) ) {
@@ -165,8 +169,10 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 				$twitter_button_html = preg_replace( '/(\/intent)\/(tweet\?)/', '$1/+/$2', $this->p->options['twitter_rrssb_html'] );
 			}
 
-			// remove empty query arguments from the twitter button html
-			// prevents twitter from appending an empty 'via' word to the tweet
+			/**
+			 * Remove empty query arguments from the twitter button html
+			 * (prevents appending an empty 'via' word to the tweet).
+			 */
 			foreach ( array( 
 				'text'     => 'tweet',
 				'hashtags' => 'hashtags',
@@ -174,14 +180,13 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 				'related'  => 'related',
 			) as $query_key => $atts_key  ) {
 				if ( ! empty( $atts[$atts_key] ) ) {
-					$extra_inline_vars['twitter_'.$query_key] = rawurlencode( $atts[$atts_key] );
+					$extra_inline_vars['twitter_' . $query_key] = rawurlencode( $atts[$atts_key] );
 				} else {
-					$twitter_button_html = preg_replace( '/&(amp;)?'.$query_key.'=%%twitter_'.$query_key.'%%/', '', $twitter_button_html );
+					$twitter_button_html = preg_replace( '/&(amp;)?' . $query_key . '=%%twitter_' . $query_key . '%%/', '', $twitter_button_html );
 				}
 			}
 
-			return $this->p->util->replace_inline_vars( '<!-- Twitter Button -->'.
-				$twitter_button_html, $mod, $atts, $extra_inline_vars );
+			return $this->p->util->replace_inline_vars( '<!-- Twitter Button -->' . $twitter_button_html, $mod, $atts, $extra_inline_vars );
 		}
 	}
 }

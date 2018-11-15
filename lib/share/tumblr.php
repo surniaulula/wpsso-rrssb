@@ -30,8 +30,9 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTumblr' ) ) {
 
 		public function filter_rrssb_share_tumblr_rows( $table_rows, $form, $submenu ) {
 
-			$table_rows['tumblr_show_on'] = $form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$submenu->show_on_checkboxes( 'tumblr' ).'</td>';
+			$table_rows['tumblr_show_on'] = '' .
+			$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
+			'<td>' . $submenu->show_on_checkboxes( 'tumblr' ) . '</td>';
 
 			$table_rows['tumblr_order'] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_select( 'tumblr_order', range( 1, count( $submenu->share ) ) ).'</td>';

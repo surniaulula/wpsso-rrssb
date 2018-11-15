@@ -127,7 +127,7 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			 * Twitter.
 			 */
 			$twitter_caption_type     = empty( $this->p->options['twitter_caption'] ) ? 'title' : $this->p->options['twitter_caption'];
-			$twitter_caption_max_len  = $this->p->rrssb_sharing->get_tweet_max_len();
+			$twitter_caption_max_len  = WpssoRrssbSocial::get_tweet_max_len();
 			$twitter_caption_hashtags = $this->p->options['twitter_caption_hashtags'];
 			$twitter_caption_text     = $this->p->page->get_caption( $twitter_caption_type, $twitter_caption_max_len, $mod, true, $twitter_caption_hashtags );
 

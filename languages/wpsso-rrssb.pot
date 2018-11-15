@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"1.11.0-dev.7\n"
+"1.11.0-b.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2018-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -13,11 +13,11 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: lib/actions.php:76
+#: lib/actions.php:80
 msgid "The default HTML for all sharing buttons has been reloaded and saved."
 msgstr ""
 
-#: lib/actions.php:95
+#: lib/actions.php:99
 msgid "The default sharing styles have been reloaded and saved."
 msgstr ""
 
@@ -205,10 +205,10 @@ msgid ""
 "sharing button must also be enabled below (see the <em>%s</em> options)."
 msgstr ""
 
-#: lib/filters.php:385 lib/share/email.php:33 lib/share/facebook.php:33
-#: lib/share/gplus.php:33 lib/share/linkedin.php:33 lib/share/pinterest.php:49
-#: lib/share/pocket.php:33 lib/share/reddit.php:33 lib/share/tumblr.php:33
-#: lib/share/twitter.php:33 lib/share/vk.php:33 lib/share/whatsapp.php:33
+#: lib/filters.php:385 lib/share/email.php:34 lib/share/facebook.php:34
+#: lib/share/gplus.php:34 lib/share/linkedin.php:34 lib/share/pinterest.php:50
+#: lib/share/pocket.php:34 lib/share/reddit.php:34 lib/share/tumblr.php:34
+#: lib/share/twitter.php:34 lib/share/vk.php:34 lib/share/whatsapp.php:34
 msgctxt "option label"
 msgid "Show Button in"
 msgstr ""
@@ -278,7 +278,7 @@ msgid ""
 "If the %1$s option (above) is also checked, the %2$s is suggested first."
 msgstr ""
 
-#: lib/filters.php:433 lib/share/twitter.php:59
+#: lib/filters.php:433 lib/share/twitter.php:60
 msgctxt "option label"
 msgid "Add via Business @username"
 msgstr ""
@@ -354,7 +354,7 @@ msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
 
-#: lib/gpl/ecom/woocommerce.php:105 lib/pro/ecom/woocommerce.php:112
+#: lib/gpl/ecom/woocommerce.php:105 lib/pro/ecom/woocommerce.php:110
 msgctxt "option label"
 msgid "Position in Woo Short Text"
 msgstr ""
@@ -369,50 +369,50 @@ msgctxt "option label"
 msgid "Position in BuddyBlog Post"
 msgstr ""
 
-#: lib/share/email.php:36 lib/share/facebook.php:36 lib/share/gplus.php:36
-#: lib/share/linkedin.php:36 lib/share/pinterest.php:52 lib/share/pocket.php:36
-#: lib/share/reddit.php:36 lib/share/tumblr.php:36 lib/share/twitter.php:36
-#: lib/share/vk.php:36 lib/share/whatsapp.php:36
+#: lib/share/email.php:37 lib/share/facebook.php:37 lib/share/gplus.php:37
+#: lib/share/linkedin.php:37 lib/share/pinterest.php:53 lib/share/pocket.php:37
+#: lib/share/reddit.php:37 lib/share/tumblr.php:37 lib/share/twitter.php:37
+#: lib/share/vk.php:37 lib/share/whatsapp.php:37
 msgctxt "option label"
 msgid "Preferred Order"
 msgstr ""
 
-#: lib/share/email.php:41 lib/share/facebook.php:41 lib/share/gplus.php:41
-#: lib/share/linkedin.php:41 lib/share/pinterest.php:57 lib/share/pocket.php:41
-#: lib/share/reddit.php:41 lib/share/tumblr.php:41 lib/share/twitter.php:41
-#: lib/share/vk.php:41 lib/share/whatsapp.php:41
+#: lib/share/email.php:42 lib/share/facebook.php:42 lib/share/gplus.php:42
+#: lib/share/linkedin.php:42 lib/share/pinterest.php:58 lib/share/pocket.php:42
+#: lib/share/reddit.php:42 lib/share/tumblr.php:42 lib/share/twitter.php:42
+#: lib/share/vk.php:42 lib/share/whatsapp.php:42
 msgctxt "option label"
 msgid "Allow for Platform"
 msgstr ""
 
-#: lib/share/email.php:46
+#: lib/share/email.php:47
 msgctxt "option label"
 msgid "Email Message Length"
 msgstr ""
 
-#: lib/share/email.php:48 lib/share/linkedin.php:48 lib/share/pinterest.php:67
-#: lib/share/reddit.php:48 lib/share/tumblr.php:48 lib/share/twitter.php:52
+#: lib/share/email.php:49 lib/share/linkedin.php:49 lib/share/pinterest.php:68
+#: lib/share/reddit.php:49 lib/share/tumblr.php:49 lib/share/twitter.php:53
 msgctxt "option comment"
 msgid "characters or less"
 msgstr ""
 
-#: lib/share/email.php:51
+#: lib/share/email.php:52
 msgctxt "option label"
 msgid "Append Hashtags to Message"
 msgstr ""
 
-#: lib/share/email.php:53 lib/share/linkedin.php:53 lib/share/pinterest.php:72
-#: lib/share/reddit.php:53 lib/share/tumblr.php:53 lib/share/twitter.php:57
+#: lib/share/email.php:54 lib/share/linkedin.php:54 lib/share/pinterest.php:73
+#: lib/share/reddit.php:54 lib/share/tumblr.php:54 lib/share/twitter.php:58
 msgctxt "option comment"
 msgid "tag names"
 msgstr ""
 
-#: lib/share/linkedin.php:46 lib/share/pinterest.php:65 lib/share/reddit.php:46
+#: lib/share/linkedin.php:47 lib/share/pinterest.php:66 lib/share/reddit.php:47
 msgctxt "option label"
 msgid "Caption Text Length"
 msgstr ""
 
-#: lib/share/linkedin.php:51 lib/share/pinterest.php:70 lib/share/reddit.php:51
+#: lib/share/linkedin.php:52 lib/share/pinterest.php:71 lib/share/reddit.php:52
 msgctxt "option label"
 msgid "Append Hashtags to Caption"
 msgstr ""
@@ -422,74 +422,74 @@ msgctxt "option label"
 msgid "Pinterest <em>Sharing Button</em>"
 msgstr ""
 
-#: lib/share/pinterest.php:61
+#: lib/share/pinterest.php:62
 msgctxt "option label"
 msgid "Image Dimensions"
 msgstr ""
 
-#: lib/share/pinterest.php:139
+#: lib/share/pinterest.php:140
 msgctxt "image size label"
 msgid "Pinterest Sharing Button"
 msgstr ""
 
-#: lib/share/tumblr.php:46
+#: lib/share/tumblr.php:47
 msgctxt "option label"
 msgid "Summary Text Length"
 msgstr ""
 
-#: lib/share/tumblr.php:51
+#: lib/share/tumblr.php:52
 msgctxt "option label"
 msgid "Append Hashtags to Summary"
 msgstr ""
 
-#: lib/share/twitter.php:46
+#: lib/share/twitter.php:47
 msgctxt "option label"
 msgid "Tweet Text Source"
 msgstr ""
 
-#: lib/share/twitter.php:50
+#: lib/share/twitter.php:51
 msgctxt "option label"
 msgid "Tweet Text Length"
 msgstr ""
 
-#: lib/share/twitter.php:55
+#: lib/share/twitter.php:56
 msgctxt "option label"
 msgid "Append Hashtags to Tweet"
 msgstr ""
 
-#: lib/share/twitter.php:63
+#: lib/share/twitter.php:64
 msgctxt "option label"
 msgid "Recommend Author @username"
 msgstr ""
 
-#: lib/sharing.php:115
+#: lib/social.php:115
 msgid "Failed writing the css file %s."
 msgstr ""
 
-#: lib/sharing.php:124
+#: lib/social.php:124
 msgid "Updated the <a href=\"%1$s\">%2$s</a> stylesheet (%3$d bytes written)."
 msgstr ""
 
-#: lib/sharing.php:141
+#: lib/social.php:141
 msgid "Cache folder %s is not writable."
 msgstr ""
 
-#: lib/sharing.php:151
+#: lib/social.php:151
 msgid "Failed to open the css file %s for writing."
 msgstr ""
 
-#: lib/sharing.php:170
+#: lib/social.php:170
 msgid ""
 "Error removing the minified stylesheet &mdash; does the web server have "
 "sufficient privileges?"
 msgstr ""
 
-#: lib/sharing.php:197
+#: lib/social.php:199
 msgctxt "metabox title"
 msgid "Share Buttons"
 msgstr ""
 
-#: lib/sharing.php:246
+#: lib/social.php:248
 msgid "This content must be published<br/>before it can be shared."
 msgstr ""
 
@@ -497,52 +497,52 @@ msgstr ""
 msgid "The %s file is not readable."
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:63
+#: lib/submenu/rrssb-buttons.php:65
 msgctxt "metabox title"
 msgid "Social Sharing Buttons"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:103
+#: lib/submenu/rrssb-buttons.php:105
 msgctxt "submit button"
 msgid "Reload Default Buttons HTML"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:126
+#: lib/submenu/rrssb-buttons.php:128
 msgctxt "metabox tab"
 msgid "Include Buttons"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:127
+#: lib/submenu/rrssb-buttons.php:129
 msgctxt "metabox tab"
 msgid "Buttons Position"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:128
+#: lib/submenu/rrssb-buttons.php:130
 msgctxt "metabox tab"
 msgid "Advanced Settings"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:176
+#: lib/submenu/rrssb-buttons.php:178
 msgctxt "option label"
 msgid "Include on Archive Webpages"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:180
+#: lib/submenu/rrssb-buttons.php:182
 msgctxt "option label"
 msgid "Include on Static Front Page"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:184
+#: lib/submenu/rrssb-buttons.php:186
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:192
+#: lib/submenu/rrssb-buttons.php:194
 msgctxt "option label"
 msgid "Position in Content Text"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:196
+#: lib/submenu/rrssb-buttons.php:198
 msgctxt "option label"
 msgid "Position in Excerpt Text"
 msgstr ""
@@ -571,12 +571,12 @@ msgstr ""
 msgid "The %s widget."
 msgstr ""
 
-#: lib/widget/sharing.php:167
+#: lib/widget/sharing.php:171
 msgctxt "option value"
 msgid "Share It"
 msgstr ""
 
-#: lib/widget/sharing.php:170
+#: lib/widget/sharing.php:174
 msgctxt "option label"
 msgid "Widget Title (leave blank for no title)"
 msgstr ""

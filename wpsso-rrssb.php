@@ -15,7 +15,7 @@
  * Requires At Least: 3.8
  * Tested Up To: 5.0
  * WC Tested Up To: 3.5
- * Version: 1.11.0-dev.7
+ * Version: 1.11.0-b.1
  * 
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -175,8 +175,9 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 		public function wpsso_init_objects() {
 
-			if ( $this->p->debug->enabled )
+			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
+			}
 
 			if ( ! $this->have_req_min ) {
 				return;	// stop here
@@ -185,9 +186,8 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 			$this->actions = new WpssoRrssbActions( $this->p );
 			$this->filters = new WpssoRrssbFilters( $this->p );
 			$this->script  = new WpssoRrssbScript( $this->p );
+			$this->social  = new WpssoRrssbSocial( $this->p );
 			$this->style   = new WpssoRrssbStyle( $this->p );
-
-			$this->p->rrssb_sharing = new WpssoRrssbSharing( $this->p );
 		}
 
 		public function wpsso_init_plugin() {

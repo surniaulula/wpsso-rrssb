@@ -30,8 +30,9 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareLinkedin' ) ) {
 
 		public function filter_rrssb_share_linkedin_rows( $table_rows, $form, $submenu ) {
 
-			$table_rows[] = $form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$submenu->show_on_checkboxes( 'linkedin' ).'</td>';
+			$table_rows[] = '' .
+			$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
+			'<td>' . $submenu->show_on_checkboxes( 'linkedin' ) . '</td>';
 
 			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_select( 'linkedin_order', range( 1, count( $submenu->share ) ) ).'</td>';
