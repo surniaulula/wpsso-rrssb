@@ -148,7 +148,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.11.0-b.1 (2018/11/15)**
+**Version 1.11.0-rc.1 (2018/11/16)**
 
 * *New Features*
 	* None.
@@ -189,9 +189,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.11.0-b.1 =
+= 1.11.0-rc.1 =
 
-(2018/11/15) Moved several methods from the WpssoRrssbSocial method to new classes.
+(2018/11/16) Moved several methods from the WpssoRrssbSocial method to new classes.
 
 = 1.10.3 =
 
