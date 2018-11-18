@@ -12,7 +12,7 @@ Requires PHP: 5.4
 Requires At Least: 3.8
 Tested Up To: 5.0
 WC Tested Up To: 3.5
-Stable Tag: 1.11.0
+Stable Tag: 1.11.1
 
 WPSSO Core add-on to provide Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
 
@@ -148,6 +148,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.11.1 (2018/11/18)**
+
+* *New Features*
+	* None.
+* *Improvements*
+	* None.
+* *Bugfixes*
+	* Added the new lib/social.php library file to the Free version SVN.
+* *Developer Notes*
+	* None.
+
 **Version 1.11.0 (2018/11/17)**
 
 * *New Features*
@@ -188,6 +199,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 		* 'tumblr_cap_hashtags'   to 'tumblr_caption_hashtags',
 
 == Upgrade Notice ==
+
+= 1.11.1 =
+
+(2018/11/18) Added the new lib/social.php library file to the Free version SVN.
 
 = 1.11.0 =
 
