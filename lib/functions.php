@@ -43,10 +43,12 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 			$error_msg = 'no buttons requested';
 		}
 
-		if ( $error_msg !== false ) {
+		if ( false !== $error_msg ) {
+
 			if ( $wpsso->debug->enabled ) {
 				$wpsso->debug->log( 'exiting early: ' . $error_msg );
 			}
+
 			return '<!-- ' . __FUNCTION__ . ' exiting early: ' . $error_msg . ' -->' . "\n";
 		}
 

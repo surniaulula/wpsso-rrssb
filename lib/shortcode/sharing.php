@@ -51,7 +51,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 				$filter_priority = has_filter( $filter_name, 'wpautop' );
 
-				if ( $filter_priority !== false && $filter_priority > $default_priority ) {
+				if ( false !== $filter_priority && $filter_priority > $default_priority ) {
 
 					remove_filter( $filter_name, 'wpautop' );
 

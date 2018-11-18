@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 
 				$classname = WpssoRrssbConfig::load_lib( false, 'share/' . $id, 'wpssorrssbsubmenushare' . $id );
 
-				if ( $classname !== false && class_exists( $classname ) ) {
+				if ( false !== $classname && class_exists( $classname ) ) {
 
 					$this->share[ $id ] = new $classname( $this->p );
 
