@@ -49,7 +49,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			if ( is_admin() ) {
 
 				if ( $this->have_buttons_for_type( 'admin_edit' ) ) {
-					add_action( 'add_meta_boxes', array( __CLASS__, 'add_metabox_admin_edit' ) );
+					add_action( 'add_meta_boxes', array( $this, 'add_metabox_admin_edit' ) );
 				}
 
 			}
@@ -175,10 +175,8 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 		public function add_metabox_admin_edit() {
 
-			$wpsso =& Wpsso::get_instance();
-
-			if ( $wpsso->debug->enabled ) {
-				$wpsso->debug->mark();
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->mark();
 			}
 
 			/**
@@ -186,14 +184,14 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			 */
 			if ( ( $post_obj = SucomUtil::get_post_object() ) === false ) {
 
-				if ( $wpsso->debug->enabled ) {
-					$wpsso->debug->log( 'exiting early: invalid post object' );
+				if ( $this->p->debug->enabled ) {
+					$this->p->debug->log( 'exiting early: invalid post object' );
 				}
 
 				return;
 			}
 
-			if ( ! empty( $wpsso->options[ 'buttons_add_to_' . $post_obj->post_type ] ) ) {
+			if ( ! empty( $this->p->options[ 'buttons_add_to_' . $post_obj->post_type ] ) ) {
 
 				$metabox_id      = 'rrssb_share';
 				$metabox_title   = _x( 'Share Buttons', 'metabox title', 'wpsso-rrssb' );
@@ -204,7 +202,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					'__block_editor_compatible_meta_box' => true,
 				);
 
-				add_meta_box( '_' . $wpsso->lca . '_' . $metabox_id, $metabox_title,
+				add_meta_box( '_' . $this->p->lca . '_' . $metabox_id, $metabox_title,
 					array( $this, 'show_metabox_rrssb_share' ), $metabox_screen,
 						$metabox_context, $metabox_prio, $callback_args );
 			}
