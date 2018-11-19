@@ -12,7 +12,7 @@ Requires PHP: 5.4
 Requires At Least: 3.8
 Tested Up To: 5.0
 WC Tested Up To: 3.5
-Stable Tag: 1.11.1
+Stable Tag: 1.11.2
 
 WPSSO Core add-on to provide Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
 
@@ -148,67 +148,20 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.11.1 (2018/11/18)**
+**Version 1.11.2 (2018/11/18)**
 
 * *New Features*
 	* None.
 * *Improvements*
 	* None.
 * *Bugfixes*
-	* Added the new lib/social.php library file to the Free version SVN.
+	* Fixed an object context error for the WpssoRrssbSocial::add_metabox_admin_edit() method.
 * *Developer Notes*
 	* None.
-
-**Version 1.11.0 (2018/11/17)**
-
-* *New Features*
-	* None.
-* *Improvements*
-	* None.
-* *Bugfixes*
-	* None.
-* *Developer Notes*
-	* Renamed the lib/websites/ folder to lib/share/.
-	* Renamed the WpssoRrssbSharing class to WpssoRrssbSocial.
-	* Moved actions from the WpssoRrssbSocial class to a new WpssoRrssbActions class.
-	* Moved filters from the WpssoRrssbSocial class to a new WpssoRrssbFilters class.
-	* Moved script enqueuing from the WpssoRrssbSocial class to a new WpssoRrssbScript class.
-	* Moved stylesheet enqueuing from the WpssoRrssbSocial class to a new WpssoRrssbStyle class.
-
-**Version 1.10.3 (2018/10/24)**
-
-* *New Features*
-	* None.
-* *Improvements*
-	* None.
-* *Bugfixes*
-	* None.
-* *Developer Notes*
-	* Renamed option keys for standardization with the Core plugin and other add-ons:
-		* 'email_cap_len'         to 'email_caption_max_len',
-		* 'twitter_cap_len'       to 'twitter_caption_max_len',
-		* 'pin_cap_len'           to 'pin_caption_max_len',
-		* 'linkedin_cap_len'      to 'linkedin_caption_max_len',
-		* 'reddit_cap_len'        to 'reddit_caption_max_len',
-		* 'tumblr_cap_len'        to 'tumblr_caption_max_len',
-		* 'email_cap_hashtags'    to 'email_caption_hashtags',
-		* 'twitter_cap_hashtags'  to 'twitter_caption_hashtags',
-		* 'pin_cap_hashtags'      to 'pin_caption_hashtags',
-		* 'linkedin_cap_hashtags' to 'linkedin_caption_hashtags',
-		* 'reddit_cap_hashtags'   to 'reddit_caption_hashtags',
-		* 'tumblr_cap_hashtags'   to 'tumblr_caption_hashtags',
 
 == Upgrade Notice ==
 
-= 1.11.1 =
+= 1.11.2 =
 
-(2018/11/18) Added the new lib/social.php library file to the Free version SVN.
-
-= 1.11.0 =
-
-(2018/11/17) Moved several methods from the WpssoRrssbSocial method to new classes.
-
-= 1.10.3 =
-
-(2018/10/24) Renamed option keys for standardization with the Core plugin and other add-ons.
+(2018/11/18) Fixed an object context error for the WpssoRrssbSocial::add_metabox_admin_edit() method.
 
