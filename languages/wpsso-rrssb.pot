@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"1.11.2\n"
+"1.11.3-dev.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2018-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -278,7 +278,7 @@ msgid ""
 "If the %1$s option (above) is also checked, the %2$s is suggested first."
 msgstr ""
 
-#: lib/filters.php:433 lib/share/twitter.php:60
+#: lib/filters.php:433 lib/share/twitter.php:61
 msgctxt "option label"
 msgid "Add via Business @username"
 msgstr ""
@@ -457,7 +457,7 @@ msgctxt "option label"
 msgid "Append Hashtags to Tweet"
 msgstr ""
 
-#: lib/share/twitter.php:64
+#: lib/share/twitter.php:65
 msgctxt "option label"
 msgid "Recommend Author @username"
 msgstr ""

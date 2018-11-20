@@ -52,17 +52,17 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTwitter' ) ) {
 			'<td>' . $form->get_input( 'twitter_caption_max_len', 'short' ) . ' ' . 
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
-			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_caption_hashtags' ) . 
+			$table_rows[] = '' . 
 			$form->get_th_html( _x( 'Append Hashtags to Tweet', 'option label', 'wpsso-rrssb' ) ) . 
 			'<td>' . $form->get_select( 'twitter_caption_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ) . ' ' . 
 				_x( 'tag names', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
-			$table_rows[] = $form->get_th_html( _x( 'Add via Business @username',
-				'option label', 'wpsso-rrssb' ), '', 'buttons_add_via'  ) . 
+			$table_rows[] = '' .
+			$form->get_th_html( _x( 'Add via Business @username', 'option label', 'wpsso-rrssb' ), '', 'buttons_add_via'  ) . 
 			'<td>' . $form->get_checkbox( 'twitter_via' ) . '</td>';
 
-			$table_rows[] = $form->get_th_html( _x( 'Recommend Author @username',
-				'option label', 'wpsso-rrssb' ), '', 'buttons_rec_author'  ) . 
+			$table_rows[] = '' .
+			$form->get_th_html( _x( 'Recommend Author @username', 'option label', 'wpsso-rrssb' ), '', 'buttons_rec_author'  ) . 
 			'<td>' . $form->get_checkbox( 'twitter_rel_author' ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_rrssb_html' ) . 
@@ -89,7 +89,7 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 					'twitter_platform'         => 'any',
 					'twitter_caption'          => 'excerpt',
 					'twitter_caption_max_len'  => 280,	// changed from 140 to 280 on 2017/11/17
-					'twitter_caption_hashtags' => 0,
+					'twitter_caption_hashtags' => 3,
 					'twitter_via'              => 1,
 					'twitter_rel_author'       => 1,
 					'twitter_rrssb_html'       => '<li class="rrssb-twitter">
@@ -120,9 +120,6 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 		}
 
 		public function filter_get_defaults( $def_opts ) {
-
-			self::$cf['opt']['defaults']['twitter_caption_hashtags'] = $def_opts['og_desc_hashtags'];
-
 			return array_merge( $def_opts, self::$cf['opt']['defaults'] );
 		}
 
