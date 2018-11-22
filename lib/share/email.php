@@ -114,11 +114,11 @@ if ( ! class_exists( 'WpssoRrssbShareEmail' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts['add_hashtags'] = empty( $this->p->options['email_caption_hashtags'] ) ? false : $this->p->options['email_caption_hashtags'];
+			$atts[ 'add_hashtags' ] = empty( $this->p->options['email_caption_hashtags'] ) ? false : $this->p->options['email_caption_hashtags'];
 
 			$email_title   = $this->p->page->get_caption( 'title', 0, $mod, true, false, false, 'email_title' );
 			$email_excerpt = $this->p->page->get_caption( 'both', $opts['email_caption_max_len'], $mod, true,
-				$atts['add_hashtags'], false, 'email_desc' );
+				$atts[ 'add_hashtags' ], false, 'email_desc' );
 
 			return $this->p->util->replace_inline_vars( '<!-- Email Button -->'.
 				$this->p->options['email_rrssb_html'], $mod, $atts, array(

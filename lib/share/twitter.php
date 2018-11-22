@@ -129,8 +129,8 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 				$this->p->debug->mark();
 			}
 
-			if ( ! isset( $atts['add_hashtags'] ) ) {
-				$atts['add_hashtags'] = empty( $this->p->options['twitter_caption_hashtags'] ) ?
+			if ( ! isset( $atts[ 'add_hashtags' ] ) ) {
+				$atts[ 'add_hashtags' ] = empty( $this->p->options['twitter_caption_hashtags'] ) ?
 					false : $this->p->options['twitter_caption_hashtags'];
 			}
 
@@ -151,8 +151,8 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 			}
 
 			if ( ! isset( $atts['related'] ) ) {
-				if ( ! empty( $opts['twitter_rel_author'] ) && ! empty( $mod['post_author'] ) && $atts['use_post'] ) {
-					$atts['related'] = preg_replace( '/^@/', '', get_the_author_meta( $opts['plugin_cm_twitter_name'], $mod['post_author'] ) );
+				if ( ! empty( $opts['twitter_rel_author'] ) && ! empty( $mod[ 'post_author' ] ) && $atts[ 'use_post' ] ) {
+					$atts['related'] = preg_replace( '/^@/', '', get_the_author_meta( $opts['plugin_cm_twitter_name'], $mod[ 'post_author' ] ) );
 				} else {
 					$atts['related'] = '';
 				}

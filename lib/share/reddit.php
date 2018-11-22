@@ -115,11 +115,11 @@ if ( ! class_exists( 'WpssoRrssbShareReddit' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts['add_hashtags'] = empty( $this->p->options['reddit_caption_hashtags'] ) ? false : $this->p->options['reddit_caption_hashtags'];
+			$atts[ 'add_hashtags' ] = empty( $this->p->options['reddit_caption_hashtags'] ) ? false : $this->p->options['reddit_caption_hashtags'];
 
 			$reddit_title   = $this->p->page->get_caption( 'title', 0, $mod, true, false, false, 'reddit_title' );
 			$reddit_summary = $this->p->page->get_caption( 'excerpt', $opts['reddit_caption_max_len'], $mod, true,
-				$atts['add_hashtags'], false, 'reddit_desc' );
+				$atts[ 'add_hashtags' ], false, 'reddit_desc' );
 
 			return $this->p->util->replace_inline_vars( '<!-- Reddit Button -->'.
 				$this->p->options['reddit_rrssb_html'], $mod, $atts, array(

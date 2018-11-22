@@ -114,11 +114,11 @@ if ( ! class_exists( 'WpssoRrssbShareTumblr' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts['add_hashtags'] = empty( $this->p->options['tumblr_caption_hashtags'] ) ? false : $this->p->options['tumblr_caption_hashtags'];
+			$atts[ 'add_hashtags' ] = empty( $this->p->options['tumblr_caption_hashtags'] ) ? false : $this->p->options['tumblr_caption_hashtags'];
 
 			$tumblr_title   = $this->p->page->get_caption( 'title', 0, $mod, true, false, false, 'tumblr_title' );
 			$tumblr_summary = $this->p->page->get_caption( 'excerpt', $opts['tumblr_caption_max_len'], $mod, true,
-				$atts['add_hashtags'], false, 'tumblr_desc' );
+				$atts[ 'add_hashtags' ], false, 'tumblr_desc' );
 
 			return $this->p->util->replace_inline_vars( '<!-- Tumblr Button -->'.
 				$this->p->options['tumblr_rrssb_html'], $mod, $atts, array(

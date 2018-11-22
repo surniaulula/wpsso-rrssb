@@ -114,11 +114,11 @@ if ( ! class_exists( 'WpssoRrssbShareLinkedin' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts['add_hashtags'] = empty( $this->p->options['linkedin_caption_hashtags'] ) ? false : $this->p->options['linkedin_caption_hashtags'];
+			$atts[ 'add_hashtags' ] = empty( $this->p->options['linkedin_caption_hashtags'] ) ? false : $this->p->options['linkedin_caption_hashtags'];
 
 		 	$linkedin_title = $this->p->page->get_caption( 'title', 0, $mod, true, false, false, 'linkedin_title' );
 			$linkedin_caption = $this->p->page->get_caption( 'excerpt', $opts['linkedin_caption_max_len'], $mod, true,
-				$atts['add_hashtags'], false, 'linkedin_desc' );
+				$atts[ 'add_hashtags' ], false, 'linkedin_desc' );
 
 			return $this->p->util->replace_inline_vars( '<!-- LinkedIn Button -->'.
 				$this->p->options['linkedin_rrssb_html'], $mod, $atts, array(

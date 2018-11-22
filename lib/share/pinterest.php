@@ -149,7 +149,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts['add_hashtags'] = empty( $this->p->options['pin_caption_hashtags'] ) ? false : $this->p->options['pin_caption_hashtags'];
+			$atts[ 'add_hashtags' ] = empty( $this->p->options['pin_caption_hashtags'] ) ? false : $this->p->options['pin_caption_hashtags'];
 
 			if ( empty( $atts['size'] ) ) {
 				$atts['size'] = $this->p->lca.'-pinterest-button';
@@ -198,7 +198,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 			}
 
 			$pinterest_caption = $this->p->page->get_caption( 'excerpt', $opts['pin_caption_max_len'], $mod, true,
-				$atts['add_hashtags'], false, 'pin_desc' );
+				$atts[ 'add_hashtags' ], false, 'pin_desc' );
 
 			return $this->p->util->replace_inline_vars( '<!-- Pinterest Button -->'.
 				$pinterest_button_html, $mod, $atts, array(

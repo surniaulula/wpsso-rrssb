@@ -56,7 +56,7 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 				$this->p->debug->log( 'required call to get_page_mod()' );
 			}
 
-			$mod         = $this->p->util->get_page_mod( $atts['use_post'] );
+			$mod         = $this->p->util->get_page_mod( $atts[ 'use_post' ] );
 			$type        = 'sharing_widget_' . $this->id;
 			$sharing_url = $this->p->util->get_sharing_url( $mod );
 

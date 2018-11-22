@@ -470,8 +470,8 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				ksort( $sorted_ids );
 
-				$atts['use_post'] = $mod['use_post'];
-				$atts['css_id']   = $css_type_name = 'rrssb-' . $type;
+				$atts[ 'use_post' ] = $mod[ 'use_post' ];
+				$atts[ 'css_id' ]   = $css_type_name = 'rrssb-' . $type;
 
 				/**
 				 * Returns html or an empty string.
@@ -484,9 +484,9 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 <!-- ' . $this->p->lca . ' ' . $css_type_name . ' begin -->
 <!-- generated on ' . date( 'c' ) . ' -->
 <div class="' . $this->p->lca . '-rrssb' .
-	( $mod['use_post'] ? ' ' . $this->p->lca . '-' . $css_type_name . '"' : '" id="' . $this->p->lca . '-' . $css_type_name . '"' ) . '>' . "\n" . 
+	( $mod[ 'use_post' ] ? ' ' . $this->p->lca . '-' . $css_type_name . '"' : '" id="' . $this->p->lca . '-' . $css_type_name . '"' ) . '>' . "\n" . 
 $cache_array[ $cache_index ] . 
-'</div><!-- .' . $this->p->lca . '-rrssb ' . ( $mod['use_post'] ? '.' : '#' ) . $this->p->lca . '-' . $css_type_name . ' -->
+'</div><!-- .' . $this->p->lca . '-rrssb ' . ( $mod[ 'use_post' ] ? '.' : '#' ) . $this->p->lca . '-' . $css_type_name . ' -->
 <!-- ' . $this->p->lca . ' ' . $css_type_name . ' end -->' . "\n\n";
 
 					$cache_array[ $cache_index ] = apply_filters( $this->p->lca . '_rrssb_buttons_html',
@@ -616,8 +616,8 @@ $cache_array[ $cache_index ] .
 				$this->p->debug->mark();
 			}
 
-			$atts['use_post'] = isset( $atts['use_post'] ) ? $atts['use_post'] : true;	// Maintain backwards compat.
-			$atts['add_page'] = isset( $atts['add_page'] ) ? $atts['add_page'] : true;	// Used by get_sharing_url().
+			$atts[ 'use_post' ] = isset( $atts[ 'use_post' ] ) ? $atts[ 'use_post' ] : true;	// Maintain backwards compat.
+			$atts[ 'add_page' ] = isset( $atts[ 'add_page' ] ) ? $atts[ 'add_page' ] : true;	// Used by get_sharing_url().
 
 			/**
 			 * The $mod array argument is preferred but not required.
@@ -629,7 +629,7 @@ $cache_array[ $cache_index ] .
 					$this->p->debug->log( 'optional call to get_page_mod()' );
 				}
 
-				$mod = $this->p->util->get_page_mod( $atts['use_post'] );
+				$mod = $this->p->util->get_page_mod( $atts[ 'use_post' ] );
 			}
 
 			$buttons_html  = '';
@@ -648,25 +648,25 @@ $cache_array[ $cache_index ] .
 
 							$atts['src_id'] = SucomUtil::get_atts_src_id( $atts, $id );	// Uses 'css_id' and 'use_post'.
 
-							if ( empty( $atts['url'] ) ) {
-								$atts['url'] = $this->p->util->get_sharing_url( $mod,
-									$atts['add_page'], $atts['src_id'] );
+							if ( empty( $atts[ 'url' ] ) ) {
+								$atts[ 'url' ] = $this->p->util->get_sharing_url( $mod,
+									$atts[ 'add_page' ], $atts['src_id'] );
 							} else {
-								$atts['url'] = apply_filters( $this->p->lca . '_sharing_url',
-									$atts['url'], $mod, $atts['add_page'], $atts['src_id'] );
+								$atts[ 'url' ] = apply_filters( $this->p->lca . '_sharing_url',
+									$atts[ 'url' ], $mod, $atts[ 'add_page' ], $atts['src_id'] );
 							}
 
 							/**
 							 * Filter to add custom tracking arguments.
 							 */
-							$atts['url'] = apply_filters( $this->p->lca . '_rrssb_buttons_shared_url',
-								$atts['url'], $mod, $id );
+							$atts[ 'url' ] = apply_filters( $this->p->lca . '_rrssb_buttons_shared_url',
+								$atts[ 'url' ], $mod, $id );
 
 							$force_prot = apply_filters( $this->p->lca . '_rrssb_buttons_force_prot',
-								$this->p->options['buttons_force_prot'], $mod, $id, $atts['url'] );
+								$this->p->options['buttons_force_prot'], $mod, $id, $atts[ 'url' ] );
 
 							if ( ! empty( $force_prot ) && $force_prot !== 'none' ) {
-								$atts['url'] = preg_replace( '/^.*:\/\//', $force_prot . '://', $atts['url'] );
+								$atts[ 'url' ] = preg_replace( '/^.*:\/\//', $force_prot . '://', $atts[ 'url' ] );
 							}
 
 							$buttons_part = $this->share[$id]->get_html( $atts, $this->p->options, $mod ) . "\n";
@@ -850,15 +850,15 @@ $cache_array[ $cache_index ] .
 
 			if ( ! isset( $atts['tweet'] ) ) {	// Just in case.
 
-				$atts['use_post']     = isset( $atts['use_post'] ) ? $atts['use_post'] : true;
-				$atts['add_page']     = isset( $atts['add_page'] ) ? $atts['add_page'] : true;	// Used by get_sharing_url().
-				$atts['add_hashtags'] = isset( $atts['add_hashtags'] ) ? $atts['add_hashtags'] : true;
+				$atts[ 'use_post' ]     = isset( $atts[ 'use_post' ] ) ? $atts[ 'use_post' ] : true;
+				$atts[ 'add_page' ]     = isset( $atts[ 'add_page' ] ) ? $atts[ 'add_page' ] : true;	// Used by get_sharing_url().
+				$atts[ 'add_hashtags' ] = isset( $atts[ 'add_hashtags' ] ) ? $atts[ 'add_hashtags' ] : true;
 
 				$caption_type    = empty( $wpsso->options[ $opt_pre . '_caption' ] ) ? 'title' : $wpsso->options[ $opt_pre . '_caption' ];
 				$caption_max_len = self::get_tweet_max_len( $opt_pre );
 
 				$atts['tweet'] = $wpsso->page->get_caption( $caption_type, $caption_max_len, $mod, $read_cache = true,
-					$atts['add_hashtags'], $do_encode = false, $md_key = $md_pre . '_desc' );
+					$atts[ 'add_hashtags' ], $do_encode = false, $md_key = $md_pre . '_desc' );
 			}
 
 			return $atts['tweet'];
