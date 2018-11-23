@@ -148,14 +148,14 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.11.3-dev.5 (2018/11/22)**
+**Version 1.11.3-b.1 (2018/11/23)**
 
 * *New Features*
 	* None.
 * *Improvements*
 	* None.
 * *Bugfixes*
-	* Fixed the "Append Hashtags to Tweet" option.
+	* Fixed the "Append Hashtags to Tweet" option select.
 * *Developer Notes*
 	* None.
 
@@ -172,9 +172,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.11.3-dev.5 =
+= 1.11.3-b.1 =
 
-(2018/11/22) Fixed the "Append Hashtags to Tweet" option.
+(2018/11/23) Fixed the "Append Hashtags to Tweet" option select.
 
 = 1.11.2 =
 
