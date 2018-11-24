@@ -489,7 +489,7 @@ msgctxt "metabox title"
 msgid "Share Buttons"
 msgstr ""
 
-#: lib/social.php:246
+#: lib/social.php:248
 msgid "This content must be published<br/>before it can be shared."
 msgstr ""
 

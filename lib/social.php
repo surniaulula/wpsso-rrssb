@@ -240,7 +240,9 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			if ( get_post_status( $post_obj->ID ) === 'publish' || $post_obj->post_type === 'attachment' ) {
 
-				echo $this->get_buttons( $text = '', 'admin_edit' );
+				$mod = $this->p->util->get_page_mod( $post_obj->ID );
+
+				echo $this->get_buttons( $text = '', 'admin_edit', $mod );
 
 			} else {
 				echo '<p class="centered">' . __( 'This content must be published<br/>before it can be shared.', 'wpsso-rrssb' ) . '</p>';
@@ -481,13 +483,11 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				if ( ! empty( $cache_array[ $cache_index ] ) ) {
 
 					$cache_array[ $cache_index ] = '
-<!-- ' . $this->p->lca . ' ' . $css_type_name . ' begin -->
-<!-- generated on ' . date( 'c' ) . ' -->
 <div class="' . $this->p->lca . '-rrssb' .
 	( $mod[ 'use_post' ] ? ' ' . $this->p->lca . '-' . $css_type_name . '"' : '" id="' . $this->p->lca . '-' . $css_type_name . '"' ) . '>' . "\n" . 
 $cache_array[ $cache_index ] . 
-'</div><!-- .' . $this->p->lca . '-rrssb ' . ( $mod[ 'use_post' ] ? '.' : '#' ) . $this->p->lca . '-' . $css_type_name . ' -->
-<!-- ' . $this->p->lca . ' ' . $css_type_name . ' end -->' . "\n\n";
+'</div><!-- .' . $this->p->lca . '-rrssb ' . ( $mod[ 'use_post' ] ? '.' : '#' ) . $this->p->lca . '-' . $css_type_name . ' -->' .
+'<!-- generated on ' . date( 'c' ) . ' -->' . "\n\n";
 
 					$cache_array[ $cache_index ] = apply_filters( $this->p->lca . '_rrssb_buttons_html',
 						$cache_array[ $cache_index ], $type, $mod, $location, $atts );
@@ -788,7 +788,7 @@ $cache_array[ $cache_index ] .
 				return $this->post_buttons_disabled[$post_id];
 			}
 
-			if ( $this->p->m['util']['post']->get_options( $post_id, 'buttons_disabled' ) ) {	// Returns null if an index key is not found.
+			if ( $this->p->m[ 'util' ][ 'post' ]->get_options( $post_id, 'buttons_disabled' ) ) {	// Returns null if an index key is not found.
 
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'post ' . $post_id . ': sharing buttons disabled by meta data option' );
