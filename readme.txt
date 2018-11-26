@@ -148,6 +148,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.12.0-dev.4 (2018/11/26)**
+
+* *New Features*
+	* None.
+* *Improvements*
+	* None.
+* *Bugfixes*
+	* Fixed the Share Buttons metabox styling on admin editing pages for WordPress v5.0.
+* *Developer Notes*
+	* None.
+
 **Version 1.11.3 (2018/11/25)**
 
 * *New Features*
@@ -160,6 +171,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* None.
 
 == Upgrade Notice ==
+
+= 1.12.0-dev.4 =
+
+(2018/11/26) Fixed the Share Buttons metabox styling on admin editing pages for WordPress v5.0.
 
 = 1.11.3 =
 
