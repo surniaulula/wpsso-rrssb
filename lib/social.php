@@ -47,7 +47,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			}
 
 			if ( is_admin() ) {
-
 				if ( $this->have_buttons_for_type( 'admin_edit' ) ) {
 					add_action( 'add_meta_boxes', array( $this, 'add_metabox_admin_edit' ) );
 				}
@@ -193,7 +192,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			if ( ! empty( $this->p->options[ 'buttons_add_to_' . $post_obj->post_type ] ) ) {
 
-				$metabox_id      = 'rrssb_share';
+				$metabox_id      = 'admin_edit';
 				$metabox_title   = _x( 'Share Buttons', 'metabox title', 'wpsso-rrssb' );
 				$metabox_screen  = $post_obj->post_type;
 				$metabox_context = 'side';
@@ -202,8 +201,8 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					'__block_editor_compatible_meta_box' => true,
 				);
 
-				add_meta_box( '_' . $this->p->lca . '_' . $metabox_id, $metabox_title,
-					array( $this, 'show_metabox_rrssb_share' ), $metabox_screen,
+				add_meta_box( '_' . $this->p->lca . '_rrssb_' . $metabox_id, $metabox_title,
+					array( $this, 'show_metabox_admin_edit' ), $metabox_screen,
 						$metabox_context, $metabox_prio, $callback_args );
 			}
 		}
@@ -226,16 +225,12 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			echo $this->get_buttons( '', 'sidebar', $use_post = false, '', array( 'container_each' => true ) );
 		}
 
-		public function show_metabox_rrssb_share( $post_obj ) {
+		public function show_metabox_admin_edit( $post_obj ) {
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
 			}
 
-			$sharing_css_data = $this->p->options['buttons_css_rrssb-admin_edit'];
-			$sharing_css_data = SucomUtil::minify_css( $sharing_css_data, $this->p->lca );
-
-			echo '<style type="text/css">' . $sharing_css_data . '</style>', "\n";
 			echo '<table class="sucom-settings ' . $this->p->lca . ' post-side-metabox"><tr><td>';
 
 			if ( get_post_status( $post_obj->ID ) === 'publish' || $post_obj->post_type === 'attachment' ) {
@@ -304,12 +299,12 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 		public function get_buttons( $text, $type = 'content', $mod = true, $location = '', $atts = array() ) {
 
 			if ( $this->p->debug->enabled ) {
-				$this->p->debug->mark( 'getting buttons for ' . $type );	// start timer
+				$this->p->debug->mark( 'getting buttons for ' . $type );	// Start timer.
 			}
 
 			$error_message = '';
 			$append_error  = true;
-			$doing_dev     = SucomUtil::get_const( 'WPSSO_DEV' );
+			$is_admin      = is_admin();	// Call the function only once.
 			$doing_ajax    = SucomUtil::get_const( 'DOING_AJAX' );
 
 			if ( $doing_ajax ) {
@@ -318,7 +313,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					$this->p->debug->log( 'doing_ajax is true' );
 				}
 
-			} elseif ( is_admin() ) {
+			} elseif ( $is_admin ) {
 
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'is_admin is true' );
@@ -383,7 +378,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( $type . ' filter skipped: ' . $error_message );
-					$this->p->debug->mark( 'getting buttons for ' . $type );	// end timer
+					$this->p->debug->mark( 'getting buttons for ' . $type );	// End timer.
 				}
 
 				if ( $append_error ) {
@@ -527,8 +522,19 @@ $cache_array[ $cache_index ] .
 					break;
 			}
 
+			if ( $doing_ajax ) {
+				$text .= '
+					<script type="text/javascript">
+						if ( ! window.rrssb_done ) {
+							window.rrssb_done = true; 
+							window.rrssbResize();
+							window.rrssbInit();
+						}
+					</script>' . "\n";
+			}
+
 			if ( $this->p->debug->enabled ) {
-				$this->p->debug->mark( 'getting buttons for ' . $type );	// end timer
+				$this->p->debug->mark( 'getting buttons for ' . $type );	// End timer.
 			}
 
 			return $text;

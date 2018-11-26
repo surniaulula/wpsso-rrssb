@@ -4,15 +4,15 @@
  * necessary to customize the layout for your website.
  */
 
-#_wpsso_rrssb_share .inside {
-	padding:6px 8px;
+#_wpsso_rrssb_admin_edit .inside {
+	padding:10px 12px;
 }
 
-#_wpsso_rrssb_share .inside table.sucom-settings {
+#_wpsso_rrssb_admin_edit .inside table.sucom-settings {
 	border-spacing:0;
 }
 
-table.sucom-settings ul.rrssb-buttons {
+#_wpsso_rrssb_admin_edit .inside table.sucom-settings ul.rrssb-buttons {
 	visibility:visible;
 	margin:0 !important;
 	padding:0 !important;
@@ -22,7 +22,7 @@ table.sucom-settings ul.rrssb-buttons {
 	box-sizing:border-box;
 }
 
-table.sucom-settings ul.rrssb-buttons::before,
-table.sucom-settings ul.rrssb-buttons::after {
+#_wpsso_rrssb_admin_edit .inside table.sucom-settings ul.rrssb-buttons::before,
+#_wpsso_rrssb_admin_edit .inside table.sucom-settings ul.rrssb-buttons::after {
 	display:none;
 }

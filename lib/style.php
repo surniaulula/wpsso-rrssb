@@ -31,14 +31,23 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 			self::$sharing_css_file = WPSSO_CACHEDIR . self::$sharing_css_name;
 			self::$sharing_css_url  = WPSSO_CACHEURL . self::$sharing_css_name;
 
-			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
+			if ( is_admin() ) {
+				add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
+			} else {
+				add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
+			}
 		}
 
 		public function enqueue_styles() {
 
+			/**
+			 * Do not use minified CSS if the DEV constant is defined.
+			 */
+			$doing_dev      = SucomUtil::get_const( 'WPSSO_DEV' );
+			$css_file_ext   = $doing_dev ? 'css' : 'min.css';
 			$plugin_version = $this->p->cf[ 'plugin' ][ 'wpssorrssb' ][ 'version' ];
 
-			wp_register_style( 'rrssb', WPSSORRSSB_URLPATH . 'css/ext/rrssb.min.css', array(), $plugin_version );
+			wp_register_style( 'rrssb', WPSSORRSSB_URLPATH . 'css/ext/rrssb.' . $css_file_ext, array(), $plugin_version );
 
 			wp_enqueue_style( 'rrssb' );
 

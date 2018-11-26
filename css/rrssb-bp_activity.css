@@ -7,16 +7,20 @@
 .wpsso-rrssb-bp_activity {
 	margin:15px 0 10px 0;
 }
+
 .wpsso-rrssb-bp_activity ul.rrssb-buttons li span.rrssb-icon {
-	padding-top:9px;
+	width:1em;
+	height:1em;
+	margin:0.2em 0;
 }
+
 .wpsso-rrssb-bp_activity ul.rrssb-buttons li span.rrssb-text {
-	padding-top:11px;
-	padding-left:13px;
+	font-size:0.8em;
 }
+
 #buddypress ul.activity-list .wpsso-rrssb-bp_activity ul.rrssb-buttons li {
 	border:none;
 }
+
 #buddypress ul.activity-list .wpsso-rrssb-bp_activity ul.rrssb-buttons li a {
-	padding:inherit;
 }
