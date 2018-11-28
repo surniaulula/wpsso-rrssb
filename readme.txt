@@ -148,7 +148,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.12.0-dev.5 (2018/11/27)**
+**Version 1.12.0-b.1 (2018/11/27)**
 
 * *New Features*
 	* None.
@@ -172,7 +172,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.12.0-dev.5 =
+= 1.12.0-b.1 =
 
 (2018/11/27) Fixed the Share Buttons metabox styling on admin editing pages for WordPress v5.0.
 
