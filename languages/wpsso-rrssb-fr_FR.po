@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 1.11.3\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 1.12.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2018-11-21 13:39-0800\n"
-"PO-Revision-Date: 2018-11-21 13:39-0800\n"
+"POT-Creation-Date: 2018-11-28 10:44-0600\n"
+"PO-Revision-Date: 2018-11-28 10:45-0600\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -412,36 +412,36 @@ msgctxt "option label"
 msgid "Recommend Author @username"
 msgstr "Recommander @nom d'auteur"
 
-#: lib/social.php:115
+#: lib/social.php:114
 msgid "Failed writing the css file %s."
 msgstr "Impossible d'écrire le fichier css %s."
 
-#: lib/social.php:124
+#: lib/social.php:123
 msgid "Updated the <a href=\"%1$s\">%2$s</a> stylesheet (%3$d bytes written)."
 msgstr "La feuille de style <a href=\"%1$s\">%2$s</a> a été mise à jour (%3$d octets écrits)."
 
-#: lib/social.php:141
+#: lib/social.php:140
 msgid "Cache folder %s is not writable."
 msgstr "Le dossier de cache %s n'est pas accessible en écriture."
 
-#: lib/social.php:151
+#: lib/social.php:150
 msgid "Failed to open the css file %s for writing."
 msgstr "Impossible d'ouvrir le fichier css %s pour écriture."
 
-#: lib/social.php:170
+#: lib/social.php:169
 msgid "Error removing the minified stylesheet &mdash; does the web server have sufficient privileges?"
 msgstr "Erreur en retirant la feuille de style minimisé &mdash; le serveur Web a t'il les privilèges nécessaires?"
 
-#: lib/social.php:197
+#: lib/social.php:196
 msgctxt "metabox title"
 msgid "Share Buttons"
 msgstr "Boutons de partage"
 
-#: lib/social.php:246
+#: lib/social.php:243
 msgid "This content must be published<br/>before it can be shared."
 msgstr "Ce contenu doit être publié<br/>avant d'être partagé."
 
-#: lib/style.php:73
+#: lib/style.php:82
 msgid "The %s file is not readable."
 msgstr "Le fichier %s n'est pas lisible."
 
