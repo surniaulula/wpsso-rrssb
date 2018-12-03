@@ -176,6 +176,7 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 				'via'      => 'via',
 				'related'  => 'related',
 			) as $query_key => $atts_key  ) {
+
 				if ( ! empty( $atts[$atts_key] ) ) {
 					$extra_inline_vars['twitter_' . $query_key] = rawurlencode( $atts[$atts_key] );
 				} else {
