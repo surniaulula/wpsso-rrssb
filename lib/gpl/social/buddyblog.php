@@ -58,7 +58,7 @@ if ( ! class_exists( 'WpssoRrssbGplSocialBuddyblogSharing' ) ) {
 				'rrssb_styles' => 1,
 			) );
 
-			if ( is_admin() && empty( $this->p->options['plugin_hide_pro'] ) ) {
+			if ( is_admin() && empty( $this->p->options[ 'plugin_hide_pro' ] ) ) {
 
 				$this->p->util->add_plugin_filters( $this, array( 
 					'rrssb_buttons_position_rows' => 2,
