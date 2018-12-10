@@ -148,6 +148,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.12.1-dev.2 (2018/12/10)**
+
+* *New Features*
+	* None.
+* *Improvements*
+	* None.
+* *Bugfixes*
+	* None.
+* *Developer Notes*
+	* Renamed the 'wpsso_action_buttons' filter hook to 'wpsso_submit_button_rows' for WPSSO Core v4.18.0.
+
 **Version 1.12.0 (2018/11/29)**
 
 * *New Features*
@@ -159,18 +170,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * *Developer Notes*
 	* None.
 
-**Version 1.11.3 (2018/11/25)**
-
-* *New Features*
-	* None.
-* *Improvements*
-	* None.
-* *Bugfixes*
-	* Fixed the "Append Hashtags to Tweet" option select.
-* *Developer Notes*
-	* None.
-
 == Upgrade Notice ==
+
+= 1.12.1-dev.2 =
+
+(2018/12/10) Renamed the 'wpsso_action_buttons' filter hook to 'wpsso_submit_button_rows' for WPSSO Core v4.18.0.
 
 = 1.12.0 =
 
