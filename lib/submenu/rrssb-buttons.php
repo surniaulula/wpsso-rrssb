@@ -49,9 +49,17 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 		}
 
 		protected function add_plugin_hooks() {
+
 			$this->p->util->add_plugin_filters( $this, array(
-				'action_buttons' => 1,
+				'submit_button_rows' => 1,
 			) );
+		}
+
+		public function filter_submit_button_rows( $submit_button_rows ) {
+
+			$submit_button_rows[0]['reload_default_sharing_rrssb_buttons_html'] = _x( 'Reload Default Buttons HTML', 'submit button', 'wpsso-rrssb' );
+
+			return $submit_button_rows;
 		}
 
 		/**
@@ -98,13 +106,6 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			 * Close all share metaboxes by default.
 			 */
 			WpssoUser::reset_metabox_prefs( $this->pagehook, array_keys( $share_ids ), 'closed' );
-		}
-
-		public function filter_action_buttons( $action_buttons ) {
-
-			$action_buttons[0]['reload_default_sharing_rrssb_buttons_html'] = _x( 'Reload Default Buttons HTML', 'submit button', 'wpsso-rrssb' );
-
-			return $action_buttons;
 		}
 
 		public function add_class_postbox_rrssb_share( $classes ) {
