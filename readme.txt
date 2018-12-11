@@ -148,7 +148,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.12.1-dev.4 (2018/12/10)**
+**Version 1.12.1-dev.4 (2018/12/11)**
 
 * *New Features*
 	* None.
@@ -174,7 +174,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 1.12.1-dev.4 =
 
-(2018/12/10) Renamed the 'wpsso_action_buttons' filter hook to 'wpsso_form_button_rows' for WPSSO Core v4.18.0.
+(2018/12/11) Renamed the 'wpsso_action_buttons' filter hook to 'wpsso_form_button_rows' for WPSSO Core v4.18.0.
 
 = 1.12.0 =
 
