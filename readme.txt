@@ -44,7 +44,7 @@ The Pro version of WPSSO RRSSB includes special integration modules to add socia
 
 &#x2605;&#x2605;&#x2605;&#x2605;&#x2605; &mdash; "These buttons are great, work on mobile phones as well as desktops, and they load super fast!" - [undergroundnetwork](https://wordpress.org/support/topic/best-sharing-buttons-out-there/)
 
-<h3>WPSSO RRSSB Free / Standard Features</h3>
+<h3>WPSSO RRSSB Standard Features</h3>
 
 * Extends the features of the WPSSO Core Free or Pro plugin.
 
@@ -81,7 +81,7 @@ The Pro version of WPSSO RRSSB includes special integration modules to add socia
 
 * Download the Free version from [GitHub](https://surniaulula.github.io/wpsso-rrssb/) or [WordPress.org](https://wordpress.org/plugins/wpsso-rrssb/).
 
-<h3>WPSSO RRSSB Pro / Additional Features</h3>
+<h3>WPSSO RRSSB Additional Features (Pro version)</h3>
 
 * Extends the features of WPSSO Core Pro (requires an active and licensed <a href="https://wpsso.com/">WPSSO Core Pro plugin</a>).
 
@@ -148,7 +148,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.12.1-dev.3 (2018/12/10)**
+**Version 1.12.1-dev.4 (2018/12/10)**
 
 * *New Features*
 	* None.
@@ -157,7 +157,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * *Bugfixes*
 	* None.
 * *Developer Notes*
-	* Renamed the 'wpsso_action_buttons' filter hook to 'wpsso_submit_button_rows' for WPSSO Core v4.18.0.
+	* Renamed the 'wpsso_action_buttons' filter hook to 'wpsso_form_button_rows' for WPSSO Core v4.18.0.
 
 **Version 1.12.0 (2018/11/29)**
 
@@ -172,9 +172,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.12.1-dev.3 =
+= 1.12.1-dev.4 =
 
-(2018/12/10) Renamed the 'wpsso_action_buttons' filter hook to 'wpsso_submit_button_rows' for WPSSO Core v4.18.0.
+(2018/12/10) Renamed the 'wpsso_action_buttons' filter hook to 'wpsso_form_button_rows' for WPSSO Core v4.18.0.
 
 = 1.12.0 =
 
