@@ -497,72 +497,72 @@ msgstr ""
 msgid "The %s file is not readable."
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:62
+#: lib/submenu/rrssb-buttons.php:69
 msgctxt "submit button"
 msgid "Reload Default Responsive Buttons"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:79
+#: lib/submenu/rrssb-buttons.php:84
 msgctxt "metabox title"
 msgid "Social Sharing Buttons"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:135
+#: lib/submenu/rrssb-buttons.php:140
 msgctxt "metabox tab"
 msgid "Include Buttons"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:136
+#: lib/submenu/rrssb-buttons.php:141
 msgctxt "metabox tab"
 msgid "Buttons Position"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:137
+#: lib/submenu/rrssb-buttons.php:142
 msgctxt "metabox tab"
 msgid "Advanced Settings"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:185
+#: lib/submenu/rrssb-buttons.php:190
 msgctxt "option label"
 msgid "Include on Archive Webpages"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:189
+#: lib/submenu/rrssb-buttons.php:194
 msgctxt "option label"
 msgid "Include on Static Front Page"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:193
+#: lib/submenu/rrssb-buttons.php:198
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:201
+#: lib/submenu/rrssb-buttons.php:206
 msgctxt "option label"
 msgid "Position in Content Text"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:205
+#: lib/submenu/rrssb-buttons.php:210
 msgctxt "option label"
 msgid "Position in Excerpt Text"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:41
+#: lib/submenu/rrssb-styles.php:48
 msgctxt "submit button"
 msgid "Reload Default Responsive Styles"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:56
+#: lib/submenu/rrssb-styles.php:61
 msgctxt "metabox title"
 msgid "Social Sharing Styles"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:80
+#: lib/submenu/rrssb-styles.php:85
 msgctxt "option label"
 msgid "Use the Social Stylesheet"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:83
+#: lib/submenu/rrssb-styles.php:88
 msgctxt "option label"
 msgid "Enqueue the Stylesheet"
 msgstr ""

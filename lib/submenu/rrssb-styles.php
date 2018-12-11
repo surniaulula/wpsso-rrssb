@@ -33,15 +33,20 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 
 		public function filter_form_button_rows( $form_button_rows, $menu_id ) {
 
+			$row_num = null;
+
 			switch ( $menu_id ) {
-				
 				case 'rrssb-buttons':
-				case 'tools':
-
-					$form_button_rows[ 0 ][ 'reload_default_rrssb_styles' ] = _x( 'Reload Default Responsive Styles',
-						'submit button', 'wpsso-rrssb' );
-
+					$row_num = 0;
 					break;
+				case 'tools':
+					$row_num = 1;
+					break;
+			}
+
+			if ( null !== $row_num ) {
+				$form_button_rows[ $row_num ][ 'reload_default_rrssb_styles' ] = _x( 'Reload Default Responsive Styles',
+					'submit button', 'wpsso-rrssb' );
 			}
 
 			return $form_button_rows;
