@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"1.12.1-dev.3\n"
+"1.12.1-dev.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2018-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -14,11 +14,11 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
 #: lib/actions.php:80
-msgid "The default HTML for all sharing buttons has been reloaded and saved."
+msgid "The default responsive buttons HTML has been reloaded and saved."
 msgstr ""
 
 #: lib/actions.php:99
-msgid "The default sharing styles have been reloaded and saved."
+msgid "The default responsive styles CSS has been reloaded and saved."
 msgstr ""
 
 #: lib/config-gettext-extract.php:3
@@ -497,72 +497,72 @@ msgstr ""
 msgid "The %s file is not readable."
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:60
+#: lib/submenu/rrssb-buttons.php:62
 msgctxt "submit button"
-msgid "Reload Default Buttons HTML"
+msgid "Reload Default Responsive Buttons"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:73
+#: lib/submenu/rrssb-buttons.php:79
 msgctxt "metabox title"
 msgid "Social Sharing Buttons"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:129
+#: lib/submenu/rrssb-buttons.php:135
 msgctxt "metabox tab"
 msgid "Include Buttons"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:130
+#: lib/submenu/rrssb-buttons.php:136
 msgctxt "metabox tab"
 msgid "Buttons Position"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:131
+#: lib/submenu/rrssb-buttons.php:137
 msgctxt "metabox tab"
 msgid "Advanced Settings"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:179
+#: lib/submenu/rrssb-buttons.php:185
 msgctxt "option label"
 msgid "Include on Archive Webpages"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:183
+#: lib/submenu/rrssb-buttons.php:189
 msgctxt "option label"
 msgid "Include on Static Front Page"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:187
+#: lib/submenu/rrssb-buttons.php:193
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:195
+#: lib/submenu/rrssb-buttons.php:201
 msgctxt "option label"
 msgid "Position in Content Text"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:199
+#: lib/submenu/rrssb-buttons.php:205
 msgctxt "option label"
 msgid "Position in Excerpt Text"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:39
+#: lib/submenu/rrssb-styles.php:41
 msgctxt "submit button"
-msgid "Reload Default Styles"
+msgid "Reload Default Responsive Styles"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:50
+#: lib/submenu/rrssb-styles.php:56
 msgctxt "metabox title"
 msgid "Social Sharing Styles"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:74
+#: lib/submenu/rrssb-styles.php:80
 msgctxt "option label"
 msgid "Use the Social Stylesheet"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:77
+#: lib/submenu/rrssb-styles.php:83
 msgctxt "option label"
 msgid "Enqueue the Stylesheet"
 msgstr ""

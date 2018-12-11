@@ -31,8 +31,8 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 			if ( is_admin() ) {
 
 				$this->p->util->add_plugin_actions( $this, array(
-					'load_setting_page_reload_default_sharing_rrssb_buttons_html' => 4,
-					'load_setting_page_reload_default_sharing_rrssb_styles'       => 4,
+					'load_setting_page_reload_default_rrssb_buttons' => 4,
+					'load_setting_page_reload_default_rrssb_styles'       => 4,
 				) );
 			}
 		}
@@ -63,7 +63,7 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 			$rrssb->social->add_buttons_filter( $filter_name );
 		}
 
-		public function action_load_setting_page_reload_default_sharing_rrssb_buttons_html( $pagehook, $menu_id, $menu_name, $menu_lib ) {
+		public function action_load_setting_page_reload_default_rrssb_buttons( $pagehook, $menu_id, $menu_name, $menu_lib ) {
 
 			$opts =& $this->p->options;
 
@@ -77,10 +77,10 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 
 			$this->p->opt->save_options( WPSSO_OPTIONS_NAME, $this->p->options, $network = false );
 
-			$this->p->notice->upd( __( 'The default HTML for all sharing buttons has been reloaded and saved.', 'wpsso-rrssb' ) );
+			$this->p->notice->upd( __( 'The default responsive buttons HTML has been reloaded and saved.', 'wpsso-rrssb' ) );
 		}
 
-		public function action_load_setting_page_reload_default_sharing_rrssb_styles( $pagehook, $menu_id, $menu_name, $menu_lib ) {
+		public function action_load_setting_page_reload_default_rrssb_styles( $pagehook, $menu_id, $menu_name, $menu_lib ) {
 
 			$def_opts = $this->p->opt->get_defaults();
 
@@ -96,7 +96,7 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 
 			$this->p->opt->save_options( WPSSO_OPTIONS_NAME, $this->p->options, $network = false );
 
-			$this->p->notice->upd( __( 'The default sharing styles have been reloaded and saved.', 'wpsso-rrssb' ) );
+			$this->p->notice->upd( __( 'The default responsive styles CSS has been reloaded and saved.', 'wpsso-rrssb' ) );
 		}
 	}
 }

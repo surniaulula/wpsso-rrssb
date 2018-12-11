@@ -25,20 +25,26 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 			$this->menu_name = $name;
 			$this->menu_lib = $lib;
 			$this->menu_ext = $ext;
-		}
-
-		protected function add_plugin_hooks() {
 
 			$this->p->util->add_plugin_filters( $this, array(
-				'submit_button_rows' => 1,
-			) );
+				'form_button_rows' => 2,
+			), 1000 );
 		}
 
-		public function filter_submit_button_rows( $submit_button_rows ) {
+		public function filter_form_button_rows( $form_button_rows, $menu_id ) {
 
-			$submit_button_rows[0]['reload_default_sharing_rrssb_styles'] = _x( 'Reload Default Styles', 'submit button', 'wpsso-rrssb' );
+			switch ( $menu_id ) {
+				
+				case 'rrssb-buttons':
+				case 'tools':
 
-			return $submit_button_rows;
+					$form_button_rows[ 0 ][ 'reload_default_rrssb_styles' ] = _x( 'Reload Default Responsive Styles',
+						'submit button', 'wpsso-rrssb' );
+
+					break;
+			}
+
+			return $form_button_rows;
 		}
 
 		/**

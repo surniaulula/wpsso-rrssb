@@ -29,6 +29,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			$this->menu_ext  = $ext;
 
 			$this->set_objects();
+
+			$this->p->util->add_plugin_filters( $this, array(
+				'form_button_rows' => 2,
+			) );
 		}
 
 		private function set_objects() {
@@ -48,18 +52,20 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			}
 		}
 
-		protected function add_plugin_hooks() {
+		public function filter_form_button_rows( $form_button_rows, $menu_id ) {
 
-			$this->p->util->add_plugin_filters( $this, array(
-				'submit_button_rows' => 1,
-			) );
-		}
+			switch ( $menu_id ) {
+				
+				case 'rrssb-buttons':
+				case 'tools':
 
-		public function filter_submit_button_rows( $submit_button_rows ) {
+					$form_button_rows[ 0 ][ 'reload_default_rrssb_buttons' ] = _x( 'Reload Default Responsive Buttons',
+						'submit button', 'wpsso-rrssb' );
 
-			$submit_button_rows[0]['reload_default_sharing_rrssb_buttons_html'] = _x( 'Reload Default Buttons HTML', 'submit button', 'wpsso-rrssb' );
+					break;
+			}
 
-			return $submit_button_rows;
+			return $form_button_rows;
 		}
 
 		/**
