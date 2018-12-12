@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 1.12.0\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 1.13.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2018-11-29 08:57-0600\n"
-"PO-Revision-Date: 2018-11-29 08:57-0600\n"
+"POT-Creation-Date: 2018-12-12 08:13-0800\n"
+"PO-Revision-Date: 2018-12-12 08:21-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -16,12 +16,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: lib/actions.php:80
-msgid "The default HTML for all sharing buttons has been reloaded and saved."
-msgstr "Le code HTML par défaut pour tous les boutons de partage a été rechargé et sauvegardé."
+msgid "The default responsive buttons HTML has been reloaded and saved."
+msgstr "L'HTML par défaut des boutons réactifs ont été rechargés et sauvegardés."
 
 #: lib/actions.php:99
-msgid "The default sharing styles have been reloaded and saved."
-msgstr "Les styles de partage par défaut ont été rechargés et sauvegardés."
+msgid "The default responsive styles CSS has been reloaded and saved."
+msgstr "Le CSS par défaut des styles réactifs ont été rechargés et sauvegardés."
 
 #: lib/config-gettext-extract.php:3
 msgctxt "option value"
@@ -445,72 +445,72 @@ msgstr "Ce contenu doit être publié<br/>avant d'être partagé."
 msgid "The %s file is not readable."
 msgstr "Le fichier %s n'est pas lisible."
 
-#: lib/submenu/rrssb-buttons.php:65
+#: lib/submenu/rrssb-buttons.php:69
+msgctxt "submit button"
+msgid "Reload Default Responsive Buttons"
+msgstr "Recharger boutons réactifs par default"
+
+#: lib/submenu/rrssb-buttons.php:84
 msgctxt "metabox title"
 msgid "Social Sharing Buttons"
 msgstr "Boutons de partage social"
 
-#: lib/submenu/rrssb-buttons.php:105
-msgctxt "submit button"
-msgid "Reload Default Buttons HTML"
-msgstr "Recharger HTML par default des boutons"
-
-#: lib/submenu/rrssb-buttons.php:128
+#: lib/submenu/rrssb-buttons.php:140
 msgctxt "metabox tab"
 msgid "Include Buttons"
 msgstr "Ajout de boutons"
 
-#: lib/submenu/rrssb-buttons.php:129
+#: lib/submenu/rrssb-buttons.php:141
 msgctxt "metabox tab"
 msgid "Buttons Position"
 msgstr "Position des boutons"
 
-#: lib/submenu/rrssb-buttons.php:130
+#: lib/submenu/rrssb-buttons.php:142
 msgctxt "metabox tab"
 msgid "Advanced Settings"
 msgstr "Réglages avancés"
 
-#: lib/submenu/rrssb-buttons.php:178
+#: lib/submenu/rrssb-buttons.php:190
 msgctxt "option label"
 msgid "Include on Archive Webpages"
 msgstr "Inclure sur les pages d'archive"
 
-#: lib/submenu/rrssb-buttons.php:182
+#: lib/submenu/rrssb-buttons.php:194
 msgctxt "option label"
 msgid "Include on Static Front Page"
 msgstr "Inclure sur la page statique d'avant"
 
-#: lib/submenu/rrssb-buttons.php:186
+#: lib/submenu/rrssb-buttons.php:198
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr "Inclure sur les articles de type"
 
-#: lib/submenu/rrssb-buttons.php:194
+#: lib/submenu/rrssb-buttons.php:206
 msgctxt "option label"
 msgid "Position in Content Text"
 msgstr "Position dans le texte de contenu"
 
-#: lib/submenu/rrssb-buttons.php:198
+#: lib/submenu/rrssb-buttons.php:210
 msgctxt "option label"
 msgid "Position in Excerpt Text"
 msgstr "Position dans le texte d'extrait"
 
-#: lib/submenu/rrssb-styles.php:42
+#: lib/submenu/rrssb-styles.php:48
+msgctxt "submit button"
+msgid "Reload Default Responsive Styles"
+msgstr "Recharger styles réactifs par défaut"
+
+#: lib/submenu/rrssb-styles.php:61
 msgctxt "metabox title"
 msgid "Social Sharing Styles"
 msgstr "Styles de partage social"
 
-#: lib/submenu/rrssb-styles.php:56
-msgctxt "submit button"
-msgid "Reload Default Styles"
-msgstr "Recharger styles par défaut"
-
-#: lib/submenu/rrssb-styles.php:73
+#: lib/submenu/rrssb-styles.php:85
 msgctxt "option label"
 msgid "Use the Social Stylesheet"
 msgstr "Utiliser la feuille de style social"
 
-#: lib/submenu/rrssb-styles.php:76
+#: lib/submenu/rrssb-styles.php:88
 msgctxt "option label"
 msgid "Enqueue the Stylesheet"
 msgstr "Placer la feuille de style en queue"
