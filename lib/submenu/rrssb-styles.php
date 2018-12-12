@@ -36,7 +36,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 			$row_num = null;
 
 			switch ( $menu_id ) {
-				case 'rrssb-buttons':
+				case 'rrssb-styles':
 					$row_num = 0;
 					break;
 				case 'tools':
