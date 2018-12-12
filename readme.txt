@@ -126,7 +126,7 @@ WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an add
 
 01. WPSSO RRSSB example showing the *Ridiculously Responsive Social Sharing Buttons* enabled (with the default stylesheet) in the CSS sidebar, content text, and widget.
 02. WPSSO RRSSB example showing a WooCommerce product page with *Ridiculously Responsive Social Sharing Buttons* in the CSS sidebar, short and long product descriptions (Pro version).
-03. WPSSO RRSSB Sharing Buttons tab in the SSO metabox allows you to fine-tune and customize the text used by several social sharing websites (Pro version).
+03. WPSSO RRSSB Sharing Buttons tab in the Document SSO metabox allows you to fine-tune and customize the text used by several social sharing websites (Pro version).
 04. WPSSO RRSSB Responsive Buttons settings page.
 05. WPSSO RRSSB Responsive Styles settings page.
 
@@ -148,12 +148,14 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.12.1-dev.5 (2018/12/11)**
+**Version 1.13.0-b.1 (2018/12/12)**
 
 * *New Features*
 	* None.
 * *Improvements*
-	* None.
+	* Added action buttons in the new SSO &gt; Tools settings page for WPSSO Core v4.18.0:
+		* Reload Default Responsive Buttons
+		* Reload Default Responsive Styles
 * *Bugfixes*
 	* None.
 * *Developer Notes*
@@ -172,9 +174,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.12.1-dev.5 =
+= 1.13.0-b.1 =
 
-(2018/12/11) Renamed the 'wpsso_action_buttons' filter hook to 'wpsso_form_button_rows' for WPSSO Core v4.18.0.
+(2018/12/12) Added action buttons in the new SSO &gt; Tools settings page for WPSSO Core v4.18.0.
 
 = 1.12.0 =
 
