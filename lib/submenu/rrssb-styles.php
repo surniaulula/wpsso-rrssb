@@ -40,7 +40,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 					$row_num = 0;
 					break;
 				case 'tools':
-					$row_num = 1;
+					$row_num = 2;
 					break;
 			}
 

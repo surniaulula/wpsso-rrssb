@@ -61,7 +61,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 					$row_num = 0;
 					break;
 				case 'tools':
-					$row_num = 1;
+					$row_num = 2;
 					break;
 			}
 
