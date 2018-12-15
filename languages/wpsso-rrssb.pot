@@ -21,104 +21,6 @@ msgstr ""
 msgid "The default responsive styles CSS has been reloaded and saved."
 msgstr ""
 
-#: lib/config-gettext-extract.php:3
-msgctxt "option value"
-msgid "Admin Edit"
-msgstr ""
-
-#: lib/config-gettext-extract.php:4
-msgctxt "option value"
-msgid "All Buttons"
-msgstr ""
-
-#: lib/config-gettext-extract.php:5
-msgctxt "option value"
-msgid "Any Platform"
-msgstr ""
-
-#: lib/config-gettext-extract.php:6
-msgctxt "option value"
-msgid "Bottom"
-msgstr ""
-
-#: lib/config-gettext-extract.php:7
-msgctxt "option label"
-msgid "Buttons HTML"
-msgstr ""
-
-#: lib/config-gettext-extract.php:8
-msgctxt "option value"
-msgid "Content"
-msgstr ""
-
-#: lib/config-gettext-extract.php:9
-msgctxt "option value"
-msgid "CSS Sidebar"
-msgstr ""
-
-#: lib/config-gettext-extract.php:10
-msgctxt "option value"
-msgid "Desktop Only"
-msgstr ""
-
-#: lib/config-gettext-extract.php:11
-msgctxt "option value"
-msgid "Excerpt"
-msgstr ""
-
-#: lib/config-gettext-extract.php:12
-msgctxt "option value"
-msgid "HTTP"
-msgstr ""
-
-#: lib/config-gettext-extract.php:13
-msgctxt "option value"
-msgid "HTTPS"
-msgstr ""
-
-#: lib/config-gettext-extract.php:14
-msgctxt "option value"
-msgid "Mobile Only"
-msgstr ""
-
-#: lib/config-gettext-extract.php:15
-msgctxt "lib file description"
-msgid "Responsive Buttons"
-msgstr ""
-
-#: lib/config-gettext-extract.php:16 lib/filters.php:415
-msgctxt "lib file description"
-msgid "Responsive Styles"
-msgstr ""
-
-#: lib/config-gettext-extract.php:17
-msgctxt "option value"
-msgid "Shortcode"
-msgstr ""
-
-#: lib/config-gettext-extract.php:18
-msgctxt "option value"
-msgid "Top and Bottom"
-msgstr ""
-
-#: lib/config-gettext-extract.php:19
-msgctxt "option value"
-msgid "Top"
-msgstr ""
-
-#: lib/config-gettext-extract.php:20
-msgctxt "option value"
-msgid "Widget"
-msgstr ""
-
-#: lib/config-gettext-extract.php:21
-msgctxt "plugin description"
-msgid ""
-"WPSSO Core add-on to provide Ridiculously Responsive (SVG) Social Sharing "
-"Buttons in your content, excerpts, CSS sidebar, widget, shortcode, post edit "
-"pages, etc."
-msgstr ""
-
 #: lib/filters.php:78
 msgid "Failed to open the css file %s for reading."
 msgstr ""
@@ -247,6 +149,11 @@ msgid ""
 "added directly to the webpage HTML."
 msgstr ""
 
+#: lib/filters.php:415 lib/gettext-config.php:7
+msgctxt "lib file description"
+msgid "Responsive Styles"
+msgstr ""
+
 #: lib/filters.php:421
 msgid ""
 "Have WordPress enqueue the social stylesheet instead of adding the CSS to in "
@@ -298,73 +205,180 @@ msgstr ""
 msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:38 lib/gpl/admin/sharing.php:59
-#: lib/pro/admin/sharing.php:46 lib/pro/admin/sharing.php:67
+#: lib/gettext-config.php:6
+msgctxt "lib file description"
+msgid "Responsive Buttons"
+msgstr ""
+
+#: lib/gettext-config.php:8
+msgctxt "plugin description"
+msgid ""
+"WPSSO Core add-on to provide Ridiculously Responsive (SVG) Social Sharing "
+"Buttons in your content, excerpts, CSS sidebar, widget, shortcode, post edit "
+"pages, etc."
+msgstr ""
+
+#: lib/gettext-config.php:9
+msgctxt "option label"
+msgid "Buttons HTML"
+msgstr ""
+
+#: lib/gettext-config.php:10 lib/gettext-config.php:17
+msgctxt "option value"
+msgid "Content"
+msgstr ""
+
+#: lib/gettext-config.php:11 lib/gettext-config.php:18
+msgctxt "option value"
+msgid "Excerpt"
+msgstr ""
+
+#: lib/gettext-config.php:12 lib/gettext-config.php:19
+msgctxt "option value"
+msgid "CSS Sidebar"
+msgstr ""
+
+#: lib/gettext-config.php:13 lib/gettext-config.php:20
+msgctxt "option value"
+msgid "Admin Edit"
+msgstr ""
+
+#: lib/gettext-config.php:14
+msgctxt "option value"
+msgid "HTTP"
+msgstr ""
+
+#: lib/gettext-config.php:15
+msgctxt "option value"
+msgid "HTTPS"
+msgstr ""
+
+#: lib/gettext-config.php:16
+msgctxt "option value"
+msgid "All Buttons"
+msgstr ""
+
+#: lib/gettext-config.php:21
+msgctxt "option value"
+msgid "Shortcode"
+msgstr ""
+
+#: lib/gettext-config.php:22
+msgctxt "option value"
+msgid "Widget"
+msgstr ""
+
+#: lib/gettext-config.php:23
+msgctxt "option value"
+msgid "Top"
+msgstr ""
+
+#: lib/gettext-config.php:24
+msgctxt "option value"
+msgid "Bottom"
+msgstr ""
+
+#: lib/gettext-config.php:25
+msgctxt "option value"
+msgid "Top and Bottom"
+msgstr ""
+
+#: lib/gettext-config.php:26
+msgctxt "option value"
+msgid "Desktop Only"
+msgstr ""
+
+#: lib/gettext-config.php:27
+msgctxt "option value"
+msgid "Mobile Only"
+msgstr ""
+
+#: lib/gettext-config.php:28
+msgctxt "option value"
+msgid "Any Platform"
+msgstr ""
+
+#: lib/gettext-pro.php:6 lib/gettext-pro.php:9 lib/gpl/admin/sharing.php:38
+#: lib/gpl/admin/sharing.php:59 lib/pro/admin/sharing.php:46
+#: lib/pro/admin/sharing.php:67
 msgctxt "option label"
 msgid "Sharing Buttons HTML Cache Expiry"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:41 lib/gpl/admin/sharing.php:62
-#: lib/pro/admin/sharing.php:49 lib/pro/admin/sharing.php:70
+#: lib/gettext-pro.php:7 lib/gettext-pro.php:10 lib/gpl/admin/sharing.php:41
+#: lib/gpl/admin/sharing.php:62 lib/pro/admin/sharing.php:49
+#: lib/pro/admin/sharing.php:70
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:54 lib/pro/admin/sharing.php:62
+#: lib/gettext-pro.php:8 lib/gpl/admin/sharing.php:54
+#: lib/pro/admin/sharing.php:62
 msgctxt "option label"
 msgid "Force Protocol for Shared URLs"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:76 lib/pro/admin/sharing.php:84
+#: lib/gettext-pro.php:11 lib/gpl/admin/sharing.php:76
+#: lib/pro/admin/sharing.php:84
 msgid "Save a draft version or publish the %s to display these options."
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:92 lib/pro/admin/sharing.php:97
+#: lib/gettext-pro.php:12 lib/gpl/admin/sharing.php:92
+#: lib/pro/admin/sharing.php:97
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:113 lib/pro/admin/sharing.php:117
+#: lib/gettext-pro.php:13 lib/gpl/admin/sharing.php:113
+#: lib/pro/admin/sharing.php:117
 msgctxt "option label"
 msgid "Email Subject"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:121 lib/pro/admin/sharing.php:124
+#: lib/gettext-pro.php:14 lib/gpl/admin/sharing.php:121
+#: lib/pro/admin/sharing.php:124
 msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:143 lib/pro/admin/sharing.php:145
+#: lib/gettext-pro.php:15 lib/gpl/admin/sharing.php:143
+#: lib/pro/admin/sharing.php:145
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:172 lib/pro/admin/sharing.php:174
+#: lib/gettext-pro.php:16 lib/gpl/admin/sharing.php:172
+#: lib/pro/admin/sharing.php:174
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:201 lib/pro/admin/sharing.php:202
+#: lib/gettext-pro.php:17 lib/gpl/admin/sharing.php:201
+#: lib/pro/admin/sharing.php:202
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/gpl/admin/sharing.php:209 lib/pro/admin/sharing.php:209
+#: lib/gettext-pro.php:18 lib/gpl/admin/sharing.php:209
+#: lib/pro/admin/sharing.php:209
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
 
-#: lib/gpl/ecom/woocommerce.php:105 lib/pro/ecom/woocommerce.php:110
+#: lib/gettext-pro.php:19 lib/gpl/ecom/woocommerce.php:105
+#: lib/pro/ecom/woocommerce.php:110
 msgctxt "option label"
 msgid "Position in Woo Short Text"
 msgstr ""
 
-#: lib/gpl/forum/bbpress.php:109 lib/pro/forum/bbpress.php:162
+#: lib/gettext-pro.php:20 lib/gpl/forum/bbpress.php:109
+#: lib/pro/forum/bbpress.php:162
 msgctxt "option label"
 msgid "Position in bbPress Single"
 msgstr ""
 
-#: lib/gpl/social/buddyblog.php:82 lib/pro/social/buddyblog.php:118
+#: lib/gettext-pro.php:21 lib/gpl/social/buddyblog.php:82
+#: lib/pro/social/buddyblog.php:118
 msgctxt "option label"
 msgid "Position in BuddyBlog Post"
 msgstr ""
