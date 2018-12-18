@@ -157,7 +157,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * *Bugfixes*
 	* None.
 * *Developer Notes*
-	* Removed the addition of `$wp_query->query` from the transient cache array key values.
+	* Removed $wp_query as a salt for transient cache array index keys.
 
 **Version 1.13.0 (2018/12/14)**
 
@@ -176,7 +176,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 1.13.1-dev.2 =
 
-(2018/12/17) Removed the addition of $wp_query->query from the transient cache array key values.
+(2018/12/17) Removed $wp_query as a salt for transient cache array index keys.
 
 = 1.13.0 =
 
