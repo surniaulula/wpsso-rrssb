@@ -573,8 +573,6 @@ $cache_array[ $cache_index ] .
 
 			$cache_index .= false !== $share_ids ? '_share_ids:' . http_build_query( $share_ids, '', ',' ) : '';
 
-			$cache_index = SucomUtil::get_query_salt( $cache_index );	// Add $wp_query args.
-
 			$cache_index = apply_filters( $this->p->lca . '_rrssb_buttons_cache_index', $cache_index );
 
 			return $cache_index;
