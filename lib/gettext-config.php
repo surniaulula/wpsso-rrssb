@@ -5,7 +5,7 @@
  */
 _x( 'Responsive Buttons', 'lib file description', 'wpsso-rrssb' );
 _x( 'Responsive Styles', 'lib file description', 'wpsso-rrssb' );
-_x( 'WPSSO Core add-on to provide Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, post edit pages, etc.', 'plugin description', 'wpsso-rrssb' );
+_x( 'WPSSO Core add-on offers Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc.', 'plugin description', 'wpsso-rrssb' );
 _x( 'Buttons HTML', 'option label', 'wpsso-rrssb' );
 _x( 'Content', 'option value', 'wpsso-rrssb' );
 _x( 'Excerpt', 'option value', 'wpsso-rrssb' );

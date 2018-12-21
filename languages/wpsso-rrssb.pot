@@ -213,8 +213,8 @@ msgstr ""
 #: lib/gettext-config.php:8
 msgctxt "plugin description"
 msgid ""
-"WPSSO Core add-on to provide Ridiculously Responsive (SVG) Social Sharing "
-"Buttons in your content, excerpts, CSS sidebar, widget, shortcode, post edit "
+"WPSSO Core add-on offers Ridiculously Responsive (SVG) Social Sharing "
+"Buttons in your content, excerpts, CSS sidebar, widget, shortcode, editor "
 "pages, etc."
 msgstr ""
 
@@ -623,8 +623,8 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"WPSSO Core add-on to provide Ridiculously Responsive (SVG) Social Sharing "
-"Buttons in your content, excerpts, CSS sidebar, widget, shortcode, post edit "
+"WPSSO Core add-on offers Ridiculously Responsive (SVG) Social Sharing "
+"Buttons in your content, excerpts, CSS sidebar, widget, shortcode, editor "
 "pages, etc."
 msgstr ""
 
