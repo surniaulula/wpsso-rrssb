@@ -14,7 +14,7 @@ Tested Up To: 5.0
 WC Tested Up To: 3.5
 Stable Tag: 1.13.1
 
-WPSSO Core add-on to provide Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
+WPSSO Core add-on offers Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, etc.
 
 == Description ==
 
