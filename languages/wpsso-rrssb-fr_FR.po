@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 1.13.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2018-12-12 08:13-0800\n"
-"PO-Revision-Date: 2018-12-12 08:51-0800\n"
+"POT-Creation-Date: 2018-12-21 19:17-0600\n"
+"PO-Revision-Date: 2018-12-21 19:17-0600\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -22,101 +22,6 @@ msgstr "L'HTML par défaut des boutons réactifs ont été rechargés et sauvega
 #: lib/actions.php:99
 msgid "The default responsive styles CSS has been reloaded and saved."
 msgstr "Le CSS par défaut des styles réactifs ont été rechargés et sauvegardés."
-
-#: lib/config-gettext-extract.php:3
-msgctxt "option value"
-msgid "Admin Edit"
-msgstr "Edit admin"
-
-#: lib/config-gettext-extract.php:4
-msgctxt "option value"
-msgid "All Buttons"
-msgstr "Tous les boutons"
-
-#: lib/config-gettext-extract.php:5
-msgctxt "option value"
-msgid "Any Platform"
-msgstr "Toute plateformes"
-
-#: lib/config-gettext-extract.php:6
-msgctxt "option value"
-msgid "Bottom"
-msgstr "Le bas"
-
-#: lib/config-gettext-extract.php:7
-msgctxt "option label"
-msgid "Buttons HTML"
-msgstr "HTML des boutons"
-
-#: lib/config-gettext-extract.php:8
-msgctxt "option value"
-msgid "Content"
-msgstr "Contenu"
-
-#: lib/config-gettext-extract.php:9
-msgctxt "option value"
-msgid "CSS Sidebar"
-msgstr "Barre latérale"
-
-#: lib/config-gettext-extract.php:10
-msgctxt "option value"
-msgid "Desktop Only"
-msgstr "Ordinateur seulement"
-
-#: lib/config-gettext-extract.php:11
-msgctxt "option value"
-msgid "Excerpt"
-msgstr "Extrait"
-
-#: lib/config-gettext-extract.php:12
-msgctxt "option value"
-msgid "HTTP"
-msgstr "HTTP"
-
-#: lib/config-gettext-extract.php:13
-msgctxt "option value"
-msgid "HTTPS"
-msgstr "HTTPS"
-
-#: lib/config-gettext-extract.php:14
-msgctxt "option value"
-msgid "Mobile Only"
-msgstr "Mobile Seulement"
-
-#: lib/config-gettext-extract.php:15
-msgctxt "lib file description"
-msgid "Responsive Buttons"
-msgstr "Boutons réactifs"
-
-#: lib/config-gettext-extract.php:16 lib/filters.php:415
-msgctxt "lib file description"
-msgid "Responsive Styles"
-msgstr "Styles réactifs"
-
-#: lib/config-gettext-extract.php:17
-msgctxt "option value"
-msgid "Shortcode"
-msgstr "Shortcode"
-
-#: lib/config-gettext-extract.php:18
-msgctxt "option value"
-msgid "Top and Bottom"
-msgstr "Haut et bas"
-
-#: lib/config-gettext-extract.php:19
-msgctxt "option value"
-msgid "Top"
-msgstr "Le haut"
-
-#: lib/config-gettext-extract.php:20
-msgctxt "option value"
-msgid "Widget"
-msgstr "Widget"
-
-#: lib/config-gettext-extract.php:21
-msgctxt "plugin description"
-msgid "WPSSO Core add-on to provide Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, post edit pages, etc."
-msgstr "Extension d'ajout WPSSO Core pour fournir des boutons de partage sociaux ridiculement réactif (SVG) dans le contenu, extraits, barre flottante CSS, widget, pages d'édition, etc."
 
 #: lib/filters.php:78
 msgid "Failed to open the css file %s for reading."
@@ -207,6 +112,11 @@ msgstr "Modifiez les URL partagées par les boutons de partage pour utiliser un 
 msgid "Add the CSS of all <em>%1$s</em> to webpages (default is checked). The CSS will be <strong>minified</strong>, and saved to a single stylesheet with a URL of <a href=\"%2$s\">%3$s</a>. The minified stylesheet can be enqueued or added directly to the webpage HTML."
 msgstr "Ajouter le CSS de tous les <em>%1$s</em> au pages Web (cochée par défaut). Le CSS sera <strong>minimisé</strong> et sauvegardé dans une seule feuille de style avec l'URL <a href=\"%2$s\">%3$s</a>. La feuille de style peut être mis en queue ou ajouté directement au HTML des pages Web."
 
+#: lib/filters.php:415 lib/gettext-config.php:7
+msgctxt "lib file description"
+msgid "Responsive Styles"
+msgstr "Styles réactifs"
+
 #: lib/filters.php:421
 msgid "Have WordPress enqueue the social stylesheet instead of adding the CSS to in the webpage HTML (default is unchecked). Enqueueing the stylesheet may be desirable if you use a plugin to concatenate all enqueued styles into a single stylesheet URL."
 msgstr "Demander a WordPress de mettre la feuille de style en queue au lieu d'ajouter le CSS au HTML des pages Web (décochée par défaut). Mettre la feuille de style en queue peut être souhaitable si vous utilisez une extension pour assembler tous le contenu des feuilles de styles dans un seul URL."
@@ -247,74 +157,178 @@ msgstr "Le code HTML des boutons de partage social est enregistré dans le cache
 msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
 msgstr "La valeur d'expiration de cache suggérée est de %1$s secondes (%2$s)."
 
-#: lib/gpl/admin/sharing.php:38 lib/gpl/admin/sharing.php:59
-#: lib/pro/admin/sharing.php:46 lib/pro/admin/sharing.php:67
+#: lib/gettext-config.php:6
+msgctxt "lib file description"
+msgid "Responsive Buttons"
+msgstr "Boutons réactifs"
+
+#: lib/gettext-config.php:8
+msgctxt "plugin description"
+msgid "WPSSO Core add-on offers Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc."
+msgstr "Ajout WPSSO Core pour fournir des boutons de partage sociaux ridiculement réactif (SVG) dans le contenu, extraits, barre flottante CSS, widget, pages d'édition, etc."
+
+#: lib/gettext-config.php:9
+msgctxt "option label"
+msgid "Buttons HTML"
+msgstr "HTML des boutons"
+
+#: lib/gettext-config.php:10 lib/gettext-config.php:17
+msgctxt "option value"
+msgid "Content"
+msgstr "Contenu"
+
+#: lib/gettext-config.php:11 lib/gettext-config.php:18
+msgctxt "option value"
+msgid "Excerpt"
+msgstr "Extrait"
+
+#: lib/gettext-config.php:12 lib/gettext-config.php:19
+msgctxt "option value"
+msgid "CSS Sidebar"
+msgstr "Barre latérale"
+
+#: lib/gettext-config.php:13 lib/gettext-config.php:20
+msgctxt "option value"
+msgid "Admin Edit"
+msgstr "Edit admin"
+
+#: lib/gettext-config.php:14
+msgctxt "option value"
+msgid "HTTP"
+msgstr "HTTP"
+
+#: lib/gettext-config.php:15
+msgctxt "option value"
+msgid "HTTPS"
+msgstr "HTTPS"
+
+#: lib/gettext-config.php:16
+msgctxt "option value"
+msgid "All Buttons"
+msgstr "Tous les boutons"
+
+#: lib/gettext-config.php:21
+msgctxt "option value"
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: lib/gettext-config.php:22
+msgctxt "option value"
+msgid "Widget"
+msgstr "Widget"
+
+#: lib/gettext-config.php:23
+msgctxt "option value"
+msgid "Top"
+msgstr "Le haut"
+
+#: lib/gettext-config.php:24
+msgctxt "option value"
+msgid "Bottom"
+msgstr "Le bas"
+
+#: lib/gettext-config.php:25
+msgctxt "option value"
+msgid "Top and Bottom"
+msgstr "Haut et bas"
+
+#: lib/gettext-config.php:26
+msgctxt "option value"
+msgid "Desktop Only"
+msgstr "Ordinateur seulement"
+
+#: lib/gettext-config.php:27
+msgctxt "option value"
+msgid "Mobile Only"
+msgstr "Mobile Seulement"
+
+#: lib/gettext-config.php:28
+msgctxt "option value"
+msgid "Any Platform"
+msgstr "Toute plateformes"
+
+#: lib/gettext-pro.php:6 lib/gettext-pro.php:9 lib/gpl/admin/sharing.php:38
+#: lib/gpl/admin/sharing.php:59 lib/pro/admin/sharing.php:46
+#: lib/pro/admin/sharing.php:67
 msgctxt "option label"
 msgid "Sharing Buttons HTML Cache Expiry"
 msgstr "Expiration cache HTML des boutons"
 
-#: lib/gpl/admin/sharing.php:41 lib/gpl/admin/sharing.php:62
-#: lib/pro/admin/sharing.php:49 lib/pro/admin/sharing.php:70
+#: lib/gettext-pro.php:7 lib/gettext-pro.php:10 lib/gpl/admin/sharing.php:41
+#: lib/gpl/admin/sharing.php:62 lib/pro/admin/sharing.php:49
+#: lib/pro/admin/sharing.php:70
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr "secondes (0 pour désactiver)"
 
-#: lib/gpl/admin/sharing.php:54 lib/pro/admin/sharing.php:62
+#: lib/gettext-pro.php:8 lib/gpl/admin/sharing.php:54
+#: lib/pro/admin/sharing.php:62
 msgctxt "option label"
 msgid "Force Protocol for Shared URLs"
 msgstr "Forcer protocole pour URLs partagées"
 
 # Ignore the post type to avoid gender issues in the French translation.
-#: lib/gpl/admin/sharing.php:76 lib/pro/admin/sharing.php:84
+#: lib/gettext-pro.php:11 lib/gpl/admin/sharing.php:76
+#: lib/pro/admin/sharing.php:84
 msgid "Save a draft version or publish the %s to display these options."
 msgstr "Enregistrer un brouillon ou publier pour activer ces options."
 
-#: lib/gpl/admin/sharing.php:92 lib/pro/admin/sharing.php:97
+#: lib/gettext-pro.php:12 lib/gpl/admin/sharing.php:92
+#: lib/pro/admin/sharing.php:97
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr "Désactiver les boutons"
 
-#: lib/gpl/admin/sharing.php:113 lib/pro/admin/sharing.php:117
+#: lib/gettext-pro.php:13 lib/gpl/admin/sharing.php:113
+#: lib/pro/admin/sharing.php:117
 msgctxt "option label"
 msgid "Email Subject"
 msgstr "Sujet du couriel"
 
-#: lib/gpl/admin/sharing.php:121 lib/pro/admin/sharing.php:124
+#: lib/gettext-pro.php:14 lib/gpl/admin/sharing.php:121
+#: lib/pro/admin/sharing.php:124
 msgctxt "option label"
 msgid "Email Message"
 msgstr "Message du courriel"
 
-#: lib/gpl/admin/sharing.php:143 lib/pro/admin/sharing.php:145
+#: lib/gettext-pro.php:15 lib/gpl/admin/sharing.php:143
+#: lib/pro/admin/sharing.php:145
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr "Texte du Tweet"
 
-#: lib/gpl/admin/sharing.php:172 lib/pro/admin/sharing.php:174
+#: lib/gettext-pro.php:16 lib/gpl/admin/sharing.php:172
+#: lib/pro/admin/sharing.php:174
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr "Texte légende Pinterest"
 
-#: lib/gpl/admin/sharing.php:201 lib/pro/admin/sharing.php:202
+#: lib/gettext-pro.php:17 lib/gpl/admin/sharing.php:201
+#: lib/pro/admin/sharing.php:202
 msgctxt "option label"
 msgid "%s Title"
 msgstr "Titre %s"
 
-#: lib/gpl/admin/sharing.php:209 lib/pro/admin/sharing.php:209
+#: lib/gettext-pro.php:18 lib/gpl/admin/sharing.php:209
+#: lib/pro/admin/sharing.php:209
 msgctxt "option label"
 msgid "%s Caption"
 msgstr "Légende %s"
 
-#: lib/gpl/ecom/woocommerce.php:105 lib/pro/ecom/woocommerce.php:110
+#: lib/gettext-pro.php:19 lib/gpl/ecom/woocommerce.php:105
+#: lib/pro/ecom/woocommerce.php:110
 msgctxt "option label"
 msgid "Position in Woo Short Text"
 msgstr "Position dans le texte Woo Short"
 
-#: lib/gpl/forum/bbpress.php:109 lib/pro/forum/bbpress.php:162
+#: lib/gettext-pro.php:20 lib/gpl/forum/bbpress.php:109
+#: lib/pro/forum/bbpress.php:162
 msgctxt "option label"
 msgid "Position in bbPress Single"
 msgstr "Position dans le texte bbPress Single"
 
-#: lib/gpl/social/buddyblog.php:82 lib/pro/social/buddyblog.php:118
+#: lib/gettext-pro.php:21 lib/gpl/social/buddyblog.php:82
+#: lib/pro/social/buddyblog.php:118
 msgctxt "option label"
 msgid "Position in BuddyBlog Post"
 msgstr "Position dans le texte d'article BuddyBlog"
@@ -550,8 +564,8 @@ msgid "https://wpsso.com/extend/plugins/wpsso-rrssb/"
 msgstr "https://wpsso.com/extend/plugins/wpsso-rrssb/"
 
 #. Description of the plugin/theme
-msgid "WPSSO Core add-on to provide Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, post edit pages, etc."
-msgstr "Extension d'ajout WPSSO Core pour fournir des boutons de partage sociaux ridiculement réactif (SVG) dans le contenu, extraits, barre flottante CSS, widget, pages d'édition, etc."
+msgid "WPSSO Core add-on offers Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc."
+msgstr "Ajout WPSSO Core pour fournir des boutons de partage sociaux ridiculement réactif (SVG) dans le contenu, extraits, barre flottante CSS, widget, pages d'édition, etc."
 
 #. Author of the plugin/theme
 msgid "JS Morisset"
