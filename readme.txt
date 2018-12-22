@@ -79,8 +79,6 @@ The Pro version of WPSSO RRSSB includes special integration modules to add socia
 
 * Uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.
 
-* Download the Free version from [GitHub](https://surniaulula.github.io/wpsso-rrssb/) or [WordPress.org](https://wordpress.org/plugins/wpsso-rrssb/).
-
 <h3>WPSSO RRSSB Additional Features (Pro version)</h3>
 
 * Extends the features of WPSSO Core Pro (requires an active and licensed <a href="https://wpsso.com/">WPSSO Core Pro plugin</a>).
