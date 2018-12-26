@@ -459,12 +459,6 @@ div.wpsso-rrssb
 
 		public function filter_status_gpl_features( $features, $ext, $info ) {
 
-			if ( ! empty( $info[ 'lib' ]['submenu']['rrssb-buttons'] ) ) {
-				$features['(sharing) Sharing Buttons'] = array(
-					'classname' => $ext . 'Sharing',
-				);
-			}
-
 			if ( ! empty( $info[ 'lib' ]['submenu']['rrssb-styles'] ) ) {
 				$features['(sharing) Sharing Stylesheet'] = array(
 					'status' => empty( $this->p->options['buttons_use_social_style'] ) ? 'off' : 'on',
