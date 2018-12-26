@@ -146,7 +146,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.13.2 (2018/12/19)**
+**Version 1.13.2 (2018/12/26)**
 
 * *New Features*
 	* None.
