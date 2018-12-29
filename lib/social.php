@@ -83,20 +83,20 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				$wpsso->debug->mark();
 			}
 
-			if ( empty( $opts['buttons_use_social_style'] ) ) {
+			if ( empty( $opts[ 'buttons_use_social_style' ] ) ) {
 
 				self::unlink_sharing_css();
 
 				return;
 			}
 
-			$styles = apply_filters( $wpsso->lca . '_rrssb_styles', $wpsso->cf['sharing']['rrssb_styles'] );
+			$styles = apply_filters( $wpsso->lca . '_rrssb_styles', $wpsso->cf[ 'sharing' ][ 'rrssb_styles' ] );
 
 			$sharing_css_data = '';
 
 			foreach ( $styles as $id => $name ) {
-				if ( isset( $opts['buttons_css_' . $id] ) ) {
-					$sharing_css_data .= $opts['buttons_css_' . $id];
+				if ( isset( $opts[ 'buttons_css_' . $id ] ) ) {
+					$sharing_css_data .= $opts[ 'buttons_css_' . $id ];
 				}
 			}
 
@@ -345,7 +345,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					$this->p->debug->log( 'is_singular is false' );
 				}
 
-				if ( empty( $this->p->options['buttons_on_index'] ) ) {
+				if ( empty( $this->p->options[ 'buttons_on_index' ] ) ) {
 					$error_message = 'buttons_on_index not enabled';
 				}
 
@@ -355,7 +355,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					$this->p->debug->log( 'is_front_page is true' );
 				}
 
-				if ( empty( $this->p->options['buttons_on_front'] ) ) {
+				if ( empty( $this->p->options[ 'buttons_on_front' ] ) ) {
 					$error_message = 'buttons_on_front not enabled';
 				}
 
@@ -420,7 +420,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			if ( $cache_exp_secs > 0 ) {
 
-				$cache_array = get_transient( $cache_id );
+				$cache_array = SucomUtil::get_transient_array( $cache_id );
 
 				if ( isset( $cache_array[ $cache_index ] ) ) {	// can be an empty string
 
@@ -448,8 +448,8 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			}
 
 			if ( empty( $location ) ) {
-				$location = empty( $this->p->options['buttons_pos_' . $type] ) ? 
-					'bottom' : $this->p->options['buttons_pos_' . $type];
+				$location = empty( $this->p->options[ 'buttons_pos_' . $type] ) ? 
+					'bottom' : $this->p->options[ 'buttons_pos_' . $type];
 			} 
 
 			if ( ! isset( $cache_array[ $cache_index ] ) ) {
@@ -459,9 +459,9 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				 */
 				$sorted_ids = array();
 
-				foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre ) {
+				foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $id => $opt_pre ) {
 					if ( ! empty( $this->p->options[$opt_pre . '_on_' . $type] ) ) {
-						$sorted_ids[ zeroise( $this->p->options[$opt_pre . '_order'], 3 ) . '-' . $id ] = $id;
+						$sorted_ids[ zeroise( $this->p->options[ $opt_pre . '_order' ], 3 ) . '-' . $id ] = $id;
 					}
 				}
 
@@ -546,8 +546,8 @@ $cache_array[ $cache_index ] .
 
 			if ( ! isset( $cache_exp_secs ) ) {
 				$cache_md5_pre    = $this->p->lca . '_b_';
-				$cache_exp_filter = $this->p->cf['wp']['transient'][$cache_md5_pre]['filter'];
-				$cache_opt_key    = $this->p->cf['wp']['transient'][$cache_md5_pre]['opt_key'];
+				$cache_exp_filter = $this->p->cf[ 'wp' ][ 'transient' ][$cache_md5_pre][ 'filter' ];
+				$cache_opt_key    = $this->p->cf[ 'wp' ][ 'transient' ][$cache_md5_pre][ 'opt_key' ];
 				$cache_exp_secs   = isset( $this->p->options[$cache_opt_key] ) ? $this->p->options[$cache_opt_key] : WEEK_IN_SECONDS;
 				$cache_exp_secs   = (int) apply_filters( $cache_exp_filter, $cache_exp_secs );
 			}
@@ -567,7 +567,7 @@ $cache_array[ $cache_index ] .
 
 			$cache_index .= '_https:' . ( SucomUtil::is_https() ? 'true' : 'false' );
 
-			$cache_index .= $this->p->avail[ '*' ]['vary_ua'] ? '_mobile:' . ( SucomUtil::is_mobile() ? 'true' : 'false' ) : '';
+			$cache_index .= $this->p->avail[ '*' ][ 'vary_ua' ] ? '_mobile:' . ( SucomUtil::is_mobile() ? 'true' : 'false' ) : '';
 
 			$cache_index .= false !== $atts ? '_atts:' . http_build_query( $atts, '', '_' ) : '';
 
@@ -650,14 +650,14 @@ $cache_array[ $cache_index ] .
 
 						if ( $this->allow_for_platform( $id ) ) {
 
-							$atts['src_id'] = SucomUtil::get_atts_src_id( $atts, $id );	// Uses 'css_id' and 'use_post'.
+							$atts[ 'src_id' ] = SucomUtil::get_atts_src_id( $atts, $id );	// Uses 'css_id' and 'use_post'.
 
 							if ( empty( $atts[ 'url' ] ) ) {
 								$atts[ 'url' ] = $this->p->util->get_sharing_url( $mod,
-									$atts[ 'add_page' ], $atts['src_id'] );
+									$atts[ 'add_page' ], $atts[ 'src_id' ] );
 							} else {
 								$atts[ 'url' ] = apply_filters( $this->p->lca . '_sharing_url',
-									$atts[ 'url' ], $mod, $atts[ 'add_page' ], $atts['src_id'] );
+									$atts[ 'url' ], $mod, $atts[ 'add_page' ], $atts[ 'src_id' ] );
 							}
 
 							/**
@@ -667,7 +667,7 @@ $cache_array[ $cache_index ] .
 								$atts[ 'url' ], $mod, $id );
 
 							$force_prot = apply_filters( $this->p->lca . '_rrssb_buttons_force_prot',
-								$this->p->options['buttons_force_prot'], $mod, $id, $atts[ 'url' ] );
+								$this->p->options[ 'buttons_force_prot' ], $mod, $id, $atts[ 'url' ] );
 
 							if ( ! empty( $force_prot ) && $force_prot !== 'none' ) {
 								$atts[ 'url' ] = preg_replace( '/^.*:\/\//', $force_prot . '://', $atts[ 'url' ] );
@@ -678,7 +678,7 @@ $cache_array[ $cache_index ] .
 							$atts = $saved_atts;	// Restore the common $atts array.
 
 							if ( false !== strpos( $buttons_part, '<li' ) ) {
-								if ( empty( $atts['container_each'] ) ) {
+								if ( empty( $atts[ 'container_each' ] ) ) {
 									$buttons_html .= $buttons_part;
 								} else {
 									$buttons_html .= '<!-- adding button as individual containers -->' . "\n" . 
@@ -700,7 +700,7 @@ $cache_array[ $cache_index ] .
 			$buttons_html = trim( $buttons_html );
 
 			if ( ! empty( $buttons_html ) ) {
-				if ( empty( $atts['container_each'] ) ) {
+				if ( empty( $atts[ 'container_each' ] ) ) {
 					$buttons_html = $buttons_begin . $buttons_html . $buttons_end;
 				}
 			}
@@ -800,7 +800,7 @@ $cache_array[ $cache_index ] .
 
 				$ret = true;
 
-			} elseif ( ! empty( $post_obj->post_type ) && empty( $this->p->options['buttons_add_to_' . $post_obj->post_type] ) ) {
+			} elseif ( ! empty( $post_obj->post_type ) && empty( $this->p->options[ 'buttons_add_to_' . $post_obj->post_type ] ) ) {
 
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'post ' . $post_id . ': sharing buttons not enabled for post type ' . $post_obj->post_type );
@@ -852,7 +852,7 @@ $cache_array[ $cache_index ] .
 				$wpsso->debug->mark();
 			}
 
-			if ( ! isset( $atts['tweet'] ) ) {	// Just in case.
+			if ( ! isset( $atts[ 'tweet' ] ) ) {	// Just in case.
 
 				$atts[ 'use_post' ]     = isset( $atts[ 'use_post' ] ) ? $atts[ 'use_post' ] : true;
 				$atts[ 'add_page' ]     = isset( $atts[ 'add_page' ] ) ? $atts[ 'add_page' ] : true;	// Used by get_sharing_url().
@@ -861,11 +861,11 @@ $cache_array[ $cache_index ] .
 				$caption_type    = empty( $wpsso->options[ $opt_pre . '_caption' ] ) ? 'title' : $wpsso->options[ $opt_pre . '_caption' ];
 				$caption_max_len = self::get_tweet_max_len( $opt_pre );
 
-				$atts['tweet'] = $wpsso->page->get_caption( $caption_type, $caption_max_len, $mod, $read_cache = true,
+				$atts[ 'tweet' ] = $wpsso->page->get_caption( $caption_type, $caption_max_len, $mod, $read_cache = true,
 					$atts[ 'add_hashtags' ], $do_encode = false, $md_key = $md_pre . '_desc' );
 			}
 
-			return $atts['tweet'];
+			return $atts[ 'tweet' ];
 		}
 
 		/**
