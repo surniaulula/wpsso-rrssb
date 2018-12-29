@@ -146,7 +146,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.13.3-dev.1 (2018/12/29)**
+**Version 1.13.3-rc.1 (2018/12/29)**
 
 * *New Features*
 	* None.
@@ -155,7 +155,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * *Bugfixes*
 	* None.
 * *Developer Notes*
-	* Added support for the new SucomUtil::get_transient_array() method in WPSSO Core v4.18.3-dev.1.
+	* Added support for the new SucomUtil::get_transient_array() method in WPSSO Core v4.18.3.
 
 **Version 1.13.2 (2018/12/26)**
 
@@ -194,9 +194,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.13.3-dev.1 =
+= 1.13.3-rc.1 =
 
-(2018/12/29) Added support for the new SucomUtil::get_transient_array() method in WPSSO Core v4.18.3-dev.1.
+(2018/12/29) Added support for the new SucomUtil::get_transient_array() method in WPSSO Core v4.18.3.
 
 = 1.13.2 =
 
