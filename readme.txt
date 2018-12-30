@@ -146,7 +146,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.13.3-rc.1 (2018/12/30)**
+**Version 1.13.3 (2018/12/30)**
 
 * *New Features*
 	* None.
@@ -194,11 +194,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.13.3-rc.1 =
+= 1.13.3 =
 
 (2018/12/30) Added support for the new SucomUtil::get_transient_array() method in WPSSO Core v4.18.3.
-
-= 1.13.2 =
-
-(2018/12/26) Removed the "Sharing Buttons" status from the SSO &gt; Dashboard page.
 
