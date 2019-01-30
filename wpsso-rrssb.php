@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WPSSO Ridiculously Responsive Social Sharing Buttons
+ * Plugin Name: WPSSO Ridiculously Responsive Social Sharing Buttons [Add-on]
  * Plugin Slug: wpsso-rrssb
  * Text Domain: wpsso-rrssb
  * Domain Path: /languages
