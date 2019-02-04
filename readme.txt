@@ -146,6 +146,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.14.0-dev.1 (2019/02/04)**
+
+* *New Features*
+	* None.
+* *Improvements*
+	* Removed the Google+ button (Google+ is shutting down its service on April 2nd 2019).
+* *Bugfixes*
+	* None.
+* *Developer Notes*
+	* None.
+
 **Version 1.13.4 (2019/01/31)**
 
 * *New Features*
@@ -204,6 +215,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Renamed the 'wpsso_action_buttons' filter hook to 'wpsso_form_button_rows' for WPSSO Core v4.18.0.
 
 == Upgrade Notice ==
+
+= 1.14.0-dev.1 =
+
+(2019/02/04) Removed the Google+ button (Google+ is shutting down its service on April 2nd 2019).
 
 = 1.13.4 =
 
