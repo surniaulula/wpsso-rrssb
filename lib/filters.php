@@ -24,8 +24,10 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			}
 
 			$this->p->util->add_plugin_filters( $this, array( 
-				'get_defaults'      => 1,
-				'get_md_defaults'   => 1,
+				'get_defaults'           => 1,
+				'get_md_defaults'        => 1,
+				'rename_options_keys'    => 1,
+				'rename_md_options_keys' => 1,
 			) );
 
 			if ( is_admin() ) {
@@ -116,6 +118,55 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				'tumblr_desc'      => '',	// Tumblr Caption
 				'buttons_disabled' => 0,	// Disable Sharing Buttons
 			) );
+		}
+
+		public function filter_rename_options_keys( $options_keys ) {
+
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->mark();
+			}
+
+			$options_keys[ 'wpssorrssb' ] = array(
+				14 => array(
+					'email_cap_len'         => 'email_caption_max_len',
+					'twitter_cap_len'       => 'twitter_caption_max_len',
+					'pin_cap_len'           => 'pin_caption_max_len',
+					'linkedin_cap_len'      => 'linkedin_caption_max_len',
+					'reddit_cap_len'        => 'reddit_caption_max_len',
+					'tumblr_cap_len'        => 'tumblr_caption_max_len',
+					'email_cap_hashtags'    => 'email_caption_hashtags',
+					'twitter_cap_hashtags'  => 'twitter_caption_hashtags',
+					'pin_cap_hashtags'      => 'pin_caption_hashtags',
+					'linkedin_cap_hashtags' => 'linkedin_caption_hashtags',
+					'reddit_cap_hashtags'   => 'reddit_caption_hashtags',
+					'tumblr_cap_hashtags'   => 'tumblr_caption_hashtags',
+				),
+				20 => array(
+					'gp_order'      => '',
+					'gp_platform'   => '',
+					'gp_rrssb_html' => '',
+				),
+			);
+
+			$show_on = apply_filters( $this->p->lca . '_rrssb_buttons_show_on', $this->p->cf[ 'sharing' ][ 'show_on' ], 'gp' );
+
+			foreach ( $show_on as $opt_suffix => $short_desc ) {
+				$options_keys[ 'wpssorrssb' ][ 20 ][ 'gp_on_' . $opt_suffix ] = '';
+			}
+
+			return $options_keys;
+		}
+
+		public function filter_rename_md_options_keys( $options_keys ) {
+
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->mark();
+			}
+
+			$options_keys[ 'wpssorrssb' ] = array(
+			);
+
+			return $options_keys;
 		}
 
 		public function filter_save_options( $opts, $options_name, $network ) {
