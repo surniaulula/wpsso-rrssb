@@ -235,6 +235,10 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			if ( get_post_status( $post_obj->ID ) === 'publish' || $post_obj->post_type === 'attachment' ) {
 
+				if ( $this->p->debug->enabled ) {
+					$this->p->debug->log( 'required call to get_page_mod()' );
+				}
+
 				$mod = $this->p->util->get_page_mod( $post_obj->ID );
 
 				echo $this->get_buttons( $text = '', 'admin_edit', $mod );
