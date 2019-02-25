@@ -347,20 +347,20 @@ msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/gettext-pro.php:16 lib/gpl/admin/sharing.php:170
-#: lib/pro/admin/sharing.php:172
+#: lib/gettext-pro.php:16 lib/gpl/admin/sharing.php:173
+#: lib/pro/admin/sharing.php:175
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/gettext-pro.php:17 lib/gpl/admin/sharing.php:199
-#: lib/pro/admin/sharing.php:200
+#: lib/gettext-pro.php:17 lib/gpl/admin/sharing.php:202
+#: lib/pro/admin/sharing.php:203
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/gettext-pro.php:18 lib/gpl/admin/sharing.php:207
-#: lib/pro/admin/sharing.php:207
+#: lib/gettext-pro.php:18 lib/gpl/admin/sharing.php:210
+#: lib/pro/admin/sharing.php:210
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""

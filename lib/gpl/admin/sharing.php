@@ -154,6 +154,9 @@ if ( ! class_exists( 'WpssoRrssbGplAdminSharing' ) ) {
 			$pin_media            = $this->p->og->get_media_info( $this->p->lca . '-pinterest-button', array( 'pid', 'img_url' ), $mod, 'schema' );
 			$force_regen          = $this->p->util->is_force_regen( $mod, 'schema' );	// False by default.
 
+			/**
+			 * Get the smaller thumbnail image as a preview image.
+			 */
 			if ( ! empty( $pin_media[ 'pid' ] ) ) {
 				$pin_media[ 'img_url' ] = $this->p->media->get_attachment_image_url( $pin_media[ 'pid' ], 'thumbnail', false, $force_regen );
 			}

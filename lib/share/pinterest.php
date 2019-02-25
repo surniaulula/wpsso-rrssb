@@ -124,7 +124,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 			}
 
 			$this->p->util->add_plugin_filters( $this, array( 
-				'get_defaults' => 1,
+				'get_defaults'       => 1,
 				'plugin_image_sizes' => 1,
 			) );
 		}
@@ -135,7 +135,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 
 		public function filter_plugin_image_sizes( $sizes ) {
 
-			$sizes['pin_img'] = array(
+			$sizes[ 'pin_img' ] = array(	// Options prefix.
 				'name'  => 'pinterest-button',
 				'label' => _x( 'Pinterest Sharing Button', 'image size label', 'wpsso-rrssb' ),
 			);
