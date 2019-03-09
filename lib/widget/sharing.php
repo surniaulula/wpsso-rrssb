@@ -161,6 +161,11 @@ $after_widget .
 				$instance[ $share_id ] = empty( $new_instance[ $share_id ] ) ? 0 : 1;
 			}
 
+			/**
+			 * Clear all sharing button transient cache objects.
+			 */
+			$deleted_count = $this->p->util->delete_all_db_transients( $clear_short = false, $only_prefix = $this->p->lca . '_b_' );
+
 			return $instance;
 		}
 	
