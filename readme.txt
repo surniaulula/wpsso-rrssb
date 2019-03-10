@@ -146,7 +146,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.14.1-dev.3 (2019/03/09)**
+**Version 1.14.1-b.1 (2019/03/10)**
 
 * *New Features*
 	* None.
@@ -227,9 +227,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.14.1-dev.3 =
+= 1.14.1-b.1 =
 
-(2019/03/09) Added a clear cache call after updating / saving the WPSSO RRSSB widget.
+(2019/03/10) Added a clear cache call after updating / saving the WPSSO RRSSB widget.
 
 = 1.14.0 =
 
