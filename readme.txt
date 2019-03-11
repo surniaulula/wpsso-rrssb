@@ -12,7 +12,7 @@ Requires PHP: 5.5
 Requires At Least: 3.8
 Tested Up To: 5.1
 WC Tested Up To: 3.5
-Stable Tag: 1.14.0
+Stable Tag: 1.14.1
 
 WPSSO Core add-on offers Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc.
 
@@ -230,8 +230,4 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 = 1.14.1 =
 
 (2019/03/11) Added a clear cache call after updating / saving the WPSSO RRSSB widget.
-
-= 1.14.0 =
-
-(2019/02/11) Removed the Google+ button (Google+ is shutting down its service on April 2nd 2019).
 
