@@ -63,7 +63,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 		$sharing_url = $wpsso->util->get_sharing_url( $mod );
 
 		$cache_md5_pre  = $wpsso->lca . '_b_';
-		$cache_exp_secs = false === $cache_exp_secs ? $rrssb->social->get_buttons_cache_exp() : $cache_exp_secs;
+		$cache_exp_secs = false === $cache_exp_secs ? $rrssb->social->get_buttons_cache_exp() : $cache_exp_secs;	// Returns 0 for 404 and search pages.
 		$cache_salt     = __FUNCTION__ . '(' . SucomUtil::get_mod_salt( $mod, $sharing_url ) . ')';
 		$cache_id       = $cache_md5_pre . md5( $cache_salt );
 		$cache_index    = $rrssb->social->get_buttons_cache_index( $type, $atts, $share_ids );	// Returns salt with locale, mobile, wp_query, etc.

@@ -66,7 +66,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				if ( false !== $classname && class_exists( $classname ) ) {
 
-					$this->share[$id] = new $classname( $this->p );
+					$this->share[ $id ] = new $classname( $this->p );
 
 					if ( $this->p->debug->enabled ) {
 						$this->p->debug->log( $classname . ' class loaded' );
@@ -408,7 +408,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			$sharing_url = $this->p->util->get_sharing_url( $mod );
 
 			$cache_md5_pre  = $this->p->lca . '_b_';
-			$cache_exp_secs = $this->get_buttons_cache_exp();
+			$cache_exp_secs = $this->get_buttons_cache_exp();	// Returns 0 for 404 and search pages.
 			$cache_salt     = __METHOD__ . '(' . SucomUtil::get_mod_salt( $mod, $sharing_url ) . ')';
 			$cache_id       = $cache_md5_pre . md5( $cache_salt );
 			$cache_index    = $this->get_buttons_cache_index( $type );	// Returns salt with locale, mobile, wp_query, etc.
@@ -464,7 +464,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				$sorted_ids = array();
 
 				foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $id => $opt_pre ) {
-					if ( ! empty( $this->p->options[$opt_pre . '_on_' . $type] ) ) {
+					if ( ! empty( $this->p->options[ $opt_pre . '_on_' . $type ] ) ) {
 						$sorted_ids[ zeroise( $this->p->options[ $opt_pre . '_order' ], 3 ) . '-' . $id ] = $id;
 					}
 				}
@@ -544,16 +544,32 @@ $cache_array[ $cache_index ] .
 			return $text;
 		}
 
+		/**
+		 * Returns 0 for 404 and search pages.
+		 */
 		public function get_buttons_cache_exp() {
+
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->mark();
+			}
 
 			static $cache_exp_secs = null;	// filter the cache expiration value only once
 
 			if ( ! isset( $cache_exp_secs ) ) {
+
 				$cache_md5_pre    = $this->p->lca . '_b_';
-				$cache_exp_filter = $this->p->cf[ 'wp' ][ 'transient' ][$cache_md5_pre][ 'filter' ];
-				$cache_opt_key    = $this->p->cf[ 'wp' ][ 'transient' ][$cache_md5_pre][ 'opt_key' ];
-				$cache_exp_secs   = isset( $this->p->options[$cache_opt_key] ) ? $this->p->options[$cache_opt_key] : WEEK_IN_SECONDS;
-				$cache_exp_secs   = (int) apply_filters( $cache_exp_filter, $cache_exp_secs );
+				$cache_exp_filter = $this->p->cf[ 'wp' ][ 'transient' ][ $cache_md5_pre ][ 'filter' ];
+				$cache_opt_key    = $this->p->cf[ 'wp' ][ 'transient' ][ $cache_md5_pre ][ 'opt_key' ];
+				$cache_exp_secs   = isset( $this->p->options[ $cache_opt_key ] ) ? $this->p->options[ $cache_opt_key ] : WEEK_IN_SECONDS;
+
+				if ( is_404() || is_search() ) {
+					if ( $this->p->debug->enabled ) {
+						$this->p->debug->log( 'setting cache expiration to 0 seconds for 404 or search page' );
+					}
+					$cache_exp_secs = 0;
+				}
+
+				$cache_exp_secs = (int) apply_filters( $cache_exp_filter, $cache_exp_secs );
 			}
 
 			return $cache_exp_secs;
@@ -648,9 +664,9 @@ $cache_array[ $cache_index ] .
 
 			foreach ( $share_ids as $id ) {
 
-				if ( isset( $this->share[$id] ) ) {
+				if ( isset( $this->share[ $id ] ) ) {
 
-					if ( method_exists( $this->share[$id], 'get_html' ) ) {
+					if ( method_exists( $this->share[ $id ], 'get_html' ) ) {
 
 						if ( $this->allow_for_platform( $id ) ) {
 
@@ -677,7 +693,7 @@ $cache_array[ $cache_index ] .
 								$atts[ 'url' ] = preg_replace( '/^.*:\/\//', $force_prot . '://', $atts[ 'url' ] );
 							}
 
-							$buttons_part = $this->share[$id]->get_html( $atts, $this->p->options, $mod ) . "\n";
+							$buttons_part = $this->share[ $id ]->get_html( $atts, $this->p->options, $mod ) . "\n";
 
 							$atts = $saved_atts;	// Restore the common $atts array.
 
@@ -792,8 +808,8 @@ $cache_array[ $cache_index ] .
 				return $ret;
 			}
 
-			if ( isset( $this->post_buttons_disabled[$post_id] ) ) {
-				return $this->post_buttons_disabled[$post_id];
+			if ( isset( $this->post_buttons_disabled[ $post_id ] ) ) {
+				return $this->post_buttons_disabled[ $post_id ];
 			}
 
 			if ( $this->p->m[ 'util' ][ 'post' ]->get_options( $post_id, 'buttons_disabled' ) ) {	// Returns null if an index key is not found.
@@ -813,7 +829,7 @@ $cache_array[ $cache_index ] .
 				$ret = true;
 			}
 
-			return $this->post_buttons_disabled[$post_id] = apply_filters( $this->p->lca . '_post_buttons_disabled', $ret, $post_id );
+			return $this->post_buttons_disabled[ $post_id ] = apply_filters( $this->p->lca . '_post_buttons_disabled', $ret, $post_id );
 		}
 
 		public function remove_paragraph_tags( $match = array() ) {

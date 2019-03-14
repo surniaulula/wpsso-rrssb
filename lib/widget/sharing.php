@@ -61,7 +61,7 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 			$sharing_url = $this->p->util->get_sharing_url( $mod );
 
 			$cache_md5_pre  = $this->p->lca . '_b_';
-			$cache_exp_secs = $rrssb->social->get_buttons_cache_exp();
+			$cache_exp_secs = $rrssb->social->get_buttons_cache_exp();	// Returns 0 for 404 and search pages.
 			$cache_salt     = __METHOD__ . '(' . SucomUtil::get_mod_salt( $mod, $sharing_url ) . ')';
 			$cache_id       = $cache_md5_pre . md5( $cache_salt );
 			$cache_index    = $rrssb->social->get_buttons_cache_index( $type, $atts );	// Returns salt with locale, mobile, wp_query, etc.
