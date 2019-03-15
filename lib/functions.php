@@ -95,13 +95,22 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 					$wpsso->debug->log( $type . ' cache index not in transient cache' );
 				}
 
-				if ( ! is_array( $cache_array ) ) {
+				if ( ! is_array( $cache_array ) ) {	// Just in case.
 					$cache_array = array();
 				}
 			}
 
-		} elseif ( $wpsso->debug->enabled ) {
-			$wpsso->debug->log( $type . ' buttons array transient cache is disabled' );
+		} else {
+
+			if ( $wpsso->debug->enabled ) {
+				$wpsso->debug->log( $type . ' buttons array transient cache is disabled' );
+			}
+
+			if ( SucomUtil::delete_transient_array( $cache_id ) ) {
+				if ( $wpsso->debug->enabled ) {
+					$wpsso->debug->log( 'deleted transient cache id ' . $cache_id );
+				}
+			}
 		}
 
 		/**

@@ -79,13 +79,13 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 
 				$cache_array = SucomUtil::get_transient_array( $cache_id );
 
-				if ( isset( $cache_array[ $cache_index ] ) ) {	// can be an empty string
+				if ( isset( $cache_array[ $cache_index ] ) ) {	// Can be an empty string.
 
 					if ( $this->p->debug->enabled ) {
 						$this->p->debug->log( $type . ' cache index found in transient cache' );
 					}
 
-					echo $cache_array[ $cache_index ];	// stop here
+					echo $cache_array[ $cache_index ];	// Stop here.
 
 					return;
 
@@ -100,8 +100,17 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 					}
 				}
 
-			} elseif ( $this->p->debug->enabled ) {
-				$this->p->debug->log( $type . ' buttons array transient cache is disabled' );
+			} else {
+			
+				if ( $this->p->debug->enabled ) {
+					$this->p->debug->log( $type . ' buttons transient cache is disabled' );
+				}
+
+				if ( SucomUtil::delete_transient_array( $cache_id ) ) {
+					if ( $this->p->debug->enabled ) {
+						$this->p->debug->log( 'deleted transient cache id ' . $cache_id );
+					}
+				}
 			}
 
 			/**
