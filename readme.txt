@@ -12,7 +12,7 @@ Requires PHP: 5.5
 Requires At Least: 3.8
 Tested Up To: 5.1
 WC Tested Up To: 3.5
-Stable Tag: 1.14.1
+Stable Tag: 1.14.2
 
 WPSSO Core add-on offers Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc.
 
@@ -179,70 +179,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * *Developer Notes*
 	* None.
 
-**Version 1.13.4 (2019/01/31)**
-
-* *New Features*
-	* None.
-* *Improvements*
-	* Maintenance release for WPSSO Core v4.22.0.
-* *Bugfixes*
-	* None.
-* *Developer Notes*
-	* Updated the required minimum PHP version from 5.4 to 5.5.
-
-**Version 1.13.3 (2018/12/30)**
-
-* *New Features*
-	* None.
-* *Improvements*
-	* None.
-* *Bugfixes*
-	* None.
-* *Developer Notes*
-	* Added support for the new SucomUtil::get_transient_array() method in WPSSO Core v4.18.3.
-
-**Version 1.13.2 (2018/12/26)**
-
-* *New Features*
-	* None.
-* *Improvements*
-	* Removed the "Sharing Buttons" status from the SSO &gt; Dashboard page.
-* *Bugfixes*
-	* None.
-* *Developer Notes*
-	* None.
-
-**Version 1.13.1 (2018/12/19)**
-
-* *New Features*
-	* None.
-* *Improvements*
-	* None.
-* *Bugfixes*
-	* None.
-* *Developer Notes*
-	* Removed $wp_query as a salt for transient cache array index keys (created too much entropy).
-
-**Version 1.13.0 (2018/12/14)**
-
-* *New Features*
-	* None.
-* *Improvements*
-	* Added action buttons in the new SSO &gt; Tools settings page for WPSSO Core v4.18.0:
-		* Reload Default Responsive Buttons
-		* Reload Default Responsive Styles
-* *Bugfixes*
-	* None.
-* *Developer Notes*
-	* Renamed the 'wpsso_action_buttons' filter hook to 'wpsso_form_button_rows' for WPSSO Core v4.18.0.
-
 == Upgrade Notice ==
 
 = 1.14.2 =
 
 (2019/03/18) Disabled sharing buttons transient cache for 404 and search pages.
-
-= 1.14.1 =
-
-(2019/03/11) Added a clear cache call after updating / saving the WPSSO RRSSB widget.
 
