@@ -9,7 +9,7 @@ Assets URI: https://surniaulula.github.io/wpsso-rrssb/assets/
 Tags: responsive, share buttons, social widget, social media, woocommerce, facebook, google, twitter, pinterest, linkedin, whatsapp, bbpress, buddypress
 Contributors: jsmoriss
 Requires At Least: 3.8
-Tested Up To: 5.1
+Tested Up To: 5.1.1
 WC Tested Up To: 3.5
 Stable Tag: 1.14.2
 
