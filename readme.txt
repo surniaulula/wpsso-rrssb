@@ -145,42 +145,20 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.14.2 (2019/03/18)**
+**Version 1.14.3 (2019/04/09)**
 
 * *New Features*
 	* None.
 * *Improvements*
-	* Disabled sharing buttons transient cache for 404 and search pages.
+	* None.
 * *Bugfixes*
 	* None.
 * *Developer Notes*
-	* None.
-
-**Version 1.14.1 (2019/03/11)**
-
-* *New Features*
-	* None.
-* *Improvements*
-	* Added a clear cache call after updating / saving the WPSSO RRSSB widget.
-* *Bugfixes*
-	* None.
-* *Developer Notes*
-	* None.
-
-**Version 1.14.0 (2019/02/11)**
-
-* *New Features*
-	* None.
-* *Improvements*
-	* Removed the Google+ button (Google+ is shutting down its service on April 2nd 2019).
-* *Bugfixes*
-	* None.
-* *Developer Notes*
-	* None.
+	* Maintenance release for WPSSO Core v4.27.2 config array updates.
 
 == Upgrade Notice ==
 
-= 1.14.2 =
+= 1.14.3 =
 
-(2019/03/18) Disabled sharing buttons transient cache for 404 and search pages.
+(2019/04/09) Maintenance release for WPSSO Core v4.27.2 config array updates.
 
