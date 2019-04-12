@@ -57,11 +57,18 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			$row_num = null;
 
 			switch ( $menu_id ) {
+
 				case 'rrssb-buttons':
+
 					$row_num = 0;
+
 					break;
+
+				case 'sso-tools':
 				case 'tools':
+
 					$row_num = 2;
+
 					break;
 			}
 
