@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 1.14.1\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 1.14.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2019-02-04 13:37-0800\n"
-"PO-Revision-Date: 2019-03-09 17:34-0800\n"
+"POT-Creation-Date: 2019-04-12 11:37-0700\n"
+"PO-Revision-Date: 2019-04-12 11:37-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -297,20 +297,20 @@ msgctxt "option label"
 msgid "Tweet Text"
 msgstr "Texte du Tweet"
 
-#: lib/gettext-pro.php:16 lib/gpl/admin/sharing.php:170
-#: lib/pro/admin/sharing.php:172
+#: lib/gettext-pro.php:16 lib/gpl/admin/sharing.php:173
+#: lib/pro/admin/sharing.php:175
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr "Texte légende Pinterest"
 
-#: lib/gettext-pro.php:17 lib/gpl/admin/sharing.php:199
-#: lib/pro/admin/sharing.php:200
+#: lib/gettext-pro.php:17 lib/gpl/admin/sharing.php:202
+#: lib/pro/admin/sharing.php:203
 msgctxt "option label"
 msgid "%s Title"
 msgstr "Titre %s"
 
-#: lib/gettext-pro.php:18 lib/gpl/admin/sharing.php:207
-#: lib/pro/admin/sharing.php:207
+#: lib/gettext-pro.php:18 lib/gpl/admin/sharing.php:210
+#: lib/pro/admin/sharing.php:210
 msgctxt "option label"
 msgid "%s Caption"
 msgstr "Légende %s"
@@ -451,7 +451,7 @@ msgctxt "metabox title"
 msgid "Share Buttons"
 msgstr "Boutons de partage"
 
-#: lib/social.php:243
+#: lib/social.php:247
 msgid "This content must be published<br/>before it can be shared."
 msgstr "Ce contenu doit être publié<br/>avant d'être partagé."
 
@@ -459,72 +459,72 @@ msgstr "Ce contenu doit être publié<br/>avant d'être partagé."
 msgid "The %s file is not readable."
 msgstr "Le fichier %s n'est pas lisible."
 
-#: lib/submenu/rrssb-buttons.php:69
+#: lib/submenu/rrssb-buttons.php:76
 msgctxt "submit button"
 msgid "Reload Default Responsive Buttons"
 msgstr "Recharger boutons réactifs par défaut"
 
-#: lib/submenu/rrssb-buttons.php:84
+#: lib/submenu/rrssb-buttons.php:91
 msgctxt "metabox title"
 msgid "Social Sharing Buttons"
 msgstr "Boutons de partage social"
 
-#: lib/submenu/rrssb-buttons.php:140
+#: lib/submenu/rrssb-buttons.php:147
 msgctxt "metabox tab"
 msgid "Include Buttons"
 msgstr "Ajout de boutons"
 
-#: lib/submenu/rrssb-buttons.php:141
+#: lib/submenu/rrssb-buttons.php:148
 msgctxt "metabox tab"
 msgid "Buttons Position"
 msgstr "Position des boutons"
 
-#: lib/submenu/rrssb-buttons.php:142
+#: lib/submenu/rrssb-buttons.php:149
 msgctxt "metabox tab"
 msgid "Advanced Settings"
 msgstr "Réglages avancés"
 
-#: lib/submenu/rrssb-buttons.php:190
+#: lib/submenu/rrssb-buttons.php:197
 msgctxt "option label"
 msgid "Include on Archive Webpages"
 msgstr "Inclure sur les pages d'archive"
 
-#: lib/submenu/rrssb-buttons.php:194
+#: lib/submenu/rrssb-buttons.php:201
 msgctxt "option label"
 msgid "Include on Static Front Page"
 msgstr "Inclure sur la page statique d'avant"
 
-#: lib/submenu/rrssb-buttons.php:198
+#: lib/submenu/rrssb-buttons.php:205
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr "Inclure sur les articles de type"
 
-#: lib/submenu/rrssb-buttons.php:206
+#: lib/submenu/rrssb-buttons.php:213
 msgctxt "option label"
 msgid "Position in Content Text"
 msgstr "Position dans le texte de contenu"
 
-#: lib/submenu/rrssb-buttons.php:210
+#: lib/submenu/rrssb-buttons.php:217
 msgctxt "option label"
 msgid "Position in Excerpt Text"
 msgstr "Position dans le texte d'extrait"
 
-#: lib/submenu/rrssb-styles.php:48
+#: lib/submenu/rrssb-styles.php:55
 msgctxt "submit button"
 msgid "Reload Default Responsive Styles"
 msgstr "Recharger styles réactifs par défaut"
 
-#: lib/submenu/rrssb-styles.php:61
+#: lib/submenu/rrssb-styles.php:68
 msgctxt "metabox title"
 msgid "Social Sharing Styles"
 msgstr "Styles de partage social"
 
-#: lib/submenu/rrssb-styles.php:85
+#: lib/submenu/rrssb-styles.php:92
 msgctxt "option label"
 msgid "Use the Social Stylesheet"
 msgstr "Utiliser la feuille de style social"
 
-#: lib/submenu/rrssb-styles.php:88
+#: lib/submenu/rrssb-styles.php:95
 msgctxt "option label"
 msgid "Enqueue the Stylesheet"
 msgstr "Placer la feuille de style en queue"
@@ -533,25 +533,25 @@ msgstr "Placer la feuille de style en queue"
 msgid "The %s widget."
 msgstr "Le widget de %s."
 
-#: lib/widget/sharing.php:171
+#: lib/widget/sharing.php:185
 msgctxt "option value"
 msgid "Share It"
 msgstr "Partager"
 
-#: lib/widget/sharing.php:174
+#: lib/widget/sharing.php:188
 msgctxt "option label"
 msgid "Widget Title (leave blank for no title)"
 msgstr "Titre du Widget (laisser vide pour aucun titre)"
 
-#: wpsso-rrssb.php:104
+#: wpsso-rrssb.php:103
 msgid "%1$s is an add-on for the %2$s plugin &mdash; please install and activate the %3$s plugin before activating %4$s."
 msgstr "%1$s est un ajout pour l'extension %2$s &mdash; SVP installer et activer l'extension %3$s avant d'activer %4$s."
 
-#: wpsso-rrssb.php:106
+#: wpsso-rrssb.php:105
 msgid "The %1$s add-on requires the %2$s plugin &mdash; install and activate the %3$s plugin or <a href=\"%4$s\">deactivate the %5$s add-on</a>."
 msgstr "L'ajout %1$s requiert l'extension %2$s &mdash; installer et activer l'extension %3$s ou <a href=\"%4$s\">désactiver l'ajout %5$s</a>."
 
-#: wpsso-rrssb.php:211
+#: wpsso-rrssb.php:210
 msgid "The %1$s version %2$s add-on requires %3$s version %4$s or newer (version %5$s is currently installed)."
 msgstr "L'ajout %1$s version %2$s requiert %3$s version %4$s ou plus récente (version %5$s est actuellement installée)."
 
