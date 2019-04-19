@@ -10,7 +10,7 @@ Tags: responsive, share buttons, social widget, social media, woocommerce, faceb
 Contributors: jsmoriss
 Requires At Least: 3.8
 Tested Up To: 5.1.1
-WC Tested Up To: 3.5
+WC Tested Up To: 3.6
 Stable Tag: 1.14.4
 
 WPSSO Core add-on offers Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc.
