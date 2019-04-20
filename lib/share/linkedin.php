@@ -38,6 +38,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareLinkedin' ) ) {
 			'<td>'.$form->get_select( 'linkedin_order', range( 1, count( $submenu->share ) ) ).'</td>';
 
 			if ( $this->p->avail[ '*' ]['vary_ua'] ) {
+
 				$table_rows[] = $form->get_tr_hide( 'basic', 'linkedin_platform' ).
 				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
 				'<td>'.$form->get_select( 'linkedin_platform', $this->p->cf['sharing']['platform'] ).'</td>';

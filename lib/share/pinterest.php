@@ -38,7 +38,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 				$this->p->opt->get_defaults( 'pin_img_height' ) . ' ' . 
 				( $this->p->opt->get_defaults( 'pin_img_crop' ) == 0 ? 'uncropped' : 'cropped' );
 
-			$table_rows['pin_img_dimensions'] = $form->get_th_html( _x( 'Pinterest <em>Sharing Button</em>', 'option label', 'wpsso-rrssb' ), null, 'pin_img_dimensions', 'The image dimensions that the Pinterest Pin It button will share (defaults is '.$def_dimensions.'). Images in the Facebook / Open Graph meta tags are usually cropped, where-as images on Pinterest often look better in their original aspect ratio (uncropped) and/or cropped using portrait photo dimensions.' ).
+			$table_rows[ 'pin_img_dimensions' ] = $form->get_th_html( _x( 'Pinterest <em>Sharing Button</em>', 'option label', 'wpsso-rrssb' ), null, 'pin_img_dimensions', 'The image dimensions that the Pinterest Pin It button will share (defaults is '.$def_dimensions.'). Images in the Facebook / Open Graph meta tags are usually cropped, where-as images on Pinterest often look better in their original aspect ratio (uncropped) and/or cropped using portrait photo dimensions.' ).
 			'<td>'.$form->get_input_image_dimensions( 'pin_img' ).'</td>';	// $use_opts = false
 
 			return $table_rows;
@@ -53,10 +53,11 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_select( 'pin_order', range( 1, count( $submenu->share ) ) ).'</td>';
 
-			if ( $this->p->avail[ '*' ]['vary_ua'] ) {
+			if ( $this->p->avail[ '*' ][ 'vary_ua' ] ) {
+
 				$table_rows[] = $form->get_tr_hide( 'basic', 'pin_platform' ).
 				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
-				'<td>'.$form->get_select( 'pin_platform', $this->p->cf['sharing']['platform'] ).'</td>';
+				'<td>'.$form->get_select( 'pin_platform', $this->p->cf[ 'sharing' ][ 'platform' ] ).'</td>';
 			}
 
 			$table_rows[] = $form->get_th_html( _x( 'Image Dimensions', 'option label', 'wpsso-rrssb' ) ).
@@ -69,7 +70,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'pin_caption_hashtags' ).
 			$form->get_th_html( _x( 'Append Hashtags to Caption', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'pin_caption_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ) . ' ' . 
+			'<td>'.$form->get_select( 'pin_caption_hashtags', range( 0, $this->p->cf[ 'form' ][ 'max_hashtags' ] ), 'short', '', true ) . ' ' . 
 				_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'pin_rrssb_html' ).
@@ -130,7 +131,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 		}
 
 		public function filter_get_defaults( $def_opts ) {
-			return array_merge( $def_opts, self::$cf['opt']['defaults'] );
+			return array_merge( $def_opts, self::$cf[ 'opt' ][ 'defaults' ] );
 		}
 
 		public function filter_plugin_image_sizes( $sizes ) {
@@ -149,41 +150,41 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts[ 'add_hashtags' ] = empty( $this->p->options['pin_caption_hashtags'] ) ? false : $this->p->options['pin_caption_hashtags'];
+			$atts[ 'add_hashtags' ] = empty( $this->p->options[ 'pin_caption_hashtags' ] ) ? false : $this->p->options[ 'pin_caption_hashtags' ];
 
-			if ( empty( $atts['size'] ) ) {
-				$atts['size'] = $this->p->lca.'-pinterest-button';
+			if ( empty( $atts[ 'size' ] ) ) {
+				$atts[ 'size' ] = $this->p->lca.'-pinterest-button';
 			}
 
-			if ( ! empty( $atts['pid'] ) ) {
+			if ( ! empty( $atts[ 'pid' ] ) ) {
 
 				$force_regen = $this->p->util->is_force_regen( $mod, 'schema' );	// false by default
 
 				list(
-					$atts['photo'],
-					$atts['width'],
-					$atts['height'],
-					$atts['cropped'],
-					$atts['pid'],
-					$atts['alt']
-				) = $this->p->media->get_attachment_image_src( $atts['pid'], $atts['size'], false, $force_regen );
+					$atts[ 'photo' ],
+					$atts[ 'width' ],
+					$atts[ 'height' ],
+					$atts[ 'cropped' ],
+					$atts[ 'pid' ],
+					$atts[ 'alt' ]
+				) = $this->p->media->get_attachment_image_src( $atts[ 'pid' ], $atts[ 'size' ], false, $force_regen );
 
 				if ( $this->p->debug->enabled ) {
-					$this->p->debug->log( 'returned image '.$atts['photo'].' ('.$atts['width'].'x'.$atts['height'].')' );
+					$this->p->debug->log( 'returned image '.$atts[ 'photo' ].' ('.$atts[ 'width' ].'x'.$atts[ 'height' ].')' );
 				}
 			}
 
-			if ( empty( $atts['photo'] ) ) {
+			if ( empty( $atts[ 'photo' ] ) ) {
 
-				$media_info = $this->p->og->get_media_info( $atts['size'], array( 'img_url', 'prev_url' ), $mod, 'schema' );
+				$media_info = $this->p->og->get_media_info( $atts[ 'size' ], array( 'img_url', 'prev_url' ), $mod, 'schema' );
 
-				if ( ! empty( $media_info['img_url'] ) ) {
-					$atts['photo'] = $media_info['img_url'];
-				} elseif ( ! empty( $media_info['prev_url'] ) ) {
-					$atts['photo'] = $media_info['prev_url'];
+				if ( ! empty( $media_info[ 'img_url' ] ) ) {
+					$atts[ 'photo' ] = $media_info[ 'img_url' ];
+				} elseif ( ! empty( $media_info[ 'prev_url' ] ) ) {
+					$atts[ 'photo' ] = $media_info[ 'prev_url' ];
 				}
 
-				if ( empty( $atts['photo'] ) ) {
+				if ( empty( $atts[ 'photo' ] ) ) {
 					if ( $this->p->debug->enabled ) {
 						$this->p->debug->log( 'exiting early: no photo available' );
 					}
@@ -191,18 +192,18 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 				}
 			}
 
-			if ( ! $this->p->avail[ '*' ]['vary_ua'] || SucomUtil::is_mobile() ) {
-				$pinterest_button_html = $this->p->options['pin_rrssb_html'];
+			if ( ! $this->p->avail[ '*' ][ 'vary_ua' ] || SucomUtil::is_mobile() ) {
+				$pinterest_button_html = $this->p->options[ 'pin_rrssb_html' ];
 			} else {
-				$pinterest_button_html = preg_replace( '/(\/create)\/(button\/)/', '$1/+/$2', $this->p->options['pin_rrssb_html'] );
+				$pinterest_button_html = preg_replace( '/(\/create)\/(button\/)/', '$1/+/$2', $this->p->options[ 'pin_rrssb_html' ] );
 			}
 
-			$pinterest_caption = $this->p->page->get_caption( 'excerpt', $opts['pin_caption_max_len'], $mod, true,
+			$pinterest_caption = $this->p->page->get_caption( 'excerpt', $opts[ 'pin_caption_max_len' ], $mod, true,
 				$atts[ 'add_hashtags' ], false, 'pin_desc' );
 
 			return $this->p->util->replace_inline_vars( '<!-- Pinterest Button -->'.
 				$pinterest_button_html, $mod, $atts, array(
-					'media_url' => rawurlencode( $atts['photo'] ),
+					'media_url' => rawurlencode( $atts[ 'photo' ] ),
 				 	'pinterest_caption' => rawurlencode( $pinterest_caption ),
 				)
 			);

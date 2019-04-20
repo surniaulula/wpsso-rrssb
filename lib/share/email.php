@@ -38,6 +38,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareEmail' ) ) {
 			'<td>'.$form->get_select( 'email_order', range( 1, count( $submenu->share ) ) ).'</td>';
 
 			if ( $this->p->avail[ '*' ]['vary_ua'] ) {
+
 				$table_rows[] = $form->get_tr_hide( 'basic', 'email_platform' ).
 				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
 				'<td>'.$form->get_select( 'email_platform', $this->p->cf['sharing']['platform'] ).'</td>';

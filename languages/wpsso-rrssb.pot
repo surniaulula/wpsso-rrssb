@@ -391,42 +391,42 @@ msgctxt "option label"
 msgid "Preferred Order"
 msgstr ""
 
-#: lib/share/email.php:42 lib/share/facebook.php:42 lib/share/linkedin.php:42
-#: lib/share/pinterest.php:58 lib/share/pocket.php:42 lib/share/reddit.php:42
+#: lib/share/email.php:43 lib/share/facebook.php:43 lib/share/linkedin.php:43
+#: lib/share/pinterest.php:59 lib/share/pocket.php:42 lib/share/reddit.php:42
 #: lib/share/tumblr.php:42 lib/share/twitter.php:42 lib/share/vk.php:42
 #: lib/share/whatsapp.php:42
 msgctxt "option label"
 msgid "Allow for Platform"
 msgstr ""
 
-#: lib/share/email.php:47
+#: lib/share/email.php:48
 msgctxt "option label"
 msgid "Email Message Length"
 msgstr ""
 
-#: lib/share/email.php:49 lib/share/linkedin.php:49 lib/share/pinterest.php:68
+#: lib/share/email.php:50 lib/share/linkedin.php:50 lib/share/pinterest.php:69
 #: lib/share/reddit.php:49 lib/share/tumblr.php:49 lib/share/twitter.php:53
 msgctxt "option comment"
 msgid "characters or less"
 msgstr ""
 
-#: lib/share/email.php:52
+#: lib/share/email.php:53
 msgctxt "option label"
 msgid "Append Hashtags to Message"
 msgstr ""
 
-#: lib/share/email.php:54 lib/share/linkedin.php:54 lib/share/pinterest.php:73
+#: lib/share/email.php:55 lib/share/linkedin.php:55 lib/share/pinterest.php:74
 #: lib/share/reddit.php:54 lib/share/tumblr.php:54 lib/share/twitter.php:58
 msgctxt "option comment"
 msgid "tag names"
 msgstr ""
 
-#: lib/share/linkedin.php:47 lib/share/pinterest.php:66 lib/share/reddit.php:47
+#: lib/share/linkedin.php:48 lib/share/pinterest.php:67 lib/share/reddit.php:47
 msgctxt "option label"
 msgid "Caption Text Length"
 msgstr ""
 
-#: lib/share/linkedin.php:52 lib/share/pinterest.php:71 lib/share/reddit.php:52
+#: lib/share/linkedin.php:53 lib/share/pinterest.php:72 lib/share/reddit.php:52
 msgctxt "option label"
 msgid "Append Hashtags to Caption"
 msgstr ""
@@ -436,12 +436,12 @@ msgctxt "option label"
 msgid "Pinterest <em>Sharing Button</em>"
 msgstr ""
 
-#: lib/share/pinterest.php:62
+#: lib/share/pinterest.php:63
 msgctxt "option label"
 msgid "Image Dimensions"
 msgstr ""
 
-#: lib/share/pinterest.php:140
+#: lib/share/pinterest.php:141
 msgctxt "image size label"
 msgid "Pinterest Sharing Button"
 msgstr ""
