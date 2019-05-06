@@ -55,7 +55,8 @@ if ( ! class_exists( 'WpssoRrssbGplEcomWoocommerceSharing' ) ) {
 				'rrssb_styles' => 1,
 			) );
 
-			if ( is_admin() && empty( $this->p->options[ 'plugin_hide_pro' ] ) ) {
+			if ( is_admin() ) {
+
 				$this->p->util->add_plugin_filters( $this, array( 
 					'rrssb_styles_tabs'           => 1,
 					'rrssb_buttons_show_on'       => 2,
