@@ -823,7 +823,7 @@ $cache_array[ $cache_index ] .
 				return $this->post_buttons_disabled[ $post_id ];
 			}
 
-			if ( $this->p->m[ 'util' ][ 'post' ]->get_options( $post_id, 'buttons_disabled' ) ) {	// Returns null if an index key is not found.
+			if ( $this->p->post->get_options( $post_id, 'buttons_disabled' ) ) {	// Returns null if an index key is not found.
 
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'post ' . $post_id . ': sharing buttons disabled by meta data option' );
