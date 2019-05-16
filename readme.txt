@@ -147,7 +147,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.15.0-dev.2 (2019/05/15)**
+**Version 1.15.0-b.1 (2019/05/16)**
 
 * *New Features*
 	* None.
@@ -182,9 +182,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.15.0-dev.2 =
+= 1.15.0-b.1 =
 
-(2019/05/15) Update for code changes in WPSSO Core v4.31.0.
+(2019/05/16) Update for code changes in WPSSO Core v4.31.0.
 
 = 1.14.4 =
 
