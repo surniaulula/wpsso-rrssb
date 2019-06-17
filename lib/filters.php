@@ -43,7 +43,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				) );
 
 				$this->p->util->add_plugin_filters( $this, array( 
-					'status_gpl_features' => 3,
+					'status_std_features' => 3,
 				), 10, 'wpssorrssb' );
 			}
 		}
@@ -508,7 +508,7 @@ div.wpsso-rrssb
 			return $text;
 		}
 
-		public function filter_status_gpl_features( $features, $ext, $info ) {
+		public function filter_status_std_features( $features, $ext, $info ) {
 
 			if ( ! empty( $info[ 'lib' ][ 'submenu' ][ 'rrssb-styles' ] ) ) {
 				$features[ '(sharing) Sharing Stylesheet' ] = array(

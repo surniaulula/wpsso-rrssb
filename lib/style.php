@@ -15,10 +15,6 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 
 		private $p;
 
-		public static $sharing_css_name = '';
-		public static $sharing_css_file = '';
-		public static $sharing_css_url  = '';
-
 		public function __construct( &$plugin ) {
 
 			$this->p =& $plugin;
@@ -26,10 +22,6 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
 			}
-
-			self::$sharing_css_name = 'rrssb-styles-id-' . get_current_blog_id() . '.min.css';
-			self::$sharing_css_file = WPSSO_CACHEDIR . self::$sharing_css_name;
-			self::$sharing_css_url  = WPSSO_CACHEURL . self::$sharing_css_name;
 
 			if ( is_admin() ) {
 				add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
@@ -51,18 +43,18 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 
 			wp_enqueue_style( 'rrssb' );
 
-			if ( ! empty( $this->p->options['buttons_use_social_style'] ) ) {
+			if ( ! empty( $this->p->options[ 'buttons_use_social_style' ] ) ) {
 
-				if ( ! file_exists( self::$sharing_css_file ) ) {
+				if ( ! file_exists( WpssoRrssbSocial::$sharing_css_file ) ) {
 
 					if ( $this->p->debug->enabled ) {
-						$this->p->debug->log( 'updating ' . self::$sharing_css_file );
+						$this->p->debug->log( 'updating ' . WpssoRrssbSocial::$sharing_css_file );
 					}
 
 					WpssoRrssbSocial::update_sharing_css( $this->p->options );
 				}
 
-				if ( ! empty( $this->p->options['buttons_enqueue_social_style'] ) ) {
+				if ( ! empty( $this->p->options[ 'buttons_enqueue_social_style' ] ) ) {
 
 					if ( $this->p->debug->enabled ) {
 						$this->p->debug->log( 'wp_enqueue_style = ' . $this->p->lca . '_rrssb_sharing_css' );
@@ -72,19 +64,19 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 
 				} else {
 
-					if ( ! is_readable( self::$sharing_css_file ) ) {
+					if ( ! is_readable( WpssoRrssbSocial::$sharing_css_file ) ) {
 
 						if ( $this->p->debug->enabled ) {
-							$this->p->debug->log( self::$sharing_css_file . ' is not readable' );
+							$this->p->debug->log( WpssoRrssbSocial::$sharing_css_file . ' is not readable' );
 						}
 
 						if ( is_admin() ) {
 							$this->p->notice->err( sprintf( __( 'The %s file is not readable.',
-								'wpsso-rrssb' ), self::$sharing_css_file ) );
+								'wpsso-rrssb' ), WpssoRrssbSocial::$sharing_css_file ) );
 						}
 
-					} elseif ( ( $fsize = @filesize( self::$sharing_css_file ) ) > 0 &&
-						$fh = @fopen( self::$sharing_css_file, 'rb' ) ) {
+					} elseif ( ( $fsize = @filesize( WpssoRrssbSocial::$sharing_css_file ) ) > 0 &&
+						$fh = @fopen( WpssoRrssbSocial::$sharing_css_file, 'rb' ) ) {
 
 						echo '<style type="text/css">';
 						echo fread( $fh, $fsize );

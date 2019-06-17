@@ -16,7 +16,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(			// Plugin acronym.
-					'version'     => '1.15.0',	// Plugin version.
+					'version'     => '2.0.0-dev.1',	// Plugin version.
 					'opt_version' => '21',		// Increment when changing default option values.
 					'short'       => 'WPSSO RRSSB',	// Short plugin name.
 					'name'        => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
@@ -29,7 +29,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'req'         => array(
 						'short'       => 'WPSSO Core',
 						'name'        => 'WPSSO Core',
-						'min_version' => '4.31.0',
+						'min_version' => '5.0.0-dev.1',
 					),
 					'assets' => array(
 						'icons' => array(
@@ -38,21 +38,6 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 						),
 					),
 					'lib' => array(
-						'gpl' => array(
-							'admin' => array(
-								'sharing' => 'Extend Sharing Settings',
-							),
-							'ecom' => array(
-								'woocommerce' => '(plugin) WooCommerce',
-							),
-							'forum' => array(
-								'bbpress' => '(plugin) bbPress',
-							),
-							'social' => array(
-								'buddyblog'  => '(plugin) BuddyBlog',
-								'buddypress' => '(plugin) BuddyPress',
-							),
-						),
 						'pro' => array(
 							'admin' => array(
 								'sharing' => 'Extend Sharing Settings',
@@ -82,6 +67,21 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 						),
 						'shortcode' => array(
 							'sharing' => 'Sharing Shortcode',
+						),
+						'std' => array(
+							'admin' => array(
+								'sharing' => 'Extend Sharing Settings',
+							),
+							'ecom' => array(
+								'woocommerce' => '(plugin) WooCommerce',
+							),
+							'forum' => array(
+								'bbpress' => '(plugin) bbPress',
+							),
+							'social' => array(
+								'buddyblog'  => '(plugin) BuddyBlog',
+								'buddypress' => '(plugin) BuddyPress',
+							),
 						),
 						'submenu' => array(
 							'rrssb-buttons' => 'Responsive Buttons',

@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"1.15.0\n"
+"2.0.0-dev.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2019-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -298,87 +298,87 @@ msgctxt "option value"
 msgid "Any Platform"
 msgstr ""
 
-#: lib/gettext-pro.php:6 lib/gettext-pro.php:9 lib/gpl/admin/sharing.php:38
-#: lib/gpl/admin/sharing.php:59 lib/pro/admin/sharing.php:46
-#: lib/pro/admin/sharing.php:67
+#: lib/gettext-pro.php:6 lib/gettext-pro.php:9 lib/pro/admin/sharing.php:46
+#: lib/pro/admin/sharing.php:67 lib/std/admin/sharing.php:38
+#: lib/std/admin/sharing.php:59
 msgctxt "option label"
 msgid "Sharing Buttons HTML Cache Expiry"
 msgstr ""
 
-#: lib/gettext-pro.php:7 lib/gettext-pro.php:10 lib/gpl/admin/sharing.php:41
-#: lib/gpl/admin/sharing.php:62 lib/pro/admin/sharing.php:49
-#: lib/pro/admin/sharing.php:70
+#: lib/gettext-pro.php:7 lib/gettext-pro.php:10 lib/pro/admin/sharing.php:49
+#: lib/pro/admin/sharing.php:70 lib/std/admin/sharing.php:41
+#: lib/std/admin/sharing.php:62
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr ""
 
-#: lib/gettext-pro.php:8 lib/gpl/admin/sharing.php:54
-#: lib/pro/admin/sharing.php:62
+#: lib/gettext-pro.php:8 lib/pro/admin/sharing.php:62
+#: lib/std/admin/sharing.php:54
 msgctxt "option label"
 msgid "Force Protocol for Shared URLs"
 msgstr ""
 
-#: lib/gettext-pro.php:11 lib/gpl/admin/sharing.php:76
-#: lib/pro/admin/sharing.php:84
+#: lib/gettext-pro.php:11 lib/pro/admin/sharing.php:84
+#: lib/std/admin/sharing.php:76
 msgid "Save a draft version or publish the %s to display these options."
 msgstr ""
 
-#: lib/gettext-pro.php:12 lib/gpl/admin/sharing.php:92
-#: lib/pro/admin/sharing.php:97
+#: lib/gettext-pro.php:12 lib/pro/admin/sharing.php:97
+#: lib/std/admin/sharing.php:92
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/gettext-pro.php:13 lib/gpl/admin/sharing.php:113
-#: lib/pro/admin/sharing.php:117
+#: lib/gettext-pro.php:13 lib/pro/admin/sharing.php:117
+#: lib/std/admin/sharing.php:113
 msgctxt "option label"
 msgid "Email Subject"
 msgstr ""
 
-#: lib/gettext-pro.php:14 lib/gpl/admin/sharing.php:121
-#: lib/pro/admin/sharing.php:124
+#: lib/gettext-pro.php:14 lib/pro/admin/sharing.php:124
+#: lib/std/admin/sharing.php:121
 msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/gettext-pro.php:15 lib/gpl/admin/sharing.php:143
-#: lib/pro/admin/sharing.php:145
+#: lib/gettext-pro.php:15 lib/pro/admin/sharing.php:145
+#: lib/std/admin/sharing.php:143
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/gettext-pro.php:16 lib/gpl/admin/sharing.php:173
-#: lib/pro/admin/sharing.php:175
+#: lib/gettext-pro.php:16 lib/pro/admin/sharing.php:175
+#: lib/std/admin/sharing.php:173
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/gettext-pro.php:17 lib/gpl/admin/sharing.php:202
-#: lib/pro/admin/sharing.php:203
+#: lib/gettext-pro.php:17 lib/pro/admin/sharing.php:203
+#: lib/std/admin/sharing.php:202
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/gettext-pro.php:18 lib/gpl/admin/sharing.php:210
-#: lib/pro/admin/sharing.php:210
+#: lib/gettext-pro.php:18 lib/pro/admin/sharing.php:210
+#: lib/std/admin/sharing.php:210
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
 
-#: lib/gettext-pro.php:19 lib/gpl/ecom/woocommerce.php:106
-#: lib/pro/ecom/woocommerce.php:110
+#: lib/gettext-pro.php:19 lib/pro/ecom/woocommerce.php:110
+#: lib/std/ecom/woocommerce.php:106
 msgctxt "option label"
 msgid "Position in Woo Short Text"
 msgstr ""
 
-#: lib/gettext-pro.php:20 lib/gpl/forum/bbpress.php:109
-#: lib/pro/forum/bbpress.php:162
+#: lib/gettext-pro.php:20 lib/pro/forum/bbpress.php:162
+#: lib/std/forum/bbpress.php:109
 msgctxt "option label"
 msgid "Position in bbPress Single"
 msgstr ""
 
-#: lib/gettext-pro.php:21 lib/gpl/social/buddyblog.php:82
-#: lib/pro/social/buddyblog.php:118
+#: lib/gettext-pro.php:21 lib/pro/social/buddyblog.php:118
+#: lib/std/social/buddyblog.php:82
 msgctxt "option label"
 msgid "Position in BuddyBlog Post"
 msgstr ""
@@ -507,7 +507,7 @@ msgstr ""
 msgid "This content must be published<br/>before it can be shared."
 msgstr ""
 
-#: lib/style.php:82
+#: lib/style.php:74
 msgid "The %s file is not readable."
 msgstr ""
 
