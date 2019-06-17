@@ -33,7 +33,7 @@ The content, excerpt, widget, CSS sidebar, shortcodes, templates, and *admin edi
 
 **Do you use bbPress, BuddyPress, BuddyBlog, or WooCommerce?**
 
-The Pro version of WPSSO RRSSB includes special integration modules to add social sharing buttons to even more locations!
+The Pro / Premium version of WPSSO RRSSB includes special integration modules to add social sharing buttons to even more locations!
 
 <h3>Users Love the WPSSO RRSSB Add-on</h3>
 
@@ -78,7 +78,7 @@ The Pro version of WPSSO RRSSB includes special integration modules to add socia
 
 * Uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.
 
-<h3>WPSSO RRSSB Additional Features (Pro version)</h3>
+<h3>WPSSO RRSSB Pro / Premium Features</h3>
 
 * Extends the features of WPSSO Core Pro (requires an active and licensed <a href="https://wpsso.com/">WPSSO Core Pro plugin</a>).
 
@@ -100,7 +100,7 @@ The Pro version of WPSSO RRSSB includes special integration modules to add socia
 
 <h3>WPSSO Core Plugin Prerequisite</h3>
 
-WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an add-on for the [WPSSO Core Plugin](https://wordpress.org/plugins/wpsso/) (Free or Pro version).
+WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an add-on for the [WPSSO Core Plugin](https://wordpress.org/plugins/wpsso/).
 
 The [WPSSO RRSSB Pro add-on](https://wpsso.com/extend/plugins/wpsso-rrssb/) uses WPSSO Core Pro features and requires an active and licensed [WPSSO Core Pro plugin](https://wpsso.com/).
 
@@ -124,8 +124,8 @@ The [WPSSO RRSSB Pro add-on](https://wpsso.com/extend/plugins/wpsso-rrssb/) uses
 == Screenshots ==
 
 01. WPSSO RRSSB example showing the *Ridiculously Responsive Social Sharing Buttons* enabled (with the default stylesheet) in the CSS sidebar, content text, and widget.
-02. WPSSO RRSSB example showing a WooCommerce product page with *Ridiculously Responsive Social Sharing Buttons* in the CSS sidebar, short and long product descriptions (Pro version).
-03. WPSSO RRSSB Sharing Buttons tab in the Document SSO metabox allows you to fine-tune and customize the text used by several social sharing websites (Pro version).
+02. WPSSO RRSSB example showing a WooCommerce product page with *Ridiculously Responsive Social Sharing Buttons* in the CSS sidebar, short and long product descriptions (Pro / Premium version).
+03. WPSSO RRSSB Sharing Buttons tab in the Document SSO metabox allows you to fine-tune and customize the text used by several social sharing websites (Pro / Premium version).
 04. WPSSO RRSSB Responsive Buttons settings page.
 05. WPSSO RRSSB Responsive Styles settings page.
 
@@ -147,6 +147,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 2.0.0-dev.1 (2019/06/17)**
+
+* *New Features*
+	* None.
+* *Improvements*
+	* None.
+* *Bugfixes*
+	* None.
+* *Developer Notes*
+	* Maintenance release for WPSSO Core v5.0.0.
+
 **Version 1.15.0 (2019/05/20)**
 
 * *New Features*
@@ -159,6 +170,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Update for code changes in WPSSO Core v4.31.0.
 
 == Upgrade Notice ==
+
+= 2.0.0-dev.1 =
+
+(2019/06/17) Maintenance release for WPSSO Core v5.0.0.
 
 = 1.15.0 =
 
