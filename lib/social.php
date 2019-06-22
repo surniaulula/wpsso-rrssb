@@ -308,13 +308,13 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			$error_message = '';
 			$append_error  = true;
-			$is_admin      = is_admin();	// Call the function only once.
-			$doing_ajax    = SucomUtil::get_const( 'DOING_AJAX' );
+			$is_admin      = is_admin();				// Check only once.
+			$doing_ajax    = SucomUtil::get_const( 'DOING_AJAX' );	// Check only once.
 
 			if ( $doing_ajax ) {
 
 				if ( $this->p->debug->enabled ) {
-					$this->p->debug->log( 'doing_ajax is true' );
+					$this->p->debug->log( 'DOING_AJAX is true' );
 				}
 
 			} elseif ( $is_admin ) {
