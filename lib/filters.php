@@ -215,8 +215,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 		public function filter_post_custom_meta_tabs( $tabs, $mod, $metabox_id ) {
 
 			if ( $metabox_id === $this->p->cf[ 'meta' ][ 'id' ] ) {
-				SucomUtil::add_after_key( $tabs, 'media', 'buttons',
-					_x( 'Share Buttons', 'metabox tab', 'wpsso-rrssb' ) );
+				SucomUtil::add_after_key( $tabs, 'media', 'buttons', _x( 'Share Buttons', 'metabox tab', 'wpsso-rrssb' ) );
 			}
 
 			return $tabs;
