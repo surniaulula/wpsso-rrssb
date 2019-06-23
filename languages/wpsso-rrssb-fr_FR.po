@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 1.14.3\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2019-04-12 11:37-0700\n"
-"PO-Revision-Date: 2019-04-12 11:37-0700\n"
+"POT-Creation-Date: 2019-06-23 16:08-0700\n"
+"PO-Revision-Date: 2019-06-23 16:08-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -27,64 +27,64 @@ msgstr "Le CSS par défaut des styles réactifs ont été rechargés et sauvegar
 msgid "Failed to open the css file %s for reading."
 msgstr "Impossible d'ouvrir le fichier css %s pour lecture."
 
-#: lib/filters.php:219
+#: lib/filters.php:218
 msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr "Boutons de partage"
 
-#: lib/filters.php:264
+#: lib/filters.php:263
 msgid "The %1$s add-on uses the \"%2$s\" class to wrap all sharing buttons, and each button has its own individual class name as well."
 msgstr "L'ajout %1$s utilise la classe \"%2$s\" pour envelopper tous les boutons de partage, et chaque bouton possède également son propre nom de classe."
 
-#: lib/filters.php:268
+#: lib/filters.php:267
 msgid "This tab can be used to edit the CSS common to all sharing button locations."
 msgstr "Cet onglet peut être utilisé pour modifier le CSS commun à tous les emplacements des boutons de partage."
 
-#: lib/filters.php:278
+#: lib/filters.php:277
 msgid "Social sharing buttons enabled in the %1$s settings page for the WordPress content are assigned the \"%2$s\" class."
 msgstr "Les boutons de partage social activés dans la page de réglages %1$s pour le contenu WordPress sont assignés la classe \"%2$s\"."
 
-#: lib/filters.php:290
+#: lib/filters.php:289
 msgid "Social sharing buttons enabled in the %1$s settings page for the WordPress excerpt are assigned the \"%2$s\" class."
 msgstr "Les boutons de partage social activés dans la page de réglages %1$s pour l'extrait WordPress sont assignés la classe \"%2$s\"."
 
-#: lib/filters.php:302
+#: lib/filters.php:301
 msgid "Social sharing buttons enabled in the %1$s settings page for the CSS sidebar are assigned the \"%2$s\" ID."
 msgstr "Les boutons de partage social activés dans la page de réglages %1$s pour la barre latérale CSS sont assignés l'ID \"%2$s\"."
 
-#: lib/filters.php:323
+#: lib/filters.php:322
 msgid "Social sharing buttons added from a shortcode are assigned the \"%1$s\" class by default."
 msgstr "Les boutons de partage social ajoutés à partir d'un shortcode sont assignés la classe \"%1$s\" par défaut."
 
-#: lib/filters.php:335
+#: lib/filters.php:334
 msgid "Social sharing buttons enabled in the %1$s widget are assigned the \"%2$s\" class (along with additional unique CSS ID names)."
 msgstr "Les boutons de partage social activés dans le widget %1$s sont assignés la classe \"%2$s\" (ainsi que des noms d'ID CSS uniques supplémentaires)."
 
-#: lib/filters.php:353
+#: lib/filters.php:352
 msgid "Social sharing buttons enabled in the %1$s settings page for admin editing pages are assigned the \"%2$s\" class."
 msgstr "Les boutons de partage social activés dans la page de réglages %1$s pour pour les pages d'édition admin sont assignés la classe \"%2$s\"."
 
-#: lib/filters.php:365
+#: lib/filters.php:364
 msgid "Social sharing buttons enabled in the %1$s settings page for WooCommerce short descriptions are assigned the \"%2$s\" class."
 msgstr "Les boutons de partage social activés dans la page de réglages %1$s pour les descriptions abrégées WooCommerce sont assignés la classe \"%2$s\"."
 
-#: lib/filters.php:377
+#: lib/filters.php:376
 msgid "Social sharing buttons enabled in the %1$s settings page for bbPress single templates are assigned the \"%2$s\" class."
 msgstr "Les boutons de partage social activés dans la page de réglages %1$s pour les modèles simples bbPress sont assignés la classe \"%2$s\"."
 
-#: lib/filters.php:389
+#: lib/filters.php:388
 msgid "Social sharing buttons enabled in the %1$s settings page for BuddyBlog posts are assigned the \"%2$s\" class."
 msgstr "Les boutons de partage social activés dans la page de réglages %1$s pour les articles BuddyBlog sont assignés la classe \"%2$s\"."
 
-#: lib/filters.php:401
+#: lib/filters.php:400
 msgid "Social sharing buttons enabled in the %1$s settings page for BuddyPress activities are assigned the \"%2$s\" class."
 msgstr "Les boutons de partage social activés dans la page de réglages %1$s pour les activités BuddyPress sont assignés la classe \"%2$s\"."
 
-#: lib/filters.php:436
+#: lib/filters.php:435
 msgid "Social sharing buttons can be added to the top, bottom, or both. Each sharing button must also be enabled below (see the <em>%s</em> options)."
 msgstr "Les boutons de partage social peuvent être ajoutés en haut, en bas, ou les deux. Chaque bouton de partage doit aussi être activé ci-dessous (voir les options <em>%s</em>)."
 
-#: lib/filters.php:436 lib/share/email.php:34 lib/share/facebook.php:34
+#: lib/filters.php:435 lib/share/email.php:34 lib/share/facebook.php:34
 #: lib/share/linkedin.php:34 lib/share/pinterest.php:50 lib/share/pocket.php:34
 #: lib/share/reddit.php:34 lib/share/tumblr.php:34 lib/share/twitter.php:34
 #: lib/share/vk.php:34 lib/share/whatsapp.php:34
@@ -92,68 +92,68 @@ msgctxt "option label"
 msgid "Show Button in"
 msgstr "Afficher le bouton"
 
-#: lib/filters.php:442
+#: lib/filters.php:441
 msgid "Add the social sharing buttons to each entry of an index webpage (blog front page, category, archive, etc.). Social sharing buttons are not included on index webpages by default."
 msgstr "Ajouter les boutons de partage social à chaque item d'une page d'index (page blog d'avant, catégorie, archives, etc.). Les boutons de partage social ne sont pas inclus dans les pages Web d'index par défaut."
 
-#: lib/filters.php:448
+#: lib/filters.php:447
 msgid "If a static Post or Page has been selected for the front page, you can add the social sharing buttons to that static front page as well (default is unchecked)."
 msgstr "Si un Article ou une Page statique a été sélectionnée pour la page d'avant, les boutons de partage social peuvent être ajouter sur la page statique d'avant aussi (valeur par défaut est décochée)."
 
-#: lib/filters.php:454
+#: lib/filters.php:453
 msgid "Enabled social sharing buttons are added to the Post, Page, Media, and Product webpages by default. If your theme (or another plugin) supports additional custom post types, and you would like to include social sharing buttons on these webpages, check the appropriate option(s) here."
 msgstr "Les boutons de partage social activés sont ajoutés par défaut au articles, pages, médias, et produits. Si votre thème (ou une autre extension) supporte des articles de types personnalisé supplémentaires, et que vous souhaitez ajouter des boutons de partage social sur ces pages Web, cochez les options appropriées ici."
 
-#: lib/filters.php:460
+#: lib/filters.php:459
 msgid "Modify URLs shared by the sharing buttons to use a specific protocol."
 msgstr "Modifiez les URL partagées par les boutons de partage pour utiliser un protocole spécifique."
 
-#: lib/filters.php:466
+#: lib/filters.php:465
 msgid "Add the CSS of all <em>%1$s</em> to webpages (default is checked). The CSS will be <strong>minified</strong>, and saved to a single stylesheet with a URL of <a href=\"%2$s\">%3$s</a>. The minified stylesheet can be enqueued or added directly to the webpage HTML."
 msgstr "Ajouter le CSS de tous les <em>%1$s</em> au pages Web (cochée par défaut). Le CSS sera <strong>minimisé</strong> et sauvegardé dans une seule feuille de style avec l'URL <a href=\"%2$s\">%3$s</a>. La feuille de style peut être mis en queue ou ajouté directement au HTML des pages Web."
 
-#: lib/filters.php:466 lib/gettext-config.php:7
+#: lib/filters.php:465 lib/gettext-config.php:7
 msgctxt "lib file description"
 msgid "Responsive Styles"
 msgstr "Styles réactifs"
 
-#: lib/filters.php:472
+#: lib/filters.php:471
 msgid "Have WordPress enqueue the social stylesheet instead of adding the CSS to in the webpage HTML (default is unchecked). Enqueueing the stylesheet may be desirable if you use a plugin to concatenate all enqueued styles into a single stylesheet URL."
 msgstr "Demander a WordPress de mettre la feuille de style en queue au lieu d'ajouter le CSS au HTML des pages Web (décochée par défaut). Mettre la feuille de style en queue peut être souhaitable si vous utilisez une extension pour assembler tous le contenu des feuilles de styles dans un seul URL."
 
-#: lib/filters.php:478
+#: lib/filters.php:477
 msgid "Append the %1$s to the tweet (see <a href=\"%2$s\">the Twitter options tab</a> in the %3$s settings page). The %1$s will be displayed and recommended after the webpage is shared."
 msgstr "Ajouter le %1$s au Tweet (voir <a href=\"%2$s\">l'onglet d'options Twitter</a> sur la page de réglages %3$s). Le %1$s sera affichés et recommandé après que la page Web est été partagée."
 
-#: lib/filters.php:478 lib/filters.php:484
+#: lib/filters.php:477 lib/filters.php:483
 msgctxt "option label"
 msgid "Twitter Business @username"
 msgstr "Le @nom d'affaires Twitter"
 
-#: lib/filters.php:478
+#: lib/filters.php:477
 msgctxt "lib file description"
 msgid "General"
 msgstr "Général"
 
-#: lib/filters.php:484
+#: lib/filters.php:483
 msgid "Recommend following the author's Twitter @username after sharing a webpage. If the %1$s option (above) is also checked, the %2$s is suggested first."
 msgstr "Conseiller de suivre le @nom Twitter de l'auteur après avoir partagé une page Web. Si l'option %1$s (ci-dessus) est également cochée, le %2$s sera recommandé en premier."
 
-#: lib/filters.php:484 lib/share/twitter.php:61
+#: lib/filters.php:483 lib/share/twitter.php:61
 msgctxt "option label"
 msgid "Add via Business @username"
 msgstr "Ajouter via @nom d'affaires"
 
-#: lib/filters.php:499
+#: lib/filters.php:498
 msgctxt "option comment"
 msgid "disabled"
 msgstr "désactivé"
 
-#: lib/filters.php:501
+#: lib/filters.php:500
 msgid "The rendered HTML for social sharing buttons is saved to the WordPress transient cache to optimize performance."
 msgstr "Le code HTML des boutons de partage social est enregistré dans le cache transitoire de WordPress pour optimiser la performance."
 
-#: lib/filters.php:502
+#: lib/filters.php:501
 msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
 msgstr "La valeur d'expiration de cache suggérée est de %1$s secondes (%2$s)."
 
@@ -247,88 +247,88 @@ msgctxt "option value"
 msgid "Any Platform"
 msgstr "Toute plateformes"
 
-#: lib/gettext-pro.php:6 lib/gettext-pro.php:9 lib/gpl/admin/sharing.php:38
-#: lib/gpl/admin/sharing.php:59 lib/pro/admin/sharing.php:46
-#: lib/pro/admin/sharing.php:67
+#: lib/gettext-pro.php:6 lib/gettext-pro.php:9 lib/pro/admin/sharing.php:46
+#: lib/pro/admin/sharing.php:67 lib/std/admin/sharing.php:38
+#: lib/std/admin/sharing.php:59
 msgctxt "option label"
 msgid "Sharing Buttons HTML Cache Expiry"
 msgstr "Expiration cache HTML des boutons"
 
-#: lib/gettext-pro.php:7 lib/gettext-pro.php:10 lib/gpl/admin/sharing.php:41
-#: lib/gpl/admin/sharing.php:62 lib/pro/admin/sharing.php:49
-#: lib/pro/admin/sharing.php:70
+#: lib/gettext-pro.php:7 lib/gettext-pro.php:10 lib/pro/admin/sharing.php:49
+#: lib/pro/admin/sharing.php:70 lib/std/admin/sharing.php:41
+#: lib/std/admin/sharing.php:62
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr "secondes (0 pour désactiver)"
 
-#: lib/gettext-pro.php:8 lib/gpl/admin/sharing.php:54
-#: lib/pro/admin/sharing.php:62
+#: lib/gettext-pro.php:8 lib/pro/admin/sharing.php:62
+#: lib/std/admin/sharing.php:54
 msgctxt "option label"
 msgid "Force Protocol for Shared URLs"
 msgstr "Forcer protocole pour URLs partagées"
 
 # Ignore the post type to avoid gender issues in the French translation.
-#: lib/gettext-pro.php:11 lib/gpl/admin/sharing.php:76
-#: lib/pro/admin/sharing.php:84
+#: lib/gettext-pro.php:11 lib/pro/admin/sharing.php:84
+#: lib/std/admin/sharing.php:76
 msgid "Save a draft version or publish the %s to display these options."
 msgstr "Enregistrer un brouillon ou publier pour activer ces options."
 
-#: lib/gettext-pro.php:12 lib/gpl/admin/sharing.php:92
-#: lib/pro/admin/sharing.php:97
+#: lib/gettext-pro.php:12 lib/pro/admin/sharing.php:97
+#: lib/std/admin/sharing.php:92
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr "Désactiver les boutons"
 
-#: lib/gettext-pro.php:13 lib/gpl/admin/sharing.php:113
-#: lib/pro/admin/sharing.php:117
+#: lib/gettext-pro.php:13 lib/pro/admin/sharing.php:117
+#: lib/std/admin/sharing.php:113
 msgctxt "option label"
 msgid "Email Subject"
 msgstr "Sujet du couriel"
 
-#: lib/gettext-pro.php:14 lib/gpl/admin/sharing.php:121
-#: lib/pro/admin/sharing.php:124
+#: lib/gettext-pro.php:14 lib/pro/admin/sharing.php:124
+#: lib/std/admin/sharing.php:121
 msgctxt "option label"
 msgid "Email Message"
 msgstr "Message du courriel"
 
-#: lib/gettext-pro.php:15 lib/gpl/admin/sharing.php:143
-#: lib/pro/admin/sharing.php:145
+#: lib/gettext-pro.php:15 lib/pro/admin/sharing.php:145
+#: lib/std/admin/sharing.php:143
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr "Texte du Tweet"
 
-#: lib/gettext-pro.php:16 lib/gpl/admin/sharing.php:173
-#: lib/pro/admin/sharing.php:175
+#: lib/gettext-pro.php:16 lib/pro/admin/sharing.php:175
+#: lib/std/admin/sharing.php:173
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr "Texte légende Pinterest"
 
-#: lib/gettext-pro.php:17 lib/gpl/admin/sharing.php:202
-#: lib/pro/admin/sharing.php:203
+#: lib/gettext-pro.php:17 lib/pro/admin/sharing.php:203
+#: lib/std/admin/sharing.php:202
 msgctxt "option label"
 msgid "%s Title"
 msgstr "Titre %s"
 
-#: lib/gettext-pro.php:18 lib/gpl/admin/sharing.php:210
-#: lib/pro/admin/sharing.php:210
+#: lib/gettext-pro.php:18 lib/pro/admin/sharing.php:210
+#: lib/std/admin/sharing.php:210
 msgctxt "option label"
 msgid "%s Caption"
 msgstr "Légende %s"
 
-#: lib/gettext-pro.php:19 lib/gpl/ecom/woocommerce.php:105
-#: lib/pro/ecom/woocommerce.php:110
+#: lib/gettext-pro.php:19 lib/pro/ecom/woocommerce.php:110
+#: lib/std/ecom/woocommerce.php:106
 msgctxt "option label"
 msgid "Position in Woo Short Text"
 msgstr "Position dans le texte Woo Short"
 
-#: lib/gettext-pro.php:20 lib/gpl/forum/bbpress.php:109
-#: lib/pro/forum/bbpress.php:162
+#: lib/gettext-pro.php:20 lib/pro/forum/bbpress.php:162
+#: lib/std/forum/bbpress.php:109
 msgctxt "option label"
 msgid "Position in bbPress Single"
 msgstr "Position dans le texte bbPress Single"
 
-#: lib/gettext-pro.php:21 lib/gpl/social/buddyblog.php:82
-#: lib/pro/social/buddyblog.php:118
+#: lib/gettext-pro.php:21 lib/pro/social/buddyblog.php:118
+#: lib/std/social/buddyblog.php:82
 msgctxt "option label"
 msgid "Position in BuddyBlog Post"
 msgstr "Position dans le texte d'article BuddyBlog"
@@ -341,42 +341,42 @@ msgctxt "option label"
 msgid "Preferred Order"
 msgstr "Ordre de préférence"
 
-#: lib/share/email.php:42 lib/share/facebook.php:42 lib/share/linkedin.php:42
-#: lib/share/pinterest.php:58 lib/share/pocket.php:42 lib/share/reddit.php:42
+#: lib/share/email.php:43 lib/share/facebook.php:43 lib/share/linkedin.php:43
+#: lib/share/pinterest.php:59 lib/share/pocket.php:42 lib/share/reddit.php:42
 #: lib/share/tumblr.php:42 lib/share/twitter.php:42 lib/share/vk.php:42
 #: lib/share/whatsapp.php:42
 msgctxt "option label"
 msgid "Allow for Platform"
 msgstr "Pour plateforme"
 
-#: lib/share/email.php:47
+#: lib/share/email.php:48
 msgctxt "option label"
 msgid "Email Message Length"
 msgstr "Longueur du message couriel"
 
-#: lib/share/email.php:49 lib/share/linkedin.php:49 lib/share/pinterest.php:68
+#: lib/share/email.php:50 lib/share/linkedin.php:50 lib/share/pinterest.php:69
 #: lib/share/reddit.php:49 lib/share/tumblr.php:49 lib/share/twitter.php:53
 msgctxt "option comment"
 msgid "characters or less"
 msgstr "caractères ou moins"
 
-#: lib/share/email.php:52
+#: lib/share/email.php:53
 msgctxt "option label"
 msgid "Append Hashtags to Message"
 msgstr "Ajout de hashtags au message"
 
-#: lib/share/email.php:54 lib/share/linkedin.php:54 lib/share/pinterest.php:73
+#: lib/share/email.php:55 lib/share/linkedin.php:55 lib/share/pinterest.php:74
 #: lib/share/reddit.php:54 lib/share/tumblr.php:54 lib/share/twitter.php:58
 msgctxt "option comment"
 msgid "tag names"
 msgstr "noms d'étiquettes"
 
-#: lib/share/linkedin.php:47 lib/share/pinterest.php:66 lib/share/reddit.php:47
+#: lib/share/linkedin.php:48 lib/share/pinterest.php:67 lib/share/reddit.php:47
 msgctxt "option label"
 msgid "Caption Text Length"
 msgstr "Longueur du texte légende"
 
-#: lib/share/linkedin.php:52 lib/share/pinterest.php:71 lib/share/reddit.php:52
+#: lib/share/linkedin.php:53 lib/share/pinterest.php:72 lib/share/reddit.php:52
 msgctxt "option label"
 msgid "Append Hashtags to Caption"
 msgstr "Ajout de hashtags a la légende"
@@ -386,12 +386,12 @@ msgctxt "option label"
 msgid "Pinterest <em>Sharing Button</em>"
 msgstr "<em>Bouton de partage</em> Pinterest"
 
-#: lib/share/pinterest.php:62
+#: lib/share/pinterest.php:63
 msgctxt "option label"
 msgid "Image Dimensions"
 msgstr "Dimensions de l’image"
 
-#: lib/share/pinterest.php:140
+#: lib/share/pinterest.php:141
 msgctxt "image size label"
 msgid "Pinterest Sharing Button"
 msgstr "Bouton de partage Pinterest"
@@ -455,7 +455,7 @@ msgstr "Boutons de partage"
 msgid "This content must be published<br/>before it can be shared."
 msgstr "Ce contenu doit être publié<br/>avant d'être partagé."
 
-#: lib/style.php:82
+#: lib/style.php:74
 msgid "The %s file is not readable."
 msgstr "Le fichier %s n'est pas lisible."
 
