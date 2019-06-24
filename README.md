@@ -74,7 +74,7 @@
 <li><p>Uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.</p></li>
 </ul>
 
-<h3>WPSSO RRSSB Pro / Premium Features</h3>
+<h3>WPSSO RRSSB Premium Features</h3>
 
 <ul>
 <li><p>Custom titles and text in the Document SSO metabox for:</p>

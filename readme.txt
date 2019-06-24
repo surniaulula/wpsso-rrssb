@@ -78,7 +78,7 @@ The WPSSO RRSSB Premium add-on includes special integration modules to add socia
 
 * Uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.
 
-<h3>WPSSO RRSSB Pro / Premium Features</h3>
+<h3>WPSSO RRSSB Premium Features</h3>
 
 * Custom titles and text in the Document SSO metabox for:
 
@@ -136,7 +136,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * {bugfix} = Backwards-compatible bug fixes or small improvements.
 * {stage}.{level} = Pre-production release: dev < a (alpha) < b (beta) < rc (release candidate).
 
-<h3>Free / Standard Version Repositories</h3>
+<h3>Standard Add-on Repositories</h3>
 
 * [GitHub](https://surniaulula.github.io/wpsso-rrssb/)
 * [WordPress.org](https://plugins.trac.wordpress.org/browser/wpsso-rrssb/)
