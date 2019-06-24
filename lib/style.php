@@ -60,7 +60,7 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 						$this->p->debug->log( 'wp_enqueue_style = ' . $this->p->lca . '_rrssb_sharing_css' );
 					}
 
-					wp_enqueue_style( $this->p->lca . '_rrssb_sharing_css', self::$sharing_css_url, false, $plugin_version );
+					wp_enqueue_style( $this->p->lca . '_rrssb_sharing_css', WpssoRrssbSocial::$sharing_css_url, false, $plugin_version );
 
 				} else {
 
