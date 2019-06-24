@@ -77,7 +77,6 @@
 <h3>WPSSO RRSSB Pro / Premium Features</h3>
 
 <ul>
-<li><p>Extends the features of WPSSO Core Pro (requires an active and licensed <a href="https://wpsso.com/">WPSSO Core Pro plugin</a>).</p></li>
 <li><p>Custom titles and text in the Document SSO metabox for:</p>
 
 <ul>
@@ -100,9 +99,7 @@
 
 <h3>WPSSO Core Plugin Prerequisite</h3>
 
-<p>WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an add-on for the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core Plugin</a>.</p>
-
-<p>The <a href="https://wpsso.com/extend/plugins/wpsso-rrssb/">WPSSO RRSSB Pro add-on</a> uses WPSSO Core Pro features and requires an active and licensed <a href="https://wpsso.com/">WPSSO Core Pro plugin</a>.</p>
+<p>WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an add-on for the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a> (Standard or Premium version).</p>
 
 
 <h2>Installation</h2>
