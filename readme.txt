@@ -33,7 +33,7 @@ The content, excerpt, widget, CSS sidebar, shortcodes, templates, and *admin edi
 
 **Do you use bbPress, BuddyPress, BuddyBlog, or WooCommerce?**
 
-The Pro / Premium version of WPSSO RRSSB includes special integration modules to add social sharing buttons to even more locations!
+The WPSSO RRSSB Premium add-on includes special integration modules to add social sharing buttons to even more locations!
 
 <h3>Users Love the WPSSO RRSSB Add-on</h3>
 
@@ -98,7 +98,7 @@ The Pro / Premium version of WPSSO RRSSB includes special integration modules to
 
 <h3>WPSSO Core Plugin Prerequisite</h3>
 
-WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an add-on for the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) (Standard or Premium version).
+WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an add-on for the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/).
 
 == Installation ==
 
@@ -120,8 +120,8 @@ WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an add
 == Screenshots ==
 
 01. WPSSO RRSSB example showing the *Ridiculously Responsive Social Sharing Buttons* enabled (with the default stylesheet) in the CSS sidebar, content text, and widget.
-02. WPSSO RRSSB example showing a WooCommerce product page with *Ridiculously Responsive Social Sharing Buttons* in the CSS sidebar, short and long product descriptions (Pro / Premium version).
-03. WPSSO RRSSB Sharing Buttons tab in the Document SSO metabox allows you to fine-tune and customize the text used by several social sharing websites (Pro / Premium version).
+02. WPSSO RRSSB example showing a WooCommerce product page with *Ridiculously Responsive Social Sharing Buttons* in the CSS sidebar, short and long product descriptions (Premium add-on).
+03. WPSSO RRSSB Sharing Buttons tab in the Document SSO metabox allows you to fine-tune and customize the text used by several social sharing websites (Premium add-on).
 04. WPSSO RRSSB Responsive Buttons settings page.
 05. WPSSO RRSSB Responsive Styles settings page.
 
