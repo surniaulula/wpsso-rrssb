@@ -148,7 +148,8 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * *New Features*
 	* None.
 * *Improvements*
-	* None.
+	* Renamed "Pro" distribution to "Premium".
+	* Renamed "Free" distribution to "Standard".
 * *Bugfixes*
 	* Fixed an undeclared static property in the WpssoRrssbStyle class.
 * *Developer Notes*
