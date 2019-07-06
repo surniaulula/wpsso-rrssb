@@ -131,6 +131,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 		}
 
 		public static function wpsso_init_textdomain() {
+
 			load_plugin_textdomain( 'wpsso-rrssb', false, 'wpsso-rrssb/languages/' );
 		}
 
@@ -142,7 +143,9 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 			$info = WpssoRrssbConfig::$cf[ 'plugin' ][ 'wpssorrssb' ];
 
 			if ( version_compare( $plugin_version, $info[ 'req' ][ 'min_version' ], '<' ) ) {
+
 				$this->have_req_min = false;
+
 				return $cf;
 			}
 
@@ -161,14 +164,16 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 			}
 
 			if ( ! $this->have_req_min ) {
-				$this->p->avail['p_ext']['rrssb'] = false;	// Signal that this extension / add-on is not available.
+
+				$this->p->avail[ 'p_ext' ][ 'rrssb' ] = false;	// Signal that this extension / add-on is not available.
+
 				return;
 			}
 
-			$this->p->avail['p_ext']['rrssb'] = true;	// Signal that this extension / add-on is available.
+			$this->p->avail[ 'p_ext' ][ 'rrssb' ] = true;		// Signal that this extension / add-on is available.
 
 			if ( is_admin() ) {
-				$this->p->avail['admin']['sharing'] = true;
+				$this->p->avail[ 'admin' ][ 'sharing' ] = true;
 			}
 		}
 
