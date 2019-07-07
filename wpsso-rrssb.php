@@ -14,7 +14,7 @@
  * Requires At Least: 3.8
  * Tested Up To: 5.2.2
  * WC Tested Up To: 3.6
- * Version: 2.0.2
+ * Version: 2.1.0-dev.2
  * 
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -68,8 +68,15 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 				add_action( 'admin_init', array( __CLASS__, 'required_check' ) );
 			}
 
+			/**
+			 * Add WPSSO filter hooks.
+			 */
 			add_filter( 'wpsso_get_config', array( $this, 'wpsso_get_config' ), 30, 2 );	// Checks core version and merges config array.
+			add_filter( 'wpsso_get_avail', array( $this, 'wpsso_get_avail' ), 20, 1 );
 
+			/**
+			 * Add WPSSO action hooks.
+			 */
 			add_action( 'wpsso_init_textdomain', array( __CLASS__, 'wpsso_init_textdomain' ) );
 			add_action( 'wpsso_init_options', array( $this, 'wpsso_init_options' ), 10 );	// Sets the $this->p reference variable.
 			add_action( 'wpsso_init_objects', array( $this, 'wpsso_init_objects' ), 10 );
@@ -152,6 +159,24 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 			return SucomUtil::array_merge_recursive_distinct( $cf, WpssoRrssbConfig::$cf );
 		}
 
+		public function wpsso_get_avail( $avail ) {
+
+			if ( ! $this->have_req_min ) {
+
+				$avail[ 'p_ext' ][ 'rrssb' ] = false;	// Signal that this extension / add-on is not available.
+
+				return;
+			}
+
+			$avail[ 'p_ext' ][ 'rrssb' ] = true;		// Signal that this extension / add-on is available.
+
+			if ( is_admin() ) {
+				$avail[ 'admin' ][ 'sharing' ] = true;
+			}
+
+			return $avail;
+		}
+
 		/**
 		 * Sets the $this->p reference variable for the core plugin instance.
 		 */
@@ -161,19 +186,6 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
-			}
-
-			if ( ! $this->have_req_min ) {
-
-				$this->p->avail[ 'p_ext' ][ 'rrssb' ] = false;	// Signal that this extension / add-on is not available.
-
-				return;
-			}
-
-			$this->p->avail[ 'p_ext' ][ 'rrssb' ] = true;		// Signal that this extension / add-on is available.
-
-			if ( is_admin() ) {
-				$this->p->avail[ 'admin' ][ 'sharing' ] = true;
 			}
 		}
 

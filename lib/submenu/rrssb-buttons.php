@@ -194,15 +194,15 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 
 				case 'rrssb_buttons-include':
 
-					$table_rows['buttons_on_index'] = $this->form->get_th_html( _x( 'Include on Archive Webpages',
+					$table_rows[ 'buttons_on_index' ] = $this->form->get_th_html( _x( 'Include on Archive Webpages',
 						'option label', 'wpsso-rrssb' ), '', 'buttons_on_index' ) . 
 					'<td>' . $this->form->get_checkbox( 'buttons_on_index' ) . '</td>';
 
-					$table_rows['buttons_on_front'] = $this->form->get_th_html( _x( 'Include on Static Front Page',
+					$table_rows[ 'buttons_on_front' ] = $this->form->get_th_html( _x( 'Include on Static Front Page',
 						'option label', 'wpsso-rrssb' ), '', 'buttons_on_front' ) . 
 					'<td>' . $this->form->get_checkbox( 'buttons_on_front' ) . '</td>';
 
-					$table_rows['buttons_add_to'] = $this->form->get_th_html( _x( 'Include on Post Types',
+					$table_rows[ 'buttons_add_to' ] = $this->form->get_th_html( _x( 'Include on Post Types',
 						'option label', 'wpsso-rrssb' ), '', 'buttons_add_to' ) . 
 					'<td>' . $this->form->get_checklist_post_types( 'buttons_add_to' ) . '</td>';
 
@@ -210,13 +210,13 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 
 				case 'rrssb_buttons-position':
 
-					$table_rows['buttons_pos_content'] = $this->form->get_th_html( _x( 'Position in Content Text',
+					$table_rows[ 'buttons_pos_content' ] = $this->form->get_th_html( _x( 'Position in Content Text',
 						'option label', 'wpsso-rrssb' ), '', 'buttons_pos_content' ) . 
-					'<td>' . $this->form->get_select( 'buttons_pos_content', $this->p->cf['sharing']['position'] ) . '</td>';
+					'<td>' . $this->form->get_select( 'buttons_pos_content', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
 
-					$table_rows['buttons_pos_excerpt'] = $this->form->get_th_html( _x( 'Position in Excerpt Text',
+					$table_rows[ 'buttons_pos_excerpt' ] = $this->form->get_th_html( _x( 'Position in Excerpt Text',
 						'option label', 'wpsso-rrssb' ), '', 'buttons_pos_excerpt' ) . 
-					'<td>' . $this->form->get_select( 'buttons_pos_excerpt', $this->p->cf['sharing']['position'] ) . '</td>';
+					'<td>' . $this->form->get_select( 'buttons_pos_excerpt', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
 
 					break;
 			}
@@ -230,12 +230,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			$max     = 6;
 			$html    = '<table>';
 			$has_pp  = $this->p->check->pp( 'wpssorrssb' );
-			$show_on = apply_filters( $this->p->lca . '_rrssb_buttons_show_on', $this->p->cf['sharing']['show_on'], $opt_prefix );
+			$show_on = apply_filters( $this->p->lca . '_rrssb_buttons_show_on', $this->p->cf[ 'sharing' ][ 'show_on' ], $opt_prefix );
 
 			foreach ( $show_on as $opt_suffix => $short_desc ) {
 
-				$css_class = isset( $this->p->options[$opt_prefix . '_on_' . $opt_suffix . ':is'] ) &&
-					$this->p->options[$opt_prefix . '_on_' . $opt_suffix . ':is'] === 'disabled' &&
+				$css_class = isset( $this->p->options[$opt_prefix . '_on_' . $opt_suffix . ':is' ] ) &&
+					$this->p->options[$opt_prefix . '_on_' . $opt_suffix . ':is' ] === 'disabled' &&
 						! $has_pp ? 'show_on blank' : 'show_on';
 
 				$col++;
