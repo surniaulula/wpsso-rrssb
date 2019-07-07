@@ -143,6 +143,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 2.2.0-dev.2 (TBD)**
+
+* *New Features*
+	* None.
+* *Improvements*
+	* None.
+* *Bugfixes*
+	* None.
+* *Developer Notes*
+	* None.
+
 **Version 2.0.2 (2019/06/24)**
 
 * *New Features*
@@ -156,6 +167,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Maintenance release for WPSSO Core v5.0.0.
 
 == Upgrade Notice ==
+
+= 2.2.0-dev.2 =
+
+(TBD) None.
 
 = 2.0.2 =
 
