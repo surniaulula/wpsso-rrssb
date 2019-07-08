@@ -26,7 +26,7 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddyblog' ) ) {
 
 			if ( is_admin() || bp_is_buddyblog_component() ) {
 
-				if ( ! empty( $this->p->avail['p_ext']['rrssb'] ) ) {
+				if ( ! empty( $this->p->avail[ 'p_ext' ][ 'rrssb' ] ) ) {
 
 					$classname = __CLASS__ . 'Sharing';
 
@@ -70,8 +70,8 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddyblogSharing' ) ) {
 
 		public function filter_get_defaults( $opts_def ) {
 
-			foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre ) {
-				$opts_def[$opt_pre . '_on_bblog_post'] = 0;
+			foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $id => $opt_pre ) {
+				$opts_def[$opt_pre . '_on_bblog_post' ] = 0;
 			}
 
 			return $opts_def;
@@ -79,18 +79,18 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddyblogSharing' ) ) {
 
 		public function filter_rrssb_buttons_position_rows( $table_rows, $form ) {
 
-			$table_rows['buttons_pos_bblog_post'] = $form->get_th_html( _x( 'Position in BuddyBlog Post',
+			$table_rows[ 'buttons_pos_bblog_post' ] = $form->get_th_html( _x( 'Position in BuddyBlog Post',
 				'option label', 'wpsso-rrssb' ), '', 'buttons_pos_bblog_post' ) . 
-			'<td class="blank">' . $form->get_no_select( 'buttons_pos_bblog_post', $this->p->cf['sharing']['position'] ) . '</td>';
+			'<td class="blank">' . $form->get_no_select( 'buttons_pos_bblog_post', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
 
 			return $table_rows;	
 		}
 
 		public function filter_rrssb_buttons_show_on( $show_on = array(), $opt_pre = '' ) {
 
-			$show_on['bblog_post'] = 'BBlog Post';
+			$show_on[ 'bblog_post' ] = 'BBlog Post';
 
-			$this->p->options[$opt_pre . '_on_bblog_post:is'] = 'disabled';
+			$this->p->options[$opt_pre . '_on_bblog_post:is' ] = 'disabled';
 
 			return $show_on;
 		}
@@ -102,9 +102,9 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddyblogSharing' ) ) {
 
 		public function filter_rrssb_styles_tabs( $styles ) {
 
-			$styles['rrssb-bblog_post'] = 'BBlog Post';
+			$styles[ 'rrssb-bblog_post' ] = 'BBlog Post';
 
-			$this->p->options['buttons_css_rrssb-bblog_post:is'] = 'disabled';
+			$this->p->options[ 'buttons_css_rrssb-bblog_post:is' ] = 'disabled';
 
 			return $styles;
 		}
