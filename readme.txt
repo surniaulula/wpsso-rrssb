@@ -143,7 +143,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.2.0-dev.2 (2019/07/08)**
+**Version 2.2.0-dev.3 (2019/07/08)**
 
 * *New Features*
 	* None.
@@ -168,7 +168,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 2.2.0-dev.2 =
+= 2.2.0-dev.3 =
 
 (2019/07/08) Minor code optimization to hook the 'wpsso_get_avail' filter.
 
