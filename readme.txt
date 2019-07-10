@@ -145,25 +145,25 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 **Version 2.2.0-dev.6 (2019/07/10)**
 
-* *New Features*
+* **New Features**
 	* None.
-* *Improvements*
+* **Improvements**
 	* None.
-* *Bugfixes*
+* **Bugfixes**
 	* None.
-* *Developer Notes*
+* **Developer Notes**
 	* Minor code optimization to hook the 'wpsso_get_avail' filter.
 
 **Version 2.0.2 (2019/06/24)**
 
-* *New Features*
+* **New Features**
 	* None.
-* *Improvements*
+* **Improvements**
 	* Renamed "Pro" distribution to "Premium".
 	* Renamed "Free" distribution to "Standard".
-* *Bugfixes*
+* **Bugfixes**
 	* Fixed an undeclared static property in the WpssoRrssbStyle class.
-* *Developer Notes*
+* **Developer Notes**
 	* Maintenance release for WPSSO Core v5.0.0.
 
 == Upgrade Notice ==
