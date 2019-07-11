@@ -143,7 +143,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.2.0-b.1 (2019/07/10)**
+**Version 2.2.0-b.2 (2019/07/11)**
 
 * **New Features**
 	* None.
@@ -168,9 +168,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 2.2.0-b.1 =
+= 2.2.0-b.2 =
 
-(2019/07/10) Minor code optimization to hook the 'wpsso_get_avail' filter.
+(2019/07/11) Minor code optimization to hook the 'wpsso_get_avail' filter.
 
 = 2.0.2 =
 
