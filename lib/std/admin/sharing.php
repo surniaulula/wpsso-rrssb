@@ -13,6 +13,8 @@ if ( ! class_exists( 'WpssoRrssbStdAdminSharing' ) ) {
 
 	class WpssoRrssbStdAdminSharing {
 
+		private $p;
+
 		public function __construct( &$plugin ) {
 
 			$this->p =& $plugin;
@@ -25,7 +27,7 @@ if ( ! class_exists( 'WpssoRrssbStdAdminSharing' ) ) {
 				'plugin_cache_rows'           => 3,
 				'rrssb_buttons_advanced_rows' => 2,
 				'post_buttons_rows'           => 4,
-			), 40 );
+			), $prio = 40 );
 		}
 
 		public function filter_plugin_cache_rows( $table_rows, $form, $network = false ) {

@@ -44,7 +44,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 				$this->p->util->add_plugin_filters( $this, array( 
 					'status_std_features' => 3,
-				), 10, 'wpssorrssb' );
+				), $prio = 10, $ext = 'wpssorrssb' );
 			}
 		}
 

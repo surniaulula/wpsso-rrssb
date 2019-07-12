@@ -24,7 +24,7 @@ if ( ! class_exists( 'WpssoRrssbStdEcomWoocommerce' ) ) {
 				$this->p->debug->mark();
 			}
 
-			if ( ! empty( $this->p->avail['p_ext']['rrssb'] ) ) {
+			if ( ! empty( $this->p->avail[ 'p_ext' ][ 'rrssb' ] ) ) {
 
 				$classname = __CLASS__.'Sharing';
 
@@ -67,20 +67,20 @@ if ( ! class_exists( 'WpssoRrssbStdEcomWoocommerceSharing' ) ) {
 
 		public function filter_get_defaults( $opts_def ) {
 
-			foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre ) {
-				$opts_def[$opt_pre.'_on_woo_short'] = 0;
+			foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $id => $opt_pre ) {
+				$opts_def[ $opt_pre.'_on_woo_short' ] = 0;
 			}
 
-			$opts_def['buttons_pos_woo_short'] = 'bottom';
+			$opts_def[ 'buttons_pos_woo_short' ] = 'bottom';
 
 			return $opts_def;
 		}
 
 		public function filter_rrssb_buttons_show_on( $show_on = array(), $opt_pre ) {
 
-			$show_on['woo_short'] = 'Woo Short';
+			$show_on[ 'woo_short' ] = 'Woo Short';
 
-			$this->p->options[$opt_pre.'_on_woo_short:is'] = 'disabled';
+			$this->p->options[ $opt_pre.'_on_woo_short:is' ] = 'disabled';
 
 			return $show_on;
 		}
@@ -92,9 +92,9 @@ if ( ! class_exists( 'WpssoRrssbStdEcomWoocommerceSharing' ) ) {
 
 		public function filter_rrssb_styles_tabs( $styles ) {
 
-			$styles['rrssb-woo_short'] = 'Woo Short';
+			$styles[ 'rrssb-woo_short' ] = 'Woo Short';
 
-			$this->p->options['buttons_css_rrssb-woo_short:is'] = 'disabled';
+			$this->p->options[ 'buttons_css_rrssb-woo_short:is' ] = 'disabled';
 
 			return $styles;
 		}
@@ -103,9 +103,9 @@ if ( ! class_exists( 'WpssoRrssbStdEcomWoocommerceSharing' ) ) {
 
 			$table_rows[] = '<td colspan="2">' . $this->p->msgs->get( 'pro-feature-msg', array( 'lca' => 'wpssorrssb' ) ) . '</td>';
 
-			$table_rows['buttons_pos_woo_short'] = $form->get_th_html( _x( 'Position in Woo Short Text',
+			$table_rows[ 'buttons_pos_woo_short' ] = $form->get_th_html( _x( 'Position in Woo Short Text',
 				'option label', 'wpsso-rrssb' ), null, 'buttons_pos_woo_short' ).
-			'<td class="blank">'.$this->p->cf['sharing']['position'][$this->p->options['buttons_pos_woo_short']].'</td>';
+			'<td class="blank">'.$this->p->cf[ 'sharing' ][ 'position' ][ $this->p->options[ 'buttons_pos_woo_short' ] ].'</td>';
 
 			return $table_rows;
 		}

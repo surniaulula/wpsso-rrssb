@@ -30,7 +30,7 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddypress' ) ) {
 			 */
 			if ( is_admin() || bp_current_component() ) {
 
-				if ( ! empty( $this->p->avail['p_ext']['rrssb'] ) ) {
+				if ( ! empty( $this->p->avail[ 'p_ext' ][ 'rrssb' ] ) ) {
 
 					$classname = __CLASS__.'Sharing';
 
@@ -85,8 +85,8 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddypressSharing' ) ) {
 
 		public function filter_get_defaults( $opts_def ) {
 
-			foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre ) {
-				$opts_def[$opt_pre.'_on_bp_activity'] = 0;
+			foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $id => $opt_pre ) {
+				$opts_def[ $opt_pre.'_on_bp_activity' ] = 0;
 			}
 
 			return $opts_def;
@@ -94,9 +94,9 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddypressSharing' ) ) {
 
 		public function filter_rrssb_buttons_show_on( $show_on = array(), $opt_pre = '' ) {
 
-			$show_on['bp_activity'] = 'BP Activity';
+			$show_on[ 'bp_activity' ] = 'BP Activity';
 
-			$this->p->options[$opt_pre.'_on_bp_activity:is'] = 'disabled';
+			$this->p->options[ $opt_pre.'_on_bp_activity:is' ] = 'disabled';
 
 			return $show_on;
 		}
@@ -108,9 +108,9 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddypressSharing' ) ) {
 
 		public function filter_rrssb_styles_tabs( $styles ) {
 
-			$styles['rrssb-bp_activity'] = 'BP Activity';
+			$styles[ 'rrssb-bp_activity' ] = 'BP Activity';
 
-			$this->p->options['buttons_css_rrssb-bp_activity:is'] = 'disabled';
+			$this->p->options[ 'buttons_css_rrssb-bp_activity:is' ] = 'disabled';
 
 			return $styles;
 		}
