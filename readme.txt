@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires At Least: 3.8
 Tested Up To: 5.2.2
 WC Tested Up To: 3.6
-Stable Tag: 2.2.0
+Stable Tag: 2.2.1
 
 WPSSO Core add-on offers Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc.
 
@@ -143,32 +143,20 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.2.0 (2019/07/13)**
+**Version 2.2.1 (2019/07/21)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* None.
+	* Added a check to exclude scripts from being enqueued on AMP pages.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Minor code optimization to hook the 'wpsso_get_avail' filter.
-
-**Version 2.0.2 (2019/06/24)**
-
-* **New Features**
 	* None.
-* **Improvements**
-	* Renamed "Pro" distribution to "Premium".
-	* Renamed "Free" distribution to "Standard".
-* **Bugfixes**
-	* Fixed an undeclared static property in the WpssoRrssbStyle class.
-* **Developer Notes**
-	* Maintenance release for WPSSO Core v5.0.0.
 
 == Upgrade Notice ==
 
-= 2.2.0 =
+= 2.2.1 =
 
-(2019/07/13) Minor code optimization to hook the 'wpsso_get_avail' filter.
+(2019/07/21) Added a check to exclude scripts from being enqueued on AMP pages.
 
