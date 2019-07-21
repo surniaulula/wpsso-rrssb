@@ -37,7 +37,12 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 			 */
 			$doing_dev      = SucomUtil::get_const( 'WPSSO_DEV' );
 			$css_file_ext   = $doing_dev ? 'css' : 'min.css';
+			$is_amp         = SucomUtil::is_amp();
 			$plugin_version = $this->p->cf[ 'plugin' ][ 'wpssorrssb' ][ 'version' ];
+
+			if ( $is_amp ) {
+				return;
+			}
 
 			wp_register_style( 'rrssb', WPSSORRSSB_URLPATH . 'css/ext/rrssb.' . $css_file_ext, array(), $plugin_version );
 

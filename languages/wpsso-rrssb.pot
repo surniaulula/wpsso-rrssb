@@ -476,38 +476,38 @@ msgctxt "option label"
 msgid "Recommend Author @username"
 msgstr ""
 
-#: lib/social.php:114
+#: lib/social.php:115
 msgid "Failed writing the css file %s."
 msgstr ""
 
-#: lib/social.php:123
+#: lib/social.php:124
 msgid "Updated the <a href=\"%1$s\">%2$s</a> stylesheet (%3$d bytes written)."
 msgstr ""
 
-#: lib/social.php:140
+#: lib/social.php:141
 msgid "Cache folder %s is not writable."
 msgstr ""
 
-#: lib/social.php:150
+#: lib/social.php:151
 msgid "Failed to open the css file %s for writing."
 msgstr ""
 
-#: lib/social.php:169
+#: lib/social.php:170
 msgid ""
 "Error removing the minified stylesheet &mdash; does the web server have "
 "sufficient privileges?"
 msgstr ""
 
-#: lib/social.php:196
+#: lib/social.php:197
 msgctxt "metabox title"
 msgid "Share Buttons"
 msgstr ""
 
-#: lib/social.php:247
+#: lib/social.php:248
 msgid "This content must be published<br/>before it can be shared."
 msgstr ""
 
-#: lib/style.php:74
+#: lib/style.php:79
 msgid "The %s file is not readable."
 msgstr ""
 

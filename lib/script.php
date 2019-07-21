@@ -29,7 +29,12 @@ if ( ! class_exists( 'WpssoRrssbScript' ) ) {
 
 		public function enqueue_scripts( $hook_name ) {
 
+			$is_amp         = SucomUtil::is_amp();
 			$plugin_version = $this->p->cf[ 'plugin' ][ 'wpssorrssb' ][ 'version' ];
+
+			if ( $is_amp ) {
+				return;
+			}
 
 			wp_register_script( 'rrssb', WPSSORRSSB_URLPATH . 'js/ext/rrssb.min.js', array( 'jquery' ), $plugin_version, true );
 

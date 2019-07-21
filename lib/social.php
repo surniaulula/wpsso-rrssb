@@ -47,6 +47,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			}
 
 			if ( is_admin() ) {
+
 				if ( $this->have_buttons_for_type( 'admin_edit' ) ) {
 					add_action( 'add_meta_boxes', array( $this, 'add_metabox_admin_edit' ) );
 				}
@@ -306,10 +307,10 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				$this->p->debug->mark( 'getting buttons for ' . $type );	// Start timer.
 			}
 
+			$is_admin      = is_admin();
+			$is_amp        = SucomUtil::is_amp();
+			$doing_ajax    = SucomUtil::get_const( 'DOING_AJAX' );
 			$error_message = '';
-			$append_error  = true;
-			$is_admin      = is_admin();				// Check only once.
-			$doing_ajax    = SucomUtil::get_const( 'DOING_AJAX' );	// Check only once.
 
 			if ( $doing_ajax ) {
 
@@ -327,7 +328,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					$error_message = $type . ' ignored in back-end';
 				}
 
-			} elseif ( SucomUtil::is_amp() ) {
+			} elseif ( $is_amp ) {
 
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'is_amp is true' );
@@ -385,11 +386,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					$this->p->debug->mark( 'getting buttons for ' . $type );	// End timer.
 				}
 
-				if ( $append_error ) {
-					return $text . "\n" . '<!-- ' . __METHOD__ . ' ' . $type . ' filter skipped: ' . $error_message . ' -->' . "\n";
-				} else {
-					return $text;
-				}
+				return $text . "\n" . '<!-- ' . __METHOD__ . ' ' . $type . ' filter skipped: ' . $error_message . ' -->' . "\n";
 			}
 
 			/**
