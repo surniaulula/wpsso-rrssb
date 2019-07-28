@@ -96,7 +96,7 @@ The WPSSO RRSSB Premium add-on includes special integration modules to add socia
 	* BuddyPress Activities
 	* WooCommerce Short Description
 
-<h3>WPSSO Core Plugin Prerequisite</h3>
+<h3>WPSSO Core Plugin Required</h3>
 
 WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an add-on for the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/).
 
