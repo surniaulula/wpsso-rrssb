@@ -198,13 +198,13 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 				$cache_array = SucomUtil::get_transient_array( $cache_id );
 
-				if ( isset( $cache_array[ $cache_index ] ) ) {	// can be an empty string
+				if ( isset( $cache_array[ $cache_index ] ) ) {	// Can be an empty string.
 
 					if ( $this->p->debug->enabled ) {
 						$this->p->debug->log( $type . ' cache index found in transient cache' );
 					}
 
-					return $cache_array[ $cache_index ];	// stop here
+					return $cache_array[ $cache_index ];	// Stop here.
 
 				} else {
 

@@ -196,7 +196,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 			}
 
 			if ( ! $this->have_req_min ) {
-				return;	// stop here
+				return;	// Stop here.
 			}
 
 			$this->actions = new WpssoRrssbActions( $this->p );
@@ -216,7 +216,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 				$this->min_version_notice();
 
-				return;	// stop here
+				return;	// Stop here.
 			}
 		}
 
