@@ -1,4 +1,4 @@
-=== WPSSO Ridiculously Responsive Social Sharing Buttons ===
+=== Ridiculously Responsive Social Sharing Buttons | WPSSO Add-on ===
 Plugin Name: WPSSO Ridiculously Responsive Social Sharing Buttons
 Plugin Slug: wpsso-rrssb
 Text Domain: wpsso-rrssb
@@ -13,7 +13,7 @@ Tested Up To: 5.2.2
 WC Tested Up To: 3.6
 Stable Tag: 2.2.1
 
-WPSSO Core add-on offers Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc.
+Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc.
 
 == Description ==
 

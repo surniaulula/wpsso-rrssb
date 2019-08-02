@@ -1,8 +1,8 @@
-<h1>WPSSO Ridiculously Responsive Social Sharing Buttons</h1>
+<h1>Ridiculously Responsive Social Sharing Buttons | WPSSO Add-on</h1>
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Ridiculously Responsive Social Sharing Buttons</td></tr>
-<tr><th align="right" valign="top" nowrap>Summary</th><td>WPSSO Core add-on offers Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, editor pages,</td></tr>
+<tr><th align="right" valign="top" nowrap>Summary</th><td>Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>2.2.1</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires At Least</th><td>WordPress 3.8</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To</th><td>WordPress 5.2.2</td></tr>
