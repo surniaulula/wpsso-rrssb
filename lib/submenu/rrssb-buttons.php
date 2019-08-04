@@ -224,18 +224,18 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			return $table_rows;
 		}
 
-		public function show_on_checkboxes( $opt_prefix ) {
+		public function show_on_checkboxes( $opt_pre ) {
 
 			$col     = 0;
 			$max     = 6;
 			$html    = '<table>';
 			$has_pp  = $this->p->check->pp( 'wpssorrssb' );
-			$show_on = apply_filters( $this->p->lca . '_rrssb_buttons_show_on', $this->p->cf[ 'sharing' ][ 'show_on' ], $opt_prefix );
+			$show_on = apply_filters( $this->p->lca . '_rrssb_buttons_show_on', $this->p->cf[ 'sharing' ][ 'show_on' ], $opt_pre );
 
 			foreach ( $show_on as $opt_suffix => $short_desc ) {
 
-				$css_class = isset( $this->p->options[$opt_prefix . '_on_' . $opt_suffix . ':is' ] ) &&
-					$this->p->options[$opt_prefix . '_on_' . $opt_suffix . ':is' ] === 'disabled' &&
+				$css_class = isset( $this->p->options[$opt_pre . '_on_' . $opt_suffix . ':is' ] ) &&
+					$this->p->options[$opt_pre . '_on_' . $opt_suffix . ':is' ] === 'disabled' &&
 						! $has_pp ? 'show_on blank' : 'show_on';
 
 				$col++;
@@ -246,7 +246,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 					$html .= '<td class="' . $css_class . '">';
 				}
 
-				$html .= $this->form->get_checkbox( $opt_prefix . '_on_' . $opt_suffix ) . 
+				$html .= $this->form->get_checkbox( $opt_pre . '_on_' . $opt_suffix ) . 
 					_x( $short_desc, 'option value', 'wpsso-rrssb' ) . '&nbsp; ';
 
 				if ( $col == $max ) {

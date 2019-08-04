@@ -71,7 +71,7 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddyblogSharing' ) ) {
 		public function filter_get_defaults( $opts_def ) {
 
 			foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $id => $opt_pre ) {
-				$opts_def[$opt_pre . '_on_bblog_post' ] = 0;
+				$opts_def[ $opt_pre . '_on_bblog_post' ] = 0;
 			}
 
 			return $opts_def;
@@ -90,7 +90,7 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddyblogSharing' ) ) {
 
 			$show_on[ 'bblog_post' ] = 'BBlog Post';
 
-			$this->p->options[$opt_pre . '_on_bblog_post:is' ] = 'disabled';
+			$this->p->options[ $opt_pre . '_on_bblog_post:is' ] = 'disabled';
 
 			return $show_on;
 		}
