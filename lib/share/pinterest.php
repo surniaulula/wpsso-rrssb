@@ -201,9 +201,9 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 			$pinterest_caption = $this->p->page->get_caption( 'excerpt', $opts[ 'pin_caption_max_len' ], $mod, true,
 				$atts[ 'add_hashtags' ], false, 'pin_desc' );
 
-			return $this->p->util->replace_inline_vars( '<!-- Pinterest Button -->'.
+			return $this->p->util->replace_inline_vars( '<!-- Pinterest Button -->' .
 				$pinterest_button_html, $mod, $atts, array(
-					'media_url' => rawurlencode( $atts[ 'photo' ] ),
+					'media_url'         => rawurlencode( $atts[ 'photo' ] ),
 				 	'pinterest_caption' => rawurlencode( $pinterest_caption ),
 				)
 			);

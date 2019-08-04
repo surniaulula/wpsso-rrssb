@@ -121,7 +121,7 @@ if ( ! class_exists( 'WpssoRrssbShareReddit' ) ) {
 			$reddit_summary = $this->p->page->get_caption( 'excerpt', $opts['reddit_caption_max_len'], $mod, true,
 				$atts[ 'add_hashtags' ], false, 'reddit_desc' );
 
-			return $this->p->util->replace_inline_vars( '<!-- Reddit Button -->'.
+			return $this->p->util->replace_inline_vars( '<!-- Reddit Button -->' .
 				$this->p->options['reddit_rrssb_html'], $mod, $atts, array(
 				 	'reddit_title'   => rawurlencode( $reddit_title ),
 				 	'reddit_summary' => rawurlencode( $reddit_summary ),

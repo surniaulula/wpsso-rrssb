@@ -120,7 +120,7 @@ if ( ! class_exists( 'WpssoRrssbShareTumblr' ) ) {
 			$tumblr_summary = $this->p->page->get_caption( 'excerpt', $opts['tumblr_caption_max_len'], $mod, true,
 				$atts[ 'add_hashtags' ], false, 'tumblr_desc' );
 
-			return $this->p->util->replace_inline_vars( '<!-- Tumblr Button -->'.
+			return $this->p->util->replace_inline_vars( '<!-- Tumblr Button -->' .
 				$this->p->options['tumblr_rrssb_html'], $mod, $atts, array(
 				 	'tumblr_title'   => rawurlencode( $tumblr_title ),
 				 	'tumblr_summary' => rawurlencode( $tumblr_summary ),

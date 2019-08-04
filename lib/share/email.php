@@ -121,7 +121,7 @@ if ( ! class_exists( 'WpssoRrssbShareEmail' ) ) {
 			$email_excerpt = $this->p->page->get_caption( 'both', $opts['email_caption_max_len'], $mod, true,
 				$atts[ 'add_hashtags' ], false, 'email_desc' );
 
-			return $this->p->util->replace_inline_vars( '<!-- Email Button -->'.
+			return $this->p->util->replace_inline_vars( '<!-- Email Button -->' .
 				$this->p->options['email_rrssb_html'], $mod, $atts, array(
 				 	'email_title'   => rawurlencode( $email_title ),
 			 		'email_excerpt' => rawurlencode( $email_excerpt ),

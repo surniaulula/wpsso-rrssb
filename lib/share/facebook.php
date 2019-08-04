@@ -103,7 +103,7 @@ if ( ! class_exists( 'WpssoRrssbShareFacebook' ) ) {
 				$this->p->debug->mark();
 			}
 
-			return $this->p->util->replace_inline_vars( '<!-- Facebook Button -->'.
+			return $this->p->util->replace_inline_vars( '<!-- Facebook Button -->' .
 				$this->p->options['fb_rrssb_html'], $mod, $atts );
 		}
 	}

@@ -102,7 +102,7 @@ if ( ! class_exists( 'WpssoRrssbSharePocket' ) ) {
 				$this->p->debug->mark();
 			}
 
-			return $this->p->util->replace_inline_vars( '<!-- Pocket Button -->'.
+			return $this->p->util->replace_inline_vars( '<!-- Pocket Button -->' .
 				$this->p->options['pocket_rrssb_html'], $mod, $atts );
 		}
 	}

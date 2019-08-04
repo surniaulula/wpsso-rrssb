@@ -104,7 +104,7 @@ if ( ! class_exists( 'WpssoRrssbShareWhatsApp' ) ) {
 
 			$wa_title = $this->p->page->get_caption( 'title', 0, $mod, true, false, false, 'og_title' );
 
-			return $this->p->util->replace_inline_vars( '<!-- WhatsApp Button -->'.
+			return $this->p->util->replace_inline_vars( '<!-- WhatsApp Button -->' .
 				$this->p->options['wa_rrssb_html'], $mod, $atts, array(
 				 	'title' => rawurlencode( $wa_title ),
 				)

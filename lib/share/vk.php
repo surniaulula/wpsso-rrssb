@@ -102,7 +102,7 @@ if ( ! class_exists( 'WpssoRrssbShareVk' ) ) {
 				$this->p->debug->mark();
 			}
 
-			return $this->p->util->replace_inline_vars( '<!-- VK Button -->'.
+			return $this->p->util->replace_inline_vars( '<!-- VK Button -->' .
 				$this->p->options['vk_rrssb_html'], $mod, $atts );
 		}
 	}
