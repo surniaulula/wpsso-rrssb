@@ -14,7 +14,7 @@
  * Requires At Least: 3.8
  * Tested Up To: 5.2.2
  * WC Tested Up To: 3.6
- * Version: 2.2.1
+ * Version: 2.2.2-dev.1
  * 
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -169,10 +169,6 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 			}
 
 			$avail[ 'p_ext' ][ 'rrssb' ] = true;		// Signal that this extension / add-on is available.
-
-			if ( is_admin() ) {
-				$avail[ 'admin' ][ 'sharing' ] = true;
-			}
 
 			return $avail;
 		}
