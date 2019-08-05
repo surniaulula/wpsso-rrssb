@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 2.1.0\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 2.2.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2019-07-12 17:19-0700\n"
-"PO-Revision-Date: 2019-07-12 17:19-0700\n"
+"POT-Creation-Date: 2019-08-05 08:28-0700\n"
+"PO-Revision-Date: 2019-08-05 08:28-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -164,8 +164,8 @@ msgstr "Boutons réactifs"
 
 #: lib/gettext-config.php:8
 msgctxt "plugin description"
-msgid "WPSSO Core add-on offers Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc."
-msgstr "Ajout WPSSO Core pour fournir des boutons de partage sociaux ridiculement réactif (SVG) dans le contenu, extraits, barre flottante CSS, widget, pages d'édition, etc."
+msgid "Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc."
+msgstr "Boutons de partage sociaux ridiculement réactif (SVG) pour votre contenu, extraits, barre flottante CSS, widget, pages d'édition, etc."
 
 #: lib/gettext-config.php:9
 msgctxt "option label"
@@ -383,8 +383,8 @@ msgstr "Ajout de hashtags a la légende"
 
 #: lib/share/pinterest.php:41
 msgctxt "option label"
-msgid "Pinterest <em>Sharing Button</em>"
-msgstr "<em>Bouton de partage</em> Pinterest"
+msgid "Pinterest Sharing Button"
+msgstr "Bouton de partage Pinterest"
 
 #: lib/share/pinterest.php:63
 msgctxt "option label"
@@ -426,36 +426,36 @@ msgctxt "option label"
 msgid "Recommend Author @username"
 msgstr "Recommander @nom d'auteur"
 
-#: lib/social.php:114
+#: lib/social.php:115
 msgid "Failed writing the css file %s."
 msgstr "Impossible d'écrire le fichier css %s."
 
-#: lib/social.php:123
+#: lib/social.php:124
 msgid "Updated the <a href=\"%1$s\">%2$s</a> stylesheet (%3$d bytes written)."
 msgstr "La feuille de style <a href=\"%1$s\">%2$s</a> a été mise à jour (%3$d octets écrits)."
 
-#: lib/social.php:140
+#: lib/social.php:141
 msgid "Cache folder %s is not writable."
 msgstr "Le dossier de cache %s n'est pas accessible en écriture."
 
-#: lib/social.php:150
+#: lib/social.php:151
 msgid "Failed to open the css file %s for writing."
 msgstr "Impossible d'ouvrir le fichier css %s pour écriture."
 
-#: lib/social.php:169
+#: lib/social.php:170
 msgid "Error removing the minified stylesheet &mdash; does the web server have sufficient privileges?"
 msgstr "Erreur en retirant la feuille de style minimisé &mdash; le serveur Web a t'il les privilèges nécessaires?"
 
-#: lib/social.php:196
+#: lib/social.php:197
 msgctxt "metabox title"
 msgid "Share Buttons"
 msgstr "Boutons de partage"
 
-#: lib/social.php:247
+#: lib/social.php:248
 msgid "This content must be published<br/>before it can be shared."
 msgstr "Ce contenu doit être publié<br/>avant d'être partagé."
 
-#: lib/style.php:74
+#: lib/style.php:79
 msgid "The %s file is not readable."
 msgstr "Le fichier %s n'est pas lisible."
 
@@ -551,7 +551,7 @@ msgstr "%1$s est un ajout pour l'extension %2$s &mdash; SVP installer et activer
 msgid "The %1$s add-on requires the %2$s plugin &mdash; install and activate the %3$s plugin or <a href=\"%4$s\">deactivate the %5$s add-on</a>."
 msgstr "L'ajout %1$s requiert l'extension %2$s &mdash; installer et activer l'extension %3$s ou <a href=\"%4$s\">désactiver l'ajout %5$s</a>."
 
-#: wpsso-rrssb.php:227
+#: wpsso-rrssb.php:223
 msgid "The %1$s version %2$s add-on requires %3$s version %4$s or newer (version %5$s is currently installed)."
 msgstr "L'ajout %1$s version %2$s requiert %3$s version %4$s ou plus récente (version %5$s est actuellement installée)."
 
@@ -564,8 +564,8 @@ msgid "https://wpsso.com/extend/plugins/wpsso-rrssb/"
 msgstr "https://wpsso.com/extend/plugins/wpsso-rrssb/"
 
 #. Description of the plugin/theme
-msgid "WPSSO Core add-on offers Ridiculously Responsive (SVG) Social Sharing Buttons in your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc."
-msgstr "Ajout WPSSO Core pour fournir des boutons de partage sociaux ridiculement réactif (SVG) dans le contenu, extraits, barre flottante CSS, widget, pages d'édition, etc."
+msgid "Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc."
+msgstr "Boutons de partage sociaux ridiculement réactif (SVG) pour votre contenu, extraits, barre flottante CSS, widget, pages d'édition, etc."
 
 #. Author of the plugin/theme
 msgid "JS Morisset"
@@ -574,3 +574,7 @@ msgstr "JS Morisset"
 #. Author URI of the plugin/theme
 msgid "https://wpsso.com/"
 msgstr "https://wpsso.com/"
+
+#~ msgctxt "option label"
+#~ msgid "Pinterest <em>Sharing Button</em>"
+#~ msgstr "<em>Bouton de partage</em> Pinterest"
