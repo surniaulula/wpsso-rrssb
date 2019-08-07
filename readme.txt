@@ -143,7 +143,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.2.2-rc.1 (2019/08/07)**
+**Version 2.2.2 (2019/08/07)**
 
 * **New Features**
 	* None.
@@ -167,11 +167,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 2.2.2-rc.1 =
+= 2.2.2 =
 
 (2019/08/07) Minor update for "fr_FR" translations. Simplified and optimized loading of admin library modules for WPSSO Core v5.5.1.
-
-= 2.2.1 =
-
-(2019/07/21) Added a check to exclude scripts from being enqueued on AMP pages.
 
