@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires At Least: 3.8
 Tested Up To: 5.2.2
 WC Tested Up To: 3.6
-Stable Tag: 2.2.1
+Stable Tag: 2.2.2
 
 Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc.
 
