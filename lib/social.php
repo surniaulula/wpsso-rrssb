@@ -559,9 +559,12 @@ $cache_array[ $cache_index ] .
 				$this->p->debug->mark();
 			}
 
-			static $cache_exp_secs = null;	// Filter the cache expiration value only once.
+			/**
+			 * Set and filter the cache expiration value only once.
+			 */
+			static $cache_exp_secs = null;
 
-			if ( ! isset( $cache_exp_secs ) ) {
+			if ( null === $cache_exp_secs ) {
 
 				$cache_md5_pre    = $this->p->lca . '_b_';
 				$cache_exp_filter = $this->p->cf[ 'wp' ][ 'transient' ][ $cache_md5_pre ][ 'filter' ];
