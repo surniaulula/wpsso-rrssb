@@ -13,7 +13,7 @@
  * Description: Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc.
  * Requires At Least: 3.8
  * Tested Up To: 5.2.2
- * WC Tested Up To: 3.6
+ * WC Tested Up To: 3.7.0
  * Version: 2.2.2
  * 
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
