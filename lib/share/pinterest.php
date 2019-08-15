@@ -38,7 +38,8 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 				$this->p->opt->get_defaults( 'pin_img_height' ) . ' ' . 
 				( $this->p->opt->get_defaults( 'pin_img_crop' ) == 0 ? 'uncropped' : 'cropped' );
 
-			$table_rows[ 'pin_img_dimensions' ] = $form->get_th_html( _x( 'Pinterest Sharing Button', 'option label', 'wpsso-rrssb' ), null, 'pin_img_dimensions', 'The image dimensions that the Pinterest Pin It button will share (defaults is '.$def_dimensions.'). Images in the Facebook / Open Graph meta tags are usually cropped, where-as images on Pinterest often look better in their original aspect ratio (uncropped) and/or cropped using portrait photo dimensions.' ).
+			$table_rows[ 'pin_img_size' ] = $form->get_th_html( _x( 'Pinterest Sharing Button', 'option label', 'wpsso-rrssb' ), null, 'pin_img_size',
+				'The image dimensions that the Pinterest Pin It button will share (defaults is '.$def_dimensions.'). Images in the Facebook / Open Graph meta tags are usually cropped, where-as images on Pinterest often look better in their original aspect ratio (uncropped) and/or cropped using portrait photo dimensions.' ).
 			'<td>'.$form->get_input_image_dimensions( 'pin_img' ).'</td>';	// $use_opts = false
 
 			return $table_rows;
@@ -60,7 +61,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 				'<td>'.$form->get_select( 'pin_platform', $this->p->cf[ 'sharing' ][ 'platform' ] ).'</td>';
 			}
 
-			$table_rows[] = $form->get_th_html( _x( 'Image Dimensions', 'option label', 'wpsso-rrssb' ) ).
+			$table_rows[] = $form->get_th_html( _x( 'Image Size', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_input_image_dimensions( 'pin_img' ).'</td>';	// $use_opts = false
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'pin_caption_max_len' ).
@@ -138,7 +139,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 
 			$sizes[ 'pin_img' ] = array(	// Options prefix.
 				'name'  => 'pinterest-button',
-				'label' => _x( 'Pinterest Sharing Button', 'image size label', 'wpsso-rrssb' ),
+				'label' => _x( 'Pinterest Sharing Image', 'image size label', 'wpsso-rrssb' ),
 			);
 
 			return $sizes;

@@ -108,7 +108,7 @@ msgid ""
 msgstr ""
 
 #: lib/filters.php:435 lib/share/email.php:34 lib/share/facebook.php:34
-#: lib/share/linkedin.php:34 lib/share/pinterest.php:50 lib/share/pocket.php:34
+#: lib/share/linkedin.php:34 lib/share/pinterest.php:51 lib/share/pocket.php:34
 #: lib/share/reddit.php:34 lib/share/tumblr.php:34 lib/share/twitter.php:34
 #: lib/share/vk.php:34 lib/share/whatsapp.php:34
 msgctxt "option label"
@@ -383,7 +383,7 @@ msgid "Position in BuddyBlog Post"
 msgstr ""
 
 #: lib/share/email.php:37 lib/share/facebook.php:37 lib/share/linkedin.php:37
-#: lib/share/pinterest.php:53 lib/share/pocket.php:37 lib/share/reddit.php:37
+#: lib/share/pinterest.php:54 lib/share/pocket.php:37 lib/share/reddit.php:37
 #: lib/share/tumblr.php:37 lib/share/twitter.php:37 lib/share/vk.php:37
 #: lib/share/whatsapp.php:37
 msgctxt "option label"
@@ -391,7 +391,7 @@ msgid "Preferred Order"
 msgstr ""
 
 #: lib/share/email.php:43 lib/share/facebook.php:43 lib/share/linkedin.php:43
-#: lib/share/pinterest.php:59 lib/share/pocket.php:42 lib/share/reddit.php:42
+#: lib/share/pinterest.php:60 lib/share/pocket.php:42 lib/share/reddit.php:42
 #: lib/share/tumblr.php:42 lib/share/twitter.php:42 lib/share/vk.php:42
 #: lib/share/whatsapp.php:42
 msgctxt "option label"
@@ -403,7 +403,7 @@ msgctxt "option label"
 msgid "Email Message Length"
 msgstr ""
 
-#: lib/share/email.php:50 lib/share/linkedin.php:50 lib/share/pinterest.php:69
+#: lib/share/email.php:50 lib/share/linkedin.php:50 lib/share/pinterest.php:70
 #: lib/share/reddit.php:49 lib/share/tumblr.php:49 lib/share/twitter.php:53
 msgctxt "option comment"
 msgid "characters or less"
@@ -414,18 +414,18 @@ msgctxt "option label"
 msgid "Append Hashtags to Message"
 msgstr ""
 
-#: lib/share/email.php:55 lib/share/linkedin.php:55 lib/share/pinterest.php:74
+#: lib/share/email.php:55 lib/share/linkedin.php:55 lib/share/pinterest.php:75
 #: lib/share/reddit.php:54 lib/share/tumblr.php:54 lib/share/twitter.php:58
 msgctxt "option comment"
 msgid "tag names"
 msgstr ""
 
-#: lib/share/linkedin.php:48 lib/share/pinterest.php:67 lib/share/reddit.php:47
+#: lib/share/linkedin.php:48 lib/share/pinterest.php:68 lib/share/reddit.php:47
 msgctxt "option label"
 msgid "Caption Text Length"
 msgstr ""
 
-#: lib/share/linkedin.php:53 lib/share/pinterest.php:72 lib/share/reddit.php:52
+#: lib/share/linkedin.php:53 lib/share/pinterest.php:73 lib/share/reddit.php:52
 msgctxt "option label"
 msgid "Append Hashtags to Caption"
 msgstr ""
@@ -435,14 +435,14 @@ msgctxt "option label"
 msgid "Pinterest Sharing Button"
 msgstr ""
 
-#: lib/share/pinterest.php:63
+#: lib/share/pinterest.php:64
 msgctxt "option label"
-msgid "Image Dimensions"
+msgid "Image Size"
 msgstr ""
 
-#: lib/share/pinterest.php:141
+#: lib/share/pinterest.php:142
 msgctxt "image size label"
-msgid "Pinterest Sharing Button"
+msgid "Pinterest Sharing Image"
 msgstr ""
 
 #: lib/share/tumblr.php:47
