@@ -4,7 +4,7 @@
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Ridiculously Responsive Social Sharing Buttons</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>2.2.2</td></tr>
-<tr><th align="right" valign="top" nowrap>Requires At Least</th><td>WordPress 3.8</td></tr>
+<tr><th align="right" valign="top" nowrap>Requires At Least</th><td>WordPress 3.9</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To</th><td>WordPress 5.2.2</td></tr>
 <tr><th align="right" valign="top" nowrap>Contributors</th><td>jsmoriss</td></tr>
 <tr><th align="right" valign="top" nowrap>License</th><td><a href="https://www.gnu.org/licenses/gpl.txt">GPLv3</a></td></tr>
