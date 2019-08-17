@@ -154,13 +154,12 @@ if ( ! class_exists( 'WpssoRrssbStdAdminSharing' ) ) {
 			$pin_caption_hashtags = $this->p->options[ 'pin_caption_hashtags' ];
 			$pin_caption_text     = $this->p->page->get_caption( 'excerpt', $pin_caption_max_len, $mod, true, $pin_caption_hashtags );
 			$pin_media            = $this->p->og->get_media_info( $this->p->lca . '-pinterest-button', array( 'pid', 'img_url' ), $mod, 'schema' );
-			$force_regen          = $this->p->util->is_force_regen( $mod, 'schema' );	// False by default.
 
 			/**
 			 * Get the smaller thumbnail image as a preview image.
 			 */
 			if ( ! empty( $pin_media[ 'pid' ] ) ) {
-				$pin_media[ 'img_url' ] = $this->p->media->get_attachment_image_url( $pin_media[ 'pid' ], 'thumbnail', false, $force_regen );
+				$pin_media[ 'img_url' ] = $this->p->media->get_attachment_image_url( $pin_media[ 'pid' ], 'thumbnail', false );
 			}
 
 			$form_rows[ 'subsection_pinterest' ] = array(

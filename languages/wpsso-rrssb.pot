@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"2.2.2\n"
+"2.3.0-dev.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2019-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -346,20 +346,20 @@ msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/gettext-pro.php:16 lib/pro/admin/sharing.php:180
-#: lib/std/admin/sharing.php:175
+#: lib/gettext-pro.php:16 lib/pro/admin/sharing.php:179
+#: lib/std/admin/sharing.php:174
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/gettext-pro.php:17 lib/pro/admin/sharing.php:208
-#: lib/std/admin/sharing.php:204
+#: lib/gettext-pro.php:17 lib/pro/admin/sharing.php:207
+#: lib/std/admin/sharing.php:203
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/gettext-pro.php:18 lib/pro/admin/sharing.php:215
-#: lib/std/admin/sharing.php:212
+#: lib/gettext-pro.php:18 lib/pro/admin/sharing.php:214
+#: lib/std/admin/sharing.php:211
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""

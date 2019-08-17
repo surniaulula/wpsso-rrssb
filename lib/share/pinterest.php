@@ -40,7 +40,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 
 			$table_rows[ 'pin_img_size' ] = $form->get_th_html( _x( 'Pinterest Sharing Button', 'option label', 'wpsso-rrssb' ), null, 'pin_img_size',
 				'The image dimensions that the Pinterest Pin It button will share (defaults is '.$def_dimensions.'). Images in the Facebook / Open Graph meta tags are usually cropped, where-as images on Pinterest often look better in their original aspect ratio (uncropped) and/or cropped using portrait photo dimensions.' ).
-			'<td>'.$form->get_input_image_dimensions( 'pin_img' ).'</td>';	// $use_opts = false
+			'<td>'.$form->get_input_image_dimensions( 'pin_img' ).'</td>';
 
 			return $table_rows;
 		}
@@ -62,7 +62,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 			}
 
 			$table_rows[] = $form->get_th_html( _x( 'Image Size', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_input_image_dimensions( 'pin_img' ).'</td>';	// $use_opts = false
+			'<td>'.$form->get_input_image_dimensions( 'pin_img' ).'</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'pin_caption_max_len' ).
                         $form->get_th_html( _x( 'Caption Text Length', 'option label', 'wpsso-rrssb' ) ).
@@ -159,8 +159,6 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 
 			if ( ! empty( $atts[ 'pid' ] ) ) {
 
-				$force_regen = $this->p->util->is_force_regen( $mod, 'schema' );	// false by default
-
 				list(
 					$atts[ 'photo' ],
 					$atts[ 'width' ],
@@ -168,7 +166,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 					$atts[ 'cropped' ],
 					$atts[ 'pid' ],
 					$atts[ 'alt' ]
-				) = $this->p->media->get_attachment_image_src( $atts[ 'pid' ], $atts[ 'size' ], false, $force_regen );
+				) = $this->p->media->get_attachment_image_src( $atts[ 'pid' ], $atts[ 'size' ], false );
 
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'returned image '.$atts[ 'photo' ].' ('.$atts[ 'width' ].'x'.$atts[ 'height' ].')' );
