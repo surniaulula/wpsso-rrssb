@@ -143,7 +143,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.3.0-dev.2 (2019/08/16)**
+**Version 2.3.0-dev.3 (2019/08/17)**
 
 * **New Features**
 	* None.
@@ -179,9 +179,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 2.3.0-dev.2 =
+= 2.3.0-dev.3 =
 
-(2019/08/16) Updates for WPSSO Core v6.0.0.
+(2019/08/17) Updates for WPSSO Core v6.0.0.
 
 = 2.2.2 =
 
