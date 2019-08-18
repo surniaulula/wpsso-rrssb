@@ -21,7 +21,7 @@ Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts,
 
 **Uses *Scalable Vector Graphics* (SVG) social icons:**
 
-The *Ridiculously Responsive Social Sharing Buttons* automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), no matter its size or resolution &mdash; including high resolution retina displays!
+The *Ridiculously Responsive Social Sharing Buttons* automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), no matter its size or resolution &mdash; including Retina and high-PPI displays!
 
 **Add *Ridiculously Responsive Social Sharing Buttons* to:**
 
