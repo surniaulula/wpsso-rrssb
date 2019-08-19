@@ -137,7 +137,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 
 		public function filter_plugin_image_sizes( $sizes ) {
 
-			$sizes[ 'pin_img' ] = array(	// Options prefix.
+			$sizes[ 'pin' ] = array(
 				'name'  => 'pinterest-button',
 				'label' => _x( 'Pinterest Sharing Image', 'image size label', 'wpsso-rrssb' ),
 			);
