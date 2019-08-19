@@ -143,17 +143,29 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 2.3.1-dev.1 (2019/08/19)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Update for WPSSO Core v6.1.0.
+
 **Version 2.3.0 (2019/08/18)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* Updates for WPSSO Core v6.0.0.
+	* None.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Removed the $force_regen argument from WpssoMedia::get_attachment_image_url() method calls.
-	* Removed the $force_regen argument from WpssoMedia::get_attachment_image_src() method calls.
+	* Update for WPSSO Core v6.0.0.
+		* Removed the `$force_regen` argument from `WpssoMedia::get_attachment_image_url()` method calls.
+		* Removed the `$force_regen` argument from `WpssoMedia::get_attachment_image_src()` method calls.
 
 **Version 2.2.2 (2019/08/07)**
 
@@ -179,7 +191,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
+= 2.3.1-dev.1 =
+
+(2019/08/19) Update for WPSSO Core v6.1.0.
+
 = 2.3.0 =
 
-(2019/08/18) Updates for WPSSO Core v6.0.0.
+(2019/08/18) Update for WPSSO Core v6.0.0.
 
