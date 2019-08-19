@@ -143,7 +143,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.3.0-rc.1 (2019/08/18)**
+**Version 2.3.0 (2019/08/18)**
 
 * **New Features**
 	* None.
@@ -179,11 +179,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 2.3.0-rc.1 =
+= 2.3.0 =
 
 (2019/08/18) Updates for WPSSO Core v6.0.0.
-
-= 2.2.2 =
-
-(2019/08/07) Minor update for "fr_FR" translations. Simplified and optimized loading of admin library modules for WPSSO Core v5.5.1.
 
