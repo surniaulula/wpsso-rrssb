@@ -143,7 +143,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.3.1-dev.2 (2019/08/19)**
+**Version 2.3.1-b.1 (2019/08/19)**
 
 * **New Features**
 	* None.
@@ -153,6 +153,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* None.
 * **Developer Notes**
 	* Update for WPSSO Core v6.1.0.
+		* Removed the `$use_placeholders` argument from `SucomForm::get_input_image_dimensions()` method calls.
 
 **Version 2.3.0 (2019/08/18)**
 
@@ -191,7 +192,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 2.3.1-dev.2 =
+= 2.3.1-b.1 =
 
 (2019/08/19) Update for WPSSO Core v6.1.0.
 
