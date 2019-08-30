@@ -143,7 +143,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.3.1-rc.4 (2019/08/29)**
+**Version 2.3.1-rc.5 (2019/08/30)**
 
 * **New Features**
 	* None.
@@ -192,9 +192,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 2.3.1-rc.4 =
+= 2.3.1-rc.5 =
 
-(2019/08/29) Update for WPSSO Core v6.1.0.
+(2019/08/30) Update for WPSSO Core v6.1.0.
 
 = 2.3.0 =
 
