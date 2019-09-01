@@ -143,7 +143,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.3.1-rc.5 (2019/08/30)**
+**Version 2.3.1 (2019/09/01)**
 
 * **New Features**
 	* None.
@@ -168,35 +168,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 		* Removed the `$force_regen` argument from `WpssoMedia::get_attachment_image_url()` method calls.
 		* Removed the `$force_regen` argument from `WpssoMedia::get_attachment_image_src()` method calls.
 
-**Version 2.2.2 (2019/08/07)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Minor update for "fr_FR" translations.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Simplified and optimized loading of admin library modules for WPSSO Core v5.5.1.
-
-**Version 2.2.1 (2019/07/21)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Added a check to exclude scripts from being enqueued on AMP pages.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-
 == Upgrade Notice ==
 
-= 2.3.1-rc.5 =
+= 2.3.1 =
 
-(2019/08/30) Update for WPSSO Core v6.1.0.
-
-= 2.3.0 =
-
-(2019/08/18) Update for WPSSO Core v6.0.0.
+(2019/09/01) Update for WPSSO Core v6.1.0.
 
