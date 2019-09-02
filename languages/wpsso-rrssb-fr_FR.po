@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 2.2.2\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 2.3.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2019-08-05 08:28-0700\n"
-"PO-Revision-Date: 2019-08-05 08:28-0700\n"
+"POT-Creation-Date: 2019-09-01 17:34-0700\n"
+"PO-Revision-Date: 2019-09-01 17:35-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -85,7 +85,7 @@ msgid "Social sharing buttons can be added to the top, bottom, or both. Each sha
 msgstr "Les boutons de partage social peuvent être ajoutés en haut, en bas, ou les deux. Chaque bouton de partage doit aussi être activé ci-dessous (voir les options <em>%s</em>)."
 
 #: lib/filters.php:435 lib/share/email.php:34 lib/share/facebook.php:34
-#: lib/share/linkedin.php:34 lib/share/pinterest.php:50 lib/share/pocket.php:34
+#: lib/share/linkedin.php:34 lib/share/pinterest.php:51 lib/share/pocket.php:34
 #: lib/share/reddit.php:34 lib/share/tumblr.php:34 lib/share/twitter.php:34
 #: lib/share/vk.php:34 lib/share/whatsapp.php:34
 msgctxt "option label"
@@ -297,20 +297,20 @@ msgctxt "option label"
 msgid "Tweet Text"
 msgstr "Texte du Tweet"
 
-#: lib/gettext-pro.php:16 lib/pro/admin/sharing.php:180
-#: lib/std/admin/sharing.php:175
+#: lib/gettext-pro.php:16 lib/pro/admin/sharing.php:179
+#: lib/std/admin/sharing.php:174
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr "Texte légende Pinterest"
 
-#: lib/gettext-pro.php:17 lib/pro/admin/sharing.php:208
-#: lib/std/admin/sharing.php:204
+#: lib/gettext-pro.php:17 lib/pro/admin/sharing.php:207
+#: lib/std/admin/sharing.php:203
 msgctxt "option label"
 msgid "%s Title"
 msgstr "Titre %s"
 
-#: lib/gettext-pro.php:18 lib/pro/admin/sharing.php:215
-#: lib/std/admin/sharing.php:212
+#: lib/gettext-pro.php:18 lib/pro/admin/sharing.php:214
+#: lib/std/admin/sharing.php:211
 msgctxt "option label"
 msgid "%s Caption"
 msgstr "Légende %s"
@@ -334,7 +334,7 @@ msgid "Position in BuddyBlog Post"
 msgstr "Position dans le texte d'article BuddyBlog"
 
 #: lib/share/email.php:37 lib/share/facebook.php:37 lib/share/linkedin.php:37
-#: lib/share/pinterest.php:53 lib/share/pocket.php:37 lib/share/reddit.php:37
+#: lib/share/pinterest.php:54 lib/share/pocket.php:37 lib/share/reddit.php:37
 #: lib/share/tumblr.php:37 lib/share/twitter.php:37 lib/share/vk.php:37
 #: lib/share/whatsapp.php:37
 msgctxt "option label"
@@ -342,7 +342,7 @@ msgid "Preferred Order"
 msgstr "Ordre de préférence"
 
 #: lib/share/email.php:43 lib/share/facebook.php:43 lib/share/linkedin.php:43
-#: lib/share/pinterest.php:59 lib/share/pocket.php:42 lib/share/reddit.php:42
+#: lib/share/pinterest.php:60 lib/share/pocket.php:42 lib/share/reddit.php:42
 #: lib/share/tumblr.php:42 lib/share/twitter.php:42 lib/share/vk.php:42
 #: lib/share/whatsapp.php:42
 msgctxt "option label"
@@ -354,7 +354,7 @@ msgctxt "option label"
 msgid "Email Message Length"
 msgstr "Longueur du message couriel"
 
-#: lib/share/email.php:50 lib/share/linkedin.php:50 lib/share/pinterest.php:69
+#: lib/share/email.php:50 lib/share/linkedin.php:50 lib/share/pinterest.php:70
 #: lib/share/reddit.php:49 lib/share/tumblr.php:49 lib/share/twitter.php:53
 msgctxt "option comment"
 msgid "characters or less"
@@ -365,18 +365,18 @@ msgctxt "option label"
 msgid "Append Hashtags to Message"
 msgstr "Ajout de hashtags au message"
 
-#: lib/share/email.php:55 lib/share/linkedin.php:55 lib/share/pinterest.php:74
+#: lib/share/email.php:55 lib/share/linkedin.php:55 lib/share/pinterest.php:75
 #: lib/share/reddit.php:54 lib/share/tumblr.php:54 lib/share/twitter.php:58
 msgctxt "option comment"
 msgid "tag names"
 msgstr "noms d'étiquettes"
 
-#: lib/share/linkedin.php:48 lib/share/pinterest.php:67 lib/share/reddit.php:47
+#: lib/share/linkedin.php:48 lib/share/pinterest.php:68 lib/share/reddit.php:47
 msgctxt "option label"
 msgid "Caption Text Length"
 msgstr "Longueur du texte légende"
 
-#: lib/share/linkedin.php:53 lib/share/pinterest.php:72 lib/share/reddit.php:52
+#: lib/share/linkedin.php:53 lib/share/pinterest.php:73 lib/share/reddit.php:52
 msgctxt "option label"
 msgid "Append Hashtags to Caption"
 msgstr "Ajout de hashtags a la légende"
@@ -386,15 +386,15 @@ msgctxt "option label"
 msgid "Pinterest Sharing Button"
 msgstr "Bouton de partage Pinterest"
 
-#: lib/share/pinterest.php:63
+#: lib/share/pinterest.php:64
 msgctxt "option label"
-msgid "Image Dimensions"
-msgstr "Dimensions de l’image"
+msgid "Image Size"
+msgstr "Taille de l'image"
 
-#: lib/share/pinterest.php:141
+#: lib/share/pinterest.php:142
 msgctxt "image size label"
-msgid "Pinterest Sharing Button"
-msgstr "Bouton de partage Pinterest"
+msgid "Pinterest Sharing Image"
+msgstr "Image de partage Pinterest"
 
 #: lib/share/tumblr.php:47
 msgctxt "option label"
@@ -574,7 +574,3 @@ msgstr "JS Morisset"
 #. Author URI of the plugin/theme
 msgid "https://wpsso.com/"
 msgstr "https://wpsso.com/"
-
-#~ msgctxt "option label"
-#~ msgid "Pinterest <em>Sharing Button</em>"
-#~ msgstr "<em>Bouton de partage</em> Pinterest"
