@@ -168,7 +168,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				return '<!-- ' . $this->p->lca . ' sharing shortcode: no buttons defined -->' . "\n\n";
 			}
 
-			$atts[ 'use_post' ]  = SucomUtil::sanitize_use_post( $atts, true );	// $default = true
+			$atts[ 'use_post' ]  = SucomUtil::sanitize_use_post( $atts, true );
 			$atts[ 'css_class' ] = empty( $atts[ 'css_class' ] ) ? 'rrssb-shortcode' : $atts[ 'css_class' ];
 
 			if ( $this->p->debug->enabled ) {
