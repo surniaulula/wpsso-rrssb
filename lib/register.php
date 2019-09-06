@@ -105,9 +105,6 @@ if ( ! class_exists( 'WpssoRrssbRegister' ) ) {
 
 					WpssoUtil::save_all_times( 'wpssorrssb', $version );
 				}
-
-			} else {
-				WpssoRrssb::required_notice( $deactivate = true );
 			}
 		}
 
