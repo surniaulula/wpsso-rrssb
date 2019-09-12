@@ -37,10 +37,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareWhatsApp' ) ) {
 			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_select( 'wa_order', range( 1, count( $submenu->share ) ) ).'</td>';
 
-			if ( $this->p->avail[ '*' ]['vary_ua'] ) {
+			if ( $this->p->avail[ '*' ][ 'vary_ua' ] ) {
 				$table_rows[] = $form->get_tr_hide( 'basic', 'wa_platform' ).
 				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
-				'<td>'.$form->get_select( 'wa_platform', $this->p->cf['sharing']['platform'] ).'</td>';
+				'<td>'.$form->get_select( 'wa_platform', $this->p->cf[ 'sharing' ][ 'platform' ] ).'</td>';
 			}
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'wa_rrssb_html' ).
@@ -93,7 +93,7 @@ if ( ! class_exists( 'WpssoRrssbShareWhatsApp' ) ) {
 		}
 
 		public function filter_get_defaults( $def_opts ) {
-			return array_merge( $def_opts, self::$cf['opt']['defaults'] );
+			return array_merge( $def_opts, self::$cf[ 'opt' ][ 'defaults' ] );
 		}
 
 		public function get_html( array $atts, array $opts, array $mod ) {
@@ -105,7 +105,7 @@ if ( ! class_exists( 'WpssoRrssbShareWhatsApp' ) ) {
 			$wa_title = $this->p->page->get_caption( 'title', 0, $mod, true, false, false, 'og_title' );
 
 			return $this->p->util->replace_inline_vars( '<!-- WhatsApp Button -->' .
-				$this->p->options['wa_rrssb_html'], $mod, $atts, array(
+				$this->p->options[ 'wa_rrssb_html' ], $mod, $atts, array(
 				 	'title' => rawurlencode( $wa_title ),
 				)
 			);

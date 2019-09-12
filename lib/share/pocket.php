@@ -37,10 +37,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePocket' ) ) {
 			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_select( 'pocket_order', range( 1, count( $submenu->share ) ) ).'</td>';
 
-			if ( $this->p->avail[ '*' ]['vary_ua'] ) {
+			if ( $this->p->avail[ '*' ][ 'vary_ua' ] ) {
 				$table_rows[] = $form->get_tr_hide( 'basic', 'pocket_platform' ).
 				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
-				'<td>'.$form->get_select( 'pocket_platform', $this->p->cf['sharing']['platform'] ).'</td>';
+				'<td>'.$form->get_select( 'pocket_platform', $this->p->cf[ 'sharing' ][ 'platform' ] ).'</td>';
 			}
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'pocket_rrssb_html' ).
@@ -93,7 +93,7 @@ if ( ! class_exists( 'WpssoRrssbSharePocket' ) ) {
 		}
 
 		public function filter_get_defaults( $def_opts ) {
-			return array_merge( $def_opts, self::$cf['opt']['defaults'] );
+			return array_merge( $def_opts, self::$cf[ 'opt' ][ 'defaults' ] );
 		}
 
 		public function get_html( array $atts, array $opts, array $mod ) {
@@ -103,7 +103,7 @@ if ( ! class_exists( 'WpssoRrssbSharePocket' ) ) {
 			}
 
 			return $this->p->util->replace_inline_vars( '<!-- Pocket Button -->' .
-				$this->p->options['pocket_rrssb_html'], $mod, $atts );
+				$this->p->options[ 'pocket_rrssb_html' ], $mod, $atts );
 		}
 	}
 }

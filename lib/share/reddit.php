@@ -37,10 +37,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareReddit' ) ) {
 			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_select( 'reddit_order', range( 1, count( $submenu->share ) ) ).'</td>';
 
-			if ( $this->p->avail[ '*' ]['vary_ua'] ) {
+			if ( $this->p->avail[ '*' ][ 'vary_ua' ] ) {
 				$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_platform' ).
 				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
-				'<td>'.$form->get_select( 'reddit_platform', $this->p->cf['sharing']['platform'] ).'</td>';
+				'<td>'.$form->get_select( 'reddit_platform', $this->p->cf[ 'sharing' ][ 'platform' ] ).'</td>';
 			}
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_caption_max_len' ).
@@ -50,7 +50,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareReddit' ) ) {
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_caption_hashtags' ).
 			$form->get_th_html( _x( 'Append Hashtags to Caption', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'reddit_caption_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ) . ' ' . 
+			'<td>'.$form->get_select( 'reddit_caption_hashtags', range( 0, $this->p->cf[ 'form' ][ 'max_hashtags' ] ), 'short', '', true ) . ' ' . 
 				_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_rrssb_html' ).
@@ -106,7 +106,7 @@ if ( ! class_exists( 'WpssoRrssbShareReddit' ) ) {
 		}
 
 		public function filter_get_defaults( $def_opts ) {
-			return array_merge( $def_opts, self::$cf['opt']['defaults'] );
+			return array_merge( $def_opts, self::$cf[ 'opt' ][ 'defaults' ] );
 		}
 
 		public function get_html( array $atts, array $opts, array $mod ) {
@@ -115,14 +115,14 @@ if ( ! class_exists( 'WpssoRrssbShareReddit' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts[ 'add_hashtags' ] = empty( $this->p->options['reddit_caption_hashtags'] ) ? false : $this->p->options['reddit_caption_hashtags'];
+			$atts[ 'add_hashtags' ] = empty( $this->p->options[ 'reddit_caption_hashtags' ] ) ? false : $this->p->options[ 'reddit_caption_hashtags' ];
 
 			$reddit_title   = $this->p->page->get_caption( 'title', 0, $mod, true, false, false, 'reddit_title' );
-			$reddit_summary = $this->p->page->get_caption( 'excerpt', $opts['reddit_caption_max_len'], $mod, true,
+			$reddit_summary = $this->p->page->get_caption( 'excerpt', $opts[ 'reddit_caption_max_len' ], $mod, true,
 				$atts[ 'add_hashtags' ], false, 'reddit_desc' );
 
 			return $this->p->util->replace_inline_vars( '<!-- Reddit Button -->' .
-				$this->p->options['reddit_rrssb_html'], $mod, $atts, array(
+				$this->p->options[ 'reddit_rrssb_html' ], $mod, $atts, array(
 				 	'reddit_title'   => rawurlencode( $reddit_title ),
 				 	'reddit_summary' => rawurlencode( $reddit_summary ),
 				 )

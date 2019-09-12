@@ -37,11 +37,11 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareEmail' ) ) {
 			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ).
 			'<td>'.$form->get_select( 'email_order', range( 1, count( $submenu->share ) ) ).'</td>';
 
-			if ( $this->p->avail[ '*' ]['vary_ua'] ) {
+			if ( $this->p->avail[ '*' ][ 'vary_ua' ] ) {
 
 				$table_rows[] = $form->get_tr_hide( 'basic', 'email_platform' ).
 				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
-				'<td>'.$form->get_select( 'email_platform', $this->p->cf['sharing']['platform'] ).'</td>';
+				'<td>'.$form->get_select( 'email_platform', $this->p->cf[ 'sharing' ][ 'platform' ] ).'</td>';
 			}
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'email_caption_max_len' ).
@@ -51,7 +51,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareEmail' ) ) {
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'email_caption_hashtags' ).
 			$form->get_th_html( _x( 'Append Hashtags to Message', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'email_caption_hashtags', range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', '', true ) . ' ' . 
+			'<td>'.$form->get_select( 'email_caption_hashtags', range( 0, $this->p->cf[ 'form' ][ 'max_hashtags' ] ), 'short', '', true ) . ' ' . 
 				_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'email_rrssb_html' ).
@@ -106,7 +106,7 @@ if ( ! class_exists( 'WpssoRrssbShareEmail' ) ) {
 		}
 
 		public function filter_get_defaults( $def_opts ) {
-			return array_merge( $def_opts, self::$cf['opt']['defaults'] );
+			return array_merge( $def_opts, self::$cf[ 'opt' ][ 'defaults' ] );
 		}
 
 		public function get_html( array $atts, array $opts, array $mod ) {
@@ -115,14 +115,14 @@ if ( ! class_exists( 'WpssoRrssbShareEmail' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts[ 'add_hashtags' ] = empty( $this->p->options['email_caption_hashtags'] ) ? false : $this->p->options['email_caption_hashtags'];
+			$atts[ 'add_hashtags' ] = empty( $this->p->options[ 'email_caption_hashtags' ] ) ? false : $this->p->options[ 'email_caption_hashtags' ];
 
 			$email_title   = $this->p->page->get_caption( 'title', 0, $mod, true, false, false, 'email_title' );
-			$email_excerpt = $this->p->page->get_caption( 'both', $opts['email_caption_max_len'], $mod, true,
+			$email_excerpt = $this->p->page->get_caption( 'both', $opts[ 'email_caption_max_len' ], $mod, true,
 				$atts[ 'add_hashtags' ], false, 'email_desc' );
 
 			return $this->p->util->replace_inline_vars( '<!-- Email Button -->' .
-				$this->p->options['email_rrssb_html'], $mod, $atts, array(
+				$this->p->options[ 'email_rrssb_html' ], $mod, $atts, array(
 				 	'email_title'   => rawurlencode( $email_title ),
 			 		'email_excerpt' => rawurlencode( $email_excerpt ),
 				 )
