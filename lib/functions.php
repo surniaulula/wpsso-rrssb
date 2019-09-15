@@ -38,7 +38,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 
 			$error_msg = 'sharing buttons are disabled';
 
-		} elseif ( empty( $share_ids ) ) {	// nothing to do
+		} elseif ( empty( $share_ids ) ) {	// Nothing to do.
 
 			$error_msg = 'no buttons requested';
 		}

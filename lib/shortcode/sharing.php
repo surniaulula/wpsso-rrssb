@@ -164,7 +164,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 			$atts = (array) apply_filters( $this->p->lca . '_rrssb_sharing_shortcode_atts', $atts, $content );
 
-			if ( empty( $atts[ 'buttons' ] ) ) {	// nothing to do
+			if ( empty( $atts[ 'buttons' ] ) ) {	// Nothing to do.
 				return '<!-- ' . $this->p->lca . ' sharing shortcode: no buttons defined -->' . "\n\n";
 			}
 
