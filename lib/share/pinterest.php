@@ -41,8 +41,8 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 			$tooltip_msg = sprintf( __( 'The image dimensions the Pinterest Pin It button will share (defaults is %s).', 'wpsso-rrssb' ), $def_dimensions ) .
 			' ' . __( 'Images for Facebook / Open Graph are usually cropped, where-as images for Pinterest often look better in their original uncropped aspect ratio.', 'wpsso-rrssb' );
 
-			$table_rows[ 'pin_img_size' ] = $form->get_th_html( _x( 'Pinterest Sharing Button',
-				'option label', 'wpsso-rrssb' ), '', 'pin_img_size', $tooltip_msg ) .
+			$table_rows[ 'pin_img_size' ] = '' .
+			$form->get_th_html( _x( 'Pinterest Sharing Button', 'option label', 'wpsso-rrssb' ), '', 'pin_img_size', $tooltip_msg ) .
 			'<td>' . $form->get_input_image_dimensions( 'pin_img' ) . '</td>';
 
 			return $table_rows;
@@ -54,7 +54,8 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 			$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
 			'<td>' . $submenu->show_on_checkboxes( 'pin' ) . '</td>';
 
-			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
+			$table_rows[] = '' .
+			$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
 			'<td>' . $form->get_select( 'pin_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
 			if ( $this->p->avail[ '*' ][ 'vary_ua' ] ) {
@@ -64,7 +65,8 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 				'<td>' . $form->get_select( 'pin_platform', $this->p->cf[ 'sharing' ][ 'platform' ] ) . '</td>';
 			}
 
-			$table_rows[] = $form->get_th_html( _x( 'Image Size', 'option label', 'wpsso-rrssb' ) ) . 
+			$table_rows[] = $form->get_tr_hide_img_dim( 'basic', 'pin_img' ) .
+			$form->get_th_html( _x( 'Image Size', 'option label', 'wpsso-rrssb' ) ) . 
 			'<td>' . $form->get_input_image_dimensions( 'pin_img' ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'pin_caption_max_len' ) . 
