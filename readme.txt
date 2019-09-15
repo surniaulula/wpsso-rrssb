@@ -143,6 +143,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 2.4.0-dev.8 (2019/09/15)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Hide image size options by default when viewing only basic options in the Responsive Buttons settings page.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+
 **Version 2.3.1 (2019/09/01)**
 
 * **New Features**
@@ -169,6 +180,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 		* Removed the `$force_regen` argument from `WpssoMedia::get_attachment_image_src()` method calls.
 
 == Upgrade Notice ==
+
+= 2.4.0-dev.8 =
+
+(2019/09/15) Hide image size options by default when viewing only basic options in the Responsive Buttons settings page.
 
 = 2.3.1 =
 
