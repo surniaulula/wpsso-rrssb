@@ -25,7 +25,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 			if ( ! is_admin() ) {
 
-				if ( $this->p->avail['p_ext']['rrssb'] ) {
+				if ( $this->p->avail[ 'p_ext' ][ 'rrssb' ] ) {
 
 					$this->check_wpautop();
 
@@ -164,7 +164,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 			$atts = (array) apply_filters( $this->p->lca . '_rrssb_sharing_shortcode_atts', $atts, $content );
 
-			if ( empty( $atts['buttons'] ) ) {	// nothing to do
+			if ( empty( $atts[ 'buttons' ] ) ) {	// nothing to do
 				return '<!-- ' . $this->p->lca . ' sharing shortcode: no buttons defined -->' . "\n\n";
 			}
 
@@ -230,9 +230,9 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				}
 			}
 
-			$ids = array_map( 'trim', explode( ',', $atts['buttons'] ) );
+			$ids = array_map( 'trim', explode( ',', $atts[ 'buttons' ] ) );
 
-			unset ( $atts['buttons'] );
+			unset ( $atts[ 'buttons' ] );
 
 			/**
 			 * Returns html or an empty string.
