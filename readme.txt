@@ -143,7 +143,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.4.0-dev.8 (2019/09/15)**
+**Version 2.4.0-b.1 (2019/09/16)**
 
 * **New Features**
 	* None.
@@ -181,9 +181,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 2.4.0-dev.8 =
+= 2.4.0-b.1 =
 
-(2019/09/15) Hide image size options by default when viewing only basic options in the Responsive Buttons settings page.
+(2019/09/16) Hide image size options by default when viewing only basic options in the Responsive Buttons settings page.
 
 = 2.3.1 =
 
