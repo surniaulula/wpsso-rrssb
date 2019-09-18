@@ -143,7 +143,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.4.0-rc.1 (2019/09/17)**
+**Version 2.4.0 (2019/09/17)**
 
 * **New Features**
 	* None.
@@ -154,38 +154,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Developer Notes**
 	* None.
 
-**Version 2.3.1 (2019/09/01)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Update for WPSSO Core v6.1.0.
-		* Removed the `$use_placeholders` argument from `SucomForm::get_input_image_dimensions()` method calls.
-
-**Version 2.3.0 (2019/08/18)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Update for WPSSO Core v6.0.0.
-		* Removed the `$force_regen` argument from `WpssoMedia::get_attachment_image_url()` method calls.
-		* Removed the `$force_regen` argument from `WpssoMedia::get_attachment_image_src()` method calls.
-
 == Upgrade Notice ==
 
-= 2.4.0-rc.1 =
+= 2.4.0 =
 
 (2019/09/17) Hide image size options by default when viewing only basic options in the Responsive Buttons settings page.
-
-= 2.3.1 =
-
-(2019/09/01) Update for WPSSO Core v6.1.0.
 
