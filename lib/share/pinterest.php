@@ -39,7 +39,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 				( $this->p->opt->get_defaults( 'pin_img_crop' ) == 0 ? 'uncropped' : 'cropped' );
 
 			$tooltip_msg = sprintf( __( 'The image dimensions the Pinterest Pin It button will share (defaults is %s).', 'wpsso-rrssb' ), $def_dimensions ) .
-			' ' . __( 'Images for Facebook / Open Graph are usually cropped, where-as images for Pinterest often look better in their original uncropped aspect ratio.', 'wpsso-rrssb' );
+			' ' . __( 'Images for Facebook / Open Graph are usually cropped, whereas images for Pinterest often look better in their original uncropped aspect ratio.', 'wpsso-rrssb' );
 
 			$table_rows[ 'pin_img_size' ] = '' .
 			$form->get_th_html( _x( 'Pinterest Sharing Button', 'option label', 'wpsso-rrssb' ), '', 'pin_img_size', $tooltip_msg ) .

@@ -437,7 +437,7 @@ msgstr ""
 
 #: lib/share/pinterest.php:42
 msgid ""
-"Images for Facebook / Open Graph are usually cropped, where-as images for "
+"Images for Facebook / Open Graph are usually cropped, whereas images for "
 "Pinterest often look better in their original uncropped aspect ratio."
 msgstr ""
 
