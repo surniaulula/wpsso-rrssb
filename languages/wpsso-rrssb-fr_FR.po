@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 2.3.1\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 2.4.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2019-09-01 17:34-0700\n"
-"PO-Revision-Date: 2019-09-01 17:35-0700\n"
+"POT-Creation-Date: 2019-09-19 07:32-0700\n"
+"PO-Revision-Date: 2019-09-19 07:32-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -85,7 +85,7 @@ msgid "Social sharing buttons can be added to the top, bottom, or both. Each sha
 msgstr "Les boutons de partage social peuvent être ajoutés en haut, en bas, ou les deux. Chaque bouton de partage doit aussi être activé ci-dessous (voir les options <em>%s</em>)."
 
 #: lib/filters.php:435 lib/share/email.php:34 lib/share/facebook.php:34
-#: lib/share/linkedin.php:34 lib/share/pinterest.php:51 lib/share/pocket.php:34
+#: lib/share/linkedin.php:34 lib/share/pinterest.php:54 lib/share/pocket.php:34
 #: lib/share/reddit.php:34 lib/share/tumblr.php:34 lib/share/twitter.php:34
 #: lib/share/vk.php:34 lib/share/whatsapp.php:34
 msgctxt "option label"
@@ -334,7 +334,7 @@ msgid "Position in BuddyBlog Post"
 msgstr "Position dans le texte d'article BuddyBlog"
 
 #: lib/share/email.php:37 lib/share/facebook.php:37 lib/share/linkedin.php:37
-#: lib/share/pinterest.php:54 lib/share/pocket.php:37 lib/share/reddit.php:37
+#: lib/share/pinterest.php:58 lib/share/pocket.php:37 lib/share/reddit.php:37
 #: lib/share/tumblr.php:37 lib/share/twitter.php:37 lib/share/vk.php:37
 #: lib/share/whatsapp.php:37
 msgctxt "option label"
@@ -342,7 +342,7 @@ msgid "Preferred Order"
 msgstr "Ordre de préférence"
 
 #: lib/share/email.php:43 lib/share/facebook.php:43 lib/share/linkedin.php:43
-#: lib/share/pinterest.php:60 lib/share/pocket.php:42 lib/share/reddit.php:42
+#: lib/share/pinterest.php:64 lib/share/pocket.php:42 lib/share/reddit.php:42
 #: lib/share/tumblr.php:42 lib/share/twitter.php:42 lib/share/vk.php:42
 #: lib/share/whatsapp.php:42
 msgctxt "option label"
@@ -354,7 +354,7 @@ msgctxt "option label"
 msgid "Email Message Length"
 msgstr "Longueur du message couriel"
 
-#: lib/share/email.php:50 lib/share/linkedin.php:50 lib/share/pinterest.php:70
+#: lib/share/email.php:50 lib/share/linkedin.php:50 lib/share/pinterest.php:75
 #: lib/share/reddit.php:49 lib/share/tumblr.php:49 lib/share/twitter.php:53
 msgctxt "option comment"
 msgid "characters or less"
@@ -365,33 +365,41 @@ msgctxt "option label"
 msgid "Append Hashtags to Message"
 msgstr "Ajout de hashtags au message"
 
-#: lib/share/email.php:55 lib/share/linkedin.php:55 lib/share/pinterest.php:75
+#: lib/share/email.php:55 lib/share/linkedin.php:55 lib/share/pinterest.php:80
 #: lib/share/reddit.php:54 lib/share/tumblr.php:54 lib/share/twitter.php:58
 msgctxt "option comment"
 msgid "tag names"
 msgstr "noms d'étiquettes"
 
-#: lib/share/linkedin.php:48 lib/share/pinterest.php:68 lib/share/reddit.php:47
+#: lib/share/linkedin.php:48 lib/share/pinterest.php:73 lib/share/reddit.php:47
 msgctxt "option label"
 msgid "Caption Text Length"
 msgstr "Longueur du texte légende"
 
-#: lib/share/linkedin.php:53 lib/share/pinterest.php:73 lib/share/reddit.php:52
+#: lib/share/linkedin.php:53 lib/share/pinterest.php:78 lib/share/reddit.php:52
 msgctxt "option label"
 msgid "Append Hashtags to Caption"
 msgstr "Ajout de hashtags a la légende"
 
 #: lib/share/pinterest.php:41
+msgid "The image dimensions the Pinterest Pin It button will share (defaults is %s)."
+msgstr "Les dimensions de l'image que le bouton Pinterest Pin It partagera (les valeurs par défaut sont %s)."
+
+#: lib/share/pinterest.php:42
+msgid "Images for Facebook / Open Graph are usually cropped, whereas images for Pinterest often look better in their original uncropped aspect ratio."
+msgstr "Les images pour Facebook / Open Graph sont généralement recadrées, tandis que les images pour Pinterest sont souvent meilleures dans leur rapport hauteur / largeur d'origine."
+
+#: lib/share/pinterest.php:45
 msgctxt "option label"
 msgid "Pinterest Sharing Button"
 msgstr "Bouton de partage Pinterest"
 
-#: lib/share/pinterest.php:64
+#: lib/share/pinterest.php:69
 msgctxt "option label"
 msgid "Image Size"
 msgstr "Taille de l'image"
 
-#: lib/share/pinterest.php:142
+#: lib/share/pinterest.php:147
 msgctxt "image size label"
 msgid "Pinterest Sharing Image"
 msgstr "Image de partage Pinterest"
@@ -543,15 +551,11 @@ msgctxt "option label"
 msgid "Widget Title (leave blank for no title)"
 msgstr "Titre du Widget (laisser vide pour aucun titre)"
 
-#: wpsso-rrssb.php:110
-msgid "%1$s is an add-on for the %2$s plugin &mdash; please install and activate the %3$s plugin before activating %4$s."
-msgstr "%1$s est un ajout pour l'extension %2$s &mdash; SVP installer et activer l'extension %3$s avant d'activer %4$s."
-
-#: wpsso-rrssb.php:112
+#: wpsso-rrssb.php:108
 msgid "The %1$s add-on requires the %2$s plugin &mdash; install and activate the %3$s plugin or <a href=\"%4$s\">deactivate the %5$s add-on</a>."
 msgstr "L'ajout %1$s requiert l'extension %2$s &mdash; installer et activer l'extension %3$s ou <a href=\"%4$s\">désactiver l'ajout %5$s</a>."
 
-#: wpsso-rrssb.php:223
+#: wpsso-rrssb.php:206
 msgid "The %1$s version %2$s add-on requires %3$s version %4$s or newer (version %5$s is currently installed)."
 msgstr "L'ajout %1$s version %2$s requiert %3$s version %4$s ou plus récente (version %5$s est actuellement installée)."
 
