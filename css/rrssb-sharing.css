@@ -28,8 +28,6 @@ ul.rrssb-buttons li,
 .content ul.rrssb-buttons li,
 .list-data ul.rrssb-buttons li {
 	position:relative;
-	font-size:inherit !important;
-	line-height:inherit !important;
 	list-style-type:none;
 	list-style-image:none;
 	border:none;
@@ -47,7 +45,6 @@ ul.rrssb-buttons li::before,
 }
 
 .rrssb-text {
-	display:block;
 	white-space:nowrap;
 }
 
