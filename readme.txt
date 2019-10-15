@@ -80,7 +80,7 @@ The WPSSO RRSSB Premium add-on includes special integration modules to add socia
 
 <h3>WPSSO RRSSB Premium Features</h3>
 
-* Custom titles and text in the Document SSO metabox for:
+* Custom share title and description text in the Document SSO metabox for:
 
 	* Email
 	* LinkedIn
