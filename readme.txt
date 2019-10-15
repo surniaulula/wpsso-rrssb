@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires At Least: 3.9
 Tested Up To: 5.2.4
 WC Tested Up To: 3.7.1
-Stable Tag: 2.4.1
+Stable Tag: 2.4.2
 
 Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc.
 
@@ -143,12 +143,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.4.1 (2019/10/04)**
+**Version 2.4.2 (2019/10/15)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* Maintenance release for WPSSO Core v6.7.0.
+	* Minor CSS update to allow RRSSB large format button sizes.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -156,7 +156,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 2.4.1 =
+= 2.4.2 =
 
-(2019/10/04) Maintenance release for WPSSO Core v6.7.0.
+(2019/10/15) Minor CSS update to allow RRSSB large format button sizes.
 
