@@ -148,7 +148,8 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **New Features**
 	* None.
 * **Improvements**
-	* Minor CSS update to allow RRSSB large format button sizes.
+	* Minor CSS update to allow RRSSB large format button sizes:
+		* Changed ".rrssb-text { display:block; }" to ".rrssb-text { display:inline-block; }"
 * **Bugfixes**
 	* None.
 * **Developer Notes**
