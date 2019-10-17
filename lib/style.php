@@ -40,7 +40,7 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 			$is_amp         = SucomUtil::is_amp();
 			$plugin_version = $this->p->cf[ 'plugin' ][ 'wpssorrssb' ][ 'version' ];
 
-			if ( $is_amp ) {
+			if ( $is_amp ) {	// No buttons for AMP pages.
 				return;
 			}
 
@@ -61,11 +61,13 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 
 				if ( ! empty( $this->p->options[ 'buttons_enqueue_social_style' ] ) ) {
 
+					$sharing_css_mtime = filemtime( WpssoRrssbSocial::$sharing_css_file );
+
 					if ( $this->p->debug->enabled ) {
 						$this->p->debug->log( 'wp_enqueue_style = ' . $this->p->lca . '_rrssb_sharing_css' );
 					}
 
-					wp_enqueue_style( $this->p->lca . '_rrssb_sharing_css', WpssoRrssbSocial::$sharing_css_url, false, $plugin_version );
+					wp_enqueue_style( $this->p->lca . '_rrssb_sharing_css', WpssoRrssbSocial::$sharing_css_url, false, $sharing_css_mtime );
 
 				} else {
 

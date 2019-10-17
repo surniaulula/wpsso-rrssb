@@ -517,7 +517,7 @@ msgstr ""
 msgid "This content must be published<br/>before it can be shared."
 msgstr ""
 
-#: lib/style.php:79
+#: lib/style.php:81
 msgid "The %s file is not readable."
 msgstr ""
 

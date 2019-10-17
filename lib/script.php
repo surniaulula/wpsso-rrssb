@@ -32,7 +32,7 @@ if ( ! class_exists( 'WpssoRrssbScript' ) ) {
 			$is_amp         = SucomUtil::is_amp();
 			$plugin_version = $this->p->cf[ 'plugin' ][ 'wpssorrssb' ][ 'version' ];
 
-			if ( $is_amp ) {
+			if ( $is_amp ) {	// No buttons for AMP pages.
 				return;
 			}
 
