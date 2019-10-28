@@ -143,6 +143,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 2.4.3-dev.1 (2019/10/28)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Updated the column width of headers under the "Share Buttons" tab in the Document SSO metabox.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+
 **Version 2.4.2 (2019/10/15)**
 
 * **New Features**
@@ -156,6 +167,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* None.
 
 == Upgrade Notice ==
+
+= 2.4.3-dev.1 =
+
+(2019/10/28) Updated the column width of headers under the "Share Buttons" tab in the Document SSO metabox.
 
 = 2.4.2 =
 
