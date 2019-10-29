@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 2.4.2\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 2.4.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2019-10-15 14:47-0700\n"
-"PO-Revision-Date: 2019-10-25 13:26-0700\n"
+"POT-Creation-Date: 2019-10-29 07:53-0700\n"
+"PO-Revision-Date: 2019-10-29 07:53-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -247,87 +247,87 @@ msgctxt "option value"
 msgid "Any Platform"
 msgstr "Toute plateformes"
 
-#: lib/gettext-pro.php:6 lib/gettext-pro.php:9 lib/pro/admin/sharing.php:51
-#: lib/pro/admin/sharing.php:72 lib/std/admin/sharing.php:40
+#: lib/gettext-pro.php:6 lib/gettext-pro.php:9 lib/pro/admin/sharing.php:45
+#: lib/pro/admin/sharing.php:66 lib/std/admin/sharing.php:40
 #: lib/std/admin/sharing.php:61
 msgctxt "option label"
 msgid "Sharing Buttons HTML Cache Expiry"
 msgstr "Expiration cache HTML des boutons"
 
-#: lib/gettext-pro.php:7 lib/gettext-pro.php:10 lib/pro/admin/sharing.php:54
-#: lib/pro/admin/sharing.php:75 lib/std/admin/sharing.php:43
+#: lib/gettext-pro.php:7 lib/gettext-pro.php:10 lib/pro/admin/sharing.php:48
+#: lib/pro/admin/sharing.php:69 lib/std/admin/sharing.php:43
 #: lib/std/admin/sharing.php:64
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr "secondes (0 pour désactiver)"
 
-#: lib/gettext-pro.php:8 lib/pro/admin/sharing.php:67
+#: lib/gettext-pro.php:8 lib/pro/admin/sharing.php:61
 #: lib/std/admin/sharing.php:56
 msgctxt "option label"
 msgid "Force Protocol for Shared URLs"
 msgstr "Forcer protocole pour URLs partagées"
 
 # Ignore the post type to avoid gender issues in the French translation.
-#: lib/gettext-pro.php:11 lib/pro/admin/sharing.php:89
+#: lib/gettext-pro.php:11 lib/pro/admin/sharing.php:83
 #: lib/std/admin/sharing.php:78
 msgid "Save a draft version or publish the %s to display these options."
 msgstr "Enregistrer un brouillon ou publier pour activer ces options."
 
-#: lib/gettext-pro.php:12 lib/pro/admin/sharing.php:102
+#: lib/gettext-pro.php:12 lib/pro/admin/sharing.php:96
 #: lib/std/admin/sharing.php:94
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr "Désactiver les boutons"
 
-#: lib/gettext-pro.php:13 lib/pro/admin/sharing.php:122
-#: lib/std/admin/sharing.php:115
+#: lib/gettext-pro.php:13 lib/pro/admin/sharing.php:117
+#: lib/std/admin/sharing.php:116
 msgctxt "option label"
 msgid "Email Subject"
 msgstr "Sujet du couriel"
 
-#: lib/gettext-pro.php:14 lib/pro/admin/sharing.php:129
-#: lib/std/admin/sharing.php:123
+#: lib/gettext-pro.php:14 lib/pro/admin/sharing.php:124
+#: lib/std/admin/sharing.php:124
 msgctxt "option label"
 msgid "Email Message"
 msgstr "Message du courriel"
 
-#: lib/gettext-pro.php:15 lib/pro/admin/sharing.php:150
-#: lib/std/admin/sharing.php:145
+#: lib/gettext-pro.php:15 lib/pro/admin/sharing.php:146
+#: lib/std/admin/sharing.php:147
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr "Texte du Tweet"
 
-#: lib/gettext-pro.php:16 lib/pro/admin/sharing.php:179
-#: lib/std/admin/sharing.php:174
+#: lib/gettext-pro.php:16 lib/pro/admin/sharing.php:176
+#: lib/std/admin/sharing.php:177
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr "Texte légende Pinterest"
 
-#: lib/gettext-pro.php:17 lib/pro/admin/sharing.php:207
-#: lib/std/admin/sharing.php:203
+#: lib/gettext-pro.php:17 lib/pro/admin/sharing.php:205
+#: lib/std/admin/sharing.php:207
 msgctxt "option label"
 msgid "%s Title"
 msgstr "Titre %s"
 
-#: lib/gettext-pro.php:18 lib/pro/admin/sharing.php:214
-#: lib/std/admin/sharing.php:211
+#: lib/gettext-pro.php:18 lib/pro/admin/sharing.php:212
+#: lib/std/admin/sharing.php:215
 msgctxt "option label"
 msgid "%s Caption"
 msgstr "Légende %s"
 
-#: lib/gettext-pro.php:19 lib/pro/ecom/woocommerce.php:114
+#: lib/gettext-pro.php:19 lib/pro/ecom/woocommerce.php:108
 #: lib/std/ecom/woocommerce.php:106
 msgctxt "option label"
 msgid "Position in Woo Short Text"
 msgstr "Position dans le texte Woo Short"
 
-#: lib/gettext-pro.php:20 lib/pro/forum/bbpress.php:165
+#: lib/gettext-pro.php:20 lib/pro/forum/bbpress.php:159
 #: lib/std/forum/bbpress.php:109
 msgctxt "option label"
 msgid "Position in bbPress Single"
 msgstr "Position dans le texte bbPress Single"
 
-#: lib/gettext-pro.php:21 lib/pro/social/buddyblog.php:121
+#: lib/gettext-pro.php:21 lib/pro/social/buddyblog.php:115
 #: lib/std/social/buddyblog.php:82
 msgctxt "option label"
 msgid "Position in BuddyBlog Post"
@@ -463,7 +463,7 @@ msgstr "Boutons de partage"
 msgid "This content must be published<br/>before it can be shared."
 msgstr "Ce contenu doit être publié<br/>avant d'être partagé."
 
-#: lib/style.php:79
+#: lib/style.php:81
 msgid "The %s file is not readable."
 msgstr "Le fichier %s n'est pas lisible."
 
