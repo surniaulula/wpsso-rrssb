@@ -16,7 +16,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(			// Plugin acronym.
-					'version'     => '2.4.3-b.3',	// Plugin version.
+					'version'     => '2.4.3-rc.1',	// Plugin version.
 					'opt_version' => '21',		// Increment when changing default option values.
 					'short'       => 'WPSSO RRSSB',	// Short plugin name.
 					'name'        => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
@@ -29,7 +29,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'req'         => array(
 						'short'       => 'WPSSO Core',
 						'name'        => 'WPSSO Core',
-						'min_version' => '6.11.0-b.3',
+						'min_version' => '6.11.0-rc.1',
 					),
 					'assets' => array(
 						'icons' => array(
@@ -181,8 +181,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 
 		public static function get_version( $add_slug = false ) {
 
-			$ext  = 'wpssorrssb';
-			$info =& self::$cf[ 'plugin' ][$ext];
+			$info =& self::$cf[ 'plugin' ][ 'wpssorrssb' ];
 
 			return $add_slug ? $info[ 'slug' ] . '-' . $info[ 'version' ] : $info[ 'version' ];
 		}
@@ -193,13 +192,21 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 				return;
 			}
 
-			define( 'WPSSORRSSB_FILEPATH', $plugin_filepath );						
-			define( 'WPSSORRSSB_PLUGINBASE', self::$cf[ 'plugin' ][ 'wpssorrssb' ][ 'base' ] );	// wpsso-rrssb/wpsso-rrssb.php
-			define( 'WPSSORRSSB_PLUGINDIR', trailingslashit( realpath( dirname( $plugin_filepath ) ) ) );
-			define( 'WPSSORRSSB_PLUGINSLUG', self::$cf[ 'plugin' ][ 'wpssorrssb' ][ 'slug' ] );	// wpsso-rrssb
-			define( 'WPSSORRSSB_URLPATH', trailingslashit( plugins_url( '', $plugin_filepath ) ) );
-			define( 'WPSSORRSSB_VERSION', self::$cf[ 'plugin' ][ 'wpssorrssb' ][ 'version' ] );						
+			$info =& self::$cf[ 'plugin' ][ 'wpssorrssb' ];
 
+			/**
+			 * Define fixed constants.
+			 */
+			define( 'WPSSORRSSB_FILEPATH', $plugin_filepath );						
+			define( 'WPSSORRSSB_PLUGINBASE', $info[ 'base' ] );	// Example: wpsso-rrssb/wpsso-rrssb.php.
+			define( 'WPSSORRSSB_PLUGINDIR', trailingslashit( realpath( dirname( $plugin_filepath ) ) ) );
+			define( 'WPSSORRSSB_PLUGINSLUG', $info[ 'slug' ] );	// Example: wpsso-rrssb.
+			define( 'WPSSORRSSB_URLPATH', trailingslashit( plugins_url( '', $plugin_filepath ) ) );
+			define( 'WPSSORRSSB_VERSION', $info[ 'version' ] );						
+
+			/**
+			 * Define variable constants.
+			 */
 			self::set_variable_constants();
 		}
 
@@ -209,6 +216,9 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 				$var_const = self::get_variable_constants();
 			}
 
+			/**
+			 * Define the variable constants, if not already defined.
+			 */
 			foreach ( $var_const as $name => $value ) {
 				if ( ! defined( $name ) ) {
 					define( $name, $value );
@@ -220,17 +230,20 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 
 			$var_const = array();
 
-			$var_const['WPSSORRSSB_SHARING_SHORTCODE_NAME'] = 'rrssb';
+			$var_const[ 'WPSSORRSSB_SHARING_SHORTCODE_NAME' ] = 'rrssb';
 
 			/**
 			 * WPSSO RRSSB hook priorities
 			 */
-			$var_const['WPSSORRSSB_SOCIAL_PRIORITY'] = 100;
-			$var_const['WPSSORRSSB_FOOTER_PRIORITY'] = 100;
+			$var_const[ 'WPSSORRSSB_SOCIAL_PRIORITY' ] = 100;
+			$var_const[ 'WPSSORRSSB_FOOTER_PRIORITY' ] = 100;
 
+			/**
+			 * Maybe override the default constant value with a pre-defined constant value.
+			 */
 			foreach ( $var_const as $name => $value ) {
 				if ( defined( $name ) ) {
-					$var_const[$name] = constant( $name );	// inherit existing values
+					$var_const[$name] = constant( $name );
 				}
 			}
 
