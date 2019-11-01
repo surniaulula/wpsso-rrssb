@@ -143,7 +143,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.4.3-rc.2 (2019/11/01)**
+**Version 2.4.3-rc.3 (2019/11/01)**
 
 * **New Features**
 	* None.
@@ -168,7 +168,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 2.4.3-rc.2 =
+= 2.4.3-rc.3 =
 
 (2019/11/01) Updated the column width of headers under the "Share Buttons" tab in the Document SSO metabox.
 
