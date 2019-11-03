@@ -109,7 +109,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 					(array) apply_filters( $filter_name, array(), $this->form )
 				);
 
-				$styles_tabs[ $tab_key ] = _x( $title, 'metabox tab', 'wpsso-ssb' );	// Translate the tab title.
+				$styles_tabs[ $tab_key ] = _x( $title, 'metabox tab', 'wpsso-rrssb' );	// Translate the tab title.
 			}
 
 			$this->p->util->do_metabox_tabbed( $metabox_id, $styles_tabs, $table_rows );
