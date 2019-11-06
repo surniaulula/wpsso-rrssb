@@ -9,11 +9,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for...' );
 }
 
+if ( ! defined( 'WPSSORRSSB_PLUGINDIR' ) ) {	// Just in case.
+	die( 'Incomplete plugin initialization...' );
+}
+
+if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
+	require_once WPSSORRSSB_PLUGINDIR . 'lib/filters-messages.php';
+}
+
 if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 	class WpssoRrssbFilters {
 
 		private $p;
+		private $msgs;
 
 		public function __construct( &$plugin ) {
 
@@ -22,6 +31,8 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
 			}
+
+			$this->msgs = new WpssoRrssbFiltersMessages( $plugin );
 
 			$this->p->util->add_plugin_filters( $this, array( 
 				'get_defaults'           => 1,
@@ -35,12 +46,11 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				$this->p->util->add_plugin_filters( $this, array( 
 					'save_options'              => 3,
 					'option_type'               => 2,
+					'plugin_cache_rows'         => 3,
 					'post_custom_meta_tabs'     => 3,
+					'post_buttons_rows'         => 4,
 					'post_cache_transient_keys' => 4,
-					'messages_info'             => 2,
-					'messages_tooltip'          => 2,
-					'messages_tooltip_plugin'   => 2,
-				) );
+				), $prio = 40 );	// Run after WPSSO Core's own Standard / Premium filters.
 
 				$this->p->util->add_plugin_filters( $this, array( 
 					'status_std_features' => 3,
@@ -146,6 +156,9 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 					'gp_platform'   => '',
 					'gp_rrssb_html' => '',
 				),
+				22 => array(
+					'plugin_wpssorrssb_tid' => '',
+				),
 			);
 
 			$show_on = apply_filters( $this->p->lca . '_rrssb_buttons_show_on', $this->p->cf[ 'sharing' ][ 'show_on' ], 'gp' );
@@ -212,6 +225,25 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			return $type;
 		}
 
+		public function filter_plugin_cache_rows( $table_rows, $form, $network = false ) {
+
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->mark();
+			}
+
+			SucomUtil::add_after_key( $table_rows, 'plugin_types_cache_exp', array( 
+
+				'plugin_sharing_buttons_cache_exp' => '' .
+					$form->get_th_html( _x( 'Sharing Buttons HTML Cache Expiry',
+						'option label', 'wpsso-rrssb' ), null, 'plugin_sharing_buttons_cache_exp' ) . 
+					'<td nowrap>' . $form->get_input( 'plugin_sharing_buttons_cache_exp', 'medium' ) . ' ' . 
+					_x( 'seconds (0 to disable)', 'option comment', 'wpsso-rrssb' ) . '</td>' . 
+					WpssoAdmin::get_option_site_use( 'plugin_sharing_buttons_cache_exp', $form, $network ),
+			) );
+
+			return $table_rows;
+		}
+
 		public function filter_post_custom_meta_tabs( $tabs, $mod, $metabox_id ) {
 
 			if ( $metabox_id === $this->p->cf[ 'meta' ][ 'id' ] ) {
@@ -219,6 +251,153 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			}
 
 			return $tabs;
+		}
+
+		public function filter_post_buttons_rows( $table_rows, $form, $head, $mod ) {
+
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->mark();
+			}
+
+			if ( empty( $mod[ 'post_status' ] ) || $mod[ 'post_status' ] === 'auto-draft' ) {
+
+				$table_rows[ 'save_a_draft' ] = '<td><blockquote class="status-info"><p class="centered">' . 
+					sprintf( __( 'Save a draft version or publish the %s to display these options.',
+						'wpsso-rrssb' ), SucomUtil::titleize( $mod[ 'post_type' ] ) ) . '</p></td>';
+
+				return $table_rows;	// abort
+			}
+
+			$def_cap_title   = $this->p->page->get_caption( 'title', 0, $mod, true, false );
+
+			/**
+			 * Disable Buttons Checkbox
+			 */
+			$form_rows[ 'buttons_disabled' ] = array(
+				'th_class' => 'medium',
+				'label'    => _x( 'Disable Sharing Buttons', 'option label', 'wpsso-rrssb' ),
+				'tooltip'  => 'post-buttons_disabled',
+				'content'  => $form->get_checkbox( 'buttons_disabled' ),
+			);
+
+			/**
+			 * Email
+			 */
+			$email_caption_max_len  = $this->p->options[ 'email_caption_max_len' ];
+			$email_caption_hashtags = $this->p->options[ 'email_caption_hashtags' ];
+			$email_caption_text     = $this->p->page->get_caption( 'excerpt', $email_caption_max_len, $mod, true, $email_caption_hashtags, true, 'none' );
+
+			$form_rows[ 'subsection_email' ] = array(
+				'td_class' => 'subsection',
+				'col_span' => '3',
+				'header'   => 'h4',
+				'label'    => 'Email',
+			);
+
+			$form_rows[ 'email_title' ] = array(
+				'th_class' => 'medium',
+				'label'    => _x( 'Email Subject', 'option label', 'wpsso-rrssb' ),
+				'tooltip'  => 'post-email_title',
+				'content'  => $form->get_input( 'email_title', 'wide', '', 0, $def_cap_title ),
+			);
+
+			$form_rows[ 'email_desc' ] = array(
+				'th_class' => 'medium',
+				'label'    => _x( 'Email Message', 'option label', 'wpsso-rrssb' ),
+				'tooltip'  => 'post-email_desc',
+				'content'  => $form->get_textarea( 'email_desc', '', '', $email_caption_max_len, $email_caption_text ),
+			);
+
+			/**
+			 * Twitter
+			 */
+			$twitter_caption_type     = empty( $this->p->options[ 'twitter_caption' ] ) ? 'title' : $this->p->options[ 'twitter_caption' ];
+			$twitter_caption_max_len  = WpssoRrssbSocial::get_tweet_max_len();
+			$twitter_caption_hashtags = $this->p->options[ 'twitter_caption_hashtags' ];
+			$twitter_caption_text     = $this->p->page->get_caption( $twitter_caption_type, $twitter_caption_max_len, $mod, true, $twitter_caption_hashtags );
+
+			$form_rows[ 'subsection_twitter' ] = array(
+				'td_class' => 'subsection',
+				'col_span' => '3',
+				'header'   => 'h4',
+				'label'    => 'Twitter',
+			);
+
+			$form_rows[ 'twitter_desc' ] = array(
+				'th_class' => 'medium',
+				'label'    => _x( 'Tweet Text', 'option label', 'wpsso-rrssb' ),
+				'tooltip'  => 'post-twitter_desc',
+				'content'  => $form->get_textarea( 'twitter_desc', '', '', $twitter_caption_max_len, $twitter_caption_text ),
+			);
+
+			/**
+			 * Pinterest
+			 */
+			$pin_caption_max_len  = $this->p->options[ 'pin_caption_max_len' ];
+			$pin_caption_hashtags = $this->p->options[ 'pin_caption_hashtags' ];
+			$pin_caption_text     = $this->p->page->get_caption( 'excerpt', $pin_caption_max_len, $mod, true, $pin_caption_hashtags );
+			$pin_media            = $this->p->og->get_media_info( $this->p->lca . '-pinterest-button', array( 'pid', 'img_url' ), $mod, 'schema' );
+
+			/**
+			 * Get the smaller thumbnail image as a preview image.
+			 */
+			if ( ! empty( $pin_media[ 'pid' ] ) ) {
+				$pin_media[ 'img_url' ] = $this->p->media->get_attachment_image_url( $pin_media[ 'pid' ], 'thumbnail', false );
+			}
+
+			$form_rows[ 'subsection_pinterest' ] = array(
+				'td_class' => 'subsection',
+				'col_span' => '3',
+				'header'   => 'h4',
+				'label'    => 'Pinterest',
+			);
+
+			$form_rows[ 'pin_desc' ] = array(
+				'th_class' => 'medium',
+				'td_class' => 'top',
+				'label'    => _x( 'Pinterest Caption', 'option label', 'wpsso-rrssb' ),
+				'tooltip'  => 'post-pin_desc',
+				'content'  => $form->get_textarea( 'pin_desc', '', '', $pin_caption_max_len, $pin_caption_text ) . 
+					( empty( $pin_media[ 'img_url' ] ) ? '' : '</td><td class="top thumb_preview">' .
+						'<img src="' . $pin_media[ 'img_url' ] . '">' ),
+			);
+
+			/**
+			 * Other Title / Caption Input
+			 */
+			foreach ( array(
+				'linkedin' => 'LinkedIn',
+				'reddit' => 'Reddit',
+				'tumblr' => 'Tumblr',
+			) as $opt_pre => $name ) {
+
+				$other_caption_max_len  = $this->p->options[ $opt_pre . '_caption_max_len' ];
+				$other_caption_hashtags = $this->p->options[ $opt_pre . '_caption_hashtags' ];
+				$other_caption_text     = $this->p->page->get_caption( 'excerpt', $other_caption_max_len, $mod, true, $other_caption_hashtags );
+
+				$form_rows[ 'subsection_' . $opt_pre ] = array(
+					'td_class' => 'subsection',
+					'col_span' => '3',
+					'header'   => 'h4',
+					'label'    => $name,
+				);
+
+				$form_rows[ $opt_pre . '_title' ] = array(
+					'th_class' => 'medium',
+					'label'    => sprintf( _x( '%s Title', 'option label', 'wpsso-rrssb' ), $name ),
+					'tooltip'  => 'post-' . $opt_pre . '_title',
+					'content'  => $form->get_input( $opt_pre . '_title', 'wide', '', 0, $def_cap_title ),
+				);
+
+				$form_rows[ $opt_pre . '_desc' ] = array(
+					'th_class' => 'medium',
+					'label'    => sprintf( _x( '%s Caption', 'option label', 'wpsso-rrssb' ), $name ),
+					'tooltip'  => 'post-' . $opt_pre . '_desc',
+					'content'  => $form->get_textarea( $opt_pre . '_desc', '', '', $other_caption_max_len, $other_caption_text ),
+				);
+			}
+
+			return $form->get_md_form_rows( $table_rows, $form_rows, $head, $mod );
 		}
 
 		public function filter_post_cache_transient_keys( $transient_keys, $mod, $sharing_url, $mod_salt ) {
@@ -244,267 +423,6 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			);
 
 			return $transient_keys;
-		}
-
-		public function filter_messages_info( $text, $msg_key ) {
-
-			if ( strpos( $msg_key, 'info-styles-rrssb-' ) !== 0 ) {
-				return $text;
-			}
-
-			$short = $this->p->cf[ 'plugin' ][ 'wpssorrssb' ][ 'short' ];
-
-			switch ( $msg_key ) {
-
-				case 'info-styles-rrssb-sharing':
-
-					$text = '<p>';
-					
-					$text .= sprintf( __( 'The %1$s add-on uses the "%2$s" class to wrap all sharing buttons, and each button has its own individual class name as well.', 'wpsso-rrssb' ), $short, 'wpsso-rrssb' );
-
-					$text .= '</p><p>';
-
-					$text .= __( 'This tab can be used to edit the CSS common to all sharing button locations.', 'wpsso-rrssb' );
-
-					$text .= '</p>';
-
-					break;
-
-				case 'info-styles-rrssb-content':
-
-					$text = '<p>';
-					
-					$text .= sprintf( __( 'Social sharing buttons enabled in the %1$s settings page for the WordPress content are assigned the "%2$s" class.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-content' ).
-
-					$text .= '</p>';
-					
-					$text .= $this->get_info_css_example( 'content', true );
-
-					break;
-
-				case 'info-styles-rrssb-excerpt':
-
-					$text = '<p>';
-					
-					$text .= sprintf( __( 'Social sharing buttons enabled in the %1$s settings page for the WordPress excerpt are assigned the "%2$s" class.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-excerpt' );
-					
-					$text .= '</p>';
-
-					$text .= $this->get_info_css_example( 'excerpt', true );
-
-					break;
-
-				case 'info-styles-rrssb-sidebar':
-
-					$text = '<p>';
-					
-					$text .= sprintf( __( 'Social sharing buttons enabled in the %1$s settings page for the CSS sidebar are assigned the "%2$s" ID.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-sidebar' );
-					
-					$text .= '</p><p>';
-
-					$text .= 'In order to achieve a vertical display, each unordered list (UL) contains a single list item (LI).';
-
-					$text .= '</p>';
-
-					$text .= '<p>Example CSS:</p>
-<pre>
-div.wpsso-rrssb 
-  #wpsso-rrssb-sidebar
-    ul.rrssb-buttons
-      li.rrssb-facebook {}
-</pre>';
-					break;
-
-				case 'info-styles-rrssb-shortcode':
-
-					$text = '<p>';
-					
-					$text .= sprintf( __( 'Social sharing buttons added from a shortcode are assigned the "%1$s" class by default.', 'wpsso-rrssb' ), 'wpsso-rrssb-shortcode' );
-					
-					$text .= '</p>';
-
-					$text .= $this->get_info_css_example( 'shortcode', true );
-
-					break;
-
-				case 'info-styles-rrssb-widget':
-
-					$text = '<p>';
-					
-					$text .= sprintf( __( 'Social sharing buttons enabled in the %1$s widget are assigned the "%2$s" class (along with additional unique CSS ID names).', 'wpsso-rrssb' ), $short, 'wpsso-rrssb-widget' );
-					
-					$text .= '</p>';
-
-					$text .= '<p>Example CSS:</p>
-<pre>
-aside.widget 
-  .wpsso-rrssb-widget 
-    ul.rrssb-buttons
-        li.rrssb-facebook {}
-</pre>';
-
-					break;
-
-				case 'info-styles-rrssb-admin_edit':
-
-					$text = '<p>';
-
-					$text .= sprintf( __( 'Social sharing buttons enabled in the %1$s settings page for admin editing pages are assigned the "%2$s" class.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-admin_edit' );
-
-					$text .= '</p>';
-
-					$text .= $this->get_info_css_example( 'admin_edit', true );
-
-					break;
-
-				case 'info-styles-rrssb-woo_short': 
-
-					$text = '<p>';
-
-					$text .= sprintf( __( 'Social sharing buttons enabled in the %1$s settings page for WooCommerce short descriptions are assigned the "%2$s" class.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-woo_short' );
-
-					$text .= '</p>';
-
-					$text .= $this->get_info_css_example( 'woo_short' );
-
-      					break;
-
-				case 'info-styles-rrssb-bbp_single': 
-
-					$text = '<p>';
-
-					$text .= sprintf( __( 'Social sharing buttons enabled in the %1$s settings page for bbPress single templates are assigned the "%2$s" class.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-bbp_single' );
-
-					$text .= '</p>';
-
-					$text .= $this->get_info_css_example( 'bbp_single' );
-
-      					break;
-
-				case 'info-styles-rrssb-bblog_post': 
-
-					$text = '<p>';
-
-					$text .= sprintf( __( 'Social sharing buttons enabled in the %1$s settings page for BuddyBlog posts are assigned the "%2$s" class.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-bblog_post' );
-
-					$text .= '</p>';
-
-					$text .= $this->get_info_css_example( 'bblog_post' );
-
-      					break;
-
-				case 'info-styles-rrssb-bp_activity': 
-
-					$text = '<p>';
-
-					$text .= sprintf( __( 'Social sharing buttons enabled in the %1$s settings page for BuddyPress activities are assigned the "%2$s" class.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-bp_activity' );
-
-					$text .= '</p>';
-
-					$text .= $this->get_info_css_example( 'bp_activity' );
-
-      					break;
-			}
-
-			return $text;
-		}
-
-		private function get_info_css_example( $type ) {
-
-			$text = '<p>Example CSS:</p>
-<pre>
-div.wpsso-rrssb
-  .wpsso-rrssb-' . $type . '
-    ul.rrssb-buttons
-      li.rrssb-facebook {}
-</pre>';
-
-			return $text;
-		}
-
-		public function filter_messages_tooltip( $text, $msg_key ) {
-
-			if ( strpos( $msg_key, 'tooltip-buttons_' ) !== 0 ) {
-				return $text;
-			}
-
-			switch ( $msg_key ) {
-
-				case ( strpos( $msg_key, 'tooltip-buttons_pos_' ) === false ? false : true ):
-
-					$text = sprintf( __( 'Social sharing buttons can be added to the top, bottom, or both. Each sharing button must also be enabled below (see the <em>%s</em> options).', 'wpsso-rrssb' ), _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) );
-
-					break;
-
-				case 'tooltip-buttons_on_index':
-
-					$text = __( 'Add the social sharing buttons to each entry of an index webpage (blog front page, category, archive, etc.). Social sharing buttons are not included on index webpages by default.', 'wpsso-rrssb' );
-
-					break;
-
-				case 'tooltip-buttons_on_front':
-
-					$text = __( 'If a static Post or Page has been selected for the front page, you can add the social sharing buttons to that static front page as well (default is unchecked).', 'wpsso-rrssb' );
-
-					break;
-
-				case 'tooltip-buttons_add_to':
-
-					$text = __( 'Enabled social sharing buttons are added to the Post, Page, Media, and Product webpages by default. If your theme (or another plugin) supports additional custom post types, and you would like to include social sharing buttons on these webpages, check the appropriate option(s) here.', 'wpsso-rrssb' );
-
-					break;
-
-				case 'tooltip-buttons_force_prot':
-
-					$text = __( 'Modify URLs shared by the sharing buttons to use a specific protocol.', 'wpsso-rrssb' );
-
-					break;
-
-				case 'tooltip-buttons_use_social_style':
-
-					$text = sprintf( __( 'Add the CSS of all <em>%1$s</em> to webpages (default is checked). The CSS will be <strong>minified</strong>, and saved to a single stylesheet with a URL of <a href="%2$s">%3$s</a>. The minified stylesheet can be enqueued or added directly to the webpage HTML.', 'wpsso-rrssb' ), _x( 'Responsive Styles', 'lib file description', 'wpsso-rrssb' ), WpssoRrssbSocial::$sharing_css_url, WpssoRrssbSocial::$sharing_css_url );
-
-					break;
-
-				case 'tooltip-buttons_enqueue_social_style':
-
-					$text = __( 'Have WordPress enqueue the social stylesheet instead of adding the CSS to in the webpage HTML (default is unchecked). Enqueueing the stylesheet may be desirable if you use a plugin to concatenate all enqueued styles into a single stylesheet URL.', 'wpsso-rrssb' );
-
-					break;
-
-				case 'tooltip-buttons_add_via':
-
-					$text = sprintf( __( 'Append the %1$s to the tweet (see <a href="%2$s">the Twitter options tab</a> in the %3$s settings page). The %1$s will be displayed and recommended after the webpage is shared.', 'wpsso-rrssb' ), _x( 'Twitter Business @username', 'option label', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'general#sucom-tabset_pub-tab_twitter' ), _x( 'General', 'lib file description', 'wpsso-rrssb' ) );
-
-					break;
-
-				case 'tooltip-buttons_rec_author':
-
-					$text = sprintf( __( 'Recommend following the author\'s Twitter @username after sharing a webpage. If the %1$s option (above) is also checked, the %2$s is suggested first.', 'wpsso-rrssb' ), _x( 'Add via Business @username', 'option label', 'wpsso-rrssb' ), _x( 'Twitter Business @username', 'option label', 'wpsso-rrssb' ) );
-
-					break;
-			}
-
-			return $text;
-		}
-
-		public function filter_messages_tooltip_plugin( $text, $msg_key ) {
-
-			switch ( $msg_key ) {
-
-				case 'tooltip-plugin_sharing_buttons_cache_exp':
-
-					$cache_exp_secs  = WpssoRrssbConfig::$cf[ 'opt' ][ 'defaults' ][ 'plugin_sharing_buttons_cache_exp' ];
-					$cache_exp_human = $cache_exp_secs ? human_time_diff( 0, $cache_exp_secs ) : _x( 'disabled', 'option comment', 'wpsso-rrssb' );
-
-					$text = __( 'The rendered HTML for social sharing buttons is saved to the WordPress transient cache to optimize performance.',
-						'wpsso-rrssb' ) . ' ' . sprintf( __( 'The suggested cache expiration value is %1$s seconds (%2$s).',
-							'wpsso-rrssb' ), $cache_exp_secs, $cache_exp_human );
-
-					break;
-			}
-
-			return $text;
 		}
 
 		public function filter_status_std_features( $features, $ext, $info ) {

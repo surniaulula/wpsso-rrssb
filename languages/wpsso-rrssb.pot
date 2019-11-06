@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"2.4.3\n"
+"3.0.0-dev.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2019-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -21,115 +21,107 @@ msgstr ""
 msgid "The default responsive styles CSS has been reloaded and saved."
 msgstr ""
 
-#: lib/filters.php:80
-msgid "Failed to open the css file %s for reading."
-msgstr ""
-
-#: lib/filters.php:218
-msgctxt "metabox tab"
-msgid "Share Buttons"
-msgstr ""
-
-#: lib/filters.php:263
+#: lib/filters-messages.php:50
 msgid ""
 "The %1$s add-on uses the \"%2$s\" class to wrap all sharing buttons, and "
 "each button has its own individual class name as well."
 msgstr ""
 
-#: lib/filters.php:267
+#: lib/filters-messages.php:54
 msgid ""
 "This tab can be used to edit the CSS common to all sharing button locations."
 msgstr ""
 
-#: lib/filters.php:277
+#: lib/filters-messages.php:64
 msgid ""
 "Social sharing buttons enabled in the %1$s settings page for the WordPress "
 "content are assigned the \"%2$s\" class."
 msgstr ""
 
-#: lib/filters.php:289
+#: lib/filters-messages.php:76
 msgid ""
 "Social sharing buttons enabled in the %1$s settings page for the WordPress "
 "excerpt are assigned the \"%2$s\" class."
 msgstr ""
 
-#: lib/filters.php:301
+#: lib/filters-messages.php:88
 msgid ""
 "Social sharing buttons enabled in the %1$s settings page for the CSS sidebar "
 "are assigned the \"%2$s\" ID."
 msgstr ""
 
-#: lib/filters.php:322
+#: lib/filters-messages.php:109
 msgid ""
 "Social sharing buttons added from a shortcode are assigned the \"%1$s\" "
 "class by default."
 msgstr ""
 
-#: lib/filters.php:334
+#: lib/filters-messages.php:121
 msgid ""
 "Social sharing buttons enabled in the %1$s widget are assigned the \"%2$s\" "
 "class (along with additional unique CSS ID names)."
 msgstr ""
 
-#: lib/filters.php:352
+#: lib/filters-messages.php:139
 msgid ""
 "Social sharing buttons enabled in the %1$s settings page for admin editing "
 "pages are assigned the \"%2$s\" class."
 msgstr ""
 
-#: lib/filters.php:364
+#: lib/filters-messages.php:151
 msgid ""
 "Social sharing buttons enabled in the %1$s settings page for WooCommerce "
 "short descriptions are assigned the \"%2$s\" class."
 msgstr ""
 
-#: lib/filters.php:376
+#: lib/filters-messages.php:163
 msgid ""
 "Social sharing buttons enabled in the %1$s settings page for bbPress single "
 "templates are assigned the \"%2$s\" class."
 msgstr ""
 
-#: lib/filters.php:388
+#: lib/filters-messages.php:175
 msgid ""
 "Social sharing buttons enabled in the %1$s settings page for BuddyBlog posts "
 "are assigned the \"%2$s\" class."
 msgstr ""
 
-#: lib/filters.php:400
+#: lib/filters-messages.php:187
 msgid ""
 "Social sharing buttons enabled in the %1$s settings page for BuddyPress "
 "activities are assigned the \"%2$s\" class."
 msgstr ""
 
-#: lib/filters.php:435
+#: lib/filters-messages.php:209
 msgid ""
 "Social sharing buttons can be added to the top, bottom, or both. Each "
 "sharing button must also be enabled below (see the <em>%s</em> options)."
 msgstr ""
 
-#: lib/filters.php:435 lib/share/email.php:34 lib/share/facebook.php:34
-#: lib/share/linkedin.php:34 lib/share/pinterest.php:54 lib/share/pocket.php:34
-#: lib/share/reddit.php:34 lib/share/tumblr.php:34 lib/share/twitter.php:34
-#: lib/share/vk.php:34 lib/share/whatsapp.php:34
+#: lib/filters-messages.php:209 lib/share/email.php:34
+#: lib/share/facebook.php:34 lib/share/linkedin.php:34
+#: lib/share/pinterest.php:54 lib/share/pocket.php:34 lib/share/reddit.php:34
+#: lib/share/tumblr.php:34 lib/share/twitter.php:34 lib/share/vk.php:34
+#: lib/share/whatsapp.php:34
 msgctxt "option label"
 msgid "Show Button in"
 msgstr ""
 
-#: lib/filters.php:441
+#: lib/filters-messages.php:215
 msgid ""
 "Add the social sharing buttons to each entry of an index webpage (blog front "
 "page, category, archive, etc.). Social sharing buttons are not included on "
 "index webpages by default."
 msgstr ""
 
-#: lib/filters.php:447
+#: lib/filters-messages.php:221
 msgid ""
 "If a static Post or Page has been selected for the front page, you can add "
 "the social sharing buttons to that static front page as well (default is "
 "unchecked)."
 msgstr ""
 
-#: lib/filters.php:453
+#: lib/filters-messages.php:227
 msgid ""
 "Enabled social sharing buttons are added to the Post, Page, Media, and "
 "Product webpages by default. If your theme (or another plugin) supports "
@@ -137,11 +129,11 @@ msgid ""
 "buttons on these webpages, check the appropriate option(s) here."
 msgstr ""
 
-#: lib/filters.php:459
+#: lib/filters-messages.php:233
 msgid "Modify URLs shared by the sharing buttons to use a specific protocol."
 msgstr ""
 
-#: lib/filters.php:465
+#: lib/filters-messages.php:239
 msgid ""
 "Add the CSS of all <em>%1$s</em> to webpages (default is checked). The CSS "
 "will be <strong>minified</strong>, and saved to a single stylesheet with a "
@@ -149,12 +141,12 @@ msgid ""
 "added directly to the webpage HTML."
 msgstr ""
 
-#: lib/filters.php:465 lib/gettext-config.php:7
+#: lib/filters-messages.php:239 lib/gettext-config.php:7
 msgctxt "lib file description"
 msgid "Responsive Styles"
 msgstr ""
 
-#: lib/filters.php:471
+#: lib/filters-messages.php:245
 msgid ""
 "Have WordPress enqueue the social stylesheet instead of adding the CSS to in "
 "the webpage HTML (default is unchecked). Enqueueing the stylesheet may be "
@@ -162,47 +154,107 @@ msgid ""
 "single stylesheet URL."
 msgstr ""
 
-#: lib/filters.php:477
+#: lib/filters-messages.php:251
 msgid ""
 "Append the %1$s to the tweet (see <a href=\"%2$s\">the Twitter options tab</"
 "a> in the %3$s settings page). The %1$s will be displayed and recommended "
 "after the webpage is shared."
 msgstr ""
 
-#: lib/filters.php:477 lib/filters.php:483
+#: lib/filters-messages.php:251 lib/filters-messages.php:257
 msgctxt "option label"
 msgid "Twitter Business @username"
 msgstr ""
 
-#: lib/filters.php:477
+#: lib/filters-messages.php:251
 msgctxt "lib file description"
 msgid "General"
 msgstr ""
 
-#: lib/filters.php:483
+#: lib/filters-messages.php:257
 msgid ""
 "Recommend following the author's Twitter @username after sharing a webpage. "
 "If the %1$s option (above) is also checked, the %2$s is suggested first."
 msgstr ""
 
-#: lib/filters.php:483 lib/share/twitter.php:61
+#: lib/filters-messages.php:257 lib/share/twitter.php:61
 msgctxt "option label"
 msgid "Add via Business @username"
 msgstr ""
 
-#: lib/filters.php:498
+#: lib/filters-messages.php:272
 msgctxt "option comment"
 msgid "disabled"
 msgstr ""
 
-#: lib/filters.php:500
+#: lib/filters-messages.php:274
 msgid ""
 "The rendered HTML for social sharing buttons is saved to the WordPress "
 "transient cache to optimize performance."
 msgstr ""
 
-#: lib/filters.php:501
+#: lib/filters-messages.php:275
 msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
+msgstr ""
+
+#: lib/filters.php:90
+msgid "Failed to open the css file %s for reading."
+msgstr ""
+
+#: lib/filters.php:237 lib/gettext-pro.php:6 lib/gettext-pro.php:9
+#: lib/submenu/rrssb-buttons.php:232
+msgctxt "option label"
+msgid "Sharing Buttons HTML Cache Expiry"
+msgstr ""
+
+#: lib/filters.php:240 lib/gettext-pro.php:7 lib/gettext-pro.php:10
+#: lib/submenu/rrssb-buttons.php:235
+msgctxt "option comment"
+msgid "seconds (0 to disable)"
+msgstr ""
+
+#: lib/filters.php:250
+msgctxt "metabox tab"
+msgid "Share Buttons"
+msgstr ""
+
+#: lib/filters.php:265 lib/gettext-pro.php:11
+msgid "Save a draft version or publish the %s to display these options."
+msgstr ""
+
+#: lib/filters.php:278 lib/gettext-pro.php:12
+msgctxt "option label"
+msgid "Disable Sharing Buttons"
+msgstr ""
+
+#: lib/filters.php:299 lib/gettext-pro.php:13
+msgctxt "option label"
+msgid "Email Subject"
+msgstr ""
+
+#: lib/filters.php:306 lib/gettext-pro.php:14
+msgctxt "option label"
+msgid "Email Message"
+msgstr ""
+
+#: lib/filters.php:328 lib/gettext-pro.php:15
+msgctxt "option label"
+msgid "Tweet Text"
+msgstr ""
+
+#: lib/filters.php:358 lib/gettext-pro.php:16
+msgctxt "option label"
+msgid "Pinterest Caption"
+msgstr ""
+
+#: lib/filters.php:387 lib/gettext-pro.php:17
+msgctxt "option label"
+msgid "%s Title"
+msgstr ""
+
+#: lib/filters.php:394 lib/gettext-pro.php:18
+msgctxt "option label"
+msgid "%s Caption"
 msgstr ""
 
 #: lib/gettext-config.php:6
@@ -297,87 +349,22 @@ msgctxt "option value"
 msgid "Any Platform"
 msgstr ""
 
-#: lib/gettext-pro.php:6 lib/gettext-pro.php:9 lib/pro/admin/sharing.php:45
-#: lib/pro/admin/sharing.php:66 lib/std/admin/sharing.php:40
-#: lib/std/admin/sharing.php:61
-msgctxt "option label"
-msgid "Sharing Buttons HTML Cache Expiry"
-msgstr ""
-
-#: lib/gettext-pro.php:7 lib/gettext-pro.php:10 lib/pro/admin/sharing.php:48
-#: lib/pro/admin/sharing.php:69 lib/std/admin/sharing.php:43
-#: lib/std/admin/sharing.php:64
-msgctxt "option comment"
-msgid "seconds (0 to disable)"
-msgstr ""
-
-#: lib/gettext-pro.php:8 lib/pro/admin/sharing.php:61
-#: lib/std/admin/sharing.php:56
+#: lib/gettext-pro.php:8 lib/submenu/rrssb-buttons.php:226
 msgctxt "option label"
 msgid "Force Protocol for Shared URLs"
 msgstr ""
 
-#: lib/gettext-pro.php:11 lib/pro/admin/sharing.php:83
-#: lib/std/admin/sharing.php:78
-msgid "Save a draft version or publish the %s to display these options."
-msgstr ""
-
-#: lib/gettext-pro.php:12 lib/pro/admin/sharing.php:96
-#: lib/std/admin/sharing.php:94
-msgctxt "option label"
-msgid "Disable Sharing Buttons"
-msgstr ""
-
-#: lib/gettext-pro.php:13 lib/pro/admin/sharing.php:117
-#: lib/std/admin/sharing.php:116
-msgctxt "option label"
-msgid "Email Subject"
-msgstr ""
-
-#: lib/gettext-pro.php:14 lib/pro/admin/sharing.php:124
-#: lib/std/admin/sharing.php:124
-msgctxt "option label"
-msgid "Email Message"
-msgstr ""
-
-#: lib/gettext-pro.php:15 lib/pro/admin/sharing.php:146
-#: lib/std/admin/sharing.php:147
-msgctxt "option label"
-msgid "Tweet Text"
-msgstr ""
-
-#: lib/gettext-pro.php:16 lib/pro/admin/sharing.php:176
-#: lib/std/admin/sharing.php:177
-msgctxt "option label"
-msgid "Pinterest Caption"
-msgstr ""
-
-#: lib/gettext-pro.php:17 lib/pro/admin/sharing.php:205
-#: lib/std/admin/sharing.php:207
-msgctxt "option label"
-msgid "%s Title"
-msgstr ""
-
-#: lib/gettext-pro.php:18 lib/pro/admin/sharing.php:212
-#: lib/std/admin/sharing.php:215
-msgctxt "option label"
-msgid "%s Caption"
-msgstr ""
-
-#: lib/gettext-pro.php:19 lib/pro/ecom/woocommerce.php:108
-#: lib/std/ecom/woocommerce.php:106
+#: lib/gettext-pro.php:19 lib/std/ecom/woocommerce.php:106
 msgctxt "option label"
 msgid "Position in Woo Short Text"
 msgstr ""
 
-#: lib/gettext-pro.php:20 lib/pro/forum/bbpress.php:159
-#: lib/std/forum/bbpress.php:109
+#: lib/gettext-pro.php:20 lib/std/forum/bbpress.php:159
 msgctxt "option label"
 msgid "Position in bbPress Single"
 msgstr ""
 
-#: lib/gettext-pro.php:21 lib/pro/social/buddyblog.php:115
-#: lib/std/social/buddyblog.php:82
+#: lib/gettext-pro.php:21 lib/std/social/buddyblog.php:114
 msgctxt "option label"
 msgid "Position in BuddyBlog Post"
 msgstr ""
@@ -486,34 +473,34 @@ msgctxt "option label"
 msgid "Recommend Author @username"
 msgstr ""
 
-#: lib/social.php:115
+#: lib/social.php:113
 msgid "Failed writing the css file %s."
 msgstr ""
 
-#: lib/social.php:124
+#: lib/social.php:122
 msgid "Updated the <a href=\"%1$s\">%2$s</a> stylesheet (%3$d bytes written)."
 msgstr ""
 
-#: lib/social.php:141
+#: lib/social.php:139
 msgid "Cache folder %s is not writable."
 msgstr ""
 
-#: lib/social.php:151
+#: lib/social.php:149
 msgid "Failed to open the css file %s for writing."
 msgstr ""
 
-#: lib/social.php:170
+#: lib/social.php:168
 msgid ""
 "Error removing the minified stylesheet &mdash; does the web server have "
 "sufficient privileges?"
 msgstr ""
 
-#: lib/social.php:197
+#: lib/social.php:195
 msgctxt "metabox title"
 msgid "Share Buttons"
 msgstr ""
 
-#: lib/social.php:248
+#: lib/social.php:246
 msgid "This content must be published<br/>before it can be shared."
 msgstr ""
 

@@ -47,11 +47,9 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			}
 
 			if ( is_admin() ) {
-
 				if ( $this->have_buttons_for_type( 'admin_edit' ) ) {
 					add_action( 'add_meta_boxes', array( $this, 'add_metabox_admin_edit' ) );
 				}
-
 			}
 
 			if ( $this->p->debug->enabled ) {
@@ -284,6 +282,12 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 		public function remove_buttons_filter( $filter_name = 'the_content' ) {
 
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->log_args( array( 
+					'filter_name' => $filter_name,
+				) );
+			}
+
 			$removed = false;
 
 			if ( method_exists( $this, 'get_buttons_for_' . $filter_name ) ) {
@@ -423,7 +427,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				$cache_array = SucomUtil::get_transient_array( $cache_id );
 
-				if ( isset( $cache_array[ $cache_index ] ) ) {	// can be an empty string
+				if ( isset( $cache_array[ $cache_index ] ) ) {	// Can be an empty string.
 
 					if ( $this->p->debug->enabled ) {
 						$this->p->debug->log( $type . ' cache index found in transient cache' );
@@ -458,8 +462,8 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			}
 
 			if ( empty( $location ) ) {
-				$location = empty( $this->p->options[ 'buttons_pos_' . $type] ) ? 
-					'bottom' : $this->p->options[ 'buttons_pos_' . $type];
+				$location = empty( $this->p->options[ 'buttons_pos_' . $type ] ) ? 
+					'bottom' : $this->p->options[ 'buttons_pos_' . $type ];
 			} 
 
 			if ( ! isset( $cache_array[ $cache_index ] ) ) {
@@ -530,17 +534,6 @@ $cache_array[ $cache_index ] .
 					$text = $cache_array[ $cache_index ] . $text . $cache_array[ $cache_index ]; 
 
 					break;
-			}
-
-			if ( $doing_ajax ) {
-				$text .= '
-					<script type="text/javascript">
-						if ( ! window.rrssb_done ) {
-							window.rrssb_done = true; 
-							window.rrssbResize();
-							window.rrssbInit();
-						}
-					</script>' . "\n";
 			}
 
 			if ( $this->p->debug->enabled ) {

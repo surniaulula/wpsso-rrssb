@@ -24,16 +24,20 @@ if ( ! class_exists( 'WpssoRrssbStdForumBbpress' ) ) {
 				$this->p->debug->mark();
 			}
 
+			if ( empty( $this->p->avail[ 'p_ext' ][ 'rrssb' ] ) ) {	// False if required version(s) not available.
+
+				if ( $this->p->debug->enabled ) {
+					$this->p->debug->log( 'exiting early: this extension / add-on is not available' );
+				}
+
+				return;
+			}
+
 			if ( class_exists( 'bbpress' ) ) {
 
-				if ( ! empty( $this->p->avail[ 'p_ext' ][ 'rrssb' ] ) ) {
+				$classname = __CLASS__ . 'Sharing';
 
-					$classname = __CLASS__ . 'Sharing';
-
-					if ( class_exists( $classname ) ) {
-						$this->sharing = new $classname( $this->p );
-					}
-				}
+				$this->sharing = new $classname( $this->p );
 			}
 		}
 	}
@@ -65,25 +69,75 @@ if ( ! class_exists( 'WpssoRrssbStdForumBbpressSharing' ) ) {
 					'rrssb_styles_tabs'           => 1,
 					'rrssb_buttons_position_rows' => 2,
 				) );
+
+			} else {
+
+				switch ( $this->p->options['buttons_pos_bbp_single'] ) {
+
+					case 'top':
+
+						$pos_bbp_single = array( 
+							'bbp_template_before_single_forum',
+							'bbp_template_before_single_reply',
+							'bbp_template_before_single_topic',
+						);
+
+						break;
+
+					case 'bottom':
+
+						$pos_bbp_single = array( 
+							'bbp_template_after_single_forum',
+							'bbp_template_after_single_reply',
+							'bbp_template_after_single_topic',
+						);
+
+						break;
+
+					case 'both':
+
+						$pos_bbp_single = array( 
+							'bbp_template_before_single_forum',
+							'bbp_template_before_single_reply',
+							'bbp_template_before_single_topic',
+							'bbp_template_after_single_forum',
+							'bbp_template_after_single_reply',
+							'bbp_template_after_single_topic',
+						);
+
+						break;
+
+					default:
+
+						if ( $this->p->debug->enabled ) {
+							$this->p->debug->log( 'unrecognized value for buttons_pos_bbp_single option' );
+						}
+
+						$pos_bbp_single = array();
+
+						break;
+				}
+
+				foreach ( $pos_bbp_single as $bbp_action ) {
+					add_action( $bbp_action, array( $this, 'add_bbp_template_single' ), 90 );
+				}
 			}
 		}
 
 		public function filter_get_defaults( $opts_def ) {
 
-			foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $id => $opt_pre ) {
-				$opts_def[ $opt_pre . '_on_bbp_single' ] = 0;
+			foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre ) {
+				$opts_def[ $opt_pre . '_on_bbp_single'] = 0;
 			}
 
-			$opts_def[ 'buttons_pos_bbp_single' ] = 'top';
+			$opts_def['buttons_pos_bbp_single'] = 'top';
 
 			return $opts_def;
 		}
 
 		public function filter_rrssb_buttons_show_on( $show_on = array(), $opt_pre = '' ) {
 
-			$show_on[ 'bbp_single' ] = 'bbPress Single';
-
-			$this->p->options[ $opt_pre . '_on_bbp_single:is' ] = 'disabled';
+			$show_on['bbp_single'] = 'bbPress Single';
 
 			return $show_on;
 		}
@@ -95,22 +149,30 @@ if ( ! class_exists( 'WpssoRrssbStdForumBbpressSharing' ) ) {
 
 		public function filter_rrssb_styles_tabs( $styles ) {
 
-			$styles[ 'rrssb-bbp_single' ] = 'bbPress Single';
-
-			$this->p->options[ 'buttons_css_rrssb-bbp_single:is' ] = 'disabled';
+			$styles['rrssb-bbp_single'] = 'bbPress Single';
 
 			return $styles;
 		}
 
 		public function filter_rrssb_buttons_position_rows( $table_rows, $form ) {
 
-			$table_rows[] = '<td colspan="2">' . $this->p->msgs->get( 'pro-feature-msg', array( 'lca' => 'wpssorrssb' ) ) . '</td>';
-
-			$table_rows[ 'buttons_pos_bbp_single' ] = $form->get_th_html( _x( 'Position in bbPress Single',
+			$table_rows['buttons_pos_bbp_single'] = $form->get_th_html( _x( 'Position in bbPress Single',
 				'option label', 'wpsso-rrssb' ), null, 'buttons_pos_bbp_single' ) . 
-			'<td class="blank">' . $this->p->cf[ 'sharing' ][ 'position' ][ $this->p->options[ 'buttons_pos_bbp_single' ] ] . '</td>';
+			'<td>' . $form->get_select( 'buttons_pos_bbp_single', $this->p->cf['sharing']['position'] ) . '</td>';
 
 			return $table_rows;
+		}
+
+		public function add_bbp_template_single() {
+
+			global $post;
+
+			if ( ! empty( $this->p->options[ 'buttons_add_to_' . $post->post_type ] ) ) {
+
+				$rrssb =& WpssoRrssb::get_instance();
+
+				echo $rrssb->social->get_buttons( $text = '', 'bbp_single', true, 'top' );
+			}
 		}
 	}
 }

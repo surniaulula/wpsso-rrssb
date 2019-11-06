@@ -16,20 +16,20 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(			// Plugin acronym.
-					'version'     => '2.4.3',	// Plugin version.
-					'opt_version' => '21',		// Increment when changing default option values.
+					'version'     => '3.0.0-dev.2',	// Plugin version.
+					'opt_version' => '23',		// Increment when changing default option values.
 					'short'       => 'WPSSO RRSSB',	// Short plugin name.
 					'name'        => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
 					'desc'        => 'Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc.',
 					'slug'        => 'wpsso-rrssb',
 					'base'        => 'wpsso-rrssb/wpsso-rrssb.php',
-					'update_auth' => 'tid',
+					'update_auth' => '',		// No premium version.
 					'text_domain' => 'wpsso-rrssb',
 					'domain_path' => '/languages',
 					'req'         => array(
 						'short'       => 'WPSSO Core',
 						'name'        => 'WPSSO Core',
-						'min_version' => '6.11.0',
+						'min_version' => '6.11.1',
 					),
 					'assets' => array(
 						'icons' => array(
@@ -39,19 +39,6 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					),
 					'lib' => array(
 						'pro' => array(
-							'admin' => array(
-								'sharing' => 'Extend Sharing Settings',
-							),
-							'ecom' => array(
-								'woocommerce' => '(plugin) WooCommerce',
-							),
-							'forum' => array(
-								'bbpress' => '(plugin) bbPress',
-							),
-							'social' => array(
-								'buddyblog'  => '(plugin) BuddyBlog',
-								'buddypress' => '(plugin) BuddyPress',
-							),
 						),
 						'share' => array(
 							'email'     => 'Email', 
@@ -69,9 +56,6 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 							'sharing' => 'Sharing Shortcode',
 						),
 						'std' => array(
-							'admin' => array(
-								'sharing' => 'Extend Sharing Settings',
-							),
 							'ecom' => array(
 								'woocommerce' => '(plugin) WooCommerce',
 							),
@@ -93,13 +77,13 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					),
 				),
 			),
-			'opt' => array(				// options
+			'opt' => array(
 				'defaults' => array(
 
 					/**
 					 * Advanced Settings
 					 */
-					'plugin_sharing_buttons_cache_exp' => WEEK_IN_SECONDS,	// Sharing Buttons HTML Cache Expiry (7 days)
+					'plugin_sharing_buttons_cache_exp' => WEEK_IN_SECONDS,	// Sharing Buttons HTML Cache Expiry (7 days).
 
 					/**
 					 * Responsive Buttons

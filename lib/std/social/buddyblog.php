@@ -24,16 +24,20 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddyblog' ) ) {
 				$this->p->debug->mark();
 			}
 
+			if ( empty( $this->p->avail[ 'p_ext' ][ 'rrssb' ] ) ) {	// False if required version(s) not available.
+
+				if ( $this->p->debug->enabled ) {
+					$this->p->debug->log( 'exiting early: this extension / add-on is not available' );
+				}
+
+				return;
+			}
+
 			if ( is_admin() || bp_is_buddyblog_component() ) {
 
-				if ( ! empty( $this->p->avail[ 'p_ext' ][ 'rrssb' ] ) ) {
+				$classname = __CLASS__ . 'Sharing';
 
-					$classname = __CLASS__ . 'Sharing';
-
-					if ( class_exists( $classname ) ) {
-						$this->sharing = new $classname( $this->p );
-					}
-				}
+				$this->sharing = new $classname( $this->p );
 			}
 		}
 	}
@@ -66,6 +70,34 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddyblogSharing' ) ) {
 					'rrssb_styles_tabs'           => 1,
 				) );
 			}
+			
+			if ( bp_is_buddyblog_component() ) {
+
+				$location = empty( $this->p->options[ 'buttons_pos_bblog_post' ] ) ? 
+					'bottom' : $this->p->options[ 'buttons_pos_bblog_post' ];
+				
+				switch ( $location ) {
+
+					case 'top':
+
+						add_action( 'buddyblog_before_blog_post', array( $this, 'show_post_buttons' ) );
+
+						break;
+
+					case 'bottom':
+
+						add_action( 'buddyblog_after_blog_post', array( $this, 'show_post_buttons' ) );
+
+						break;
+
+					case 'both':
+
+						add_action( 'buddyblog_before_blog_post', array( $this, 'show_post_buttons' ) );
+						add_action( 'buddyblog_after_blog_post', array( $this, 'show_post_buttons' ) );
+
+						break;
+				}
+			}
 		}
 
 		public function filter_get_defaults( $opts_def ) {
@@ -81,7 +113,7 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddyblogSharing' ) ) {
 
 			$table_rows[ 'buttons_pos_bblog_post' ] = $form->get_th_html( _x( 'Position in BuddyBlog Post',
 				'option label', 'wpsso-rrssb' ), '', 'buttons_pos_bblog_post' ) . 
-			'<td class="blank">' . $form->get_no_select( 'buttons_pos_bblog_post', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
+			'<td>' . $form->get_select( 'buttons_pos_bblog_post', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
 
 			return $table_rows;	
 		}
@@ -89,8 +121,6 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddyblogSharing' ) ) {
 		public function filter_rrssb_buttons_show_on( $show_on = array(), $opt_pre = '' ) {
 
 			$show_on[ 'bblog_post' ] = 'BBlog Post';
-
-			$this->p->options[ $opt_pre . '_on_bblog_post:is' ] = 'disabled';
 
 			return $show_on;
 		}
@@ -104,9 +134,14 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddyblogSharing' ) ) {
 
 			$styles[ 'rrssb-bblog_post' ] = 'BBlog Post';
 
-			$this->p->options[ 'buttons_css_rrssb-bblog_post:is' ] = 'disabled';
-
 			return $styles;
+		}
+
+		public function show_post_buttons() {
+
+			$rrssb =& WpssoRrssb::get_instance();
+
+			echo $rrssb->social->get_buttons( '', 'bblog_post' );
 		}
 	}
 }
