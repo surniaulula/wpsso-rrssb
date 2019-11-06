@@ -69,7 +69,7 @@ if ( ! class_exists( 'WpssoRrssbShareReddit' ) ) {
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
-					'reddit_order'            => 7,
+					'reddit_order'            => 6,
 					'reddit_on_content'       => 0,
 					'reddit_on_excerpt'       => 0,
 					'reddit_on_sidebar'       => 0,

@@ -81,7 +81,7 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
-					'twitter_order'            => 4,
+					'twitter_order'            => 3,
 					'twitter_on_content'       => 1,
 					'twitter_on_excerpt'       => 0,
 					'twitter_on_sidebar'       => 0,

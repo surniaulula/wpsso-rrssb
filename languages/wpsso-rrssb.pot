@@ -380,7 +380,7 @@ msgstr ""
 #: lib/share/email.php:43 lib/share/facebook.php:43 lib/share/linkedin.php:43
 #: lib/share/pinterest.php:64 lib/share/pocket.php:42 lib/share/reddit.php:42
 #: lib/share/tumblr.php:42 lib/share/twitter.php:42 lib/share/vk.php:42
-#: lib/share/whatsapp.php:42
+#: lib/share/whatsapp.php:43
 msgctxt "option label"
 msgid "Allow for Platform"
 msgstr ""

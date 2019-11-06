@@ -38,6 +38,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareWhatsApp' ) ) {
 			'<td>'.$form->get_select( 'wa_order', range( 1, count( $submenu->share ) ) ).'</td>';
 
 			if ( $this->p->avail[ '*' ][ 'vary_ua' ] ) {
+
 				$table_rows[] = $form->get_tr_hide( 'basic', 'wa_platform' ).
 				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
 				'<td>'.$form->get_select( 'wa_platform', $this->p->cf[ 'sharing' ][ 'platform' ] ).'</td>';
@@ -59,13 +60,13 @@ if ( ! class_exists( 'WpssoRrssbShareWhatsApp' ) ) {
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
-					'wa_order' => 11,
-					'wa_on_content' => 1,
-					'wa_on_excerpt' => 0,
-					'wa_on_sidebar' => 0,
+					'wa_order'         => 10,
+					'wa_on_content'    => 1,
+					'wa_on_excerpt'    => 0,
+					'wa_on_sidebar'    => 0,
 					'wa_on_admin_edit' => 0,
-					'wa_platform' => 'mobile',
-					'wa_rrssb_html' => '<li class="rrssb-whatsapp">
+					'wa_platform'      => 'mobile',
+					'wa_rrssb_html'    => '<li class="rrssb-whatsapp">
 	<a href="whatsapp://send?text=%%title%%%20%%short_url%%" data-action="share/whatsapp/share" class="popup">
 		<span class="rrssb-icon">
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28" height="28" viewBox="0 0 90 90" enable-background="new 0 0 90 90;" xml:space="preserve">

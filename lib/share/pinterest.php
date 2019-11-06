@@ -95,7 +95,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
-					'pin_order'            => 5,
+					'pin_order'            => 4,
 					'pin_on_content'       => 1,
 					'pin_on_excerpt'       => 0,
 					'pin_on_sidebar'       => 0,

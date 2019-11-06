@@ -59,13 +59,13 @@ if ( ! class_exists( 'WpssoRrssbShareVk' ) ) {
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
-					'vk_order' => 10,
-					'vk_on_content' => 0,
-					'vk_on_excerpt' => 0,
-					'vk_on_sidebar' => 0,
+					'vk_order'         => 9,
+					'vk_on_content'    => 0,
+					'vk_on_excerpt'    => 0,
+					'vk_on_sidebar'    => 0,
 					'vk_on_admin_edit' => 0,
-					'vk_platform' => 'any',
-					'vk_rrssb_html' => '<li class="rrssb-vk">
+					'vk_platform'      => 'any',
+					'vk_rrssb_html'    => '<li class="rrssb-vk">
 	<a href="http://vk.com/share.php?url=%%sharing_url%%" class="popup">
 		<span class="rrssb-icon">
 			<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="70 70 378.7 378.7">

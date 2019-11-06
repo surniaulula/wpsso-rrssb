@@ -69,7 +69,7 @@ if ( ! class_exists( 'WpssoRrssbShareTumblr' ) ) {
 		private static $cf = array(
 			'opt' => array(				// options
 				'defaults' => array(
-					'tumblr_order'            => 9,
+					'tumblr_order'            => 8,
 					'tumblr_on_content'       => 0,
 					'tumblr_on_excerpt'       => 0,
 					'tumblr_on_sidebar'       => 0,
