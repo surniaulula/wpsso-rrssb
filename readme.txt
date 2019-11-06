@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires At Least: 3.9
 Tested Up To: 5.3
 WC Tested Up To: 3.7.1
-Stable Tag: 3.0.0
+Stable Tag: 3.0.1
 
 Ridiculously Responsive Social Sharing Buttons (RRSSB) for your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc.
 
@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.0.0 (2019/11/06)**
+**Version 3.0.1 (2019/11/06)**
 
 * **New Features**
 	* Moved Premium add-on features into the Free / Standard version.
@@ -149,7 +149,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.0.0 =
+= 3.0.1 =
 
 (2019/11/06) Moved Premium add-on features into the Free / Standard version.
 
