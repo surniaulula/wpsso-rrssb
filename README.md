@@ -15,13 +15,13 @@
 
 <p style="margin:0;"><img class="readme-icon" src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png"></p>
 
-<p>The <em>Ridiculously Responsive Social Sharing Buttons</em> automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), no matter its size or resolution &mdash; including mobile, Retina, and high-PPI displays!</p>
+<p><em>Ridiculously Responsive Social Sharing Buttons</em> automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), no matter its size or resolution &mdash; including mobile, Retina, and high-PPI displays!</p>
 
-<p><strong>Add <em>Ridiculously Responsive Social Sharing Buttons</em> to:</strong></p>
+<p><strong>Add Ridiculously Responsive Social Sharing Buttons to:</strong></p>
 
 <p>Posts, Pages, custom post types, bbPress, BuddyBlog posts, BuddyPress activities, WooCommerce product pages, and much more.</p></p>
 
-<p><strong>Add <em>Ridiculously Responsive Social Sharing Buttons</em> in:</strong></p>
+<p><strong>Add Ridiculously Responsive Social Sharing Buttons in:</strong></p>
 
 <p>The content, excerpt, widget, CSS sidebar, shortcodes, templates, and <em>admin editor page</em> &mdash; so you can share directly from the admin editor page!</p>
 
@@ -41,7 +41,7 @@
 
 <ul>
 <li><p>Extends the features of the WPSSO Core plugin.</p></li>
-<li><p>Include a selection of <em>Ridiculously Responsive Social Sharing Buttons</em> in multiple locations:</p>
+<li><p>Include Ridiculously Responsive Social Sharing Buttons in multiple locations:</p>
 
 <ul>
 <li>Above and/or below your content, excerpt text, bbPress single, BuddyBlog posts, BuddyPress activities, and WooCommerce short description.</li>

@@ -19,13 +19,13 @@ Ridiculously Responsive Social Sharing Buttons (RRSSB) for your content, excerpt
 
 <p style="margin:0;"><img class="readme-icon" src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png"></p>
 
-The *Ridiculously Responsive Social Sharing Buttons* automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), no matter its size or resolution &mdash; including mobile, Retina, and high-PPI displays!
+*Ridiculously Responsive Social Sharing Buttons* automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), no matter its size or resolution &mdash; including mobile, Retina, and high-PPI displays!
 
-**Add *Ridiculously Responsive Social Sharing Buttons* to:**
+**Add Ridiculously Responsive Social Sharing Buttons to:**
 
 Posts, Pages, custom post types, bbPress, BuddyBlog posts, BuddyPress activities, WooCommerce product pages, and much more.</p>
 
-**Add *Ridiculously Responsive Social Sharing Buttons* in:**
+**Add Ridiculously Responsive Social Sharing Buttons in:**
 
 The content, excerpt, widget, CSS sidebar, shortcodes, templates, and *admin editor page* &mdash; so you can share directly from the admin editor page!
 
@@ -45,7 +45,7 @@ The WPSSO RRSSB add-on includes special integration modules to add social sharin
 
 * Extends the features of the WPSSO Core plugin.
 
-* Include a selection of *Ridiculously Responsive Social Sharing Buttons* in multiple locations:
+* Include Ridiculously Responsive Social Sharing Buttons in multiple locations:
 
 	* Above and/or below your content, excerpt text, bbPress single, BuddyBlog posts, BuddyPress activities, and WooCommerce short description.
 	* In an admin editing page metabox &ndash; including media, product pages, and custom post types.
@@ -101,8 +101,8 @@ WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an add
 
 == Screenshots ==
 
-01. WPSSO RRSSB example showing the *Ridiculously Responsive Social Sharing Buttons* enabled (with the default stylesheet) in the CSS sidebar, content text, and widget.
-02. WPSSO RRSSB example showing a WooCommerce product page with *Ridiculously Responsive Social Sharing Buttons* in the CSS sidebar, short and long product descriptions.
+01. WPSSO RRSSB example showing the Ridiculously Responsive Social Sharing Buttons enabled (with the default stylesheet) in the CSS sidebar, content text, and widget.
+02. WPSSO RRSSB example showing a WooCommerce product page with Ridiculously Responsive Social Sharing Buttons in the CSS sidebar, short and long product descriptions.
 03. WPSSO RRSSB Sharing Buttons tab in the Document SSO metabox allows you to fine-tune and customize the text used by several social sharing websites.
 04. WPSSO RRSSB Responsive Buttons settings page.
 05. WPSSO RRSSB Responsive Styles settings page.
