@@ -143,6 +143,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 3.0.0-dev.2 (2019/11/06)**
+
+* **New Features**
+	* Moved Premium add-on features into the Free / Standard version.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+
 **Version 2.4.3 (2019/11/01)**
 
 * **New Features**
@@ -167,6 +178,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* None.
 
 == Upgrade Notice ==
+
+= 3.0.0-dev.2 =
+
+(2019/11/06) Moved Premium add-on features into the Free / Standard version.
 
 = 2.4.3 =
 
