@@ -33,7 +33,7 @@ The content, excerpt, widget, CSS sidebar, shortcodes, templates, and *admin edi
 
 **Do you use bbPress, BuddyPress, BuddyBlog, or WooCommerce?**
 
-The WPSSO RRSSB Premium add-on includes special integration modules to add social sharing buttons to even more locations!
+The WPSSO RRSSB add-on includes special integration modules to add social sharing buttons to even more locations!
 
 <h3>Users Love the WPSSO RRSSB Add-on</h3>
 
@@ -49,8 +49,8 @@ The WPSSO RRSSB Premium add-on includes special integration modules to add socia
 
 * Include a selection of *Ridiculously Responsive Social Sharing Buttons* in multiple locations:
 
-	* Above or below your Post / Page content or excerpt text.
-	* In admin editing pages &ndash; including media, product pages, and custom post types.
+	* Above and/or below your content, excerpt text, bbPress single, BuddyBlog posts, BuddyPress activities, and WooCommerce short description.
+	* In an admin editing page metabox &ndash; including media, product pages, and custom post types.
 	* In a CSS / javascript sidebar.
 	* In a WordPress sharing widget.
 	* A shortcode in your content or excerpt.
@@ -70,31 +70,15 @@ The WPSSO RRSSB Premium add-on includes special integration modules to add socia
 	* VK
 	* WhatsApp (for mobile devices)
 
+* Options to include / exclude social sharing buttons by post type.
+
 * Include / exclude individual social sharing buttons based on the viewing device (desktop and/or mobile).
 
 * Automatically exclude buttons from [Accelerated Mobile Pages (AMP)](https://wordpress.org/plugins/amp/) plugin pages.
 
-* A built-in stylesheet editor allows you to fine-tune the CSS for each social sharing button location easily (content, excerpt, shortcode, widget, etc.).
+* A built-in stylesheet editor allows you to easily fine-tune the CSS for each social sharing button location (content, excerpt, shortcode, widget, etc.).
 
 * Uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.
-
-<h3>WPSSO RRSSB Premium Features</h3>
-
-* Custom share title and description text in the Document SSO metabox for:
-
-	* Email
-	* LinkedIn
-	* Pinterest
-	* Reddit
-	* Tumblr
-	* Twitter
-
-* Additional sharing button locations and CSS styles for:
-
-	* bbPress Single
-	* BuddyBlog Posts
-	* BuddyPress Activities
-	* WooCommerce Short Description
 
 <h3>WPSSO Core Plugin Required</h3>
 
@@ -120,8 +104,8 @@ WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an add
 == Screenshots ==
 
 01. WPSSO RRSSB example showing the *Ridiculously Responsive Social Sharing Buttons* enabled (with the default stylesheet) in the CSS sidebar, content text, and widget.
-02. WPSSO RRSSB example showing a WooCommerce product page with *Ridiculously Responsive Social Sharing Buttons* in the CSS sidebar, short and long product descriptions (Premium add-on).
-03. WPSSO RRSSB Sharing Buttons tab in the Document SSO metabox allows you to fine-tune and customize the text used by several social sharing websites (Premium add-on).
+02. WPSSO RRSSB example showing a WooCommerce product page with *Ridiculously Responsive Social Sharing Buttons* in the CSS sidebar, short and long product descriptions.
+03. WPSSO RRSSB Sharing Buttons tab in the Document SSO metabox allows you to fine-tune and customize the text used by several social sharing websites.
 04. WPSSO RRSSB Responsive Buttons settings page.
 05. WPSSO RRSSB Responsive Styles settings page.
 
