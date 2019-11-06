@@ -143,7 +143,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.0.0-dev.2 (2019/11/06)**
+**Version 3.0.0 (2019/11/06)**
 
 * **New Features**
 	* Moved Premium add-on features into the Free / Standard version.
@@ -152,7 +152,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Updated js/ext/rrssb.js init to use `$(window).load()` instead of `$(document).ready()` for the WordPress block editor.
 
 **Version 2.4.3 (2019/11/01)**
 
@@ -165,25 +165,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Developer Notes**
 	* None.
 
-**Version 2.4.2 (2019/10/15)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Minor CSS update to allow RRSSB large format button sizes:
-		* Changed "`.rrssb-text { display:block; }`" to "`.rrssb-text { display:inline-block; }`"
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-
 == Upgrade Notice ==
 
-= 3.0.0-dev.2 =
+= 3.0.0 =
 
 (2019/11/06) Moved Premium add-on features into the Free / Standard version.
-
-= 2.4.3 =
-
-(2019/11/01) Updated the column width of headers under the "Share Buttons" tab in the Document SSO metabox.
 
