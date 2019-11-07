@@ -136,17 +136,6 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Developer Notes**
 	* Updated js/ext/rrssb.js init to use `$(window).load()` instead of `$(document).ready()` for the WordPress block editor.
 
-**Version 2.4.3 (2019/11/01)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Updated the column width of headers under the "Share Buttons" tab in the Document SSO metabox.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-
 == Upgrade Notice ==
 
 = 3.0.1 =
