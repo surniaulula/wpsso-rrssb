@@ -156,7 +156,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 					'gp_platform'   => '',
 					'gp_rrssb_html' => '',
 				),
-				22 => array(
+				23 => array(
 					'plugin_wpssorrssb_tid' => '',
 				),
 			);

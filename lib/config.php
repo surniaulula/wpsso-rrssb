@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			'plugin' => array(
 				'wpssorrssb' => array(			// Plugin acronym.
 					'version'     => '3.0.1',	// Plugin version.
-					'opt_version' => '23',		// Increment when changing default option values.
+					'opt_version' => '24',		// Increment when changing default option values.
 					'short'       => 'WPSSO RRSSB',	// Short plugin name.
 					'name'        => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
 					'desc'        => 'Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc.',
