@@ -41,7 +41,7 @@ The WPSSO RRSSB add-on includes special integration modules to add social sharin
 
 &#x2605;&#x2605;&#x2605;&#x2605;&#x2605; &mdash; "These buttons are great, work on mobile phones as well as desktops, and they load super fast!" - [undergroundnetwork](https://wordpress.org/support/topic/best-sharing-buttons-out-there/)
 
-<h3>WPSSO RRSSB Free / Standard Features</h3>
+<h3>WPSSO RRSSB Standard Features</h3>
 
 * Extends the features of the WPSSO Core plugin.
 
@@ -128,7 +128,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 **Version 3.0.1 (2019/11/06)**
 
 * **New Features**
-	* Moved Premium add-on features into the Free / Standard version.
+	* Moved Premium add-on features into the Standard version.
 * **Improvements**
 	* None.
 * **Bugfixes**
@@ -140,5 +140,5 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 3.0.1 =
 
-(2019/11/06) Moved Premium add-on features into the Free / Standard version.
+(2019/11/06) Moved Premium add-on features into the Standard version.
 
