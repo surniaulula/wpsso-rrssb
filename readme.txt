@@ -10,7 +10,7 @@ Tags: responsive, share buttons, social widget, social media, woocommerce, faceb
 Contributors: jsmoriss
 Requires At Least: 3.9
 Tested Up To: 5.3
-WC Tested Up To: 3.7.1
+WC Tested Up To: 3.8.0
 Stable Tag: 3.0.1
 
 Ridiculously Responsive Social Sharing Buttons (RRSSB) for your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc.
