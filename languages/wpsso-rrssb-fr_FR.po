@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 3.0.0\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 3.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2019-11-06 11:11-0800\n"
-"PO-Revision-Date: 2019-11-06 11:11-0800\n"
+"POT-Creation-Date: 2019-11-13 11:36-0800\n"
+"PO-Revision-Date: 2019-11-13 11:36-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -175,37 +175,37 @@ msgstr "Boutons de partage"
 msgid "Save a draft version or publish the %s to display these options."
 msgstr "Enregistrer un brouillon ou publier pour activer ces options."
 
-#: lib/filters.php:278 lib/gettext-pro.php:12
+#: lib/filters.php:281 lib/gettext-pro.php:12
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr "Désactiver les boutons"
 
-#: lib/filters.php:299 lib/gettext-pro.php:13
+#: lib/filters.php:302 lib/gettext-pro.php:13
 msgctxt "option label"
 msgid "Email Subject"
 msgstr "Sujet du couriel"
 
-#: lib/filters.php:306 lib/gettext-pro.php:14
+#: lib/filters.php:309 lib/gettext-pro.php:14
 msgctxt "option label"
 msgid "Email Message"
 msgstr "Message du courriel"
 
-#: lib/filters.php:328 lib/gettext-pro.php:15
+#: lib/filters.php:331 lib/gettext-pro.php:15
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr "Texte du Tweet"
 
-#: lib/filters.php:358 lib/gettext-pro.php:16
+#: lib/filters.php:361 lib/gettext-pro.php:16
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr "Texte légende Pinterest"
 
-#: lib/filters.php:387 lib/gettext-pro.php:17
+#: lib/filters.php:390 lib/gettext-pro.php:17
 msgctxt "option label"
 msgid "%s Title"
 msgstr "Titre %s"
 
-#: lib/filters.php:394 lib/gettext-pro.php:18
+#: lib/filters.php:397 lib/gettext-pro.php:18
 msgctxt "option label"
 msgid "%s Caption"
 msgstr "Légende %s"
@@ -331,7 +331,7 @@ msgstr "Ordre de préférence"
 #: lib/share/email.php:43 lib/share/facebook.php:43 lib/share/linkedin.php:43
 #: lib/share/pinterest.php:64 lib/share/pocket.php:42 lib/share/reddit.php:42
 #: lib/share/tumblr.php:42 lib/share/twitter.php:42 lib/share/vk.php:42
-#: lib/share/whatsapp.php:42
+#: lib/share/whatsapp.php:43
 msgctxt "option label"
 msgid "Allow for Platform"
 msgstr "Pour plateforme"
