@@ -222,37 +222,37 @@ msgstr ""
 msgid "Save a draft version or publish the %s to display these options."
 msgstr ""
 
-#: lib/filters.php:278 lib/gettext-pro.php:12
+#: lib/filters.php:281 lib/gettext-pro.php:12
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/filters.php:299 lib/gettext-pro.php:13
+#: lib/filters.php:302 lib/gettext-pro.php:13
 msgctxt "option label"
 msgid "Email Subject"
 msgstr ""
 
-#: lib/filters.php:306 lib/gettext-pro.php:14
+#: lib/filters.php:309 lib/gettext-pro.php:14
 msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/filters.php:328 lib/gettext-pro.php:15
+#: lib/filters.php:331 lib/gettext-pro.php:15
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/filters.php:358 lib/gettext-pro.php:16
+#: lib/filters.php:361 lib/gettext-pro.php:16
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/filters.php:387 lib/gettext-pro.php:17
+#: lib/filters.php:390 lib/gettext-pro.php:17
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/filters.php:394 lib/gettext-pro.php:18
+#: lib/filters.php:397 lib/gettext-pro.php:18
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""

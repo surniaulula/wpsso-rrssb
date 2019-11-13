@@ -54,7 +54,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 				$this->p->util->add_plugin_filters( $this, array( 
 					'status_std_features' => 3,
-				), $prio = 10, $ext = 'wpssorrssb' );
+				), $prio = 10, $ext = 'wpssorrssb' );	// Hook into our own filters.
 			}
 		}
 
@@ -265,9 +265,12 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 					sprintf( __( 'Save a draft version or publish the %s to display these options.',
 						'wpsso-rrssb' ), SucomUtil::titleize( $mod[ 'post_type' ] ) ) . '</p></td>';
 
-				return $table_rows;	// abort
+				return $table_rows;	// Abort.
 			}
 
+			/**
+			 * Default option values.
+			 */
 			$def_cap_title   = $this->p->page->get_caption( 'title', 0, $mod, true, false );
 
 			/**
