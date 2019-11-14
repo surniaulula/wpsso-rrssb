@@ -38,7 +38,6 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				'get_defaults'           => 1,
 				'get_md_defaults'        => 1,
 				'rename_options_keys'    => 1,
-				'rename_md_options_keys' => 1,
 			) );
 
 			if ( is_admin() ) {
@@ -166,18 +165,6 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			foreach ( $show_on as $opt_suffix => $short_desc ) {
 				$options_keys[ 'wpssorrssb' ][ 20 ][ 'gp_on_' . $opt_suffix ] = '';
 			}
-
-			return $options_keys;
-		}
-
-		public function filter_rename_md_options_keys( $options_keys ) {
-
-			if ( $this->p->debug->enabled ) {
-				$this->p->debug->mark();
-			}
-
-			$options_keys[ 'wpssorrssb' ] = array(
-			);
 
 			return $options_keys;
 		}
