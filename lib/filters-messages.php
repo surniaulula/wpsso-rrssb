@@ -15,6 +15,9 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 
 		private $p;
 
+		/**
+		 * Instantiated by WpssoRrssbFilters->__construct().
+		 */
 		public function __construct( &$plugin ) {
 
 			$this->p =& $plugin;
