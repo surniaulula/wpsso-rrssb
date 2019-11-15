@@ -167,8 +167,8 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 			}
 
 			/**
-			 * Remove empty query arguments from the twitter button html
-			 * (prevents appending an empty 'via' word to the tweet).
+			 * Remove empty query arguments from the twitter button html (prevents appending an empty 'via' word to the
+			 * tweet).
 			 */
 			foreach ( array( 
 				'text'     => 'tweet',
