@@ -6,7 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	die( 'These aren\'t the droids you\'re looking for...' );
+	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
 if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
