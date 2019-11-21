@@ -99,11 +99,14 @@ if ( ! class_exists( 'WpssoRrssbRegister' ) ) {
 
 			if ( class_exists( 'Wpsso' ) ) {
 
-				if ( class_exists( 'WpssoUtil' ) ) {	// Just in case.
+				/**
+				 * Register plugin install, activation, update times.
+				 */
+				if ( class_exists( 'WpssoUtilReg' ) ) {	// Since WPSSO v6.13.0.
 
 					$version = WpssoRrssbConfig::$cf[ 'plugin' ][ 'wpssorrssb' ][ 'version' ];
 
-					WpssoUtil::register_ext_version( 'wpssorrssb', $version );
+					WpssoUtilReg::update_ext_version( 'wpssorrssb', $version );
 				}
 			}
 		}

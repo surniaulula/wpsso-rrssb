@@ -9,14 +9,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
-if ( ! defined( 'WPSSORRSSB_PLUGINDIR' ) ) {
-	die( 'Do. Or do not. There is no try.' );
-}
-
-if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
-	require_once WPSSORRSSB_PLUGINDIR . 'lib/filters-messages.php';
-}
-
 if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 	class WpssoRrssbFilters {
@@ -32,8 +24,6 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$this->msgs = new WpssoRrssbFiltersMessages( $plugin );
-
 			$this->p->util->add_plugin_filters( $this, array( 
 				'get_defaults'           => 1,
 				'get_md_defaults'        => 1,
@@ -41,6 +31,12 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			) );
 
 			if ( is_admin() ) {
+
+				if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
+					require_once WPSSORRSSB_PLUGINDIR . 'lib/filters-messages.php';
+				}
+
+				$this->msgs = new WpssoRrssbFiltersMessages( $plugin );
 
 				$this->p->util->add_plugin_filters( $this, array( 
 					'save_options'              => 3,

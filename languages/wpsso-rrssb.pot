@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"3.0.1\n"
+"3.0.2-dev.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2019-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -197,62 +197,62 @@ msgstr ""
 msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
 msgstr ""
 
-#: lib/filters.php:89
+#: lib/filters.php:85
 msgid "Failed to open the css file %s for reading."
 msgstr ""
 
-#: lib/filters.php:224 lib/gettext-pro.php:6 lib/gettext-pro.php:9
+#: lib/filters.php:220 lib/gettext-pro.php:6 lib/gettext-pro.php:9
 #: lib/submenu/rrssb-buttons.php:232
 msgctxt "option label"
 msgid "Sharing Buttons HTML Cache Expiry"
 msgstr ""
 
-#: lib/filters.php:227 lib/gettext-pro.php:7 lib/gettext-pro.php:10
+#: lib/filters.php:223 lib/gettext-pro.php:7 lib/gettext-pro.php:10
 #: lib/submenu/rrssb-buttons.php:235
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr ""
 
-#: lib/filters.php:237
+#: lib/filters.php:233
 msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr ""
 
-#: lib/filters.php:252 lib/gettext-pro.php:11
+#: lib/filters.php:248 lib/gettext-pro.php:11
 msgid "Save a draft version or publish the %s to display these options."
 msgstr ""
 
-#: lib/filters.php:268 lib/gettext-pro.php:12
+#: lib/filters.php:264 lib/gettext-pro.php:12
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/filters.php:289 lib/gettext-pro.php:13
+#: lib/filters.php:285 lib/gettext-pro.php:13
 msgctxt "option label"
 msgid "Email Subject"
 msgstr ""
 
-#: lib/filters.php:296 lib/gettext-pro.php:14
+#: lib/filters.php:292 lib/gettext-pro.php:14
 msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/filters.php:318 lib/gettext-pro.php:15
+#: lib/filters.php:314 lib/gettext-pro.php:15
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/filters.php:348 lib/gettext-pro.php:16
+#: lib/filters.php:344 lib/gettext-pro.php:16
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/filters.php:377 lib/gettext-pro.php:17
+#: lib/filters.php:373 lib/gettext-pro.php:17
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/filters.php:384 lib/gettext-pro.php:18
+#: lib/filters.php:380 lib/gettext-pro.php:18
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
