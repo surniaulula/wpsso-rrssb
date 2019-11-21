@@ -125,6 +125,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 3.0.2-dev.2 (TBD)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Updated WpssoRrssbRegister->activate_plugin() for the new WpssoUtilReg class in WPSSO Core v6.13.0.
+
 **Version 3.0.1 (2019/11/06)**
 
 * **New Features**
