@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.0.2-dev.2 (TBD)**
+**Version 3.0.2-dev.2 (2019/11/21)**
 
 * **New Features**
 	* None.
@@ -148,6 +148,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Updated js/ext/rrssb.js init to use `$(window).load()` instead of `$(document).ready()` for the WordPress block editor.
 
 == Upgrade Notice ==
+
+= 3.0.1-dev.2 =
+
+(2019/11/21) Update for the new WpssoUtilReg class in WPSSO Core v6.13.0.
 
 = 3.0.1 =
 
