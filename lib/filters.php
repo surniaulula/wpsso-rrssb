@@ -39,7 +39,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				$this->msgs = new WpssoRrssbFiltersMessages( $plugin );
 
 				$this->p->util->add_plugin_filters( $this, array( 
-					'save_options'              => 3,
+					'save_options'              => 4,
 					'option_type'               => 2,
 					'plugin_cache_rows'         => 3,
 					'post_custom_meta_tabs'     => 3,
@@ -165,12 +165,12 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			return $options_keys;
 		}
 
-		public function filter_save_options( $opts, $options_name, $network ) {
+		public function filter_save_options( $opts, $options_name, $network, $doing_upgrade ) {
 
 			/**
 			 * Update the combined and minified social stylesheet.
 			 */
-			if ( false === $network ) {
+			if ( ! $network ) {
 				WpssoRrssbSocial::update_sharing_css( $opts );
 			}
 
