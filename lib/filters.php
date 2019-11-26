@@ -167,12 +167,18 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 		public function filter_save_options( $opts, $options_name, $network, $doing_upgrade ) {
 
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->mark();
+			}
+
+			if ( $network ) {
+				return $opts;	// Nothing to do.
+			}
+
 			/**
 			 * Update the combined and minified social stylesheet.
 			 */
-			if ( ! $network ) {
-				WpssoRrssbSocial::update_sharing_css( $opts );
-			}
+			WpssoRrssbSocial::update_sharing_css( $opts );
 
 			return $opts;
 		}
