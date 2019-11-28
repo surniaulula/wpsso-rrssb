@@ -15,6 +15,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 
 		private $p;
 
+		/**
+		 * Note that Pinterest share button options (from the WPSSO SSB and WPSSO RRSSB add-ons, for example) use a "pin"
+		 * option prefix, where-as options from the WPSSO setting pages and Document SSO metabox use a "p" prefix".
+		 */
 		public function __construct( &$plugin ) {
 
 			$this->p =& $plugin;
@@ -201,8 +205,9 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 				$pinterest_button_html = preg_replace( '/(\/create)\/(button\/)/', '$1/+/$2', $this->p->options[ 'pin_rrssb_html' ] );
 			}
 
-			$pinterest_caption = $this->p->page->get_caption( 'excerpt', $opts[ 'pin_caption_max_len' ], $mod, true,
-				$atts[ 'add_hashtags' ], false, 'pin_desc' );
+			$pinterest_caption = $this->p->page->get_caption( 'excerpt', $opts[ 'pin_caption_max_len' ],
+				$mod, $read_cache = true, $atts[ 'add_hashtags' ], $do_encode = false,
+					$md_key = array ( 'pin_desc', 'p_img_desc', 'og_desc' ) );
 
 			return $this->p->util->replace_inline_vars( '<!-- Pinterest Button -->' .
 				$pinterest_button_html, $mod, $atts, array(
