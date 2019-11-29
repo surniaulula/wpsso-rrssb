@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.1.0-b.3 (2019/11/28)**
+**Version 3.1.0-rc.1 (2019/11/29)**
 
 * **New Features**
 	* None.
@@ -160,9 +160,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.1.0-b.3 =
+= 3.1.0-rc.1 =
 
-(2019/11/28) Added support for the new "Pinterest Image Description" value in the Document SSO metabox (since WPSSO Core v6.14.0).
+(2019/11/29) Added support for the new "Pinterest Image Description" value in the Document SSO metabox (since WPSSO Core v6.14.0).
 
 = 3.0.2 =
 
