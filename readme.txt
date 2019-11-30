@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires At Least: 3.9
 Tested Up To: 5.3
 WC Tested Up To: 3.8.1
-Stable Tag: 3.0.2
+Stable Tag: 3.1.0
 
 Ridiculously Responsive Social Sharing Buttons (RRSSB) for your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc.
 
@@ -163,8 +163,4 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 = 3.1.0 =
 
 (2019/11/30) Added support for the new "Pinterest Image Description" value in the Document SSO metabox (since WPSSO Core v6.14.0).
-
-= 3.0.2 =
-
-(2019/11/23) Update for the new WpssoUtilReg class in WPSSO Core v6.13.1.
 
