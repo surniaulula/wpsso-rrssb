@@ -11,6 +11,7 @@
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Description: Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc.
+ * Requires PHP: 5.5
  * Requires At Least: 3.9
  * Tested Up To: 5.3
  * WC Tested Up To: 3.8.1
