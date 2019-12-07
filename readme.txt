@@ -8,6 +8,7 @@ License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://surniaulula.github.io/wpsso-rrssb/assets/
 Tags: responsive, share buttons, social widget, social media, woocommerce, facebook, google, twitter, pinterest, linkedin, whatsapp, bbpress, buddypress
 Contributors: jsmoriss
+Requires PHP: 5.5
 Requires At Least: 3.9
 Tested Up To: 5.3
 WC Tested Up To: 3.8.1

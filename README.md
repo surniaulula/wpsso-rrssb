@@ -4,8 +4,10 @@
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Ridiculously Responsive Social Sharing Buttons</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>Ridiculously Responsive Social Sharing Buttons (RRSSB) for your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>3.1.0</td></tr>
-<tr><th align="right" valign="top" nowrap>Requires At Least</th><td>WordPress 3.9</td></tr>
-<tr><th align="right" valign="top" nowrap>Tested Up To</th><td>WordPress 5.3</td></tr>
+<tr><th align="right" valign="top" nowrap>Requires PHP</th><td>5.5 or newer</td></tr>
+<tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>3.9 or newer</td></tr>
+<tr><th align="right" valign="top" nowrap>Tested Up To WordPress</th><td>5.3</td></tr>
+<tr><th align="right" valign="top" nowrap>Tested Up To WooCommerce</th><td>3.8.1</td></tr>
 <tr><th align="right" valign="top" nowrap>Contributors</th><td>jsmoriss</td></tr>
 <tr><th align="right" valign="top" nowrap>License</th><td><a href="https://www.gnu.org/licenses/gpl.txt">GPLv3</a></td></tr>
 <tr><th align="right" valign="top" nowrap>Tags / Keywords</th><td>responsive, share buttons, social widget, social media, woocommerce, facebook, google, twitter, pinterest, linkedin, whatsapp, bbpress, buddypress</td></tr>
