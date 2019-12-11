@@ -204,6 +204,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			 * Define the variable constants, if not already defined.
 			 */
 			foreach ( $var_const as $name => $value ) {
+
 				if ( ! defined( $name ) ) {
 					define( $name, $value );
 				}
@@ -226,6 +227,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			 * Maybe override the default constant value with a pre-defined constant value.
 			 */
 			foreach ( $var_const as $name => $value ) {
+
 				if ( defined( $name ) ) {
 					$var_const[$name] = constant( $name );
 				}

@@ -14,6 +14,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 	class WpssoRrssbShortcodeSharing {
 
 		private $p;
+		private $shortcode_name = 'rrssb';	// Default shortcode name.
 
 		public function __construct( &$plugin ) {
 
@@ -22,6 +23,8 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
 			}
+
+			$this->shortcode_name = WPSSORRSSB_SHARING_SHORTCODE_NAME;
 
 			if ( ! is_admin() ) {
 
@@ -40,8 +43,8 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 		}
 
 		/**
-		 * Make sure wpautop() does not have a higher priority than 10, otherwise it will
-		 * format the shortcode output (shortcode filters are run at priority 11).
+		 * Make sure wpautop() does not have a higher priority than 10, otherwise it will format the shortcode output
+		 * (shortcode filters are run at priority 11).
 		 */
 		public function check_wpautop() {
 
@@ -94,19 +97,19 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 		public function add_shortcode() {
 
-			if ( shortcode_exists( WPSSORRSSB_SHARING_SHORTCODE_NAME ) ) {
+			if ( shortcode_exists( $this->shortcode_name ) ) {
 
 				if ( $this->p->debug->enabled ) {
-					$this->p->debug->log( 'cannot add [' . WPSSORRSSB_SHARING_SHORTCODE_NAME . '] sharing shortcode - shortcode already exists' );
+					$this->p->debug->log( 'cannot add ' . $this->shortcode_name . ' shortcode - already exists' );
 				}
 
 				return false;
 			}
 
-        		add_shortcode( WPSSORRSSB_SHARING_SHORTCODE_NAME, array( $this, 'do_shortcode' ) );
+        		add_shortcode( $this->shortcode_name, array( $this, 'do_shortcode' ) );
 
 			if ( $this->p->debug->enabled ) {
-				$this->p->debug->log( '[' . WPSSORRSSB_SHARING_SHORTCODE_NAME . '] sharing shortcode added' );
+				$this->p->debug->log( $this->shortcode_name . ' shortcode added' );
 			}
 
 			return true;
@@ -114,12 +117,12 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 		public function remove_shortcode() {
 
-			if ( shortcode_exists( WPSSORRSSB_SHARING_SHORTCODE_NAME ) ) {
+			if ( shortcode_exists( $this->shortcode_name ) ) {
 
-				remove_shortcode( WPSSORRSSB_SHARING_SHORTCODE_NAME );
+				remove_shortcode( $this->shortcode_name );
 
 				if ( $this->p->debug->enabled ) {
-					$this->p->debug->log( '[' . WPSSORRSSB_SHARING_SHORTCODE_NAME . '] sharing shortcode removed' );
+					$this->p->debug->log( $this->shortcode_name . ' shortcode removed' );
 				}
 
 				return true;
@@ -127,7 +130,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			}
 			
 			if ( $this->p->debug->enabled ) {
-				$this->p->debug->log( 'cannot remove [' . WPSSORRSSB_SHARING_SHORTCODE_NAME . '] sharing shortcode - shortcode does not exist' );
+				$this->p->debug->log( 'cannot remove ' . $this->shortcode_name . ' shortcode - does not exist' );
 			}
 
 			return false;
@@ -165,7 +168,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			$atts = (array) apply_filters( $this->p->lca . '_rrssb_sharing_shortcode_atts', $atts, $content );
 
 			if ( empty( $atts[ 'buttons' ] ) ) {	// Nothing to do.
-				return '<!-- ' . $this->p->lca . ' sharing shortcode: no buttons defined -->' . "\n\n";
+				return '<!-- ' . $this->shortcode_name . ' shortcode: no buttons attribute -->' . "\n\n";
 			}
 
 			$atts[ 'use_post' ]  = SucomUtil::sanitize_use_post( $atts, true );
@@ -176,7 +179,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			}
 
 			$mod         = $this->p->util->get_page_mod( $atts[ 'use_post' ] );
-			$type        = 'sharing_shortcode_' . WPSSORRSSB_SHARING_SHORTCODE_NAME;
+			$type        = 'sharing_shortcode_' . $this->shortcode_name;
 			$atts[ 'url' ] = empty( $atts[ 'url' ] ) ? $this->p->util->get_sharing_url( $mod ) : $atts[ 'url' ];
 
 			$cache_md5_pre  = $this->p->lca . '_b_';
