@@ -10,7 +10,7 @@ Tags: responsive, share buttons, social widget, social media, woocommerce, faceb
 Contributors: jsmoriss
 Requires PHP: 5.5
 Requires At Least: 3.9
-Tested Up To: 5.3
+Tested Up To: 5.3.1
 WC Tested Up To: 3.8.1
 Stable Tag: 3.1.0
 
