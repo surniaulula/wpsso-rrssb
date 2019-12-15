@@ -26,7 +26,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
-				$this->p->debug->mark( 'rrssb sharing action / filter setup' );
+				$this->p->debug->mark( 'rrssb sharing action / filter setup' );	// Begin timer.
 			}
 
 			self::$sharing_css_name = 'rrssb-styles-id-' . get_current_blog_id() . '.min.css';
@@ -53,7 +53,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			}
 
 			if ( $this->p->debug->enabled ) {
-				$this->p->debug->mark( 'rrssb sharing action / filter setup' );
+				$this->p->debug->mark( 'rrssb sharing action / filter setup' );	// End timer.
 			}
 		}
 
@@ -308,7 +308,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 		public function get_buttons( $text, $type = 'content', $mod = true, $location = '', $atts = array() ) {
 
 			if ( $this->p->debug->enabled ) {
-				$this->p->debug->mark( 'getting buttons for ' . $type );	// Start timer.
+				$this->p->debug->mark( 'getting buttons for ' . $type );	// Begin timer.
 			}
 
 			$is_admin      = is_admin();
