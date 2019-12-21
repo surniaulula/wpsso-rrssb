@@ -34,27 +34,28 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareReddit' ) ) {
 			$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
 			'<td>' . $submenu->show_on_checkboxes( 'reddit' ) . '</td>';
 
-			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'reddit_order', range( 1, count( $submenu->share ) ) ).'</td>';
+			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
+			'<td>' . $form->get_select( 'reddit_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
 			if ( $this->p->avail[ '*' ][ 'vary_ua' ] ) {
-				$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_platform' ).
-				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
-				'<td>'.$form->get_select( 'reddit_platform', $this->p->cf[ 'sharing' ][ 'platform' ] ).'</td>';
+
+				$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_platform' ) . 
+				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ) . 
+				'<td>' . $form->get_select( 'reddit_platform', $this->p->cf[ 'sharing' ][ 'platform' ] ) . '</td>';
 			}
 
-			$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_caption_max_len' ).
-                        $form->get_th_html( _x( 'Caption Text Length', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_input( 'reddit_caption_max_len', 'short' ) . ' ' . 
-				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ).'</td>';
+			$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_caption_max_len' ) . 
+                        $form->get_th_html( _x( 'Caption Text Length', 'option label', 'wpsso-rrssb' ) ) . 
+			'<td>' . $form->get_input( 'reddit_caption_max_len', 'short' ) . ' ' . 
+				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
-			$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_caption_hashtags' ).
-			$form->get_th_html( _x( 'Append Hashtags to Caption', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'reddit_caption_hashtags', range( 0, $this->p->cf[ 'form' ][ 'max_hashtags' ] ), 'short', '', true ) . ' ' . 
-				_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
+			$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_caption_hashtags' ) . 
+			$form->get_th_html( _x( 'Append Hashtags to Caption', 'option label', 'wpsso-rrssb' ) ) . 
+			'<td>' . $form->get_select( 'reddit_caption_hashtags', range( 0, $this->p->cf[ 'form' ][ 'max_hashtags' ] ), 'short', '', true ) . ' ' . 
+				_x( 'tag names', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
-			$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_rrssb_html' ).
-			'<td colspan="2">'.$form->get_textarea( 'reddit_rrssb_html', 'button_html code' ).'</td>';
+			$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_rrssb_html' ) . 
+			'<td colspan="2">' . $form->get_textarea( 'reddit_rrssb_html', 'button_html code' ) . '</td>';
 
 			return $table_rows;
 		}

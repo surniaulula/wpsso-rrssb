@@ -34,27 +34,28 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTumblr' ) ) {
 			$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
 			'<td>' . $submenu->show_on_checkboxes( 'tumblr' ) . '</td>';
 
-			$table_rows[ 'tumblr_order' ] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'tumblr_order', range( 1, count( $submenu->share ) ) ).'</td>';
+			$table_rows[ 'tumblr_order' ] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
+			'<td>' . $form->get_select( 'tumblr_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
 			if ( $this->p->avail[ '*' ][ 'vary_ua' ] ) {
-				$table_rows[ 'tumblr_platform' ] = $form->get_tr_hide( 'basic', 'tumblr_platform' ).
-				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
-				'<td>'.$form->get_select( 'tumblr_platform', $this->p->cf[ 'sharing' ][ 'platform' ] ).'</td>';
+
+				$table_rows[ 'tumblr_platform' ] = $form->get_tr_hide( 'basic', 'tumblr_platform' ) . 
+				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ) . 
+				'<td>' . $form->get_select( 'tumblr_platform', $this->p->cf[ 'sharing' ][ 'platform' ] ) . '</td>';
 			}
 
-			$table_rows[ 'tumblr_caption_max_len' ] = $form->get_tr_hide( 'basic', 'tumblr_caption_max_len' ).
-                        $form->get_th_html( _x( 'Summary Text Length', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_input( 'tumblr_caption_max_len', 'short' ) . ' ' . 
-				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ).'</td>';
+			$table_rows[ 'tumblr_caption_max_len' ] = $form->get_tr_hide( 'basic', 'tumblr_caption_max_len' ) . 
+                        $form->get_th_html( _x( 'Summary Text Length', 'option label', 'wpsso-rrssb' ) ) . 
+			'<td>' . $form->get_input( 'tumblr_caption_max_len', 'short' ) . ' ' . 
+				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
-			$table_rows[ 'tumblr_caption_hashtags' ] = $form->get_tr_hide( 'basic', 'tumblr_caption_hashtags' ).
-			$form->get_th_html( _x( 'Append Hashtags to Summary', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'tumblr_caption_hashtags', range( 0, $this->p->cf[ 'form' ][ 'max_hashtags' ] ), 'short', '', true ) . ' ' . 
-				_x( 'tag names', 'option comment', 'wpsso-rrssb' ).'</td>';
+			$table_rows[ 'tumblr_caption_hashtags' ] = $form->get_tr_hide( 'basic', 'tumblr_caption_hashtags' ) . 
+			$form->get_th_html( _x( 'Append Hashtags to Summary', 'option label', 'wpsso-rrssb' ) ) . 
+			'<td>' . $form->get_select( 'tumblr_caption_hashtags', range( 0, $this->p->cf[ 'form' ][ 'max_hashtags' ] ), 'short', '', true ) . ' ' . 
+				_x( 'tag names', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
-			$table_rows[ 'tumblr_rrssb_html' ] = $form->get_tr_hide( 'basic', 'tumblr_rrssb_html' ).
-			'<td colspan="2">'.$form->get_textarea( 'tumblr_rrssb_html', 'button_html code' ).'</td>';
+			$table_rows[ 'tumblr_rrssb_html' ] = $form->get_tr_hide( 'basic', 'tumblr_rrssb_html' ) . 
+			'<td colspan="2">' . $form->get_textarea( 'tumblr_rrssb_html', 'button_html code' ) . '</td>';
 
 			return $table_rows;
 		}

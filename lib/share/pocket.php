@@ -34,17 +34,18 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePocket' ) ) {
 			$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
 			'<td>' . $submenu->show_on_checkboxes( 'pocket' ) . '</td>';
 
-			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'pocket_order', range( 1, count( $submenu->share ) ) ).'</td>';
+			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
+			'<td>' . $form->get_select( 'pocket_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
 			if ( $this->p->avail[ '*' ][ 'vary_ua' ] ) {
-				$table_rows[] = $form->get_tr_hide( 'basic', 'pocket_platform' ).
-				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
-				'<td>'.$form->get_select( 'pocket_platform', $this->p->cf[ 'sharing' ][ 'platform' ] ).'</td>';
+
+				$table_rows[] = $form->get_tr_hide( 'basic', 'pocket_platform' ) . 
+				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ) . 
+				'<td>' . $form->get_select( 'pocket_platform', $this->p->cf[ 'sharing' ][ 'platform' ] ) . '</td>';
 			}
 
-			$table_rows[] = $form->get_tr_hide( 'basic', 'pocket_rrssb_html' ).
-			'<td colspan="2">'.$form->get_textarea( 'pocket_rrssb_html', 'button_html code' ).'</td>';
+			$table_rows[] = $form->get_tr_hide( 'basic', 'pocket_rrssb_html' ) . 
+			'<td colspan="2">' . $form->get_textarea( 'pocket_rrssb_html', 'button_html code' ) . '</td>';
 
 			return $table_rows;
 		}

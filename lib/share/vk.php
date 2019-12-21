@@ -34,17 +34,18 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareVk' ) ) {
 			$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
 			'<td>' . $submenu->show_on_checkboxes( 'vk' ) . '</td>';
 
-			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ).
-			'<td>'.$form->get_select( 'vk_order', range( 1, count( $submenu->share ) ) ).'</td>';
+			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
+			'<td>' . $form->get_select( 'vk_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
 			if ( $this->p->avail[ '*' ][ 'vary_ua' ] ) {
-				$table_rows[] = $form->get_tr_hide( 'basic', 'vk_platform' ).
-				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ).
-				'<td>'.$form->get_select( 'vk_platform', $this->p->cf[ 'sharing' ][ 'platform' ] ).'</td>';
+
+				$table_rows[] = $form->get_tr_hide( 'basic', 'vk_platform' ) . 
+				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ) . 
+				'<td>' . $form->get_select( 'vk_platform', $this->p->cf[ 'sharing' ][ 'platform' ] ) . '</td>';
 			}
 
-			$table_rows[] = $form->get_tr_hide( 'basic', 'vk_rrssb_html' ).
-			'<td colspan="2">'.$form->get_textarea( 'vk_rrssb_html', 'button_html code' ).'</td>';
+			$table_rows[] = $form->get_tr_hide( 'basic', 'vk_rrssb_html' ) . 
+			'<td colspan="2">' . $form->get_textarea( 'vk_rrssb_html', 'button_html code' ) . '</td>';
 
 			return $table_rows;
 		}
