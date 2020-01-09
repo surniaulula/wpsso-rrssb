@@ -252,7 +252,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 				$table_rows[ 'save_a_draft' ] = '<td><blockquote class="status-info"><p class="centered">' . 
 					sprintf( __( 'Save a draft version or publish the %s to display these options.',
-						'wpsso-rrssb' ), SucomUtil::titleize( $mod[ 'post_type' ] ) ) . '</p></td>';
+						'wpsso-rrssb' ), SucomUtil::titleize( $mod[ 'post_type' ] ) ) . '</p></blockquote></td>';
 
 				return $table_rows;	// Abort.
 			}
