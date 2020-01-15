@@ -157,8 +157,8 @@ msgstr ""
 #: lib/filters-messages.php:254
 msgid ""
 "Append the %1$s to the tweet (see <a href=\"%2$s\">the Twitter options tab</"
-"a> in the %3$s settings page). The %1$s will be displayed and recommended "
-"after the webpage is shared."
+"a> in the %3$s page). The %1$s will be displayed and recommended after the "
+"webpage is shared."
 msgstr ""
 
 #: lib/filters-messages.php:254 lib/filters-messages.php:260
@@ -168,7 +168,7 @@ msgstr ""
 
 #: lib/filters-messages.php:254
 msgctxt "lib file description"
-msgid "General"
+msgid "General Settings"
 msgstr ""
 
 #: lib/filters-messages.php:260
