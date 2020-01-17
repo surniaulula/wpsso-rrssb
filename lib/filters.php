@@ -18,6 +18,17 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 		public function __construct( &$plugin ) {
 
+			/**
+			 * Just in case - prevent filters from being hooked and executed more than once.
+			 */
+			static $do_once = null;
+
+			if ( true === $do_once ) {
+				return;	// Stop here.
+			}
+
+			$do_once = true;
+
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
@@ -25,6 +36,8 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			}
 
 			$this->p->util->add_plugin_filters( $this, array( 
+				'option_type'            => 2,
+				'save_options'           => 4,
 				'get_defaults'           => 1,
 				'get_md_defaults'        => 1,
 				'rename_options_keys'    => 1,
@@ -39,8 +52,6 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				$this->msgs = new WpssoRrssbFiltersMessages( $plugin );
 
 				$this->p->util->add_plugin_filters( $this, array( 
-					'save_options'              => 4,
-					'option_type'               => 2,
 					'plugin_cache_rows'         => 3,
 					'post_custom_meta_tabs'     => 3,
 					'post_buttons_rows'         => 4,
@@ -51,6 +62,55 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 					'status_std_features' => 3,
 				), $prio = 10, $ext = 'wpssorrssb' );	// Hook into our own filters.
 			}
+		}
+
+		public function filter_option_type( $type, $base_key ) {
+
+			if ( ! empty( $type ) ) {
+				return $type;
+			}
+
+			switch ( $base_key ) {
+
+				/**
+				 * Integer options that must be 1 or more (not zero).
+				 */
+				case ( preg_match( '/_order$/', $base_key ) ? true : false ):
+
+					return 'pos_int';
+
+					break;
+
+				/**
+				 * Text strings that can be blank.
+				 */
+				case 'buttons_force_prot':
+				case ( preg_match( '/_(desc|title)$/', $base_key ) ? true : false ):
+
+					return 'ok_blank';
+
+					break;
+			}
+
+			return $type;
+		}
+
+		public function filter_save_options( $opts, $options_name, $network, $doing_upgrade ) {
+
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->mark();
+			}
+
+			if ( $network ) {
+				return $opts;	// Nothing to do.
+			}
+
+			/**
+			 * Update the combined and minified social stylesheet.
+			 */
+			WpssoRrssbSocial::update_sharing_css( $opts );
+
+			return $opts;
 		}
 
 		public function filter_get_defaults( $def_opts ) {
@@ -163,55 +223,6 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			}
 
 			return $options_keys;
-		}
-
-		public function filter_save_options( $opts, $options_name, $network, $doing_upgrade ) {
-
-			if ( $this->p->debug->enabled ) {
-				$this->p->debug->mark();
-			}
-
-			if ( $network ) {
-				return $opts;	// Nothing to do.
-			}
-
-			/**
-			 * Update the combined and minified social stylesheet.
-			 */
-			WpssoRrssbSocial::update_sharing_css( $opts );
-
-			return $opts;
-		}
-
-		public function filter_option_type( $type, $base_key ) {
-
-			if ( ! empty( $type ) ) {
-				return $type;
-			}
-
-			switch ( $base_key ) {
-
-				/**
-				 * Integer options that must be 1 or more (not zero).
-				 */
-				case ( preg_match( '/_order$/', $base_key ) ? true : false ):
-
-					return 'pos_int';
-
-					break;
-
-				/**
-				 * Text strings that can be blank.
-				 */
-				case 'buttons_force_prot':
-				case ( preg_match( '/_(desc|title)$/', $base_key ) ? true : false ):
-
-					return 'ok_blank';
-
-					break;
-			}
-
-			return $type;
 		}
 
 		public function filter_plugin_cache_rows( $table_rows, $form, $network = false ) {
