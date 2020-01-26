@@ -800,10 +800,13 @@ $cache_array[ $cache_index ] .
 			$ret = false;
 
 			if ( ( $post_obj = SucomUtil::get_post_object() ) === false ) {
+
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'exiting early: invalid post object' );
 				}
+
 				return $ret;
+
 			} else {
 				$post_id = empty( $post_obj->ID ) ? 0 : $post_obj->ID;
 			}

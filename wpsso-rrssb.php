@@ -47,6 +47,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 		public $filters;	// WpssoRrssbFilters
 		public $reg;		// WpssoRrssbRegister
 		public $script;		// WpssoRrssbScript
+		public $social;		// WpssoRrssbSocial
 		public $style;		// WpssoRrssbStyle
 
 		/**
