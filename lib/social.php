@@ -165,7 +165,8 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				if ( ! @unlink( self::$sharing_css_file ) ) {
 
 					if ( is_admin() ) {
-						$wpsso->notice->err( __( 'Error removing the minified stylesheet &mdash; does the web server have sufficient privileges?', 'wpsso-rrssb' ) );
+						$wpsso->notice->err( __( 'Error removing the minified stylesheet &mdash; does the web server have sufficient privileges?',
+							'wpsso-rrssb' ) );
 					}
 				}
 			}
@@ -207,6 +208,10 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 		}
 
 		public function show_footer() {
+
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->mark();
+			}
 
 			if ( $this->have_buttons_for_type( 'sidebar' ) ) {
 				$this->show_sidebar();
@@ -377,16 +382,24 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				if ( $this->is_post_buttons_disabled() ) {
 					$error_message = 'post buttons are disabled';
 				}
+
+			} elseif ( ! apply_filters( $this->p->lca . '_rrssb_add_buttons', true, $type, $mod, $location ) ) {
+
+				$error_message = $this->p->lca . '_rrssb_add_buttons filter returned false';
 			}
 
-			if ( empty( $error_message ) && ! $this->have_buttons_for_type( $type ) ) {
-				$error_message = 'no sharing buttons enabled';
+			if ( empty( $error_message ) ) {
+				if ( ! $this->have_buttons_for_type( $type ) ) {
+					$error_message = 'no sharing buttons enabled';
+				}
 			}
 
 			if ( ! empty( $error_message ) ) {
 
 				if ( $this->p->debug->enabled ) {
+
 					$this->p->debug->log( $type . ' filter skipped: ' . $error_message );
+
 					$this->p->debug->mark( 'getting buttons for ' . $type );	// End timer.
 				}
 
@@ -395,6 +408,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			/**
 			 * The $mod array argument is preferred but not required.
+			 *
 			 * $mod = true | false | post_id | $mod array
 			 */
 			if ( ! is_array( $mod ) ) {

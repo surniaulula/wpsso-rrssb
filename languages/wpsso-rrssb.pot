@@ -495,12 +495,12 @@ msgid ""
 "sufficient privileges?"
 msgstr ""
 
-#: lib/social.php:195
+#: lib/social.php:196
 msgctxt "metabox title"
 msgid "Share Buttons"
 msgstr ""
 
-#: lib/social.php:246
+#: lib/social.php:251
 msgid "This content must be published<br/>before it can be shared."
 msgstr ""
 
