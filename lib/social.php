@@ -650,7 +650,9 @@ $cache_array[ $cache_index ] .
 		}
 
 		/**
-		 * get_html() can be called by a widget, shortcode, function, filter hook, etc.
+		 * Called by $this->get_buttons().
+		 *
+		 * get_html() can also be called by a widget, shortcode, function, filter hook, etc.
 		 */
 		public function get_html( array $share_ids, array $atts, $mod = false ) {
 
