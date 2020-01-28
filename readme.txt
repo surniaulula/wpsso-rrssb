@@ -123,6 +123,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 3.2.0-dev.2 (2020/01/28)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Optimized the addition/removal of the WPSSO RRSSB shortcode when text filters are applied.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v5.5.
+	* WordPress v4.0.
+	* WPSSO Core v6.18.0.
+
 **Version 3.1.0 (2019/11/30)**
 
 * **New Features**
@@ -161,6 +176,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Updated js/ext/rrssb.js init to use `$(window).load()` instead of `$(document).ready()` for the WordPress block editor.
 
 == Upgrade Notice ==
+
+= 3.2.0-dev.2 =
+
+(2020/01/28) Optimized the addition/removal of the WPSSO RRSSB shortcode when text filters are applied.
 
 = 3.1.0 =
 
