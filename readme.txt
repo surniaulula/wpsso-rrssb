@@ -129,6 +129,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* None.
 * **Improvements**
 	* Optimized the addition/removal of the WPSSO RRSSB shortcode when text filters are applied.
+	* Minor update to the default WPSSO RRSSB CSS for the TwentyTwenty theme.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -179,7 +180,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 3.2.0-b.1 =
 
-(2020/01/28) Optimized the addition/removal of the WPSSO RRSSB shortcode when text filters are applied.
+(2020/01/28) Optimized the addition/removal of the WPSSO RRSSB shortcode when text filters are applied. Minor update to the default WPSSO RRSSB CSS for the TwentyTwenty theme.
 
 = 3.1.0 =
 
