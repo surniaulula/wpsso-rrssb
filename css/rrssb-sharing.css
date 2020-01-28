@@ -43,11 +43,15 @@ ul.rrssb-buttons li::before,
 	content:none !important;
 }
 
-.rrssb-icon {
+ul.rrssb-buttons li a .rrssb-icon {
 	display:inline-block;
 }
 
-.rrssb-text {
+ul.rrssb-buttons li.small a .rrssb-icon {
+	left:10px;
+}
+
+ul.rrssb-buttons li a .rrssb-text {
 	display:inline-block;
 	white-space:nowrap;
 }
