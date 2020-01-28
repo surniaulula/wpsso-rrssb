@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.2.0-dev.2 (2020/01/28)**
+**Version 3.2.0-b.1 (2020/01/28)**
 
 * **New Features**
 	* None.
@@ -177,7 +177,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.2.0-dev.2 =
+= 3.2.0-b.1 =
 
 (2020/01/28) Optimized the addition/removal of the WPSSO RRSSB shortcode when text filters are applied.
 
