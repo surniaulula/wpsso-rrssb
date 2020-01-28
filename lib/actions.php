@@ -25,7 +25,6 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 
 			$this->p->util->add_plugin_actions( $this, array( 
 				'pre_apply_filters_text'   => 1,
-				'after_apply_filters_text' => 1,
 			) );
 
 			if ( is_admin() ) {
@@ -47,7 +46,15 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 
 			$rrssb =& WpssoRrssb::get_instance();
 
-			$rrssb->social->remove_buttons_filter( $filter_name );
+			/**
+			 * If a buttons filter is removed, then re-add it when the text filter is finished executing.
+			 */
+			if ( $rrssb->social->remove_buttons_filter( $filter_name ) ) {
+
+				$this->p->util->add_plugin_actions( $this, array( 
+					'after_apply_filters_text' => 1,
+				) );
+			}
 		}
 
 		public function action_after_apply_filters_text( $filter_name ) {

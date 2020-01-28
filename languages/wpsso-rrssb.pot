@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"3.1.0\n"
+"3.2.0-dev.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2020-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -13,11 +13,11 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: lib/actions.php:80
+#: lib/actions.php:87
 msgid "The default responsive buttons HTML has been reloaded and saved."
 msgstr ""
 
-#: lib/actions.php:99
+#: lib/actions.php:106
 msgid "The default responsive styles CSS has been reloaded and saved."
 msgstr ""
 

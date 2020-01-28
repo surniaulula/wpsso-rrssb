@@ -26,19 +26,15 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 			$this->shortcode_name = WPSSORRSSB_SHARING_SHORTCODE_NAME;
 
-			if ( ! is_admin() ) {
+			if ( $this->p->avail[ 'p_ext' ][ 'rrssb' ] ) {
 
-				if ( $this->p->avail[ 'p_ext' ][ 'rrssb' ] ) {
+				$this->check_wpautop();
 
-					$this->check_wpautop();
+				$this->add_shortcode();
 
-					$this->add_shortcode();
-
-					$this->p->util->add_plugin_actions( $this, array( 
-						'pre_apply_filters_text'   => 1,
-						'after_apply_filters_text' => 1,
-					) );
-				}
+				$this->p->util->add_plugin_actions( $this, array( 
+					'pre_apply_filters_text'   => 1,
+				) );
 			}
 		}
 
@@ -78,7 +74,15 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				) );
 			}
 
-			$this->remove_shortcode();
+			/**
+			 * If a shortcode is removed, then re-add it when the text filter is finished executing.
+			 */
+			if ( $this->remove_shortcode() ) {
+
+				$this->p->util->add_plugin_actions( $this, array( 
+					'after_apply_filters_text' => 1,
+				) );
+			}
 		}
 
 		/**
