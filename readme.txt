@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.2.0-rc.1 (2020/01/29)**
+**Version 3.2.0-rc.2 (2020/01/29)**
 
 * **New Features**
 	* None.
@@ -178,7 +178,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.2.0-rc.1 =
+= 3.2.0-rc.2 =
 
 (2020/01/29) Optimized the addition/removal of the WPSSO RRSSB shortcode when text filters are applied. Minor update to the default WPSSO RRSSB CSS for the TwentyTwenty theme.
 
