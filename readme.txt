@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.2.0-rc.4 (2020/01/30)**
+**Version 3.2.0 (2020/01/30)**
 
 * **New Features**
 	* None.
@@ -154,35 +154,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v4.0.
 	* WPSSO Core v6.16.2.
 
-**Version 3.0.2 (2019/11/23)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Updated `WpssoRrssbRegister->activate_plugin()` for the new WpssoUtilReg class in WPSSO Core v6.13.1.
-
-**Version 3.0.1 (2019/11/06)**
-
-* **New Features**
-	* Moved Premium add-on features into the Standard version.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Updated js/ext/rrssb.js init to use `$(window).load()` instead of `$(document).ready()` for the WordPress block editor.
-
 == Upgrade Notice ==
 
-= 3.2.0-rc.4 =
+= 3.2.0 =
 
 (2020/01/30) Optimized the addition/removal of the WPSSO RRSSB shortcode when text filters are applied. Minor update to the default WPSSO RRSSB CSS for the TwentyTwenty theme.
-
-= 3.1.0 =
-
-(2019/11/30) Added support for the new "Pinterest Image Description" value in the Document SSO metabox (since WPSSO Core v6.14.0).
 
