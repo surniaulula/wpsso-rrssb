@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 
-	function wpssorrssb_get_sharing_buttons( $share_ids = array(), $atts = array(), $cache_exp_secs = false ) {
+	function wpssorrssb_get_sharing_buttons( $share_ids = array(), $atts = array(), $cache_exp_secs = null ) {
 
 		$wpsso =& Wpsso::get_instance();
 		$rrssb =& WpssoRrssb::get_instance();
@@ -63,11 +63,24 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 		$sharing_url = $wpsso->util->get_sharing_url( $mod );
 
 		$cache_md5_pre  = $wpsso->lca . '_b_';
-		$cache_exp_secs = false === $cache_exp_secs ? $rrssb->social->get_buttons_cache_exp() : $cache_exp_secs;	// Returns 0 for 404 and search pages.
 		$cache_salt     = __FUNCTION__ . '(' . SucomUtil::get_mod_salt( $mod, $sharing_url ) . ')';
 		$cache_id       = $cache_md5_pre . md5( $cache_salt );
-		$cache_index    = $rrssb->social->get_buttons_cache_index( $type, $atts, $share_ids );	// Returns salt with locale, mobile, wp_query, etc.
+		$cache_index    = $rrssb->social->get_buttons_cache_index( $type, $atts, $share_ids );
 		$cache_array    = array();
+
+		if ( null === $cache_exp_secs ) {
+
+			$cache_exp_secs = $this->p->util->get_cache_exp_secs( $cache_md5_pre );	// Default is week in seconds.
+
+			if ( is_404() || is_search() ) {
+
+				if ( $this->p->debug->enabled ) {
+					$this->p->debug->log( 'setting cache expiration to 0 seconds for 404 or search page' );
+				}
+
+				$cache_exp_secs = 0;
+			}
+		}
 
 		if ( $wpsso->debug->enabled ) {
 			$wpsso->debug->log( 'sharing url = ' . $sharing_url );

@@ -187,11 +187,20 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			$atts[ 'url' ] = empty( $atts[ 'url' ] ) ? $this->p->util->get_sharing_url( $mod ) : $atts[ 'url' ];
 
 			$cache_md5_pre  = $this->p->lca . '_b_';
-			$cache_exp_secs = $rrssb->social->get_buttons_cache_exp();	// Returns 0 for 404 and search pages.
+			$cache_exp_secs = $this->p->util->get_cache_exp_secs( $cache_md5_pre );	// Default is week in seconds.
 			$cache_salt     = __METHOD__ . '(' . SucomUtil::get_mod_salt( $mod, $atts[ 'url' ] ) . ')';
 			$cache_id       = $cache_md5_pre . md5( $cache_salt );
-			$cache_index    = $rrssb->social->get_buttons_cache_index( $type, $atts );	// Returns salt with locale, mobile, wp_query, etc.
+			$cache_index    = $rrssb->social->get_buttons_cache_index( $type, $atts );
 			$cache_array    = array();
+
+			if ( is_404() || is_search() ) {
+
+				if ( $this->p->debug->enabled ) {
+					$this->p->debug->log( 'setting cache expiration to 0 seconds for 404 or search page' );
+				}
+
+				$cache_exp_secs = 0;
+			}
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'sharing url = ' . $atts[ 'url' ] );

@@ -423,11 +423,20 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			$sharing_url = $this->p->util->get_sharing_url( $mod );
 
 			$cache_md5_pre  = $this->p->lca . '_b_';
-			$cache_exp_secs = $this->get_buttons_cache_exp();	// Returns 0 for 404 and search pages.
+			$cache_exp_secs = $this->p->util->get_cache_exp_secs( $cache_md5_pre );	// Default is week in seconds.
 			$cache_salt     = __METHOD__ . '(' . SucomUtil::get_mod_salt( $mod, $sharing_url ) . ')';
 			$cache_id       = $cache_md5_pre . md5( $cache_salt );
-			$cache_index    = $this->get_buttons_cache_index( $type );	// Returns salt with locale, mobile, wp_query, etc.
+			$cache_index    = $this->get_buttons_cache_index( $type );
 			$cache_array    = array();
+
+			if ( is_404() || is_search() ) {
+
+				if ( $this->p->debug->enabled ) {
+					$this->p->debug->log( 'setting cache expiration to 0 seconds for 404 or search page' );
+				}
+
+				$cache_exp_secs = 0;
+			}
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'sharing url = ' . $sharing_url );
@@ -555,42 +564,6 @@ $cache_array[ $cache_index ] .
 			}
 
 			return $text;
-		}
-
-		/**
-		 * Returns 0 for 404 and search pages.
-		 */
-		public function get_buttons_cache_exp() {
-
-			if ( $this->p->debug->enabled ) {
-				$this->p->debug->mark();
-			}
-
-			/**
-			 * Set and filter the cache expiration value only once.
-			 */
-			static $cache_exp_secs = null;
-
-			if ( null === $cache_exp_secs ) {
-
-				$cache_md5_pre    = $this->p->lca . '_b_';
-				$cache_exp_filter = $this->p->cf[ 'wp' ][ 'transient' ][ $cache_md5_pre ][ 'filter' ];
-				$cache_opt_key    = $this->p->cf[ 'wp' ][ 'transient' ][ $cache_md5_pre ][ 'opt_key' ];
-				$cache_exp_secs   = isset( $this->p->options[ $cache_opt_key ] ) ? $this->p->options[ $cache_opt_key ] : WEEK_IN_SECONDS;
-
-				if ( is_404() || is_search() ) {
-
-					if ( $this->p->debug->enabled ) {
-						$this->p->debug->log( 'setting cache expiration to 0 seconds for 404 or search page' );
-					}
-
-					$cache_exp_secs = 0;
-				}
-
-				$cache_exp_secs = (int) apply_filters( $cache_exp_filter, $cache_exp_secs );
-			}
-
-			return $cache_exp_secs;
 		}
 
 		public function get_buttons_cache_index( $type, $atts = false, $share_ids = false ) {
