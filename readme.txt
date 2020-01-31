@@ -123,6 +123,23 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 3.3.0-dev.1 (2020/01/31)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Added support for `WpssoUtil->get_cache_exp_secs()` in WPSSO Core v6.19.0:
+		* Replaced calls to `WpssoRrssbSocial->get_buttons_cache_exp()` by `WpssoUtil->get_cache_exp_secs()`.
+		* Removed the `WpssoRrssbSocial->get_buttons_cache_exp()` method.
+* **Requires At Least**
+	* PHP v5.5.
+	* WordPress v4.0.
+	* WPSSO Core v6.19.0.
+
 **Version 3.2.0 (2020/01/30)**
 
 * **New Features**
@@ -155,6 +172,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v6.16.2.
 
 == Upgrade Notice ==
+
+= 3.3.0-dev.1 =
+
+(2020/01/31) Added support for WpssoUtil->get_cache_exp_secs() in WPSSO Core v6.19.0.
 
 = 3.2.0 =
 
