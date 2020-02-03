@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.3.0-dev.1 (2020/01/31)**
+**Version 3.3.0-dev.2 (2020/02/03)**
 
 * **New Features**
 	* None.
@@ -173,9 +173,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.3.0-dev.1 =
+= 3.3.0-dev.2 =
 
-(2020/01/31) Added support for WpssoUtil->get_cache_exp_secs() in WPSSO Core v6.19.0.
+(2020/02/03) Added support for WpssoUtil->get_cache_exp_secs() in WPSSO Core v6.19.0.
 
 = 3.2.0 =
 
