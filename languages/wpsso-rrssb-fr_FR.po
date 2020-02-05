@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 3.2.0\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 3.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2020-01-30 10:23-0800\n"
-"PO-Revision-Date: 2020-01-30 10:23-0800\n"
+"POT-Creation-Date: 2020-02-05 10:00-0800\n"
+"PO-Revision-Date: 2020-02-05 10:00-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -528,12 +528,12 @@ msgstr "Placer la feuille de style en queue"
 msgid "The %s widget."
 msgstr "Le widget de %s."
 
-#: lib/widget/sharing.php:185
+#: lib/widget/sharing.php:194
 msgctxt "option value"
 msgid "Share It"
 msgstr "Partager"
 
-#: lib/widget/sharing.php:188
+#: lib/widget/sharing.php:197
 msgctxt "option label"
 msgid "Widget Title (leave blank for no title)"
 msgstr "Titre du Widget (laisser vide pour aucun titre)"
