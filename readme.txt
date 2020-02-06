@@ -12,7 +12,7 @@ Requires PHP: 5.5
 Requires At Least: 4.0
 Tested Up To: 5.3.2
 WC Tested Up To: 3.9.1
-Stable Tag: 3.2.0
+Stable Tag: 3.3.0
 
 Ridiculously Responsive Social Sharing Buttons (RRSSB) for your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc.
 
