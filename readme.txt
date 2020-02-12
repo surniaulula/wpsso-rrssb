@@ -12,7 +12,7 @@ Requires PHP: 5.5
 Requires At Least: 4.0
 Tested Up To: 5.3.2
 WC Tested Up To: 3.9.1
-Stable Tag: 3.3.0
+Stable Tag: 3.3.1
 
 Ridiculously Responsive Social Sharing Buttons (RRSSB) for your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc.
 
@@ -123,6 +123,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 3.3.1 (2020/02/12)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* Fixed a potential PHP fatal error in the `wpssorrssb_get_sharing_buttons()` function.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v5.5.
+	* WordPress v4.0.
+	* WPSSO Core v6.20.0.
+
 **Version 3.3.0 (2020/02/06)**
 
 * **New Features**
@@ -173,7 +188,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.3.0 =
+= 3.3.1 =
 
-(2020/02/06) Added support for WpssoUtil->get_cache_exp_secs() in WPSSO Core v6.19.0.
+(2020/02/12) Fixed a potential PHP fatal error in the `wpssorrssb_get_sharing_buttons()` function.
 
