@@ -14,6 +14,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 	function wpssorrssb_get_sharing_buttons( $share_ids = array(), $atts = array(), $cache_exp_secs = null ) {
 
 		$wpsso =& Wpsso::get_instance();
+
 		$rrssb =& WpssoRrssb::get_instance();
 
 		if ( $wpsso->debug->enabled ) {
@@ -70,12 +71,12 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 
 		if ( null === $cache_exp_secs ) {
 
-			$cache_exp_secs = $this->p->util->get_cache_exp_secs( $cache_md5_pre );	// Default is week in seconds.
+			$cache_exp_secs = $wpsso->util->get_cache_exp_secs( $cache_md5_pre );	// Default is week in seconds.
 
 			if ( is_404() || is_search() ) {
 
-				if ( $this->p->debug->enabled ) {
-					$this->p->debug->log( 'setting cache expiration to 0 seconds for 404 or search page' );
+				if ( $wpsso->debug->enabled ) {
+					$wpsso->debug->log( 'setting cache expiration to 0 seconds for 404 or search page' );
 				}
 
 				$cache_exp_secs = 0;
