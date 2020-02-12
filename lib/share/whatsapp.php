@@ -94,6 +94,7 @@ if ( ! class_exists( 'WpssoRrssbShareWhatsApp' ) ) {
 		}
 
 		public function filter_get_defaults( $def_opts ) {
+
 			return array_merge( $def_opts, self::$cf[ 'opt' ][ 'defaults' ] );
 		}
 
