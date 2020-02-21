@@ -29,7 +29,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'req'         => array(
 						'short'       => 'WPSSO Core',
 						'name'        => 'WPSSO Core',
-						'min_version' => '6.20.0',
+						'min_version' => '6.21.2',
 					),
 					'assets' => array(
 						'icons' => array(
