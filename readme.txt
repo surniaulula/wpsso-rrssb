@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.4.0-dev.1 (TBD)**
+**Version 3.4.0-dev.2 (2020/03/03)**
 
 * **New Features**
 	* None.
@@ -136,7 +136,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v5.5.
 	* WordPress v4.0.
-	* WPSSO Core v6.23.0-dev.1.
+	* WPSSO Core v6.23.0-dev.2.
 
 **Version 3.3.1 (2020/02/12)**
 
@@ -175,8 +175,8 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **New Features**
 	* None.
 * **Improvements**
-	* Optimized the addition/removal of the WPSSO RRSSB shortcode when text filters are applied.
 	* Minor update to the default WPSSO RRSSB CSS for the TwentyTwenty theme.
+	* Optimized the addition/removal of the WPSSO RRSSB shortcode when text filters are applied.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -202,6 +202,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v6.16.2.
 
 == Upgrade Notice ==
+
+= 3.4.0-dev.2 =
+
+(2020/03/03) Removed the 'no_auto_draft' deprecated argument from all form options.
 
 = 3.3.1 =
 
