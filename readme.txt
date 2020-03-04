@@ -12,7 +12,7 @@ Requires PHP: 5.5
 Requires At Least: 4.0
 Tested Up To: 5.3.2
 WC Tested Up To: 3.9.2
-Stable Tag: 3.3.1
+Stable Tag: 3.4.0
 
 Ridiculously Responsive Social Sharing Buttons (RRSSB) for your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc.
 
@@ -206,8 +206,4 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 = 3.4.0 =
 
 (2020/03/04) Removed the 'no_auto_draft' deprecated argument from all form options.
-
-= 3.3.1 =
-
-(2020/02/12) Fixed a potential PHP fatal error in the `wpssorrssb_get_sharing_buttons()` function.
 
