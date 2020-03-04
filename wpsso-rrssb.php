@@ -13,7 +13,7 @@
  * Description: Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc.
  * Requires PHP: 5.5
  * Requires At Least: 4.0
- * Tested Up To: 5.3.2
+ * Tested Up To: 5.4
  * WC Tested Up To: 3.9.2
  * Version: 3.4.0
  * 
