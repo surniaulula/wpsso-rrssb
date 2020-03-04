@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.4.0-dev.2 (2020/03/03)**
+**Version 3.4.0-b.1 (2020/03/03)**
 
 * **New Features**
 	* None.
@@ -136,7 +136,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v5.5.
 	* WordPress v4.0.
-	* WPSSO Core v6.23.0-dev.2.
+	* WPSSO Core v6.23.0-b.1.
 
 **Version 3.3.1 (2020/02/12)**
 
@@ -203,7 +203,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.4.0-dev.2 =
+= 3.4.0-b.1 =
 
 (2020/03/03) Removed the 'no_auto_draft' deprecated argument from all form options.
 
