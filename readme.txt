@@ -8,7 +8,7 @@ License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://surniaulula.github.io/wpsso-rrssb/assets/
 Tags: responsive, share buttons, social widget, social media, woocommerce, facebook, google, twitter, pinterest, linkedin, whatsapp, bbpress, buddypress
 Contributors: jsmoriss
-Requires PHP: 5.5
+Requires PHP: 5.6
 Requires At Least: 4.0
 Tested Up To: 5.4
 WC Tested Up To: 3.9.2
@@ -134,72 +134,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Developer Notes**
 	* Removed the 'no_auto_draft' deprecated argument from all form options.
 * **Requires At Least**
-	* PHP v5.5.
+	* PHP v5.6.
 	* WordPress v4.0.
-	* WPSSO Core v6.23.0.
-
-**Version 3.3.1 (2020/02/12)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* Fixed a potential PHP fatal error in the `wpssorrssb_get_sharing_buttons()` function.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v5.5.
-	* WordPress v4.0.
-	* WPSSO Core v6.21.2.
-
-**Version 3.3.0 (2020/02/06)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Added support for `WpssoUtil->get_cache_exp_secs()` in WPSSO Core v6.19.0:
-		* Replaced calls to `WpssoRrssbSocial->get_buttons_cache_exp()` by `WpssoUtil->get_cache_exp_secs()`.
-		* Removed the `WpssoRrssbSocial->get_buttons_cache_exp()` method.
-* **Requires At Least**
-	* PHP v5.5.
-	* WordPress v4.0.
-	* WPSSO Core v6.19.0.
-
-**Version 3.2.0 (2020/01/30)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Minor update to the default WPSSO RRSSB CSS for the TwentyTwenty theme.
-	* Optimized the addition/removal of the WPSSO RRSSB shortcode when text filters are applied.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v5.5.
-	* WordPress v4.0.
-	* WPSSO Core v6.18.0.
-
-**Version 3.1.0 (2019/11/30)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Added support for the new "Pinterest Image Description" value in the Document SSO metabox (since WPSSO Core v6.14.0).
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v5.5.
-	* WordPress v4.0.
-	* WPSSO Core v6.16.2.
+	* WPSSO Core v6.23.1.
 
 == Upgrade Notice ==
 
