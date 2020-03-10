@@ -61,7 +61,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 			$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
 			'<td>' . $form->get_select( 'pin_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
-			if ( $this->p->avail[ '*' ][ 'vary_ua' ] ) {
+			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] ) {
 
 				$table_rows[] = $form->get_tr_hide( 'basic', 'pin_platform' ) . 
 				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ) . 
@@ -199,10 +199,14 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 				}
 			}
 
-			if ( ! $this->p->avail[ '*' ][ 'vary_ua' ] || SucomUtil::is_mobile() ) {
-				$pinterest_button_html = $this->p->options[ 'pin_rrssb_html' ];
-			} else {
+			/**
+			 * If we can use the browser user agent string, and this is not a mobile client, then prevent social
+			 * javascripts from manipulating our share button.
+			 */
+			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] && ! SucomUtil::is_mobile() ) {
 				$pinterest_button_html = preg_replace( '/(\/create)\/(button\/)/', '$1/+/$2', $this->p->options[ 'pin_rrssb_html' ] );
+			} else {
+				$pinterest_button_html = $this->p->options[ 'pin_rrssb_html' ];
 			}
 
 			$pinterest_caption = $this->p->page->get_caption( 'excerpt', $opts[ 'pin_caption_max_len' ],

@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTumblr' ) ) {
 			$table_rows[ 'tumblr_order' ] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
 			'<td>' . $form->get_select( 'tumblr_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
-			if ( $this->p->avail[ '*' ][ 'vary_ua' ] ) {
+			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] ) {
 
 				$table_rows[ 'tumblr_platform' ] = $form->get_tr_hide( 'basic', 'tumblr_platform' ) . 
 				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ) . 

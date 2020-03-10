@@ -578,7 +578,7 @@ $cache_array[ $cache_index ] .
 
 			$cache_index .= '_https:' . ( SucomUtil::is_https() ? 'true' : 'false' );
 
-			$cache_index .= $this->p->avail[ '*' ][ 'vary_ua' ] ? '_mobile:' . ( SucomUtil::is_mobile() ? 'true' : 'false' ) : '';
+			$cache_index .= $this->p->avail[ 'p' ][ 'vary_ua' ] ? '_mobile:' . ( SucomUtil::is_mobile() ? 'true' : 'false' ) : '';
 
 			$cache_index .= false !== $atts ? '_atts:' . http_build_query( $atts, '', '_' ) : '';
 
@@ -748,7 +748,7 @@ $cache_array[ $cache_index ] .
 			/**
 			 * Always allow if the content does not vary by user agent.
 			 */
-			if ( empty( $this->p->avail[ '*' ][ 'vary_ua' ] ) ) {
+			if ( empty( $this->p->avail[ 'p' ][ 'vary_ua' ] ) ) {
 				return true;
 			}
 
