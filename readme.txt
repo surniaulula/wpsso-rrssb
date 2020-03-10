@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 5.6
 Requires At Least: 4.0
 Tested Up To: 5.4
-WC Tested Up To: 3.9.2
+WC Tested Up To: 4.0.0
 Stable Tag: 3.4.0
 
 Ridiculously Responsive Social Sharing Buttons (RRSSB) for your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc.
@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.5.0-b.1 (2020/03/10)**
+**Version 3.5.0-rc.1 (2020/03/11)**
 
 * **New Features**
 	* None.
@@ -136,7 +136,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v4.0.
-	* WPSSO Core v6.24.0-b.1.
+	* WPSSO Core v6.24.0-rc.1.
 
 **Version 3.4.0 (2020/03/04)**
 
@@ -155,9 +155,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.5.0-b.1 =
+= 3.5.0-rc.1 =
 
-(2020/03/10) Updated the 'vary_ua' variable check for WPSSO Core v6.24.0.
+(2020/03/11) Updated the 'vary_ua' variable check for WPSSO Core v6.24.0.
 
 = 3.4.0 =
 
