@@ -123,6 +123,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 3.5.0-b.1 (2020/03/10)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Updated the 'vary_ua' variable check for WPSSO Core v6.24.0.
+* **Requires At Least**
+	* PHP v5.6.
+	* WordPress v4.0.
+	* WPSSO Core v6.24.0-b.1.
+
 **Version 3.4.0 (2020/03/04)**
 
 * **New Features**
@@ -139,6 +154,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v6.23.2.
 
 == Upgrade Notice ==
+
+= 3.5.0-b.1 =
+
+(2020/03/10) Updated the 'vary_ua' variable check for WPSSO Core v6.24.0.
 
 = 3.4.0 =
 
