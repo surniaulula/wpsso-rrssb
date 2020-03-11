@@ -12,7 +12,7 @@ Requires PHP: 5.6
 Requires At Least: 4.0
 Tested Up To: 5.4
 WC Tested Up To: 4.0.0
-Stable Tag: 3.4.0
+Stable Tag: 3.5.0
 
 Ridiculously Responsive Social Sharing Buttons (RRSSB) for your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc.
 
@@ -155,7 +155,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.5.0-rc.1 =
+= 3.5.0 =
 
 (2020/03/11) Updated the 'vary_ua' variable check for WPSSO Core v6.24.0.
 
