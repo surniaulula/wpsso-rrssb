@@ -540,7 +540,7 @@ msgstr ""
 
 #: lib/submenu/rrssb-buttons.php:201
 msgctxt "option label"
-msgid "Include on Static Front Page"
+msgid "Include on Page Homepage"
 msgstr ""
 
 #: lib/submenu/rrssb-buttons.php:205

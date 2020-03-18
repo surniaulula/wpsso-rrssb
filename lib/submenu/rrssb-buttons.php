@@ -198,7 +198,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 						'option label', 'wpsso-rrssb' ), '', 'buttons_on_index' ) . 
 					'<td>' . $this->form->get_checkbox( 'buttons_on_index' ) . '</td>';
 
-					$table_rows[ 'buttons_on_front' ] = $this->form->get_th_html( _x( 'Include on Static Front Page',
+					$table_rows[ 'buttons_on_front' ] = $this->form->get_th_html( _x( 'Include on Page Homepage',
 						'option label', 'wpsso-rrssb' ), '', 'buttons_on_front' ) . 
 					'<td>' . $this->form->get_checkbox( 'buttons_on_front' ) . '</td>';
 
