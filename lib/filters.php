@@ -53,7 +53,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 				$this->p->util->add_plugin_filters( $this, array( 
 					'plugin_cache_rows'         => 3,
-					'post_document_meta_tabs'     => 3,
+					'post_document_meta_tabs'   => 3,
 					'post_buttons_rows'         => 4,
 					'post_cache_transient_keys' => 4,
 				), $prio = 40 );	// Run after WPSSO Core's own Standard / Premium filters.
