@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"3.5.0\n"
+"3.6.0-dev.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2020-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -201,54 +201,54 @@ msgstr ""
 msgid "Failed to open the css file %s for reading."
 msgstr ""
 
-#: lib/filters.php:237 lib/gettext-pro.php:6 lib/gettext-pro.php:9
-#: lib/submenu/rrssb-buttons.php:232
+#: lib/filters.php:244 lib/gettext-pro.php:6 lib/gettext-pro.php:9
+#: lib/submenu/rrssb-buttons.php:237
 msgctxt "option label"
 msgid "Sharing Buttons HTML Cache Expiry"
 msgstr ""
 
-#: lib/filters.php:240 lib/gettext-pro.php:7 lib/gettext-pro.php:10
-#: lib/submenu/rrssb-buttons.php:235
+#: lib/filters.php:247 lib/gettext-pro.php:7 lib/gettext-pro.php:10
+#: lib/submenu/rrssb-buttons.php:240
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr ""
 
-#: lib/filters.php:250
+#: lib/filters.php:257
 msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr ""
 
-#: lib/filters.php:269 lib/gettext-pro.php:12
+#: lib/filters.php:276 lib/gettext-pro.php:12
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/filters.php:290 lib/gettext-pro.php:13
+#: lib/filters.php:297 lib/gettext-pro.php:13
 msgctxt "option label"
 msgid "Email Subject"
 msgstr ""
 
-#: lib/filters.php:297 lib/gettext-pro.php:14
+#: lib/filters.php:304 lib/gettext-pro.php:14
 msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/filters.php:319 lib/gettext-pro.php:15
+#: lib/filters.php:326 lib/gettext-pro.php:15
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/filters.php:349 lib/gettext-pro.php:16
+#: lib/filters.php:356 lib/gettext-pro.php:16
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/filters.php:378 lib/gettext-pro.php:17
+#: lib/filters.php:385 lib/gettext-pro.php:17
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/filters.php:385 lib/gettext-pro.php:18
+#: lib/filters.php:392 lib/gettext-pro.php:18
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
@@ -345,7 +345,7 @@ msgctxt "option value"
 msgid "Any Platform"
 msgstr ""
 
-#: lib/gettext-pro.php:8 lib/submenu/rrssb-buttons.php:226
+#: lib/gettext-pro.php:8 lib/submenu/rrssb-buttons.php:231
 msgctxt "option label"
 msgid "Force Protocol for Shared URLs"
 msgstr ""
@@ -533,29 +533,29 @@ msgctxt "metabox tab"
 msgid "Advanced Settings"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:197
+#: lib/submenu/rrssb-buttons.php:198
 msgctxt "option label"
 msgid "Include on Archive Webpages"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:201
+#: lib/submenu/rrssb-buttons.php:203
 msgctxt "option label"
 msgid "Include on Page Homepage"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:205
+#: lib/submenu/rrssb-buttons.php:208
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:213
-msgctxt "option label"
-msgid "Position in Content Text"
-msgstr ""
-
 #: lib/submenu/rrssb-buttons.php:217
 msgctxt "option label"
-msgid "Position in Excerpt Text"
+msgid "Position in Content"
+msgstr ""
+
+#: lib/submenu/rrssb-buttons.php:222
+msgctxt "option label"
+msgid "Position in Excerpt"
 msgstr ""
 
 #: lib/submenu/rrssb-styles.php:55
@@ -598,7 +598,7 @@ msgid ""
 "%3$s plugin or <a href=\"%4$s\">deactivate the %5$s add-on</a>."
 msgstr ""
 
-#: wpsso-rrssb.php:213
+#: wpsso-rrssb.php:216
 msgid ""
 "The %1$s version %2$s add-on requires %3$s version %4$s or newer (version "
 "%5$s is currently installed)."

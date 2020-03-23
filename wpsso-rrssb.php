@@ -14,8 +14,8 @@
  * Requires PHP: 5.6
  * Requires At Least: 4.0
  * Tested Up To: 5.4
- * WC Tested Up To: 4.0.0
- * Version: 3.5.0
+ * WC Tested Up To: 4.0.1
+ * Version: 3.6.0-dev.1
  * 
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -188,6 +188,9 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 			$this->style   = new WpssoRrssbStyle( $this->p );
 		}
 
+		/**
+		 * All WPSSO objects are instantiated and configured.
+		 */
 		public function wpsso_init_plugin() {
 
 			if ( $this->p->debug->enabled ) {
@@ -196,7 +199,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 			if ( ! $this->have_min_version ) {
 
-				$this->min_version_notice();
+				$this->min_version_notice();	// Show minimum version notice.
 
 				return;	// Stop here.
 			}

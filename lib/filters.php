@@ -53,7 +53,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 				$this->p->util->add_plugin_filters( $this, array( 
 					'plugin_cache_rows'         => 3,
-					'post_custom_meta_tabs'     => 3,
+					'post_document_meta_tabs'     => 3,
 					'post_buttons_rows'         => 4,
 					'post_cache_transient_keys' => 4,
 				), $prio = 40 );	// Run after WPSSO Core's own Standard / Premium filters.
@@ -231,20 +231,27 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				$this->p->debug->mark();
 			}
 
-			SucomUtil::add_after_key( $table_rows, 'plugin_types_cache_exp', array( 
+			$td_attr = '';
+			$in_func = 'get_input';
 
+			if ( ! WpssoAdmin::$pkg[ $this->p->lca ][ 'pp' ] ) {
+				$td_attr = ' class="blank"';
+				$in_func = 'get_no_input';
+			}
+
+			SucomUtil::add_after_key( $table_rows, 'plugin_types_cache_exp', array( 
 				'plugin_sharing_buttons_cache_exp' => '' .
-					$form->get_th_html( _x( 'Sharing Buttons HTML Cache Expiry',
-						'option label', 'wpsso-rrssb' ), null, 'plugin_sharing_buttons_cache_exp' ) . 
-					'<td nowrap>' . $form->get_input( 'plugin_sharing_buttons_cache_exp', 'medium' ) . ' ' . 
-					_x( 'seconds (0 to disable)', 'option comment', 'wpsso-rrssb' ) . '</td>' . 
-					WpssoAdmin::get_option_site_use( 'plugin_sharing_buttons_cache_exp', $form, $network ),
+				$form->get_th_html( _x( 'Sharing Buttons HTML Cache Expiry', 'option label', 'wpsso-rrssb' ),
+					$css_class = '', $css_id = 'plugin_sharing_buttons_cache_exp' ) . 
+				'<td' . $td_attr . ' nowrap>' . $form->$in_func( 'plugin_sharing_buttons_cache_exp', 'medium' ) . ' ' . 
+				_x( 'seconds (0 to disable)', 'option comment', 'wpsso-rrssb' ) . '</td>' . 
+				WpssoAdmin::get_option_site_use( 'plugin_sharing_buttons_cache_exp', $form, $network ),
 			) );
 
 			return $table_rows;
 		}
 
-		public function filter_post_custom_meta_tabs( $tabs, $mod, $metabox_id ) {
+		public function filter_post_document_meta_tabs( $tabs, $mod, $metabox_id ) {
 
 			if ( $metabox_id === $this->p->cf[ 'meta' ][ 'id' ] ) {
 				SucomUtil::add_after_key( $tabs, 'media', 'buttons', _x( 'Share Buttons', 'metabox tab', 'wpsso-rrssb' ) );
