@@ -334,7 +334,9 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			$pin_caption_max_len  = $this->p->options[ 'pin_caption_max_len' ];
 			$pin_caption_hashtags = $this->p->options[ 'pin_caption_hashtags' ];
 			$pin_caption_text     = $this->p->page->get_caption( 'excerpt', $pin_caption_max_len, $mod, true, $pin_caption_hashtags );
-			$pin_media            = $this->p->og->get_media_info( $this->p->lca . '-pinterest-button', array( 'pid', 'img_url' ), $mod, 'schema' );
+
+			$pin_media = $this->p->og->get_media_info( $this->p->lca . '-pinterest',
+				array( 'pid', 'img_url', 'prev_url' ), $mod, array( 'p', 'schema' ) );
 
 			/**
 			 * Get the smaller thumbnail image as a preview image.

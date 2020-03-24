@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"3.6.0-dev.1\n"
+"3.6.0-dev.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2020-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -100,7 +100,7 @@ msgstr ""
 
 #: lib/filters-messages.php:223 lib/share/email.php:34
 #: lib/share/facebook.php:34 lib/share/linkedin.php:34
-#: lib/share/pinterest.php:57 lib/share/pocket.php:34 lib/share/reddit.php:34
+#: lib/share/pinterest.php:34 lib/share/pocket.php:34 lib/share/reddit.php:34
 #: lib/share/tumblr.php:34 lib/share/twitter.php:34 lib/share/vk.php:34
 #: lib/share/whatsapp.php:34
 msgctxt "option label"
@@ -238,17 +238,17 @@ msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/filters.php:356 lib/gettext-pro.php:16
+#: lib/filters.php:358 lib/gettext-pro.php:16
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/filters.php:385 lib/gettext-pro.php:17
+#: lib/filters.php:387 lib/gettext-pro.php:17
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/filters.php:392 lib/gettext-pro.php:18
+#: lib/filters.php:394 lib/gettext-pro.php:18
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
@@ -370,7 +370,7 @@ msgid "Position in BuddyBlog Post"
 msgstr ""
 
 #: lib/share/email.php:37 lib/share/facebook.php:37 lib/share/linkedin.php:37
-#: lib/share/pinterest.php:61 lib/share/pocket.php:37 lib/share/reddit.php:37
+#: lib/share/pinterest.php:38 lib/share/pocket.php:37 lib/share/reddit.php:37
 #: lib/share/tumblr.php:37 lib/share/twitter.php:37 lib/share/vk.php:37
 #: lib/share/whatsapp.php:37
 msgctxt "option label"
@@ -378,7 +378,7 @@ msgid "Preferred Order"
 msgstr ""
 
 #: lib/share/email.php:43 lib/share/facebook.php:43 lib/share/linkedin.php:43
-#: lib/share/pinterest.php:67 lib/share/pocket.php:43 lib/share/reddit.php:43
+#: lib/share/pinterest.php:44 lib/share/pocket.php:43 lib/share/reddit.php:43
 #: lib/share/tumblr.php:43 lib/share/twitter.php:43 lib/share/vk.php:43
 #: lib/share/whatsapp.php:43
 msgctxt "option label"
@@ -390,7 +390,7 @@ msgctxt "option label"
 msgid "Email Message Length"
 msgstr ""
 
-#: lib/share/email.php:50 lib/share/linkedin.php:50 lib/share/pinterest.php:78
+#: lib/share/email.php:50 lib/share/linkedin.php:50 lib/share/pinterest.php:51
 #: lib/share/reddit.php:50 lib/share/tumblr.php:50 lib/share/twitter.php:54
 msgctxt "option comment"
 msgid "characters or less"
@@ -401,46 +401,20 @@ msgctxt "option label"
 msgid "Append Hashtags to Message"
 msgstr ""
 
-#: lib/share/email.php:55 lib/share/linkedin.php:55 lib/share/pinterest.php:83
+#: lib/share/email.php:55 lib/share/linkedin.php:55 lib/share/pinterest.php:56
 #: lib/share/reddit.php:55 lib/share/tumblr.php:55 lib/share/twitter.php:59
 msgctxt "option comment"
 msgid "tag names"
 msgstr ""
 
-#: lib/share/linkedin.php:48 lib/share/pinterest.php:76 lib/share/reddit.php:48
+#: lib/share/linkedin.php:48 lib/share/pinterest.php:49 lib/share/reddit.php:48
 msgctxt "option label"
 msgid "Caption Text Length"
 msgstr ""
 
-#: lib/share/linkedin.php:53 lib/share/pinterest.php:81 lib/share/reddit.php:53
+#: lib/share/linkedin.php:53 lib/share/pinterest.php:54 lib/share/reddit.php:53
 msgctxt "option label"
 msgid "Append Hashtags to Caption"
-msgstr ""
-
-#: lib/share/pinterest.php:45
-msgid ""
-"The image dimensions the Pinterest Pin It button will share (defaults is %s)."
-msgstr ""
-
-#: lib/share/pinterest.php:45
-msgid ""
-"Images for Facebook / Open Graph are usually cropped, whereas images for "
-"Pinterest often look better in their original uncropped aspect ratio."
-msgstr ""
-
-#: lib/share/pinterest.php:48
-msgctxt "option label"
-msgid "Pinterest Sharing Button"
-msgstr ""
-
-#: lib/share/pinterest.php:72
-msgctxt "option label"
-msgid "Image Size"
-msgstr ""
-
-#: lib/share/pinterest.php:150
-msgctxt "image size label"
-msgid "Pinterest Sharing Image"
 msgstr ""
 
 #: lib/share/tumblr.php:48
