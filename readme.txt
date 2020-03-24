@@ -123,12 +123,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.6.0-dev.1 (2020/03/23)**
+**Version 3.6.0-dev.2 (2020/03/24)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* None.
+	* Removed the "Pinterest Sharing Image" size and its options. The Pinterest share button now uses the Pinterest image size from WPSSO Core v6.26.0.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -170,9 +170,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.6.0-dev.1 =
+= 3.6.0-dev.2 =
 
-(2020/03/23) Renamed 'custom_meta' hooks to 'document_meta' for WPSSO Core v6.26.0.
+(2020/03/24) Renamed 'custom_meta' hooks to 'document_meta' for WPSSO Core v6.26.0.
 
 = 3.5.0 =
 
