@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.6.0-dev.3 (2020/03/25)**
+**Version 3.6.0-dev.4 (2020/03/25)**
 
 * **New Features**
 	* None.
@@ -170,7 +170,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.6.0-dev.3 =
+= 3.6.0-dev.4 =
 
 (2020/03/25) Renamed 'custom_meta' hooks to 'document_meta' for WPSSO Core v6.26.0.
 
