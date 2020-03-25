@@ -172,7 +172,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 3.6.0-dev.4 =
 
-(2020/03/25) Renamed 'custom_meta' hooks to 'document_meta' for WPSSO Core v6.26.0.
+(2020/03/25) Removed the "Pinterest Sharing Image" size and its options.
 
 = 3.5.0 =
 
