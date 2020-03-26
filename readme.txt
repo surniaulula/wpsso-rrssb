@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.6.0-b.1 (2020/03/26)**
+**Version 3.6.0-rc.1 (2020/03/26)**
 
 * **New Features**
 	* None.
@@ -170,7 +170,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.6.0-b.1 =
+= 3.6.0-rc.1 =
 
 (2020/03/26) Removed the "Pinterest Sharing Image" size and its options.
 
