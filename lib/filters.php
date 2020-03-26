@@ -435,13 +435,13 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 			if ( ! empty( $info[ 'lib' ][ 'shortcode' ][ 'sharing' ] ) ) {
 				$features[ '(sharing) Sharing Shortcode' ] = array(
-					'classname' => $ext . 'ShortcodeSharing',
+					'classname' => $ext . 'shortcodesharing',
 				);
 			}
 
 			if ( ! empty( $info[ 'lib' ][ 'widget' ][ 'sharing' ] ) ) {
 				$features[ '(sharing) Sharing Widget' ] = array(
-					'classname' => $ext . 'WidgetSharing',
+					'classname' => $ext . 'widgetsharing',
 				);
 			}
 
