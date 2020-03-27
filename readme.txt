@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.6.0-rc.2 (2020/03/26)**
+**Version 3.6.0 (2020/03/27)**
 
 * **New Features**
 	* None.
@@ -136,7 +136,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v4.0.
-	* WPSSO Core v6.26.0-rc.2.
+	* WPSSO Core v6.26.0.
 
 **Version 3.5.0 (2020/03/11)**
 
@@ -170,9 +170,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.6.0-rc.2 =
+= 3.6.0 =
 
-(2020/03/26) Removed the "Pinterest Sharing Image" size and its options.
+(2020/03/27) Removed the "Pinterest Sharing Image" size and its options.
 
 = 3.5.0 =
 
