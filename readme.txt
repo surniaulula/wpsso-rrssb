@@ -123,6 +123,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 3.7.0-dev.1 (2020/04/02)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Refactored WPSSO Core active and minimum version dependency checks.
+* **Requires At Least**
+	* PHP v5.6.
+	* WordPress v4.0.
+	* WPSSO Core v6.27.1.
+
 **Version 3.6.0 (2020/03/27)**
 
 * **New Features**
@@ -138,47 +153,13 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v4.0.
 	* WPSSO Core v6.27.1.
 
-**Version 3.5.0 (2020/03/11)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Updated the 'vary_ua' variable check for WPSSO Core v6.24.0.
-* **Requires At Least**
-	* PHP v5.6.
-	* WordPress v4.0.
-	* WPSSO Core v6.24.0.
-
-**Version 3.4.0 (2020/03/04)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Removed the 'no_auto_draft' deprecated argument from all form options.
-* **Requires At Least**
-	* PHP v5.6.
-	* WordPress v4.0.
-	* WPSSO Core v6.23.2.
-
 == Upgrade Notice ==
+
+= 3.7.0-dev.1 =
+
+(2020/04/02) Refactored WPSSO Core active and minimum version dependency checks.
 
 = 3.6.0 =
 
 (2020/03/27) Removed the "Pinterest Sharing Image" size and its options.
-
-= 3.5.0 =
-
-(2020/03/11) Updated the 'vary_ua' variable check for WPSSO Core v6.24.0.
-
-= 3.4.0 =
-
-(2020/03/04) Removed the 'no_auto_draft' deprecated argument from all form options.
 
