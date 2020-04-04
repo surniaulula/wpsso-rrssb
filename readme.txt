@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.7.0-dev.4 (2020/04/04)**
+**Version 4.0.0-dev.4 (2020/04/04)**
 
 * **New Features**
 	* None.
@@ -156,7 +156,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.7.0-dev.4 =
+= 4.0.0-dev.4 =
 
 (2020/04/04) Updated "Requires At Least" to WordPress v4.2. Refactored WPSSO Core active and minimum version dependency checks.
 
