@@ -4,6 +4,10 @@
  * necessary to customize the layout for your website.
  */
 
+div.wpsso-rrssb-limit {
+	margin:0 auto;
+}
+
 ul.rrssb-buttons {
 	visibility:visible;
 	margin:0;
@@ -47,13 +51,13 @@ ul.rrssb-buttons li a .rrssb-icon {
 	display:inline-block;
 }
 
-ul.rrssb-buttons li.small a .rrssb-icon {
-	left:10px;
-}
-
 ul.rrssb-buttons li a .rrssb-text {
 	display:inline-block;
 	white-space:nowrap;
+}
+
+ul.rrssb-buttons li a svg {
+	display:inline-block;
 }
 
 .rrssb-email      a .rrssb-text::before { content:" E-Mail"; }

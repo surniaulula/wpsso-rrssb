@@ -106,6 +106,21 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				return $opts;	// Nothing to do.
 			}
 
+			if ( isset( $opts[ 'plugin_wpssorrssb_opt_version' ] ) && $opts[ 'plugin_wpssorrssb_opt_version' ] <= 28 ) {
+			
+				$def_opts = $this->p->opt->get_defaults();
+
+				$styles = apply_filters( $this->p->lca . '_rrssb_styles', $this->p->cf[ 'sharing' ][ 'rrssb_styles' ] );
+
+				foreach ( $styles as $id => $name ) {
+					if ( isset( $this->p->options[ 'buttons_css_' . $id ] ) && isset( $def_opts[ 'buttons_css_' . $id ] ) ) {
+						$this->p->options[ 'buttons_css_' . $id ] = $def_opts[ 'buttons_css_' . $id ];
+					}
+				}
+
+				$this->p->notice->upd( __( 'The default responsive styles CSS has been reloaded and saved.', 'wpsso-rrssb' ) );
+			}
+
 			/**
 			 * Update the combined and minified social stylesheet.
 			 */

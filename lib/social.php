@@ -453,9 +453,10 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				if ( ! empty( $cache_array[ $cache_index ] ) ) {
 
-					$css_style = 'max-width:' . ( 100 * count( $sorted_ids ) ) . 'px;';
-					$css_class = $lca . '-rrssb ' . $lca . '-' . $css_type_name;
 					$css_id    = '';
+					$css_class = $lca . '-rrssb ' . $lca . '-' . $css_type_name;
+					$css_class_max = $lca . '-rrssb-limit ' . $lca . '-' . $css_type_name . '-limit';
+					$css_style_max = 'max-width:' . ( 100 * count( $sorted_ids ) ) . 'px;';
 
 					if ( $mod[ 'name' ] ) {
 						$css_id = $lca . '-' . $css_type_name . '-' . $mod[ 'name' ] . '-' . (int) $mod[ 'id' ];
@@ -463,7 +464,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 					$cache_array[ $cache_index ] = '' .
 						'<div class="' . $css_class . '" id="' . $css_id . '">' . "\n" .
-						'<div style="max-width:' . ( 80 * count( $sorted_ids ) ) . 'px;">' . "\n" .
+						'<div class="' . $css_class_max . '" style="' . $css_style_max . '">' . "\n" .
 						$cache_array[ $cache_index ] .
 						'</div>' . "\n" .
 						'</div><!-- .' . $lca . '-rrssb -->' . "\n" .
