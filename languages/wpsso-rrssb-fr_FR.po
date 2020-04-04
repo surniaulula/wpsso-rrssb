@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 3.7.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2020-04-03 11:28-0700\n"
-"PO-Revision-Date: 2020-04-03 11:28-0700\n"
+"POT-Creation-Date: 2020-04-04 14:02-0700\n"
+"PO-Revision-Date: 2020-04-04 14:02-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -16,8 +16,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: lib/actions.php:87
-msgid "The default responsive buttons HTML has been reloaded and saved."
-msgstr "L'HTML par défaut des boutons réactifs ont été rechargés et sauvegardés."
+msgid "The default responsive button options have been reloaded and saved."
+msgstr "Les options des boutons réactifs par défaut ont été rechargées et sauvegardés."
 
 #: lib/actions.php:106
 msgid "The default responsive styles CSS has been reloaded and saved."
@@ -149,58 +149,58 @@ msgstr "Le code HTML des boutons de partage social est enregistré dans le cache
 msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
 msgstr "La valeur d'expiration de cache suggérée est de %1$s secondes (%2$s)."
 
-#: lib/filters.php:145
+#: lib/filters.php:146
 msgid "Failed to open the css file %s for reading."
 msgstr "Impossible d'ouvrir le fichier css %s pour lecture."
 
-#: lib/filters.php:244 lib/gettext-pro.php:6 lib/gettext-pro.php:9
+#: lib/filters.php:245 lib/gettext-pro.php:6 lib/gettext-pro.php:9
 #: lib/submenu/rrssb-buttons.php:237
 msgctxt "option label"
 msgid "Sharing Buttons HTML Cache Expiry"
 msgstr "Expiration cache HTML des boutons"
 
-#: lib/filters.php:247 lib/gettext-pro.php:7 lib/gettext-pro.php:10
+#: lib/filters.php:248 lib/gettext-pro.php:7 lib/gettext-pro.php:10
 #: lib/submenu/rrssb-buttons.php:240
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr "secondes (0 pour désactiver)"
 
-#: lib/filters.php:257
+#: lib/filters.php:258
 msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr "Boutons de partage"
 
-#: lib/filters.php:276 lib/gettext-pro.php:12
+#: lib/filters.php:277 lib/gettext-pro.php:12
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr "Désactiver les boutons"
 
-#: lib/filters.php:297 lib/gettext-pro.php:13
+#: lib/filters.php:298 lib/gettext-pro.php:13
 msgctxt "option label"
 msgid "Email Subject"
 msgstr "Sujet du couriel"
 
-#: lib/filters.php:304 lib/gettext-pro.php:14
+#: lib/filters.php:305 lib/gettext-pro.php:14
 msgctxt "option label"
 msgid "Email Message"
 msgstr "Message du courriel"
 
-#: lib/filters.php:326 lib/gettext-pro.php:15
+#: lib/filters.php:327 lib/gettext-pro.php:15
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr "Texte du Tweet"
 
-#: lib/filters.php:358 lib/gettext-pro.php:16
+#: lib/filters.php:359 lib/gettext-pro.php:16
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr "Texte légende Pinterest"
 
-#: lib/filters.php:387 lib/gettext-pro.php:17
+#: lib/filters.php:388 lib/gettext-pro.php:17
 msgctxt "option label"
 msgid "%s Title"
 msgstr "Titre %s"
 
-#: lib/filters.php:394 lib/gettext-pro.php:18
+#: lib/filters.php:395 lib/gettext-pro.php:18
 msgctxt "option label"
 msgid "%s Caption"
 msgstr "Légende %s"
@@ -398,34 +398,25 @@ msgctxt "option label"
 msgid "Recommend Author @username"
 msgstr "Recommander @nom d'auteur"
 
-#: lib/social.php:113
+#: lib/social.php:112
 msgid "Failed writing the css file %s."
 msgstr "Impossible d'écrire le fichier css %s."
 
-#: lib/social.php:122
+#: lib/social.php:121
 msgid "Updated the <a href=\"%1$s\">%2$s</a> stylesheet (%3$d bytes written)."
 msgstr "La feuille de style <a href=\"%1$s\">%2$s</a> a été mise à jour (%3$d octets écrits)."
 
-#: lib/social.php:139
+#: lib/social.php:138
 msgid "Cache folder %s is not writable."
 msgstr "Le dossier de cache %s n'est pas accessible en écriture."
 
-#: lib/social.php:149
+#: lib/social.php:148
 msgid "Failed to open the css file %s for writing."
 msgstr "Impossible d'ouvrir le fichier css %s pour écriture."
 
-#: lib/social.php:168
+#: lib/social.php:167
 msgid "Error removing the minified stylesheet &mdash; does the web server have sufficient privileges?"
 msgstr "Erreur en retirant la feuille de style minimisé &mdash; le serveur Web a t'il les privilèges nécessaires?"
-
-#: lib/social.php:196
-msgctxt "metabox title"
-msgid "Share Buttons"
-msgstr "Boutons de partage"
-
-#: lib/social.php:251
-msgid "This content must be published<br/>before it can be shared."
-msgstr "Ce contenu doit être publié<br/>avant d'être partagé."
 
 #: lib/style.php:81
 msgid "The %s file is not readable."
