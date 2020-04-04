@@ -461,9 +461,13 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 						$css_id = $lca . '-' . $css_type_name . '-' . $mod[ 'name' ] . '-' . (int) $mod[ 'id' ];
 					}
 
-					$cache_array[ $cache_index ] = '<div class="' . $css_class . '" id="' . $css_id . '" style="' . $css_style . '">' . "\n" .
-						$cache_array[ $cache_index ] . '</div><!-- .' . $lca . '-rrssb -->' .
-							'<!-- generated on ' . date( 'c' ) . ' -->' . "\n\n";
+					$cache_array[ $cache_index ] = '' .
+						'<div class="' . $css_class . '" id="' . $css_id . '">' . "\n" .
+						'<div style="max-width:' . ( 80 * count( $sorted_ids ) ) . 'px;">' . "\n" .
+						$cache_array[ $cache_index ] .
+						'</div>' . "\n" .
+						'</div><!-- .' . $lca . '-rrssb -->' . "\n" .
+						'<!-- generated on ' . date( 'c' ) . ' -->' . "\n";
 
 					$cache_array[ $cache_index ] = apply_filters( $lca . '_rrssb_buttons_html',
 						$cache_array[ $cache_index ], $type, $mod, $location, $atts );
