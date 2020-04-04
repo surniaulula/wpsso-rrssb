@@ -128,7 +128,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **New Features**
 	* None.
 * **Improvements**
-	* None.
+	* Removed the "Share Buttons" metabox from admin editing pages and moved enabled "Admin Edit" buttons to the Document SSO metabox footer.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
