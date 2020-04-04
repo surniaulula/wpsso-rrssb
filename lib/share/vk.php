@@ -57,14 +57,15 @@ if ( ! class_exists( 'WpssoRrssbShareVk' ) ) {
 	class WpssoRrssbShareVk {
 
 		private $p;
+
 		private static $cf = array(
-			'opt' => array(				// options
+			'opt' => array(
 				'defaults' => array(
 					'vk_order'         => 9,
 					'vk_on_content'    => 0,
 					'vk_on_excerpt'    => 0,
 					'vk_on_sidebar'    => 0,
-					'vk_on_admin_edit' => 0,
+					'vk_on_admin_edit' => 1,
 					'vk_platform'      => 'any',
 					'vk_rrssb_html'    => '<li class="rrssb-vk">
 	<a href="http://vk.com/share.php?url=%%sharing_url%%" class="popup">

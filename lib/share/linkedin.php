@@ -67,8 +67,9 @@ if ( ! class_exists( 'WpssoRrssbShareLinkedin' ) ) {
 	class WpssoRrssbShareLinkedin {
 
 		private $p;
+
 		private static $cf = array(
-			'opt' => array(				// options
+			'opt' => array(
 				'defaults' => array(
 					'linkedin_order'            => 5,
 					'linkedin_on_content'       => 1,

@@ -56,6 +56,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 					'post_document_meta_tabs'   => 3,
 					'post_buttons_rows'         => 4,
 					'post_cache_transient_keys' => 4,
+					'metabox_sso_inside_footer' => 2,
 				), $prio = 40 );	// Run after WPSSO Core's own Standard / Premium filters.
 
 				$this->p->util->add_plugin_filters( $this, array( 
@@ -423,6 +424,23 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			);
 
 			return $transient_keys;
+		}
+
+		public function filter_metabox_sso_inside_footer( $metabox_html, $mod ) {
+
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->mark();
+			}
+
+			$wpssorrssb =& WpssoRrssb::get_instance();
+
+			$metabox_html .= $wpssorrssb->social->get_buttons( $text = '', 'admin_edit', $mod );
+
+			if ( SucomUtil::get_const( 'DOING_AJAX' ) ) {
+				$metabox_html .= '<script type="text/javascript">rrssbResize();</script>' . "\n";
+			}
+
+			return $metabox_html;
 		}
 
 		public function filter_status_std_features( $features, $ext, $info ) {

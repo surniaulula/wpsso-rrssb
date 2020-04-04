@@ -57,8 +57,9 @@ if ( ! class_exists( 'WpssoRrssbShareFacebook' ) ) {
 	class WpssoRrssbShareFacebook {
 
 		private $p;
+
 		private static $cf = array(
-			'opt' => array(				// options
+			'opt' => array(
 				'defaults' => array(
 					'fb_order'         => 2,
 					'fb_on_content'    => 1,
@@ -94,6 +95,7 @@ if ( ! class_exists( 'WpssoRrssbShareFacebook' ) ) {
 		}
 
 		public function filter_get_defaults( $def_opts ) {
+
 			return array_merge( $def_opts, self::$cf[ 'opt' ][ 'defaults' ] );
 		}
 

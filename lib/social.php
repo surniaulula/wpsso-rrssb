@@ -46,12 +46,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				$this->add_buttons_filter( 'the_excerpt' );
 			}
 
-			if ( is_admin() ) {
-				if ( $this->have_buttons_for_type( 'admin_edit' ) ) {
-					add_action( 'add_meta_boxes', array( $this, 'add_metabox_admin_edit' ) );
-				}
-			}
-
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark( 'rrssb sharing action / filter setup' );	// End timer.
 			}
@@ -72,6 +66,11 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					}
 				}
 			}
+		}
+
+		public function get_share_objets() {
+
+			return $this->share;
 		}
 
 		public static function update_sharing_css( &$opts ) {
@@ -172,41 +171,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			}
 		}
 
-		public function add_metabox_admin_edit() {
-
-			if ( $this->p->debug->enabled ) {
-				$this->p->debug->mark();
-			}
-
-			/**
-			 * Get the current object / post type.
-			 */
-			if ( ( $post_obj = SucomUtil::get_post_object() ) === false ) {
-
-				if ( $this->p->debug->enabled ) {
-					$this->p->debug->log( 'exiting early: invalid post object' );
-				}
-
-				return;
-			}
-
-			if ( ! empty( $this->p->options[ 'buttons_add_to_' . $post_obj->post_type ] ) ) {
-
-				$metabox_id      = 'admin_edit';
-				$metabox_title   = _x( 'Share Buttons', 'metabox title', 'wpsso-rrssb' );
-				$metabox_screen  = $post_obj->post_type;
-				$metabox_context = 'side';
-				$metabox_prio    = 'high';
-				$callback_args   = array(	// Second argument passed to the callback function / method.
-					'__block_editor_compatible_meta_box' => true,
-				);
-
-				add_meta_box( '_' . $this->p->lca . '_rrssb_' . $metabox_id, $metabox_title,
-					array( $this, 'show_metabox_admin_edit' ), $metabox_screen,
-						$metabox_context, $metabox_prio, $callback_args );
-			}
-		}
-
 		public function show_footer() {
 
 			if ( $this->p->debug->enabled ) {
@@ -227,31 +191,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			}
 
 			echo $this->get_buttons( '', 'sidebar', $use_post = false, '', array( 'container_each' => true ) );
-		}
-
-		public function show_metabox_admin_edit( $post_obj ) {
-
-			if ( $this->p->debug->enabled ) {
-				$this->p->debug->mark();
-			}
-
-			echo '<table class="sucom-settings ' . $this->p->lca . ' post-side-metabox"><tr><td>';
-
-			if ( get_post_status( $post_obj->ID ) === 'publish' || $post_obj->post_type === 'attachment' ) {
-
-				if ( $this->p->debug->enabled ) {
-					$this->p->debug->log( 'required call to get_page_mod()' );
-				}
-
-				$mod = $this->p->util->get_page_mod( $post_obj->ID );
-
-				echo $this->get_buttons( $text = '', 'admin_edit', $mod );
-
-			} else {
-				echo '<p class="centered">' . __( 'This content must be published<br/>before it can be shared.', 'wpsso-rrssb' ) . '</p>';
-			}
-
-			echo '</td></tr></table>';
 		}
 
 		public function add_buttons_filter( $filter_name = 'the_content' ) {
@@ -307,19 +246,17 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			return $removed;
 		}
 
-		/**
-		 * $mod = true | false | post_id | $mod array
-		 */
 		public function get_buttons( $text, $type = 'content', $mod = true, $location = '', $atts = array() ) {
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark( 'getting buttons for ' . $type );	// Begin timer.
 			}
 
-			$is_admin      = is_admin();
-			$is_amp        = SucomUtil::is_amp();
-			$doing_ajax    = SucomUtil::get_const( 'DOING_AJAX' );
-			$error_message = '';
+			$lca        = $this->p->lca;
+			$is_admin   = is_admin();
+			$is_amp     = SucomUtil::is_amp();
+			$doing_ajax = SucomUtil::get_const( 'DOING_AJAX' );
+			$error_msg  = '';
 
 			if ( $doing_ajax ) {
 
@@ -334,7 +271,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				}
 
 				if ( strpos( $type, 'admin_' ) !== 0 ) {
-					$error_message = $type . ' ignored in back-end';
+					$error_msg = $type . ' ignored in back-end';
 				}
 
 			} elseif ( $is_amp ) {
@@ -343,7 +280,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					$this->p->debug->log( 'is_amp is true' );
 				}
 
-				$error_message = 'buttons not allowed in amp endpoint';
+				$error_msg = 'buttons not allowed in amp endpoint';
 
 			} elseif ( is_feed() ) {
 
@@ -351,7 +288,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					$this->p->debug->log( 'is_feed is true' );
 				}
 
-				$error_message = 'buttons not allowed in rss feeds';
+				$error_msg = 'buttons not allowed in rss feeds';
 
 			} elseif ( ! is_singular() ) {
 
@@ -360,7 +297,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				}
 
 				if ( empty( $this->p->options[ 'buttons_on_index' ] ) ) {
-					$error_message = 'buttons_on_index not enabled';
+					$error_msg = 'buttons_on_index not enabled';
 				}
 
 			} elseif ( is_front_page() ) {
@@ -370,7 +307,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				}
 
 				if ( empty( $this->p->options[ 'buttons_on_front' ] ) ) {
-					$error_message = 'buttons_on_front not enabled';
+					$error_msg = 'buttons_on_front not enabled';
 				}
 
 			} elseif ( is_singular() ) {
@@ -380,30 +317,30 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				}
 
 				if ( $this->is_post_buttons_disabled() ) {
-					$error_message = 'post buttons are disabled';
+					$error_msg = 'post buttons are disabled';
 				}
 
-			} elseif ( ! apply_filters( $this->p->lca . '_rrssb_add_buttons', true, $type, $mod, $location ) ) {
+			} elseif ( ! apply_filters( $lca . '_rrssb_add_buttons', true, $type, $mod, $location ) ) {
 
-				$error_message = $this->p->lca . '_rrssb_add_buttons filter returned false';
+				$error_msg = $lca . '_rrssb_add_buttons filter returned false';
 			}
 
-			if ( empty( $error_message ) ) {
+			if ( empty( $error_msg ) ) {
 				if ( ! $this->have_buttons_for_type( $type ) ) {
-					$error_message = 'no sharing buttons enabled';
+					$error_msg = 'no sharing buttons enabled';
 				}
 			}
 
-			if ( ! empty( $error_message ) ) {
+			if ( ! empty( $error_msg ) ) {
 
 				if ( $this->p->debug->enabled ) {
 
-					$this->p->debug->log( $type . ' filter skipped: ' . $error_message );
+					$this->p->debug->log( $type . ' filter skipped: ' . $error_msg );
 
 					$this->p->debug->mark( 'getting buttons for ' . $type );	// End timer.
 				}
 
-				return $text . "\n" . '<!-- ' . __METHOD__ . ' ' . $type . ' filter skipped: ' . $error_message . ' -->' . "\n";
+				return $text . "\n" . '<!-- ' . __METHOD__ . ' ' . $type . ' filter skipped: ' . $error_msg . ' -->' . "\n";
 			}
 
 			/**
@@ -422,7 +359,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			$sharing_url = $this->p->util->get_sharing_url( $mod );
 
-			$cache_md5_pre  = $this->p->lca . '_b_';
+			$cache_md5_pre  = $lca . '_b_';
 			$cache_exp_secs = $this->p->util->get_cache_exp_secs( $cache_md5_pre );	// Default is week in seconds.
 			$cache_salt     = __METHOD__ . '(' . SucomUtil::get_mod_salt( $mod, $sharing_url ) . ')';
 			$cache_id       = $cache_md5_pre . md5( $cache_salt );
@@ -497,7 +434,9 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				$sorted_ids = array();
 
 				foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $id => $opt_pre ) {
+
 					if ( ! empty( $this->p->options[ $opt_pre . '_on_' . $type ] ) ) {
+
 						$sorted_ids[ zeroise( $this->p->options[ $opt_pre . '_order' ], 3 ) . '-' . $id ] = $id;
 					}
 				}
@@ -514,14 +453,19 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				if ( ! empty( $cache_array[ $cache_index ] ) ) {
 
-					$cache_array[ $cache_index ] = '
-<div class="' . $this->p->lca . '-rrssb' .
-	( $mod[ 'use_post' ] ? ' ' . $this->p->lca . '-' . $css_type_name . '"' : '" id="' . $this->p->lca . '-' . $css_type_name . '"' ) . '>' . "\n" . 
-$cache_array[ $cache_index ] . 
-'</div><!-- .' . $this->p->lca . '-rrssb ' . ( $mod[ 'use_post' ] ? '.' : '#' ) . $this->p->lca . '-' . $css_type_name . ' -->' .
-'<!-- generated on ' . date( 'c' ) . ' -->' . "\n\n";
+					$css_style = 'max-width:' . ( 100 * count( $sorted_ids ) ) . 'px;';
+					$css_class = $lca . '-rrssb ' . $lca . '-' . $css_type_name;
+					$css_id    = '';
 
-					$cache_array[ $cache_index ] = apply_filters( $this->p->lca . '_rrssb_buttons_html',
+					if ( $mod[ 'name' ] ) {
+						$css_id = $lca . '-' . $css_type_name . '-' . $mod[ 'name' ] . '-' . (int) $mod[ 'id' ];
+					}
+
+					$cache_array[ $cache_index ] = '<div class="' . $css_class . '" id="' . $css_id . '" style="' . $css_style . '">' . "\n" .
+						$cache_array[ $cache_index ] . '</div><!-- .' . $lca . '-rrssb -->' .
+							'<!-- generated on ' . date( 'c' ) . ' -->' . "\n\n";
+
+					$cache_array[ $cache_index ] = apply_filters( $lca . '_rrssb_buttons_html',
 						$cache_array[ $cache_index ], $type, $mod, $location, $atts );
 				}
 
@@ -578,7 +522,7 @@ $cache_array[ $cache_index ] .
 
 			$cache_index .= '_https:' . ( SucomUtil::is_https() ? 'true' : 'false' );
 
-			$cache_index .= $this->p->avail[ 'p' ][ 'vary_ua' ] ? '_mobile:' . ( SucomUtil::is_mobile() ? 'true' : 'false' ) : '';
+			$cache_index .= empty( $this->p->avail[ 'p' ][ 'vary_ua' ] ) ? '' : '_mobile:' . ( SucomUtil::is_mobile() ? 'true' : 'false' );
 
 			$cache_index .= false !== $atts ? '_atts:' . http_build_query( $atts, '', '_' ) : '';
 
@@ -702,9 +646,11 @@ $cache_array[ $cache_index ] .
 						} elseif ( $this->p->debug->enabled ) {
 							$this->p->debug->log( $id . ' not allowed for platform' );
 						}
+
 					} elseif ( $this->p->debug->enabled ) {
 						$this->p->debug->log( 'get_html method missing for ' . $id );
 					}
+
 				} elseif ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'share object missing for ' . $id );
 				}

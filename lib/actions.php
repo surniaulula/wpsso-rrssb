@@ -31,7 +31,7 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 
 				$this->p->util->add_plugin_actions( $this, array(
 					'load_setting_page_reload_default_rrssb_buttons' => 4,
-					'load_setting_page_reload_default_rrssb_styles'       => 4,
+					'load_setting_page_reload_default_rrssb_styles'  => 4,
 				) );
 			}
 		}
@@ -72,19 +72,19 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 
 		public function action_load_setting_page_reload_default_rrssb_buttons( $pagehook, $menu_id, $menu_name, $menu_lib ) {
 
-			$opts =& $this->p->options;
+			$wpssorrssb =& WpssoRrssb::get_instance();
 
-			$def_opts = $this->p->opt->get_defaults();
+			foreach ( $wpssorrssb->social->get_share_objets() as $id => $share_obj ) {
 
-			foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $id => $opt_pre ) {
-				if ( isset( $this->p->options[ $opt_pre . '_rrssb_html' ] ) && isset( $def_opts[ $opt_pre . '_rrssb_html' ] ) ) {
-					$this->p->options[ $opt_pre . '_rrssb_html' ] = $def_opts[ $opt_pre . '_rrssb_html' ];
+				if ( method_exists( $share_obj, 'filter_get_defaults' ) ) {
+
+					$this->p->options = $share_obj->filter_get_defaults( $this->p->options );
 				}
 			}
 
 			$this->p->opt->save_options( WPSSO_OPTIONS_NAME, $this->p->options, $network = false );
 
-			$this->p->notice->upd( __( 'The default responsive buttons HTML has been reloaded and saved.', 'wpsso-rrssb' ) );
+			$this->p->notice->upd( __( 'The default responsive button options have been reloaded and saved.', 'wpsso-rrssb' ) );
 		}
 
 		public function action_load_setting_page_reload_default_rrssb_styles( $pagehook, $menu_id, $menu_name, $menu_lib ) {

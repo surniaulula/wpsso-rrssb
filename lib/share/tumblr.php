@@ -67,14 +67,15 @@ if ( ! class_exists( 'WpssoRrssbShareTumblr' ) ) {
 	class WpssoRrssbShareTumblr {
 
 		private $p;
+
 		private static $cf = array(
-			'opt' => array(				// options
+			'opt' => array(
 				'defaults' => array(
 					'tumblr_order'            => 8,
 					'tumblr_on_content'       => 0,
 					'tumblr_on_excerpt'       => 0,
 					'tumblr_on_sidebar'       => 0,
-					'tumblr_on_admin_edit'    => 0,
+					'tumblr_on_admin_edit'    => 1,
 					'tumblr_platform'         => 'any',
 					'tumblr_caption_max_len'  => 300,
 					'tumblr_caption_hashtags' => 0,

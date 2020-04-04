@@ -14,6 +14,9 @@ if ( ! class_exists( 'WpssoRrssbScript' ) ) {
 	class WpssoRrssbScript {
 
 		private $p;
+		private $doing_dev = false;
+		private $file_ext  = 'min.js';
+		private $version   = '';
 
 		public function __construct( &$plugin ) {
 
@@ -23,20 +26,25 @@ if ( ! class_exists( 'WpssoRrssbScript' ) ) {
 				$this->p->debug->mark();
 			}
 
+			$this->doing_dev = SucomUtil::get_const( 'WPSSO_DEV' );
+			$this->file_ext  = $this->doing_dev ? 'js' : 'min.js';
+			$this->version   = WpssoRrssbConfig::get_version();
+
 			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		}
 
 		public function enqueue_scripts( $hook_name ) {
 
-			$is_amp         = SucomUtil::is_amp();
-			$plugin_version = $this->p->cf[ 'plugin' ][ 'wpssorrssb' ][ 'version' ];
+			$is_amp = SucomUtil::is_amp();
 
 			if ( $is_amp ) {	// No buttons for AMP pages.
 				return;
 			}
 
-			wp_register_script( 'rrssb', WPSSORRSSB_URLPATH . 'js/ext/rrssb.min.js', array( 'jquery' ), $plugin_version, true );
+			wp_register_script( 'rrssb',
+				WPSSORRSSB_URLPATH . 'js/ext/rrssb.' . $this->file_ext,
+					array( 'jquery' ), $this->version, true );
 
 			wp_enqueue_script( 'rrssb' );
 		}

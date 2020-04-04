@@ -14,7 +14,7 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
 #: lib/actions.php:87
-msgid "The default responsive buttons HTML has been reloaded and saved."
+msgid "The default responsive button options have been reloaded and saved."
 msgstr ""
 
 #: lib/actions.php:106
@@ -197,58 +197,58 @@ msgstr ""
 msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
 msgstr ""
 
-#: lib/filters.php:145
+#: lib/filters.php:146
 msgid "Failed to open the css file %s for reading."
 msgstr ""
 
-#: lib/filters.php:244 lib/gettext-pro.php:6 lib/gettext-pro.php:9
+#: lib/filters.php:245 lib/gettext-pro.php:6 lib/gettext-pro.php:9
 #: lib/submenu/rrssb-buttons.php:237
 msgctxt "option label"
 msgid "Sharing Buttons HTML Cache Expiry"
 msgstr ""
 
-#: lib/filters.php:247 lib/gettext-pro.php:7 lib/gettext-pro.php:10
+#: lib/filters.php:248 lib/gettext-pro.php:7 lib/gettext-pro.php:10
 #: lib/submenu/rrssb-buttons.php:240
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr ""
 
-#: lib/filters.php:257
+#: lib/filters.php:258
 msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr ""
 
-#: lib/filters.php:276 lib/gettext-pro.php:12
+#: lib/filters.php:277 lib/gettext-pro.php:12
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/filters.php:297 lib/gettext-pro.php:13
+#: lib/filters.php:298 lib/gettext-pro.php:13
 msgctxt "option label"
 msgid "Email Subject"
 msgstr ""
 
-#: lib/filters.php:304 lib/gettext-pro.php:14
+#: lib/filters.php:305 lib/gettext-pro.php:14
 msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/filters.php:326 lib/gettext-pro.php:15
+#: lib/filters.php:327 lib/gettext-pro.php:15
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/filters.php:358 lib/gettext-pro.php:16
+#: lib/filters.php:359 lib/gettext-pro.php:16
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/filters.php:387 lib/gettext-pro.php:17
+#: lib/filters.php:388 lib/gettext-pro.php:17
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/filters.php:394 lib/gettext-pro.php:18
+#: lib/filters.php:395 lib/gettext-pro.php:18
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
@@ -447,35 +447,26 @@ msgctxt "option label"
 msgid "Recommend Author @username"
 msgstr ""
 
-#: lib/social.php:113
+#: lib/social.php:112
 msgid "Failed writing the css file %s."
 msgstr ""
 
-#: lib/social.php:122
+#: lib/social.php:121
 msgid "Updated the <a href=\"%1$s\">%2$s</a> stylesheet (%3$d bytes written)."
 msgstr ""
 
-#: lib/social.php:139
+#: lib/social.php:138
 msgid "Cache folder %s is not writable."
 msgstr ""
 
-#: lib/social.php:149
+#: lib/social.php:148
 msgid "Failed to open the css file %s for writing."
 msgstr ""
 
-#: lib/social.php:168
+#: lib/social.php:167
 msgid ""
 "Error removing the minified stylesheet &mdash; does the web server have "
 "sufficient privileges?"
-msgstr ""
-
-#: lib/social.php:196
-msgctxt "metabox title"
-msgid "Share Buttons"
-msgstr ""
-
-#: lib/social.php:251
-msgid "This content must be published<br/>before it can be shared."
 msgstr ""
 
 #: lib/style.php:81

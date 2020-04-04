@@ -67,14 +67,15 @@ if ( ! class_exists( 'WpssoRrssbShareReddit' ) ) {
 	class WpssoRrssbShareReddit {
 
 		private $p;
+
 		private static $cf = array(
-			'opt' => array(				// options
+			'opt' => array(
 				'defaults' => array(
 					'reddit_order'            => 6,
 					'reddit_on_content'       => 0,
 					'reddit_on_excerpt'       => 0,
 					'reddit_on_sidebar'       => 0,
-					'reddit_on_admin_edit'    => 0,
+					'reddit_on_admin_edit'    => 1,
 					'reddit_platform'         => 'any',
 					'reddit_caption_max_len'  => 300,
 					'reddit_caption_hashtags' => 0,
