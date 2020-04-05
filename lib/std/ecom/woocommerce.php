@@ -73,41 +73,43 @@ if ( ! class_exists( 'WpssoRrssbStdEcomWoocommerceSharing' ) ) {
 
 		public function filter_get_defaults( $opts_def ) {
 
-			foreach ( $this->p->cf['opt']['cm_prefix'] as $cm_id => $opt_pre ) {
-				$opts_def[$opt_pre . '_on_woo_short'] = 0;
+			foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $cm_id => $opt_pre ) {
+				$opts_def[$opt_pre . '_on_woo_short' ] = 0;
 			}
 
-			$opts_def['buttons_pos_woo_short'] = 'bottom';
+			$opts_def[ 'buttons_pos_woo_short' ] = 'bottom';
 
 			return $opts_def;
 		}
 
 		public function filter_rrssb_buttons_show_on( $show_on = array(), $opt_pre ) {
 
-			$show_on['woo_short'] = 'Woo Short';
+			$show_on[ 'woo_short' ] = 'Woo Short';
 
 			return $show_on;
 		}
 
-		public function filter_rrssb_styles( $styles ) {
+		public function filter_rrssb_buttons_position_rows( $table_rows, $form ) {
 
-			return $this->filter_rrssb_styles_tabs( $styles );
+			$table_rows[ 'buttons_pos_woo_short' ] = '' .
+			$form->get_th_html( _x( 'Position in Woo Short Text', 'option label', 'wpsso-rrssb' ), null, 'buttons_pos_woo_short' ) . 
+			'<td>' . $form->get_select( 'buttons_pos_woo_short', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
+
+			return $table_rows;
 		}
 
-		public function filter_rrssb_styles_tabs( $styles ) {
+		public function filter_rrssb_styles( $styles ) {
 
-			$styles['rrssb-woo_short'] = 'Woo Short';
+			$styles[ 'rrssb-woo_short' ] = 'Woo Short';
 
 			return $styles;
 		}
 
-		public function filter_rrssb_buttons_position_rows( $table_rows, $form ) {
+		public function filter_rrssb_styles_tabs( $styles ) {
 
-			$table_rows['buttons_pos_woo_short'] = $form->get_th_html( _x( 'Position in Woo Short Text',
-				'option label', 'wpsso-rrssb' ), null, 'buttons_pos_woo_short' ) . 
-			'<td>' . $form->get_select( 'buttons_pos_woo_short', $this->p->cf['sharing']['position'] ) . '</td>';
+			$styles[ 'rrssb-woo_short' ] = 'Woo Short';
 
-			return $table_rows;
+			return $styles;
 		}
 
 		public function get_buttons_woo_short( $text ) {

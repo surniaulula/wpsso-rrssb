@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"4.0.0-b.1\n"
+"4.0.0-rc.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2020-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 msgid "The default responsive button options have been reloaded and saved."
 msgstr ""
 
-#: lib/actions.php:106
+#: lib/actions.php:106 lib/filters.php:124
 msgid "The default responsive styles CSS has been reloaded and saved."
 msgstr ""
 
@@ -197,58 +197,58 @@ msgstr ""
 msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
 msgstr ""
 
-#: lib/filters.php:146
+#: lib/filters.php:164
 msgid "Failed to open the css file %s for reading."
 msgstr ""
 
-#: lib/filters.php:245 lib/gettext-pro.php:6 lib/gettext-pro.php:9
+#: lib/filters.php:263 lib/gettext-pro.php:6 lib/gettext-pro.php:9
 #: lib/submenu/rrssb-buttons.php:237
 msgctxt "option label"
 msgid "Sharing Buttons HTML Cache Expiry"
 msgstr ""
 
-#: lib/filters.php:248 lib/gettext-pro.php:7 lib/gettext-pro.php:10
+#: lib/filters.php:266 lib/gettext-pro.php:7 lib/gettext-pro.php:10
 #: lib/submenu/rrssb-buttons.php:240
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr ""
 
-#: lib/filters.php:258
+#: lib/filters.php:276
 msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr ""
 
-#: lib/filters.php:277 lib/gettext-pro.php:12
+#: lib/filters.php:295 lib/gettext-pro.php:12
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/filters.php:298 lib/gettext-pro.php:13
+#: lib/filters.php:316 lib/gettext-pro.php:13
 msgctxt "option label"
 msgid "Email Subject"
 msgstr ""
 
-#: lib/filters.php:305 lib/gettext-pro.php:14
+#: lib/filters.php:323 lib/gettext-pro.php:14
 msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/filters.php:327 lib/gettext-pro.php:15
+#: lib/filters.php:345 lib/gettext-pro.php:15
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/filters.php:359 lib/gettext-pro.php:16
+#: lib/filters.php:377 lib/gettext-pro.php:16
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/filters.php:388 lib/gettext-pro.php:17
+#: lib/filters.php:406 lib/gettext-pro.php:17
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/filters.php:395 lib/gettext-pro.php:18
+#: lib/filters.php:413 lib/gettext-pro.php:18
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
@@ -354,12 +354,12 @@ msgstr ""
 msgid "Save a draft version or publish the %s to display these options."
 msgstr ""
 
-#: lib/gettext-pro.php:19 lib/std/ecom/woocommerce.php:106
+#: lib/gettext-pro.php:19 lib/std/ecom/woocommerce.php:95
 msgctxt "option label"
 msgid "Position in Woo Short Text"
 msgstr ""
 
-#: lib/gettext-pro.php:20 lib/std/forum/bbpress.php:159
+#: lib/gettext-pro.php:20 lib/std/forum/bbpress.php:148
 msgctxt "option label"
 msgid "Position in bbPress Single"
 msgstr ""

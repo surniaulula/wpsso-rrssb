@@ -72,7 +72,7 @@ if ( ! class_exists( 'WpssoRrssbStdForumBbpressSharing' ) ) {
 
 			} else {
 
-				switch ( $this->p->options['buttons_pos_bbp_single'] ) {
+				switch ( $this->p->options[ 'buttons_pos_bbp_single' ] ) {
 
 					case 'top':
 
@@ -126,41 +126,43 @@ if ( ! class_exists( 'WpssoRrssbStdForumBbpressSharing' ) ) {
 
 		public function filter_get_defaults( $opts_def ) {
 
-			foreach ( $this->p->cf['opt']['cm_prefix'] as $id => $opt_pre ) {
-				$opts_def[ $opt_pre . '_on_bbp_single'] = 0;
+			foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $id => $opt_pre ) {
+				$opts_def[ $opt_pre . '_on_bbp_single' ] = 0;
 			}
 
-			$opts_def['buttons_pos_bbp_single'] = 'top';
+			$opts_def[ 'buttons_pos_bbp_single' ] = 'top';
 
 			return $opts_def;
 		}
 
 		public function filter_rrssb_buttons_show_on( $show_on = array(), $opt_pre = '' ) {
 
-			$show_on['bbp_single'] = 'bbPress Single';
+			$show_on[ 'bbp_single' ] = 'bbPress Single';
 
 			return $show_on;
 		}
 
-		public function filter_rrssb_styles( $styles ) {
+		public function filter_rrssb_buttons_position_rows( $table_rows, $form ) {
 
-			return $this->filter_rrssb_styles_tabs( $styles );
+			$table_rows[ 'buttons_pos_bbp_single' ] = '' .
+			$form->get_th_html( _x( 'Position in bbPress Single', 'option label', 'wpsso-rrssb' ), null, 'buttons_pos_bbp_single' ) . 
+			'<td>' . $form->get_select( 'buttons_pos_bbp_single', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
+
+			return $table_rows;
 		}
 
-		public function filter_rrssb_styles_tabs( $styles ) {
+		public function filter_rrssb_styles( $styles ) {
 
-			$styles['rrssb-bbp_single'] = 'bbPress Single';
+			$styles[ 'rrssb-bbp_single' ] = 'bbPress Single';
 
 			return $styles;
 		}
 
-		public function filter_rrssb_buttons_position_rows( $table_rows, $form ) {
+		public function filter_rrssb_styles_tabs( $styles ) {
 
-			$table_rows['buttons_pos_bbp_single'] = $form->get_th_html( _x( 'Position in bbPress Single',
-				'option label', 'wpsso-rrssb' ), null, 'buttons_pos_bbp_single' ) . 
-			'<td>' . $form->get_select( 'buttons_pos_bbp_single', $this->p->cf['sharing']['position'] ) . '</td>';
+			$styles[ 'rrssb-bbp_single' ] = 'bbPress Single';
 
-			return $table_rows;
+			return $styles;
 		}
 
 		public function add_bbp_template_single() {

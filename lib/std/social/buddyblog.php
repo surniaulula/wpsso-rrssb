@@ -127,7 +127,9 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddyblogSharing' ) ) {
 
 		public function filter_rrssb_styles( $styles ) {
 
-			return $this->filter_rrssb_styles_tabs( $styles );
+			$styles[ 'rrssb-bblog_post' ] = 'BBlog Post';
+
+			return $styles;
 		}
 
 		public function filter_rrssb_styles_tabs( $styles ) {

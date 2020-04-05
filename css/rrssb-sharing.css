@@ -47,13 +47,20 @@ ul.rrssb-buttons li::before,
 	content:none !important;
 }
 
+ul.rrssb-buttons li a {
+	text-align:left;
+}
+
 ul.rrssb-buttons li a .rrssb-icon {
 	display:inline-block;
+	text-align:center;
 }
 
 ul.rrssb-buttons li a .rrssb-text {
 	display:inline-block;
+	text-transform:none;
 	white-space:nowrap;
+	margin:0 5px;
 }
 
 ul.rrssb-buttons li a svg {
@@ -62,7 +69,6 @@ ul.rrssb-buttons li a svg {
 
 .rrssb-email      a .rrssb-text::before { content:" E-Mail"; }
 .rrssb-facebook   a .rrssb-text::before { content:" Facebook"; }
-.rrssb-googleplus a .rrssb-text::before { content:" Google+"; }
 .rrssb-linkedin   a .rrssb-text::before { content:" LinkedIn"; }
 .rrssb-pinterest  a .rrssb-text::before { content:" Pinterest"; }
 .rrssb-pocket     a .rrssb-text::before { content:" Pocket"; }
