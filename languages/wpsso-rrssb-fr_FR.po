@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 3.7.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2020-04-04 14:02-0700\n"
-"PO-Revision-Date: 2020-04-04 14:02-0700\n"
+"POT-Creation-Date: 2020-04-05 15:46-0700\n"
+"PO-Revision-Date: 2020-04-05 15:46-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -19,7 +19,7 @@ msgstr ""
 msgid "The default responsive button options have been reloaded and saved."
 msgstr "Les options des boutons réactifs par défaut ont été rechargées et sauvegardés."
 
-#: lib/actions.php:106
+#: lib/actions.php:106 lib/filters.php:124
 msgid "The default responsive styles CSS has been reloaded and saved."
 msgstr "Le CSS par défaut des styles réactifs ont été rechargés et sauvegardés."
 
@@ -149,58 +149,58 @@ msgstr "Le code HTML des boutons de partage social est enregistré dans le cache
 msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
 msgstr "La valeur d'expiration de cache suggérée est de %1$s secondes (%2$s)."
 
-#: lib/filters.php:146
+#: lib/filters.php:164
 msgid "Failed to open the css file %s for reading."
 msgstr "Impossible d'ouvrir le fichier css %s pour lecture."
 
-#: lib/filters.php:245 lib/gettext-pro.php:6 lib/gettext-pro.php:9
+#: lib/filters.php:263 lib/gettext-pro.php:6 lib/gettext-pro.php:9
 #: lib/submenu/rrssb-buttons.php:237
 msgctxt "option label"
 msgid "Sharing Buttons HTML Cache Expiry"
 msgstr "Expiration cache HTML des boutons"
 
-#: lib/filters.php:248 lib/gettext-pro.php:7 lib/gettext-pro.php:10
+#: lib/filters.php:266 lib/gettext-pro.php:7 lib/gettext-pro.php:10
 #: lib/submenu/rrssb-buttons.php:240
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr "secondes (0 pour désactiver)"
 
-#: lib/filters.php:258
+#: lib/filters.php:276
 msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr "Boutons de partage"
 
-#: lib/filters.php:277 lib/gettext-pro.php:12
+#: lib/filters.php:295 lib/gettext-pro.php:12
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr "Désactiver les boutons"
 
-#: lib/filters.php:298 lib/gettext-pro.php:13
+#: lib/filters.php:316 lib/gettext-pro.php:13
 msgctxt "option label"
 msgid "Email Subject"
 msgstr "Sujet du couriel"
 
-#: lib/filters.php:305 lib/gettext-pro.php:14
+#: lib/filters.php:323 lib/gettext-pro.php:14
 msgctxt "option label"
 msgid "Email Message"
 msgstr "Message du courriel"
 
-#: lib/filters.php:327 lib/gettext-pro.php:15
+#: lib/filters.php:345 lib/gettext-pro.php:15
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr "Texte du Tweet"
 
-#: lib/filters.php:359 lib/gettext-pro.php:16
+#: lib/filters.php:377 lib/gettext-pro.php:16
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr "Texte légende Pinterest"
 
-#: lib/filters.php:388 lib/gettext-pro.php:17
+#: lib/filters.php:406 lib/gettext-pro.php:17
 msgctxt "option label"
 msgid "%s Title"
 msgstr "Titre %s"
 
-#: lib/filters.php:395 lib/gettext-pro.php:18
+#: lib/filters.php:413 lib/gettext-pro.php:18
 msgctxt "option label"
 msgid "%s Caption"
 msgstr "Légende %s"
@@ -212,8 +212,8 @@ msgstr "Boutons réactifs"
 
 #: lib/gettext-config.php:8
 msgctxt "plugin description"
-msgid "Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc."
-msgstr "Boutons de partage sociaux ridiculement réactif (SVG) pour votre contenu, extraits, barre flottante CSS, widget, pages d'édition, etc."
+msgid "Ridiculously Responsive (SVG) Social Sharing Buttons for your Content, Excerpts, CSS Sidebar, Widget, Shortcode, Templates, and Editor."
+msgstr "Boutons de partage social ridiculement réactifs (SVG) pour votre contenu, extraits, barre latérale CSS, widget, shortcode, modèles et éditeur."
 
 #: lib/gettext-config.php:9
 msgctxt "option label"
@@ -305,12 +305,12 @@ msgstr "Forcer protocole pour URLs partagées"
 msgid "Save a draft version or publish the %s to display these options."
 msgstr "Enregistrer un brouillon ou publier pour activer ces options."
 
-#: lib/gettext-pro.php:19 lib/std/ecom/woocommerce.php:106
+#: lib/gettext-pro.php:19 lib/std/ecom/woocommerce.php:95
 msgctxt "option label"
 msgid "Position in Woo Short Text"
 msgstr "Position dans le texte Woo Short"
 
-#: lib/gettext-pro.php:20 lib/std/forum/bbpress.php:159
+#: lib/gettext-pro.php:20 lib/std/forum/bbpress.php:148
 msgctxt "option label"
 msgid "Position in bbPress Single"
 msgstr "Position dans bbPress Single"
@@ -523,8 +523,8 @@ msgid "https://wpsso.com/extend/plugins/wpsso-rrssb/"
 msgstr "https://wpsso.com/extend/plugins/wpsso-rrssb/"
 
 #. Description of the plugin/theme
-msgid "Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, editor pages, etc."
-msgstr "Boutons de partage sociaux ridiculement réactif (SVG) pour votre contenu, extraits, barre flottante CSS, widget, pages d'édition, etc."
+msgid "Ridiculously Responsive (SVG) Social Sharing Buttons for your Content, Excerpts, CSS Sidebar, Widget, Shortcode, Templates, and Editor."
+msgstr "Boutons de partage social ridiculement réactifs (SVG) pour votre contenu, extraits, barre latérale CSS, widget, shortcode, modèles et éditeur."
 
 #. Author of the plugin/theme
 msgid "JS Morisset"
