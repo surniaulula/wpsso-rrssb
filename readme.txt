@@ -123,13 +123,15 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.0.0-b.1 (2020/04/04)**
+**Version 4.0.0-rc.1 (2020/04/05)**
+
+Please note that all default button CSS styles will be reloaded with this version. If you have made custom CSS changes in the SSO &gt; Responsive Styles settings page, please save your custom CSS before updating to this version.
 
 * **New Features**
 	* None.
 * **Improvements**
 	* Updated "Requires At Least" to WordPress v4.2.
-	* Removed the "Share Buttons" metabox from admin editing pages and moved enabled "Admin Edit" buttons to the Document SSO metabox footer.
+	* Removed the "Share Buttons" metabox from admin editing pages and moved "Admin Edit" buttons to the Document SSO metabox footer.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -137,7 +139,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v4.2.
-	* WPSSO Core v6.28.0-b.1.
+	* WPSSO Core v6.28.0-rc.1.
 
 **Version 3.6.0 (2020/03/27)**
 
@@ -156,9 +158,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.0.0-b.1 =
+= 4.0.0-rc.1 =
 
-(2020/04/04) Updated "Requires At Least" to WordPress v4.2. Refactored WPSSO Core active and minimum version dependency checks.
+(2020/04/05) Please note that all default button CSS styles will be reloaded with this version. If you have made custom CSS changes in the SSO &gt; Responsive Styles settings page, please save your custom CSS before updating to this version.
 
 = 3.6.0 =
 
