@@ -261,8 +261,8 @@ msgstr ""
 #: lib/gettext-config.php:8
 msgctxt "plugin description"
 msgid ""
-"Ridiculously Responsive (SVG) Social Sharing Buttons for your content, "
-"excerpts, CSS sidebar, widget, shortcode, editor pages, etc."
+"Ridiculously Responsive (SVG) Social Sharing Buttons for your Content, "
+"Excerpts, CSS Sidebar, Widget, Shortcode, Templates, and Editor."
 msgstr ""
 
 #: lib/gettext-config.php:9
@@ -579,8 +579,8 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Ridiculously Responsive (SVG) Social Sharing Buttons for your content, "
-"excerpts, CSS sidebar, widget, shortcode, editor pages, etc."
+"Ridiculously Responsive (SVG) Social Sharing Buttons for your Content, "
+"Excerpts, CSS Sidebar, Widget, Shortcode, Templates, and Editor."
 msgstr ""
 
 #. Author of the plugin/theme
