@@ -15,7 +15,7 @@
  * Requires At Least: 4.2
  * Tested Up To: 5.4
  * WC Tested Up To: 4.0.1
- * Version: 4.0.0-rc.2
+ * Version: 4.0.0-rc.3
  * 
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -129,6 +129,9 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 			}
 		}
 
+		/**
+		 * The 'wpsso_init_textdomain' action is run after the $check, $avail, and $debug properties are defined.
+		 */
 		public static function wpsso_init_textdomain() {
 
 			static $do_once = null;
