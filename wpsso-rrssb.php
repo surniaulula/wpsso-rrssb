@@ -82,7 +82,6 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 			 * Add WPSSO action hooks.
 			 */
 			add_action( 'wpsso_init_textdomain', array( __CLASS__, 'wpsso_init_textdomain' ) );
-			add_action( 'wpsso_init_options', array( $this, 'wpsso_init_options' ), 10 );	// Sets the $this->p reference variable.
 			add_action( 'wpsso_init_objects', array( $this, 'wpsso_init_objects' ), 10 );
 			add_action( 'wpsso_init_plugin', array( $this, 'wpsso_init_plugin' ), 10 );
 		}
@@ -165,8 +164,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 		}
 
 		/**
-		 * The 'wpsso_get_avail' filter is run after the $check property is defined. The $cache and $notice properties are
-		 * not defined, and the plugin and add-on textdomains are not loaded.
+		 * The 'wpsso_get_avail' filter is run after the $check property is defined.
 		 */
 		public function wpsso_get_avail( $avail ) {
 
@@ -174,7 +172,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 				$avail[ 'p_ext' ][ 'rrssb' ] = false;	// Signal that this extension / add-on is not available.
 
-				return;
+				return $avail;
 			}
 
 			$avail[ 'p_ext' ][ 'rrssb' ] = true;		// Signal that this extension / add-on is available.
@@ -182,22 +180,9 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 			return $avail;
 		}
 
-		/**
-		 * The 'wpsso_init_options' action is run after the $check, $avail, $debug, $notice, $cache, $util, and $opt
-		 * properties are defined.
-		 *
-		 * Sets the $this->p reference variable for the core plugin instance.
-		 */
-		public function wpsso_init_options() {
+		public function wpsso_init_objects() {
 
 			$this->p =& Wpsso::get_instance();
-
-			if ( $this->p->debug->enabled ) {
-				$this->p->debug->mark();
-			}
-		}
-
-		public function wpsso_init_objects() {
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
