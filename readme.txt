@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.0.0-rc.2 (2020/04/06)**
+**Version 4.0.0-rc.3 (2020/04/06)**
 
 Please note that all default button CSS styles will be reloaded with this version. If you have made custom CSS changes in the SSO &gt; Responsive Styles settings page, please save your custom CSS before updating to this version.
 
@@ -139,7 +139,7 @@ Please note that all default button CSS styles will be reloaded with this versio
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v4.2.
-	* WPSSO Core v6.28.0-rc.2.
+	* WPSSO Core v6.28.0-rc.3.
 
 **Version 3.6.0 (2020/03/27)**
 
@@ -158,7 +158,7 @@ Please note that all default button CSS styles will be reloaded with this versio
 
 == Upgrade Notice ==
 
-= 4.0.0-rc.2 =
+= 4.0.0-rc.3 =
 
 (2020/04/06) Please note that all default button CSS styles will be reloaded with this version. If you have made custom CSS changes in the SSO &gt; Responsive Styles settings page, please save your custom CSS before updating to this version.
 
