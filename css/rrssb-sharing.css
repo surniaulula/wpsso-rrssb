@@ -17,10 +17,10 @@ ul.rrssb-buttons {
 }
 
 ul.rrssb-buttons a {
-	border:none;
 	box-shadow:none;
 	-webkit-box-shadow:none;
 	line-height:1em;
+	border:none;
 }
 
 ul.rrssb-buttons a:hover {
@@ -36,19 +36,15 @@ ul.rrssb-buttons li,
 	line-height:inherit !important;
 	list-style-type:none;
 	list-style-image:none;
-	border:none;
 	margin:0;
 	padding:0 2px !important;
+	border:none;
 }
 
 ul.rrssb-buttons li::before,
 .content ul.rrssb-buttons li::before,
 .list-data ul.rrssb-buttons li::before {
 	content:none !important;
-}
-
-ul.rrssb-buttons li a {
-	text-align:left;
 }
 
 ul.rrssb-buttons li a .rrssb-icon {
