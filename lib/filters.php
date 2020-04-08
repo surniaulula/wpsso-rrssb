@@ -109,7 +109,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			/**
 			 * Reload the defaults styles if older than WPSSO RRSSB v4.0.0 (options version 30).
 			 */
-			if ( ! empty( $opts[ 'plugin_wpssorrssb_opt_version' ] ) && $opts[ 'plugin_wpssorrssb_opt_version' ] < 30 ) {
+			if ( ! empty( $opts[ 'plugin_wpssorrssb_opt_version' ] ) && $opts[ 'plugin_wpssorrssb_opt_version' ] < 32 ) {
 			
 				$def_opts = $this->p->opt->get_defaults();
 
