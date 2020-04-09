@@ -58,12 +58,6 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 
 			switch ( $menu_id ) {
 
-				case 'rrssb-buttons':
-
-					$row_num = 0;
-
-					break;
-
 				case 'sso-tools':
 				case 'tools':
 
@@ -96,7 +90,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			);
 
 			add_meta_box( $this->pagehook . '_' . $metabox_id, $metabox_title,
-				array( $this, 'show_metabox_rrssb_buttons' ), $metabox_screen,
+				array( $this, 'show_metabox_' . $metabox_id ), $metabox_screen,
 					$metabox_context, $metabox_prio, $callback_args );
 
 			$share_ids = $rrssb->social->get_share_ids( $this->share );
@@ -167,7 +161,9 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 		public function show_metabox_rrssb_share( $post, $callback ) {
 
 			$callback_args = $callback[ 'args' ];
-			$metabox_id    = 'rrssb_share';
+
+			$metabox_id = 'rrssb_share';
+
 			$metabox_tabs  = apply_filters( $this->p->lca . '_' . $metabox_id . '_' . $callback_args[ 'share_id' ] . '_tabs', array() );
 
 			if ( empty( $metabox_tabs ) ) {

@@ -34,7 +34,8 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTwitter' ) ) {
 			$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
 			'<td>' . $submenu->show_on_checkboxes( 'twitter' ) . '</td>';
 
-			$table_rows[] = $form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
+			$table_rows[] = '' .
+			$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
 			'<td>' . $form->get_select( 'twitter_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
 			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] ) {
@@ -50,13 +51,13 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTwitter' ) ) {
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_caption_max_len' ) . 
 			$form->get_th_html( _x( 'Tweet Text Length', 'option label', 'wpsso-rrssb' ) ) . 
-			'<td>' . $form->get_input( 'twitter_caption_max_len', 'short' ) . ' ' . 
+			'<td>' . $form->get_input( 'twitter_caption_max_len', $css_class = 'short' ) . ' ' . 
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
 			$table_rows[] = '' . 
 			$form->get_th_html( _x( 'Append Hashtags to Tweet', 'option label', 'wpsso-rrssb' ) ) . 
-			'<td>' . $form->get_select( 'twitter_caption_hashtags', range( 0, $this->p->cf[ 'form' ][ 'max_hashtags' ] ), 'short', '', true ) . ' ' . 
-				_x( 'tag names', 'option comment', 'wpsso-rrssb' ) . '</td>';
+			'<td>' . $form->get_select( 'twitter_caption_hashtags', range( 0, $this->p->cf[ 'form' ][ 'max_hashtags' ] ),
+				$css_class = 'short', '', true ) . ' ' . _x( 'tag names', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
 			$table_rows[] = '' .
 			$form->get_th_html( _x( 'Add via Business @username', 'option label', 'wpsso-rrssb' ), '', 'buttons_add_via'  ) . 

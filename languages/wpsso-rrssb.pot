@@ -177,7 +177,7 @@ msgid ""
 "If the %1$s option (above) is also checked, the %2$s is suggested first."
 msgstr ""
 
-#: lib/filters-messages.php:271 lib/share/twitter.php:62
+#: lib/filters-messages.php:271 lib/share/twitter.php:63
 msgctxt "option label"
 msgid "Add via Business @username"
 msgstr ""
@@ -202,13 +202,13 @@ msgid "Failed to open the css file %s for reading."
 msgstr ""
 
 #: lib/filters.php:263 lib/gettext-pro.php:6 lib/gettext-pro.php:9
-#: lib/submenu/rrssb-buttons.php:237
+#: lib/submenu/rrssb-buttons.php:233
 msgctxt "option label"
 msgid "Sharing Buttons HTML Cache Expiry"
 msgstr ""
 
 #: lib/filters.php:266 lib/gettext-pro.php:7 lib/gettext-pro.php:10
-#: lib/submenu/rrssb-buttons.php:240
+#: lib/submenu/rrssb-buttons.php:236
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr ""
@@ -345,7 +345,7 @@ msgctxt "option value"
 msgid "Any Platform"
 msgstr ""
 
-#: lib/gettext-pro.php:8 lib/submenu/rrssb-buttons.php:231
+#: lib/gettext-pro.php:8 lib/submenu/rrssb-buttons.php:227
 msgctxt "option label"
 msgid "Force Protocol for Shared URLs"
 msgstr ""
@@ -369,80 +369,80 @@ msgctxt "option label"
 msgid "Position in BuddyBlog Post"
 msgstr ""
 
-#: lib/share/email.php:37 lib/share/facebook.php:37 lib/share/linkedin.php:37
-#: lib/share/pinterest.php:38 lib/share/pocket.php:37 lib/share/reddit.php:37
-#: lib/share/tumblr.php:37 lib/share/twitter.php:37 lib/share/vk.php:37
-#: lib/share/whatsapp.php:37
+#: lib/share/email.php:38 lib/share/facebook.php:38 lib/share/linkedin.php:38
+#: lib/share/pinterest.php:38 lib/share/pocket.php:38 lib/share/reddit.php:38
+#: lib/share/tumblr.php:38 lib/share/twitter.php:38 lib/share/vk.php:38
+#: lib/share/whatsapp.php:38
 msgctxt "option label"
 msgid "Preferred Order"
 msgstr ""
 
-#: lib/share/email.php:43 lib/share/facebook.php:43 lib/share/linkedin.php:43
-#: lib/share/pinterest.php:44 lib/share/pocket.php:43 lib/share/reddit.php:43
-#: lib/share/tumblr.php:43 lib/share/twitter.php:43 lib/share/vk.php:43
-#: lib/share/whatsapp.php:43
+#: lib/share/email.php:44 lib/share/facebook.php:44 lib/share/linkedin.php:44
+#: lib/share/pinterest.php:44 lib/share/pocket.php:44 lib/share/reddit.php:44
+#: lib/share/tumblr.php:44 lib/share/twitter.php:44 lib/share/vk.php:44
+#: lib/share/whatsapp.php:44
 msgctxt "option label"
 msgid "Allow for Platform"
 msgstr ""
 
-#: lib/share/email.php:48
+#: lib/share/email.php:49
 msgctxt "option label"
 msgid "Email Message Length"
 msgstr ""
 
-#: lib/share/email.php:50 lib/share/linkedin.php:50 lib/share/pinterest.php:51
-#: lib/share/reddit.php:50 lib/share/tumblr.php:50 lib/share/twitter.php:54
+#: lib/share/email.php:51 lib/share/linkedin.php:51 lib/share/pinterest.php:51
+#: lib/share/reddit.php:51 lib/share/tumblr.php:51 lib/share/twitter.php:55
 msgctxt "option comment"
 msgid "characters or less"
 msgstr ""
 
-#: lib/share/email.php:53
+#: lib/share/email.php:54
 msgctxt "option label"
 msgid "Append Hashtags to Message"
 msgstr ""
 
-#: lib/share/email.php:55 lib/share/linkedin.php:55 lib/share/pinterest.php:56
-#: lib/share/reddit.php:55 lib/share/tumblr.php:55 lib/share/twitter.php:59
+#: lib/share/email.php:56 lib/share/linkedin.php:56 lib/share/pinterest.php:56
+#: lib/share/reddit.php:56 lib/share/tumblr.php:56 lib/share/twitter.php:60
 msgctxt "option comment"
 msgid "tag names"
 msgstr ""
 
-#: lib/share/linkedin.php:48 lib/share/pinterest.php:49 lib/share/reddit.php:48
+#: lib/share/linkedin.php:49 lib/share/pinterest.php:49 lib/share/reddit.php:49
 msgctxt "option label"
 msgid "Caption Text Length"
 msgstr ""
 
-#: lib/share/linkedin.php:53 lib/share/pinterest.php:54 lib/share/reddit.php:53
+#: lib/share/linkedin.php:54 lib/share/pinterest.php:54 lib/share/reddit.php:54
 msgctxt "option label"
 msgid "Append Hashtags to Caption"
 msgstr ""
 
-#: lib/share/tumblr.php:48
+#: lib/share/tumblr.php:49
 msgctxt "option label"
 msgid "Summary Text Length"
 msgstr ""
 
-#: lib/share/tumblr.php:53
+#: lib/share/tumblr.php:54
 msgctxt "option label"
 msgid "Append Hashtags to Summary"
 msgstr ""
 
-#: lib/share/twitter.php:48
+#: lib/share/twitter.php:49
 msgctxt "option label"
 msgid "Tweet Text Source"
 msgstr ""
 
-#: lib/share/twitter.php:52
+#: lib/share/twitter.php:53
 msgctxt "option label"
 msgid "Tweet Text Length"
 msgstr ""
 
-#: lib/share/twitter.php:57
+#: lib/share/twitter.php:58
 msgctxt "option label"
 msgid "Append Hashtags to Tweet"
 msgstr ""
 
-#: lib/share/twitter.php:66
+#: lib/share/twitter.php:67
 msgctxt "option label"
 msgid "Recommend Author @username"
 msgstr ""
@@ -473,52 +473,52 @@ msgstr ""
 msgid "The %s file is not readable."
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:76
+#: lib/submenu/rrssb-buttons.php:70
 msgctxt "submit button"
 msgid "Reload Default Responsive Buttons"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:91
+#: lib/submenu/rrssb-buttons.php:85
 msgctxt "metabox title"
 msgid "Social Sharing Buttons"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:147
+#: lib/submenu/rrssb-buttons.php:141
 msgctxt "metabox tab"
 msgid "Include Buttons"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:148
+#: lib/submenu/rrssb-buttons.php:142
 msgctxt "metabox tab"
 msgid "Buttons Position"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:149
+#: lib/submenu/rrssb-buttons.php:143
 msgctxt "metabox tab"
 msgid "Advanced Settings"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:198
+#: lib/submenu/rrssb-buttons.php:194
 msgctxt "option label"
 msgid "Include on Archive Webpages"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:203
+#: lib/submenu/rrssb-buttons.php:199
 msgctxt "option label"
 msgid "Include on Page Homepage"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:208
+#: lib/submenu/rrssb-buttons.php:204
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:217
+#: lib/submenu/rrssb-buttons.php:213
 msgctxt "option label"
 msgid "Position in Content"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:222
+#: lib/submenu/rrssb-buttons.php:218
 msgctxt "option label"
 msgid "Position in Excerpt"
 msgstr ""
