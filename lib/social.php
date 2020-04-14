@@ -612,14 +612,10 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 						if ( $this->allow_for_platform( $id ) ) {
 
-							$atts[ 'src_id' ] = SucomUtil::get_atts_src_id( $atts, $id );	// Uses 'css_id' and 'use_post'.
-
 							if ( empty( $atts[ 'url' ] ) ) {
-								$atts[ 'url' ] = $this->p->util->get_sharing_url( $mod,
-									$atts[ 'add_page' ], $atts[ 'src_id' ] );
+								$atts[ 'url' ] = $this->p->util->get_sharing_url( $mod, $atts[ 'add_page' ] );
 							} else {
-								$atts[ 'url' ] = apply_filters( $this->p->lca . '_sharing_url',
-									$atts[ 'url' ], $mod, $atts[ 'add_page' ], $atts[ 'src_id' ] );
+								$atts[ 'url' ] = apply_filters( $this->p->lca . '_sharing_url', $atts[ 'url' ], $mod, $atts[ 'add_page' ] );
 							}
 
 							/**
