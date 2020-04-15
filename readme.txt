@@ -123,6 +123,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 4.1.0-dev.2 (TBD)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Added support for the new 'is_public' key in the `$mod` array.
+* **Requires At Least**
+	* PHP v5.6.
+	* WordPress v4.2.
+	* WPSSO Core v6.28.0.
+
 **Version 4.0.0 (2020/04/06)**
 
 Please note that all default button CSS styles will be reloaded with this version. If you have made custom CSS changes in the SSO &gt; Responsive Styles settings page, please save your custom CSS before updating to this version.
