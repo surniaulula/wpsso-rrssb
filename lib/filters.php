@@ -284,8 +284,10 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 				case $this->p->cf[ 'meta' ][ 'id' ]:	// 'sso' metabox ID.
 
-					if ( $mod[ 'is_public' ] ) {
-						SucomUtil::add_after_key( $tabs, 'media', 'buttons', _x( 'Share Buttons', 'metabox tab', 'wpsso-rrssb' ) );
+					if ( $mod[ 'is_public' ] ) {	// Since WPSSO Core v6.29.0.
+
+						SucomUtil::add_after_key( $tabs, 'media', 'buttons',
+							_x( 'Share Buttons', 'metabox tab', 'wpsso-rrssb' ) );
 					}
 
 					break;

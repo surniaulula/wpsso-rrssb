@@ -213,42 +213,42 @@ msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr ""
 
-#: lib/filters.php:288
+#: lib/filters.php:290
 msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr ""
 
-#: lib/filters.php:310 lib/gettext-pro.php:12
+#: lib/filters.php:312 lib/gettext-pro.php:12
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/filters.php:331 lib/gettext-pro.php:13
+#: lib/filters.php:333 lib/gettext-pro.php:13
 msgctxt "option label"
 msgid "Email Subject"
 msgstr ""
 
-#: lib/filters.php:338 lib/gettext-pro.php:14
+#: lib/filters.php:340 lib/gettext-pro.php:14
 msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/filters.php:360 lib/gettext-pro.php:15
+#: lib/filters.php:362 lib/gettext-pro.php:15
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/filters.php:392 lib/gettext-pro.php:16
+#: lib/filters.php:394 lib/gettext-pro.php:16
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/filters.php:421 lib/gettext-pro.php:17
+#: lib/filters.php:423 lib/gettext-pro.php:17
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/filters.php:428 lib/gettext-pro.php:18
+#: lib/filters.php:430 lib/gettext-pro.php:18
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
