@@ -272,8 +272,15 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 		public function filter_post_document_meta_tabs( $tabs, $mod, $metabox_id ) {
 
-			if ( $metabox_id === $this->p->cf[ 'meta' ][ 'id' ] ) {
-				SucomUtil::add_after_key( $tabs, 'media', 'buttons', _x( 'Share Buttons', 'metabox tab', 'wpsso-rrssb' ) );
+			switch ( $metabox_id ) {
+
+				case $this->p->cf[ 'meta' ][ 'id' ]:	// 'sso' metabox ID.
+
+					if ( $mod[ 'is_public' ] ) {
+						SucomUtil::add_after_key( $tabs, 'media', 'buttons', _x( 'Share Buttons', 'metabox tab', 'wpsso-rrssb' ) );
+					}
+
+					break;
 			}
 
 			return $tabs;
@@ -448,6 +455,14 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
+			}
+
+			if ( empty( $mod[ 'is_public' ] ) ) {
+				if ( $this->p->debug->enabled ) {
+					$this->p->debug->log( 'exiting early: ' . $mod[ 'name' ] . ' ID ' . $mod[ 'id' ] . ' is not public' );
+				}
+
+				return $metabox_html;
 			}
 
 			$wpssorrssb =& WpssoRrssb::get_instance();

@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"4.0.0\n"
+"4.1.0-dev.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2020-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -213,42 +213,42 @@ msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr ""
 
-#: lib/filters.php:276
+#: lib/filters.php:280
 msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr ""
 
-#: lib/filters.php:295 lib/gettext-pro.php:12
+#: lib/filters.php:302 lib/gettext-pro.php:12
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/filters.php:316 lib/gettext-pro.php:13
+#: lib/filters.php:323 lib/gettext-pro.php:13
 msgctxt "option label"
 msgid "Email Subject"
 msgstr ""
 
-#: lib/filters.php:323 lib/gettext-pro.php:14
+#: lib/filters.php:330 lib/gettext-pro.php:14
 msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/filters.php:345 lib/gettext-pro.php:15
+#: lib/filters.php:352 lib/gettext-pro.php:15
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/filters.php:377 lib/gettext-pro.php:16
+#: lib/filters.php:384 lib/gettext-pro.php:16
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/filters.php:406 lib/gettext-pro.php:17
+#: lib/filters.php:413 lib/gettext-pro.php:17
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/filters.php:413 lib/gettext-pro.php:18
+#: lib/filters.php:420 lib/gettext-pro.php:18
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
