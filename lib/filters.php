@@ -134,12 +134,20 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 		public function filter_get_defaults( $def_opts ) {
 
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->mark();
+			}
+
 			/**
 			 * Add options using a key prefix array and post type names.
 			 */
-			$def_opts     = $this->p->util->add_ptns_to_opts( $def_opts, 'buttons_add_to', 1 );
+			$def_opts = $this->p->util->add_ptns_to_opts( $def_opts, array(
+				'buttons_add_to' => 1,
+			) );
+
 			$rel_url_path = parse_url( WPSSORRSSB_URLPATH, PHP_URL_PATH );	// Returns a relative URL.
-			$styles       = apply_filters( $this->p->lca . '_rrssb_styles', $this->p->cf[ 'sharing' ][ 'rrssb_styles' ] );
+
+			$styles = apply_filters( $this->p->lca . '_rrssb_styles', $this->p->cf[ 'sharing' ][ 'rrssb_styles' ] );
 
 			foreach ( $styles as $id => $name ) {
 
