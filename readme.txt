@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.1.0-dev.4 (2020/04/15)**
+**Version 4.1.0-b.1 (2020/04/16)**
 
 * **New Features**
 	* None.
@@ -136,7 +136,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v4.2.
-	* WPSSO Core v6.29.0-dev.4.
+	* WPSSO Core v6.29.0-b.1.
 
 **Version 4.0.0 (2020/04/06)**
 
@@ -173,9 +173,9 @@ Please note that all default button CSS styles will be reloaded with this versio
 
 == Upgrade Notice ==
 
-= 4.1.0-dev.4 =
+= 4.1.0-b.1 =
 
-(2020/04/15) Added support for the new 'is_public' key in the `$mod` array (available since WPSSO Core v6.29.0).
+(2020/04/16) Added support for the new 'is_public' key in the `$mod` array (available since WPSSO Core v6.29.0).
 
 = 4.0.0 =
 
