@@ -132,11 +132,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Added support for the new 'is_public' key in the `$mod` array (available since WPSSO Core v6.29.0).
+	* Added support for the new 'is_public' key in the `$mod` array (available since WPSSO Core v7.0.0).
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v4.2.
-	* WPSSO Core v6.29.0-rc.1.
+	* WPSSO Core v7.0.0-rc.1.
 
 **Version 4.0.0 (2020/04/06)**
 
@@ -175,7 +175,7 @@ Please note that all default button CSS styles will be reloaded with this versio
 
 = 4.1.0-rc.1 =
 
-(2020/04/16) Added support for the new 'is_public' key in the `$mod` array (available since WPSSO Core v6.29.0).
+(2020/04/16) Added support for the new 'is_public' key in the `$mod` array (available since WPSSO Core v7.0.0).
 
 = 4.0.0 =
 
