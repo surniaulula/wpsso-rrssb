@@ -85,8 +85,8 @@
 <h3 class="top">Install and Uninstall</h3>
 
 <ul>
-<li><a href="https://wpsso.com/docs/plugins/wpsso-rrssb/installation/install-the-plugin/">Install the WPSSO RRSSB Add-on</a></li>
-<li><a href="https://wpsso.com/docs/plugins/wpsso-rrssb/installation/uninstall-the-plugin/">Uninstall the WPSSO RRSSB Add-on</a></li>
+<li><a href="https://wpsso.com/docs/plugins/wpsso-rrssb/installation/install-the-plugin/">Install the WPSSO RRSSB add-on</a>.</li>
+<li><a href="https://wpsso.com/docs/plugins/wpsso-rrssb/installation/uninstall-the-plugin/">Uninstall the WPSSO RRSSB add-on</a>.</li>
 </ul>
 
 
