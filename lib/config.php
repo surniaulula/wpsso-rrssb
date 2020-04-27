@@ -52,8 +52,6 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					 * Library files loaded and instantiated by WPSSO.
 					 */
 					'lib' => array(
-						'pro' => array(
-						),
 						'share' => array(
 							'email'     => 'Email', 
 							'facebook'  => 'Facebook', 

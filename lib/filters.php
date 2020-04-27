@@ -36,11 +36,11 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			}
 
 			$this->p->util->add_plugin_filters( $this, array( 
-				'option_type'            => 2,
-				'save_options'           => 4,
-				'get_defaults'           => 1,
-				'get_md_defaults'        => 1,
-				'rename_options_keys'    => 1,
+				'option_type'         => 2,
+				'save_options'        => 4,
+				'get_defaults'        => 1,
+				'get_md_defaults'     => 1,
+				'rename_options_keys' => 1,
 			) );
 
 			if ( is_admin() ) {
