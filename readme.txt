@@ -9,7 +9,7 @@ Assets URI: https://surniaulula.github.io/wpsso-rrssb/assets/
 Tags: responsive, share buttons, social widget, social media, woocommerce, facebook, google, twitter, pinterest, linkedin, whatsapp, bbpress, buddypress
 Contributors: jsmoriss
 Requires PHP: 5.6
-Requires At Least: 4.2
+Requires At Least: 5.2
 Tested Up To: 5.4
 WC Tested Up To: 4.0.1
 Stable Tag: 4.1.0
@@ -128,14 +128,14 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **New Features**
 	* None.
 * **Improvements**
-	* None.
+	* Updated the RRSSB jQuery to use `jQuery(document).ready()` by default (faster) and `jQuery(window).load()` in the block editor.
 * **Bugfixes**
 	* Fixed the default sidebar stylesheet to use the CSS class instead of the CSS id.
 * **Developer Notes**
-	* None.
+	* Moved the sidebar HTML from 'wp_footer' to 'wp_body_open'.
 * **Requires At Least**
 	* PHP v5.6.
-	* WordPress v4.2.
+	* WordPress v5.2.
 	* WPSSO Core v7.2.0-dev.2.
 
 **Version 4.1.0 (2020/04/17)**
