@@ -123,20 +123,20 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.2.0-dev.1 (2020/04/28)**
+**Version 4.2.0-dev.2 (2020/04/28)**
 
 * **New Features**
 	* None.
 * **Improvements**
 	* None.
 * **Bugfixes**
-	* None.
+	* Fixed the default sidebar stylesheet to use the CSS class instead of the CSS id.
 * **Developer Notes**
 	* None.
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v4.2.
-	* WPSSO Core v7.0.1.
+	* WPSSO Core v7.2.0-dev.2.
 
 **Version 4.1.0 (2020/04/17)**
 
@@ -188,9 +188,9 @@ Please note that all default button CSS styles will be reloaded with this versio
 
 == Upgrade Notice ==
 
-= 4.2.0-dev.1 =
+= 4.2.0-dev.2 =
 
-(2020/04/28) None.
+(2020/04/28) Fixed the default sidebar stylesheet to use the CSS class instead of the CSS id.
 
 = 4.1.0 =
 
