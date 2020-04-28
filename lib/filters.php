@@ -480,7 +480,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			$metabox_html .= $wpssorrssb->social->get_buttons( $text = '', 'admin_edit', $mod );
 
 			if ( SucomUtil::get_const( 'DOING_AJAX' ) ) {
-				$metabox_html .= '<script type="text/javascript">rrssbResize();</script>' . "\n";
+				$metabox_html .= '<script type="text/javascript">rrssbInit();</script>' . "\n";
 			}
 
 			return $metabox_html;
