@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 4.1.0\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 4.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2020-04-16 06:58-0700\n"
-"PO-Revision-Date: 2020-04-16 07:24-0700\n"
+"POT-Creation-Date: 2020-04-28 10:04-0700\n"
+"PO-Revision-Date: 2020-04-28 10:05-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -496,21 +496,29 @@ msgstr "Placer la feuille de style en queue"
 msgid "The %s widget."
 msgstr "Le widget de %s."
 
-#: lib/widget/sharing.php:194
+#: lib/widget/sharing.php:193
 msgctxt "option value"
 msgid "Share It"
 msgstr "Partager"
 
-#: lib/widget/sharing.php:197
+#: lib/widget/sharing.php:196
 msgctxt "option label"
 msgid "Widget Title (leave blank for no title)"
 msgstr "Titre du Widget (laisser vide pour aucun titre)"
 
-#: wpsso-rrssb.php:123
+#: wpsso-rrssb.php:130
 msgid "The %1$s add-on requires the %2$s plugin &mdash; install and activate the plugin or <a href=\"%3$s\">deactivate this add-on</a>."
 msgstr "L'ajout %1$s requiert l'extension %2$s &mdash; installer et activer l'extension ou <a href=\"%3$s\">désactiver cet ajout</a>."
 
-#: wpsso-rrssb.php:232
+#: wpsso-rrssb.php:161
+msgid "%1$s requires %2$s version %3$s or higher and has been deactivated."
+msgstr "%1$s nécessite %2$s version %3$s ou supérieure et a été désactivé."
+
+#: wpsso-rrssb.php:163
+msgid "Please upgrade %1$s before trying to re-activate the %2$s plugin."
+msgstr "SVP mettre à jour %1$s avant d'essayer de réactiver l'extension %2$s."
+
+#: wpsso-rrssb.php:269
 msgid "The %1$s version %2$s add-on requires %3$s version %4$s or newer (version %5$s is currently installed)."
 msgstr "L'ajout %1$s version %2$s requiert %3$s version %4$s ou plus récente (version %5$s est actuellement installée)."
 
