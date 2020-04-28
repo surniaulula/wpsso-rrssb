@@ -234,12 +234,6 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			$var_const[ 'WPSSORRSSB_SHARING_SHORTCODE_NAME' ] = 'rrssb';
 
 			/**
-			 * WPSSO RRSSB hook priorities
-			 */
-			$var_const[ 'WPSSORRSSB_SOCIAL_PRIORITY' ] = 100;
-			$var_const[ 'WPSSORRSSB_FOOTER_PRIORITY' ] = 100;
-
-			/**
 			 * Maybe override the default constant value with a pre-defined constant value.
 			 */
 			foreach ( $var_const as $name => $value ) {

@@ -12,6 +12,8 @@
 	top:50%;
 	left:0;
 	transform:translateY(-50%);
+	border-top-right-radius:2px;
+	border-bottom-right-radius:2px;
 	overflow:hidden;
 }
 

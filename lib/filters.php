@@ -481,6 +481,8 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 			if ( SucomUtil::get_const( 'DOING_AJAX' ) ) {
 				$metabox_html .= '<script type="text/javascript">rrssbInit();</script>' . "\n";
+			} else {
+				$metabox_html .= '<script type="text/javascript">jQuery(window).load(function(){ rrssbInit(); });</script>' . "\n";
 			}
 
 			return $metabox_html;

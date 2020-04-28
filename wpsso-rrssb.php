@@ -12,7 +12,7 @@
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Description: Ridiculously Responsive (SVG) Social Sharing Buttons for your Content, Excerpts, CSS Sidebar, Widget, Shortcode, Templates, and Editor.
  * Requires PHP: 5.6
- * Requires At Least: 4.2
+ * Requires At Least: 5.2
  * Tested Up To: 5.4
  * WC Tested Up To: 4.0.1
  * Version: 4.2.0-dev.2
@@ -55,6 +55,8 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 		 */
 		private $have_min_version = true;	// Have minimum wpsso version.
 
+		private static $wp_min_version = '5.2';	// Minimum WordPress version.
+
 		private static $instance;
 
 		public function __construct() {
@@ -66,6 +68,11 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 			WpssoRrssbConfig::require_libs( __FILE__ );	// Includes the register.php class library.
 
 			$this->reg = new WpssoRrssbRegister();		// Activate, deactivate, uninstall hooks.
+
+			/**
+			 * Check for the minimum required WordPress version.
+			 */
+			add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
 
 			/**
 			 * Check for required plugins and show notices.
@@ -125,6 +132,34 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 				echo '<div class="notice notice-error error"><p>';
 				echo sprintf( $notice_msg, $info[ 'name' ], $req_info[ 'name' ], $deactivate_url );
 				echo '</p></div>';
+			}
+		}
+
+		/**
+		 * Check for the minimum required WordPress version.
+		 */
+		public static function check_wp_version() {
+
+			global $wp_version;
+
+			if ( version_compare( $wp_version, self::$wp_min_version, '<' ) ) {
+
+				$plugin = plugin_basename( __FILE__ );
+
+				self::wpsso_init_textdomain();	// If not already loaded, load the textdomain now.
+
+				if ( ! function_exists( 'deactivate_plugins' ) ) {
+					require_once trailingslashit( ABSPATH ) . 'wp-admin/includes/plugin.php';
+				}
+
+				$plugin_data = get_plugin_data( __FILE__, $markup = false );
+
+				deactivate_plugins( $plugin, true );	// $silent is true
+
+				wp_die( '<p>' . sprintf( __( '%1$s requires %2$s version %3$s or higher and has been deactivated.',
+					'wpsso-rrssb' ), $plugin_data[ 'Name' ], 'WordPress', self::$wp_min_version ) . ' ' . 
+					 	sprintf( __( 'Please upgrade %1$s before trying to re-activate the %2$s plugin.',
+					 		'wpsso-rrssb' ), 'WordPress', $plugin_data[ 'Name' ] ) . '</p>' );
 			}
 		}
 

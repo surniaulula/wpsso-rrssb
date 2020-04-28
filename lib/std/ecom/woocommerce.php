@@ -67,7 +67,7 @@ if ( ! class_exists( 'WpssoRrssbStdEcomWoocommerceSharing' ) ) {
 
 			} else {
 
-				add_filter( 'woocommerce_short_description', array( $this, 'get_buttons_woo_short' ), WPSSORRSSB_SOCIAL_PRIORITY );
+				add_filter( 'woocommerce_short_description', array( $this, 'get_buttons_woo_short' ) );
 			}
 		}
 

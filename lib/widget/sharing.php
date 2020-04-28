@@ -47,7 +47,6 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 
 			$atts = array( 
 				'use_post' => false,		// Don't use the post ID on indexes.
-				'css_id'   => $args[ 'widget_id' ],
 			);
 
 			$widget_title = apply_filters( 'widget_title', $instance[ 'title' ], $instance, $this->id_base );

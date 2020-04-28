@@ -547,23 +547,31 @@ msgstr ""
 msgid "The %s widget."
 msgstr ""
 
-#: lib/widget/sharing.php:194
+#: lib/widget/sharing.php:193
 msgctxt "option value"
 msgid "Share It"
 msgstr ""
 
-#: lib/widget/sharing.php:197
+#: lib/widget/sharing.php:196
 msgctxt "option label"
 msgid "Widget Title (leave blank for no title)"
 msgstr ""
 
-#: wpsso-rrssb.php:123
+#: wpsso-rrssb.php:130
 msgid ""
 "The %1$s add-on requires the %2$s plugin &mdash; install and activate the "
 "plugin or <a href=\"%3$s\">deactivate this add-on</a>."
 msgstr ""
 
-#: wpsso-rrssb.php:232
+#: wpsso-rrssb.php:159
+msgid "%1$s requires %2$s version %3$s or higher and has been deactivated."
+msgstr ""
+
+#: wpsso-rrssb.php:161
+msgid "Please upgrade %1$s before trying to re-activate the %2$s plugin."
+msgstr ""
+
+#: wpsso-rrssb.php:267
 msgid ""
 "The %1$s version %2$s add-on requires %3$s version %4$s or newer (version "
 "%5$s is currently installed)."

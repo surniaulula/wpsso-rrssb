@@ -35,7 +35,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			$this->set_objects();
 
-			add_action( 'wp_footer', array( $this, 'show_footer' ), WPSSORRSSB_FOOTER_PRIORITY );
+			add_action( 'wp_body_open', array( $this, 'wp_body_open' ) );	// Since WP v5.2.
 
 			if ( $this->have_buttons_for_type( 'content' ) ) {
 				$this->add_buttons_filter( 'the_content' );
@@ -171,7 +171,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			}
 		}
 
-		public function show_footer() {
+		public function wp_body_open() {
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
@@ -190,7 +190,8 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				$this->p->debug->mark();
 			}
 
-			echo $this->get_buttons( '', 'sidebar', $use_post = false, '', array( 'container_each' => true ) );
+			echo $this->get_buttons( $text = '', $type = 'sidebar', $use_post = false, $location = 'bottom',
+				$atts = array( 'container_each' => true ) );
 		}
 
 		public function add_buttons_filter( $filter_name = 'the_content' ) {
@@ -211,7 +212,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			} elseif ( method_exists( $this, 'get_buttons_for_' . $filter_name ) ) {
 
-				$added = add_filter( $filter_name, array( $this, 'get_buttons_for_' . $filter_name ), WPSSORRSSB_SOCIAL_PRIORITY );
+				$added = add_filter( $filter_name, array( $this, 'get_buttons_for_' . $filter_name ) );
 
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'buttons filter ' . $filter_name . ' added (' . ( $added  ? 'true' : 'false' ) . ')' );
@@ -236,7 +237,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			if ( method_exists( $this, 'get_buttons_for_' . $filter_name ) ) {
 
-				$removed = remove_filter( $filter_name, array( $this, 'get_buttons_for_' . $filter_name ), WPSSORRSSB_SOCIAL_PRIORITY );
+				$removed = remove_filter( $filter_name, array( $this, 'get_buttons_for_' . $filter_name ) );
 
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'buttons filter ' . $filter_name . ' removed (' . ( $removed  ? 'true' : 'false' ) . ')' );
@@ -444,7 +445,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				ksort( $sorted_ids );
 
 				$atts[ 'use_post' ] = $mod[ 'use_post' ];
-				$atts[ 'css_id' ]   = $css_type_name = 'rrssb-' . $type;
 
 				/**
 				 * Returns html or an empty string.
@@ -453,17 +453,23 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				if ( ! empty( $cache_array[ $cache_index ] ) ) {
 
-					$css_id    = '';
-					$css_class = $lca . '-rrssb ' . $lca . '-' . $css_type_name;
-					$css_class_max = $lca . '-rrssb-limit ' . $lca . '-' . $css_type_name . '-limit';
+					$css_type      = 'rrssb-' . $type;
+					$css_id        = 'sidebar' === $type ? $lca . '-' . $css_type . ' ' : '';
+					$css_class     = $lca . '-rrssb ' . $lca . '-' . $css_type;
+					$css_class_max = $lca . '-rrssb-limit ' . $lca . '-' . $css_type . '-limit';
 					$css_style_max = 'max-width:' . ( 100 * count( $sorted_ids ) ) . 'px;';
 
 					if ( $mod[ 'name' ] ) {
-						$css_id = $lca . '-' . $css_type_name . '-' . $mod[ 'name' ] . '-' . (int) $mod[ 'id' ];
+
+						$css_id .= $lca . '-' . $css_type . '-' . $mod[ 'name' ] . '-' . (int) $mod[ 'id' ];
+
+						if ( $mod[ 'id' ] ) {
+							$css_id .= '-' . (int) $mod[ 'id' ];
+						}
 					}
 
 					$cache_array[ $cache_index ] = '' .
-						'<div class="' . $css_class . '" id="' . $css_id . '">' . "\n" .
+						'<div class="' . $css_class . '" id="' . trim( $css_id ) . '">' . "\n" .
 						'<div class="' . $css_class_max . '" style="' . $css_style_max . '">' . "\n" .
 						$cache_array[ $cache_index ] .
 						'</div>' . "\n" .
@@ -553,10 +559,10 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$css_type_name = 'rrssb-excerpt';
+			$css_type = 'rrssb-excerpt';
 
-			$text = preg_replace_callback( '/(<!-- ' . $this->p->lca . ' ' . $css_type_name . ' begin -->' . 
-				'.*<!-- ' . $this->p->lca . ' ' . $css_type_name . ' end -->)(<\/p>)?/Usi', 
+			$text = preg_replace_callback( '/(<!-- ' . $this->p->lca . ' ' . $css_type . ' begin -->' . 
+				'.*<!-- ' . $this->p->lca . ' ' . $css_type . ' end -->)(<\/p>)?/Usi', 
 					array( __CLASS__, 'remove_paragraph_tags' ), $text );
 
 			return $text;
