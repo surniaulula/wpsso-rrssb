@@ -190,6 +190,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				$this->p->debug->mark();
 			}
 
+			echo "\n\n";
 			echo $this->get_buttons( $text = '', $type = 'sidebar', $use_post = false, $location = 'bottom',
 				$atts = array( 'container_each' => true ) );
 		}
@@ -461,7 +462,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 					if ( $mod[ 'name' ] ) {
 
-						$css_id .= $lca . '-' . $css_type . '-' . $mod[ 'name' ] . '-' . (int) $mod[ 'id' ];
+						$css_id .= $lca . '-' . $css_type . '-' . $mod[ 'name' ];
 
 						if ( $mod[ 'id' ] ) {
 							$css_id .= '-' . (int) $mod[ 'id' ];
@@ -642,10 +643,14 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 							$atts = $saved_atts;	// Restore the common $atts array.
 
 							if ( false !== strpos( $buttons_part, '<li' ) ) {
+
 								if ( empty( $atts[ 'container_each' ] ) ) {
+
 									$buttons_html .= $buttons_part;
+
 								} else {
-									$buttons_html .= '<!-- adding button as individual containers -->' . "\n" . 
+
+									$buttons_html .= '<!-- adding buttons as individual containers -->' . "\n" . 
 										$buttons_begin . $buttons_part . $buttons_end;
 								}
 							}

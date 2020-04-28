@@ -15,7 +15,7 @@
  * Requires At Least: 5.2
  * Tested Up To: 5.4
  * WC Tested Up To: 4.0.1
- * Version: 4.2.0-dev.2
+ * Version: 4.2.0-b.1
  * 
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -137,6 +137,8 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 		/**
 		 * Check for the minimum required WordPress version.
+		 *
+		 * If we don't have the minimum required version, then de-activate ourselves and die.
 		 */
 		public static function check_wp_version() {
 
@@ -144,9 +146,9 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 			if ( version_compare( $wp_version, self::$wp_min_version, '<' ) ) {
 
-				$plugin = plugin_basename( __FILE__ );
-
 				self::wpsso_init_textdomain();	// If not already loaded, load the textdomain now.
+
+				$plugin = plugin_basename( __FILE__ );
 
 				if ( ! function_exists( 'deactivate_plugins' ) ) {
 					require_once trailingslashit( ABSPATH ) . 'wp-admin/includes/plugin.php';
@@ -154,7 +156,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 				$plugin_data = get_plugin_data( __FILE__, $markup = false );
 
-				deactivate_plugins( $plugin, true );	// $silent is true
+				deactivate_plugins( $plugin, $silent = true );
 
 				wp_die( '<p>' . sprintf( __( '%1$s requires %2$s version %3$s or higher and has been deactivated.',
 					'wpsso-rrssb' ), $plugin_data[ 'Name' ], 'WordPress', self::$wp_min_version ) . ' ' . 
@@ -170,7 +172,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 			static $do_once = null;
 
-			if ( true === $do_once ) {
+			if ( null !== $do_once ) {	// Already loaded.
 				return;
 			}
 
