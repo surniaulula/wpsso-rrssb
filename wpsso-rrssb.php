@@ -168,15 +168,15 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 		/**
 		 * The 'wpsso_init_textdomain' action is run after the $check, $avail, and $debug properties are defined.
 		 */
-		public static function wpsso_init_textdomain() {
+		public static function wpsso_init_textdomain( $debug_enabled = false ) {
 
-			static $do_once = null;
+			static $loaded = null;
 
-			if ( null !== $do_once ) {	// Already loaded.
+			if ( null !== $loaded ) {
 				return;
 			}
 
-			$do_once = true;
+			$loaded = true;
 
 			load_plugin_textdomain( 'wpsso-rrssb', false, 'wpsso-rrssb/languages/' );
 		}
