@@ -123,11 +123,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.2.0-dev.2 (2020/04/28)**
+**Version 4.2.0-b.1 (2020/04/28)**
 
 * **New Features**
 	* None.
 * **Improvements**
+	* Updated the minimum required WordPress version from 4.2 to 5.2. 
 	* Updated the RRSSB jQuery to use `jQuery(document).ready()` by default (faster) and `jQuery(window).load()` in the block editor.
 * **Bugfixes**
 	* Fixed the default sidebar stylesheet to use the CSS class instead of the CSS id.
@@ -136,7 +137,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v5.2.
-	* WPSSO Core v7.2.0-dev.2.
+	* WPSSO Core v7.2.0-b.1.
 
 **Version 4.1.0 (2020/04/17)**
 
@@ -188,7 +189,7 @@ Please note that all default button CSS styles will be reloaded with this versio
 
 == Upgrade Notice ==
 
-= 4.2.0-dev.2 =
+= 4.2.0-b.1 =
 
 (2020/04/28) Fixed the default sidebar stylesheet to use the CSS class instead of the CSS id.
 
