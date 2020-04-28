@@ -63,10 +63,11 @@ if ( ! class_exists( 'WpssoRrssbShareFacebook' ) ) {
 			'opt' => array(
 				'defaults' => array(
 					'fb_order'         => 2,
+					'fb_on_admin_edit' => 1,
 					'fb_on_content'    => 1,
 					'fb_on_excerpt'    => 0,
 					'fb_on_sidebar'    => 0,
-					'fb_on_admin_edit' => 1,
+					'fb_on_woo_short'  => 1,
 					'fb_platform'      => 'any',
 					'fb_rrssb_html'    => '<li class="rrssb-facebook">
 	<a href="https://www.facebook.com/sharer/sharer.php?u=%%sharing_url%%" class="popup">

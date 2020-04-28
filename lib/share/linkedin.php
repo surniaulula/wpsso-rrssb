@@ -73,10 +73,11 @@ if ( ! class_exists( 'WpssoRrssbShareLinkedin' ) ) {
 			'opt' => array(
 				'defaults' => array(
 					'linkedin_order'            => 5,
+					'linkedin_on_admin_edit'    => 1,
 					'linkedin_on_content'       => 1,
 					'linkedin_on_excerpt'       => 0,
 					'linkedin_on_sidebar'       => 0,
-					'linkedin_on_admin_edit'    => 1,
+					'linkedin_on_woo_short'     => 1,
 					'linkedin_platform'         => 'any',
 					'linkedin_caption_max_len'  => 300,
 					'linkedin_caption_hashtags' => 0,

@@ -73,10 +73,11 @@ if ( ! class_exists( 'WpssoRrssbShareTumblr' ) ) {
 			'opt' => array(
 				'defaults' => array(
 					'tumblr_order'            => 8,
-					'tumblr_on_content'       => 0,
+					'tumblr_on_admin_edit'    => 1,
+					'tumblr_on_content'       => 1,
 					'tumblr_on_excerpt'       => 0,
 					'tumblr_on_sidebar'       => 0,
-					'tumblr_on_admin_edit'    => 1,
+					'tumblr_on_woo_short'     => 1,
 					'tumblr_platform'         => 'any',
 					'tumblr_caption_max_len'  => 300,
 					'tumblr_caption_hashtags' => 0,

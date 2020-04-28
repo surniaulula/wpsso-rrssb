@@ -63,10 +63,11 @@ if ( ! class_exists( 'WpssoRrssbShareWhatsApp' ) ) {
 			'opt' => array(
 				'defaults' => array(
 					'wa_order'         => 10,
+					'wa_on_admin_edit' => 1,
 					'wa_on_content'    => 1,
 					'wa_on_excerpt'    => 0,
 					'wa_on_sidebar'    => 0,
-					'wa_on_admin_edit' => 1,
+					'wa_on_woo_short'  => 1,
 					'wa_platform'      => 'mobile',
 					'wa_rrssb_html'    => '<li class="rrssb-whatsapp">
 	<a href="whatsapp://send?text=%%title%%%20%%short_url%%" data-action="share/whatsapp/share" class="popup">

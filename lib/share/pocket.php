@@ -63,10 +63,11 @@ if ( ! class_exists( 'WpssoRrssbSharePocket' ) ) {
 			'opt' => array(
 				'defaults' => array(
 					'pocket_order'         => 7,
-					'pocket_on_content'    => 0,
+					'pocket_on_admin_edit' => 1,
+					'pocket_on_content'    => 1,
 					'pocket_on_excerpt'    => 0,
 					'pocket_on_sidebar'    => 0,
-					'pocket_on_admin_edit' => 1,
+					'pocket_on_woo_short'  => 1,
 					'pocket_platform'      => 'any',
 					'pocket_rrssb_html'    => '<li class="rrssb-pocket">
 	<a href="https://getpocket.com/save?url=%%sharing_url%%">

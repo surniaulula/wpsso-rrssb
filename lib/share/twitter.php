@@ -85,10 +85,11 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 			'opt' => array(
 				'defaults' => array(
 					'twitter_order'            => 3,
+					'twitter_on_admin_edit'    => 1,
 					'twitter_on_content'       => 1,
 					'twitter_on_excerpt'       => 0,
 					'twitter_on_sidebar'       => 0,
-					'twitter_on_admin_edit'    => 1,
+					'twitter_on_woo_short'     => 1,
 					'twitter_platform'         => 'any',
 					'twitter_caption'          => 'excerpt',
 					'twitter_caption_max_len'  => 280,	// changed from 140 to 280 on 2017/11/17

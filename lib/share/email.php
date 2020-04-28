@@ -73,10 +73,11 @@ if ( ! class_exists( 'WpssoRrssbShareEmail' ) ) {
 			'opt' => array(
 				'defaults' => array(
 					'email_order'            => 1,
+					'email_on_admin_edit'    => 1,
 					'email_on_content'       => 1,
 					'email_on_excerpt'       => 0,
 					'email_on_sidebar'       => 0,
-					'email_on_admin_edit'    => 1,
+					'email_on_woo_short'     => 1,
 					'email_platform'         => 'any',
 					'email_caption_max_len'  => 500,
 					'email_caption_hashtags' => 0,

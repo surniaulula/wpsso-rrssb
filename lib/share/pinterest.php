@@ -73,10 +73,11 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 			'opt' => array(
 				'defaults' => array(
 					'pin_order'            => 4,
+					'pin_on_admin_edit'    => 1,
 					'pin_on_content'       => 1,
 					'pin_on_excerpt'       => 0,
 					'pin_on_sidebar'       => 0,
-					'pin_on_admin_edit'    => 1,
+					'pin_on_woo_short'     => 1,
 					'pin_platform'         => 'any',
 					'pin_caption_max_len'  => 300,
 					'pin_caption_hashtags' => 0,
