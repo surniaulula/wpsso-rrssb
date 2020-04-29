@@ -458,7 +458,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					$css_id        = 'sidebar' === $type ? $lca . '-' . $css_type . ' ' : '';
 					$css_class     = $lca . '-rrssb ' . $lca . '-' . $css_type;
 					$css_class_max = $lca . '-rrssb-limit ' . $lca . '-' . $css_type . '-limit';
-					$css_style_max = 'max-width:' . ( 100 * count( $sorted_ids ) ) . 'px;';
+					$css_style_max = 'max-width:' . ( 120 * count( $sorted_ids ) ) . 'px;';
 
 					if ( $mod[ 'name' ] ) {
 

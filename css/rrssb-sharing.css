@@ -9,11 +9,11 @@ div.wpsso-rrssb-limit {
 }
 
 ul.rrssb-buttons {
+	clear:both;
 	visibility:visible;
 	margin:0;
 	padding:0;
 	list-style:none;
-	clear:both;
 }
 
 ul.rrssb-buttons a {
@@ -29,13 +29,15 @@ ul.rrssb-buttons a:hover {
 }
 
 ul.rrssb-buttons li,
+.archive-page ul.rrssb-buttons li,
 .content ul.rrssb-buttons li,
+.entry-content ul.rrssb-buttons li,
 .list-data ul.rrssb-buttons li {
 	position:relative;
 	font-size:inherit !important;
 	line-height:inherit !important;
-	list-style-type:none;
-	list-style-image:none;
+	list-style-type:none !important;
+	list-style-image:none !important;
 	margin:0;
 	padding:0 2px !important;
 	border:none;
@@ -63,13 +65,14 @@ ul.rrssb-buttons li a svg {
 	display:inline-block;
 }
 
-.rrssb-email      a .rrssb-text::before { content:" E-Mail"; }
-.rrssb-facebook   a .rrssb-text::before { content:" Facebook"; }
-.rrssb-linkedin   a .rrssb-text::before { content:" LinkedIn"; }
-.rrssb-pinterest  a .rrssb-text::before { content:" Pinterest"; }
-.rrssb-pocket     a .rrssb-text::before { content:" Pocket"; }
-.rrssb-reddit     a .rrssb-text::before { content:" Reddit"; }
-.rrssb-tumblr     a .rrssb-text::before { content:" Tumblr"; }
-.rrssb-twitter    a .rrssb-text::before { content:" Twitter"; }
-.rrssb-vk         a .rrssb-text::before { content:" Vk"; }
-.rrssb-whatsapp   a .rrssb-text::before { content:" WhatsApp"; }
+.rrssb-email      a .rrssb-text::before { content:"E-Mail"; }
+.rrssb-facebook   a .rrssb-text::before { content:"Facebook"; }
+.rrssb-linkedin   a .rrssb-text::before { content:"LinkedIn"; }
+.rrssb-pinterest  a .rrssb-text::before { content:"Pinterest"; }
+.rrssb-pocket     a .rrssb-text::before { content:"Pocket"; }
+.rrssb-reddit     a .rrssb-text::before { content:"Reddit"; }
+.rrssb-tumblr     a .rrssb-text::before { content:"Tumblr"; }
+.rrssb-twitter    a .rrssb-text::before { content:"Twitter"; }
+.rrssb-vk         a .rrssb-text::before { content:"Vk"; }
+.rrssb-whatsapp   a .rrssb-text::before { content:"WhatsApp"; }
+
