@@ -35,6 +35,7 @@ ul.rrssb-buttons li,
 .list-data ul.rrssb-buttons li {
 	position:relative;
 	font-size:inherit !important;
+	text-shadow: none !important;
 	line-height:inherit !important;
 	list-style-type:none !important;
 	list-style-image:none !important;
