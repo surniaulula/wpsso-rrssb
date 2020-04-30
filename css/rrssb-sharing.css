@@ -12,7 +12,7 @@ ul.rrssb-buttons {
 	clear:both;
 	visibility:visible;
 	margin:0;
-	padding:0;
+	padding:0 !important;
 	list-style:none;
 }
 
