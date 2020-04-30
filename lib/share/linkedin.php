@@ -47,7 +47,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareLinkedin' ) ) {
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'linkedin_caption_max_len' ) . 
                         $form->get_th_html( _x( 'Caption Text Length', 'option label', 'wpsso-rrssb' ) ) . 
-			'<td>' . $form->get_input( 'linkedin_caption_max_len', 'short' ) . ' ' . 
+			'<td>' . $form->get_input( 'linkedin_caption_max_len', $css_class = 'chars' ) . ' ' . 
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'linkedin_caption_hashtags' ) . 

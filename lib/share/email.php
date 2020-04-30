@@ -47,7 +47,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareEmail' ) ) {
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'email_caption_max_len' ) . 
                         $form->get_th_html( _x( 'Email Message Length', 'option label', 'wpsso-rrssb' ) ) . 
-			'<td>' . $form->get_input( 'email_caption_max_len', 'short' ) . ' ' . 
+			'<td>' . $form->get_input( 'email_caption_max_len', $css_class = 'chars' ) . ' ' . 
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'email_caption_hashtags' ) . 

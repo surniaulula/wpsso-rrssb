@@ -47,7 +47,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTumblr' ) ) {
 
 			$table_rows[ 'tumblr_caption_max_len' ] = $form->get_tr_hide( 'basic', 'tumblr_caption_max_len' ) . 
                         $form->get_th_html( _x( 'Summary Text Length', 'option label', 'wpsso-rrssb' ) ) . 
-			'<td>' . $form->get_input( 'tumblr_caption_max_len', 'short' ) . ' ' . 
+			'<td>' . $form->get_input( 'tumblr_caption_max_len', $css_class = 'chars' ) . ' ' . 
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
 			$table_rows[ 'tumblr_caption_hashtags' ] = $form->get_tr_hide( 'basic', 'tumblr_caption_hashtags' ) . 

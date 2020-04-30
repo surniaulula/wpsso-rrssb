@@ -51,7 +51,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTwitter' ) ) {
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_caption_max_len' ) . 
 			$form->get_th_html( _x( 'Tweet Text Length', 'option label', 'wpsso-rrssb' ) ) . 
-			'<td>' . $form->get_input( 'twitter_caption_max_len', $css_class = 'short' ) . ' ' . 
+			'<td>' . $form->get_input( 'twitter_caption_max_len', $css_class = 'chars' ) . ' ' . 
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
 			$table_rows[] = '' . 
