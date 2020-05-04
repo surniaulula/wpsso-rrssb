@@ -98,7 +98,7 @@
 <li>None.</li>
 </ul>
 
-<h3>Advanced Documentation and Notes</h3>
+<h3>Notes and Documentation</h3>
 
 <ul>
 <li><a href="https://wpsso.com/docs/plugins/wpsso-rrssb/notes/rrssb-shortcode/">RRSSB Shortcode for Sharing Buttons</a></li>
