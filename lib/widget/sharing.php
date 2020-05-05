@@ -175,13 +175,14 @@ $after_widget .
 			$share_ids = $rrssb->social->get_share_ids();
 
 			foreach ( $share_ids as $share_id => $share_title ) {
+
 				$instance[ $share_id ] = empty( $new_instance[ $share_id ] ) ? 0 : 1;
 			}
 
 			/**
 			 * Clear all sharing button transient cache objects.
 			 */
-			$deleted_count = $this->p->util->delete_all_db_transients( $clear_short = false, $transient_prefix = $this->p->lca . '_b_' );
+			$deleted_count = $this->p->util->cache->clear_db_transients( $clear_short = false, $transient_prefix = $this->p->lca . '_b_' );
 
 			return $instance;
 		}
