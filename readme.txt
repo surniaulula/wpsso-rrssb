@@ -123,6 +123,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 4.3.0-dev.1 (TBD)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v5.6.
+	* WordPress v5.2.
+	* WPSSO Core v7.3.0.
+
 **Version 4.2.0 (2020/04/28)**
 
 * **New Features**
@@ -189,6 +204,10 @@ Please note that all default button CSS styles will be reloaded with this versio
 	* WPSSO Core v6.27.1.
 
 == Upgrade Notice ==
+
+= 4.3.0-dev.1 =
+
+(TBD) None.
 
 = 4.2.0 =
 
