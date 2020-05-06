@@ -182,7 +182,7 @@ $after_widget .
 			/**
 			 * Clear all sharing button transient cache objects.
 			 */
-			$deleted_count = $this->p->util->cache->clear_db_transients( $clear_short = false, $transient_prefix = $this->p->lca . '_b_' );
+			$cleared_count = $this->p->util->cache->clear_db_transients( $clear_short = false, $transient_prefix = $this->p->lca . '_b_' );
 
 			return $instance;
 		}
