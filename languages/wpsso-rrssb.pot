@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"4.3.0-dev.1\n"
+"4.3.0-dev.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2020-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -557,21 +557,21 @@ msgctxt "option label"
 msgid "Widget Title (leave blank for no title)"
 msgstr ""
 
-#: wpsso-rrssb.php:130
+#: wpsso-rrssb.php:123
 msgid ""
-"The %1$s add-on requires the %2$s plugin &mdash; install and activate the "
-"plugin or <a href=\"%3$s\">deactivate this add-on</a>."
+"The %1$s add-on requires the %2$s plugin &mdash; please install and activate "
+"the missing plugin."
 msgstr ""
 
-#: wpsso-rrssb.php:161
+#: wpsso-rrssb.php:196
 msgid "%1$s requires %2$s version %3$s or higher and has been deactivated."
 msgstr ""
 
-#: wpsso-rrssb.php:163
+#: wpsso-rrssb.php:198
 msgid "Please upgrade %1$s before trying to re-activate the %2$s plugin."
 msgstr ""
 
-#: wpsso-rrssb.php:269
+#: wpsso-rrssb.php:304
 msgid ""
 "The %1$s version %2$s add-on requires %3$s version %4$s or newer (version "
 "%5$s is currently installed)."

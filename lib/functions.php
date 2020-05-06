@@ -35,7 +35,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 
 			error_log( __FUNCTION__ . '() error: ' . $error_msg );
 
-		} elseif ( ! $wpsso->avail['p_ext']['rrssb'] ) {
+		} elseif ( ! $wpsso->avail[ 'p_ext' ][ 'rrssb' ] ) {
 
 			$error_msg = 'sharing buttons are disabled';
 
