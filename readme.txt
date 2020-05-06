@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 5.6
 Requires At Least: 5.2
 Tested Up To: 5.4.1
-WC Tested Up To: 4.0.1
+WC Tested Up To: 4.1.0
 Stable Tag: 4.2.0
 
 Ridiculously Responsive (SVG) Social Sharing Buttons for your Content, Excerpts, CSS Sidebar, Widget, Shortcode, Templates, and Editor.
@@ -132,7 +132,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Updated clear cache method call for WPSSO Core v7.4.0.
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v5.2.
@@ -207,7 +207,7 @@ Please note that all default button CSS styles will be reloaded with this versio
 
 = 4.3.0-dev.1 =
 
-(TBD) None.
+(TBD) Updated clear cache method call for WPSSO Core v7.4.0.
 
 = 4.2.0 =
 
