@@ -36,7 +36,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareEmail' ) ) {
 
 			$table_rows[] = '' .
 			$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
-			'<td>' . $form->get_select( 'email_order', range( 1, count( $submenu->share ) ) ) . '</td>';
+			'<td>' . $form->get_select( 'email_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
 			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] ) {
 
@@ -72,7 +72,7 @@ if ( ! class_exists( 'WpssoRrssbShareEmail' ) ) {
 		private static $cf = array(
 			'opt' => array(
 				'defaults' => array(
-					'email_order'            => 1,
+					'email_button_order'     => 1,
 					'email_on_admin_edit'    => 1,
 					'email_on_content'       => 1,
 					'email_on_excerpt'       => 0,

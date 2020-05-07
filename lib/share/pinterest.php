@@ -36,7 +36,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 
 			$table_rows[] = '' .
 			$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
-			'<td>' . $form->get_select( 'pin_order', range( 1, count( $submenu->share ) ) ) . '</td>';
+			'<td>' . $form->get_select( 'pin_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
 			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] ) {
 
@@ -72,7 +72,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 		private static $cf = array(
 			'opt' => array(
 				'defaults' => array(
-					'pin_order'            => 4,
+					'pin_button_order'     => 4,
 					'pin_on_admin_edit'    => 1,
 					'pin_on_content'       => 1,
 					'pin_on_excerpt'       => 0,

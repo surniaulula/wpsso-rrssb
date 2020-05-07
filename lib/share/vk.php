@@ -36,7 +36,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareVk' ) ) {
 
 			$table_rows[] = '' .
 			$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
-			'<td>' . $form->get_select( 'vk_order', range( 1, count( $submenu->share ) ) ) . '</td>';
+			'<td>' . $form->get_select( 'vk_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
 			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] ) {
 
@@ -62,7 +62,7 @@ if ( ! class_exists( 'WpssoRrssbShareVk' ) ) {
 		private static $cf = array(
 			'opt' => array(
 				'defaults' => array(
-					'vk_order'         => 9,
+					'vk_button_order'  => 9,
 					'vk_on_admin_edit' => 1,
 					'vk_on_content'    => 1,
 					'vk_on_excerpt'    => 0,

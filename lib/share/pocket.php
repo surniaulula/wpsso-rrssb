@@ -36,7 +36,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePocket' ) ) {
 
 			$table_rows[] = '' .
 			$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
-			'<td>' . $form->get_select( 'pocket_order', range( 1, count( $submenu->share ) ) ) . '</td>';
+			'<td>' . $form->get_select( 'pocket_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
 			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] ) {
 
@@ -62,7 +62,7 @@ if ( ! class_exists( 'WpssoRrssbSharePocket' ) ) {
 		private static $cf = array(
 			'opt' => array(
 				'defaults' => array(
-					'pocket_order'         => 7,
+					'pocket_button_order'  => 7,
 					'pocket_on_admin_edit' => 1,
 					'pocket_on_content'    => 1,
 					'pocket_on_excerpt'    => 0,

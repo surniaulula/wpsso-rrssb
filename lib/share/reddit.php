@@ -36,7 +36,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareReddit' ) ) {
 
 			$table_rows[] = '' .
 			$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
-			'<td>' . $form->get_select( 'reddit_order', range( 1, count( $submenu->share ) ) ) . '</td>';
+			'<td>' . $form->get_select( 'reddit_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
 			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] ) {
 
@@ -72,7 +72,7 @@ if ( ! class_exists( 'WpssoRrssbShareReddit' ) ) {
 		private static $cf = array(
 			'opt' => array(
 				'defaults' => array(
-					'reddit_order'            => 6,
+					'reddit_button_order'     => 6,
 					'reddit_on_admin_edit'    => 1,
 					'reddit_on_content'       => 1,
 					'reddit_on_excerpt'       => 0,

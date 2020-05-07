@@ -439,7 +439,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 					if ( ! empty( $this->p->options[ $opt_pre . '_on_' . $type ] ) ) {
 
-						$sorted_ids[ zeroise( $this->p->options[ $opt_pre . '_order' ], 3 ) . '-' . $id ] = $id;
+						$sorted_ids[ zeroise( $this->p->options[ $opt_pre . '_button_order' ], 3 ) . '-' . $id ] = $id;
 					}
 				}
 

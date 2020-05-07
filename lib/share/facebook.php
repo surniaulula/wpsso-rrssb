@@ -36,7 +36,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareFacebook' ) ) {
 
 			$table_rows[] = '' .
 			$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
-			'<td>' . $form->get_select( 'fb_order', range( 1, count( $submenu->share ) ) ) . '</td>';
+			'<td>' . $form->get_select( 'fb_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
 			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] ) {
 
@@ -62,7 +62,7 @@ if ( ! class_exists( 'WpssoRrssbShareFacebook' ) ) {
 		private static $cf = array(
 			'opt' => array(
 				'defaults' => array(
-					'fb_order'         => 2,
+					'fb_button_order'  => 2,
 					'fb_on_admin_edit' => 1,
 					'fb_on_content'    => 1,
 					'fb_on_excerpt'    => 0,

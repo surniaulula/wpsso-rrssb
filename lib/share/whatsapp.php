@@ -36,7 +36,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareWhatsApp' ) ) {
 
 			$table_rows[] = '' .
 			$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
-			'<td>' . $form->get_select( 'wa_order', range( 1, count( $submenu->share ) ) ) . '</td>';
+			'<td>' . $form->get_select( 'wa_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
 			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] ) {
 
@@ -62,7 +62,7 @@ if ( ! class_exists( 'WpssoRrssbShareWhatsApp' ) ) {
 		private static $cf = array(
 			'opt' => array(
 				'defaults' => array(
-					'wa_order'         => 10,
+					'wa_button_order'  => 10,
 					'wa_on_admin_edit' => 1,
 					'wa_on_content'    => 1,
 					'wa_on_excerpt'    => 0,

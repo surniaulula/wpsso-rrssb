@@ -36,7 +36,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareLinkedin' ) ) {
 
 			$table_rows[] = '' .
 			$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
-			'<td>' . $form->get_select( 'linkedin_order', range( 1, count( $submenu->share ) ) ) . '</td>';
+			'<td>' . $form->get_select( 'linkedin_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
 			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] ) {
 
@@ -72,7 +72,7 @@ if ( ! class_exists( 'WpssoRrssbShareLinkedin' ) ) {
 		private static $cf = array(
 			'opt' => array(
 				'defaults' => array(
-					'linkedin_order'            => 5,
+					'linkedin_button_order'     => 5,
 					'linkedin_on_admin_edit'    => 1,
 					'linkedin_on_content'       => 1,
 					'linkedin_on_excerpt'       => 0,

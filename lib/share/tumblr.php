@@ -34,9 +34,9 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTumblr' ) ) {
 			$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
 			'<td>' . $submenu->show_on_checkboxes( 'tumblr' ) . '</td>';
 
-			$table_rows[ 'tumblr_order' ] = '' .
+			$table_rows[ 'tumblr_button_order' ] = '' .
 			$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
-			'<td>' . $form->get_select( 'tumblr_order', range( 1, count( $submenu->share ) ) ) . '</td>';
+			'<td>' . $form->get_select( 'tumblr_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
 			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] ) {
 
@@ -72,7 +72,7 @@ if ( ! class_exists( 'WpssoRrssbShareTumblr' ) ) {
 		private static $cf = array(
 			'opt' => array(
 				'defaults' => array(
-					'tumblr_order'            => 8,
+					'tumblr_button_order'     => 8,
 					'tumblr_on_admin_edit'    => 1,
 					'tumblr_on_content'       => 1,
 					'tumblr_on_excerpt'       => 0,

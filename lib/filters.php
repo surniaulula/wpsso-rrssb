@@ -76,7 +76,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				/**
 				 * Integer options that must be 1 or more (not zero).
 				 */
-				case ( preg_match( '/_order$/', $base_key ) ? true : false ):
+				case ( preg_match( '/_button_order$/', $base_key ) ? true : false ):
 
 					return 'pos_int';
 
@@ -111,13 +111,13 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			 */
 			if ( ! empty( $opts[ 'plugin_wpssorrssb_opt_version' ] ) && $opts[ 'plugin_wpssorrssb_opt_version' ] < 32 ) {
 			
-				$def_opts = $this->p->opt->get_defaults();
+				$defs = $this->p->opt->get_defaults();
 
 				$styles = apply_filters( $this->p->lca . '_rrssb_styles', $this->p->cf[ 'sharing' ][ 'rrssb_styles' ] );
 		
 				foreach ( $styles as $id => $name ) {
-					if ( isset( $this->p->options[ 'buttons_css_' . $id ] ) && isset( $def_opts[ 'buttons_css_' . $id ] ) ) {
-						$this->p->options[ 'buttons_css_' . $id ] = $def_opts[ 'buttons_css_' . $id ];
+					if ( isset( $this->p->options[ 'buttons_css_' . $id ] ) && isset( $defs[ 'buttons_css_' . $id ] ) ) {
+						$this->p->options[ 'buttons_css_' . $id ] = $defs[ 'buttons_css_' . $id ];
 					}
 				}
 		
@@ -132,7 +132,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			return $opts;
 		}
 
-		public function filter_get_defaults( $def_opts ) {
+		public function filter_get_defaults( $defs ) {
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
@@ -141,7 +141,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			/**
 			 * Add options using a key prefix array and post type names.
 			 */
-			$def_opts = $this->p->util->add_ptns_to_opts( $def_opts, array(
+			$this->p->util->add_post_type_names( $defs, array(
 				'buttons_add_to' => 1,
 			) );
 
@@ -156,7 +156,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				/**
 				 * CSS files are only loaded once (when variable is empty) into defaults to minimize disk I/O.
 				 */
-				if ( empty( $def_opts[ 'buttons_css_' . $id ] ) ) {
+				if ( empty( $defs[ 'buttons_css_' . $id ] ) ) {
 
 					if ( ! file_exists( $buttons_css_file ) ) {
 
@@ -187,12 +187,12 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 							$buttons_css_data = preg_replace( '/%%' . $macro . '%%/', $value, $buttons_css_data );
 						}
 
-						$def_opts[ 'buttons_css_' . $id ] = $buttons_css_data;
+						$defs[ 'buttons_css_' . $id ] = $buttons_css_data;
 					}
 				}
 			}
 
-			return $def_opts;
+			return $defs;
 		}
 
 		public function filter_get_md_defaults( $md_defs ) {
@@ -241,11 +241,24 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				23 => array(
 					'plugin_wpssorrssb_tid' => '',
 				),
+				32 => array(
+					'email_order'    => 'email_button_order',
+					'fb_order'       => 'fb_button_order',
+					'linkedin_order' => 'linkedin_button_order',
+					'pin_order'      => 'pin_button_order',
+					'pocket_order'   => 'pocket_button_order',
+					'reddit_order'   => 'reddit_button_order',
+					'tumblr_order'   => 'tumblr_button_order',
+					'twitter_order'  => 'twitter_button_order',
+					'vk_order'       => 'vk_button_order',
+					'wa_order'       => 'wa_button_order',
+				),
 			);
 
 			$show_on = apply_filters( $this->p->lca . '_rrssb_buttons_show_on', $this->p->cf[ 'sharing' ][ 'show_on' ], 'gp' );
 
 			foreach ( $show_on as $opt_suffix => $short_desc ) {
+
 				$options_keys[ 'wpssorrssb' ][ 20 ][ 'gp_on_' . $opt_suffix ] = '';
 			}
 

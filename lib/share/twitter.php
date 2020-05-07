@@ -36,7 +36,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTwitter' ) ) {
 
 			$table_rows[] = '' .
 			$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
-			'<td>' . $form->get_select( 'twitter_order', range( 1, count( $submenu->share ) ) ) . '</td>';
+			'<td>' . $form->get_select( 'twitter_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
 			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] ) {
 
@@ -84,7 +84,7 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 		private static $cf = array(
 			'opt' => array(
 				'defaults' => array(
-					'twitter_order'            => 3,
+					'twitter_button_order'     => 3,
 					'twitter_on_admin_edit'    => 1,
 					'twitter_on_content'       => 1,
 					'twitter_on_excerpt'       => 0,
