@@ -123,20 +123,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.3.0-dev.2 (2020/05/06)**
+**Version 4.3.0-dev.3 (2020/05/07)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* Minor improvements to the requirement checks in the main plugin class.
+	* None.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
+	* Refactored the required plugin check to (optionally) check the class name and a version constant.
 	* Updated clear cache method call for WPSSO Core v7.4.0.
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v5.2.
-	* WPSSO Core v7.4.0-dev.2.
+	* WPSSO Core v7.4.0-dev.3.
 
 **Version 4.2.0 (2020/04/28)**
 
@@ -205,9 +206,9 @@ Please note that all default button CSS styles will be reloaded with this versio
 
 == Upgrade Notice ==
 
-= 4.3.0-dev.2 =
+= 4.3.0-dev.3 =
 
-(2020/05/06) Minor improvements to the requirement checks in the main plugin class.
+(2020/05/07) Refactored the required plugin check to (optionally) check the class name and a version constant.
 
 = 4.2.0 =
 
