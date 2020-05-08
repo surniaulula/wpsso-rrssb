@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 4.2.0\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 4.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2020-04-28 10:04-0700\n"
-"PO-Revision-Date: 2020-04-28 10:05-0700\n"
+"POT-Creation-Date: 2020-05-08 08:09-0700\n"
+"PO-Revision-Date: 2020-05-08 08:09-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -153,54 +153,54 @@ msgstr "La valeur d'expiration de cache suggérée est de %1$s secondes (%2$s)."
 msgid "Failed to open the css file %s for reading."
 msgstr "Impossible d'ouvrir le fichier css %s pour lecture."
 
-#: lib/filters.php:271 lib/gettext-pro.php:6 lib/gettext-pro.php:9
+#: lib/filters.php:284 lib/gettext-pro.php:6 lib/gettext-pro.php:9
 #: lib/submenu/rrssb-buttons.php:233
 msgctxt "option label"
 msgid "Sharing Buttons HTML Cache Expiry"
 msgstr "Expiration cache HTML des boutons"
 
-#: lib/filters.php:274 lib/gettext-pro.php:7 lib/gettext-pro.php:10
+#: lib/filters.php:287 lib/gettext-pro.php:7 lib/gettext-pro.php:10
 #: lib/submenu/rrssb-buttons.php:236
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr "secondes (0 pour désactiver)"
 
-#: lib/filters.php:290
+#: lib/filters.php:303
 msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr "Boutons de partage"
 
-#: lib/filters.php:312 lib/gettext-pro.php:12
+#: lib/filters.php:325 lib/gettext-pro.php:12
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr "Désactiver les boutons"
 
-#: lib/filters.php:333 lib/gettext-pro.php:13
+#: lib/filters.php:346 lib/gettext-pro.php:13
 msgctxt "option label"
 msgid "Email Subject"
 msgstr "Sujet du couriel"
 
-#: lib/filters.php:340 lib/gettext-pro.php:14
+#: lib/filters.php:353 lib/gettext-pro.php:14
 msgctxt "option label"
 msgid "Email Message"
 msgstr "Message du courriel"
 
-#: lib/filters.php:362 lib/gettext-pro.php:15
+#: lib/filters.php:375 lib/gettext-pro.php:15
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr "Texte du Tweet"
 
-#: lib/filters.php:394 lib/gettext-pro.php:16
+#: lib/filters.php:407 lib/gettext-pro.php:16
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr "Texte légende Pinterest"
 
-#: lib/filters.php:423 lib/gettext-pro.php:17
+#: lib/filters.php:436 lib/gettext-pro.php:17
 msgctxt "option label"
 msgid "%s Title"
 msgstr "Titre %s"
 
-#: lib/filters.php:430 lib/gettext-pro.php:18
+#: lib/filters.php:443 lib/gettext-pro.php:18
 msgctxt "option label"
 msgid "%s Caption"
 msgstr "Légende %s"
@@ -472,22 +472,22 @@ msgctxt "option label"
 msgid "Position in Excerpt"
 msgstr "Position dans l'extrait"
 
-#: lib/submenu/rrssb-styles.php:55
+#: lib/submenu/rrssb-styles.php:49
 msgctxt "submit button"
 msgid "Reload Default Responsive Styles"
 msgstr "Recharger styles réactifs par défaut"
 
-#: lib/submenu/rrssb-styles.php:68
+#: lib/submenu/rrssb-styles.php:62
 msgctxt "metabox title"
 msgid "Social Sharing Styles"
 msgstr "Styles de partage social"
 
-#: lib/submenu/rrssb-styles.php:92
+#: lib/submenu/rrssb-styles.php:86
 msgctxt "option label"
 msgid "Use the Social Stylesheet"
 msgstr "Utiliser la feuille de style social"
 
-#: lib/submenu/rrssb-styles.php:95
+#: lib/submenu/rrssb-styles.php:89
 msgctxt "option label"
 msgid "Enqueue the Stylesheet"
 msgstr "Placer la feuille de style en queue"
@@ -496,31 +496,23 @@ msgstr "Placer la feuille de style en queue"
 msgid "The %s widget."
 msgstr "Le widget de %s."
 
-#: lib/widget/sharing.php:193
+#: lib/widget/sharing.php:194
 msgctxt "option value"
 msgid "Share It"
 msgstr "Partager"
 
-#: lib/widget/sharing.php:196
+#: lib/widget/sharing.php:197
 msgctxt "option label"
 msgid "Widget Title (leave blank for no title)"
 msgstr "Titre du Widget (laisser vide pour aucun titre)"
 
-#: wpsso-rrssb.php:130
-msgid "The %1$s add-on requires the %2$s plugin &mdash; install and activate the plugin or <a href=\"%3$s\">deactivate this add-on</a>."
-msgstr "L'ajout %1$s requiert l'extension %2$s &mdash; installer et activer l'extension ou <a href=\"%3$s\">désactiver cet ajout</a>."
+#: wpsso-rrssb.php:250
+msgid "The %1$s version %2$s add-on requires the %3$s plugin &mdash; please activate the missing plugin."
+msgstr "L'ajout %1$s version %2$s nécessite l'extension %3$s &mdash; veuillez activer l'extension manquante."
 
-#: wpsso-rrssb.php:161
-msgid "%1$s requires %2$s version %3$s or higher and has been deactivated."
-msgstr "%1$s nécessite %2$s version %3$s ou supérieure et a été désactivé."
-
-#: wpsso-rrssb.php:163
-msgid "Please upgrade %1$s before trying to re-activate the %2$s plugin."
-msgstr "SVP mettre à jour %1$s avant d'essayer de réactiver l'extension %2$s."
-
-#: wpsso-rrssb.php:269
+#: wpsso-rrssb.php:253
 msgid "The %1$s version %2$s add-on requires %3$s version %4$s or newer (version %5$s is currently installed)."
-msgstr "L'ajout %1$s version %2$s requiert %3$s version %4$s ou plus récente (version %5$s est actuellement installée)."
+msgstr "L'ajout %1$s version %2$s nécessite %3$s version %4$s ou plus récente (la version %5$s est actuellement installée)."
 
 #. Plugin Name of the plugin/theme
 msgid "WPSSO Ridiculously Responsive Social Sharing Buttons"
