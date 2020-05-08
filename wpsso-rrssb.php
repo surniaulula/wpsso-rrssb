@@ -15,7 +15,7 @@
  * Requires At Least: 5.2
  * Tested Up To: 5.4.1
  * WC Tested Up To: 4.1.0
- * Version: 4.3.0-dev.4
+ * Version: 4.3.0-b.1
  * 
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -90,6 +90,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 		public static function &get_instance() {
 
 			if ( null === self::$instance ) {
+
 				self::$instance = new self;
 			}
 
