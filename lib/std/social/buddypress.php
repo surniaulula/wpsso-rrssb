@@ -128,7 +128,7 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddypressSharing' ) ) {
 
 		public function show_activity_buttons() {
 
-			static $do_once = array();	// Static variable to prevent recursion.
+			static $do_once = array();
 
 			$activity_id = bp_get_activity_id();
 
@@ -138,7 +138,7 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddypressSharing' ) ) {
 					$this->p->debug->log( 'adding sharing buttons for activity id ' . $activity_id );
 				}
 
-				$do_once[ $activity_id ] = true;		// Prevent recursion.
+				$do_once[ $activity_id ] = true;
 
 				$rrssb =& WpssoRrssb::get_instance();
 
