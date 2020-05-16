@@ -282,7 +282,8 @@ aside.widget
 
 				case 'tooltip-plugin_sharing_buttons_cache_exp':
 
-					$cache_exp_secs  = WpssoRrssbConfig::$cf[ 'opt' ][ 'defaults' ][ 'plugin_sharing_buttons_cache_exp' ];
+					$cache_exp_secs  = $this->p->opt->get_defaults( 'plugin_sharing_buttons_cache_exp' );
+
 					$cache_exp_human = $cache_exp_secs ? human_time_diff( 0, $cache_exp_secs ) : _x( 'disabled', 'option comment', 'wpsso-rrssb' );
 
 					$text = __( 'The rendered HTML for social sharing buttons is saved to the WordPress transient cache to optimize performance.',

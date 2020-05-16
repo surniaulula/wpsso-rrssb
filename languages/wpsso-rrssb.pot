@@ -182,18 +182,18 @@ msgctxt "option label"
 msgid "Add via Business @username"
 msgstr ""
 
-#: lib/filters-messages.php:286
+#: lib/filters-messages.php:287
 msgctxt "option comment"
 msgid "disabled"
 msgstr ""
 
-#: lib/filters-messages.php:288
+#: lib/filters-messages.php:289
 msgid ""
 "The rendered HTML for social sharing buttons is saved to the WordPress "
 "transient cache to optimize performance."
 msgstr ""
 
-#: lib/filters-messages.php:289
+#: lib/filters-messages.php:290
 msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
 msgstr ""
 
