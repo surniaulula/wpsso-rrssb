@@ -48,7 +48,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 			foreach ( array( 'get_the_excerpt', 'the_excerpt', 'the_content' ) as $filter_name ) {
 
-				$filter_priority = has_filter( $filter_name, 'wpautop' );
+				$filter_priority = has_filter( $filter_name, 'wpautop' );	// Can return a priority of 0.
 
 				if ( false !== $filter_priority && $filter_priority > $default_priority ) {
 
