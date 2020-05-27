@@ -178,8 +178,11 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			}
 
 			if ( $this->have_buttons_for_type( 'sidebar' ) ) {
+
 				$this->show_sidebar();
+
 			} elseif ( $this->p->debug->enabled ) {
+
 				$this->p->debug->log( 'no buttons enabled for sidebar' );
 			}
 		}
@@ -191,6 +194,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			}
 
 			echo "\n\n";
+
 			echo $this->get_buttons( $text = '', $type = 'sidebar', $use_post = false, $location = 'bottom',
 				$atts = array( 'container_each' => true ) );
 		}
@@ -328,7 +332,9 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			}
 
 			if ( empty( $error_msg ) ) {
+
 				if ( ! $this->have_buttons_for_type( $type ) ) {
+
 					$error_msg = 'no sharing buttons enabled';
 				}
 			}
@@ -357,6 +363,10 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				}
 
 				$mod = $this->p->util->get_page_mod( $mod );
+			}
+
+			if ( $this->p->debug->enabled ) {
+				$this->p->debug->log( 'getting sharing url' );
 			}
 
 			$sharing_url = $this->p->util->get_sharing_url( $mod );
@@ -593,6 +603,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			}
 
 			$atts[ 'use_post' ] = isset( $atts[ 'use_post' ] ) ? $atts[ 'use_post' ] : true;	// Maintain backwards compat.
+
 			$atts[ 'add_page' ] = isset( $atts[ 'add_page' ] ) ? $atts[ 'add_page' ] : true;	// Used by get_sharing_url().
 
 			/**
@@ -608,9 +619,11 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				$mod = $this->p->util->get_page_mod( $atts[ 'use_post' ] );
 			}
 
-			$buttons_html  = '';
+			$buttons_html = '';
+
 			$buttons_begin = '<ul class="rrssb-buttons ' . SucomUtil::get_locale( $mod ) . ' clearfix">' . "\n";
-			$buttons_end   = '</ul><!-- .rrssb-buttons.' . SucomUtil::get_locale( $mod ) . '.clearfix -->' . "\n";
+
+			$buttons_end = '</ul><!-- .rrssb-buttons.' . SucomUtil::get_locale( $mod ) . '.clearfix -->' . "\n";
 
 			$saved_atts = $atts;
 
