@@ -106,7 +106,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 			/**
 			 * Make sure the Pinterest Pin It image size is available.
 			 */
-			$this->p->options[ 'p_add_img_html' ] = 1;
+			$this->p->options[ 'p_add_img_html' ]    = 1;
 			$this->p->options[ 'p_add_img_html:is' ] = 'disabled';
 
 			$this->p->util->add_plugin_filters( $this, array( 
