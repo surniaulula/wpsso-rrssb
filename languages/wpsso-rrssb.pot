@@ -17,7 +17,7 @@ msgstr ""
 msgid "The default responsive button options have been reloaded and saved."
 msgstr ""
 
-#: lib/actions.php:106 lib/filters.php:124
+#: lib/actions.php:106 lib/filters.php:120
 msgid "The default responsive styles CSS has been reloaded and saved."
 msgstr ""
 
@@ -197,58 +197,58 @@ msgstr ""
 msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
 msgstr ""
 
-#: lib/filters.php:172
+#: lib/filters.php:168
 msgid "Failed to open the css file %s for reading."
 msgstr ""
 
-#: lib/filters.php:284 lib/gettext-pro.php:6 lib/gettext-pro.php:9
+#: lib/filters.php:280 lib/gettext-pro.php:6 lib/gettext-pro.php:9
 #: lib/submenu/rrssb-buttons.php:233
 msgctxt "option label"
 msgid "Sharing Buttons HTML Cache Expiry"
 msgstr ""
 
-#: lib/filters.php:287 lib/gettext-pro.php:7 lib/gettext-pro.php:10
+#: lib/filters.php:283 lib/gettext-pro.php:7 lib/gettext-pro.php:10
 #: lib/submenu/rrssb-buttons.php:236
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr ""
 
-#: lib/filters.php:303
+#: lib/filters.php:299
 msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr ""
 
-#: lib/filters.php:325 lib/gettext-pro.php:12
+#: lib/filters.php:321 lib/gettext-pro.php:12
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/filters.php:346 lib/gettext-pro.php:13
+#: lib/filters.php:342 lib/gettext-pro.php:13
 msgctxt "option label"
 msgid "Email Subject"
 msgstr ""
 
-#: lib/filters.php:353 lib/gettext-pro.php:14
+#: lib/filters.php:349 lib/gettext-pro.php:14
 msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/filters.php:375 lib/gettext-pro.php:15
+#: lib/filters.php:371 lib/gettext-pro.php:15
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/filters.php:407 lib/gettext-pro.php:16
+#: lib/filters.php:403 lib/gettext-pro.php:16
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/filters.php:436 lib/gettext-pro.php:17
+#: lib/filters.php:432 lib/gettext-pro.php:17
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/filters.php:443 lib/gettext-pro.php:18
+#: lib/filters.php:439 lib/gettext-pro.php:18
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""

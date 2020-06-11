@@ -80,8 +80,6 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 					return 'pos_int';
 
-					break;
-
 				/**
 				 * Text strings that can be blank.
 				 */
@@ -89,8 +87,6 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				case ( preg_match( '/_(desc|title)$/', $base_key ) ? true : false ):
 
 					return 'ok_blank';
-
-					break;
 			}
 
 			return $type;
