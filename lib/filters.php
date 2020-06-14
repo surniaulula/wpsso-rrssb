@@ -93,9 +93,9 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 		}
 
 		/**
-		 * $doing_upgrade added in WPSSO Core v4.4.0.
+		 * $network is true if saving multisite network settings.
 		 */
-		public function filter_save_options( $opts, $options_name, $network, $doing_upgrade ) {
+		public function filter_save_setting_options( array $opts, $network, $doing_upgrade ) {
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
