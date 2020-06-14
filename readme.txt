@@ -123,6 +123,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 4.4.0-dev.1 (2020/06/14)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Replaced the 'wpsso_save_options' filter with 'wpsso_save_setting_options' (new in WPSSO Core v7.10.0).
+* **Requires At Least**
+	* PHP v5.6.
+	* WordPress v5.2.
+	* WPSSO Core v7.10.0-dev.1.
+
 **Version 4.3.0 (2020/05/09)**
 
 * **New Features**
@@ -189,40 +204,13 @@ Please note that all default button CSS styles will be reloaded with this versio
 	* WordPress v4.2.
 	* WPSSO Core v6.28.0.
 
-**Version 3.6.0 (2020/03/27)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Removed the "Pinterest Sharing Image" size and its options. The Pinterest share button now uses the Pinterest image size from WPSSO Core v6.26.0.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Renamed 'custom_meta' hooks to 'document_meta' for WPSSO Core v6.26.0.
-* **Requires At Least**
-	* PHP v5.6.
-	* WordPress v4.0.
-	* WPSSO Core v6.27.1.
-
 == Upgrade Notice ==
+
+= 4.4.0-dev.1 =
+
+(2020/06/14) Replaced the 'wpsso_save_options' filter with 'wpsso_save_setting_options'.
 
 = 4.3.0 =
 
 (2020/05/09) Refactored the required plugin check to (optionally) check the class name and a version constant.
-
-= 4.2.0 =
-
-(2020/04/28) Updated the minimum required WordPress version from 4.2 to 5.2. Fixed the default sidebar stylesheet to use the CSS class instead of the CSS id.
-
-= 4.1.0 =
-
-(2020/04/17) Added support for the new 'is_public' key in the `$mod` array (available since WPSSO Core v7.0.0).
-
-= 4.0.0 =
-
-(2020/04/06) Please note that all default button CSS styles will be reloaded with this version. If you have made custom CSS changes in the SSO &gt; Responsive Styles settings page, please save your custom CSS before updating to this version.
-
-= 3.6.0 =
-
-(2020/03/27) Removed the "Pinterest Sharing Image" size and its options.
 
