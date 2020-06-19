@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.4.0-b.1 (2020/06/18)**
+**Version 4.4.0-rc.1 (2020/06/19)**
 
 * **New Features**
 	* None.
@@ -136,7 +136,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v5.2.
-	* WPSSO Core v7.10.0-b.1.
+	* WPSSO Core v7.10.0-rc.1.
 
 **Version 4.3.0 (2020/05/09)**
 
@@ -206,9 +206,9 @@ Please note that all default button CSS styles will be reloaded with this versio
 
 == Upgrade Notice ==
 
-= 4.4.0-b.1 =
+= 4.4.0-rc.1 =
 
-(2020/06/18) Replaced the 'wpsso_save_options' filter with 'wpsso_save_setting_options'.
+(2020/06/19) Replaced the 'wpsso_save_options' filter with 'wpsso_save_setting_options'.
 
 = 4.3.0 =
 
