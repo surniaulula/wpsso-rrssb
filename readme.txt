@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.4.0 (2020/06/19)**
+**Version 4.4.0 (2020/06/20)**
 
 * **New Features**
 	* None.
@@ -208,7 +208,7 @@ Please note that all default button CSS styles will be reloaded with this versio
 
 = 4.4.0 =
 
-(2020/06/19) Replaced the 'wpsso_save_options' filter with 'wpsso_save_setting_options'.
+(2020/06/20) Replaced the 'wpsso_save_options' filter with 'wpsso_save_setting_options'.
 
 = 4.3.0 =
 
