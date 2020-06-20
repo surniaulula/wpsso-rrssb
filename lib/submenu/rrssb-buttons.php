@@ -31,7 +31,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			$this->set_objects();
 
 			$this->p->util->add_plugin_filters( $this, array(
-				'form_button_rows' => 2,
+				'form_button_rows' => 2,	// Filter form buttons for all settings pages.
 			) );
 		}
 
@@ -58,7 +58,6 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 
 			switch ( $menu_id ) {
 
-				case 'sso-tools':
 				case 'tools':
 
 					$row_num = 2;
