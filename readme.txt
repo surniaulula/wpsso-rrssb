@@ -12,7 +12,7 @@ Requires PHP: 5.6
 Requires At Least: 5.2
 Tested Up To: 5.4.2
 WC Tested Up To: 4.2.0
-Stable Tag: 4.4.1
+Stable Tag: 4.4.2
 
 Ridiculously Responsive (SVG) Social Sharing Buttons for your Content, Excerpts, CSS Sidebar, Widget, Shortcode, Templates, and Editor.
 
@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.4.1 (2020/06/23)**
+**Version 4.4.2 (2020/06/23)**
 
 * **New Features**
 	* None.
@@ -138,90 +138,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v5.2.
 	* WPSSO Core v7.10.1.
 
-**Version 4.4.0 (2020/06/20)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Replaced the 'wpsso_save_options' filter with 'wpsso_save_setting_options' (new in WPSSO Core v7.10.1).
-* **Requires At Least**
-	* PHP v5.6.
-	* WordPress v5.2.
-	* WPSSO Core v7.10.1.
-
-**Version 4.3.0 (2020/05/09)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Refactored the required plugin check to (optionally) check the class name and a version constant.
-	* Updated clear cache method call for WPSSO Core v7.4.0.
-* **Requires At Least**
-	* PHP v5.6.
-	* WordPress v5.2.
-	* WPSSO Core v7.5.0.
-
-**Version 4.2.0 (2020/04/28)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Updated the minimum required WordPress version from 4.2 to 5.2. 
-	* Updated the RRSSB jQuery to use `jQuery(document).ready()` by default (faster) and `jQuery(window).load()` in the block editor.
-* **Bugfixes**
-	* Fixed the default sidebar stylesheet to use the CSS class instead of the CSS id.
-* **Developer Notes**
-	* Re-added the 'wpsso-rrssb-sidebar' CSS id to the sidebar container for backwards compatibility.
-	* Moved the sidebar HTML from 'wp_footer' to 'wp_body_open'.
-* **Requires At Least**
-	* PHP v5.6.
-	* WordPress v5.2.
-	* WPSSO Core v7.3.0.
-
-**Version 4.1.0 (2020/04/17)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Added support for the new 'is_public' key in the `$mod` array (available since WPSSO Core v7.0.0).
-* **Requires At Least**
-	* PHP v5.6.
-	* WordPress v4.2.
-	* WPSSO Core v7.0.1.
-
-**Version 4.0.0 (2020/04/06)**
-
-Please note that all default button CSS styles will be reloaded with this version. If you have made custom CSS changes in the SSO &gt; Responsive Styles settings page, please save your custom CSS before updating to this version.
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Updated "Requires At Least" to WordPress v4.2.
-	* Removed the "Share Buttons" metabox from admin editing pages and moved "Admin Edit" buttons to the Document SSO metabox footer.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Refactored WPSSO Core active and minimum version dependency checks.
-* **Requires At Least**
-	* PHP v5.6.
-	* WordPress v4.2.
-	* WPSSO Core v6.28.0.
-
 == Upgrade Notice ==
 
-= 4.4.1 =
+= 4.4.2 =
 
 (2020/06/23) Fixed the maximum button width value (based on the number of buttons shown).
 
