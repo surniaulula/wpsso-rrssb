@@ -477,7 +477,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					 * button for a desktop browser).
 					 */
 					$buttons_count = preg_match_all( '/<li/', $cache_array[ $cache_index ] );
-					$css_style_max = 'max-width:' . ( 110 * $buttons_count ) . 'px;';
+					$css_style_max = 'max-width:' . ( 115 * $buttons_count ) . 'px;';
 
 					if ( $mod[ 'name' ] ) {
 
