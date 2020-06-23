@@ -471,7 +471,13 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					$css_id        = 'sidebar' === $type ? $lca . '-' . $css_type . ' ' : '';
 					$css_class     = $lca . '-rrssb ' . $lca . '-' . $css_type;
 					$css_class_max = $lca . '-rrssb-limit ' . $lca . '-' . $css_type . '-limit';
-					$css_style_max = 'max-width:' . ( 120 * count( $sorted_ids ) ) . 'px;';
+
+					/**
+					 * Do not count $sorted_ids since some buttons may not return anything (ie. the WhatsApp
+					 * button for a desktop browser).
+					 */
+					$buttons_count = preg_match_all( '/<li/', $cache_array[ $cache_index ] );
+					$css_style_max = 'max-width:' . ( 110 * $buttons_count ) . 'px;';
 
 					if ( $mod[ 'name' ] ) {
 
@@ -603,7 +609,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			}
 
 			$atts[ 'use_post' ] = isset( $atts[ 'use_post' ] ) ? $atts[ 'use_post' ] : true;	// Maintain backwards compat.
-
 			$atts[ 'add_page' ] = isset( $atts[ 'add_page' ] ) ? $atts[ 'add_page' ] : true;	// Used by get_sharing_url().
 
 			/**
@@ -619,13 +624,10 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				$mod = $this->p->util->get_page_mod( $atts[ 'use_post' ] );
 			}
 
-			$buttons_html = '';
-
+			$buttons_html  = '';
 			$buttons_begin = '<ul class="rrssb-buttons ' . SucomUtil::get_locale( $mod ) . ' clearfix">' . "\n";
-
-			$buttons_end = '</ul><!-- .rrssb-buttons.' . SucomUtil::get_locale( $mod ) . '.clearfix -->' . "\n";
-
-			$saved_atts = $atts;
+			$buttons_end   = '</ul><!-- .rrssb-buttons.' . SucomUtil::get_locale( $mod ) . '.clearfix -->' . "\n";
+			$saved_atts    = $atts;
 
 			foreach ( $share_ids as $id ) {
 
