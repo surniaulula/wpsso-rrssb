@@ -123,6 +123,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 4.4.1 (2020/06/23)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* Fixed the maximum button width value (based on the number of buttons shown).
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v5.6.
+	* WordPress v5.2.
+	* WPSSO Core v7.10.1.
+
 **Version 4.4.0 (2020/06/20)**
 
 * **New Features**
@@ -206,11 +221,7 @@ Please note that all default button CSS styles will be reloaded with this versio
 
 == Upgrade Notice ==
 
-= 4.4.0 =
+= 4.4.1 =
 
-(2020/06/20) Replaced the 'wpsso_save_options' filter with 'wpsso_save_setting_options'.
-
-= 4.3.0 =
-
-(2020/05/09) Refactored the required plugin check to (optionally) check the class name and a version constant.
+(2020/06/23) Fixed the maximum button width value (based on the number of buttons shown).
 
