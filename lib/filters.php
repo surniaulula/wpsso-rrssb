@@ -95,7 +95,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 		/**
 		 * $network is true if saving multisite network settings.
 		 */
-		public function filter_save_setting_options( array $opts, $network, $doing_upgrade ) {
+		public function filter_save_setting_options( array $opts, $network, $upgrading ) {
 
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
