@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 4.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2020-07-17 09:11-0700\n"
-"PO-Revision-Date: 2020-07-17 09:12-0700\n"
+"POT-Creation-Date: 2020-07-17 09:19-0700\n"
+"PO-Revision-Date: 2020-07-17 09:19-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -156,8 +156,7 @@ msgctxt "option label"
 msgid "Sharing Buttons Cache Expiry"
 msgstr "Expiration cache boutons de partage"
 
-#: lib/filters.php:286 lib/gettext-pro.php:7 lib/gettext-pro.php:10
-#: lib/submenu/rrssb-buttons.php:235
+#: lib/filters.php:286 lib/submenu/rrssb-buttons.php:235
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr "secondes (0 pour désactiver)"
@@ -167,37 +166,37 @@ msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr "Boutons de partage"
 
-#: lib/filters.php:324 lib/gettext-pro.php:12
+#: lib/filters.php:324
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr "Désactiver les boutons"
 
-#: lib/filters.php:345 lib/gettext-pro.php:13
+#: lib/filters.php:345
 msgctxt "option label"
 msgid "Email Subject"
 msgstr "Sujet du couriel"
 
-#: lib/filters.php:352 lib/gettext-pro.php:14
+#: lib/filters.php:352
 msgctxt "option label"
 msgid "Email Message"
 msgstr "Message du courriel"
 
-#: lib/filters.php:374 lib/gettext-pro.php:15
+#: lib/filters.php:374
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr "Texte du Tweet"
 
-#: lib/filters.php:406 lib/gettext-pro.php:16
+#: lib/filters.php:406
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr "Texte légende Pinterest"
 
-#: lib/filters.php:435 lib/gettext-pro.php:17
+#: lib/filters.php:435
 msgctxt "option label"
 msgid "%s Title"
 msgstr "Titre %s"
 
-#: lib/filters.php:442 lib/gettext-pro.php:18
+#: lib/filters.php:442
 msgctxt "option label"
 msgid "%s Caption"
 msgstr "Légende %s"
@@ -291,36 +290,6 @@ msgstr "Mobile Seulement"
 msgctxt "option value"
 msgid "Any Platform"
 msgstr "Toute plateformes"
-
-#: lib/gettext-pro.php:6 lib/gettext-pro.php:9
-msgctxt "option label"
-msgid "Sharing Buttons HTML Cache Expiry"
-msgstr "Expiration cache HTML des boutons"
-
-#: lib/gettext-pro.php:8 lib/submenu/rrssb-buttons.php:226
-msgctxt "option label"
-msgid "Force Protocol for Shared URLs"
-msgstr "Forcer protocole pour URLs partagées"
-
-# Ignore the post type to avoid gender issues in the French translation.
-#: lib/gettext-pro.php:11
-msgid "Save a draft version or publish the %s to display these options."
-msgstr "Enregistrer un brouillon ou publier pour activer ces options."
-
-#: lib/gettext-pro.php:19 lib/std/ecom/woocommerce.php:95
-msgctxt "option label"
-msgid "Position in Woo Short Text"
-msgstr "Position dans le texte Woo Short"
-
-#: lib/gettext-pro.php:20 lib/std/forum/bbpress.php:148
-msgctxt "option label"
-msgid "Position in bbPress Single"
-msgstr "Position dans bbPress Single"
-
-#: lib/gettext-pro.php:21 lib/std/social/buddyblog.php:114
-msgctxt "option label"
-msgid "Position in BuddyBlog Post"
-msgstr "Position dans l'article BuddyBlog"
 
 #: lib/share/email.php:38 lib/share/facebook.php:38 lib/share/linkedin.php:38
 #: lib/share/pinterest.php:38 lib/share/pocket.php:38 lib/share/reddit.php:38
@@ -420,6 +389,21 @@ msgstr "Impossible d'ouvrir le fichier css %s pour écriture."
 msgid "Error removing the minified stylesheet &mdash; does the web server have sufficient privileges?"
 msgstr "Erreur en retirant la feuille de style minimisé &mdash; le serveur Web a t'il les privilèges nécessaires?"
 
+#: lib/std/ecom/woocommerce.php:95
+msgctxt "option label"
+msgid "Position in Woo Short Text"
+msgstr "Position dans le texte Woo Short"
+
+#: lib/std/forum/bbpress.php:148
+msgctxt "option label"
+msgid "Position in bbPress Single"
+msgstr "Position dans bbPress Single"
+
+#: lib/std/social/buddyblog.php:114
+msgctxt "option label"
+msgid "Position in BuddyBlog Post"
+msgstr "Position dans l'article BuddyBlog"
+
 #: lib/style.php:81
 msgid "The %s file is not readable."
 msgstr "Le fichier %s n'est pas lisible."
@@ -473,6 +457,11 @@ msgstr "Position dans le contenu"
 msgctxt "option label"
 msgid "Position in Excerpt"
 msgstr "Position dans l'extrait"
+
+#: lib/submenu/rrssb-buttons.php:226
+msgctxt "option label"
+msgid "Force Protocol for Shared URLs"
+msgstr "Forcer protocole pour URLs partagées"
 
 #: lib/submenu/rrssb-styles.php:48
 msgctxt "submit button"
@@ -535,7 +524,3 @@ msgstr "JS Morisset"
 #. Author URI of the plugin/theme
 msgid "https://wpsso.com/"
 msgstr "https://wpsso.com/"
-
-#~ msgctxt "option label"
-#~ msgid "Buttons HTML"
-#~ msgstr "HTML des boutons"
