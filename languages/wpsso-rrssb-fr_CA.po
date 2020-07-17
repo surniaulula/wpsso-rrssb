@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 4.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2020-05-08 08:09-0700\n"
-"PO-Revision-Date: 2020-05-08 08:09-0700\n"
+"POT-Creation-Date: 2020-07-17 09:11-0700\n"
+"PO-Revision-Date: 2020-07-17 09:12-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -17,7 +17,7 @@ msgstr ""
 msgid "The default responsive button options have been reloaded and saved."
 msgstr "Les options des boutons réactifs par défaut ont été rechargées et sauvegardés."
 
-#: lib/actions.php:106 lib/filters.php:124
+#: lib/actions.php:106 lib/filters.php:123
 msgid "The default responsive styles CSS has been reloaded and saved."
 msgstr "Le CSS par défaut des styles réactifs ont été rechargés et sauvegardés."
 
@@ -134,71 +134,70 @@ msgctxt "option label"
 msgid "Add via Business @username"
 msgstr "Ajouter via @nom d'affaires"
 
-#: lib/filters-messages.php:286
+#: lib/filters-messages.php:287
 msgctxt "option comment"
 msgid "disabled"
 msgstr "désactivé"
 
-#: lib/filters-messages.php:288
+#: lib/filters-messages.php:289
 msgid "The rendered HTML for social sharing buttons is saved to the WordPress transient cache to optimize performance."
 msgstr "Le code HTML des boutons de partage social est enregistré dans le cache transitoire de WordPress pour optimiser la performance."
 
-#: lib/filters-messages.php:289
+#: lib/filters-messages.php:290
 msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
 msgstr "La valeur d'expiration de cache suggérée est de %1$s secondes (%2$s)."
 
-#: lib/filters.php:172
+#: lib/filters.php:171
 msgid "Failed to open the css file %s for reading."
 msgstr "Impossible d'ouvrir le fichier css %s pour lecture."
 
-#: lib/filters.php:284 lib/gettext-pro.php:6 lib/gettext-pro.php:9
-#: lib/submenu/rrssb-buttons.php:233
+#: lib/filters.php:283 lib/submenu/rrssb-buttons.php:232
 msgctxt "option label"
-msgid "Sharing Buttons HTML Cache Expiry"
-msgstr "Expiration cache HTML des boutons"
+msgid "Sharing Buttons Cache Expiry"
+msgstr "Expiration cache boutons de partage"
 
-#: lib/filters.php:287 lib/gettext-pro.php:7 lib/gettext-pro.php:10
-#: lib/submenu/rrssb-buttons.php:236
+#: lib/filters.php:286 lib/gettext-pro.php:7 lib/gettext-pro.php:10
+#: lib/submenu/rrssb-buttons.php:235
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr "secondes (0 pour désactiver)"
 
-#: lib/filters.php:303
+#: lib/filters.php:302
 msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr "Boutons de partage"
 
-#: lib/filters.php:325 lib/gettext-pro.php:12
+#: lib/filters.php:324 lib/gettext-pro.php:12
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr "Désactiver les boutons"
 
-#: lib/filters.php:346 lib/gettext-pro.php:13
+#: lib/filters.php:345 lib/gettext-pro.php:13
 msgctxt "option label"
 msgid "Email Subject"
 msgstr "Sujet du couriel"
 
-#: lib/filters.php:353 lib/gettext-pro.php:14
+#: lib/filters.php:352 lib/gettext-pro.php:14
 msgctxt "option label"
 msgid "Email Message"
 msgstr "Message du courriel"
 
-#: lib/filters.php:375 lib/gettext-pro.php:15
+#: lib/filters.php:374 lib/gettext-pro.php:15
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr "Texte du Tweet"
 
-#: lib/filters.php:407 lib/gettext-pro.php:16
+#: lib/filters.php:406 lib/gettext-pro.php:16
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr "Texte légende Pinterest"
 
-#: lib/filters.php:436 lib/gettext-pro.php:17
+#: lib/filters.php:435 lib/gettext-pro.php:17
 msgctxt "option label"
 msgid "%s Title"
 msgstr "Titre %s"
 
-#: lib/filters.php:443 lib/gettext-pro.php:18
+#: lib/filters.php:442 lib/gettext-pro.php:18
 msgctxt "option label"
 msgid "%s Caption"
 msgstr "Légende %s"
@@ -215,8 +214,8 @@ msgstr "Boutons de partage social ridiculement réactifs (SVG) pour votre conten
 
 #: lib/gettext-config.php:9
 msgctxt "option label"
-msgid "Buttons HTML"
-msgstr "HTML des boutons"
+msgid "Sharing Buttons"
+msgstr "Boutons de partage"
 
 #: lib/gettext-config.php:10 lib/gettext-config.php:17
 msgctxt "option value"
@@ -293,7 +292,12 @@ msgctxt "option value"
 msgid "Any Platform"
 msgstr "Toute plateformes"
 
-#: lib/gettext-pro.php:8 lib/submenu/rrssb-buttons.php:227
+#: lib/gettext-pro.php:6 lib/gettext-pro.php:9
+msgctxt "option label"
+msgid "Sharing Buttons HTML Cache Expiry"
+msgstr "Expiration cache HTML des boutons"
+
+#: lib/gettext-pro.php:8 lib/submenu/rrssb-buttons.php:226
 msgctxt "option label"
 msgid "Force Protocol for Shared URLs"
 msgstr "Forcer protocole pour URLs partagées"
@@ -420,72 +424,72 @@ msgstr "Erreur en retirant la feuille de style minimisé &mdash; le serveur Web 
 msgid "The %s file is not readable."
 msgstr "Le fichier %s n'est pas lisible."
 
-#: lib/submenu/rrssb-buttons.php:70
+#: lib/submenu/rrssb-buttons.php:69
 msgctxt "submit button"
 msgid "Reload Default Responsive Buttons"
 msgstr "Recharger boutons réactifs par défaut"
 
-#: lib/submenu/rrssb-buttons.php:85
+#: lib/submenu/rrssb-buttons.php:84
 msgctxt "metabox title"
 msgid "Social Sharing Buttons"
 msgstr "Boutons de partage social"
 
-#: lib/submenu/rrssb-buttons.php:141
+#: lib/submenu/rrssb-buttons.php:140
 msgctxt "metabox tab"
 msgid "Include Buttons"
 msgstr "Ajout de boutons"
 
-#: lib/submenu/rrssb-buttons.php:142
+#: lib/submenu/rrssb-buttons.php:141
 msgctxt "metabox tab"
 msgid "Buttons Position"
 msgstr "Position des boutons"
 
-#: lib/submenu/rrssb-buttons.php:143
+#: lib/submenu/rrssb-buttons.php:142
 msgctxt "metabox tab"
 msgid "Advanced Settings"
 msgstr "Réglages avancés"
 
-#: lib/submenu/rrssb-buttons.php:194
+#: lib/submenu/rrssb-buttons.php:193
 msgctxt "option label"
 msgid "Include on Archive Webpages"
 msgstr "Inclure sur les pages d'archive"
 
-#: lib/submenu/rrssb-buttons.php:199
+#: lib/submenu/rrssb-buttons.php:198
 msgctxt "option label"
 msgid "Include on Page Homepage"
 msgstr "Inclure sur la page d'accueil"
 
-#: lib/submenu/rrssb-buttons.php:204
+#: lib/submenu/rrssb-buttons.php:203
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr "Inclure sur les articles de type"
 
-#: lib/submenu/rrssb-buttons.php:213
+#: lib/submenu/rrssb-buttons.php:212
 msgctxt "option label"
 msgid "Position in Content"
 msgstr "Position dans le contenu"
 
-#: lib/submenu/rrssb-buttons.php:218
+#: lib/submenu/rrssb-buttons.php:217
 msgctxt "option label"
 msgid "Position in Excerpt"
 msgstr "Position dans l'extrait"
 
-#: lib/submenu/rrssb-styles.php:49
+#: lib/submenu/rrssb-styles.php:48
 msgctxt "submit button"
 msgid "Reload Default Responsive Styles"
 msgstr "Recharger styles réactifs par défaut"
 
-#: lib/submenu/rrssb-styles.php:62
+#: lib/submenu/rrssb-styles.php:61
 msgctxt "metabox title"
 msgid "Social Sharing Styles"
 msgstr "Styles de partage social"
 
-#: lib/submenu/rrssb-styles.php:86
+#: lib/submenu/rrssb-styles.php:85
 msgctxt "option label"
 msgid "Use the Social Stylesheet"
 msgstr "Utiliser la feuille de style social"
 
-#: lib/submenu/rrssb-styles.php:89
+#: lib/submenu/rrssb-styles.php:88
 msgctxt "option label"
 msgid "Enqueue the Stylesheet"
 msgstr "Placer la feuille de style en queue"
@@ -531,3 +535,7 @@ msgstr "JS Morisset"
 #. Author URI of the plugin/theme
 msgid "https://wpsso.com/"
 msgstr "https://wpsso.com/"
+
+#~ msgctxt "option label"
+#~ msgid "Buttons HTML"
+#~ msgstr "HTML des boutons"
