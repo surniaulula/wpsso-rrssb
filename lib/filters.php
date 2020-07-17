@@ -278,9 +278,9 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				$in_func = 'get_no_input';
 			}
 
-			SucomUtil::add_after_key( $table_rows, 'plugin_types_cache_exp', array( 
+			SucomUtil::add_after_key( $table_rows, 'plugin_content_cache_exp', array( 
 				'plugin_sharing_buttons_cache_exp' => '' .
-				$form->get_th_html( _x( 'Sharing Buttons HTML Cache Expiry', 'option label', 'wpsso-rrssb' ),
+				$form->get_th_html( _x( 'Sharing Buttons Cache Expiry', 'option label', 'wpsso-rrssb' ),
 					$css_class = '', $css_id = 'plugin_sharing_buttons_cache_exp' ) . 
 				'<td' . $td_attr . ' nowrap>' . $form->$in_func( 'plugin_sharing_buttons_cache_exp', 'medium' ) . ' ' . 
 				_x( 'seconds (0 to disable)', 'option comment', 'wpsso-rrssb' ) . '</td>' . 

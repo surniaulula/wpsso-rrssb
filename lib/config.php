@@ -107,7 +107,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					/**
 					 * Advanced Settings
 					 */
-					'plugin_sharing_buttons_cache_exp' => WEEK_IN_SECONDS,	// Sharing Buttons HTML Cache Expiry (7 days).
+					'plugin_sharing_buttons_cache_exp' => WEEK_IN_SECONDS,	// Sharing Buttons Cache Expiry (7 days).
 
 					/**
 					 * Responsive Buttons
@@ -140,14 +140,14 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					/**
 					 * Advanced Settings
 					 */
-					'plugin_sharing_buttons_cache_exp'     => WEEK_IN_SECONDS,	// Sharing Buttons HTML Cache Expiry (7 days)
+					'plugin_sharing_buttons_cache_exp'     => WEEK_IN_SECONDS,	// Sharing Buttons Cache Expiry (7 days)
 					'plugin_sharing_buttons_cache_exp:use' => 'default',
 				),	// end of site defaults
 			),
 			'wp' => array(				// WordPress
 				'transient' => array(
 					'wpsso_b_' => array(
-						'label'       => 'Buttons HTML',
+						'label'       => 'Sharing Buttons',
 						'text_domain' => 'wpsso-rrssb',
 						'opt_key'     => 'plugin_sharing_buttons_cache_exp',
 						'filter'      => 'wpsso_cache_expire_sharing_buttons',

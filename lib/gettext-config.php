@@ -6,7 +6,7 @@
 _x( 'Responsive Buttons', 'lib file description', 'wpsso-rrssb' );
 _x( 'Responsive Styles', 'lib file description', 'wpsso-rrssb' );
 _x( 'Ridiculously Responsive (SVG) Social Sharing Buttons for your Content, Excerpts, CSS Sidebar, Widget, Shortcode, Templates, and Editor.', 'plugin description', 'wpsso-rrssb' );
-_x( 'Buttons HTML', 'option label', 'wpsso-rrssb' );
+_x( 'Sharing Buttons', 'option label', 'wpsso-rrssb' );
 _x( 'Content', 'option value', 'wpsso-rrssb' );
 _x( 'Excerpt', 'option value', 'wpsso-rrssb' );
 _x( 'CSS Sidebar', 'option value', 'wpsso-rrssb' );

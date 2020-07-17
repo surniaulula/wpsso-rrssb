@@ -201,14 +201,12 @@ msgstr ""
 msgid "Failed to open the css file %s for reading."
 msgstr ""
 
-#: lib/filters.php:283 lib/gettext-pro.php:6 lib/gettext-pro.php:9
-#: lib/submenu/rrssb-buttons.php:232
+#: lib/filters.php:283 lib/submenu/rrssb-buttons.php:232
 msgctxt "option label"
-msgid "Sharing Buttons HTML Cache Expiry"
+msgid "Sharing Buttons Cache Expiry"
 msgstr ""
 
-#: lib/filters.php:286 lib/gettext-pro.php:7 lib/gettext-pro.php:10
-#: lib/submenu/rrssb-buttons.php:235
+#: lib/filters.php:286 lib/submenu/rrssb-buttons.php:235
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr ""
@@ -218,37 +216,37 @@ msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr ""
 
-#: lib/filters.php:324 lib/gettext-pro.php:12
+#: lib/filters.php:324
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/filters.php:345 lib/gettext-pro.php:13
+#: lib/filters.php:345
 msgctxt "option label"
 msgid "Email Subject"
 msgstr ""
 
-#: lib/filters.php:352 lib/gettext-pro.php:14
+#: lib/filters.php:352
 msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/filters.php:374 lib/gettext-pro.php:15
+#: lib/filters.php:374
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/filters.php:406 lib/gettext-pro.php:16
+#: lib/filters.php:406
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/filters.php:435 lib/gettext-pro.php:17
+#: lib/filters.php:435
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/filters.php:442 lib/gettext-pro.php:18
+#: lib/filters.php:442
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
@@ -267,7 +265,7 @@ msgstr ""
 
 #: lib/gettext-config.php:9
 msgctxt "option label"
-msgid "Buttons HTML"
+msgid "Sharing Buttons"
 msgstr ""
 
 #: lib/gettext-config.php:10 lib/gettext-config.php:17
@@ -343,30 +341,6 @@ msgstr ""
 #: lib/gettext-config.php:28
 msgctxt "option value"
 msgid "Any Platform"
-msgstr ""
-
-#: lib/gettext-pro.php:8 lib/submenu/rrssb-buttons.php:226
-msgctxt "option label"
-msgid "Force Protocol for Shared URLs"
-msgstr ""
-
-#: lib/gettext-pro.php:11
-msgid "Save a draft version or publish the %s to display these options."
-msgstr ""
-
-#: lib/gettext-pro.php:19 lib/std/ecom/woocommerce.php:95
-msgctxt "option label"
-msgid "Position in Woo Short Text"
-msgstr ""
-
-#: lib/gettext-pro.php:20 lib/std/forum/bbpress.php:148
-msgctxt "option label"
-msgid "Position in bbPress Single"
-msgstr ""
-
-#: lib/gettext-pro.php:21 lib/std/social/buddyblog.php:114
-msgctxt "option label"
-msgid "Position in BuddyBlog Post"
 msgstr ""
 
 #: lib/share/email.php:38 lib/share/facebook.php:38 lib/share/linkedin.php:38
@@ -469,6 +443,21 @@ msgid ""
 "sufficient privileges?"
 msgstr ""
 
+#: lib/std/ecom/woocommerce.php:95
+msgctxt "option label"
+msgid "Position in Woo Short Text"
+msgstr ""
+
+#: lib/std/forum/bbpress.php:148
+msgctxt "option label"
+msgid "Position in bbPress Single"
+msgstr ""
+
+#: lib/std/social/buddyblog.php:114
+msgctxt "option label"
+msgid "Position in BuddyBlog Post"
+msgstr ""
+
 #: lib/style.php:81
 msgid "The %s file is not readable."
 msgstr ""
@@ -521,6 +510,11 @@ msgstr ""
 #: lib/submenu/rrssb-buttons.php:217
 msgctxt "option label"
 msgid "Position in Excerpt"
+msgstr ""
+
+#: lib/submenu/rrssb-buttons.php:226
+msgctxt "option label"
+msgid "Force Protocol for Shared URLs"
 msgstr ""
 
 #: lib/submenu/rrssb-styles.php:48
