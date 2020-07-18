@@ -146,7 +146,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				$this->p->debug->mark();
 			}
 
-			if ( SucomUtil::is_amp() ) {
+			if ( SucomUtil::is_amp() ) {	// Returns null, true, or false.
 
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( 'exiting early: buttons not allowed in amp endpoint'  );

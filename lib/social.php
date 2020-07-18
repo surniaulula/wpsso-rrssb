@@ -260,7 +260,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			$lca        = $this->p->lca;
 			$is_admin   = is_admin();
-			$is_amp     = SucomUtil::is_amp();
+			$is_amp     = SucomUtil::is_amp();	// Returns null, true, or false.
 			$doing_ajax = SucomUtil::get_const( 'DOING_AJAX' );
 			$error_msg  = '';
 

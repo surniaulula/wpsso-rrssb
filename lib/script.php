@@ -36,7 +36,7 @@ if ( ! class_exists( 'WpssoRrssbScript' ) ) {
 
 		public function enqueue_scripts( $hook_name ) {
 
-			$is_amp = SucomUtil::is_amp();
+			$is_amp = SucomUtil::is_amp();	// Returns null, true, or false.
 
 			if ( $is_amp ) {	// No buttons for AMP pages.
 				return;

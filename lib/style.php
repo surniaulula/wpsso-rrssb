@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 			 */
 			$doing_dev      = SucomUtil::get_const( 'WPSSO_DEV' );
 			$css_file_ext   = $doing_dev ? 'css' : 'min.css';
-			$is_amp         = SucomUtil::is_amp();
+			$is_amp         = SucomUtil::is_amp();	// Returns null, true, or false.
 			$plugin_version = $this->p->cf[ 'plugin' ][ 'wpssorrssb' ][ 'version' ];
 
 			if ( $is_amp ) {	// No buttons for AMP pages.
