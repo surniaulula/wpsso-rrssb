@@ -201,12 +201,12 @@ msgstr ""
 msgid "Failed to open the css file %s for reading."
 msgstr ""
 
-#: lib/filters.php:283 lib/submenu/rrssb-buttons.php:232
+#: lib/filters.php:283 lib/submenu/rrssb-buttons.php:227
 msgctxt "option label"
 msgid "Sharing Buttons Cache Expiry"
 msgstr ""
 
-#: lib/filters.php:286 lib/submenu/rrssb-buttons.php:235
+#: lib/filters.php:286 lib/submenu/rrssb-buttons.php:230
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr ""
@@ -472,47 +472,47 @@ msgctxt "metabox title"
 msgid "Social Sharing Buttons"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:140
+#: lib/submenu/rrssb-buttons.php:135
 msgctxt "metabox tab"
 msgid "Include Buttons"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:141
+#: lib/submenu/rrssb-buttons.php:136
 msgctxt "metabox tab"
 msgid "Buttons Position"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:142
+#: lib/submenu/rrssb-buttons.php:137
 msgctxt "metabox tab"
 msgid "Advanced Settings"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:193
+#: lib/submenu/rrssb-buttons.php:188
 msgctxt "option label"
 msgid "Include on Archive Webpages"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:198
+#: lib/submenu/rrssb-buttons.php:193
 msgctxt "option label"
 msgid "Include on Page Homepage"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:203
+#: lib/submenu/rrssb-buttons.php:198
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:212
+#: lib/submenu/rrssb-buttons.php:207
 msgctxt "option label"
 msgid "Position in Content"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:217
+#: lib/submenu/rrssb-buttons.php:212
 msgctxt "option label"
 msgid "Position in Excerpt"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:226
+#: lib/submenu/rrssb-buttons.php:221
 msgctxt "option label"
 msgid "Force Protocol for Shared URLs"
 msgstr ""

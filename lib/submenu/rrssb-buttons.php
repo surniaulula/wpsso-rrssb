@@ -112,11 +112,6 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 				add_filter( 'postbox_classes_' . $this->pagehook . '_' . $this->pagehook . '_' . $share_id, 
 					array( $this, 'add_class_postbox_rrssb_share' ) );
 			}
-
-			/**
-			 * Close all share metaboxes by default.
-			 */
-			WpssoUser::reset_metabox_prefs( $this->pagehook, array_keys( $share_ids ), 'closed' );
 		}
 
 		public function add_class_postbox_rrssb_share( $classes ) {
