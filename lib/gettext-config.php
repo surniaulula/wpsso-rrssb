@@ -3,6 +3,10 @@
 /**
  * Extract of translatable text strings from the static config array.
  */
+_x( '(plugin) WooCommerce', 'lib file description', 'wpsso-rrssb' );
+_x( '(plugin) bbPress', 'lib file description', 'wpsso-rrssb' );
+_x( '(plugin) BuddyBlog', 'lib file description', 'wpsso-rrssb' );
+_x( '(plugin) BuddyPress', 'lib file description', 'wpsso-rrssb' );
 _x( 'Responsive Buttons', 'lib file description', 'wpsso-rrssb' );
 _x( 'Responsive Styles', 'lib file description', 'wpsso-rrssb' );
 _x( 'Ridiculously Responsive (SVG) Social Sharing Buttons for your Content, Excerpts, CSS Sidebar, Widget, Shortcode, Templates, and Editor.', 'plugin description', 'wpsso-rrssb' );

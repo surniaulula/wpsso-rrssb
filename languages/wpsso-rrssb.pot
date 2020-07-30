@@ -141,7 +141,7 @@ msgid ""
 "added directly to the webpage HTML."
 msgstr ""
 
-#: lib/filters-messages.php:253 lib/gettext-config.php:7
+#: lib/filters-messages.php:253 lib/gettext-config.php:11
 msgctxt "lib file description"
 msgid "Responsive Styles"
 msgstr ""
@@ -201,144 +201,164 @@ msgstr ""
 msgid "Failed to open the css file %s for reading."
 msgstr ""
 
-#: lib/filters.php:283 lib/submenu/rrssb-buttons.php:227
+#: lib/filters.php:284 lib/submenu/rrssb-buttons.php:227
 msgctxt "option label"
 msgid "Sharing Buttons Cache Expiry"
 msgstr ""
 
-#: lib/filters.php:286 lib/submenu/rrssb-buttons.php:230
+#: lib/filters.php:287 lib/submenu/rrssb-buttons.php:230
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr ""
 
-#: lib/filters.php:302
+#: lib/filters.php:303
 msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr ""
 
-#: lib/filters.php:324
+#: lib/filters.php:325
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/filters.php:345
+#: lib/filters.php:346
 msgctxt "option label"
 msgid "Email Subject"
 msgstr ""
 
-#: lib/filters.php:352
+#: lib/filters.php:353
 msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/filters.php:374
+#: lib/filters.php:375
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/filters.php:406
+#: lib/filters.php:407
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/filters.php:435
+#: lib/filters.php:436
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/filters.php:442
+#: lib/filters.php:443
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
 
 #: lib/gettext-config.php:6
 msgctxt "lib file description"
-msgid "Responsive Buttons"
+msgid "(plugin) WooCommerce"
+msgstr ""
+
+#: lib/gettext-config.php:7
+msgctxt "lib file description"
+msgid "(plugin) bbPress"
 msgstr ""
 
 #: lib/gettext-config.php:8
+msgctxt "lib file description"
+msgid "(plugin) BuddyBlog"
+msgstr ""
+
+#: lib/gettext-config.php:9
+msgctxt "lib file description"
+msgid "(plugin) BuddyPress"
+msgstr ""
+
+#: lib/gettext-config.php:10
+msgctxt "lib file description"
+msgid "Responsive Buttons"
+msgstr ""
+
+#: lib/gettext-config.php:12
 msgctxt "plugin description"
 msgid ""
 "Ridiculously Responsive (SVG) Social Sharing Buttons for your Content, "
 "Excerpts, CSS Sidebar, Widget, Shortcode, Templates, and Editor."
 msgstr ""
 
-#: lib/gettext-config.php:9
+#: lib/gettext-config.php:13
 msgctxt "option label"
 msgid "Sharing Buttons"
 msgstr ""
 
-#: lib/gettext-config.php:10 lib/gettext-config.php:17
+#: lib/gettext-config.php:14 lib/gettext-config.php:21
 msgctxt "option value"
 msgid "Content"
 msgstr ""
 
-#: lib/gettext-config.php:11 lib/gettext-config.php:18
+#: lib/gettext-config.php:15 lib/gettext-config.php:22
 msgctxt "option value"
 msgid "Excerpt"
 msgstr ""
 
-#: lib/gettext-config.php:12 lib/gettext-config.php:19
+#: lib/gettext-config.php:16 lib/gettext-config.php:23
 msgctxt "option value"
 msgid "CSS Sidebar"
 msgstr ""
 
-#: lib/gettext-config.php:13 lib/gettext-config.php:20
+#: lib/gettext-config.php:17 lib/gettext-config.php:24
 msgctxt "option value"
 msgid "Admin Edit"
 msgstr ""
 
-#: lib/gettext-config.php:14
+#: lib/gettext-config.php:18
 msgctxt "option value"
 msgid "HTTP"
 msgstr ""
 
-#: lib/gettext-config.php:15
+#: lib/gettext-config.php:19
 msgctxt "option value"
 msgid "HTTPS"
 msgstr ""
 
-#: lib/gettext-config.php:16
+#: lib/gettext-config.php:20
 msgctxt "option value"
 msgid "All Buttons"
 msgstr ""
 
-#: lib/gettext-config.php:21
+#: lib/gettext-config.php:25
 msgctxt "option value"
 msgid "Shortcode"
 msgstr ""
 
-#: lib/gettext-config.php:22
+#: lib/gettext-config.php:26
 msgctxt "option value"
 msgid "Widget"
 msgstr ""
 
-#: lib/gettext-config.php:23
+#: lib/gettext-config.php:27
 msgctxt "option value"
 msgid "Top"
 msgstr ""
 
-#: lib/gettext-config.php:24
+#: lib/gettext-config.php:28
 msgctxt "option value"
 msgid "Bottom"
 msgstr ""
 
-#: lib/gettext-config.php:25
+#: lib/gettext-config.php:29
 msgctxt "option value"
 msgid "Top and Bottom"
 msgstr ""
 
-#: lib/gettext-config.php:26
+#: lib/gettext-config.php:30
 msgctxt "option value"
 msgid "Desktop Only"
 msgstr ""
 
-#: lib/gettext-config.php:27
+#: lib/gettext-config.php:31
 msgctxt "option value"
 msgid "Mobile Only"
 msgstr ""
 
-#: lib/gettext-config.php:28
+#: lib/gettext-config.php:32
 msgctxt "option value"
 msgid "Any Platform"
 msgstr ""

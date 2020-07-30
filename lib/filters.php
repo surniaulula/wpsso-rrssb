@@ -61,7 +61,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 				$this->p->util->add_plugin_filters( $this, array( 
 					'status_std_features' => 3,
-				), $prio = 10, $ext = 'wpssorrssb' );	// Hook into our own filters.
+				), $prio = 10, $ext = 'wpssorrssb' );	// Hooks the 'wpssorrssb' filters.
 			}
 		}
 
@@ -274,6 +274,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			$in_func = 'get_input';
 
 			if ( ! WpssoAdmin::$pkg[ $this->p->lca ][ 'pp' ] ) {
+
 				$td_attr = ' class="blank"';
 				$in_func = 'get_no_input';
 			}
@@ -500,21 +501,32 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			return $metabox_html;
 		}
 
+		/**
+		 * Filter for 'wpssorrssb_status_std_features'.
+		 */
 		public function filter_status_std_features( $features, $ext, $info ) {
 
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
+
 			if ( ! empty( $info[ 'lib' ][ 'submenu' ][ 'rrssb-styles' ] ) ) {
+
 				$features[ '(sharing) Sharing Stylesheet' ] = array(
 					'status' => empty( $this->p->options[ 'buttons_use_social_style' ] ) ? 'off' : 'on',
 				);
 			}
 
 			if ( ! empty( $info[ 'lib' ][ 'shortcode' ][ 'sharing' ] ) ) {
+
 				$features[ '(sharing) Sharing Shortcode' ] = array(
 					'classname' => $ext . 'shortcodesharing',
 				);
 			}
 
 			if ( ! empty( $info[ 'lib' ][ 'widget' ][ 'sharing' ] ) ) {
+
 				$features[ '(sharing) Sharing Widget' ] = array(
 					'classname' => $ext . 'widgetsharing',
 				);
