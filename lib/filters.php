@@ -513,21 +513,21 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 			if ( ! empty( $info[ 'lib' ][ 'submenu' ][ 'rrssb-styles' ] ) ) {
 
-				$features[ '(sharing) Sharing Stylesheet' ] = array(
+				$features[ _x( '(sharing) Sharing Stylesheet', 'lib file description', 'wpsso-rrssb' ) ] = array(
 					'status' => empty( $this->p->options[ 'buttons_use_social_style' ] ) ? 'off' : 'on',
 				);
 			}
 
 			if ( ! empty( $info[ 'lib' ][ 'shortcode' ][ 'sharing' ] ) ) {
 
-				$features[ '(sharing) Sharing Shortcode' ] = array(
+				$features[ _x( '(sharing) Sharing Shortcode', 'lib file description', 'wpsso-rrssb' ) ] = array(
 					'classname' => $ext . 'shortcodesharing',
 				);
 			}
 
 			if ( ! empty( $info[ 'lib' ][ 'widget' ][ 'sharing' ] ) ) {
 
-				$features[ '(sharing) Sharing Widget' ] = array(
+				$features[ _x( '(sharing) Sharing Widget', 'lib file description', 'wpsso-rrssb' ) ] = array(
 					'classname' => $ext . 'widgetsharing',
 				);
 			}
