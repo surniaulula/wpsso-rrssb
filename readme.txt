@@ -132,11 +132,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* Added the ability to translate labels in the "Standard Features Status" metabox in the SSO &gt; Dashboard page.
 * **Developer Notes**
-	* None.
+	* Renamed the config array keys for icons URLs from 'low' and 'high' to '1x' and '2x'.
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v5.2.
-	* WPSSO Core v7.10.1.
+	* WPSSO Core v7.15.0-dev.2.
 
 **Version 4.4.2 (2020/06/23)**
 
