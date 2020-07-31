@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.5.0-dev.1 (2020/07/30)**
+**Version 4.5.0-dev.2 (2020/07/31)**
 
 * **New Features**
 	* None.
@@ -155,9 +155,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.5.0-dev.1 =
+= 4.5.0-dev.2 =
 
-(2020/07/30) Added the ability to translate labels in the "Standard Features Status" metabox.
+(2020/07/31) Added the ability to translate labels in the "Standard Features Status" metabox.
 
 = 4.4.2 =
 
