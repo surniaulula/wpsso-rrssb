@@ -10,7 +10,7 @@ Tags: responsive, share buttons, social widget, social media, woocommerce, faceb
 Contributors: jsmoriss
 Requires PHP: 5.6
 Requires At Least: 5.2
-Tested Up To: 5.4.2
+Tested Up To: 5.5
 WC Tested Up To: 4.3.1
 Stable Tag: 4.4.2
 
@@ -123,6 +123,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 4.5.0-dev.1 (2020/07/30)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* Added the ability to translate labels in the "Standard Features Status" metabox in the SSO &gt; Dashboard page.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v5.6.
+	* WordPress v5.2.
+	* WPSSO Core v7.10.1.
+
 **Version 4.4.2 (2020/06/23)**
 
 * **New Features**
@@ -139,6 +154,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v7.10.1.
 
 == Upgrade Notice ==
+
+= 4.5.0-dev.1 =
+
+(2020/07/30) Added the ability to translate labels in the "Standard Features Status" metabox.
 
 = 4.4.2 =
 
