@@ -15,7 +15,7 @@
  * Requires At Least: 5.2
  * Tested Up To: 5.5
  * WC Tested Up To: 4.3.1
- * Version: 4.5.0
+ * Version: 4.6.0-dev.1
  * 
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -135,7 +135,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 			static $loaded = null;
 
-			if ( null !== $loaded ) {
+			if ( null !== $loaded && ! $debug_enabled ) {
 
 				return;
 			}
@@ -251,15 +251,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 			$local_cache = array();
 
-			self::wpsso_init_textdomain();	// If not already loaded, load the textdomain now.
-
 			$info = WpssoRrssbConfig::$cf[ 'plugin' ][ self::$ext ];
-
-			$plugin_missing_transl = __( 'The %1$s version %2$s add-on requires the %3$s plugin &mdash; please activate the missing plugin.',
-				'wpsso-rrssb' );
-
-			$old_version_transl = __( 'The %1$s version %2$s add-on requires %3$s version %4$s or newer (version %5$s is currently installed).',
-				'wpsso-rrssb' );
 
 			foreach ( $info[ 'req' ] as $key => $req_info ) {
 
@@ -282,7 +274,11 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 				} elseif ( ! empty( $req_info[ 'plugin_class' ] ) && ! class_exists( $req_info[ 'plugin_class' ] ) ) {
 
-					$req_info[ 'notice' ] = sprintf( $plugin_missing_transl, $info[ 'name' ], $info[ 'version' ], $req_name );
+					self::wpsso_init_textdomain();	// If not already loaded, load the textdomain now.
+
+					$notice_msg = __( 'The %1$s version %2$s add-on requires the %3$s plugin &mdash; please activate the missing plugin.', 'wpsso-rrssb' );
+
+					$req_info[ 'notice' ] = sprintf( $notice_msg, $info[ 'name' ], $info[ 'version' ], $req_name );
 				}
 
 				if ( ! empty( $req_info[ 'version' ] ) ) {
@@ -291,8 +287,11 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 						if ( version_compare( $req_info[ 'version' ], $req_info[ 'min_version' ], '<' ) ) {
 
-							$req_info[ 'notice' ] = sprintf( $old_version_transl, $info[ 'name' ], $info[ 'version' ],
-								$req_name, $req_info[ 'min_version' ], $req_info[ 'version' ] );
+							self::wpsso_init_textdomain();	// If not already loaded, load the textdomain now.
+
+							$notice_msg = __( 'The %1$s version %2$s add-on requires %3$s version %4$s or newer (version %5$s is currently installed).', 'wpsso-rrssb' );
+
+							$req_info[ 'notice' ] = sprintf( $notice_msg, $info[ 'name' ], $info[ 'version' ], $req_name, $req_info[ 'min_version' ], $req_info[ 'version' ] );
 						}
 					}
 				}

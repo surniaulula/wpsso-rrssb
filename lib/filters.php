@@ -6,6 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
@@ -24,6 +25,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			static $do_once = null;
 
 			if ( true === $do_once ) {
+
 				return;	// Stop here.
 			}
 
@@ -32,6 +34,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -513,22 +516,25 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 			if ( ! empty( $info[ 'lib' ][ 'submenu' ][ 'rrssb-styles' ] ) ) {
 
-				$features[ _x( '(sharing) Sharing Stylesheet', 'lib file description', 'wpsso-rrssb' ) ] = array(
-					'status' => empty( $this->p->options[ 'buttons_use_social_style' ] ) ? 'off' : 'on',
+				$features[ '(sharing) Sharing Stylesheet' ] = array(
+					'label_transl' => _x( '(sharing) Sharing Stylesheet', 'lib file description', 'wpsso-rrssb' ),
+					'status'       => empty( $this->p->options[ 'buttons_use_social_style' ] ) ? 'off' : 'on',
 				);
 			}
 
 			if ( ! empty( $info[ 'lib' ][ 'shortcode' ][ 'sharing' ] ) ) {
 
-				$features[ _x( '(sharing) Sharing Shortcode', 'lib file description', 'wpsso-rrssb' ) ] = array(
-					'classname' => $ext . 'shortcodesharing',
+				$features[ '(sharing) Sharing Shortcode' ] = array(
+					'label_transl' => _x( '(sharing) Sharing Shortcode', 'lib file description', 'wpsso-rrssb' ),
+					'classname'    => $ext . 'shortcodesharing',
 				);
 			}
 
 			if ( ! empty( $info[ 'lib' ][ 'widget' ][ 'sharing' ] ) ) {
 
-				$features[ _x( '(sharing) Sharing Widget', 'lib file description', 'wpsso-rrssb' ) ] = array(
-					'classname' => $ext . 'widgetsharing',
+				$features[ '(sharing) Sharing Widget' ] = array(
+					'label_transl' => _x( '(sharing) Sharing Widget', 'lib file description', 'wpsso-rrssb' ),
+					'classname'    => $ext . 'widgetsharing',
 				);
 			}
 

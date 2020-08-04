@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"4.5.0\n"
+"4.6.0-dev.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2020-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 msgid "The default responsive button options have been reloaded and saved."
 msgstr ""
 
-#: lib/actions.php:106 lib/filters.php:123
+#: lib/actions.php:106 lib/filters.php:126
 msgid "The default responsive styles CSS has been reloaded and saved."
 msgstr ""
 
@@ -197,71 +197,71 @@ msgstr ""
 msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
 msgstr ""
 
-#: lib/filters.php:171
+#: lib/filters.php:174
 msgid "Failed to open the css file %s for reading."
 msgstr ""
 
-#: lib/filters.php:284 lib/submenu/rrssb-buttons.php:227
+#: lib/filters.php:287 lib/submenu/rrssb-buttons.php:227
 msgctxt "option label"
 msgid "Sharing Buttons Cache Expiry"
 msgstr ""
 
-#: lib/filters.php:287 lib/submenu/rrssb-buttons.php:230
+#: lib/filters.php:290 lib/submenu/rrssb-buttons.php:230
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr ""
 
-#: lib/filters.php:303
+#: lib/filters.php:306
 msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr ""
 
-#: lib/filters.php:325
+#: lib/filters.php:328
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/filters.php:346
+#: lib/filters.php:349
 msgctxt "option label"
 msgid "Email Subject"
 msgstr ""
 
-#: lib/filters.php:353
+#: lib/filters.php:356
 msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/filters.php:375
+#: lib/filters.php:378
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/filters.php:407
+#: lib/filters.php:410
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/filters.php:436
+#: lib/filters.php:439
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/filters.php:443
+#: lib/filters.php:446
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
 
-#: lib/filters.php:516
+#: lib/filters.php:520
 msgctxt "lib file description"
 msgid "(sharing) Sharing Stylesheet"
 msgstr ""
 
-#: lib/filters.php:523
+#: lib/filters.php:528
 msgctxt "lib file description"
 msgid "(sharing) Sharing Shortcode"
 msgstr ""
 
-#: lib/filters.php:530
+#: lib/filters.php:536
 msgctxt "lib file description"
 msgid "(sharing) Sharing Widget"
 msgstr ""
@@ -586,13 +586,13 @@ msgctxt "option label"
 msgid "Widget Title (leave blank for no title)"
 msgstr ""
 
-#: wpsso-rrssb.php:258
+#: wpsso-rrssb.php:279
 msgid ""
 "The %1$s version %2$s add-on requires the %3$s plugin &mdash; please "
 "activate the missing plugin."
 msgstr ""
 
-#: wpsso-rrssb.php:261
+#: wpsso-rrssb.php:292
 msgid ""
 "The %1$s version %2$s add-on requires %3$s version %4$s or newer (version "
 "%5$s is currently installed)."
