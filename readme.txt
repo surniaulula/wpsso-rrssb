@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.6.0-dev.1 (TBD)**
+**Version 4.6.0-dev.2 (2020/08/05)**
 
 * **New Features**
 	* None.
@@ -136,7 +136,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v5.2.
-	* WPSSO Core v7.16.0-dev.1.
+	* WPSSO Core v7.16.0-dev.2.
 
 **Version 4.5.0 (2020/08/02)**
 
@@ -169,6 +169,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v7.10.1.
 
 == Upgrade Notice ==
+
+= 4.6.0-dev.2 =
+
+(2020/08/05) Refactored text domain related methods to allow reloading translation files when debugging is enabled.
 
 = 4.5.0 =
 
