@@ -286,20 +286,14 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$td_attr = '';
-			$in_func = 'get_input';
-
-			if ( ! WpssoAdmin::$pkg[ $this->p->lca ][ 'pp' ] ) {
-
-				$td_attr = ' class="blank"';
-				$in_func = 'get_no_input';
-			}
+			$td_attr = WpssoAdmin::$pkg[ $this->p->lca ][ 'pp' ] ? '' : ' class="blank"';
+			$in_func = WpssoAdmin::$pkg[ $this->p->lca ][ 'pp' ] ? 'get_input' : 'get_no_input';
 
 			SucomUtil::add_after_key( $table_rows, 'plugin_content_cache_exp', array( 
 				'plugin_sharing_buttons_cache_exp' => '' .
 				$form->get_th_html( _x( 'Sharing Buttons Cache Expiry', 'option label', 'wpsso-rrssb' ),
 					$css_class = '', $css_id = 'plugin_sharing_buttons_cache_exp' ) . 
-				'<td' . $td_attr . ' nowrap>' . $form->$in_func( 'plugin_sharing_buttons_cache_exp', 'medium' ) . ' ' . 
+				'<td nowrap' . $td_attr . '>' . $form->$in_func( 'plugin_sharing_buttons_cache_exp', $css_class = 'medium' ) . ' ' . 
 				_x( 'seconds (0 to disable)', 'option comment', 'wpsso-rrssb' ) . '</td>' . 
 				WpssoAdmin::get_option_site_use( 'plugin_sharing_buttons_cache_exp', $form, $network ),
 			) );

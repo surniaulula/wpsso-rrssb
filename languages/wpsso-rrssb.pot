@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"4.6.0-dev.3\n"
+"4.6.0-dev.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2020-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -201,67 +201,67 @@ msgstr ""
 msgid "Failed to open the css file %s for reading."
 msgstr ""
 
-#: lib/filters.php:300 lib/submenu/rrssb-buttons.php:227
+#: lib/filters.php:294 lib/submenu/rrssb-buttons.php:227
 msgctxt "option label"
 msgid "Sharing Buttons Cache Expiry"
 msgstr ""
 
-#: lib/filters.php:303 lib/submenu/rrssb-buttons.php:230
+#: lib/filters.php:297 lib/submenu/rrssb-buttons.php:230
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr ""
 
-#: lib/filters.php:319
+#: lib/filters.php:313
 msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr ""
 
-#: lib/filters.php:342
+#: lib/filters.php:336
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/filters.php:363
+#: lib/filters.php:357
 msgctxt "option label"
 msgid "Email Subject"
 msgstr ""
 
-#: lib/filters.php:370
+#: lib/filters.php:364
 msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/filters.php:392
+#: lib/filters.php:386
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/filters.php:425
+#: lib/filters.php:419
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/filters.php:454
+#: lib/filters.php:448
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/filters.php:461
+#: lib/filters.php:455
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
 
-#: lib/filters.php:541
+#: lib/filters.php:535
 msgctxt "lib file description"
 msgid "(sharing) Sharing Stylesheet"
 msgstr ""
 
-#: lib/filters.php:549
+#: lib/filters.php:543
 msgctxt "lib file description"
 msgid "(sharing) Sharing Shortcode"
 msgstr ""
 
-#: lib/filters.php:557
+#: lib/filters.php:551
 msgctxt "lib file description"
 msgid "(sharing) Sharing Widget"
 msgstr ""
