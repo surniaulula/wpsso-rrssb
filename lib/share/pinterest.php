@@ -128,8 +128,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts[ 'add_hashtags' ] = empty( $this->p->options[ 'pin_caption_hashtags' ] ) ?
-				false : $this->p->options[ 'pin_caption_hashtags' ];
+			$atts[ 'add_hashtags' ] = empty( $this->p->options[ 'pin_caption_hashtags' ] ) ? false : $this->p->options[ 'pin_caption_hashtags' ];
 
 			if ( empty( $atts[ 'size' ] ) ) {
 
@@ -156,7 +155,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 			if ( empty( $atts[ 'photo' ] ) ) {
 
 				$media_request = array( 'img_url', 'prev_url' );
-				$media_info    = $this->p->og->get_media_info( $atts[ 'size' ], $media_request, $mod, $md_pre = array( 'p', 'schema' ) );
+				$media_info    = $this->p->og->get_media_info( $atts[ 'size' ], $media_request, $mod, $md_pre = array( 'p', 'schema', 'og' ) );
 
 				if ( ! empty( $media_info[ 'img_url' ] ) ) {
 

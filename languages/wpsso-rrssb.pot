@@ -236,32 +236,32 @@ msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/filters.php:419
+#: lib/filters.php:423
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/filters.php:448
+#: lib/filters.php:452
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/filters.php:455
+#: lib/filters.php:459
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
 
-#: lib/filters.php:535
+#: lib/filters.php:539
 msgctxt "lib file description"
 msgid "(sharing) Sharing Stylesheet"
 msgstr ""
 
-#: lib/filters.php:543
+#: lib/filters.php:547
 msgctxt "lib file description"
 msgid "(sharing) Sharing Shortcode"
 msgstr ""
 
-#: lib/filters.php:551
+#: lib/filters.php:555
 msgctxt "lib file description"
 msgid "(sharing) Sharing Widget"
 msgstr ""

@@ -394,9 +394,13 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			$pin_caption_max_len  = $this->p->options[ 'pin_caption_max_len' ];
 			$pin_caption_hashtags = $this->p->options[ 'pin_caption_hashtags' ];
 			$pin_caption_text     = $this->p->page->get_caption( 'excerpt', $pin_caption_max_len, $mod, true, $pin_caption_hashtags );
-			$size_name            = $this->p->lca . '-pinterest';
-			$media_request        = array( 'pid', 'img_url', 'prev_url' );
-			$pin_media            = $this->p->og->get_media_info( $size_name, $media_request, $mod, array( 'p', 'schema' ) );
+
+			/**
+			 * Get the default Pinterest image pid and URL.
+			 */
+			$size_name     = $this->p->lca . '-pinterest';
+			$media_request = array( 'pid', 'img_url' );
+			$pin_media     = $this->p->og->get_media_info( $size_name, $media_request, $mod, array( 'p', 'schema', 'og' ) );
 
 			/**
 			 * Get the smaller thumbnail image as a preview image.
