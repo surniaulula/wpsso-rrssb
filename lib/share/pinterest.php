@@ -20,6 +20,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -100,6 +101,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -122,6 +124,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 		public function get_html( array $atts, array $opts, array $mod ) {
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -129,6 +132,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 				false : $this->p->options[ 'pin_caption_hashtags' ];
 
 			if ( empty( $atts[ 'size' ] ) ) {
+
 				$atts[ 'size' ] = $this->p->lca . '-pinterest';
 			}
 
@@ -144,14 +148,15 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 				) = $this->p->media->get_attachment_image_src( $atts[ 'pid' ], $atts[ 'size' ], $check_dupes = false );
 
 				if ( $this->p->debug->enabled ) {
+
 					$this->p->debug->log( 'returned image ' . $atts[ 'photo' ] . ' (' . $atts[ 'width' ] . 'x' . $atts[ 'height' ] . ')' );
 				}
 			}
 
 			if ( empty( $atts[ 'photo' ] ) ) {
 
-				$media_info = $this->p->og->get_media_info( $atts[ 'size' ],
-					array( 'img_url', 'prev_url' ), $mod, $md_pre = array( 'p', 'schema' ) );
+				$media_request = array( 'img_url', 'prev_url' );
+				$media_info    = $this->p->og->get_media_info( $atts[ 'size' ], $media_request, $mod, $md_pre = array( 'p', 'schema' ) );
 
 				if ( ! empty( $media_info[ 'img_url' ] ) ) {
 
@@ -165,6 +170,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 				if ( empty( $atts[ 'photo' ] ) ) {
 
 					if ( $this->p->debug->enabled ) {
+
 						$this->p->debug->log( 'exiting early: no photo available' );
 					}
 
@@ -177,8 +183,11 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 			 * javascripts from manipulating our share button.
 			 */
 			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] && ! SucomUtil::is_mobile() ) {
+
 				$pinterest_button_html = preg_replace( '/(\/create)\/(button\/)/', '$1/+/$2', $this->p->options[ 'pin_rrssb_html' ] );
+
 			} else {
+
 				$pinterest_button_html = $this->p->options[ 'pin_rrssb_html' ];
 			}
 

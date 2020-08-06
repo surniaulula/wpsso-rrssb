@@ -17,7 +17,7 @@ msgstr ""
 msgid "The default responsive button options have been reloaded and saved."
 msgstr ""
 
-#: lib/actions.php:106 lib/filters.php:126
+#: lib/actions.php:106 lib/filters.php:132
 msgid "The default responsive styles CSS has been reloaded and saved."
 msgstr ""
 
@@ -100,7 +100,7 @@ msgstr ""
 
 #: lib/filters-messages.php:223 lib/share/email.php:34
 #: lib/share/facebook.php:34 lib/share/linkedin.php:34
-#: lib/share/pinterest.php:34 lib/share/pocket.php:34 lib/share/reddit.php:34
+#: lib/share/pinterest.php:35 lib/share/pocket.php:34 lib/share/reddit.php:34
 #: lib/share/tumblr.php:34 lib/share/twitter.php:34 lib/share/vk.php:34
 #: lib/share/whatsapp.php:34
 msgctxt "option label"
@@ -197,71 +197,71 @@ msgstr ""
 msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
 msgstr ""
 
-#: lib/filters.php:174
+#: lib/filters.php:183
 msgid "Failed to open the css file %s for reading."
 msgstr ""
 
-#: lib/filters.php:287 lib/submenu/rrssb-buttons.php:227
+#: lib/filters.php:300 lib/submenu/rrssb-buttons.php:227
 msgctxt "option label"
 msgid "Sharing Buttons Cache Expiry"
 msgstr ""
 
-#: lib/filters.php:290 lib/submenu/rrssb-buttons.php:230
+#: lib/filters.php:303 lib/submenu/rrssb-buttons.php:230
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr ""
 
-#: lib/filters.php:306
+#: lib/filters.php:319
 msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr ""
 
-#: lib/filters.php:328
+#: lib/filters.php:342
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/filters.php:349
+#: lib/filters.php:363
 msgctxt "option label"
 msgid "Email Subject"
 msgstr ""
 
-#: lib/filters.php:356
+#: lib/filters.php:370
 msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/filters.php:378
+#: lib/filters.php:392
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/filters.php:410
+#: lib/filters.php:425
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/filters.php:439
+#: lib/filters.php:454
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/filters.php:446
+#: lib/filters.php:461
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
 
-#: lib/filters.php:520
+#: lib/filters.php:541
 msgctxt "lib file description"
 msgid "(sharing) Sharing Stylesheet"
 msgstr ""
 
-#: lib/filters.php:528
+#: lib/filters.php:549
 msgctxt "lib file description"
 msgid "(sharing) Sharing Shortcode"
 msgstr ""
 
-#: lib/filters.php:536
+#: lib/filters.php:557
 msgctxt "lib file description"
 msgid "(sharing) Sharing Widget"
 msgstr ""
@@ -379,7 +379,7 @@ msgid "Any Platform"
 msgstr ""
 
 #: lib/share/email.php:38 lib/share/facebook.php:38 lib/share/linkedin.php:38
-#: lib/share/pinterest.php:38 lib/share/pocket.php:38 lib/share/reddit.php:38
+#: lib/share/pinterest.php:39 lib/share/pocket.php:38 lib/share/reddit.php:38
 #: lib/share/tumblr.php:38 lib/share/twitter.php:38 lib/share/vk.php:38
 #: lib/share/whatsapp.php:38
 msgctxt "option label"
@@ -387,7 +387,7 @@ msgid "Preferred Order"
 msgstr ""
 
 #: lib/share/email.php:44 lib/share/facebook.php:44 lib/share/linkedin.php:44
-#: lib/share/pinterest.php:44 lib/share/pocket.php:44 lib/share/reddit.php:44
+#: lib/share/pinterest.php:45 lib/share/pocket.php:44 lib/share/reddit.php:44
 #: lib/share/tumblr.php:44 lib/share/twitter.php:44 lib/share/vk.php:44
 #: lib/share/whatsapp.php:44
 msgctxt "option label"
@@ -399,7 +399,7 @@ msgctxt "option label"
 msgid "Email Message Length"
 msgstr ""
 
-#: lib/share/email.php:51 lib/share/linkedin.php:51 lib/share/pinterest.php:51
+#: lib/share/email.php:51 lib/share/linkedin.php:51 lib/share/pinterest.php:52
 #: lib/share/reddit.php:51 lib/share/tumblr.php:51 lib/share/twitter.php:55
 msgctxt "option comment"
 msgid "characters or less"
@@ -410,18 +410,18 @@ msgctxt "option label"
 msgid "Append Hashtags to Message"
 msgstr ""
 
-#: lib/share/email.php:56 lib/share/linkedin.php:56 lib/share/pinterest.php:56
+#: lib/share/email.php:56 lib/share/linkedin.php:56 lib/share/pinterest.php:57
 #: lib/share/reddit.php:56 lib/share/tumblr.php:56 lib/share/twitter.php:60
 msgctxt "option comment"
 msgid "tag names"
 msgstr ""
 
-#: lib/share/linkedin.php:49 lib/share/pinterest.php:49 lib/share/reddit.php:49
+#: lib/share/linkedin.php:49 lib/share/pinterest.php:50 lib/share/reddit.php:49
 msgctxt "option label"
 msgid "Caption Text Length"
 msgstr ""
 
-#: lib/share/linkedin.php:54 lib/share/pinterest.php:54 lib/share/reddit.php:54
+#: lib/share/linkedin.php:54 lib/share/pinterest.php:55 lib/share/reddit.php:54
 msgctxt "option label"
 msgid "Append Hashtags to Caption"
 msgstr ""

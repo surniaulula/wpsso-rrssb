@@ -49,6 +49,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			if ( is_admin() ) {
 
 				if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
+
 					require_once WPSSORRSSB_PLUGINDIR . 'lib/filters-messages.php';
 				}
 
@@ -71,6 +72,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 		public function filter_option_type( $type, $base_key ) {
 
 			if ( ! empty( $type ) ) {
+
 				return $type;
 			}
 
@@ -101,10 +103,12 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 		public function filter_save_setting_options( array $opts, $network, $upgrading ) {
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
 			if ( $network ) {
+
 				return $opts;	// Nothing to do.
 			}
 
@@ -118,7 +122,9 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				$styles = apply_filters( $this->p->lca . '_rrssb_styles', $this->p->cf[ 'sharing' ][ 'rrssb_styles' ] );
 		
 				foreach ( $styles as $id => $name ) {
+
 					if ( isset( $this->p->options[ 'buttons_css_' . $id ] ) && isset( $defs[ 'buttons_css_' . $id ] ) ) {
+
 						$this->p->options[ 'buttons_css_' . $id ] = $defs[ 'buttons_css_' . $id ];
 					}
 				}
@@ -137,6 +143,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 		public function filter_get_defaults( $defs ) {
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -167,10 +174,12 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 					} elseif ( ! $fh = @fopen( $buttons_css_file, 'rb' ) ) {
 
 						if ( $this->p->debug->enabled ) {
+
 							$this->p->debug->log( 'failed to open the css file ' . $buttons_css_file . ' for reading' );
 						}
 
 						if ( is_admin() ) {
+
 							$this->p->notice->err( sprintf( __( 'Failed to open the css file %s for reading.',
 								'wpsso-rrssb' ), $buttons_css_file ) );
 						}
@@ -182,10 +191,12 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 						fclose( $fh );
 
 						if ( $this->p->debug->enabled ) {
+
 							$this->p->debug->log( 'read css file ' . $buttons_css_file );
 						}
 
 						foreach ( array( 'plugin_url_path' => $rel_url_path ) as $macro => $value ) {
+
 							$buttons_css_data = preg_replace( '/%%' . $macro . '%%/', $value, $buttons_css_data );
 						}
 
@@ -217,6 +228,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 		public function filter_rename_options_keys( $options_keys ) {
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -270,6 +282,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 		public function filter_plugin_cache_rows( $table_rows, $form, $network = false ) {
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -315,6 +328,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 		public function filter_post_buttons_rows( $table_rows, $form, $head, $mod ) {
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -386,14 +400,15 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			$pin_caption_max_len  = $this->p->options[ 'pin_caption_max_len' ];
 			$pin_caption_hashtags = $this->p->options[ 'pin_caption_hashtags' ];
 			$pin_caption_text     = $this->p->page->get_caption( 'excerpt', $pin_caption_max_len, $mod, true, $pin_caption_hashtags );
-
-			$pin_media = $this->p->og->get_media_info( $this->p->lca . '-pinterest',
-				array( 'pid', 'img_url', 'prev_url' ), $mod, array( 'p', 'schema' ) );
+			$size_name            = $this->p->lca . '-pinterest';
+			$media_request        = array( 'pid', 'img_url', 'prev_url' );
+			$pin_media            = $this->p->og->get_media_info( $size_name, $media_request, $mod, array( 'p', 'schema' ) );
 
 			/**
 			 * Get the smaller thumbnail image as a preview image.
 			 */
 			if ( ! empty( $pin_media[ 'pid' ] ) ) {
+
 				$pin_media[ 'img_url' ] = $this->p->media->get_attachment_image_url( $pin_media[ 'pid' ], 'thumbnail', false );
 			}
 
@@ -480,11 +495,14 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 		public function filter_metabox_sso_inside_footer( $metabox_html, $mod ) {
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
 			if ( empty( $mod[ 'is_public' ] ) ) {
+
 				if ( $this->p->debug->enabled ) {
+
 					$this->p->debug->log( 'exiting early: ' . $mod[ 'name' ] . ' ID ' . $mod[ 'id' ] . ' is not public' );
 				}
 
@@ -496,8 +514,11 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			$metabox_html .= $wpssorrssb->social->get_buttons( $text = '', 'admin_edit', $mod );
 
 			if ( SucomUtil::get_const( 'DOING_AJAX' ) ) {
+
 				$metabox_html .= '<script type="text/javascript">rrssbInit();</script>' . "\n";
+
 			} else {
+
 				$metabox_html .= '<script type="text/javascript">jQuery(window).load(function(){ rrssbInit(); });</script>' . "\n";
 			}
 
