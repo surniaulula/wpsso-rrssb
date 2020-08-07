@@ -149,7 +149,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 				);
 			}
 
-			$this->p->util->do_metabox_tabbed( $metabox_id, $metabox_tabs, $table_rows );
+			$this->p->util->metabox->do_tabbed( $metabox_id, $metabox_tabs, $table_rows );
 		}
 
 		public function show_metabox_rrssb_share( $post, $callback ) {
@@ -162,17 +162,18 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 
 			if ( empty( $metabox_tabs ) ) {
 
-				$this->p->util->do_metabox_table( apply_filters( $this->p->lca . '_' . $metabox_id . '_' . $callback_args[ 'share_id' ] . '_rows',
+				$this->p->util->metabox->do_table( apply_filters( $this->p->lca . '_' . $metabox_id . '_' . $callback_args[ 'share_id' ] . '_rows',
 					array(), $this->form, $this ), 'metabox-' . $metabox_id . '-' . $callback_args[ 'share_id' ], 'metabox-' . $metabox_id );
 
 			} else {
 
 				foreach ( $metabox_tabs as $tab => $title ) {
-					$table_rows[$tab] = apply_filters( $this->p->lca . '_' . $metabox_id . '_' . $callback_args[ 'share_id' ] . '_' . $tab . '_rows',
+
+					$table_rows[ $tab ] = apply_filters( $this->p->lca . '_' . $metabox_id . '_' . $callback_args[ 'share_id' ] . '_' . $tab . '_rows',
 						array(), $this->form, $this );
 				}
 
-				$this->p->util->do_metabox_tabbed( $metabox_id . '_' . $callback_args[ 'share_id' ], $metabox_tabs, $table_rows );
+				$this->p->util->metabox->do_tabbed( $metabox_id . '_' . $callback_args[ 'share_id' ], $metabox_tabs, $table_rows );
 			}
 		}
 

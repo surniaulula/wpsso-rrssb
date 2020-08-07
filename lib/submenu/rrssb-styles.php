@@ -80,7 +80,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 				$css_min_msg = '';
 			}
 
-			$this->p->util->do_metabox_table( array( 
+			$this->p->util->metabox->do_table( array( 
 
 				$this->form->get_th_html( _x( 'Use the Social Stylesheet', 'option label', 'wpsso-rrssb' ), '', 'buttons_use_social_style' ) . 
 				'<td>' . $this->form->get_checkbox( 'buttons_use_social_style' ) . $css_min_msg . '</td>',
@@ -105,7 +105,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 				$styles_tabs[ $tab_key ] = _x( $title, 'metabox tab', 'wpsso-rrssb' );	// Translate the tab title.
 			}
 
-			$this->p->util->do_metabox_tabbed( $metabox_id, $styles_tabs, $table_rows );
+			$this->p->util->metabox->do_tabbed( $metabox_id, $styles_tabs, $table_rows );
 		}
 
 		protected function get_table_rows( $metabox_id, $tab_key ) {

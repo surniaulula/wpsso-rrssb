@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"4.6.0-dev.6\n"
+"4.6.0-dev.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2020-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -201,12 +201,12 @@ msgstr ""
 msgid "Failed to open the css file %s for reading."
 msgstr ""
 
-#: lib/filters.php:294 lib/submenu/rrssb-buttons.php:227
+#: lib/filters.php:294 lib/submenu/rrssb-buttons.php:228
 msgctxt "option label"
 msgid "Sharing Buttons Cache Expiry"
 msgstr ""
 
-#: lib/filters.php:297 lib/submenu/rrssb-buttons.php:230
+#: lib/filters.php:297 lib/submenu/rrssb-buttons.php:231
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr ""
@@ -522,32 +522,32 @@ msgctxt "metabox tab"
 msgid "Advanced Settings"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:188
+#: lib/submenu/rrssb-buttons.php:189
 msgctxt "option label"
 msgid "Include on Archive Webpages"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:193
+#: lib/submenu/rrssb-buttons.php:194
 msgctxt "option label"
 msgid "Include on Page Homepage"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:198
+#: lib/submenu/rrssb-buttons.php:199
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:207
+#: lib/submenu/rrssb-buttons.php:208
 msgctxt "option label"
 msgid "Position in Content"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:212
+#: lib/submenu/rrssb-buttons.php:213
 msgctxt "option label"
 msgid "Position in Excerpt"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:221
+#: lib/submenu/rrssb-buttons.php:222
 msgctxt "option label"
 msgid "Force Protocol for Shared URLs"
 msgstr ""
