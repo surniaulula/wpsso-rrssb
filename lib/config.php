@@ -6,6 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
@@ -16,7 +17,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(			// Plugin acronym.
-					'version'     => '4.6.0-dev.10',	// Plugin version.
+					'version'     => '4.6.0-b.1',	// Plugin version.
 					'opt_version' => '33',		// Increment when changing default option values.
 					'short'       => 'WPSSO RRSSB',	// Short plugin name.
 					'name'        => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
@@ -42,7 +43,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '8.0.0-dev.10',
+							'min_version'   => '8.0.0-b.1',
 						),
 					),
 
@@ -201,6 +202,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static function set_constants( $plugin_file_path ) { 
 
 			if ( defined( 'WPSSORRSSB_VERSION' ) ) {	// Define constants only once.
+
 				return;
 			}
 
@@ -225,6 +227,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static function set_variable_constants( $var_const = null ) {
 
 			if ( ! is_array( $var_const ) ) {
+
 				$var_const = (array) self::get_variable_constants();
 			}
 
@@ -234,6 +237,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			foreach ( $var_const as $name => $value ) {
 
 				if ( ! defined( $name ) ) {
+
 					define( $name, $value );
 				}
 			}
@@ -251,6 +255,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			foreach ( $var_const as $name => $value ) {
 
 				if ( defined( $name ) ) {
+
 					$var_const[$name] = constant( $name );
 				}
 			}
