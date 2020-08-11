@@ -3,7 +3,7 @@
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Ridiculously Responsive Social Sharing Buttons</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>Ridiculously Responsive (SVG) Social Sharing Buttons for your Content, Excerpts, CSS Sidebar, Widget, Shortcode, Templates, and Editor.</td></tr>
-<tr><th align="right" valign="top" nowrap>Stable Version</th><td>4.5.0</td></tr>
+<tr><th align="right" valign="top" nowrap>Stable Version</th><td>4.6.0</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>5.6 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>5.2 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To WordPress</th><td>5.5</td></tr>
