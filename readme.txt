@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 5.6
 Requires At Least: 5.2
 Tested Up To: 5.5
-WC Tested Up To: 4.3.1
+WC Tested Up To: 4.3.2
 Stable Tag: 4.5.0
 
 Ridiculously Responsive (SVG) Social Sharing Buttons for your Content, Excerpts, CSS Sidebar, Widget, Shortcode, Templates, and Editor.
@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.6.0-b.2 (2020/08/10)**
+**Version 4.6.0-b.3 (2020/08/11)**
 
 * **New Features**
 	* None.
@@ -137,7 +137,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v5.2.
-	* WPSSO Core v8.0.0-b.2.
+	* WPSSO Core v8.0.0-b.3.
 
 **Version 4.5.0 (2020/08/02)**
 
@@ -171,9 +171,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.6.0-b.2 =
+= 4.6.0-b.3 =
 
-(2020/08/10) Added support for the new WpssoUtilMetabox class in WPSSO Core v8.0.0. Refactored text domain related methods to allow reloading translation files when debugging is enabled.
+(2020/08/11) Added support for the new WpssoUtilMetabox class in WPSSO Core v8.0.0. Refactored text domain related methods to allow reloading translation files when debugging is enabled.
 
 = 4.5.0 =
 
