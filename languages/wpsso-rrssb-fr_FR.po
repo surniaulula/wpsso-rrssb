@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 4.5.0\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 4.6.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2020-08-02 10:42-0700\n"
-"PO-Revision-Date: 2020-08-02 10:42-0700\n"
+"POT-Creation-Date: 2020-08-11 12:02-0700\n"
+"PO-Revision-Date: 2020-08-11 12:02-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -17,7 +17,7 @@ msgstr ""
 msgid "The default responsive button options have been reloaded and saved."
 msgstr "Les options des boutons réactifs par défaut ont été rechargées et sauvegardés."
 
-#: lib/actions.php:106 lib/filters.php:123
+#: lib/actions.php:106 lib/filters.php:132
 msgid "The default responsive styles CSS has been reloaded and saved."
 msgstr "Le CSS par défaut des styles réactifs ont été rechargés et sauvegardés."
 
@@ -75,7 +75,7 @@ msgstr "Les boutons de partage social peuvent être ajoutés en haut, en bas, ou
 
 #: lib/filters-messages.php:223 lib/share/email.php:34
 #: lib/share/facebook.php:34 lib/share/linkedin.php:34
-#: lib/share/pinterest.php:34 lib/share/pocket.php:34 lib/share/reddit.php:34
+#: lib/share/pinterest.php:35 lib/share/pocket.php:34 lib/share/reddit.php:34
 #: lib/share/tumblr.php:34 lib/share/twitter.php:34 lib/share/vk.php:34
 #: lib/share/whatsapp.php:34
 msgctxt "option label"
@@ -147,71 +147,71 @@ msgstr "Le code HTML des boutons de partage social est enregistré dans le cache
 msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
 msgstr "La valeur d'expiration de cache suggérée est de %1$s secondes (%2$s)."
 
-#: lib/filters.php:171
+#: lib/filters.php:183
 msgid "Failed to open the css file %s for reading."
 msgstr "Impossible d'ouvrir le fichier css %s pour lecture."
 
-#: lib/filters.php:284 lib/submenu/rrssb-buttons.php:227
+#: lib/filters.php:294 lib/submenu/rrssb-buttons.php:228
 msgctxt "option label"
 msgid "Sharing Buttons Cache Expiry"
 msgstr "Expiration cache boutons de partage"
 
-#: lib/filters.php:287 lib/submenu/rrssb-buttons.php:230
+#: lib/filters.php:297 lib/submenu/rrssb-buttons.php:231
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr "secondes (0 pour désactiver)"
 
-#: lib/filters.php:303
+#: lib/filters.php:313
 msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr "Boutons de partage"
 
-#: lib/filters.php:325
+#: lib/filters.php:336
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr "Désactiver les boutons"
 
-#: lib/filters.php:346
+#: lib/filters.php:357
 msgctxt "option label"
 msgid "Email Subject"
 msgstr "Sujet du couriel"
 
-#: lib/filters.php:353
+#: lib/filters.php:364
 msgctxt "option label"
 msgid "Email Message"
 msgstr "Message du courriel"
 
-#: lib/filters.php:375
+#: lib/filters.php:386
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr "Texte du Tweet"
 
-#: lib/filters.php:407
+#: lib/filters.php:423
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr "Texte légende Pinterest"
 
-#: lib/filters.php:436
+#: lib/filters.php:452
 msgctxt "option label"
 msgid "%s Title"
 msgstr "Titre %s"
 
-#: lib/filters.php:443
+#: lib/filters.php:459
 msgctxt "option label"
 msgid "%s Caption"
 msgstr "Légende %s"
 
-#: lib/filters.php:516
+#: lib/filters.php:539
 msgctxt "lib file description"
 msgid "(sharing) Sharing Stylesheet"
 msgstr "(sharing) Styles de partage social"
 
-#: lib/filters.php:523
+#: lib/filters.php:547
 msgctxt "lib file description"
 msgid "(sharing) Sharing Shortcode"
 msgstr "(sharing) Code court de partage"
 
-#: lib/filters.php:530
+#: lib/filters.php:555
 msgctxt "lib file description"
 msgid "(sharing) Sharing Widget"
 msgstr "(sharing) Widget de partage"
@@ -327,7 +327,7 @@ msgid "Any Platform"
 msgstr "Toute plateformes"
 
 #: lib/share/email.php:38 lib/share/facebook.php:38 lib/share/linkedin.php:38
-#: lib/share/pinterest.php:38 lib/share/pocket.php:38 lib/share/reddit.php:38
+#: lib/share/pinterest.php:39 lib/share/pocket.php:38 lib/share/reddit.php:38
 #: lib/share/tumblr.php:38 lib/share/twitter.php:38 lib/share/vk.php:38
 #: lib/share/whatsapp.php:38
 msgctxt "option label"
@@ -335,7 +335,7 @@ msgid "Preferred Order"
 msgstr "Ordre de préférence"
 
 #: lib/share/email.php:44 lib/share/facebook.php:44 lib/share/linkedin.php:44
-#: lib/share/pinterest.php:44 lib/share/pocket.php:44 lib/share/reddit.php:44
+#: lib/share/pinterest.php:45 lib/share/pocket.php:44 lib/share/reddit.php:44
 #: lib/share/tumblr.php:44 lib/share/twitter.php:44 lib/share/vk.php:44
 #: lib/share/whatsapp.php:44
 msgctxt "option label"
@@ -347,7 +347,7 @@ msgctxt "option label"
 msgid "Email Message Length"
 msgstr "Longueur du message couriel"
 
-#: lib/share/email.php:51 lib/share/linkedin.php:51 lib/share/pinterest.php:51
+#: lib/share/email.php:51 lib/share/linkedin.php:51 lib/share/pinterest.php:52
 #: lib/share/reddit.php:51 lib/share/tumblr.php:51 lib/share/twitter.php:55
 msgctxt "option comment"
 msgid "characters or less"
@@ -358,18 +358,18 @@ msgctxt "option label"
 msgid "Append Hashtags to Message"
 msgstr "Ajout de hashtags au message"
 
-#: lib/share/email.php:56 lib/share/linkedin.php:56 lib/share/pinterest.php:56
+#: lib/share/email.php:56 lib/share/linkedin.php:56 lib/share/pinterest.php:57
 #: lib/share/reddit.php:56 lib/share/tumblr.php:56 lib/share/twitter.php:60
 msgctxt "option comment"
 msgid "tag names"
 msgstr "noms d'étiquettes"
 
-#: lib/share/linkedin.php:49 lib/share/pinterest.php:49 lib/share/reddit.php:49
+#: lib/share/linkedin.php:49 lib/share/pinterest.php:50 lib/share/reddit.php:49
 msgctxt "option label"
 msgid "Caption Text Length"
 msgstr "Longueur du texte légende"
 
-#: lib/share/linkedin.php:54 lib/share/pinterest.php:54 lib/share/reddit.php:54
+#: lib/share/linkedin.php:54 lib/share/pinterest.php:55 lib/share/reddit.php:54
 msgctxt "option label"
 msgid "Append Hashtags to Caption"
 msgstr "Ajout de hashtags a la légende"
@@ -468,32 +468,32 @@ msgctxt "metabox tab"
 msgid "Advanced Settings"
 msgstr "Réglages avancés"
 
-#: lib/submenu/rrssb-buttons.php:188
+#: lib/submenu/rrssb-buttons.php:189
 msgctxt "option label"
 msgid "Include on Archive Webpages"
 msgstr "Inclure sur les pages d'archive"
 
-#: lib/submenu/rrssb-buttons.php:193
+#: lib/submenu/rrssb-buttons.php:194
 msgctxt "option label"
 msgid "Include on Page Homepage"
 msgstr "Inclure sur la page d'accueil"
 
-#: lib/submenu/rrssb-buttons.php:198
+#: lib/submenu/rrssb-buttons.php:199
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr "Inclure sur les articles de type"
 
-#: lib/submenu/rrssb-buttons.php:207
+#: lib/submenu/rrssb-buttons.php:208
 msgctxt "option label"
 msgid "Position in Content"
 msgstr "Position dans le contenu"
 
-#: lib/submenu/rrssb-buttons.php:212
+#: lib/submenu/rrssb-buttons.php:213
 msgctxt "option label"
 msgid "Position in Excerpt"
 msgstr "Position dans l'extrait"
 
-#: lib/submenu/rrssb-buttons.php:221
+#: lib/submenu/rrssb-buttons.php:222
 msgctxt "option label"
 msgid "Force Protocol for Shared URLs"
 msgstr "Forcer protocole pour URLs partagées"
@@ -532,11 +532,11 @@ msgctxt "option label"
 msgid "Widget Title (leave blank for no title)"
 msgstr "Titre du widget (laisser vide pour aucun titre)"
 
-#: wpsso-rrssb.php:258
+#: wpsso-rrssb.php:279
 msgid "The %1$s version %2$s add-on requires the %3$s plugin &mdash; please activate the missing plugin."
 msgstr "L'ajout %1$s version %2$s nécessite l'extension %3$s &mdash; veuillez activer l'extension manquante."
 
-#: wpsso-rrssb.php:261
+#: wpsso-rrssb.php:292
 msgid "The %1$s version %2$s add-on requires %3$s version %4$s or newer (version %5$s is currently installed)."
 msgstr "L'ajout %1$s version %2$s nécessite %3$s version %4$s ou plus récente (la version %5$s est actuellement installée)."
 
