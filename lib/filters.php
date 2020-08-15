@@ -517,7 +517,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 			} else {
 
-				$metabox_html .= '<script type="text/javascript">jQuery(window).load(function(){ rrssbInit(); });</script>' . "\n";
+				$metabox_html .= '<script type="text/javascript">jQuery( window ).on( \'load\', function(){ rrssbInit(); });</script>' . "\n";
 			}
 
 			return $metabox_html;
