@@ -456,23 +456,23 @@ msgctxt "option label"
 msgid "Recommend Author @username"
 msgstr ""
 
-#: lib/social.php:112
+#: lib/social.php:123
 msgid "Failed writing the css file %s."
 msgstr ""
 
-#: lib/social.php:121
+#: lib/social.php:133
 msgid "Updated the <a href=\"%1$s\">%2$s</a> stylesheet (%3$d bytes written)."
 msgstr ""
 
-#: lib/social.php:138
+#: lib/social.php:152
 msgid "Cache folder %s is not writable."
 msgstr ""
 
-#: lib/social.php:148
+#: lib/social.php:164
 msgid "Failed to open the css file %s for writing."
 msgstr ""
 
-#: lib/social.php:167
+#: lib/social.php:185
 msgid ""
 "Error removing the minified stylesheet &mdash; does the web server have "
 "sufficient privileges?"
