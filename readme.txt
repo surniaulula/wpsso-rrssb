@@ -123,6 +123,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 4.6.1-dev.1 (2020/09/11)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Added a new `WpssoRrssbStyle::admin_enqueue_styles()` method to add RRSSB specific inline styles for 'sucom-settings-table'.
+* **Requires At Least**
+	* PHP v5.6.
+	* WordPress v5.2.
+	* WPSSO Core v8.4.0.
+
 **Version 4.6.0 (2020/08/11)**
 
 * **New Features**
@@ -140,6 +155,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v8.4.0.
 
 == Upgrade Notice ==
+
+= 4.6.1-dev.1 =
+
+(2020/09/11) Added a new method to add RRSSB specific inline styles for 'sucom-settings-table'.
 
 = 4.6.0 =
 
