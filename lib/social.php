@@ -127,13 +127,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				} elseif ( $wpsso->debug->enabled ) {
 
 					$wpsso->debug->log( 'updated css file ' . self::$sharing_css_file . ' (' . $written . ' bytes written)' );
-
-					if ( is_admin() ) {
-
-						$wpsso->notice->upd( sprintf( __( 'Updated the <a href="%1$s">%2$s</a> stylesheet (%3$d bytes written).',
-							'wpsso-rrssb' ), self::$sharing_css_url, self::$sharing_css_file, $written ), 
-								true, 'updated_' . self::$sharing_css_file, true );	// allow dismiss
-					}
 				}
 
 				fclose( $fh );

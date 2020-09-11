@@ -419,7 +419,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				'label'    => _x( 'Pinterest Caption', 'option label', 'wpsso-rrssb' ),
 				'tooltip'  => 'post-pin_desc',
 				'content'  => $form->get_textarea( 'pin_desc', '', '', $pin_caption_max_len, $pin_caption_text ) . 
-					( empty( $pin_media[ 'img_url' ] ) ? '' : '</td><td class="top thumb_preview">' .
+					( empty( $pin_media[ 'img_url' ] ) ? '' : '</td><td class="top wp_thumb_rrssb_img">' .
 						'<img src="' . $pin_media[ 'img_url' ] . '">' ),
 			);
 
