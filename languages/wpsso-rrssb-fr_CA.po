@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 4.6.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2020-09-11 14:17-0700\n"
-"PO-Revision-Date: 2020-09-11 14:17-0700\n"
+"POT-Creation-Date: 2020-09-13 12:22-0700\n"
+"PO-Revision-Date: 2020-09-13 12:22-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -12,6 +12,126 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.6\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: gettext/gettext-config.php:6 lib/gettext-config.php:6
+msgctxt "lib file description"
+msgid "(plugin) WooCommerce"
+msgstr "(plugin) WooCommerce"
+
+#: gettext/gettext-config.php:7 lib/gettext-config.php:7
+msgctxt "lib file description"
+msgid "(plugin) bbPress"
+msgstr "(plugin) bbPress"
+
+#: gettext/gettext-config.php:8 lib/gettext-config.php:8
+msgctxt "lib file description"
+msgid "(plugin) BuddyBlog"
+msgstr "(plugin) BuddyBlog"
+
+#: gettext/gettext-config.php:9 lib/gettext-config.php:9
+msgctxt "lib file description"
+msgid "(plugin) BuddyPress"
+msgstr "(plugin) BuddyPress"
+
+#: gettext/gettext-config.php:10 lib/gettext-config.php:10
+msgctxt "lib file description"
+msgid "Responsive Buttons"
+msgstr "Boutons réactifs"
+
+#: gettext/gettext-config.php:11 lib/filters-messages.php:250
+#: lib/gettext-config.php:11
+msgctxt "lib file description"
+msgid "Responsive Styles"
+msgstr "Styles réactifs"
+
+#: gettext/gettext-config.php:12 lib/gettext-config.php:12
+msgctxt "plugin description"
+msgid "Ridiculously Responsive (SVG) Social Sharing Buttons for your Content, Excerpts, CSS Sidebar, Widget, Shortcode, Templates, and Editor."
+msgstr "Boutons de partage social ridiculement réactifs (SVG) pour votre contenu, extraits, barre latérale CSS, widget, code court, modèles et éditeur."
+
+#: gettext/gettext-config.php:13 lib/gettext-config.php:13
+msgctxt "option label"
+msgid "Sharing Buttons"
+msgstr "Boutons de partage"
+
+#: gettext/gettext-config.php:14 gettext/gettext-config.php:21
+#: lib/gettext-config.php:14 lib/gettext-config.php:21
+msgctxt "option value"
+msgid "Content"
+msgstr "Contenu"
+
+#: gettext/gettext-config.php:15 gettext/gettext-config.php:22
+#: lib/gettext-config.php:15 lib/gettext-config.php:22
+msgctxt "option value"
+msgid "Excerpt"
+msgstr "Extrait"
+
+#: gettext/gettext-config.php:16 gettext/gettext-config.php:23
+#: lib/gettext-config.php:16 lib/gettext-config.php:23
+msgctxt "option value"
+msgid "CSS Sidebar"
+msgstr "Barre latérale"
+
+#: gettext/gettext-config.php:17 gettext/gettext-config.php:24
+#: lib/gettext-config.php:17 lib/gettext-config.php:24
+msgctxt "option value"
+msgid "Admin Edit"
+msgstr "Edit admin"
+
+#: gettext/gettext-config.php:18 lib/gettext-config.php:18
+msgctxt "option value"
+msgid "HTTP"
+msgstr "HTTP"
+
+#: gettext/gettext-config.php:19 lib/gettext-config.php:19
+msgctxt "option value"
+msgid "HTTPS"
+msgstr "HTTPS"
+
+#: gettext/gettext-config.php:20 lib/gettext-config.php:20
+msgctxt "option value"
+msgid "All Buttons"
+msgstr "Tous les boutons"
+
+#: gettext/gettext-config.php:25 lib/gettext-config.php:25
+msgctxt "option value"
+msgid "Shortcode"
+msgstr "Code court"
+
+#: gettext/gettext-config.php:26 lib/gettext-config.php:26
+msgctxt "option value"
+msgid "Widget"
+msgstr "Widget"
+
+#: gettext/gettext-config.php:27 lib/gettext-config.php:27
+msgctxt "option value"
+msgid "Top"
+msgstr "Le haut"
+
+#: gettext/gettext-config.php:28 lib/gettext-config.php:28
+msgctxt "option value"
+msgid "Bottom"
+msgstr "Le bas"
+
+#: gettext/gettext-config.php:29 lib/gettext-config.php:29
+msgctxt "option value"
+msgid "Top and Bottom"
+msgstr "Haut et bas"
+
+#: gettext/gettext-config.php:30 lib/gettext-config.php:30
+msgctxt "option value"
+msgid "Desktop Only"
+msgstr "Ordinateur seulement"
+
+#: gettext/gettext-config.php:31 lib/gettext-config.php:31
+msgctxt "option value"
+msgid "Mobile Only"
+msgstr "Mobile Seulement"
+
+#: gettext/gettext-config.php:32 lib/gettext-config.php:32
+msgctxt "option value"
+msgid "Any Platform"
+msgstr "Toute plateformes"
 
 #: lib/actions.php:87
 msgid "The default responsive button options have been reloaded and saved."
@@ -101,11 +221,6 @@ msgstr "Modifiez les URL partagées par les boutons de partage pour utiliser un 
 #: lib/filters-messages.php:250
 msgid "Add the CSS of all <em>%1$s</em> to webpages (default is checked). The CSS will be <strong>minified</strong>, and saved to a single stylesheet with a URL of <a href=\"%2$s\">%3$s</a>. The minified stylesheet can be enqueued or added directly to the webpage HTML."
 msgstr "Ajouter le CSS de tous les <em>%1$s</em> au pages Web (cochée par défaut). Le CSS sera <strong>minimisé</strong> et sauvegardé dans une seule feuille de style avec l'URL <a href=\"%2$s\">%3$s</a>. La feuille de style peut être mis en queue ou ajouté directement au HTML des pages Web."
-
-#: lib/filters-messages.php:250 lib/gettext-config.php:11
-msgctxt "lib file description"
-msgid "Responsive Styles"
-msgstr "Styles réactifs"
 
 #: lib/filters-messages.php:256
 msgid "Have WordPress enqueue the social stylesheet instead of adding the CSS to in the webpage HTML (default is unchecked). Enqueueing the stylesheet may be desirable if you use a plugin to concatenate all enqueued styles into a single stylesheet URL."
@@ -215,116 +330,6 @@ msgstr "(sharing) Code court de partage"
 msgctxt "lib file description"
 msgid "(sharing) Sharing Widget"
 msgstr "(sharing) Widget de partage"
-
-#: lib/gettext-config.php:6
-msgctxt "lib file description"
-msgid "(plugin) WooCommerce"
-msgstr "(plugin) WooCommerce"
-
-#: lib/gettext-config.php:7
-msgctxt "lib file description"
-msgid "(plugin) bbPress"
-msgstr "(plugin) bbPress"
-
-#: lib/gettext-config.php:8
-msgctxt "lib file description"
-msgid "(plugin) BuddyBlog"
-msgstr "(plugin) BuddyBlog"
-
-#: lib/gettext-config.php:9
-msgctxt "lib file description"
-msgid "(plugin) BuddyPress"
-msgstr "(plugin) BuddyPress"
-
-#: lib/gettext-config.php:10
-msgctxt "lib file description"
-msgid "Responsive Buttons"
-msgstr "Boutons réactifs"
-
-#: lib/gettext-config.php:12
-msgctxt "plugin description"
-msgid "Ridiculously Responsive (SVG) Social Sharing Buttons for your Content, Excerpts, CSS Sidebar, Widget, Shortcode, Templates, and Editor."
-msgstr "Boutons de partage social ridiculement réactifs (SVG) pour votre contenu, extraits, barre latérale CSS, widget, code court, modèles et éditeur."
-
-#: lib/gettext-config.php:13
-msgctxt "option label"
-msgid "Sharing Buttons"
-msgstr "Boutons de partage"
-
-#: lib/gettext-config.php:14 lib/gettext-config.php:21
-msgctxt "option value"
-msgid "Content"
-msgstr "Contenu"
-
-#: lib/gettext-config.php:15 lib/gettext-config.php:22
-msgctxt "option value"
-msgid "Excerpt"
-msgstr "Extrait"
-
-#: lib/gettext-config.php:16 lib/gettext-config.php:23
-msgctxt "option value"
-msgid "CSS Sidebar"
-msgstr "Barre latérale"
-
-#: lib/gettext-config.php:17 lib/gettext-config.php:24
-msgctxt "option value"
-msgid "Admin Edit"
-msgstr "Edit admin"
-
-#: lib/gettext-config.php:18
-msgctxt "option value"
-msgid "HTTP"
-msgstr "HTTP"
-
-#: lib/gettext-config.php:19
-msgctxt "option value"
-msgid "HTTPS"
-msgstr "HTTPS"
-
-#: lib/gettext-config.php:20
-msgctxt "option value"
-msgid "All Buttons"
-msgstr "Tous les boutons"
-
-#: lib/gettext-config.php:25
-msgctxt "option value"
-msgid "Shortcode"
-msgstr "Code court"
-
-#: lib/gettext-config.php:26
-msgctxt "option value"
-msgid "Widget"
-msgstr "Widget"
-
-#: lib/gettext-config.php:27
-msgctxt "option value"
-msgid "Top"
-msgstr "Le haut"
-
-#: lib/gettext-config.php:28
-msgctxt "option value"
-msgid "Bottom"
-msgstr "Le bas"
-
-#: lib/gettext-config.php:29
-msgctxt "option value"
-msgid "Top and Bottom"
-msgstr "Haut et bas"
-
-#: lib/gettext-config.php:30
-msgctxt "option value"
-msgid "Desktop Only"
-msgstr "Ordinateur seulement"
-
-#: lib/gettext-config.php:31
-msgctxt "option value"
-msgid "Mobile Only"
-msgstr "Mobile Seulement"
-
-#: lib/gettext-config.php:32
-msgctxt "option value"
-msgid "Any Platform"
-msgstr "Toute plateformes"
 
 #: lib/share/email.php:38 lib/share/facebook.php:38 lib/share/linkedin.php:38
 #: lib/share/pinterest.php:39 lib/share/pocket.php:38 lib/share/reddit.php:38
