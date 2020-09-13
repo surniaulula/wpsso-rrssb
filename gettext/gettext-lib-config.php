@@ -1,7 +1,7 @@
 <?php die( 'These aren\'t the droids you\'re looking for.' );
 
 /**
- * Extract of translatable strings from the config array.
+ * Extract of translatable strings from lib/config.php.
  */
 _x( '(plugin) WooCommerce', 'lib file description', 'wpsso-rrssb' );
 _x( '(plugin) bbPress', 'lib file description', 'wpsso-rrssb' );
