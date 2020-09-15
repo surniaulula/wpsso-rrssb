@@ -44,88 +44,93 @@ msgid "Responsive Styles"
 msgstr ""
 
 #: gettext/gettext-lib-config.php:12
+msgctxt "plugin name"
+msgid "WPSSO Ridiculously Responsive Social Sharing Buttons"
+msgstr ""
+
+#: gettext/gettext-lib-config.php:13
 msgctxt "plugin description"
 msgid ""
 "Ridiculously Responsive (SVG) Social Sharing Buttons for your Content, "
 "Excerpts, CSS Sidebar, Widget, Shortcode, Templates, and Editor."
 msgstr ""
 
-#: gettext/gettext-lib-config.php:13
+#: gettext/gettext-lib-config.php:14
 msgctxt "option label"
 msgid "Sharing Buttons"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:14 gettext/gettext-lib-config.php:21
+#: gettext/gettext-lib-config.php:15 gettext/gettext-lib-config.php:22
 msgctxt "option value"
 msgid "Content"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:15 gettext/gettext-lib-config.php:22
+#: gettext/gettext-lib-config.php:16 gettext/gettext-lib-config.php:23
 msgctxt "option value"
 msgid "Excerpt"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:16 gettext/gettext-lib-config.php:23
+#: gettext/gettext-lib-config.php:17 gettext/gettext-lib-config.php:24
 msgctxt "option value"
 msgid "CSS Sidebar"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:17 gettext/gettext-lib-config.php:24
+#: gettext/gettext-lib-config.php:18 gettext/gettext-lib-config.php:25
 msgctxt "option value"
 msgid "Admin Edit"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:18
+#: gettext/gettext-lib-config.php:19
 msgctxt "option value"
 msgid "HTTP"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:19
+#: gettext/gettext-lib-config.php:20
 msgctxt "option value"
 msgid "HTTPS"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:20
+#: gettext/gettext-lib-config.php:21
 msgctxt "option value"
 msgid "All Buttons"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:25
+#: gettext/gettext-lib-config.php:26
 msgctxt "option value"
 msgid "Shortcode"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:26
+#: gettext/gettext-lib-config.php:27
 msgctxt "option value"
 msgid "Widget"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:27
+#: gettext/gettext-lib-config.php:28
 msgctxt "option value"
 msgid "Top"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:28
+#: gettext/gettext-lib-config.php:29
 msgctxt "option value"
 msgid "Bottom"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:29
+#: gettext/gettext-lib-config.php:30
 msgctxt "option value"
 msgid "Top and Bottom"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:30
+#: gettext/gettext-lib-config.php:31
 msgctxt "option value"
 msgid "Desktop Only"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:31
+#: gettext/gettext-lib-config.php:32
 msgctxt "option value"
 msgid "Mobile Only"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:32
+#: gettext/gettext-lib-config.php:33
 msgctxt "option value"
 msgid "Any Platform"
 msgstr ""

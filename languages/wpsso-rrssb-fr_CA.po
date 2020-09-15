@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 4.6.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2020-09-14 11:17-0700\n"
-"PO-Revision-Date: 2020-09-14 11:17-0700\n"
+"PO-Revision-Date: 2020-09-15 08:59-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -538,7 +538,7 @@ msgstr "L'ajout %1$s version %2$s nécessite %3$s version %4$s ou plus récente 
 
 #. Plugin Name of the plugin/theme
 msgid "WPSSO Ridiculously Responsive Social Sharing Buttons"
-msgstr "WPSSO Ridiculously Responsive Social Sharing Buttons"
+msgstr "WPSSO boutons de partage social ridiculement réactifs"
 
 #. Plugin URI of the plugin/theme
 msgid "https://wpsso.com/extend/plugins/wpsso-rrssb/"
