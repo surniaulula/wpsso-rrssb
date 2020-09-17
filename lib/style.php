@@ -27,7 +27,7 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 
 			if ( is_admin() ) {
 
-				add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_styles' ) );
+				add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_styles' ), WPSSO_ADMIN_SCRIPTS_PRIORITY );
 				add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 
 			} else {

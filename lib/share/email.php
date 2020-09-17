@@ -134,4 +134,3 @@ if ( ! class_exists( 'WpssoRrssbShareEmail' ) ) {
 		}
 	}
 }
-

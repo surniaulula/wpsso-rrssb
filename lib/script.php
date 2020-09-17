@@ -6,6 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
@@ -23,6 +24,7 @@ if ( ! class_exists( 'WpssoRrssbScript' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -30,7 +32,7 @@ if ( ! class_exists( 'WpssoRrssbScript' ) ) {
 			$this->file_ext  = $this->doing_dev ? 'js' : 'min.js';
 			$this->version   = WpssoRrssbConfig::get_version();
 
-			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ), WPSSO_ADMIN_SCRIPTS_PRIORITY );
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		}
 
@@ -39,6 +41,7 @@ if ( ! class_exists( 'WpssoRrssbScript' ) ) {
 			$is_amp = SucomUtil::is_amp();	// Returns null, true, or false.
 
 			if ( $is_amp ) {	// No buttons for AMP pages.
+
 				return;
 			}
 
