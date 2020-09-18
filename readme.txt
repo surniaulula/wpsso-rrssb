@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.6.3-rc.1 (2020/09/18)**
+**Version 4.6.3 (2020/09/18)**
 
 * **New Features**
 	* None.
@@ -136,7 +136,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v5.2.
-	* WPSSO Core v8.5.1-rc.1.
+	* WPSSO Core v8.5.1.
 
 **Version 4.6.2 (2020/09/15)**
 
@@ -153,28 +153,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v5.2.
 	* WPSSO Core v8.5.0.
 
-**Version 4.6.1 (2020/09/11)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Added a new `WpssoRrssbStyle::admin_enqueue_styles()` method to add RRSSB specific inline styles for 'sucom-settings-table'.
-* **Requires At Least**
-	* PHP v5.6.
-	* WordPress v5.2.
-	* WPSSO Core v8.4.1.
-
 == Upgrade Notice ==
 
-= 4.6.3-rc.1 =
+= 4.6.3 =
 
 (2020/09/18) Added support for the new WPSSO_ADMIN_SCRIPTS_PRIORITY constant in WPSSO Core v8.5.1.
-
-= 4.6.2 =
-
-(2020/09/15) Updated the French plugin translations.
 
