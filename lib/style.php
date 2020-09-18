@@ -40,6 +40,15 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 		public function admin_enqueue_styles() {
 
 			$settings_table_css = '
+				table.sucom-settings td.rrssb_show_on {	/* Used by WPSSO RRSSB add-on. */
+					min-width:80px;
+					padding-right:4px;
+					white-space:nowrap;
+				}
+				table.sucom-settings td.rrssb_show_on input[type="checkbox"] {	/* Used by WPSSO RRSSB add-on. */
+					margin:0 6px 0 0;
+					vertical-align:text-bottom;
+				}
 				table.sucom-settings td.wp_thumb_rrssb_img {		/* Used by WPSSO RRSSB add-on. */
 					width:100px;
 					max-width:100px;

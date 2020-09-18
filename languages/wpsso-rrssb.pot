@@ -494,7 +494,7 @@ msgctxt "option label"
 msgid "Position in BuddyBlog Post"
 msgstr ""
 
-#: lib/style.php:118
+#: lib/style.php:127
 msgid "The %s file is not readable."
 msgstr ""
 
