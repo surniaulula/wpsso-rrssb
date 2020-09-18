@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.6.3-dev.4 (2020/09/17)**
+**Version 4.6.3-b.1 (2020/09/18)**
 
 * **New Features**
 	* None.
@@ -136,7 +136,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v5.2.
-	* WPSSO Core v8.5.1-dev.4.
+	* WPSSO Core v8.5.1-b.1.
 
 **Version 4.6.2 (2020/09/15)**
 
@@ -170,9 +170,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.6.3-dev.4 =
+= 4.6.3-b.1 =
 
-(2020/09/17) Added support for the new WPSSO_ADMIN_SCRIPTS_PRIORITY constant in WPSSO Core v8.5.1.
+(2020/09/18) Added support for the new WPSSO_ADMIN_SCRIPTS_PRIORITY constant in WPSSO Core v8.5.1.
 
 = 4.6.2 =
 
