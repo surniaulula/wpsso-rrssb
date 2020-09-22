@@ -8,16 +8,16 @@
 	margin:15px auto 10px auto;
 }
 
-.wpsso-rrssb-bp_activity ul.rrssb-buttons li span.rrssb-icon {
+.wpsso-rrssb-bp_activity ul.rrssb-buttons > li span.rrssb-icon {
 	width:1em;
 	height:1em;
 	margin:0.2em 0;
 }
 
-.wpsso-rrssb-bp_activity ul.rrssb-buttons li span.rrssb-text {
+.wpsso-rrssb-bp_activity ul.rrssb-buttons > li span.rrssb-text {
 	font-size:0.8em;
 }
 
-#buddypress ul.activity-list .wpsso-rrssb-bp_activity ul.rrssb-buttons li {
+#buddypress ul.activity-list .wpsso-rrssb-bp_activity ul.rrssb-buttons > li {
 	border:none;
 }

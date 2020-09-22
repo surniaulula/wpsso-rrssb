@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 4.6.2\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 4.6.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2020-09-15 11:05-0700\n"
-"PO-Revision-Date: 2020-09-15 11:05-0700\n"
+"POT-Creation-Date: 2020-09-18 10:53-0700\n"
+"PO-Revision-Date: 2020-09-18 10:53-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -440,7 +440,7 @@ msgctxt "option label"
 msgid "Position in BuddyBlog Post"
 msgstr "Position dans l'article BuddyBlog"
 
-#: lib/style.php:117
+#: lib/style.php:127
 msgid "The %s file is not readable."
 msgstr "Le fichier %s n'est pas lisible."
 

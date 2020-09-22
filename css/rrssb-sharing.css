@@ -28,11 +28,11 @@ ul.rrssb-buttons a:hover {
 	-webkit-box-shadow:none;
 }
 
-ul.rrssb-buttons li,
-.archive-page ul.rrssb-buttons li,
-.content ul.rrssb-buttons li,
-.entry-content ul.rrssb-buttons li,
-.list-data ul.rrssb-buttons li {
+ul.rrssb-buttons > li,
+.archive-page ul.rrssb-buttons > li,
+.content ul.rrssb-buttons > li,
+.entry-content ul.rrssb-buttons > li,
+.list-data ul.rrssb-buttons > li {
 	position:relative;
 	font-size:inherit !important;
 	text-shadow: none !important;
@@ -44,25 +44,25 @@ ul.rrssb-buttons li,
 	border:none;
 }
 
-ul.rrssb-buttons li::before,
-.content ul.rrssb-buttons li::before,
-.list-data ul.rrssb-buttons li::before {
+ul.rrssb-buttons > li::before,
+.content ul.rrssb-buttons > li::before,
+.list-data ul.rrssb-buttons > li::before {
 	content:none !important;
 }
 
-ul.rrssb-buttons li a .rrssb-icon {
+ul.rrssb-buttons > li a .rrssb-icon {
 	display:inline-block;
 	text-align:center;
 }
 
-ul.rrssb-buttons li a .rrssb-text {
+ul.rrssb-buttons > li a .rrssb-text {
 	display:inline-block;
 	text-transform:none;
 	white-space:nowrap;
 	margin:0 5px;
 }
 
-ul.rrssb-buttons li a svg {
+ul.rrssb-buttons > li a svg {
 	display:inline-block;
 }
 
