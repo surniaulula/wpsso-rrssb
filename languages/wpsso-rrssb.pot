@@ -139,7 +139,7 @@ msgstr ""
 msgid "The default responsive button options have been reloaded and saved."
 msgstr ""
 
-#: lib/actions.php:106 lib/filters.php:129
+#: lib/actions.php:106 lib/filters.php:139
 msgid "The default responsive styles CSS has been reloaded and saved."
 msgstr ""
 
@@ -314,71 +314,71 @@ msgstr ""
 msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
 msgstr ""
 
-#: lib/filters.php:180
+#: lib/filters.php:190
 msgid "Failed to open the css file %s for reading."
 msgstr ""
 
-#: lib/filters.php:291 lib/submenu/rrssb-buttons.php:228
+#: lib/filters.php:247 lib/submenu/rrssb-buttons.php:228
 msgctxt "option label"
 msgid "Sharing Buttons Cache Expiry"
 msgstr ""
 
-#: lib/filters.php:293 lib/submenu/rrssb-buttons.php:231
+#: lib/filters.php:249 lib/submenu/rrssb-buttons.php:231
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr ""
 
-#: lib/filters.php:309
+#: lib/filters.php:265
 msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr ""
 
-#: lib/filters.php:332
+#: lib/filters.php:288
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/filters.php:353
+#: lib/filters.php:309
 msgctxt "option label"
 msgid "Email Subject"
 msgstr ""
 
-#: lib/filters.php:360
+#: lib/filters.php:316
 msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/filters.php:382
+#: lib/filters.php:338
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/filters.php:419
+#: lib/filters.php:375
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/filters.php:448
+#: lib/filters.php:404
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/filters.php:455
+#: lib/filters.php:411
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
 
-#: lib/filters.php:535
+#: lib/filters.php:497
 msgctxt "lib file description"
 msgid "(sharing) Sharing Stylesheet"
 msgstr ""
 
-#: lib/filters.php:543
+#: lib/filters.php:505
 msgctxt "lib file description"
 msgid "(sharing) Sharing Shortcode"
 msgstr ""
 
-#: lib/filters.php:551
+#: lib/filters.php:513
 msgctxt "lib file description"
 msgid "(sharing) Sharing Widget"
 msgstr ""

@@ -877,8 +877,8 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				$caption_max_len = self::get_tweet_max_len( $opt_pre );
 
-				$atts[ 'tweet' ] = $wpsso->page->get_caption( $caption_type, $caption_max_len, $mod, $read_cache = true,
-					$atts[ 'add_hashtags' ], $do_encode = false, $md_key = $md_pre . '_desc' );
+				$atts[ 'tweet' ] = $wpsso->page->get_caption( $caption_type, $caption_max_len, $mod,
+					$read_cache = true, $atts[ 'add_hashtags' ], $do_encode = false, $md_key = $md_pre . '_desc' );
 			}
 
 			return $atts[ 'tweet' ];
