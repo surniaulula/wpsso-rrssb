@@ -344,15 +344,14 @@
 
 	// init load
 	$(document).ready(function(){
+		/*
+		 * Event listners
+		 */
 
 		try {
 			$(document).on('click', '.rrssb-buttons a.popup', {}, function popUp(e) {
 				var self = $(this);
-				// Custom change by jsmoriss 2018/09/24.
-				// Remove '/+/' from share URLs, which is used to prevent social javascripts (from Twitter and
-				// Pinterest, for example) from rendering their share URL into a button.
-				var url = self.attr('href').replace('/+/', '/');
-				popupCenter(url, self.find('.rrssb-text').html(), 580, 470);
+				popupCenter(self.attr('href'), self.find('.rrssb-text').html(), 580, 470);
 				e.preventDefault();
 			});
 		}
