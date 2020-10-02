@@ -6,6 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
@@ -20,6 +21,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTwitter' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -37,13 +39,6 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTwitter' ) ) {
 			$table_rows[] = '' .
 			$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
 			'<td>' . $form->get_select( 'twitter_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
-
-			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] ) {
-
-				$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_platform' ) . 
-				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ) . 
-				'<td>' . $form->get_select( 'twitter_platform', $this->p->cf[ 'sharing' ][ 'platform' ] ) . '</td>';
-			}
 
 			$table_rows[] = '' . 
 			$form->get_th_html( _x( 'Tweet Text Source', 'option label', 'wpsso-rrssb' ) ) . 
@@ -90,9 +85,8 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 					'twitter_on_excerpt'       => 0,
 					'twitter_on_sidebar'       => 0,
 					'twitter_on_woo_short'     => 1,
-					'twitter_platform'         => 'any',
 					'twitter_caption'          => 'excerpt',
-					'twitter_caption_max_len'  => 280,	// changed from 140 to 280 on 2017/11/17
+					'twitter_caption_max_len'  => 280,	// Changed from 140 to 280 on 2017/11/17.
 					'twitter_caption_hashtags' => 3,
 					'twitter_via'              => 1,
 					'twitter_rel_author'       => 1,
@@ -115,6 +109,7 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -131,54 +126,58 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 		public function get_html( array $atts, array $opts, array $mod ) {
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
 			if ( ! isset( $atts[ 'add_hashtags' ] ) ) {
-				$atts[ 'add_hashtags' ] = empty( $this->p->options[ 'twitter_caption_hashtags' ] ) ?
-					false : $this->p->options[ 'twitter_caption_hashtags' ];
+
+				$atts[ 'add_hashtags' ] = empty( $this->p->options[ 'twitter_caption_hashtags' ] ) ? false : $this->p->options[ 'twitter_caption_hashtags' ];
 			}
 
 			if ( ! isset( $atts[ 'tweet' ] ) ) {
+
 				$atts[ 'tweet' ] = WpssoRrssbSocial::get_tweet_text( $mod, $atts, 'twitter', 'twitter' );
 			}
 
 			if ( ! isset( $atts[ 'hashtags' ] ) ) {
+
 				$atts[ 'hashtags' ] = '';
 			}
 
 			if ( ! isset( $atts[ 'via' ] ) ) {
+
 				if ( ! empty( $opts[ 'twitter_via' ] ) ) {
+
 					$atts[ 'via' ] = preg_replace( '/^@/', '', SucomUtil::get_key_value( 'tc_site', $opts ) );
+
 				} else {
+
 					$atts[ 'via' ] = '';
 				}
 			}
 
 			if ( ! isset( $atts[ 'related' ] ) ) {
+
+
 				if ( ! empty( $opts[ 'twitter_rel_author' ] ) && ! empty( $mod[ 'post_author' ] ) && $atts[ 'use_post' ] ) {
+
+
 					$atts[ 'related' ] = preg_replace( '/^@/', '', get_the_author_meta( $opts[ 'plugin_cm_twitter_name' ], $mod[ 'post_author' ] ) );
+
 				} else {
+
 					$atts[ 'related' ] = '';
 				}
 			}
 
+			/**
+			 * Remove empty query arguments from the twitter button html (prevents appending an empty 'via' word to the tweet).
+			 */
+			$twitter_button_html = $this->p->options[ 'twitter_rrssb_html' ];
+
 			$extra_inline_vars = array();
 
-			/**
-			 * If we can use the browser user agent string, and this is not a mobile client, then prevent social
-			 * javascripts from manipulating our share button.
-			 */
-			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] && ! SucomUtil::is_mobile() ) {
-				$twitter_button_html = preg_replace( '/(\/intent)\/(tweet\?)/', '$1/+/$2', $this->p->options[ 'twitter_rrssb_html' ] );
-			} else {
-				$twitter_button_html = $this->p->options[ 'twitter_rrssb_html' ];
-			}
-
-			/**
-			 * Remove empty query arguments from the twitter button html (prevents appending an empty 'via' word to the
-			 * tweet).
-			 */
 			foreach ( array( 
 				'text'     => 'tweet',
 				'hashtags' => 'hashtags',
@@ -186,10 +185,13 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 				'related'  => 'related',
 			) as $query_key => $atts_key  ) {
 
-				if ( ! empty( $atts[$atts_key] ) ) {
-					$extra_inline_vars[ 'twitter_' . $query_key ] = rawurlencode( $atts[$atts_key] );
-				} else {
+				if ( empty( $atts[ $atts_key ] ) ) {
+
 					$twitter_button_html = preg_replace( '/&(amp;)?' . $query_key . '=%%twitter_' . $query_key . '%%/', '', $twitter_button_html );
+
+				} else {
+
+					$extra_inline_vars[ 'twitter_' . $query_key ] = rawurlencode( $atts[ $atts_key ] );
 				}
 			}
 

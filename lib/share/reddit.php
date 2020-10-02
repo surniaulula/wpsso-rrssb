@@ -6,6 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
@@ -20,6 +21,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareReddit' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -37,13 +39,6 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareReddit' ) ) {
 			$table_rows[] = '' .
 			$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
 			'<td>' . $form->get_select( 'reddit_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
-
-			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] ) {
-
-				$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_platform' ) . 
-				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ) . 
-				'<td>' . $form->get_select( 'reddit_platform', $this->p->cf[ 'sharing' ][ 'platform' ] ) . '</td>';
-			}
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_caption_max_len' ) . 
                         $form->get_th_html( _x( 'Caption Text Length', 'option label', 'wpsso-rrssb' ) ) . 
@@ -78,7 +73,6 @@ if ( ! class_exists( 'WpssoRrssbShareReddit' ) ) {
 					'reddit_on_excerpt'       => 0,
 					'reddit_on_sidebar'       => 0,
 					'reddit_on_woo_short'     => 1,
-					'reddit_platform'         => 'any',
 					'reddit_caption_max_len'  => 300,
 					'reddit_caption_hashtags' => 0,
 					'reddit_rrssb_html'       => '<li class="rrssb-reddit">
@@ -101,6 +95,7 @@ if ( ! class_exists( 'WpssoRrssbShareReddit' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -117,21 +112,22 @@ if ( ! class_exists( 'WpssoRrssbShareReddit' ) ) {
 		public function get_html( array $atts, array $opts, array $mod ) {
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
 			$atts[ 'add_hashtags' ] = empty( $this->p->options[ 'reddit_caption_hashtags' ] ) ? false : $this->p->options[ 'reddit_caption_hashtags' ];
 
-			$reddit_title   = $this->p->page->get_caption( 'title', 0, $mod, true, false, false, 'reddit_title' );
-			$reddit_summary = $this->p->page->get_caption( 'excerpt', $opts[ 'reddit_caption_max_len' ], $mod, true,
-				$atts[ 'add_hashtags' ], false, 'reddit_desc' );
+			$reddit_title = $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
+				$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'reddit_title' );
 
-			return $this->p->util->replace_inline_vars( '<!-- Reddit Button -->' .
-				$this->p->options[ 'reddit_rrssb_html' ], $mod, $atts, array(
-				 	'reddit_title'   => rawurlencode( $reddit_title ),
-				 	'reddit_summary' => rawurlencode( $reddit_summary ),
-				 )
-			 );
+			$reddit_summary = $this->p->page->get_caption( $type = 'excerpt', $opts[ 'reddit_caption_max_len' ], $mod,
+				$read_cache = true, $atts[ 'add_hashtags' ], $do_encode = false, $md_key = 'reddit_desc' );
+
+			return $this->p->util->replace_inline_vars( '<!-- Reddit Button -->' . $this->p->options[ 'reddit_rrssb_html' ], $mod, $atts, array(
+			 	'reddit_title'   => rawurlencode( $reddit_title ),
+			 	'reddit_summary' => rawurlencode( $reddit_summary ),
+			 ) );
 		}
 	}
 }

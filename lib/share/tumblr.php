@@ -6,6 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
@@ -20,6 +21,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTumblr' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -37,13 +39,6 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTumblr' ) ) {
 			$table_rows[ 'tumblr_button_order' ] = '' .
 			$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
 			'<td>' . $form->get_select( 'tumblr_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
-
-			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] ) {
-
-				$table_rows[ 'tumblr_platform' ] = $form->get_tr_hide( 'basic', 'tumblr_platform' ) . 
-				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ) . 
-				'<td>' . $form->get_select( 'tumblr_platform', $this->p->cf[ 'sharing' ][ 'platform' ] ) . '</td>';
-			}
 
 			$table_rows[ 'tumblr_caption_max_len' ] = $form->get_tr_hide( 'basic', 'tumblr_caption_max_len' ) . 
                         $form->get_th_html( _x( 'Summary Text Length', 'option label', 'wpsso-rrssb' ) ) . 
@@ -78,7 +73,6 @@ if ( ! class_exists( 'WpssoRrssbShareTumblr' ) ) {
 					'tumblr_on_excerpt'       => 0,
 					'tumblr_on_sidebar'       => 0,
 					'tumblr_on_woo_short'     => 1,
-					'tumblr_platform'         => 'any',
 					'tumblr_caption_max_len'  => 300,
 					'tumblr_caption_hashtags' => 0,
 					'tumblr_rrssb_html'       => '<li class="rrssb-tumblr">
@@ -100,6 +94,7 @@ if ( ! class_exists( 'WpssoRrssbShareTumblr' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -116,21 +111,22 @@ if ( ! class_exists( 'WpssoRrssbShareTumblr' ) ) {
 		public function get_html( array $atts, array $opts, array $mod ) {
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
 			$atts[ 'add_hashtags' ] = empty( $this->p->options[ 'tumblr_caption_hashtags' ] ) ? false : $this->p->options[ 'tumblr_caption_hashtags' ];
 
-			$tumblr_title   = $this->p->page->get_caption( 'title', 0, $mod, true, false, false, 'tumblr_title' );
-			$tumblr_summary = $this->p->page->get_caption( 'excerpt', $opts[ 'tumblr_caption_max_len' ], $mod, true,
-				$atts[ 'add_hashtags' ], false, 'tumblr_desc' );
+			$tumblr_title = $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
+				$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'tumblr_title' );
 
-			return $this->p->util->replace_inline_vars( '<!-- Tumblr Button -->' .
-				$this->p->options[ 'tumblr_rrssb_html' ], $mod, $atts, array(
-				 	'tumblr_title'   => rawurlencode( $tumblr_title ),
-				 	'tumblr_summary' => rawurlencode( $tumblr_summary ),
-				 )
-			 );
+			$tumblr_summary = $this->p->page->get_caption( $type = 'excerpt', $opts[ 'tumblr_caption_max_len' ], $mod,
+				$read_cache = true, $atts[ 'add_hashtags' ], $do_encode = false, $md_key = 'tumblr_desc' );
+
+			return $this->p->util->replace_inline_vars( '<!-- Tumblr Button -->' . $this->p->options[ 'tumblr_rrssb_html' ], $mod, $atts, array(
+				'tumblr_title'   => rawurlencode( $tumblr_title ),
+				 'tumblr_summary' => rawurlencode( $tumblr_summary ),
+			) );
 		}
 	}
 }

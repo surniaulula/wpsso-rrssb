@@ -6,6 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
@@ -20,6 +21,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareLinkedin' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -37,13 +39,6 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareLinkedin' ) ) {
 			$table_rows[] = '' .
 			$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
 			'<td>' . $form->get_select( 'linkedin_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
-
-			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] ) {
-
-				$table_rows[] = $form->get_tr_hide( 'basic', 'linkedin_platform' ) . 
-				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ) . 
-				'<td>' . $form->get_select( 'linkedin_platform', $this->p->cf[ 'sharing' ][ 'platform' ] ) . '</td>';
-			}
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'linkedin_caption_max_len' ) . 
                         $form->get_th_html( _x( 'Caption Text Length', 'option label', 'wpsso-rrssb' ) ) . 
@@ -78,7 +73,6 @@ if ( ! class_exists( 'WpssoRrssbShareLinkedin' ) ) {
 					'linkedin_on_excerpt'       => 0,
 					'linkedin_on_sidebar'       => 0,
 					'linkedin_on_woo_short'     => 1,
-					'linkedin_platform'         => 'any',
 					'linkedin_caption_max_len'  => 300,
 					'linkedin_caption_hashtags' => 0,
 					'linkedin_rrssb_html'       => '<li class="rrssb-linkedin">
@@ -100,6 +94,7 @@ if ( ! class_exists( 'WpssoRrssbShareLinkedin' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -116,21 +111,22 @@ if ( ! class_exists( 'WpssoRrssbShareLinkedin' ) ) {
 		public function get_html( array $atts, array $opts, array $mod ) {
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
 			$atts[ 'add_hashtags' ] = empty( $this->p->options[ 'linkedin_caption_hashtags' ] ) ? false : $this->p->options[ 'linkedin_caption_hashtags' ];
 
-		 	$linkedin_title = $this->p->page->get_caption( 'title', 0, $mod, true, false, false, 'linkedin_title' );
-			$linkedin_caption = $this->p->page->get_caption( 'excerpt', $opts[ 'linkedin_caption_max_len' ], $mod, true,
-				$atts[ 'add_hashtags' ], false, 'linkedin_desc' );
+		 	$linkedin_title = $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
+				$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'linkedin_title' );
 
-			return $this->p->util->replace_inline_vars( '<!-- LinkedIn Button -->' .
-				$this->p->options[ 'linkedin_rrssb_html' ], $mod, $atts, array(
-				 	'linkedin_title'   => rawurlencode( $linkedin_title ),
-			 		'linkedin_caption' => rawurlencode( $linkedin_caption ),
-				 )
-			 );
+			$linkedin_caption = $this->p->page->get_caption( $type = 'excerpt', $opts[ 'linkedin_caption_max_len' ], $mod,
+				$read_cache = true, $atts[ 'add_hashtags' ], $do_encode = false, $md_key = 'linkedin_desc' );
+
+			return $this->p->util->replace_inline_vars( '<!-- LinkedIn Button -->' . $this->p->options[ 'linkedin_rrssb_html' ], $mod, $atts, array(
+				'linkedin_title'   => rawurlencode( $linkedin_title ),
+			 	'linkedin_caption' => rawurlencode( $linkedin_caption ),
+			) );
 		}
 	}
 }

@@ -45,22 +45,22 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 					padding-right:4px;
 					white-space:nowrap;
 				}
-				table.sucom-settings td.rrssb_show_on input[type="checkbox"] {	/* Used by WPSSO RRSSB add-on. */
+				table.sucom-settings td.rrssb_show_on input[type="checkbox"] {
 					margin:0 6px 0 0;
 					vertical-align:text-bottom;
 				}
-				table.sucom-settings td.wp_thumb_rrssb_img {		/* Used by WPSSO RRSSB add-on. */
+				table.sucom-settings td.wp_thumb_rrssb_img {
 					width:100px;
 					max-width:100px;
 				}
 				table.sucom-settings img.wp_thumb_rrssb_img,
-				table.sucom-settings td.wp_thumb_rrssb_img img {	/* Used by WPSSO RRSSB add-on. */
+				table.sucom-settings td.wp_thumb_rrssb_img img {
 					width:100px;
 					max-width:100px;
 					height:auto;
 				}
 				@media screen and ( max-width:1100px ) {
-					table.sucom-settings td.wp_thumb_rrssb_img {	/* Used by WPSSO RRSSB add-on. */
+					table.sucom-settings td.wp_thumb_rrssb_img {
 						display:none;
 					}
 				}

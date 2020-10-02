@@ -77,3 +77,11 @@ ul.rrssb-buttons > li a svg {
 .rrssb-vk         a .rrssb-text::before { content:"Vk"; }
 .rrssb-whatsapp   a .rrssb-text::before { content:"WhatsApp"; }
 
+/**
+ * If the primary input mechanism of the device can hover over
+ * elements, then assume we have a non-mobile device.
+ */
+@media ( hover:hover ) {
+
+	.rrssb-whatsapp { display:none; }
+}

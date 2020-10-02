@@ -20,6 +20,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareFacebook' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -37,13 +38,6 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareFacebook' ) ) {
 			$table_rows[] = '' .
 			$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
 			'<td>' . $form->get_select( 'fb_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
-
-			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] ) {
-
-				$table_rows[] = $form->get_tr_hide( 'basic', 'fb_platform' ) . 
-				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ) . 
-				'<td>' . $form->get_select( 'fb_platform', $this->p->cf[ 'sharing' ][ 'platform' ] ) . '</td>';
-			}
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'fb_rrssb_html' ) . 
 			'<td colspan="2">' . $form->get_textarea( 'fb_rrssb_html', 'button_html code' ) . '</td>';
@@ -68,7 +62,6 @@ if ( ! class_exists( 'WpssoRrssbShareFacebook' ) ) {
 					'fb_on_excerpt'    => 0,
 					'fb_on_sidebar'    => 0,
 					'fb_on_woo_short'  => 1,
-					'fb_platform'      => 'any',
 					'fb_rrssb_html'    => '<li class="rrssb-facebook">
 	<a href="https://www.facebook.com/sharer/sharer.php?u=%%sharing_url%%" class="popup">
 		<span class="rrssb-icon">
@@ -88,6 +81,7 @@ if ( ! class_exists( 'WpssoRrssbShareFacebook' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -104,11 +98,11 @@ if ( ! class_exists( 'WpssoRrssbShareFacebook' ) ) {
 		public function get_html( array $atts, array $opts, array $mod ) {
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
-			return $this->p->util->replace_inline_vars( '<!-- Facebook Button -->' .
-				$this->p->options[ 'fb_rrssb_html' ], $mod, $atts );
+			return $this->p->util->replace_inline_vars( '<!-- Facebook Button -->' . $this->p->options[ 'fb_rrssb_html' ], $mod, $atts );
 		}
 	}
 }

@@ -6,6 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
@@ -20,6 +21,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareEmail' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -37,13 +39,6 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareEmail' ) ) {
 			$table_rows[] = '' .
 			$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
 			'<td>' . $form->get_select( 'email_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
-
-			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] ) {
-
-				$table_rows[] = $form->get_tr_hide( 'basic', 'email_platform' ) . 
-				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ) . 
-				'<td>' . $form->get_select( 'email_platform', $this->p->cf[ 'sharing' ][ 'platform' ] ) . '</td>';
-			}
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'email_caption_max_len' ) . 
                         $form->get_th_html( _x( 'Email Message Length', 'option label', 'wpsso-rrssb' ) ) . 
@@ -78,7 +73,6 @@ if ( ! class_exists( 'WpssoRrssbShareEmail' ) ) {
 					'email_on_excerpt'       => 0,
 					'email_on_sidebar'       => 0,
 					'email_on_woo_short'     => 1,
-					'email_platform'         => 'any',
 					'email_caption_max_len'  => 500,
 					'email_caption_hashtags' => 0,
 					'email_rrssb_html'       => '<li class="rrssb-email">
@@ -100,6 +94,7 @@ if ( ! class_exists( 'WpssoRrssbShareEmail' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -116,21 +111,22 @@ if ( ! class_exists( 'WpssoRrssbShareEmail' ) ) {
 		public function get_html( array $atts, array $opts, array $mod ) {
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
 			$atts[ 'add_hashtags' ] = empty( $this->p->options[ 'email_caption_hashtags' ] ) ? false : $this->p->options[ 'email_caption_hashtags' ];
 
-			$email_title = $this->p->page->get_caption( 'title', 0, $mod, true, false, false, 'email_title' );
+			$email_title = $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
+				$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'email_title' );
 
-			$email_excerpt = $this->p->page->get_caption( 'both', $opts[ 'email_caption_max_len' ], $mod, true, $atts[ 'add_hashtags' ], false, 'email_desc' );
+			$email_excerpt = $this->p->page->get_caption( $type = 'both', $opts[ 'email_caption_max_len' ], $mod,
+				$read_cache = true, $atts[ 'add_hashtags' ], $do_encode = false, $md_key = 'email_desc' );
 
-			return $this->p->util->replace_inline_vars( '<!-- Email Button -->' .
-				$this->p->options[ 'email_rrssb_html' ], $mod, $atts, array(
-				 	'email_title'   => rawurlencode( $email_title ),
-			 		'email_excerpt' => rawurlencode( $email_excerpt ),
-				 )
-			 );
+			return $this->p->util->replace_inline_vars( '<!-- Email Button -->' . $this->p->options[ 'email_rrssb_html' ], $mod, $atts, array(
+			 	'email_title'   => rawurlencode( $email_title ),
+		 		'email_excerpt' => rawurlencode( $email_excerpt ),
+			 ) );
 		}
 	}
 }

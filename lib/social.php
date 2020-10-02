@@ -599,8 +599,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			$cache_index .= '_https:' . ( SucomUtil::is_https() ? 'true' : 'false' );
 
-			$cache_index .= empty( $this->p->avail[ 'p' ][ 'vary_ua' ] ) ? '' : '_mobile:' . ( SucomUtil::is_mobile() ? 'true' : 'false' );
-
 			$cache_index .= false !== $atts ? '_atts:' . http_build_query( $atts, '', '_' ) : '';
 
 			$cache_index .= false !== $share_ids ? '_share_ids:' . http_build_query( $share_ids, '', ',' ) : '';
@@ -686,51 +684,44 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 					if ( method_exists( $this->share[ $id ], 'get_html' ) ) {
 
-						if ( $this->allow_for_platform( $id ) ) {
+						if ( empty( $atts[ 'url' ] ) ) {
 
-							if ( empty( $atts[ 'url' ] ) ) {
+							$atts[ 'url' ] = $this->p->util->get_sharing_url( $mod, $atts[ 'add_page' ] );
 
-								$atts[ 'url' ] = $this->p->util->get_sharing_url( $mod, $atts[ 'add_page' ] );
+						} else {
+
+							$atts[ 'url' ] = apply_filters( $this->p->lca . '_sharing_url', $atts[ 'url' ], $mod, $atts[ 'add_page' ] );
+						}
+
+						/**
+						 * Filter to add custom tracking arguments.
+						 */
+						$atts[ 'url' ] = apply_filters( $this->p->lca . '_rrssb_buttons_shared_url',
+							$atts[ 'url' ], $mod, $id );
+
+						$force_prot = apply_filters( $this->p->lca . '_rrssb_buttons_force_prot',
+							$this->p->options[ 'buttons_force_prot' ], $mod, $id, $atts[ 'url' ] );
+
+						if ( ! empty( $force_prot ) && $force_prot !== 'none' ) {
+
+							$atts[ 'url' ] = preg_replace( '/^.*:\/\//', $force_prot . '://', $atts[ 'url' ] );
+						}
+
+						$buttons_part = $this->share[ $id ]->get_html( $atts, $this->p->options, $mod ) . "\n";
+
+						$atts = $saved_atts;	// Restore the common $atts array.
+
+						if ( false !== strpos( $buttons_part, '<li' ) ) {
+
+							if ( empty( $atts[ 'container_each' ] ) ) {
+
+								$buttons_html .= $buttons_part;
 
 							} else {
 
-								$atts[ 'url' ] = apply_filters( $this->p->lca . '_sharing_url', $atts[ 'url' ], $mod, $atts[ 'add_page' ] );
+								$buttons_html .= '<!-- adding buttons as individual containers -->' . "\n" . 
+									$buttons_begin . $buttons_part . $buttons_end;
 							}
-
-							/**
-							 * Filter to add custom tracking arguments.
-							 */
-							$atts[ 'url' ] = apply_filters( $this->p->lca . '_rrssb_buttons_shared_url',
-								$atts[ 'url' ], $mod, $id );
-
-							$force_prot = apply_filters( $this->p->lca . '_rrssb_buttons_force_prot',
-								$this->p->options[ 'buttons_force_prot' ], $mod, $id, $atts[ 'url' ] );
-
-							if ( ! empty( $force_prot ) && $force_prot !== 'none' ) {
-
-								$atts[ 'url' ] = preg_replace( '/^.*:\/\//', $force_prot . '://', $atts[ 'url' ] );
-							}
-
-							$buttons_part = $this->share[ $id ]->get_html( $atts, $this->p->options, $mod ) . "\n";
-
-							$atts = $saved_atts;	// Restore the common $atts array.
-
-							if ( false !== strpos( $buttons_part, '<li' ) ) {
-
-								if ( empty( $atts[ 'container_each' ] ) ) {
-
-									$buttons_html .= $buttons_part;
-
-								} else {
-
-									$buttons_html .= '<!-- adding buttons as individual containers -->' . "\n" . 
-										$buttons_begin . $buttons_part . $buttons_end;
-								}
-							}
-
-						} elseif ( $this->p->debug->enabled ) {
-
-							$this->p->debug->log( $id . ' not allowed for platform' );
 						}
 
 					} elseif ( $this->p->debug->enabled ) {
@@ -770,52 +761,11 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				if ( ! empty( $this->p->options[ $opt_pre . '_on_' . $type ] ) ) {	// Check if button is enabled.
 
-					if ( $this->allow_for_platform( $id ) ) {	// Check if allowed on platform.
-
-						return $local_cache[ $type ] = true;	// Stop here.
-					}
+					return $local_cache[ $type ] = true;	// Stop here.
 				}
 			}
 
 			return $local_cache[ $type ] = false;
-		}
-
-		public function allow_for_platform( $id ) {
-
-			/**
-			 * Always allow if the content does not vary by user agent.
-			 */
-			if ( empty( $this->p->avail[ 'p' ][ 'vary_ua' ] ) ) {
-
-				return true;
-			}
-
-			$opt_pre = isset( $this->p->cf[ 'opt' ][ 'cm_prefix' ][ $id ] ) ?
-				$this->p->cf[ 'opt' ][ 'cm_prefix' ][ $id ] : $id;
-
-			if ( isset( $this->p->options[ $opt_pre . '_platform' ] ) ) {
-
-				switch( $this->p->options[ $opt_pre . '_platform' ] ) {
-
-					case 'any':
-
-						return true;
-
-					case 'desktop':
-
-						return SucomUtil::is_desktop();
-
-					case 'mobile':
-
-						return SucomUtil::is_mobile();
-
-					default:
-
-						return true;
-				}
-			}
-
-			return true;
 		}
 
 		public function is_post_buttons_disabled() {

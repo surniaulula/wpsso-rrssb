@@ -6,6 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
@@ -38,13 +39,6 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 			$table_rows[] = '' .
 			$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
 			'<td>' . $form->get_select( 'pin_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
-
-			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] ) {
-
-				$table_rows[] = $form->get_tr_hide( 'basic', 'pin_platform' ) . 
-				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ) . 
-				'<td>' . $form->get_select( 'pin_platform', $this->p->cf[ 'sharing' ][ 'platform' ] ) . '</td>';
-			}
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'pin_caption_max_len' ) . 
                         $form->get_th_html( _x( 'Caption Text Length', 'option label', 'wpsso-rrssb' ) ) . 
@@ -79,7 +73,6 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 					'pin_on_excerpt'       => 0,
 					'pin_on_sidebar'       => 0,
 					'pin_on_woo_short'     => 1,
-					'pin_platform'         => 'any',
 					'pin_caption_max_len'  => 300,
 					'pin_caption_hashtags' => 0,
 					'pin_rrssb_html'       => '<li class="rrssb-pinterest">
@@ -155,7 +148,8 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 			if ( empty( $atts[ 'photo' ] ) ) {
 
 				$media_request = array( 'img_url', 'prev_url' );
-				$media_info    = $this->p->og->get_media_info( $atts[ 'size' ], $media_request, $mod, $md_pre = array( 'p', 'schema', 'og' ) );
+
+				$media_info = $this->p->og->get_media_info( $atts[ 'size' ], $media_request, $mod, $md_pre = array( 'p', 'schema', 'og' ) );
 
 				if ( ! empty( $media_info[ 'img_url' ] ) ) {
 
@@ -177,29 +171,13 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 				}
 			}
 
-			/**
-			 * If we can use the browser user agent string, and this is not a mobile client, then prevent social
-			 * javascripts from manipulating our share button.
-			 */
-			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] && ! SucomUtil::is_mobile() ) {
+			$pinterest_caption = $this->p->page->get_caption( $type = 'excerpt', $opts[ 'pin_caption_max_len' ], $mod,
+				$read_cache = true, $atts[ 'add_hashtags' ], $do_encode = false, $md_key = array ( 'pin_desc', 'p_img_desc', 'og_desc' ) );
 
-				$pinterest_button_html = preg_replace( '/(\/create)\/(button\/)/', '$1/+/$2', $this->p->options[ 'pin_rrssb_html' ] );
-
-			} else {
-
-				$pinterest_button_html = $this->p->options[ 'pin_rrssb_html' ];
-			}
-
-			$pinterest_caption = $this->p->page->get_caption( 'excerpt', $opts[ 'pin_caption_max_len' ],
-				$mod, $read_cache = true, $atts[ 'add_hashtags' ], $do_encode = false,
-					$md_key = array ( 'pin_desc', 'p_img_desc', 'og_desc' ) );
-
-			return $this->p->util->replace_inline_vars( '<!-- Pinterest Button -->' .
-				$pinterest_button_html, $mod, $atts, array(
-					'media_url'         => rawurlencode( $atts[ 'photo' ] ),
-				 	'pinterest_caption' => rawurlencode( $pinterest_caption ),
-				)
-			);
+			return $this->p->util->replace_inline_vars( '<!-- Pinterest Button -->' . $this->p->options[ 'pin_rrssb_html' ], $mod, $atts, array(
+				'media_url'         => rawurlencode( $atts[ 'photo' ] ),
+			 	'pinterest_caption' => rawurlencode( $pinterest_caption ),
+			) );
 		}
 	}
 }

@@ -6,6 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
@@ -20,6 +21,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePocket' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -37,13 +39,6 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePocket' ) ) {
 			$table_rows[] = '' .
 			$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
 			'<td>' . $form->get_select( 'pocket_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
-
-			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] ) {
-
-				$table_rows[] = $form->get_tr_hide( 'basic', 'pocket_platform' ) . 
-				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ) . 
-				'<td>' . $form->get_select( 'pocket_platform', $this->p->cf[ 'sharing' ][ 'platform' ] ) . '</td>';
-			}
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'pocket_rrssb_html' ) . 
 			'<td colspan="2">' . $form->get_textarea( 'pocket_rrssb_html', 'button_html code' ) . '</td>';
@@ -68,7 +63,6 @@ if ( ! class_exists( 'WpssoRrssbSharePocket' ) ) {
 					'pocket_on_excerpt'    => 0,
 					'pocket_on_sidebar'    => 0,
 					'pocket_on_woo_short'  => 1,
-					'pocket_platform'      => 'any',
 					'pocket_rrssb_html'    => '<li class="rrssb-pocket">
 	<a href="https://getpocket.com/save?url=%%sharing_url%%">
 		<span class="rrssb-icon">
@@ -88,6 +82,7 @@ if ( ! class_exists( 'WpssoRrssbSharePocket' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -104,11 +99,11 @@ if ( ! class_exists( 'WpssoRrssbSharePocket' ) ) {
 		public function get_html( array $atts, array $opts, array $mod ) {
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
-			return $this->p->util->replace_inline_vars( '<!-- Pocket Button -->' .
-				$this->p->options[ 'pocket_rrssb_html' ], $mod, $atts );
+			return $this->p->util->replace_inline_vars( '<!-- Pocket Button -->' . $this->p->options[ 'pocket_rrssb_html' ], $mod, $atts );
 		}
 	}
 }

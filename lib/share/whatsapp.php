@@ -6,6 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
@@ -20,6 +21,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareWhatsApp' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -37,13 +39,6 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareWhatsApp' ) ) {
 			$table_rows[] = '' .
 			$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
 			'<td>' . $form->get_select( 'wa_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
-
-			if ( $this->p->avail[ 'p' ][ 'vary_ua' ] ) {
-
-				$table_rows[] = $form->get_tr_hide( 'basic', 'wa_platform' ) . 
-				$form->get_th_html( _x( 'Allow for Platform', 'option label', 'wpsso-rrssb' ) ) . 
-				'<td>' . $form->get_select( 'wa_platform', $this->p->cf[ 'sharing' ][ 'platform' ] ) . '</td>';
-			}
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'wa_rrssb_html' ) . 
 			'<td colspan="2">' . $form->get_textarea( 'wa_rrssb_html', 'button_html code' ) . '</td>';
@@ -68,7 +63,6 @@ if ( ! class_exists( 'WpssoRrssbShareWhatsApp' ) ) {
 					'wa_on_excerpt'    => 0,
 					'wa_on_sidebar'    => 0,
 					'wa_on_woo_short'  => 1,
-					'wa_platform'      => 'mobile',
 					'wa_rrssb_html'    => '<li class="rrssb-whatsapp">
 	<a href="whatsapp://send?text=%%title%%%20%%short_url%%" data-action="share/whatsapp/share" class="popup">
 		<span class="rrssb-icon">
@@ -88,6 +82,7 @@ if ( ! class_exists( 'WpssoRrssbShareWhatsApp' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -104,16 +99,16 @@ if ( ! class_exists( 'WpssoRrssbShareWhatsApp' ) ) {
 		public function get_html( array $atts, array $opts, array $mod ) {
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
-			$wa_title = $this->p->page->get_caption( 'title', 0, $mod, true, false, false, 'og_title' );
+			$wa_title = $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
+				$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'og_title' );
 
-			return $this->p->util->replace_inline_vars( '<!-- WhatsApp Button -->' .
-				$this->p->options[ 'wa_rrssb_html' ], $mod, $atts, array(
-				 	'title' => rawurlencode( $wa_title ),
-				)
-			);
+			return $this->p->util->replace_inline_vars( '<!-- WhatsApp Button -->' . $this->p->options[ 'wa_rrssb_html' ], $mod, $atts, array(
+				'title' => rawurlencode( $wa_title ),
+			) );
 		}
 	}
 }

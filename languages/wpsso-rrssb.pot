@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"4.6.3\n"
+"5.0.0-b.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2020-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -220,11 +220,11 @@ msgid ""
 "sharing button must also be enabled below (see the <em>%s</em> options)."
 msgstr ""
 
-#: lib/filters-messages.php:220 lib/share/email.php:34
-#: lib/share/facebook.php:34 lib/share/linkedin.php:34
-#: lib/share/pinterest.php:35 lib/share/pocket.php:34 lib/share/reddit.php:34
-#: lib/share/tumblr.php:34 lib/share/twitter.php:34 lib/share/vk.php:34
-#: lib/share/whatsapp.php:34
+#: lib/filters-messages.php:220 lib/share/email.php:36
+#: lib/share/facebook.php:35 lib/share/linkedin.php:36
+#: lib/share/pinterest.php:36 lib/share/pocket.php:36 lib/share/reddit.php:36
+#: lib/share/tumblr.php:36 lib/share/twitter.php:36 lib/share/vk.php:36
+#: lib/share/whatsapp.php:36
 msgctxt "option label"
 msgid "Show Button in"
 msgstr ""
@@ -294,7 +294,7 @@ msgid ""
 "If the %1$s option (above) is also checked, the %2$s is suggested first."
 msgstr ""
 
-#: lib/filters-messages.php:268 lib/share/twitter.php:63
+#: lib/filters-messages.php:268 lib/share/twitter.php:58
 msgctxt "option label"
 msgid "Add via Business @username"
 msgstr ""
@@ -383,80 +383,72 @@ msgctxt "lib file description"
 msgid "(sharing) Sharing Widget"
 msgstr ""
 
-#: lib/share/email.php:38 lib/share/facebook.php:38 lib/share/linkedin.php:38
-#: lib/share/pinterest.php:39 lib/share/pocket.php:38 lib/share/reddit.php:38
-#: lib/share/tumblr.php:38 lib/share/twitter.php:38 lib/share/vk.php:38
-#: lib/share/whatsapp.php:38
+#: lib/share/email.php:40 lib/share/facebook.php:39 lib/share/linkedin.php:40
+#: lib/share/pinterest.php:40 lib/share/pocket.php:40 lib/share/reddit.php:40
+#: lib/share/tumblr.php:40 lib/share/twitter.php:40 lib/share/vk.php:40
+#: lib/share/whatsapp.php:40
 msgctxt "option label"
 msgid "Preferred Order"
 msgstr ""
 
-#: lib/share/email.php:44 lib/share/facebook.php:44 lib/share/linkedin.php:44
-#: lib/share/pinterest.php:45 lib/share/pocket.php:44 lib/share/reddit.php:44
-#: lib/share/tumblr.php:44 lib/share/twitter.php:44 lib/share/vk.php:44
-#: lib/share/whatsapp.php:44
-msgctxt "option label"
-msgid "Allow for Platform"
-msgstr ""
-
-#: lib/share/email.php:49
+#: lib/share/email.php:44
 msgctxt "option label"
 msgid "Email Message Length"
 msgstr ""
 
-#: lib/share/email.php:51 lib/share/linkedin.php:51 lib/share/pinterest.php:52
-#: lib/share/reddit.php:51 lib/share/tumblr.php:51 lib/share/twitter.php:55
+#: lib/share/email.php:46 lib/share/linkedin.php:46 lib/share/pinterest.php:46
+#: lib/share/reddit.php:46 lib/share/tumblr.php:46 lib/share/twitter.php:50
 msgctxt "option comment"
 msgid "characters or less"
 msgstr ""
 
-#: lib/share/email.php:54
+#: lib/share/email.php:49
 msgctxt "option label"
 msgid "Append Hashtags to Message"
 msgstr ""
 
-#: lib/share/email.php:56 lib/share/linkedin.php:56 lib/share/pinterest.php:57
-#: lib/share/reddit.php:56 lib/share/tumblr.php:56 lib/share/twitter.php:60
+#: lib/share/email.php:51 lib/share/linkedin.php:51 lib/share/pinterest.php:51
+#: lib/share/reddit.php:51 lib/share/tumblr.php:51 lib/share/twitter.php:55
 msgctxt "option comment"
 msgid "tag names"
 msgstr ""
 
-#: lib/share/linkedin.php:49 lib/share/pinterest.php:50 lib/share/reddit.php:49
+#: lib/share/linkedin.php:44 lib/share/pinterest.php:44 lib/share/reddit.php:44
 msgctxt "option label"
 msgid "Caption Text Length"
 msgstr ""
 
-#: lib/share/linkedin.php:54 lib/share/pinterest.php:55 lib/share/reddit.php:54
+#: lib/share/linkedin.php:49 lib/share/pinterest.php:49 lib/share/reddit.php:49
 msgctxt "option label"
 msgid "Append Hashtags to Caption"
 msgstr ""
 
-#: lib/share/tumblr.php:49
+#: lib/share/tumblr.php:44
 msgctxt "option label"
 msgid "Summary Text Length"
 msgstr ""
 
-#: lib/share/tumblr.php:54
+#: lib/share/tumblr.php:49
 msgctxt "option label"
 msgid "Append Hashtags to Summary"
 msgstr ""
 
-#: lib/share/twitter.php:49
+#: lib/share/twitter.php:44
 msgctxt "option label"
 msgid "Tweet Text Source"
 msgstr ""
 
-#: lib/share/twitter.php:53
+#: lib/share/twitter.php:48
 msgctxt "option label"
 msgid "Tweet Text Length"
 msgstr ""
 
-#: lib/share/twitter.php:58
+#: lib/share/twitter.php:53
 msgctxt "option label"
 msgid "Append Hashtags to Tweet"
 msgstr ""
 
-#: lib/share/twitter.php:67
+#: lib/share/twitter.php:62
 msgctxt "option label"
 msgid "Recommend Author @username"
 msgstr ""
