@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.0.0-b.1 (2020/10/02)**
+**Version 5.0.0-b.2 (2020/10/02)**
 
 **This version includes an update to the default CSS to hide the WhatsApp button on non-mobile devices. To use the new default CSS, you must reload the default CSS manually using the SSO &gt; Tools and Actions &gt; Reload Default Responsive Styles button.**
 
@@ -139,7 +139,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v5.2.
-	* WPSSO Core v8.5.1.
+	* WPSSO Core v8.7.0-b.2.
 
 **Version 4.6.3 (2020/09/18)**
 
@@ -173,7 +173,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.0.0-b.1 =
+= 5.0.0-b.2 =
 
 (2020/10/02) Updated the default CSS to hide the WhatsApp button on non-mobile devices. Removed the "Allow for Platform" option from all share button settings pages.
 
