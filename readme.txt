@@ -123,6 +123,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 5.1.0-dev.1 (TBD)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v5.6.
+	* WordPress v5.2.
+	* WPSSO Core v8.8.0-dev.1.
+
 **Version 5.0.0 (2020/10/02)**
 
 **This version includes an update to the default CSS to hide the WhatsApp button on non-mobile devices. To use the new default CSS, you must reload the default CSS manually using the SSO &gt; Tools and Actions &gt; Reload Default Responsive Styles button.**
