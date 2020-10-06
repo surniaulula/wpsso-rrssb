@@ -135,13 +135,13 @@ msgctxt "option value"
 msgid "Any Platform"
 msgstr ""
 
-#: lib/abstracts/com/add-on.php:155
+#: lib/abstracts/com/add-on.php:157
 msgid ""
 "The %1$s add-on requires the %2$s plugin &mdash; please activate the missing "
 "plugin."
 msgstr ""
 
-#: lib/abstracts/com/add-on.php:169
+#: lib/abstracts/com/add-on.php:171
 msgid ""
 "The %1$s add-on requires %2$s version %3$s or newer (version %4$s is "
 "currently installed)."
@@ -577,16 +577,16 @@ msgctxt "option label"
 msgid "Enqueue the Stylesheet"
 msgstr ""
 
-#: lib/widget/sharing.php:32
+#: lib/widget/sharing.php:33
 msgid "The %s widget."
 msgstr ""
 
-#: lib/widget/sharing.php:194
+#: lib/widget/sharing.php:195
 msgctxt "option value"
 msgid "Share It"
 msgstr ""
 
-#: lib/widget/sharing.php:197
+#: lib/widget/sharing.php:198
 msgctxt "option label"
 msgid "Widget Title (leave blank for no title)"
 msgstr ""

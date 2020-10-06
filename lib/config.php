@@ -199,7 +199,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			return $add_slug ? $info[ 'slug' ] . '-' . $info[ 'version' ] : $info[ 'version' ];
 		}
 
-		public static function set_constants( $plugin_file_path ) { 
+		public static function set_constants( $plugin_file ) { 
 
 			if ( defined( 'WPSSORRSSB_VERSION' ) ) {	// Define constants only once.
 
@@ -211,11 +211,11 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			/**
 			 * Define fixed constants.
 			 */
-			define( 'WPSSORRSSB_FILEPATH', $plugin_file_path );						
+			define( 'WPSSORRSSB_FILEPATH', $plugin_file );						
 			define( 'WPSSORRSSB_PLUGINBASE', $info[ 'base' ] );	// Example: wpsso-rrssb/wpsso-rrssb.php.
-			define( 'WPSSORRSSB_PLUGINDIR', trailingslashit( realpath( dirname( $plugin_file_path ) ) ) );
+			define( 'WPSSORRSSB_PLUGINDIR', trailingslashit( realpath( dirname( $plugin_file ) ) ) );
 			define( 'WPSSORRSSB_PLUGINSLUG', $info[ 'slug' ] );	// Example: wpsso-rrssb.
-			define( 'WPSSORRSSB_URLPATH', trailingslashit( plugins_url( '', $plugin_file_path ) ) );
+			define( 'WPSSORRSSB_URLPATH', trailingslashit( plugins_url( '', $plugin_file ) ) );
 			define( 'WPSSORRSSB_VERSION', $info[ 'version' ] );						
 
 			/**
@@ -263,7 +263,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			return $var_const;
 		}
 
-		public static function require_libs( $plugin_file_path ) {
+		public static function require_libs( $plugin_file ) {
 
 			require_once WPSSORRSSB_PLUGINDIR . 'lib/actions.php';
 			require_once WPSSORRSSB_PLUGINDIR . 'lib/filters.php';

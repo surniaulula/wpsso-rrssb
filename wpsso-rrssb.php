@@ -32,18 +32,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
-if ( ! class_exists( 'SucomAddOn' ) ) {
+if ( ! class_exists( 'WpssoAddOn' ) ) {
 
-	require_once dirname( __FILE__ ) . '/lib/abstracts/com/add-on.php';	// SucomAddOn class.
+	require_once dirname( __FILE__ ) . '/lib/abstracts/add-on.php';	// WpssoAddOn class.
 }
 
 if ( ! class_exists( 'WpssoRrssb' ) ) {
 
-	class WpssoRrssb extends SucomAddOn {
+	class WpssoRrssb extends WpssoAddOn {
 
-		/**
-		 * Library class object variables.
-		 */
 		public $actions;	// WpssoRrssbActions class.
 		public $filters;	// WpssoRrssbFilters class.
 		public $reg;		// WpssoRrssbRegister class.
@@ -51,45 +48,13 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 		public $social;		// WpssoRrssbSocial class.
 		public $style;		// WpssoRrssbStyle class.
 
-		/**
-		 * Reference Variables (config, options, modules, etc.).
-		 */
 		protected $p;
-		protected $ext   = 'wpssorrssb';
-		protected $p_ext = 'rrssb';
-		protected $cf    = array();
 
 		private static $instance = null;
 
 		public function __construct() {
 
-			require_once dirname( __FILE__ ) . '/lib/config.php';
-
-			WpssoRrssbConfig::set_constants( __FILE__ );
-
-			WpssoRrssbConfig::require_libs( __FILE__ );	// Includes the register.php class library.
-
-			$this->cf =& WpssoRrssbConfig::$cf;
-
-			$this->reg = new WpssoRrssbRegister();		// Activate, deactivate, uninstall hooks.
-
-			/**
-			 * WPSSO filter hooks.
-			 */
-			add_filter( 'wpsso_get_config', array( $this, 'get_config' ), 10, 1 );
-			add_filter( 'wpsso_get_avail', array( $this, 'get_avail' ), 10, 1 );
-
-			/**
-			 * WPSSO action hooks.
-			 */
-			add_action( 'wpsso_init_textdomain', array( $this, 'init_textdomain' ), 10, 1 );
-			add_action( 'wpsso_init_objects', array( $this, 'init_objects' ), 10, 0 );
-			add_action( 'wpsso_init_plugin', array( $this, 'init_missing_requirements' ), 10, 2 );
-
-			/**
-			 * WordPress action hooks.
-			 */
-			add_action( 'all_admin_notices', array( $this, 'show_missing_requirements' ) );
+			parent::__construct( __FILE__, __CLASS__ );
 		}
 
 		public static function &get_instance() {

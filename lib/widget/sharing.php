@@ -20,6 +20,7 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 			$this->p =& Wpsso::get_instance();
 
 			if ( ! is_object( $this->p ) ) {
+
 				return;
 			}
 
