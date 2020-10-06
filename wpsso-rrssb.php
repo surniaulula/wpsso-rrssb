@@ -43,7 +43,6 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 		public $actions;	// WpssoRrssbActions class.
 		public $filters;	// WpssoRrssbFilters class.
-		public $reg;		// WpssoRrssbRegister class.
 		public $script;		// WpssoRrssbScript class.
 		public $social;		// WpssoRrssbSocial class.
 		public $style;		// WpssoRrssbStyle class.
