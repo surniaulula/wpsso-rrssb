@@ -113,10 +113,8 @@ if ( ! class_exists( 'WpssoRrssbRegister' ) ) {
 			}
 		}
 
-		private function deactivate_plugin() {
-		}
+		private function deactivate_plugin() {}
 
-		private static function uninstall_plugin() {
-		}
+		private static function uninstall_plugin() {}
 	}
 }
