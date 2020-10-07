@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.1.0-dev.1 (TBD)**
+**Version 5.1.0-dev.2 (TBD)**
 
 * **New Features**
 	* None.
@@ -138,7 +138,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v5.2.
-	* WPSSO Core v8.8.0-dev.1.
+	* WPSSO Core v8.8.0-dev.2.
 
 **Version 5.0.0 (2020/10/02)**
 
@@ -190,7 +190,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.1.0-dev.1 =
+= 5.1.0-dev.2 =
 
 (TBD) Refactored the add-on class to extend WpssoAddOn.
 
