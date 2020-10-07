@@ -123,16 +123,15 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.1.0-dev.2 (TBD)**
+**Version 5.1.0-dev.2 (2020/10/07)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* None.
+	* Refactored the add-on class to extend a new WpssoAddOn abstract class.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Refactored the add-on class to extend WpssoAddOn.
 	* Added a new WpssoAddOn class in lib/abstracts/add-on.php.
 	* Added a new SucomAddOn class in lib/abstracts/com/add-on.php.
 * **Requires At Least**
@@ -158,47 +157,13 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v5.2.
 	* WPSSO Core v8.7.0.
 
-**Version 4.6.3 (2020/09/18)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Added support for the new WPSSO_ADMIN_SCRIPTS_PRIORITY constant in WPSSO Core v8.5.1.
-* **Requires At Least**
-	* PHP v5.6.
-	* WordPress v5.2.
-	* WPSSO Core v8.5.1.
-
-**Version 4.6.2 (2020/09/15)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Updated the French plugin translations.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Moved extracted translation strings from lib/gettext-*.php files to a new gettext/ folder.
-* **Requires At Least**
-	* PHP v5.6.
-	* WordPress v5.2.
-	* WPSSO Core v8.5.0.
-
 == Upgrade Notice ==
 
 = 5.1.0-dev.2 =
 
-(TBD) Refactored the add-on class to extend WpssoAddOn.
+(2020/10/07) Refactored the add-on class to extend a new WpssoAddOn abstract class.
 
 = 5.0.0 =
 
 (2020/10/02) Updated the default CSS to hide the WhatsApp button on non-mobile devices. Removed the "Allow for Platform" option from all share button settings pages.
-
-= 4.6.3 =
-
-(2020/09/18) Added support for the new WPSSO_ADMIN_SCRIPTS_PRIORITY constant in WPSSO Core v8.5.1.
 
