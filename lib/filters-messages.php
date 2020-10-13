@@ -6,6 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
@@ -23,6 +24,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 			static $do_once = null;
 
 			if ( true === $do_once ) {
+
 				return;	// Stop here.
 			}
 
@@ -31,6 +33,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -47,6 +50,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 		public function filter_messages_info( $text, $msg_key ) {
 
 			if ( strpos( $msg_key, 'info-styles-rrssb-' ) !== 0 ) {
+
 				return $text;
 			}
 
@@ -210,6 +214,7 @@ aside.widget
 		public function filter_messages_tooltip( $text, $msg_key ) {
 
 			if ( strpos( $msg_key, 'tooltip-buttons_' ) !== 0 ) {
+
 				return $text;
 			}
 
