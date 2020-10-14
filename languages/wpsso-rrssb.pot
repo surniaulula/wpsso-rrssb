@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"5.1.0-dev.5\n"
+"5.1.0-dev.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2020-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -483,7 +483,7 @@ msgid ""
 "sufficient privileges?"
 msgstr ""
 
-#: lib/std/ecom/woocommerce.php:95
+#: lib/std/ecom/woocommerce.php:103
 msgctxt "option label"
 msgid "Position in Woo Short Text"
 msgstr ""

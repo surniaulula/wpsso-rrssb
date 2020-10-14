@@ -6,6 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
@@ -21,12 +22,14 @@ if ( ! class_exists( 'WpssoRrssbStdEcomWoocommerce' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
 			if ( empty( $this->p->avail[ 'p_ext' ][ 'rrssb' ] ) ) {	// False if required version(s) not available.
 
 				if ( $this->p->debug->enabled ) {
+
 					$this->p->debug->log( 'exiting early: this extension / add-on is not available' );
 				}
 
@@ -45,11 +48,14 @@ if ( ! class_exists( 'WpssoRrssbStdEcomWoocommerceSharing' ) ) {
 	class WpssoRrssbStdEcomWoocommerceSharing {
 
 		private $p;
+		private $is_variation = false;
 
 		public function __construct( &$plugin ) {
 
 			$this->p =& $plugin;
+
 			if ( $this->p->debug->enabled )
+
 				$this->p->debug->mark();
 
 			$this->p->util->add_plugin_filters( $this, array( 
@@ -68,12 +74,14 @@ if ( ! class_exists( 'WpssoRrssbStdEcomWoocommerceSharing' ) ) {
 			} else {
 
 				add_filter( 'woocommerce_short_description', array( $this, 'get_buttons_woo_short' ) );
+				add_filter( 'woocommerce_available_variation', array( $this, 'get_variation_woo_short' ), 10, 3 );
 			}
 		}
 
 		public function filter_get_defaults( $opts_def ) {
 
 			foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $cm_id => $opt_pre ) {
+
 				$opts_def[$opt_pre . '_on_woo_short' ] = 0;
 			}
 
@@ -117,19 +125,36 @@ if ( ! class_exists( 'WpssoRrssbStdEcomWoocommerceSharing' ) ) {
 			$rrssb =& WpssoRrssb::get_instance();
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
-			if ( ! empty( $GLOBALS[ $this->p->lca . '_doing_filter_the_content' ] ) ) {
+			if ( $this->is_variation ) {
+
+				return $text;
+
+			} elseif ( ! empty( $GLOBALS[ 'wpsso_doing_filter_the_content' ] ) ) {
 
 				if ( $this->p->debug->enabled ) {
-					$this->p->debug->log( 'exiting early: ' . $this->p->lca . '_doing_filter_the_content is true' );
+
+					$this->p->debug->log( 'exiting early: wpsso_doing_filter_the_content is true' );
 				}
 
 				return $text;
 			}
 
 			return $rrssb->social->get_buttons( $text, 'woo_short' );
+		}
+
+		public function get_variation_woo_short( $data, $product, $variation ) {
+
+			$this->is_variation = true;
+
+			$data[ 'variation_description' ] = wc_format_content( $variation->get_description() );
+
+			$this->is_variation = false;
+
+			return $data;
 		}
 	}
 }
