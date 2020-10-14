@@ -123,11 +123,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.1.0-dev.5 (2020/10/13)**
+**Version 5.1.0-dev.6 (2020/10/14)**
 
 * **New Features**
 	* None.
 * **Improvements**
+	* Added a filter to avoid adding buttons to WooCommerce product variation short descriptions.
 	* Refactored the add-on class to extend a new WpssoAddOn abstract class.
 * **Bugfixes**
 	* None.
@@ -137,7 +138,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v5.2.
-	* WPSSO Core v8.8.0-dev.5.
+	* WPSSO Core v8.8.0-dev.6.
 
 **Version 5.0.0 (2020/10/02)**
 
@@ -159,9 +160,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.1.0-dev.5 =
+= 5.1.0-dev.6 =
 
-(2020/10/13) Refactored the add-on class to extend a new WpssoAddOn abstract class.
+(2020/10/14) Added a filter to avoid adding buttons to WooCommerce product variation short descriptions. Refactored the add-on class to extend a new WpssoAddOn abstract class.
 
 = 5.0.0 =
 
