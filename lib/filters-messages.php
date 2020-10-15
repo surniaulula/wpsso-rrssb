@@ -61,7 +61,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 				case 'info-styles-rrssb-sharing':
 
 					$text = '<p>';
-					
+
 					$text .= sprintf( __( 'The %1$s add-on uses the "%2$s" class to wrap all sharing buttons, and each button has its own individual class name as well.', 'wpsso-rrssb' ), $short, 'wpsso-rrssb' );
 
 					$text .= '</p><p>';
@@ -75,11 +75,11 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 				case 'info-styles-rrssb-content':
 
 					$text = '<p>';
-					
+
 					$text .= sprintf( __( 'Social sharing buttons enabled in the %1$s settings page for the WordPress content are assigned the "%2$s" class.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-content' ).
 
 					$text .= '</p>';
-					
+
 					$text .= $this->get_info_css_example( 'content', true );
 
 					break;
@@ -87,9 +87,9 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 				case 'info-styles-rrssb-excerpt':
 
 					$text = '<p>';
-					
+
 					$text .= sprintf( __( 'Social sharing buttons enabled in the %1$s settings page for the WordPress excerpt are assigned the "%2$s" class.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-excerpt' );
-					
+
 					$text .= '</p>';
 
 					$text .= $this->get_info_css_example( 'excerpt', true );
@@ -99,9 +99,9 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 				case 'info-styles-rrssb-sidebar':
 
 					$text = '<p>';
-					
+
 					$text .= sprintf( __( 'Social sharing buttons enabled in the %1$s settings page for the CSS sidebar are assigned the "%2$s" ID.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-sidebar' );
-					
+
 					$text .= '</p><p>';
 
 					$text .= 'In order to achieve a vertical display, each unordered list (UL) contains a single list item (LI).';
@@ -120,9 +120,9 @@ div.wpsso-rrssb
 				case 'info-styles-rrssb-shortcode':
 
 					$text = '<p>';
-					
+
 					$text .= sprintf( __( 'Social sharing buttons added from a shortcode are assigned the "%1$s" class by default.', 'wpsso-rrssb' ), 'wpsso-rrssb-shortcode' );
-					
+
 					$text .= '</p>';
 
 					$text .= $this->get_info_css_example( 'shortcode', true );
@@ -132,9 +132,9 @@ div.wpsso-rrssb
 				case 'info-styles-rrssb-widget':
 
 					$text = '<p>';
-					
+
 					$text .= sprintf( __( 'Social sharing buttons enabled in the %1$s widget are assigned the "%2$s" class (along with additional unique CSS ID names).', 'wpsso-rrssb' ), $short, 'wpsso-rrssb-widget' );
-					
+
 					$text .= '</p>';
 
 					$text .= '<p>Example CSS:</p>

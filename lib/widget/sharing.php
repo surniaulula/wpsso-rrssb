@@ -35,7 +35,7 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 
 			parent::__construct( $widget_class, $widget_name, $widget_ops );
 		}
-	
+
 		public function widget( $args, $instance ) {
 
 			if ( is_feed() ) {
@@ -110,7 +110,7 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 				}
 
 			} else {
-			
+
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( $type . ' buttons transient cache is disabled' );
 				}
@@ -164,7 +164,7 @@ $after_widget .
 
 			echo $cache_array[ $cache_index ];
 		}
-	
+
 		public function update( $new_instance, $old_instance ) {
 
 			$rrssb =& WpssoRrssb::get_instance();
@@ -187,7 +187,7 @@ $after_widget .
 
 			return $instance;
 		}
-	
+
 		public function form( $instance ) {
 
 			$rrssb =& WpssoRrssb::get_instance();
@@ -198,7 +198,7 @@ $after_widget .
 				_x( 'Widget Title (leave blank for no title)', 'option label', 'wpsso-rrssb' ) . ':</label>' . 
 				'<input class="widefat" id="' . $this->get_field_id( 'title' ) . '" name="' . 
 					$this->get_field_name( 'title' ) . '" type="text" value="' . $widget_title . '"/></p>' . "\n";
-	
+
 			$share_ids = $rrssb->social->get_share_ids();
 
 			foreach ( $share_ids as $share_id => $share_title ) {

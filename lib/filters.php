@@ -123,11 +123,11 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			 * Reload the defaults styles if older than WPSSO RRSSB v4.0.0 (options version 30).
 			 */
 			if ( ! empty( $opts[ 'plugin_wpssorrssb_opt_version' ] ) && $opts[ 'plugin_wpssorrssb_opt_version' ] < 32 ) {
-			
+
 				$defs = $this->p->opt->get_defaults();
 
 				$styles = apply_filters( $this->p->lca . '_rrssb_styles', $this->p->cf[ 'sharing' ][ 'rrssb_styles' ] );
-		
+
 				foreach ( $styles as $id => $name ) {
 
 					if ( isset( $this->p->options[ 'buttons_css_' . $id ] ) && isset( $defs[ 'buttons_css_' . $id ] ) ) {
@@ -135,7 +135,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 						$this->p->options[ 'buttons_css_' . $id ] = $defs[ 'buttons_css_' . $id ];
 					}
 				}
-		
+
 				$this->p->notice->upd( __( 'The default responsive styles CSS has been reloaded and saved.', 'wpsso-rrssb' ) );
 			}
 

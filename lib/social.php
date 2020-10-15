@@ -459,7 +459,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				}
 
 			} else {
-			
+
 				if ( $this->p->debug->enabled ) {
 
 					$this->p->debug->log( $type . ' buttons transient cache is disabled' );

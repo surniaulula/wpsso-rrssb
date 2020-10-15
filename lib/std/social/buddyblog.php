@@ -70,12 +70,12 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddyblogSharing' ) ) {
 					'rrssb_styles_tabs'           => 1,
 				) );
 			}
-			
+
 			if ( bp_is_buddyblog_component() ) {
 
 				$location = empty( $this->p->options[ 'buttons_pos_bblog_post' ] ) ? 
 					'bottom' : $this->p->options[ 'buttons_pos_bblog_post' ];
-				
+
 				switch ( $location ) {
 
 					case 'top':

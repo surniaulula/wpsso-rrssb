@@ -132,7 +132,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				return true;
 
 			}
-			
+
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->log( 'cannot remove ' . $this->shortcode_name . ' shortcode - does not exist' );
 			}
@@ -234,7 +234,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				}
 
 			} else {
-			
+
 				if ( $this->p->debug->enabled ) {
 					$this->p->debug->log( $type . ' buttons transient cache is disabled' );
 				}
