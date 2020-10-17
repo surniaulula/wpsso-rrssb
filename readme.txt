@@ -133,7 +133,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Added a filter to avoid adding buttons to WooCommerce product variation short descriptions.
 	* Refactored the add-on class to extend a new WpssoAddOn abstract class.
 * **Bugfixes**
-	* Fixed backwards compatibility with WPSSO Core v8.7.1 'init_objects' and 'init_plugin' action arguments.
+	* Fixed backwards compatibility with older 'init_objects' and 'init_plugin' action arguments.
 * **Developer Notes**
 	* Added a new WpssoAddOn class in lib/abstracts/add-on.php.
 	* Added a new SucomAddOn class in lib/abstracts/com/add-on.php.
