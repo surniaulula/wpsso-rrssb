@@ -71,7 +71,10 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 			load_plugin_textdomain( 'wpsso-rrssb', false, 'wpsso-rrssb/languages/' );
 		}
 
-		public function init_objects( $is_admin ) {
+		/**
+		 * $is_admin, $doing_ajax, and $doing_cron available since WPSSO Core v8.8.0.
+		 */
+		public function init_objects( $is_admin = false, $doing_ajax = false, $doing_cron = false ) {
 
 			$this->p =& Wpsso::get_instance();
 
