@@ -478,7 +478,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				$location = empty( $this->p->options[ 'buttons_pos_' . $type ] ) ? 
 					'bottom' : $this->p->options[ 'buttons_pos_' . $type ];
-			} 
+			}
 
 			if ( ! isset( $cache_array[ $cache_index ] ) ) {
 
@@ -561,19 +561,19 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				case 'top': 
 
-					$text = $cache_array[ $cache_index ] . $text; 
+					$text = $cache_array[ $cache_index ] . $text;
 
 					break;
 
 				case 'bottom': 
 
-					$text = $text . $cache_array[ $cache_index ]; 
+					$text = $text . $cache_array[ $cache_index ];
 
 					break;
 
 				case 'both': 
 
-					$text = $cache_array[ $cache_index ] . $text . $cache_array[ $cache_index ]; 
+					$text = $cache_array[ $cache_index ] . $text . $cache_array[ $cache_index ];
 
 					break;
 			}
@@ -833,7 +833,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			$suff = empty( $match[2] ) ? '' : $match[2];
 			$ret  = preg_replace( '/(<\/*[pP]>|\n)/', '', $text );
 
-			return $suff . $ret; 
+			return $suff . $ret;
 		}
 
 		public function get_share_ids( $share = array() ) {

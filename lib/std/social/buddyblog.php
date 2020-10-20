@@ -115,7 +115,7 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddyblogSharing' ) ) {
 				'option label', 'wpsso-rrssb' ), '', 'buttons_pos_bblog_post' ) . 
 			'<td>' . $form->get_select( 'buttons_pos_bblog_post', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
 
-			return $table_rows;	
+			return $table_rows;
 		}
 
 		public function filter_rrssb_buttons_show_on( $show_on = array(), $opt_pre = '' ) {

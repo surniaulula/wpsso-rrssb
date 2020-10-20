@@ -211,12 +211,12 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			/**
 			 * Define fixed constants.
 			 */
-			define( 'WPSSORRSSB_FILEPATH', $plugin_file );						
+			define( 'WPSSORRSSB_FILEPATH', $plugin_file );
 			define( 'WPSSORRSSB_PLUGINBASE', $info[ 'base' ] );	// Example: wpsso-rrssb/wpsso-rrssb.php.
 			define( 'WPSSORRSSB_PLUGINDIR', trailingslashit( realpath( dirname( $plugin_file ) ) ) );
 			define( 'WPSSORRSSB_PLUGINSLUG', $info[ 'slug' ] );	// Example: wpsso-rrssb.
 			define( 'WPSSORRSSB_URLPATH', trailingslashit( plugins_url( '', $plugin_file ) ) );
-			define( 'WPSSORRSSB_VERSION', $info[ 'version' ] );						
+			define( 'WPSSORRSSB_VERSION', $info[ 'version' ] );
 
 			/**
 			 * Define variable constants.

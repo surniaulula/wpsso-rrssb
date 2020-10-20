@@ -56,7 +56,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 			return '<!-- ' . __FUNCTION__ . ' exiting early: ' . $error_msg . ' -->' . "\n";
 		}
 
-		$atts[ 'use_post' ] = SucomUtil::sanitize_use_post( $atts ); 
+		$atts[ 'use_post' ] = SucomUtil::sanitize_use_post( $atts );
 
 		if ( $wpsso->debug->enabled ) {
 
