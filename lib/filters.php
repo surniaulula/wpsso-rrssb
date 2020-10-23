@@ -14,11 +14,12 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 	class WpssoRrssbFilters {
 
-		private $p;
-		private $msgs;
-		private $upg;		// WpssoRrssbFiltersUpgrade class object.
+		private $p;	// Wpsso class object.
+		private $a;	// WpssoRrssb class object.
+		private $msgs;	// WpssoRrssbFiltersMessages class object.
+		private $upg;	// WpssoRrssbFiltersUpgrade class object.
 
-		public function __construct( &$plugin ) {
+		public function __construct( &$plugin, &$addon ) {
 
 			static $do_once = null;
 
@@ -30,6 +31,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			$do_once = true;
 
 			$this->p =& $plugin;
+			$this->a =& $addon;
 
 			if ( $this->p->debug->enabled ) {
 
@@ -465,9 +467,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				return $metabox_html;
 			}
 
-			$wpssorrssb =& WpssoRrssb::get_instance();
-
-			$metabox_html .= $wpssorrssb->social->get_buttons( $text = '', 'admin_edit', $mod );
+			$metabox_html .= $this->a->social->get_buttons( $text = '', 'admin_edit', $mod );
 
 			if ( SucomUtil::get_const( 'DOING_AJAX' ) ) {
 

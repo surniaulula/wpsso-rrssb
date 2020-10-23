@@ -6,6 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
@@ -13,13 +14,25 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 
 	class WpssoRrssbActions {
 
-		private $p;
+		private $p;	// Wpsso class object.
+		private $a;	// WpssoRrssb class object.
 
-		public function __construct( &$plugin ) {
+		public function __construct( &$plugin, &$addon ) {
+
+			static $do_once = null;
+
+			if ( true === $do_once ) {
+
+				return;	// Stop here.
+			}
+
+			$do_once = true;
 
 			$this->p =& $plugin;
+			$this->a =& $addon;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -39,17 +52,16 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 		public function action_pre_apply_filters_text( $filter_name ) {
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->log_args( array( 
 					'filter_name' => $filter_name,
 				) );
 			}
 
-			$rrssb =& WpssoRrssb::get_instance();
-
 			/**
 			 * If a buttons filter is removed, then re-add it when the text filter is finished executing.
 			 */
-			if ( $rrssb->social->remove_buttons_filter( $filter_name ) ) {
+			if ( $this->a->social->remove_buttons_filter( $filter_name ) ) {
 
 				$this->p->util->add_plugin_actions( $this, array( 
 					'after_apply_filters_text' => 1,
@@ -60,21 +72,18 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 		public function action_after_apply_filters_text( $filter_name ) {
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->log_args( array( 
 					'filter_name' => $filter_name,
 				) );
 			}
 
-			$rrssb =& WpssoRrssb::get_instance();
-
-			$rrssb->social->add_buttons_filter( $filter_name );
+			$this->a->social->add_buttons_filter( $filter_name );
 		}
 
 		public function action_load_setting_page_reload_default_rrssb_buttons( $pagehook, $menu_id, $menu_name, $menu_lib ) {
 
-			$wpssorrssb =& WpssoRrssb::get_instance();
-
-			foreach ( $wpssorrssb->social->get_share_objets() as $id => $share_obj ) {
+			foreach ( $this->a->social->get_share_objets() as $id => $share_obj ) {
 
 				if ( method_exists( $share_obj, 'filter_get_defaults' ) ) {
 
@@ -94,7 +103,9 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 			$styles = apply_filters( $this->p->lca . '_rrssb_styles', $this->p->cf[ 'sharing' ][ 'rrssb_styles' ] );
 
 			foreach ( $styles as $id => $name ) {
+
 				if ( isset( $this->p->options[ 'buttons_css_' . $id ] ) && isset( $def_opts[ 'buttons_css_' . $id ] ) ) {
+
 					$this->p->options[ 'buttons_css_' . $id ] = $def_opts[ 'buttons_css_' . $id ];
 				}
 			}

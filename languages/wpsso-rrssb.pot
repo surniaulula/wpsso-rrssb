@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"5.1.1\n"
+"5.2.0-dev.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2020-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -13,13 +13,13 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: gettext/gettext-lib-abstracts-com.php:6 lib/abstracts/com/add-on.php:161
+#: gettext/gettext-lib-abstracts-com.php:6 lib/abstracts/com/add-on.php:162
 msgid ""
 "The %1$s add-on requires the %2$s plugin &mdash; please activate the missing "
 "plugin."
 msgstr ""
 
-#: gettext/gettext-lib-abstracts-com.php:7 lib/abstracts/com/add-on.php:179
+#: gettext/gettext-lib-abstracts-com.php:7 lib/abstracts/com/add-on.php:180
 msgid ""
 "The %1$s add-on requires %2$s version %3$s or newer (version %4$s is "
 "currently installed)."
@@ -147,11 +147,11 @@ msgctxt "option value"
 msgid "Any Platform"
 msgstr ""
 
-#: lib/actions.php:87
+#: lib/actions.php:96
 msgid "The default responsive button options have been reloaded and saved."
 msgstr ""
 
-#: lib/actions.php:106 lib/filters.php:139
+#: lib/actions.php:117 lib/filters.php:141
 msgid "The default responsive styles CSS has been reloaded and saved."
 msgstr ""
 
@@ -326,56 +326,56 @@ msgstr ""
 msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
 msgstr ""
 
-#: lib/filters.php:190
+#: lib/filters.php:192
 msgid "Failed to open the css file %s for reading."
 msgstr ""
 
-#: lib/filters.php:247 lib/submenu/rrssb-buttons.php:228
+#: lib/filters.php:249 lib/submenu/rrssb-buttons.php:228
 msgctxt "option label"
 msgid "Sharing Buttons Cache Expiry"
 msgstr ""
 
-#: lib/filters.php:249 lib/submenu/rrssb-buttons.php:231
+#: lib/filters.php:251 lib/submenu/rrssb-buttons.php:231
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr ""
 
-#: lib/filters.php:265
+#: lib/filters.php:267
 msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr ""
 
-#: lib/filters.php:288
+#: lib/filters.php:290
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/filters.php:309
+#: lib/filters.php:311
 msgctxt "option label"
 msgid "Email Subject"
 msgstr ""
 
-#: lib/filters.php:316
+#: lib/filters.php:318
 msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/filters.php:338
+#: lib/filters.php:340
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/filters.php:375
+#: lib/filters.php:377
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/filters.php:404
+#: lib/filters.php:406
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/filters.php:411
+#: lib/filters.php:413
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
@@ -465,35 +465,35 @@ msgctxt "option label"
 msgid "Recommend Author @username"
 msgstr ""
 
-#: lib/social.php:123
+#: lib/social.php:125
 msgid "Failed writing the css file %s."
 msgstr ""
 
-#: lib/social.php:145
+#: lib/social.php:147
 msgid "Cache folder %s is not writable."
 msgstr ""
 
-#: lib/social.php:157
+#: lib/social.php:159
 msgid "Failed to open the css file %s for writing."
 msgstr ""
 
-#: lib/social.php:178
+#: lib/social.php:180
 msgid ""
 "Error removing the minified stylesheet &mdash; does the web server have "
 "sufficient privileges?"
 msgstr ""
 
-#: lib/std/ecom/woocommerce.php:103
+#: lib/std/ecom/woocommerce.php:104
 msgctxt "option label"
 msgid "Position in Woo Short Text"
 msgstr ""
 
-#: lib/std/forum/bbpress.php:148
+#: lib/std/forum/bbpress.php:149
 msgctxt "option label"
 msgid "Position in bbPress Single"
 msgstr ""
 
-#: lib/std/social/buddyblog.php:114
+#: lib/std/social/buddyblog.php:115
 msgctxt "option label"
 msgid "Position in BuddyBlog Post"
 msgstr ""

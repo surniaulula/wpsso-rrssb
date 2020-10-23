@@ -14,7 +14,7 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 
 	class WpssoRrssbStyle {
 
-		private $p;
+		private $p;	// Wpsso class object.
 
 		public function __construct( &$plugin ) {
 

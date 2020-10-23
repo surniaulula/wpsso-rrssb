@@ -13,7 +13,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareFacebook' ) ) {
 
 	class WpssoRrssbSubmenuShareFacebook {
 
-		private $p;
+		private $p;	// Wpsso class object.
 
 		public function __construct( &$plugin ) {
 

@@ -14,7 +14,8 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddypress' ) ) {
 
 	class WpssoRrssbStdSocialBuddypress {
 
-		private $p;
+		private $p;	// Wpsso class object.
+
 		private $sharing;
 
 		public function __construct( &$plugin ) {
@@ -54,7 +55,7 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddypressSharing' ) ) {
 
 	class WpssoRrssbStdSocialBuddypressSharing {
 
-		private $p;
+		private $p;	// Wpsso class object.
 
 		public function __construct( &$plugin ) {
 

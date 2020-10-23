@@ -13,7 +13,7 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 
 	class WpssoRrssbWidgetSharing extends WP_Widget {
 
-		private $p;
+		private $p;	// Wpsso class object.
 
 		public function __construct() {
 

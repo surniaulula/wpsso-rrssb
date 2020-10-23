@@ -13,7 +13,8 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 	class WpssoRrssbShortcodeSharing {
 
-		private $p;
+		private $p;	// Wpsso class object.
+
 		private $shortcode_name = 'rrssb';	// Default shortcode name.
 
 		public function __construct( &$plugin ) {

@@ -14,7 +14,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersUpgrade' ) ) {
 
 	class WpssoRrssbFiltersUpgrade {
 
-		private $p;
+		private $p;	// Wpsso class object.
 
 		/**
 		 * Instantiated by WpssoRrssbFilters->__construct().

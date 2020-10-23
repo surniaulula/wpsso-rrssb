@@ -14,7 +14,8 @@ if ( ! class_exists( 'WpssoRrssbStdEcomWoocommerce' ) ) {
 
 	class WpssoRrssbStdEcomWoocommerce {
 
-		private $p;
+		private $p;	// Wpsso class object.
+
 		private $sharing;
 
 		public function __construct( &$plugin ) {
@@ -47,7 +48,7 @@ if ( ! class_exists( 'WpssoRrssbStdEcomWoocommerceSharing' ) ) {
 
 	class WpssoRrssbStdEcomWoocommerceSharing {
 
-		private $p;
+		private $p;	// Wpsso class object.
 		private $is_variation = false;
 
 		public function __construct( &$plugin ) {

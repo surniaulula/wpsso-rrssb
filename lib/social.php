@@ -14,9 +14,11 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 	class WpssoRrssbSocial {
 
-		private $p;
+		private $p;	// Wpsso class object.
+
 		private $share = array();
-		private $post_buttons_disabled = array();	// cache for is_post_buttons_disabled()
+
+		private $post_buttons_disabled = array();	// Cache for is_post_buttons_disabled().
 
 		public static $sharing_css_name = '';
 		public static $sharing_css_file = '';

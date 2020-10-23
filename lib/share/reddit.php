@@ -14,7 +14,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareReddit' ) ) {
 
 	class WpssoRrssbSubmenuShareReddit {
 
-		private $p;
+		private $p;	// Wpsso class object.
 
 		public function __construct( &$plugin ) {
 

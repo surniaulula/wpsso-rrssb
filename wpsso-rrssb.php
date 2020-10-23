@@ -15,7 +15,7 @@
  * Requires At Least: 5.2
  * Tested Up To: 5.5.1
  * WC Tested Up To: 4.6.1
- * Version: 5.1.1
+ * Version: 5.2.0-dev.6
  * 
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -41,15 +41,15 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 	class WpssoRrssb extends WpssoAddOn {
 
-		public $actions;	// WpssoRrssbActions class.
-		public $filters;	// WpssoRrssbFilters class.
-		public $script;		// WpssoRrssbScript class.
-		public $social;		// WpssoRrssbSocial class.
-		public $style;		// WpssoRrssbStyle class.
+		public $actions;	// WpssoRrssbActions class object.
+		public $filters;	// WpssoRrssbFilters class object.
+		public $script;		// WpssoRrssbScript class object.
+		public $social;		// WpssoRrssbSocial class object.
+		public $style;		// WpssoRrssbStyle class object.
 
-		protected $p;
+		protected $p;	// Wpsso class object.
 
-		private static $instance = null;
+		private static $instance = null;	// WpssoRrssb class object.
 
 		public function __construct() {
 
@@ -88,8 +88,8 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 				return;	// Stop here.
 			}
 
-			$this->actions = new WpssoRrssbActions( $this->p );
-			$this->filters = new WpssoRrssbFilters( $this->p );
+			$this->actions = new WpssoRrssbActions( $this->p, $this );
+			$this->filters = new WpssoRrssbFilters( $this->p, $this );
 			$this->script  = new WpssoRrssbScript( $this->p );
 			$this->social  = new WpssoRrssbSocial( $this->p );
 			$this->style   = new WpssoRrssbStyle( $this->p );
