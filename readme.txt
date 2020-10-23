@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.2.0-dev.6 (2020/10/23)**
+**Version 5.2.0-b.1 (2020/10/23)**
 
 * **New Features**
 	* None.
@@ -177,7 +177,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.2.0-dev.6 =
+= 5.2.0-b.1 =
 
 (2020/10/23) Added an `$addon` object variable to the WpssoRrssbActions and WpssoRrssbFilters constructor arguments.
 
