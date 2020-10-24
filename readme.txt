@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.2.0-b.1 (2020/10/23)**
+**Version 5.2.0 (2020/10/24)**
 
 * **New Features**
 	* None.
@@ -138,7 +138,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v5.2.
-	* WPSSO Core v8.8.1.
+	* WPSSO Core v8.9.0.
 
 **Version 5.1.1 (2020/10/17)**
 
@@ -177,9 +177,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.2.0-b.1 =
+= 5.2.0 =
 
-(2020/10/23) Added an `$addon` object variable to the WpssoRrssbActions and WpssoRrssbFilters constructor arguments.
+(2020/10/24) Added an `$addon` object variable to the WpssoRrssbActions and WpssoRrssbFilters constructor arguments.
 
 = 5.1.1 =
 
