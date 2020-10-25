@@ -630,7 +630,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			$css_type = 'rrssb-excerpt';
 
 			$text = preg_replace_callback( '/(<!-- ' . $this->p->lca . ' ' . $css_type . ' begin -->' . 
-				'.*<!-- ' . $this->p->lca . ' ' . $css_type . ' end -->)(<\/p>)?/Usi', 
+				'.*<!-- ' . $this->p->lca . ' ' . $css_type . ' end -->)(<\/p>)?/Usi',
 					array( __CLASS__, 'remove_paragraph_tags' ), $text );
 
 			return $text;

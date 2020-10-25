@@ -105,11 +105,11 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 					'share_title' => $share_title,
 				);
 
-				add_meta_box( $this->pagehook . '_' . $share_id, $share_title, 
+				add_meta_box( $this->pagehook . '_' . $share_id, $share_title,
 					array( $this, 'show_metabox_rrssb_share' ), $metabox_screen,
 						$metabox_context, $metabox_prio, $callback_args );
 
-				add_filter( 'postbox_classes_' . $this->pagehook . '_' . $this->pagehook . '_' . $share_id, 
+				add_filter( 'postbox_classes_' . $this->pagehook . '_' . $this->pagehook . '_' . $share_id,
 					array( $this, 'add_class_postbox_rrssb_share' ) );
 			}
 		}
@@ -144,7 +144,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 				$filter_name = $this->p->lca . '_' . $metabox_id . '_' . $tab_key . '_rows';
 
 				$table_rows[ $tab_key ] = array_merge(
-					$this->get_table_rows( $metabox_id, $tab_key ), 
+					$this->get_table_rows( $metabox_id, $tab_key ),
 					(array) apply_filters( $filter_name, array(), $this->form )
 				);
 			}
@@ -186,17 +186,17 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 				case 'rrssb_buttons-include':
 
 					$table_rows[ 'buttons_on_index' ] = '' .
-					$this->form->get_th_html( _x( 'Include on Archive Webpages', 'option label', 'wpsso-rrssb' ), 
+					$this->form->get_th_html( _x( 'Include on Archive Webpages', 'option label', 'wpsso-rrssb' ),
 						$css_class = '', $css_id = 'buttons_on_index' ) . 
 					'<td>' . $this->form->get_checkbox( 'buttons_on_index' ) . '</td>';
 
 					$table_rows[ 'buttons_on_front' ] = '' .
-					$this->form->get_th_html( _x( 'Include on Page Homepage', 'option label', 'wpsso-rrssb' ), 
+					$this->form->get_th_html( _x( 'Include on Page Homepage', 'option label', 'wpsso-rrssb' ),
 						$css_class = '', $css_id = 'buttons_on_front' ) . 
 					'<td>' . $this->form->get_checkbox( 'buttons_on_front' ) . '</td>';
 
 					$table_rows[ 'buttons_add_to' ] = '' .
-					$this->form->get_th_html( _x( 'Include on Post Types', 'option label', 'wpsso-rrssb' ), 
+					$this->form->get_th_html( _x( 'Include on Post Types', 'option label', 'wpsso-rrssb' ),
 						$css_class = '', $css_id = 'buttons_add_to' ) . 
 					'<td>' . $this->form->get_checklist_post_types( 'buttons_add_to' ) . '</td>';
 
@@ -205,12 +205,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 				case 'rrssb_buttons-position':
 
 					$table_rows[ 'buttons_pos_content' ] = '' .
-					$this->form->get_th_html( _x( 'Position in Content', 'option label', 'wpsso-rrssb' ), 
+					$this->form->get_th_html( _x( 'Position in Content', 'option label', 'wpsso-rrssb' ),
 						$css_class = '', $css_id = 'buttons_pos_content' ) . 
 					'<td>' . $this->form->get_select( 'buttons_pos_content', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
 
 					$table_rows[ 'buttons_pos_excerpt' ] = '' .
-					$this->form->get_th_html( _x( 'Position in Excerpt', 'option label', 'wpsso-rrssb' ), 
+					$this->form->get_th_html( _x( 'Position in Excerpt', 'option label', 'wpsso-rrssb' ),
 						$css_class = '', $css_id = 'buttons_pos_excerpt' ) . 
 					'<td>' . $this->form->get_select( 'buttons_pos_excerpt', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
 

@@ -66,16 +66,16 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					 */
 					'lib' => array(
 						'share' => array(
-							'email'     => 'Email', 
-							'facebook'  => 'Facebook', 
-							'twitter'   => 'Twitter', 
-							'pinterest' => 'Pinterest', 
-							'linkedin'  => 'LinkedIn', 
-							'reddit'    => 'Reddit', 
-							'pocket'    => 'Pocket', 
-							'tumblr'    => 'Tumblr', 
-							'vk'        => 'VK', 
-							'whatsapp'  => 'WhatsApp', 
+							'email'     => 'Email',
+							'facebook'  => 'Facebook',
+							'twitter'   => 'Twitter',
+							'pinterest' => 'Pinterest',
+							'linkedin'  => 'LinkedIn',
+							'reddit'    => 'Reddit',
+							'pocket'    => 'Pocket',
+							'tumblr'    => 'Tumblr',
+							'vk'        => 'VK',
+							'whatsapp'  => 'WhatsApp',
 						),
 						'shortcode' => array(
 							'sharing' => 'Sharing Shortcode',
@@ -162,8 +162,8 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			'sharing' => array(
 				'show_on' => array( 
 					'content'    => 'Content',
-					'excerpt'    => 'Excerpt', 
-					'sidebar'    => 'CSS Sidebar', 
+					'excerpt'    => 'Excerpt',
+					'sidebar'    => 'CSS Sidebar',
 					'admin_edit' => 'Admin Edit',
 				),
 				'force_prot' => array( 
@@ -199,7 +199,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			return $add_slug ? $info[ 'slug' ] . '-' . $info[ 'version' ] : $info[ 'version' ];
 		}
 
-		public static function set_constants( $plugin_file ) { 
+		public static function set_constants( $plugin_file ) {
 
 			if ( defined( 'WPSSORRSSB_VERSION' ) ) {	// Define constants only once.
 
@@ -243,7 +243,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			}
 		}
 
-		public static function get_variable_constants() { 
+		public static function get_variable_constants() {
 
 			$var_const = array();
 
