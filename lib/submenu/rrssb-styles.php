@@ -6,6 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
@@ -18,6 +19,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -45,6 +47,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 			}
 
 			if ( null !== $row_num ) {
+
 				$form_button_rows[ $row_num ][ 'reload_default_rrssb_styles' ] = _x( 'Reload Default Responsive Styles',
 					'submit button', 'wpsso-rrssb' );
 			}
@@ -75,8 +78,11 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 			$metabox_id = 'rrssb_styles';
 
 			if ( file_exists( WpssoRrssbSocial::$sharing_css_file ) && false !== ( $fsize = filesize( WpssoRrssbSocial::$sharing_css_file ) ) ) {
+
 				$css_min_msg = ' <a href="' . WpssoRrssbSocial::$sharing_css_url . '">minified css is ' . $fsize . ' bytes</a>';
+
 			} else {
+
 				$css_min_msg = '';
 			}
 

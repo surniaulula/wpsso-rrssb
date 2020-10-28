@@ -6,6 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
@@ -20,6 +21,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -46,6 +48,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 					$this->share[ $id ] = new $classname( $this->p );
 
 					if ( $this->p->debug->enabled ) {
+
 						$this->p->debug->log( $classname . ' class loaded' );
 					}
 				}
@@ -66,6 +69,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			}
 
 			if ( null !== $row_num ) {
+
 				$form_button_rows[ $row_num ][ 'reload_default_rrssb_buttons' ] = _x( 'Reload Default Responsive Buttons',
 					'submit button', 'wpsso-rrssb' );
 			}
@@ -121,6 +125,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			$classes[] = 'postbox-rrssb_share';
 
 			if ( ! empty( $show_opts ) ) {
+
 				$classes[] = 'postbox-show_' . $show_opts;
 			}
 
