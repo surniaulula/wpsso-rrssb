@@ -113,8 +113,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 					array( $this, 'show_metabox_rrssb_share' ), $metabox_screen,
 						$metabox_context, $metabox_prio, $callback_args );
 
-				add_filter( 'postbox_classes_' . $this->pagehook . '_' . $this->pagehook . '_' . $share_id,
-					array( $this, 'add_class_postbox_rrssb_share' ) );
+				add_filter( 'postbox_classes_' . $this->pagehook . '_' . $this->pagehook . '_' . $share_id, array( $this, 'add_class_postbox_rrssb_share' ) );
 			}
 		}
 
