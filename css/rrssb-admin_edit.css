@@ -5,7 +5,7 @@
  */
 
 .wpsso-rrssb-admin_edit {
-	padding:10px 0;
+	padding:10px;
 	background-color:#f9f9f9;	/* Match the SSO metabox background. */
 	border-top:1px solid #ccc;
 }
