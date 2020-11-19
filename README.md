@@ -1,4 +1,4 @@
-<h1>Ridiculously Responsive Social Sharing Buttons (RRSSB)</h1><h3>WPSSO Add-on</h3>
+<h1>WPSSO Ridiculously Responsive Social Sharing Buttons (RRSSB)</h1>
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Ridiculously Responsive Social Sharing Buttons</td></tr>
