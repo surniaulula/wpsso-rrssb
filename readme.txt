@@ -125,6 +125,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 5.2.1 (2020/11/23)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Replaced references to `Wpsso->lca` by 'wpsso'.
+* **Requires At Least**
+	* PHP v5.6.
+	* WordPress v5.2.
+	* WPSSO Core v8.13.0.
+
 **Version 5.2.0 (2020/10/24)**
 
 * **New Features**
@@ -176,6 +191,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v8.7.0.
 
 == Upgrade Notice ==
+
+= 5.2.1 =
+
+(2020/11/23) Replaced references to `Wpsso->lca` by 'wpsso'.
 
 = 5.2.0 =
 
