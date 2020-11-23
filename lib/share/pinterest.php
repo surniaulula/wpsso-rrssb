@@ -125,7 +125,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 
 			if ( empty( $atts[ 'size' ] ) ) {
 
-				$atts[ 'size' ] = $this->p->lca . '-pinterest';
+				$atts[ 'size' ] = 'wpsso-pinterest';
 			}
 
 			if ( ! empty( $atts[ 'pid' ] ) ) {

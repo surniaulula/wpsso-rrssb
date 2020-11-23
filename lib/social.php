@@ -97,7 +97,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				return;
 			}
 
-			$styles = apply_filters( $wpsso->lca . '_rrssb_styles', $wpsso->cf[ 'sharing' ][ 'rrssb_styles' ] );
+			$styles = apply_filters( 'wpsso_rrssb_styles', $wpsso->cf[ 'sharing' ][ 'rrssb_styles' ] );
 
 			$sharing_css_data = '';
 
@@ -109,7 +109,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				}
 			}
 
-			$sharing_css_data = SucomUtil::minify_css( $sharing_css_data, $wpsso->lca );
+			$sharing_css_data = SucomUtil::minify_css( $sharing_css_data, $ext = 'wpsso' );
 
 			if ( $fh = @fopen( self::$sharing_css_file, 'wb' ) ) {
 
@@ -122,8 +122,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 					if ( is_admin() ) {
 
-						$wpsso->notice->err( sprintf( __( 'Failed writing the css file %s.',
-							'wpsso-rrssb' ), self::$sharing_css_file ) );
+						$wpsso->notice->err( sprintf( __( 'Failed writing the css file %s.', 'wpsso-rrssb' ), self::$sharing_css_file ) );
 					}
 
 				} elseif ( $wpsso->debug->enabled ) {
@@ -144,8 +143,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 					if ( is_admin() ) {
 
-						$wpsso->notice->err( sprintf( __( 'Cache folder %s is not writable.',
-							'wpsso-rrssb' ), WPSSO_CACHEDIR ) );
+						$wpsso->notice->err( sprintf( __( 'Cache folder %s is not writable.', 'wpsso-rrssb' ), WPSSO_CACHEDIR ) );
 					}
 				}
 
@@ -156,8 +154,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				if ( is_admin() ) {
 
-					$wpsso->notice->err( sprintf( __( 'Failed to open the css file %s for writing.',
-						'wpsso-rrssb' ), self::$sharing_css_file ) );
+					$wpsso->notice->err( sprintf( __( 'Failed to open the css file %s for writing.', 'wpsso-rrssb' ), self::$sharing_css_file ) );
 				}
 			}
 		}
@@ -210,8 +207,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			echo "\n\n";
 
-			echo $this->get_buttons( $text = '', $type = 'sidebar', $use_post = false, $location = 'bottom',
-				$atts = array( 'container_each' => true ) );
+			echo $this->get_buttons( $text = '', $type = 'sidebar', $use_post = false, $location = 'bottom', $atts = array( 'container_each' => true ) );
 		}
 
 		public function add_buttons_filter( $filter_name = 'the_content' ) {
@@ -280,7 +276,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				$this->p->debug->mark( 'getting buttons for ' . $type );	// Begin timer.
 			}
 
-			$lca        = $this->p->lca;
 			$is_admin   = is_admin();
 			$is_amp     = SucomUtil::is_amp();	// Returns null, true, or false.
 			$doing_ajax = SucomUtil::get_const( 'DOING_AJAX' );
@@ -359,9 +354,9 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					$error_msg = 'post buttons are disabled';
 				}
 
-			} elseif ( ! apply_filters( $lca . '_rrssb_add_buttons', true, $type, $mod, $location ) ) {
+			} elseif ( ! apply_filters( 'wpsso_rrssb_add_buttons', true, $type, $mod, $location ) ) {
 
-				$error_msg = $lca . '_rrssb_add_buttons filter returned false';
+				$error_msg = 'wpsso_rrssb_add_buttons filter returned false';
 			}
 
 			if ( empty( $error_msg ) ) {
@@ -406,7 +401,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			$sharing_url = $this->p->util->get_sharing_url( $mod );
 
-			$cache_md5_pre  = $lca . '_b_';
+			$cache_md5_pre  = 'wpsso_b_';
 			$cache_exp_secs = $this->p->util->get_cache_exp_secs( $cache_md5_pre );	// Default is week in seconds.
 			$cache_salt     = __METHOD__ . '(' . SucomUtil::get_mod_salt( $mod, $sharing_url ) . ')';
 			$cache_id       = $cache_md5_pre . md5( $cache_salt );
@@ -478,8 +473,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			if ( empty( $location ) ) {
 
-				$location = empty( $this->p->options[ 'buttons_pos_' . $type ] ) ? 
-					'bottom' : $this->p->options[ 'buttons_pos_' . $type ];
+				$location = empty( $this->p->options[ 'buttons_pos_' . $type ] ) ? 'bottom' : $this->p->options[ 'buttons_pos_' . $type ];
 			}
 
 			if ( ! isset( $cache_array[ $cache_index ] ) ) {
@@ -493,8 +487,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 					if ( ! empty( $this->p->options[ $opt_pre . '_on_' . $type ] ) ) {
 
-						$button_order = empty( $this->p->options[ $opt_pre . '_button_order' ] ) ?
-							0 : $this->p->options[ $opt_pre . '_button_order' ];
+						$button_order = empty( $this->p->options[ $opt_pre . '_button_order' ] ) ? 0 : $this->p->options[ $opt_pre . '_button_order' ];
 
 						$sorted_ids[ zeroise( $button_order, 3 ) . '-' . $id ] = $id;
 					}
@@ -512,9 +505,9 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				if ( ! empty( $cache_array[ $cache_index ] ) ) {
 
 					$css_type      = 'rrssb-' . $type;
-					$css_id        = 'sidebar' === $type ? $lca . '-' . $css_type . ' ' : '';
-					$css_class     = $lca . '-rrssb ' . $lca . '-' . $css_type;
-					$css_class_max = $lca . '-rrssb-limit ' . $lca . '-' . $css_type . '-limit';
+					$css_id        = 'sidebar' === $type ? 'wpsso-' . $css_type . ' ' : '';
+					$css_class     = 'wpsso-rrssb wpsso-' . $css_type;
+					$css_class_max = 'wpsso-rrssb-limit wpsso-' . $css_type . '-limit';
 
 					/**
 					 * Do not count $sorted_ids since some buttons may not return anything (ie. the WhatsApp
@@ -525,7 +518,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 					if ( $mod[ 'name' ] ) {
 
-						$css_id .= $lca . '-' . $css_type . '-' . $mod[ 'name' ];
+						$css_id .= 'wpsso-' . $css_type . '-' . $mod[ 'name' ];
 
 						if ( $mod[ 'id' ] ) {
 
@@ -538,10 +531,10 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 						'<div class="' . $css_class_max . '" style="' . $css_style_max . '">' . "\n" .
 						$cache_array[ $cache_index ] .
 						'</div>' . "\n" .
-						'</div><!-- .' . $lca . '-rrssb -->' . "\n" .
+						'</div><!-- .wpsso-rrssb -->' . "\n" .
 						'<!-- generated on ' . date( 'c' ) . ' -->' . "\n";
 
-					$cache_array[ $cache_index ] = apply_filters( $lca . '_rrssb_buttons_html',
+					$cache_array[ $cache_index ] = apply_filters( 'wpsso_rrssb_buttons_html',
 						$cache_array[ $cache_index ], $type, $mod, $location, $atts );
 				}
 
@@ -605,7 +598,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			$cache_index .= false !== $share_ids ? '_share_ids:' . http_build_query( $share_ids, '', ',' ) : '';
 
-			$cache_index = apply_filters( $this->p->lca . '_rrssb_buttons_cache_index', $cache_index );
+			$cache_index = apply_filters( 'wpsso_rrssb_buttons_cache_index', $cache_index );
 
 			return $cache_index;
 		}
@@ -629,8 +622,8 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			$css_type = 'rrssb-excerpt';
 
-			$text = preg_replace_callback( '/(<!-- ' . $this->p->lca . ' ' . $css_type . ' begin -->' . 
-				'.*<!-- ' . $this->p->lca . ' ' . $css_type . ' end -->)(<\/p>)?/Usi',
+			$text = preg_replace_callback( '/(<!-- wpsso ' . $css_type . ' begin -->' . 
+				'.*<!-- wpsso ' . $css_type . ' end -->)(<\/p>)?/Usi',
 					array( __CLASS__, 'remove_paragraph_tags' ), $text );
 
 			return $text;
@@ -692,16 +685,16 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 						} else {
 
-							$atts[ 'url' ] = apply_filters( $this->p->lca . '_sharing_url', $atts[ 'url' ], $mod, $atts[ 'add_page' ] );
+							$atts[ 'url' ] = apply_filters( 'wpsso_sharing_url', $atts[ 'url' ], $mod, $atts[ 'add_page' ] );
 						}
 
 						/**
 						 * Filter to add custom tracking arguments.
 						 */
-						$atts[ 'url' ] = apply_filters( $this->p->lca . '_rrssb_buttons_shared_url',
+						$atts[ 'url' ] = apply_filters( 'wpsso_rrssb_buttons_shared_url',
 							$atts[ 'url' ], $mod, $id );
 
-						$force_prot = apply_filters( $this->p->lca . '_rrssb_buttons_force_prot',
+						$force_prot = apply_filters( 'wpsso_rrssb_buttons_force_prot',
 							$this->p->options[ 'buttons_force_prot' ], $mod, $id, $atts[ 'url' ] );
 
 						if ( ! empty( $force_prot ) && $force_prot !== 'none' ) {
@@ -821,7 +814,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				$ret = true;
 			}
 
-			return $this->post_buttons_disabled[ $post_id ] = apply_filters( $this->p->lca . '_post_buttons_disabled', $ret, $post_id );
+			return $this->post_buttons_disabled[ $post_id ] = apply_filters( 'wpsso_post_buttons_disabled', $ret, $post_id );
 		}
 
 		public function remove_paragraph_tags( $match = array() ) {
@@ -854,6 +847,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			$share_lib = $this->p->cf[ 'plugin' ][ 'wpssorrssb' ][ 'lib' ][ 'share' ];
 
 			foreach ( $keys as $id ) {
+
 				$share_ids[ $id ] = isset( $share_lib[ $id ] ) ? $share_lib[ $id ] : ucfirst( $id );
 			}
 

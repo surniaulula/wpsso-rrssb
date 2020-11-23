@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"5.2.0\n"
+"5.2.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2020-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -469,15 +469,15 @@ msgstr ""
 msgid "Failed writing the css file %s."
 msgstr ""
 
-#: lib/social.php:147
+#: lib/social.php:146
 msgid "Cache folder %s is not writable."
 msgstr ""
 
-#: lib/social.php:159
+#: lib/social.php:157
 msgid "Failed to open the css file %s for writing."
 msgstr ""
 
-#: lib/social.php:180
+#: lib/social.php:177
 msgid ""
 "Error removing the minified stylesheet &mdash; does the web server have "
 "sufficient privileges?"
@@ -581,12 +581,12 @@ msgstr ""
 msgid "The %s widget."
 msgstr ""
 
-#: lib/widget/sharing.php:195
+#: lib/widget/sharing.php:196
 msgctxt "option value"
 msgid "Share It"
 msgstr ""
 
-#: lib/widget/sharing.php:198
+#: lib/widget/sharing.php:199
 msgctxt "option label"
 msgid "Widget Title (leave blank for no title)"
 msgstr ""

@@ -97,11 +97,11 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 
 			$table_rows  = array();
 
-			$styles_tabs = apply_filters( $this->p->lca . '_' . $metabox_id . '_tabs', $this->p->cf[ 'sharing' ][ 'rrssb_styles' ] );
+			$styles_tabs = apply_filters( 'wpsso_' . $metabox_id . '_tabs', $this->p->cf[ 'sharing' ][ 'rrssb_styles' ] );
 
 			foreach ( $styles_tabs as $tab_key => $title ) {
 
-				$filter_name = $this->p->lca . '_' . $metabox_id . '_' . $tab_key . '_rows';
+				$filter_name = 'wpsso_' . $metabox_id . '_' . $tab_key . '_rows';
 
 				$table_rows[ $tab_key ] = array_merge(
 					$this->get_table_rows( $metabox_id, $tab_key ),

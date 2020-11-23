@@ -27,7 +27,7 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 			$short        = $this->p->cf[ 'plugin' ][ 'wpssorrssb' ][ 'short' ];
 			$name         = $this->p->cf[ 'plugin' ][ 'wpssorrssb' ][ 'name' ];
 			$widget_name  = $short;
-			$widget_class = $this->p->lca . '-rrssb-widget';
+			$widget_class = 'wpsso-rrssb-widget';
 			$widget_ops   = array( 
 				'classname'   => $widget_class,
 				'description' => sprintf( __( 'The %s widget.', 'wpsso-rrssb' ), $name ),
@@ -60,7 +60,7 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 			$type        = 'sharing_widget_' . $this->id;
 			$sharing_url = $this->p->util->get_sharing_url( $mod );
 
-			$cache_md5_pre  = $this->p->lca . '_b_';
+			$cache_md5_pre  = 'wpsso_b_';
 			$cache_exp_secs = $this->p->util->get_cache_exp_secs( $cache_md5_pre );	// Default is week in seconds.
 			$cache_salt     = __METHOD__ . '(' . SucomUtil::get_mod_salt( $mod, $sharing_url ) . ')';
 			$cache_id       = $cache_md5_pre . md5( $cache_salt );
@@ -141,13 +141,14 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 			$cache_array[ $cache_index ] = $rrssb->social->get_html( $sorted_ids, $atts, $mod );
 
 			if ( ! empty( $cache_array[ $cache_index ] ) ) {
+
 				$cache_array[ $cache_index ] = '
-<!-- ' . $this->p->lca . ' sharing widget ' . $args[ 'widget_id' ] . ' begin -->' . "\n" . 
+<!-- wpsso sharing widget ' . $args[ 'widget_id' ] . ' begin -->' . "\n" . 
 $before_widget . 
 ( empty( $widget_title ) ? '' : $before_title . $widget_title . $after_title ) . 
 $cache_array[ $cache_index ] . "\n" . 	// Buttons html is trimmed, so add newline.
 $after_widget . 
-'<!-- ' . $this->p->lca . ' sharing widget ' . $args[ 'widget_id' ] . ' end -->' . "\n\n";
+'<!-- wpsso sharing widget ' . $args[ 'widget_id' ] . ' end -->' . "\n\n";
 			}
 
 			if ( $cache_exp_secs > 0 ) {
@@ -183,7 +184,7 @@ $after_widget .
 			/**
 			 * Clear all sharing button transient cache objects.
 			 */
-			$cleared_count = $this->p->util->cache->clear_db_transients( $clear_short = false, $transient_prefix = $this->p->lca . '_b_' );
+			$cleared_count = $this->p->util->cache->clear_db_transients( $clear_short = false, $transient_prefix = 'wpsso_b_' );
 
 			return $instance;
 		}

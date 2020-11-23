@@ -100,7 +100,7 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 
 			$def_opts = $this->p->opt->get_defaults();
 
-			$styles = apply_filters( $this->p->lca . '_rrssb_styles', $this->p->cf[ 'sharing' ][ 'rrssb_styles' ] );
+			$styles = apply_filters( 'wpsso_rrssb_styles', $this->p->cf[ 'sharing' ][ 'rrssb_styles' ] );
 
 			foreach ( $styles as $id => $name ) {
 

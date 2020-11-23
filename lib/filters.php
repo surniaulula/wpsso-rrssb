@@ -128,7 +128,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 				$defs = $this->p->opt->get_defaults();
 
-				$styles = apply_filters( $this->p->lca . '_rrssb_styles', $this->p->cf[ 'sharing' ][ 'rrssb_styles' ] );
+				$styles = apply_filters( 'wpsso_rrssb_styles', $this->p->cf[ 'sharing' ][ 'rrssb_styles' ] );
 
 				foreach ( $styles as $id => $name ) {
 
@@ -165,7 +165,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 			$rel_url_path = parse_url( WPSSORRSSB_URLPATH, PHP_URL_PATH );	// Returns a relative URL.
 
-			$styles = apply_filters( $this->p->lca . '_rrssb_styles', $this->p->cf[ 'sharing' ][ 'rrssb_styles' ] );
+			$styles = apply_filters( 'wpsso_rrssb_styles', $this->p->cf[ 'sharing' ][ 'rrssb_styles' ] );
 
 			foreach ( $styles as $id => $name ) {
 
@@ -241,8 +241,8 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$td_attr = WpssoAdmin::$pkg[ $this->p->lca ][ 'pp' ] ? '' : ' class="blank"';
-			$in_func = WpssoAdmin::$pkg[ $this->p->lca ][ 'pp' ] ? 'get_input' : 'get_no_input';
+			$td_attr = WpssoAdmin::$pkg[ 'wpsso' ][ 'pp' ] ? '' : ' class="blank"';
+			$in_func = WpssoAdmin::$pkg[ 'wpsso' ][ 'pp' ] ? 'get_input' : 'get_no_input';
 			$opt_key = $css_id = 'plugin_sharing_buttons_cache_exp';
 
 			SucomUtil::add_after_key( $table_rows, 'plugin_content_cache_exp', array( 
@@ -352,7 +352,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			/**
 			 * Get the default Pinterest image pid and URL.
 			 */
-			$size_name     = $this->p->lca . '-pinterest';
+			$size_name     = 'wpsso-pinterest';
 			$media_request = array( 'pid', 'img_url' );
 			$pin_media     = $this->p->og->get_media_info( $size_name, $media_request, $mod, array( 'p', 'schema', 'og' ) );
 
@@ -421,7 +421,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 		public function filter_post_cache_transient_keys( $transient_keys, $mod, $sharing_url, $mod_salt ) {
 
-			$cache_md5_pre = $this->p->lca . '_b_';
+			$cache_md5_pre = 'wpsso_b_';
 
 			$transient_keys[] = array(
 				'id'   => $cache_md5_pre . md5( 'wpssorrssb_get_sharing_buttons(' . $mod_salt . ')' ),

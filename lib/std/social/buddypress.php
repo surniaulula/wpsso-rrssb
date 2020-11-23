@@ -93,7 +93,7 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddypressSharing' ) ) {
 				/**
 				 * Remove sharing filters on WordPress content and excerpt.
 				 */
-				add_action( $this->p->lca . '_init_plugin', array( $this, 'remove_wp_buttons' ), 100, 0 );
+				add_action( 'wpsso_init_plugin', array( $this, 'remove_wp_buttons' ), 100, 0 );
 
 				/**
 				 * Add sharing buttons to each activity entry.

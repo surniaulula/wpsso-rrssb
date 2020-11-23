@@ -135,7 +135,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 
 			$metabox_id = 'rrssb_buttons';
 
-			$metabox_tabs = apply_filters( $this->p->lca . '_rrssb_buttons_tabs', array(
+			$metabox_tabs = apply_filters( 'wpsso_rrssb_buttons_tabs', array(
 				'include'  => _x( 'Include Buttons', 'metabox tab', 'wpsso-rrssb' ),
 				'position' => _x( 'Buttons Position', 'metabox tab', 'wpsso-rrssb' ),
 				'advanced' => _x( 'Advanced Settings', 'metabox tab', 'wpsso-rrssb' ),
@@ -145,7 +145,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 
 			foreach ( $metabox_tabs as $tab_key => $title ) {
 
-				$filter_name = $this->p->lca . '_' . $metabox_id . '_' . $tab_key . '_rows';
+				$filter_name = 'wpsso_' . $metabox_id . '_' . $tab_key . '_rows';
 
 				$table_rows[ $tab_key ] = array_merge(
 					$this->get_table_rows( $metabox_id, $tab_key ),
@@ -162,18 +162,18 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 
 			$metabox_id = 'rrssb_share';
 
-			$metabox_tabs  = apply_filters( $this->p->lca . '_' . $metabox_id . '_' . $callback_args[ 'share_id' ] . '_tabs', array() );
+			$metabox_tabs  = apply_filters( 'wpsso_' . $metabox_id . '_' . $callback_args[ 'share_id' ] . '_tabs', array() );
 
 			if ( empty( $metabox_tabs ) ) {
 
-				$this->p->util->metabox->do_table( apply_filters( $this->p->lca . '_' . $metabox_id . '_' . $callback_args[ 'share_id' ] . '_rows',
+				$this->p->util->metabox->do_table( apply_filters( 'wpsso_' . $metabox_id . '_' . $callback_args[ 'share_id' ] . '_rows',
 					array(), $this->form, $this ), 'metabox-' . $metabox_id . '-' . $callback_args[ 'share_id' ], 'metabox-' . $metabox_id );
 
 			} else {
 
 				foreach ( $metabox_tabs as $tab => $title ) {
 
-					$table_rows[ $tab ] = apply_filters( $this->p->lca . '_' . $metabox_id . '_' . $callback_args[ 'share_id' ] . '_' . $tab . '_rows',
+					$table_rows[ $tab ] = apply_filters( 'wpsso_' . $metabox_id . '_' . $callback_args[ 'share_id' ] . '_' . $tab . '_rows',
 						array(), $this->form, $this );
 				}
 
@@ -246,7 +246,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 
 			$max_cols = 6;
 
-			$show_on = apply_filters( $this->p->lca . '_rrssb_buttons_show_on', $this->p->cf[ 'sharing' ][ 'show_on' ], $opt_pre );
+			$show_on = apply_filters( 'wpsso_rrssb_buttons_show_on', $this->p->cf[ 'sharing' ][ 'show_on' ], $opt_pre );
 
 			$html = '<table>';
 

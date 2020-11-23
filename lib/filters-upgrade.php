@@ -98,7 +98,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersUpgrade' ) ) {
 				),
 			);
 
-			$show_on = apply_filters( $this->p->lca . '_rrssb_buttons_show_on', $this->p->cf[ 'sharing' ][ 'show_on' ], 'gp' );
+			$show_on = apply_filters( 'wpsso_rrssb_buttons_show_on', $this->p->cf[ 'sharing' ][ 'show_on' ], 'gp' );
 
 			foreach ( $show_on as $opt_suffix => $short_desc ) {
 

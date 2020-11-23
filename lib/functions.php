@@ -67,7 +67,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 		$type        = __FUNCTION__;
 		$sharing_url = $wpsso->util->get_sharing_url( $mod );
 
-		$cache_md5_pre = $wpsso->lca . '_b_';
+		$cache_md5_pre = 'wpsso_b_';
 		$cache_salt    = __FUNCTION__ . '(' . SucomUtil::get_mod_salt( $mod, $sharing_url ) . ')';
 		$cache_id      = $cache_md5_pre . md5( $cache_salt );
 		$cache_index   = $rrssb->social->get_buttons_cache_index( $type, $atts, $share_ids );
@@ -147,10 +147,10 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 		if ( ! empty( $cache_array[ $cache_index ] ) ) {
 
 			$cache_array[ $cache_index ] = '
-<!-- ' . $wpsso->lca . ' ' . __FUNCTION__ . ' function begin -->
+<!-- wpsso ' . __FUNCTION__ . ' function begin -->
 <!-- generated on ' . date( 'c' ) . ' -->' . "\n" . 
 $cache_array[ $cache_index ] . "\n" . 	// buttons html is trimmed, so add newline
-'<!-- ' . $wpsso->lca . ' ' . __FUNCTION__ . ' function end -->' . "\n\n";
+'<!-- wpsso ' . __FUNCTION__ . ' function end -->' . "\n\n";
 		}
 
 		if ( $cache_exp_secs > 0 ) {

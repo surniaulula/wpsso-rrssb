@@ -108,10 +108,10 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 
 					if ( $this->p->debug->enabled ) {
 
-						$this->p->debug->log( 'wp_enqueue_style = ' . $this->p->lca . '_rrssb_sharing_css' );
+						$this->p->debug->log( 'wp_enqueue_style = wpsso_rrssb_sharing_css' );
 					}
 
-					wp_enqueue_style( $this->p->lca . '_rrssb_sharing_css', WpssoRrssbSocial::$sharing_css_url, false, $sharing_css_mtime );
+					wp_enqueue_style( 'wpsso_rrssb_sharing_css', WpssoRrssbSocial::$sharing_css_url, false, $sharing_css_mtime );
 
 				} else {
 

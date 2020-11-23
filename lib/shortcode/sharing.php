@@ -6,6 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
@@ -22,6 +23,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -58,6 +60,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 					add_filter( $filter_name, 'wpautop' , $default_priority );
 
 					if ( $this->p->debug->enabled ) {
+
 						$this->p->debug->log( 'wpautop() priority changed from ' . $filter_priority . ' to ' . $default_priority );
 					}
 				}
@@ -70,6 +73,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 		public function action_pre_apply_filters_text( $filter_name ) {
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->log_args( array( 
 					'filter_name' => $filter_name,
 				) );
@@ -92,6 +96,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 		public function action_after_apply_filters_text( $filter_name ) {
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->log_args( array( 
 					'filter_name' => $filter_name,
 				) );
@@ -105,6 +110,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			if ( shortcode_exists( $this->shortcode_name ) ) {
 
 				if ( $this->p->debug->enabled ) {
+
 					$this->p->debug->log( 'cannot add ' . $this->shortcode_name . ' shortcode - already exists' );
 				}
 
@@ -114,6 +120,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
         		add_shortcode( $this->shortcode_name, array( $this, 'do_shortcode' ) );
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->log( $this->shortcode_name . ' shortcode added' );
 			}
 
@@ -127,6 +134,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				remove_shortcode( $this->shortcode_name );
 
 				if ( $this->p->debug->enabled ) {
+
 					$this->p->debug->log( $this->shortcode_name . ' shortcode removed' );
 				}
 
@@ -135,6 +143,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			}
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->log( 'cannot remove ' . $this->shortcode_name . ' shortcode - does not exist' );
 			}
 
@@ -144,12 +153,14 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 		public function do_shortcode( $atts = array(), $content = null, $tag = '' ) {
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
 			if ( SucomUtil::is_amp() ) {	// Returns null, true, or false.
 
 				if ( $this->p->debug->enabled ) {
+
 					$this->p->debug->log( 'exiting early: buttons not allowed in amp endpoint'  );
 				}
 
@@ -158,6 +169,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			} elseif ( is_feed() ) {
 
 				if ( $this->p->debug->enabled ) {
+
 					$this->p->debug->log( 'exiting early: buttons not allowed in rss feeds'  );
 				}
 
@@ -167,12 +179,14 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			$rrssb =& WpssoRrssb::get_instance();
 
 			if ( ! is_array( $atts ) ) {	// Empty string if no shortcode attributes.
+
 				$atts = array();
 			}
 
-			$atts = (array) apply_filters( $this->p->lca . '_rrssb_sharing_shortcode_atts', $atts, $content );
+			$atts = (array) apply_filters( 'wpsso_rrssb_sharing_shortcode_atts', $atts, $content );
 
 			if ( empty( $atts[ 'buttons' ] ) ) {	// Nothing to do.
+
 				return '<!-- ' . $this->shortcode_name . ' shortcode: no buttons attribute -->' . "\n\n";
 			}
 
@@ -180,6 +194,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			$atts[ 'css_class' ] = empty( $atts[ 'css_class' ] ) ? 'rrssb-shortcode' : $atts[ 'css_class' ];
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->log( 'required call to get_page_mod()' );
 			}
 
@@ -187,7 +202,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			$type        = 'sharing_shortcode_' . $this->shortcode_name;
 			$atts[ 'url' ] = empty( $atts[ 'url' ] ) ? $this->p->util->get_sharing_url( $mod ) : $atts[ 'url' ];
 
-			$cache_md5_pre  = $this->p->lca . '_b_';
+			$cache_md5_pre  = 'wpsso_b_';
 			$cache_exp_secs = $this->p->util->get_cache_exp_secs( $cache_md5_pre );	// Default is week in seconds.
 			$cache_salt     = __METHOD__ . '(' . SucomUtil::get_mod_salt( $mod, $atts[ 'url' ] ) . ')';
 			$cache_id       = $cache_md5_pre . md5( $cache_salt );
@@ -197,6 +212,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			if ( is_404() || is_search() ) {
 
 				if ( $this->p->debug->enabled ) {
+
 					$this->p->debug->log( 'setting cache expiration to 0 seconds for 404 or search page' );
 				}
 
@@ -204,6 +220,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			}
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->log( 'sharing url = ' . $atts[ 'url' ] );
 				$this->p->debug->log( 'cache expire = ' . $cache_exp_secs );
 				$this->p->debug->log( 'cache salt = ' . $cache_salt );
@@ -218,6 +235,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				if ( isset( $cache_array[ $cache_index ] ) ) {	// Can be an empty string.
 
 					if ( $this->p->debug->enabled ) {
+
 						$this->p->debug->log( $type . ' cache index found in transient cache' );
 					}
 
@@ -226,10 +244,12 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				} else {
 
 					if ( $this->p->debug->enabled ) {
+
 						$this->p->debug->log( $type . ' cache index not in transient cache' );
 					}
 
 					if ( ! is_array( $cache_array ) ) {
+
 						$cache_array = array();
 					}
 				}
@@ -237,11 +257,14 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			} else {
 
 				if ( $this->p->debug->enabled ) {
+
 					$this->p->debug->log( $type . ' buttons transient cache is disabled' );
 				}
 
 				if ( SucomUtil::delete_transient_array( $cache_id ) ) {
+
 					if ( $this->p->debug->enabled ) {
+
 						$this->p->debug->log( 'deleted transient cache id ' . $cache_id );
 					}
 				}
@@ -257,13 +280,13 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			$cache_array[ $cache_index ] = $rrssb->social->get_html( $ids, $atts, $mod );
 
 			if ( ! empty( $cache_array[ $cache_index ] ) ) {
+
 				$cache_array[ $cache_index ] = '
-<!-- ' . $this->p->lca . ' ' . $type . ' begin -->
-<!-- generated on ' . date( 'c' ) . ' -->
-<div class="' . $this->p->lca . '-rrssb ' . $this->p->lca . '-' . $atts[ 'css_class' ] . '">' . "\n" . 
+<!-- wpsso ' . $type . ' begin -->
+<div class="wpsso-rrssb wpsso-' . $atts[ 'css_class' ] . '">' . "\n" . 
 $cache_array[ $cache_index ] . "\n" . 	// Buttons html is trimmed, so add newline.
-'</div><!-- .' . $this->p->lca . '-' . $atts[ 'css_class' ] . ' -->' . "\n" . 
-'<!-- ' . $this->p->lca . ' ' . $type . ' end -->' . "\n\n";
+'</div><!-- .wpsso-' . $atts[ 'css_class' ] . ' -->' . "\n" . 
+'<!-- wpsso ' . $type . ' end -->' . "\n\n";
 			}
 
 			if ( $cache_exp_secs > 0 ) {
@@ -274,6 +297,7 @@ $cache_array[ $cache_index ] . "\n" . 	// Buttons html is trimmed, so add newlin
 				$expires_in_secs = SucomUtil::update_transient_array( $cache_id, $cache_array, $cache_exp_secs );
 
 				if ( $this->p->debug->enabled ) {
+
 					$this->p->debug->log( $type . ' buttons saved to transient cache (expires in ' . $expires_in_secs . ' secs)' );
 				}
 			}
