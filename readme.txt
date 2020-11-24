@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.2.1 (2020/11/23)**
+**Version 5.2.1 (2020/11/24)**
 
 * **New Features**
 	* None.
@@ -194,7 +194,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 5.2.1 =
 
-(2020/11/23) Replaced references to `Wpsso->lca` by 'wpsso'.
+(2020/11/24) Replaced references to `Wpsso->lca` by 'wpsso'.
 
 = 5.2.0 =
 
