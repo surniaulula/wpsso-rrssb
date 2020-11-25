@@ -241,7 +241,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$pkg_info = $this->p->admin->plugin_pkg_info();	// Returns an array from cache.
+			$pkg_info = $this->p->admin->get_pkg_info();	// Returns an array from cache.
 			$td_attr  = $pkg_info[ 'wpsso' ][ 'pp' ] ? '' : ' class="blank"';
 			$get_func = $pkg_info[ 'wpsso' ][ 'pp' ] ? 'get_input' : 'get_no_input';
 			$opt_key  = $css_id = 'plugin_sharing_buttons_cache_exp';
