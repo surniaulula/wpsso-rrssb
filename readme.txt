@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.3.0-rc.1 (2020/11/25)**
+**Version 5.3.0 (2020/11/25)**
 
 * **New Features**
 	* None.
@@ -138,7 +138,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v5.2.
-	* WPSSO Core v8.14.0-rc.1.
+	* WPSSO Core v8.14.0.
 
 **Version 5.2.1 (2020/11/24)**
 
@@ -157,7 +157,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.3.0-rc.1 =
+= 5.3.0 =
 
 (2020/11/25) Updated a method call for WPSSO Core v8.14.0.
 
