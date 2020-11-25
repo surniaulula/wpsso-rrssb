@@ -330,67 +330,67 @@ msgstr ""
 msgid "Failed to open the css file %s for reading."
 msgstr ""
 
-#: lib/filters.php:249 lib/submenu/rrssb-buttons.php:232
+#: lib/filters.php:250 lib/submenu/rrssb-buttons.php:232
 msgctxt "option label"
 msgid "Sharing Buttons Cache Expiry"
 msgstr ""
 
-#: lib/filters.php:251 lib/submenu/rrssb-buttons.php:235
+#: lib/filters.php:252 lib/submenu/rrssb-buttons.php:235
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr ""
 
-#: lib/filters.php:267
+#: lib/filters.php:268
 msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr ""
 
-#: lib/filters.php:290
+#: lib/filters.php:291
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/filters.php:311
+#: lib/filters.php:312
 msgctxt "option label"
 msgid "Email Subject"
 msgstr ""
 
-#: lib/filters.php:318
+#: lib/filters.php:319
 msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/filters.php:340
+#: lib/filters.php:341
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/filters.php:377
+#: lib/filters.php:378
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/filters.php:406
+#: lib/filters.php:407
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/filters.php:413
+#: lib/filters.php:414
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
 
-#: lib/filters.php:497
+#: lib/filters.php:498
 msgctxt "lib file description"
 msgid "(sharing) Sharing Stylesheet"
 msgstr ""
 
-#: lib/filters.php:505
+#: lib/filters.php:506
 msgctxt "lib file description"
 msgid "(sharing) Sharing Shortcode"
 msgstr ""
 
-#: lib/filters.php:513
+#: lib/filters.php:514
 msgctxt "lib file description"
 msgid "(sharing) Sharing Widget"
 msgstr ""
