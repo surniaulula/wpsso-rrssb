@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 5.1.1\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 5.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2020-10-17 11:40-0700\n"
-"PO-Revision-Date: 2020-10-17 11:40-0700\n"
+"POT-Creation-Date: 2020-11-25 13:36-0800\n"
+"PO-Revision-Date: 2020-11-25 13:36-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -13,11 +13,11 @@ msgstr ""
 "X-Generator: Poedit 1.8.6\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: gettext/gettext-lib-abstracts-com.php:6 lib/abstracts/com/add-on.php:161
+#: gettext/gettext-lib-abstracts-com.php:6 lib/abstracts/com/add-on.php:178
 msgid "The %1$s add-on requires the %2$s plugin &mdash; please activate the missing plugin."
 msgstr "L'ajout %1$s nécessite l'extension %2$s &mdash; veuillez activer l'extension manquante."
 
-#: gettext/gettext-lib-abstracts-com.php:7 lib/abstracts/com/add-on.php:179
+#: gettext/gettext-lib-abstracts-com.php:7 lib/abstracts/com/add-on.php:196
 msgid "The %1$s add-on requires %2$s version %3$s or newer (version %4$s is currently installed)."
 msgstr "L'ajout %1$s nécessite %2$s version %3$s ou plus récente (la version %4$s est actuellement installée)."
 
@@ -141,11 +141,11 @@ msgctxt "option value"
 msgid "Any Platform"
 msgstr "Toute plateformes"
 
-#: lib/actions.php:87
+#: lib/actions.php:96
 msgid "The default responsive button options have been reloaded and saved."
 msgstr "Les options des boutons réactifs par défaut ont été rechargées et sauvegardés."
 
-#: lib/actions.php:106 lib/filters.php:139
+#: lib/actions.php:117 lib/filters.php:141
 msgid "The default responsive styles CSS has been reloaded and saved."
 msgstr "Le CSS par défaut des styles réactifs ont été rechargés et sauvegardés."
 
@@ -270,71 +270,71 @@ msgstr "Le code HTML des boutons de partage social est enregistré dans le cache
 msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
 msgstr "La valeur d'expiration de cache suggérée est de %1$s secondes (%2$s)."
 
-#: lib/filters.php:190
+#: lib/filters.php:192
 msgid "Failed to open the css file %s for reading."
 msgstr "Impossible d'ouvrir le fichier css %s pour lecture."
 
-#: lib/filters.php:247 lib/submenu/rrssb-buttons.php:228
+#: lib/filters.php:250 lib/submenu/rrssb-buttons.php:232
 msgctxt "option label"
 msgid "Sharing Buttons Cache Expiry"
 msgstr "Expiration cache boutons de partage"
 
-#: lib/filters.php:249 lib/submenu/rrssb-buttons.php:231
+#: lib/filters.php:252 lib/submenu/rrssb-buttons.php:235
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr "secondes (0 pour désactiver)"
 
-#: lib/filters.php:265
+#: lib/filters.php:268
 msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr "Boutons de partage"
 
-#: lib/filters.php:288
+#: lib/filters.php:291
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr "Désactiver les boutons"
 
-#: lib/filters.php:309
+#: lib/filters.php:312
 msgctxt "option label"
 msgid "Email Subject"
 msgstr "Sujet du couriel"
 
-#: lib/filters.php:316
+#: lib/filters.php:319
 msgctxt "option label"
 msgid "Email Message"
 msgstr "Message du courriel"
 
-#: lib/filters.php:338
+#: lib/filters.php:341
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr "Texte du Tweet"
 
-#: lib/filters.php:375
+#: lib/filters.php:378
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr "Texte légende Pinterest"
 
-#: lib/filters.php:404
+#: lib/filters.php:407
 msgctxt "option label"
 msgid "%s Title"
 msgstr "Titre %s"
 
-#: lib/filters.php:411
+#: lib/filters.php:414
 msgctxt "option label"
 msgid "%s Caption"
 msgstr "Légende %s"
 
-#: lib/filters.php:497
+#: lib/filters.php:498
 msgctxt "lib file description"
 msgid "(sharing) Sharing Stylesheet"
 msgstr "(sharing) Styles de partage social"
 
-#: lib/filters.php:505
+#: lib/filters.php:506
 msgctxt "lib file description"
 msgid "(sharing) Sharing Shortcode"
 msgstr "(sharing) Code court de partage"
 
-#: lib/filters.php:513
+#: lib/filters.php:514
 msgctxt "lib file description"
 msgid "(sharing) Sharing Widget"
 msgstr "(sharing) Widget de partage"
@@ -409,11 +409,11 @@ msgctxt "option label"
 msgid "Recommend Author @username"
 msgstr "Recommander @nom d'auteur"
 
-#: lib/social.php:123
+#: lib/social.php:125
 msgid "Failed writing the css file %s."
 msgstr "Impossible d'écrire le fichier css %s."
 
-#: lib/social.php:145
+#: lib/social.php:146
 msgid "Cache folder %s is not writable."
 msgstr "Le dossier de cache %s n'est pas accessible en écriture."
 
@@ -421,21 +421,21 @@ msgstr "Le dossier de cache %s n'est pas accessible en écriture."
 msgid "Failed to open the css file %s for writing."
 msgstr "Impossible d'ouvrir le fichier css %s pour écriture."
 
-#: lib/social.php:178
+#: lib/social.php:177
 msgid "Error removing the minified stylesheet &mdash; does the web server have sufficient privileges?"
 msgstr "Erreur en retirant la feuille de style minimisé &mdash; le serveur Web a t'il les privilèges nécessaires?"
 
-#: lib/std/ecom/woocommerce.php:103
+#: lib/std/ecom/woocommerce.php:104
 msgctxt "option label"
 msgid "Position in Woo Short Text"
 msgstr "Position dans le texte Woo Short"
 
-#: lib/std/forum/bbpress.php:148
+#: lib/std/forum/bbpress.php:149
 msgctxt "option label"
 msgid "Position in bbPress Single"
 msgstr "Position dans bbPress Single"
 
-#: lib/std/social/buddyblog.php:114
+#: lib/std/social/buddyblog.php:115
 msgctxt "option label"
 msgid "Position in BuddyBlog Post"
 msgstr "Position dans l'article BuddyBlog"
@@ -444,77 +444,77 @@ msgstr "Position dans l'article BuddyBlog"
 msgid "The %s file is not readable."
 msgstr "Le fichier %s n'est pas lisible."
 
-#: lib/submenu/rrssb-buttons.php:69
+#: lib/submenu/rrssb-buttons.php:73
 msgctxt "submit button"
 msgid "Reload Default Responsive Buttons"
 msgstr "Recharger boutons réactifs par défaut"
 
-#: lib/submenu/rrssb-buttons.php:84
+#: lib/submenu/rrssb-buttons.php:88
 msgctxt "metabox title"
 msgid "Social Sharing Buttons"
 msgstr "Boutons de partage social"
 
-#: lib/submenu/rrssb-buttons.php:135
+#: lib/submenu/rrssb-buttons.php:139
 msgctxt "metabox tab"
 msgid "Include Buttons"
 msgstr "Ajout de boutons"
 
-#: lib/submenu/rrssb-buttons.php:136
+#: lib/submenu/rrssb-buttons.php:140
 msgctxt "metabox tab"
 msgid "Buttons Position"
 msgstr "Position des boutons"
 
-#: lib/submenu/rrssb-buttons.php:137
+#: lib/submenu/rrssb-buttons.php:141
 msgctxt "metabox tab"
 msgid "Advanced Settings"
 msgstr "Réglages avancés"
 
-#: lib/submenu/rrssb-buttons.php:189
+#: lib/submenu/rrssb-buttons.php:193
 msgctxt "option label"
 msgid "Include on Archive Webpages"
 msgstr "Inclure sur les pages d'archive"
 
-#: lib/submenu/rrssb-buttons.php:194
+#: lib/submenu/rrssb-buttons.php:198
 msgctxt "option label"
 msgid "Include on Page Homepage"
 msgstr "Inclure sur la page d'accueil"
 
-#: lib/submenu/rrssb-buttons.php:199
+#: lib/submenu/rrssb-buttons.php:203
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr "Inclure sur les articles de type"
 
-#: lib/submenu/rrssb-buttons.php:208
+#: lib/submenu/rrssb-buttons.php:212
 msgctxt "option label"
 msgid "Position in Content"
 msgstr "Position dans le contenu"
 
-#: lib/submenu/rrssb-buttons.php:213
+#: lib/submenu/rrssb-buttons.php:217
 msgctxt "option label"
 msgid "Position in Excerpt"
 msgstr "Position dans l'extrait"
 
-#: lib/submenu/rrssb-buttons.php:222
+#: lib/submenu/rrssb-buttons.php:226
 msgctxt "option label"
 msgid "Force Protocol for Shared URLs"
 msgstr "Forcer protocole pour URLs partagées"
 
-#: lib/submenu/rrssb-styles.php:48
+#: lib/submenu/rrssb-styles.php:51
 msgctxt "submit button"
 msgid "Reload Default Responsive Styles"
 msgstr "Recharger styles réactifs par défaut"
 
-#: lib/submenu/rrssb-styles.php:61
+#: lib/submenu/rrssb-styles.php:64
 msgctxt "metabox title"
 msgid "Social Sharing Styles"
 msgstr "Styles de partage social"
 
-#: lib/submenu/rrssb-styles.php:85
+#: lib/submenu/rrssb-styles.php:91
 msgctxt "option label"
 msgid "Use the Social Stylesheet"
 msgstr "Utiliser la feuille de style social"
 
-#: lib/submenu/rrssb-styles.php:88
+#: lib/submenu/rrssb-styles.php:94
 msgctxt "option label"
 msgid "Enqueue the Stylesheet"
 msgstr "Placer la feuille de style en queue"
@@ -523,12 +523,12 @@ msgstr "Placer la feuille de style en queue"
 msgid "The %s widget."
 msgstr "Le widget de %s."
 
-#: lib/widget/sharing.php:195
+#: lib/widget/sharing.php:196
 msgctxt "option value"
 msgid "Share It"
 msgstr "Partager"
 
-#: lib/widget/sharing.php:198
+#: lib/widget/sharing.php:199
 msgctxt "option label"
 msgid "Widget Title (leave blank for no title)"
 msgstr "Titre du widget (laisser vide pour aucun titre)"
