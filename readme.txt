@@ -125,6 +125,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 5.3.0-dev.5 (2020/11/25)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Replaced a call to `WpssoAdmin->plugin_pkg_info()` by `get_pkg_info()` for WPSSO Core v8.14.0.
+* **Requires At Least**
+	* PHP v5.6.
+	* WordPress v5.2.
+	* WPSSO Core v8.14.0-dev.5.
+
 **Version 5.2.1 (2020/11/24)**
 
 * **New Features**
@@ -140,71 +155,13 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v5.2.
 	* WPSSO Core v8.13.0.
 
-**Version 5.2.0 (2020/10/24)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Added an `$addon` object variable to the WpssoRrssbActions and WpssoRrssbFilters constructor arguments.
-* **Requires At Least**
-	* PHP v5.6.
-	* WordPress v5.2.
-	* WPSSO Core v8.13.0.
-
-**Version 5.1.1 (2020/10/17)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Added a filter to avoid adding buttons to WooCommerce product variation short descriptions.
-	* Refactored the add-on class to extend a new WpssoAddOn abstract class.
-* **Bugfixes**
-	* Fixed backwards compatibility with older 'init_objects' and 'init_plugin' action arguments.
-* **Developer Notes**
-	* Added a new WpssoAddOn class in lib/abstracts/add-on.php.
-	* Added a new SucomAddOn class in lib/abstracts/com/add-on.php.
-* **Requires At Least**
-	* PHP v5.6.
-	* WordPress v5.2.
-	* WPSSO Core v8.8.1.
-
-**Version 5.0.0 (2020/10/02)**
-
-**This version includes an update to the default CSS to hide the WhatsApp button on non-mobile devices. To use the new default CSS, you must reload the default CSS manually using the SSO &gt; Tools and Actions &gt; Reload Default Responsive Styles button.**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Updated the default CSS to hide the WhatsApp button on non-mobile devices (see css/rrssb-sharing.css).
-	* Removed the "Allow for Platform" option from all share button settings pages.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Added a new lib/filters-upgrade.php library file.
-* **Requires At Least**
-	* PHP v5.6.
-	* WordPress v5.2.
-	* WPSSO Core v8.7.0.
-
 == Upgrade Notice ==
+
+= 5.3.0-dev.5 =
+
+(2020/11/25) Updated a method call for WPSSO Core v8.14.0.
 
 = 5.2.1 =
 
 (2020/11/24) Replaced references to `Wpsso->lca` by 'wpsso'.
-
-= 5.2.0 =
-
-(2020/10/24) Added an `$addon` object variable to the WpssoRrssbActions and WpssoRrssbFilters constructor arguments.
-
-= 5.1.1 =
-
-(2020/10/17) Added a filter to avoid adding buttons to WooCommerce product variation short descriptions. Refactored the add-on class to extend a new WpssoAddOn abstract class.
-
-= 5.0.0 =
-
-(2020/10/02) Updated the default CSS to hide the WhatsApp button on non-mobile devices. Removed the "Allow for Platform" option from all share button settings pages.
 
