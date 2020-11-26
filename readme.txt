@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.3.0 (2020/11/25)**
+**Version 5.3.0 (2020/11/26)**
 
 * **New Features**
 	* None.
@@ -144,5 +144,5 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 5.3.0 =
 
-(2020/11/25) Updated a method call for WPSSO Core v8.14.0.
+(2020/11/26) Updated a method call for WPSSO Core v8.14.0.
 
