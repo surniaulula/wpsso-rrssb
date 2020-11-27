@@ -38,13 +38,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				$this->p->debug->mark();
 			}
 
-			/**
-			 * Instantiate the WpssoPlmFiltersUpgrade class object.
-			 */
-			if ( ! class_exists( 'WpssoRrssbFiltersUpgrade' ) ) {
-
-				require_once WPSSORRSSB_PLUGINDIR . 'lib/filters-upgrade.php';
-			}
+			require_once WPSSORRSSB_PLUGINDIR . 'lib/filters-upgrade.php';
 
 			$this->upg = new WpssoRrssbFiltersUpgrade( $plugin );
 
@@ -57,10 +51,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 			if ( is_admin() ) {
 
-				if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
-
-					require_once WPSSORRSSB_PLUGINDIR . 'lib/filters-messages.php';
-				}
+				require_once WPSSORRSSB_PLUGINDIR . 'lib/filters-messages.php';
 
 				$this->msgs = new WpssoRrssbFiltersMessages( $plugin );
 

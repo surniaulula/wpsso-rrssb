@@ -50,7 +50,7 @@ msgctxt "lib file description"
 msgid "Responsive Buttons"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:11 lib/filters-messages.php:255
+#: gettext/gettext-lib-config.php:11 lib/filters-messages.php:246
 msgctxt "lib file description"
 msgid "Responsive Styles"
 msgstr ""
@@ -151,88 +151,88 @@ msgstr ""
 msgid "The default responsive button options have been reloaded and saved."
 msgstr ""
 
-#: lib/actions.php:117 lib/filters.php:141
+#: lib/actions.php:117 lib/filters.php:132
 msgid "The default responsive styles CSS has been reloaded and saved."
 msgstr ""
 
-#: lib/filters-messages.php:65
+#: lib/filters-messages.php:56
 msgid ""
 "The %1$s add-on uses the \"%2$s\" class to wrap all sharing buttons, and "
 "each button has its own individual class name as well."
 msgstr ""
 
-#: lib/filters-messages.php:69
+#: lib/filters-messages.php:60
 msgid ""
 "This tab can be used to edit the CSS common to all sharing button locations."
 msgstr ""
 
-#: lib/filters-messages.php:79
+#: lib/filters-messages.php:70
 msgid ""
 "Social sharing buttons enabled in the %1$s settings page for the WordPress "
 "content are assigned the \"%2$s\" class."
 msgstr ""
 
-#: lib/filters-messages.php:91
+#: lib/filters-messages.php:82
 msgid ""
 "Social sharing buttons enabled in the %1$s settings page for the WordPress "
 "excerpt are assigned the \"%2$s\" class."
 msgstr ""
 
-#: lib/filters-messages.php:103
+#: lib/filters-messages.php:94
 msgid ""
 "Social sharing buttons enabled in the %1$s settings page for the CSS sidebar "
 "are assigned the \"%2$s\" ID."
 msgstr ""
 
-#: lib/filters-messages.php:124
+#: lib/filters-messages.php:115
 msgid ""
 "Social sharing buttons added from a shortcode are assigned the \"%1$s\" "
 "class by default."
 msgstr ""
 
-#: lib/filters-messages.php:136
+#: lib/filters-messages.php:127
 msgid ""
 "Social sharing buttons enabled in the %1$s widget are assigned the \"%2$s\" "
 "class (along with additional unique CSS ID names)."
 msgstr ""
 
-#: lib/filters-messages.php:154
+#: lib/filters-messages.php:145
 msgid ""
 "Social sharing buttons enabled in the %1$s settings page for admin editing "
 "pages are assigned the \"%2$s\" class."
 msgstr ""
 
-#: lib/filters-messages.php:166
+#: lib/filters-messages.php:157
 msgid ""
 "Social sharing buttons enabled in the %1$s settings page for WooCommerce "
 "short descriptions are assigned the \"%2$s\" class."
 msgstr ""
 
-#: lib/filters-messages.php:178
+#: lib/filters-messages.php:169
 msgid ""
 "Social sharing buttons enabled in the %1$s settings page for bbPress single "
 "templates are assigned the \"%2$s\" class."
 msgstr ""
 
-#: lib/filters-messages.php:190
+#: lib/filters-messages.php:181
 msgid ""
 "Social sharing buttons enabled in the %1$s settings page for BuddyBlog posts "
 "are assigned the \"%2$s\" class."
 msgstr ""
 
-#: lib/filters-messages.php:202
+#: lib/filters-messages.php:193
 msgid ""
 "Social sharing buttons enabled in the %1$s settings page for BuddyPress "
 "activities are assigned the \"%2$s\" class."
 msgstr ""
 
-#: lib/filters-messages.php:225
+#: lib/filters-messages.php:216
 msgid ""
 "Social sharing buttons can be added to the top, bottom, or both. Each "
 "sharing button must also be enabled below (see the <em>%s</em> options)."
 msgstr ""
 
-#: lib/filters-messages.php:225 lib/share/email.php:36
+#: lib/filters-messages.php:216 lib/share/email.php:36
 #: lib/share/facebook.php:35 lib/share/linkedin.php:36
 #: lib/share/pinterest.php:36 lib/share/pocket.php:36 lib/share/reddit.php:36
 #: lib/share/tumblr.php:36 lib/share/twitter.php:36 lib/share/vk.php:36
@@ -241,21 +241,21 @@ msgctxt "option label"
 msgid "Show Button in"
 msgstr ""
 
-#: lib/filters-messages.php:231
+#: lib/filters-messages.php:222
 msgid ""
 "Add the social sharing buttons to each entry of an index webpage (blog front "
 "page, category, archive, etc.). Social sharing buttons are not included on "
 "index webpages by default."
 msgstr ""
 
-#: lib/filters-messages.php:237
+#: lib/filters-messages.php:228
 msgid ""
 "If a static Post or Page has been selected for the front page, you can add "
 "the social sharing buttons to that static front page as well (default is "
 "unchecked)."
 msgstr ""
 
-#: lib/filters-messages.php:243
+#: lib/filters-messages.php:234
 msgid ""
 "Enabled social sharing buttons are added to the Post, Page, Media, and "
 "Product webpages by default. If your theme (or another plugin) supports "
@@ -263,11 +263,11 @@ msgid ""
 "buttons on these webpages, check the appropriate option(s) here."
 msgstr ""
 
-#: lib/filters-messages.php:249
+#: lib/filters-messages.php:240
 msgid "Modify URLs shared by the sharing buttons to use a specific protocol."
 msgstr ""
 
-#: lib/filters-messages.php:255
+#: lib/filters-messages.php:246
 msgid ""
 "Add the CSS of all <em>%1$s</em> to webpages (default is checked). The CSS "
 "will be <strong>minified</strong>, and saved to a single stylesheet with a "
@@ -275,7 +275,7 @@ msgid ""
 "added directly to the webpage HTML."
 msgstr ""
 
-#: lib/filters-messages.php:261
+#: lib/filters-messages.php:252
 msgid ""
 "Have WordPress enqueue the social stylesheet instead of adding the CSS to in "
 "the webpage HTML (default is unchecked). Enqueueing the stylesheet may be "
@@ -283,114 +283,114 @@ msgid ""
 "single stylesheet URL."
 msgstr ""
 
-#: lib/filters-messages.php:267
+#: lib/filters-messages.php:258
 msgid ""
 "Append the %1$s to the tweet (see <a href=\"%2$s\">the Twitter options tab</"
 "a> in the %3$s page). The %1$s will be displayed and recommended after the "
 "webpage is shared."
 msgstr ""
 
-#: lib/filters-messages.php:267 lib/filters-messages.php:273
+#: lib/filters-messages.php:258 lib/filters-messages.php:264
 msgctxt "option label"
 msgid "Twitter Business @username"
 msgstr ""
 
-#: lib/filters-messages.php:267
+#: lib/filters-messages.php:258
 msgctxt "lib file description"
 msgid "General Settings"
 msgstr ""
 
-#: lib/filters-messages.php:273
+#: lib/filters-messages.php:264
 msgid ""
 "Recommend following the author's Twitter @username after sharing a webpage. "
 "If the %1$s option (above) is also checked, the %2$s is suggested first."
 msgstr ""
 
-#: lib/filters-messages.php:273 lib/share/twitter.php:58
+#: lib/filters-messages.php:264 lib/share/twitter.php:58
 msgctxt "option label"
 msgid "Add via Business @username"
 msgstr ""
 
-#: lib/filters-messages.php:289
+#: lib/filters-messages.php:280
 msgctxt "option comment"
 msgid "disabled"
 msgstr ""
 
-#: lib/filters-messages.php:291
+#: lib/filters-messages.php:282
 msgid ""
 "The rendered HTML for social sharing buttons is saved to the WordPress "
 "transient cache to optimize performance."
 msgstr ""
 
-#: lib/filters-messages.php:292
+#: lib/filters-messages.php:283
 msgid "The suggested cache expiration value is %1$s seconds (%2$s)."
 msgstr ""
 
-#: lib/filters.php:192
+#: lib/filters.php:183
 msgid "Failed to open the css file %s for reading."
 msgstr ""
 
-#: lib/filters.php:250 lib/submenu/rrssb-buttons.php:232
+#: lib/filters.php:241 lib/submenu/rrssb-buttons.php:232
 msgctxt "option label"
 msgid "Sharing Buttons Cache Expiry"
 msgstr ""
 
-#: lib/filters.php:252 lib/submenu/rrssb-buttons.php:235
+#: lib/filters.php:243 lib/submenu/rrssb-buttons.php:235
 msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr ""
 
-#: lib/filters.php:268
+#: lib/filters.php:259
 msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr ""
 
-#: lib/filters.php:291
+#: lib/filters.php:282
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/filters.php:312
+#: lib/filters.php:303
 msgctxt "option label"
 msgid "Email Subject"
 msgstr ""
 
-#: lib/filters.php:319
+#: lib/filters.php:310
 msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/filters.php:341
+#: lib/filters.php:332
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/filters.php:378
+#: lib/filters.php:369
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/filters.php:407
+#: lib/filters.php:398
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/filters.php:414
+#: lib/filters.php:405
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
 
-#: lib/filters.php:498
+#: lib/filters.php:489
 msgctxt "lib file description"
 msgid "(sharing) Sharing Stylesheet"
 msgstr ""
 
-#: lib/filters.php:506
+#: lib/filters.php:497
 msgctxt "lib file description"
 msgid "(sharing) Sharing Shortcode"
 msgstr ""
 
-#: lib/filters.php:514
+#: lib/filters.php:505
 msgctxt "lib file description"
 msgid "(sharing) Sharing Widget"
 msgstr ""
