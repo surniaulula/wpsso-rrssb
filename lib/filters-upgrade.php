@@ -15,18 +15,15 @@ if ( ! class_exists( 'WpssoRrssbFiltersUpgrade' ) ) {
 	class WpssoRrssbFiltersUpgrade {
 
 		private $p;	// Wpsso class object.
+		private $a;	// WpssoRrssb class object.
 
 		/**
 		 * Instantiated by WpssoRrssbFilters->__construct().
 		 */
-		public function __construct( &$plugin ) {
+		public function __construct( &$plugin, &$addon ) {
 
 			$this->p =& $plugin;
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
+			$this->a =& $addon;
 
 			$this->p->util->add_plugin_filters( $this, array( 
 				'rename_options_keys'  => 1,
@@ -34,11 +31,6 @@ if ( ! class_exists( 'WpssoRrssbFiltersUpgrade' ) ) {
 		}
 
 		public function filter_rename_options_keys( $options_keys ) {
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
 
 			$options_keys[ 'wpssorrssb' ] = array(
 				14 => array(

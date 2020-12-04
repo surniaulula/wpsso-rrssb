@@ -15,27 +15,22 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 	class WpssoRrssbSocial {
 
 		private $p;	// Wpsso class object.
+		private $a;	// WpssoRrssb class object.
 
-		private $share = array();
+		private $share = array();	// Associative array of lib/share/ class objects.
 
-		private $post_buttons_disabled = array();	// Cache for is_post_buttons_disabled().
-
-		public static $sharing_css_name = '';
-		public static $sharing_css_file = '';
-		public static $sharing_css_url  = '';
-
+		/**
+		 * Instantiated by WpssoRrssb->init_objects().
+		 */
 		public function __construct( &$plugin ) {
 
 			$this->p =& $plugin;
+			$this->a =& $addon;
 
 			if ( $this->p->debug->enabled ) {
 
 				$this->p->debug->mark( 'rrssb sharing action / filter setup' );	// Begin timer.
 			}
-
-			self::$sharing_css_name = 'rrssb-styles-id-' . get_current_blog_id() . '.min.css';
-			self::$sharing_css_file = WPSSO_CACHEDIR . self::$sharing_css_name;
-			self::$sharing_css_url  = WPSSO_CACHEURL . self::$sharing_css_name;
 
 			$this->set_objects();
 
@@ -81,14 +76,24 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			return $this->share;
 		}
 
+		public static function get_sharing_css_name() {
+
+			return 'rrssb-styles-id-' . get_current_blog_id() . '.min.css';
+		}
+
+		public static function get_sharing_css_path() {
+
+			return WPSSO_CACHEDIR . self::get_sharing_css_name();
+		}
+
+		public static function get_sharing_css_url() {
+
+			return WPSSO_CACHEURL . self::get_sharing_css_name();
+		}
+
 		public static function update_sharing_css( &$opts ) {
 
 			$wpsso =& Wpsso::get_instance();
-
-			if ( $wpsso->debug->enabled ) {
-
-				$wpsso->debug->mark();
-			}
 
 			if ( empty( $opts[ 'buttons_use_social_style' ] ) ) {
 
@@ -110,24 +115,25 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			}
 
 			$sharing_css_data = SucomUtil::minify_css( $sharing_css_data, $ext = 'wpsso' );
+			$sharing_css_path = self::get_sharing_css_path();
 
-			if ( $fh = @fopen( self::$sharing_css_file, 'wb' ) ) {
+			if ( $fh = @fopen( $sharing_css_path, 'wb' ) ) {
 
 				if ( ( $written = fwrite( $fh, $sharing_css_data ) ) === false ) {
 
 					if ( $wpsso->debug->enabled ) {
 
-						$wpsso->debug->log( 'failed writing the css file ' . self::$sharing_css_file );
+						$wpsso->debug->log( 'failed writing the css file ' . $sharing_css_path );
 					}
 
 					if ( is_admin() ) {
 
-						$wpsso->notice->err( sprintf( __( 'Failed writing the css file %s.', 'wpsso-rrssb' ), self::$sharing_css_file ) );
+						$wpsso->notice->err( sprintf( __( 'Failed writing the css file %s.', 'wpsso-rrssb' ), $sharing_css_path ) );
 					}
 
 				} elseif ( $wpsso->debug->enabled ) {
 
-					$wpsso->debug->log( 'updated css file ' . self::$sharing_css_file . ' (' . $written . ' bytes written)' );
+					$wpsso->debug->log( 'updated css file ' . $sharing_css_path . ' (' . $written . ' bytes written)' );
 				}
 
 				fclose( $fh );
@@ -149,12 +155,12 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				if ( $wpsso->debug->enabled ) {
 
-					$wpsso->debug->log( 'failed to open the css file ' . self::$sharing_css_file . ' for writing' );
+					$wpsso->debug->log( 'failed to open the css file ' . $sharing_css_path . ' for writing' );
 				}
 
 				if ( is_admin() ) {
 
-					$wpsso->notice->err( sprintf( __( 'Failed to open the css file %s for writing.', 'wpsso-rrssb' ), self::$sharing_css_file ) );
+					$wpsso->notice->err( sprintf( __( 'Failed to open the css file %s for writing.', 'wpsso-rrssb' ), $sharing_css_path ) );
 				}
 			}
 		}
@@ -163,14 +169,11 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			$wpsso =& Wpsso::get_instance();
 
-			if ( $wpsso->debug->enabled ) {
+			$sharing_css_path = self::get_sharing_css_path();
 
-				$wpsso->debug->mark();
-			}
+			if ( file_exists( $sharing_css_path ) ) {
 
-			if ( file_exists( self::$sharing_css_file ) ) {
-
-				if ( ! @unlink( self::$sharing_css_file ) ) {
+				if ( ! @unlink( $sharing_css_path ) ) {
 
 					if ( is_admin() ) {
 
@@ -183,11 +186,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 		public function wp_body_open() {
 
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
-
 			if ( $this->have_buttons_for_type( 'sidebar' ) ) {
 
 				$this->show_sidebar();
@@ -199,11 +197,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 		}
 
 		public function show_sidebar() {
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
 
 			echo "\n\n";
 
@@ -583,11 +576,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 		public function get_buttons_cache_index( $type, $atts = false, $share_ids = false ) {
 
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
-
 			$cache_index = 'locale:' . SucomUtil::get_locale( 'current' );
 
 			$cache_index .= '_type:' . ( empty( $type ) ? 'none' : $type );
@@ -605,20 +593,10 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 		public function get_buttons_for_the_content( $text ) {
 
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
-
 			return $this->get_buttons( $text, 'content' );
 		}
 
 		public function get_buttons_for_the_excerpt( $text ) {
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
 
 			$css_type = 'rrssb-excerpt';
 
@@ -631,11 +609,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 		public function get_buttons_for_get_the_excerpt( $text ) {
 
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
-
 			return $this->get_buttons( $text, 'excerpt' );
 		}
 
@@ -645,11 +618,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 		 * get_html() can also be called by a widget, shortcode, function, filter hook, etc.
 		 */
 		public function get_html( array $share_ids, array $atts, $mod = false ) {
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
 
 			$atts[ 'use_post' ] = isset( $atts[ 'use_post' ] ) ? $atts[ 'use_post' ] : true;	// Maintain backwards compat.
 			$atts[ 'add_page' ] = isset( $atts[ 'add_page' ] ) ? $atts[ 'add_page' ] : true;	// Used by get_sharing_url().
@@ -765,12 +733,9 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 		public function is_post_buttons_disabled() {
 
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
-
 			$ret = false;
+
+			static $local_cache = array();
 
 			if ( ( $post_obj = SucomUtil::get_post_object() ) === false ) {
 
@@ -781,18 +746,18 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				return $ret;
 
-			} else {
-				$post_id = empty( $post_obj->ID ) ? 0 : $post_obj->ID;
 			}
+
+			$post_id = empty( $post_obj->ID ) ? 0 : $post_obj->ID;
 
 			if ( empty( $post_id ) ) {
 
 				return $ret;
 			}
 
-			if ( isset( $this->post_buttons_disabled[ $post_id ] ) ) {
+			if ( isset( $local_cache[ $post_id ] ) ) {
 
-				return $this->post_buttons_disabled[ $post_id ];
+				return $local_cache[ $post_id ];
 			}
 
 			if ( $this->p->post->get_options( $post_id, 'buttons_disabled' ) ) {	// Returns null if an index key is not found.
@@ -814,7 +779,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				$ret = true;
 			}
 
-			return $this->post_buttons_disabled[ $post_id ] = apply_filters( 'wpsso_post_buttons_disabled', $ret, $post_id );
+			return $local_cache[ $post_id ] = apply_filters( 'wpsso_post_buttons_disabled', $ret, $post_id );
 		}
 
 		public function remove_paragraph_tags( $match = array() ) {
@@ -858,11 +823,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			$wpsso =& Wpsso::get_instance();
 
-			if ( $wpsso->debug->enabled ) {
-
-				$wpsso->debug->mark();
-			}
-
 			if ( ! isset( $atts[ 'tweet' ] ) ) {	// Just in case.
 
 				$atts[ 'use_post' ]     = isset( $atts[ 'use_post' ] ) ? $atts[ 'use_post' ] : true;
@@ -886,11 +846,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 		public static function get_tweet_max_len( $opt_pre = 'twitter', $num_urls = 1 ) {
 
 			$wpsso =& Wpsso::get_instance();
-
-			if ( $wpsso->debug->enabled ) {
-
-				$wpsso->debug->mark();
-			}
 
 			$short_len = 23 * $num_urls;	// Twitter counts 23 characters for any url.
 

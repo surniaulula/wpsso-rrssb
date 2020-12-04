@@ -19,6 +19,9 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 		private $msgs;	// WpssoRrssbFiltersMessages class object.
 		private $upg;	// WpssoRrssbFiltersUpgrade class object.
 
+		/**
+		 * Instantiated by WpssoRrssb->init_objects().
+		 */
 		public function __construct( &$plugin, &$addon ) {
 
 			static $do_once = null;
@@ -33,14 +36,9 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			$this->p =& $plugin;
 			$this->a =& $addon;
 
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
-
 			require_once WPSSORRSSB_PLUGINDIR . 'lib/filters-upgrade.php';
 
-			$this->upg = new WpssoRrssbFiltersUpgrade( $plugin );
+			$this->upg = new WpssoRrssbFiltersUpgrade( $plugin, $addon );
 
 			$this->p->util->add_plugin_filters( $this, array( 
 				'option_type'          => 2,
@@ -53,7 +51,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 				require_once WPSSORRSSB_PLUGINDIR . 'lib/filters-messages.php';
 
-				$this->msgs = new WpssoRrssbFiltersMessages( $plugin );
+				$this->msgs = new WpssoRrssbFiltersMessages( $plugin, $addon );
 
 				$this->p->util->add_plugin_filters( $this, array( 
 					'plugin_cache_rows'         => 3,
@@ -102,11 +100,6 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 		 */
 		public function filter_save_setting_options( array $opts, $network, $upgrading ) {
 
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
-
 			if ( $network ) {
 
 				return $opts;	// Nothing to do.
@@ -141,11 +134,6 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 		}
 
 		public function filter_get_defaults( $defs ) {
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
 
 			/**
 			 * Add options using a key prefix array and post type names.
@@ -186,14 +174,14 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 					} else {
 
+						if ( $this->p->debug->enabled ) {
+
+							$this->p->debug->log( 'reading css file ' . $buttons_css_file );
+						}
+
 						$buttons_css_data = fread( $fh, filesize( $buttons_css_file ) );
 
 						fclose( $fh );
-
-						if ( $this->p->debug->enabled ) {
-
-							$this->p->debug->log( 'read css file ' . $buttons_css_file );
-						}
 
 						foreach ( array( 'plugin_url_path' => $rel_url_path ) as $macro => $value ) {
 
@@ -226,11 +214,6 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 		}
 
 		public function filter_plugin_cache_rows( $table_rows, $form, $network = false ) {
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
 
 			$pkg_info = $this->p->admin->get_pkg_info();	// Returns an array from cache.
 			$td_attr  = $pkg_info[ 'wpsso' ][ 'pp' ] ? '' : ' class="blank"';
@@ -266,11 +249,6 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 		}
 
 		public function filter_post_buttons_rows( $table_rows, $form, $head, $mod ) {
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
 
 			$def_cap_title   = $this->p->page->get_caption( 'title', 0, $mod, true, false );
 
@@ -444,16 +422,11 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 		public function filter_metabox_sso_inside_footer( $metabox_html, $mod ) {
 
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
-
 			if ( empty( $mod[ 'is_public' ] ) ) {
 
 				if ( $this->p->debug->enabled ) {
 
-					$this->p->debug->log( 'exiting early: ' . $mod[ 'name' ] . ' ID ' . $mod[ 'id' ] . ' is not public' );
+					$this->p->debug->log( 'exiting early: ' . $mod[ 'name' ] . ' id ' . $mod[ 'id' ] . ' is not public' );
 				}
 
 				return $metabox_html;
@@ -477,11 +450,6 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 		 * Filter for 'wpssorrssb_status_std_features'.
 		 */
 		public function filter_status_std_features( $features, $ext, $info ) {
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
 
 			if ( ! empty( $info[ 'lib' ][ 'submenu' ][ 'rrssb-styles' ] ) ) {
 

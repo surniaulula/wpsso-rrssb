@@ -15,19 +15,19 @@ if ( ! class_exists( 'WpssoRrssbScript' ) ) {
 	class WpssoRrssbScript {
 
 		private $p;	// Wpsso class object.
+		private $a;	// WpssoRrssb class object.
 
 		private $doing_dev = false;
 		private $file_ext  = 'min.js';
 		private $version   = '';
 
+		/**
+		 * Instantiated by WpssoRrssb->init_objects().
+		 */
 		public function __construct( &$plugin ) {
 
 			$this->p =& $plugin;
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
+			$this->a =& $addon;
 
 			$this->doing_dev = SucomUtil::get_const( 'WPSSO_DEV' );
 			$this->file_ext  = $this->doing_dev ? 'js' : 'min.js';
@@ -39,9 +39,7 @@ if ( ! class_exists( 'WpssoRrssbScript' ) ) {
 
 		public function enqueue_scripts( $hook_name ) {
 
-			$is_amp = SucomUtil::is_amp();	// Returns null, true, or false.
-
-			if ( $is_amp ) {	// No buttons for AMP pages.
+			if ( SucomUtil::is_amp() ) {	// Returns null, true, or false.
 
 				return;
 			}

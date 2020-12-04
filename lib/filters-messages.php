@@ -15,27 +15,21 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 	class WpssoRrssbFiltersMessages {
 
 		private $p;	// Wpsso class object.
+		private $a;	// WpssoRrssb class object.
 
 		/**
 		 * Instantiated by WpssoRrssbFilters->__construct().
 		 */
-		public function __construct( &$plugin ) {
+		public function __construct( &$plugin, &$addon ) {
 
 			$this->p =& $plugin;
+			$this->a =& $addon;
 
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
-
-			if ( is_admin() ) {
-
-				$this->p->util->add_plugin_filters( $this, array( 
-					'messages_info'             => 2,
-					'messages_tooltip'          => 2,
-					'messages_tooltip_plugin'   => 2,
-				) );
-			}
+			$this->p->util->add_plugin_filters( $this, array( 
+				'messages_info'           => 2,
+				'messages_tooltip'        => 2,
+				'messages_tooltip_plugin' => 2,
+			) );
 		}
 
 		public function filter_messages_info( $text, $msg_key ) {
@@ -243,7 +237,9 @@ aside.widget
 
 				case 'tooltip-buttons_use_social_style':
 
-					$text = sprintf( __( 'Add the CSS of all <em>%1$s</em> to webpages (default is checked). The CSS will be <strong>minified</strong>, and saved to a single stylesheet with a URL of <a href="%2$s">%3$s</a>. The minified stylesheet can be enqueued or added directly to the webpage HTML.', 'wpsso-rrssb' ), _x( 'Responsive Styles', 'lib file description', 'wpsso-rrssb' ), WpssoRrssbSocial::$sharing_css_url, WpssoRrssbSocial::$sharing_css_url );
+					$sharing_css_url = WpssoRrssbSocial::get_sharing_css_url();
+
+					$text = sprintf( __( 'Add the CSS of all <em>%1$s</em> to webpages (default is checked). The CSS will be <strong>minified</strong>, and saved to a single stylesheet with a URL of <a href="%2$s">%3$s</a>. The minified stylesheet can be enqueued or added directly to the webpage HTML.', 'wpsso-rrssb' ), _x( 'Responsive Styles', 'lib file description', 'wpsso-rrssb' ), $sharing_css_url, $sharing_css_url );
 
 					break;
 

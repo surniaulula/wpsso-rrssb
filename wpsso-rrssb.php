@@ -15,7 +15,7 @@
  * Requires At Least: 5.2
  * Tested Up To: 5.6
  * WC Tested Up To: 4.7.1
- * Version: 5.3.0
+ * Version: 5.4.0
  * 
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -90,9 +90,9 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 			$this->actions = new WpssoRrssbActions( $this->p, $this );
 			$this->filters = new WpssoRrssbFilters( $this->p, $this );
-			$this->script  = new WpssoRrssbScript( $this->p );
-			$this->social  = new WpssoRrssbSocial( $this->p );
-			$this->style   = new WpssoRrssbStyle( $this->p );
+			$this->script  = new WpssoRrssbScript( $this->p, $this );
+			$this->social  = new WpssoRrssbSocial( $this->p, $this );
+			$this->style   = new WpssoRrssbStyle( $this->p, $this );
 		}
 	}
 

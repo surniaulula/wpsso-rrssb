@@ -17,6 +17,9 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 		private $p;	// Wpsso class object.
 		private $a;	// WpssoRrssb class object.
 
+		/**
+		 * Instantiated by WpssoRrssb->init_objects().
+		 */
 		public function __construct( &$plugin, &$addon ) {
 
 			static $do_once = null;
@@ -30,11 +33,6 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 
 			$this->p =& $plugin;
 			$this->a =& $addon;
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
 
 			$this->p->util->add_plugin_actions( $this, array( 
 				'pre_apply_filters_text'   => 1,
