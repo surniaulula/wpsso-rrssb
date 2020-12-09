@@ -6,6 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
@@ -39,6 +40,7 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 		public function widget( $args, $instance ) {
 
 			if ( is_feed() ) {
+
 				return;
 			}
 
@@ -53,11 +55,14 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 			$widget_title = apply_filters( 'widget_title', $instance[ 'title' ], $instance, $this->id_base );
 
 			if ( $this->p->debug->enabled ) {
-				$this->p->debug->log( 'required call to get_page_mod()' );
+
+				$this->p->debug->log( 'required call to WpssoPage->get_mod()' );
 			}
 
-			$mod         = $this->p->util->get_page_mod( $atts[ 'use_post' ] );
-			$type        = 'sharing_widget_' . $this->id;
+			$mod = $this->p->page->get_mod( $atts[ 'use_post' ] );
+
+			$type = 'sharing_widget_' . $this->id;
+
 			$sharing_url = $this->p->util->get_sharing_url( $mod );
 
 			$cache_md5_pre  = 'wpsso_b_';
@@ -67,9 +72,10 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 			$cache_index    = $rrssb->social->get_buttons_cache_index( $type, $atts );
 			$cache_array    = array();
 
-			if ( is_404() || is_search() ) {
+			if ( $mod[ 'is_404' ] || $mod[ 'is_search' ] ) {
 
 				if ( $this->p->debug->enabled ) {
+
 					$this->p->debug->log( 'setting cache expiration to 0 seconds for 404 or search page' );
 				}
 
@@ -77,6 +83,7 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 			}
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->log( 'sharing url = ' . $sharing_url );
 				$this->p->debug->log( 'cache expire = ' . $cache_exp_secs );
 				$this->p->debug->log( 'cache salt = ' . $cache_salt );
@@ -91,6 +98,7 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 				if ( isset( $cache_array[ $cache_index ] ) ) {	// Can be an empty string.
 
 					if ( $this->p->debug->enabled ) {
+
 						$this->p->debug->log( $type . ' cache index found in transient cache' );
 					}
 
@@ -101,10 +109,12 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 				} else {
 
 					if ( $this->p->debug->enabled ) {
+
 						$this->p->debug->log( $type . ' cache index not in transient cache' );
 					}
 
 					if ( ! is_array( $cache_array ) ) {
+
 						$cache_array = array();
 					}
 				}
@@ -112,11 +122,14 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 			} else {
 
 				if ( $this->p->debug->enabled ) {
+
 					$this->p->debug->log( $type . ' buttons transient cache is disabled' );
 				}
 
 				if ( SucomUtil::delete_transient_array( $cache_id ) ) {
+
 					if ( $this->p->debug->enabled ) {
+
 						$this->p->debug->log( 'deleted transient cache id ' . $cache_id );
 					}
 				}
@@ -128,7 +141,9 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 			$sorted_ids = array();
 
 			foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $id => $opt_pre ) {
+
 				if ( array_key_exists( $id, $instance ) && (int) $instance[ $id ] ) {
+
 					$sorted_ids[ zeroise( $this->p->options[ $opt_pre . '_button_order' ], 3 ) . '-' . $id ] = $id;
 				}
 			}
@@ -159,6 +174,7 @@ $after_widget .
 				$expires_in_secs = SucomUtil::update_transient_array( $cache_id, $cache_array, $cache_exp_secs );
 
 				if ( $this->p->debug->enabled ) {
+
 					$this->p->debug->log( $type . ' buttons html saved to transient cache (expires in ' . $expires_in_secs . ' secs)' );
 				}
 			}
@@ -212,6 +228,7 @@ $after_widget .
 					'" value="1" type="checkbox" ';
 
 				if ( ! empty( $instance[ $share_id ] ) ) {
+
 					echo checked( 1, $instance[ $share_id ] );
 				}
 

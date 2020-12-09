@@ -381,10 +381,10 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				if ( $this->p->debug->enabled ) {
 
-					$this->p->debug->log( 'optional call to get_page_mod()' );
+					$this->p->debug->log( 'optional call to WpssoPage->get_mod()' );
 				}
 
-				$mod = $this->p->util->get_page_mod( $mod );
+				$mod = $this->p->page->get_mod( $mod );
 			}
 
 			if ( $this->p->debug->enabled ) {
@@ -401,7 +401,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			$cache_index    = $this->get_buttons_cache_index( $type );
 			$cache_array    = array();
 
-			if ( is_404() || is_search() ) {
+			if ( $mod[ 'is_404' ] || $mod[ 'is_search' ] ) {
 
 				if ( $this->p->debug->enabled ) {
 
@@ -624,16 +624,17 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			/**
 			 * The $mod array argument is preferred but not required.
+			 *
 			 * $mod = true | false | post_id | $mod array
 			 */
 			if ( ! is_array( $mod ) ) {
 
 				if ( $this->p->debug->enabled ) {
 
-					$this->p->debug->log( 'optional call to get_page_mod()' );
+					$this->p->debug->log( 'optional call to WpssoPage->get_mod()' );
 				}
 
-				$mod = $this->p->util->get_page_mod( $atts[ 'use_post' ] );
+				$mod = $this->p->page->get_mod( $atts[ 'use_post' ] );
 			}
 
 			$buttons_html  = '';

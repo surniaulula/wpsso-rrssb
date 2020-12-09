@@ -60,11 +60,13 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 
 		if ( $wpsso->debug->enabled ) {
 
-			$wpsso->debug->log( 'required call to get_page_mod()' );
+			$wpsso->debug->log( 'required call to WpssoPage->get_mod()' );
 		}
 
-		$mod         = $wpsso->util->get_page_mod( $atts[ 'use_post' ] );
-		$type        = __FUNCTION__;
+		$mod = $wpsso->page->get_mod( $atts[ 'use_post' ] );
+
+		$type = __FUNCTION__;
+
 		$sharing_url = $wpsso->util->get_sharing_url( $mod );
 
 		$cache_md5_pre = 'wpsso_b_';
@@ -77,7 +79,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 
 			$cache_exp_secs = $wpsso->util->get_cache_exp_secs( $cache_md5_pre );	// Default is week in seconds.
 
-			if ( is_404() || is_search() ) {
+			if ( $mod[ 'is_404' ] || $mod[ 'is_search' ] ) {
 
 				if ( $wpsso->debug->enabled ) {
 

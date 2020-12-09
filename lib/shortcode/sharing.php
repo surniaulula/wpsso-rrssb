@@ -195,11 +195,13 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 			if ( $this->p->debug->enabled ) {
 
-				$this->p->debug->log( 'required call to get_page_mod()' );
+				$this->p->debug->log( 'required call to WpssoPage->get_mod()' );
 			}
 
-			$mod         = $this->p->util->get_page_mod( $atts[ 'use_post' ] );
-			$type        = 'sharing_shortcode_' . $this->shortcode_name;
+			$mod = $this->p->page->get_mod( $atts[ 'use_post' ] );
+
+			$type = 'sharing_shortcode_' . $this->shortcode_name;
+
 			$atts[ 'url' ] = empty( $atts[ 'url' ] ) ? $this->p->util->get_sharing_url( $mod ) : $atts[ 'url' ];
 
 			$cache_md5_pre  = 'wpsso_b_';
@@ -209,7 +211,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			$cache_index    = $rrssb->social->get_buttons_cache_index( $type, $atts );
 			$cache_array    = array();
 
-			if ( is_404() || is_search() ) {
+			if ( $mod[ 'is_404' ] || $mod[ 'is_search' ] ) {
 
 				if ( $this->p->debug->enabled ) {
 
