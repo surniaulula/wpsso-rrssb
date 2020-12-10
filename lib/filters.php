@@ -432,9 +432,11 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				return $metabox_html;
 			}
 
+			$doing_ajax = SucomUtilWP::doing_ajax();
+
 			$metabox_html .= $this->a->social->get_buttons( $text = '', 'admin_edit', $mod );
 
-			if ( SucomUtil::get_const( 'DOING_AJAX' ) ) {
+			if ( $doing_ajax ) {
 
 				$metabox_html .= '<script type="text/javascript">rrssbInit();</script>' . "\n";
 

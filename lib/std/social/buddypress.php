@@ -38,10 +38,12 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddypress' ) ) {
 			}
 
 			/**
-			 * Note that the latest BuddyPress templates use AJAX calls, so is_admin(), bp_current_component(), and
-			 * DOING_AJAX will all be true in those cases.
+			 * The latest BuddyPress templates use ajax calls, so is_admin(), bp_current_component(), and DOING_AJAX
+			 * will all be true for those ajax calls.
 			 */
-			if ( is_admin() || bp_current_component() ) {
+			$component = bp_current_component();
+
+			if ( is_admin() || $component ) {
 
 				$classname = __CLASS__.'Sharing';
 
@@ -72,9 +74,11 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddypressSharing' ) ) {
 			) );
 
 			/**
-			 * Note that the latest BuddyPress templates use AJAX calls, so is_admin(), bp_current_component(), and
-			 * DOING_AJAX will all be true in those cases.
+			 * The latest BuddyPress templates use ajax calls, so is_admin(), bp_current_component(), and DOING_AJAX
+			 * will all be true for those ajax calls.
 			 */
+			$component = bp_current_component();
+
 			if ( is_admin() ) {
 
 				$this->p->util->add_plugin_filters( $this, array( 
@@ -83,11 +87,11 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddypressSharing' ) ) {
 				) );
 			}
 
-			if ( bp_current_component() ) {
+			if ( $component ) {
 
 				if ( $this->p->debug->enabled ) {
 
-					$this->p->debug->log( 'bp_current_component() = ' . bp_current_component() );
+					$this->p->debug->log( 'bp_current_component() is true' );
 				}
 
 				/**

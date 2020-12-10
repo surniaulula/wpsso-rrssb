@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"5.5.0-dev.1\n"
+"5.5.0-dev.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2020-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -380,17 +380,17 @@ msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
 
-#: lib/filters.php:457
+#: lib/filters.php:459
 msgctxt "lib file description"
 msgid "(sharing) Sharing Stylesheet"
 msgstr ""
 
-#: lib/filters.php:465
+#: lib/filters.php:467
 msgctxt "lib file description"
 msgid "(sharing) Sharing Shortcode"
 msgstr ""
 
-#: lib/filters.php:473
+#: lib/filters.php:475
 msgctxt "lib file description"
 msgid "(sharing) Sharing Widget"
 msgstr ""

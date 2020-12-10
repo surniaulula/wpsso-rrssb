@@ -271,14 +271,14 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			$is_admin   = is_admin();
 			$is_amp     = SucomUtil::is_amp();	// Returns null, true, or false.
-			$doing_ajax = SucomUtil::get_const( 'DOING_AJAX' );
+			$doing_ajax = SucomUtilWP::doing_ajax();
 			$error_msg  = '';
 
 			if ( $doing_ajax ) {
 
 				if ( $this->p->debug->enabled ) {
 
-					$this->p->debug->log( 'DOING_AJAX is true' );
+					$this->p->debug->log( 'doing_ajax is true' );
 				}
 
 			} elseif ( $is_admin ) {
