@@ -170,11 +170,14 @@ if ( ! class_exists( 'WpssoRrssbStdForumBbpressSharing' ) ) {
 
 			global $post;
 
-			if ( ! empty( $this->p->options[ 'buttons_add_to_' . $post->post_type ] ) ) {
+			if ( ! empty( $post->ID ) ) {	// Just in case.
 
-				$rrssb =& WpssoRrssb::get_instance();
+				if ( ! empty( $this->p->options[ 'buttons_add_to_' . $post->post_type ] ) ) {
 
-				echo $rrssb->social->get_buttons( $text = '', 'bbp_single', true, 'top' );
+					$rrssb =& WpssoRrssb::get_instance();
+
+					echo $rrssb->social->get_buttons( $text = '', 'bbp_single', true, 'top' );
+				}
 			}
 		}
 	}
