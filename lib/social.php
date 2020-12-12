@@ -520,13 +520,13 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					}
 
 					$cache_array[ $cache_index ] = '' .
-						'<!-- wpsso ' . $css_type . ' begin -->' .
+						'<!-- wpsso ' . $css_type . ' begin -->' .	// Used by $this->get_buttons_for_the_excerpt().
 						'<div class="' . $css_class . '" id="' . trim( $css_id ) . '">' . 
 						'<div class="' . $css_class_max . '" style="' . $css_style_max . '">' . 
 						$cache_array[ $cache_index ] .
 						'</div>' . "\n" .
 						'</div><!-- .wpsso-rrssb -->' .
-						'<!-- wpsso ' . $css_type . ' end -->' .
+						'<!-- wpsso ' . $css_type . ' end -->' .	// Used by $this->get_buttons_for_the_excerpt().
 						'<!-- generated on ' . date( 'c' ) . ' -->';
 
 					$cache_array[ $cache_index ] = apply_filters( 'wpsso_rrssb_buttons_html',
@@ -607,24 +607,15 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			$css_type = 'rrssb-excerpt';
 
-			$text = preg_replace_callback( '/(<!-- wpsso ' . $css_type . ' begin -->.*<!-- wpsso ' . $css_type . ' end -->)?/Usi',
+			$text = preg_replace_callback( '/<!-- wpsso ' . $css_type . ' begin -->(.*)<!-- wpsso ' . $css_type . ' end -->/Usi',
 				array( $this, 'remove_wp_breaks' ), $text );
 
 			return $text;
 		}
 
-		private function remove_wp_breaks( $match = array() ) {
+		private function remove_wp_breaks( array $match ) {
 
-			if ( empty( $match ) || ! is_array( $match ) ) {
-
-				return;
-			}
-
-			$text = empty( $match[ 1 ] ) ? '' : $match[ 1 ];
-
-			$ret  = preg_replace( '/(<(\/?p|br ?\/?)>|\n)/i', '', $text );
-
-			return $ret;
+			return preg_replace( '/(<(\/?p|br ?\/?)>|\n)/i', '', $match[ 1 ] );
 		}
 
 		/**
