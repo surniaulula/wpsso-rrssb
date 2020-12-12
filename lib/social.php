@@ -520,12 +520,14 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					}
 
 					$cache_array[ $cache_index ] = '' .
-						'<div class="' . $css_class . '" id="' . trim( $css_id ) . '">' . "\n" .
-						'<div class="' . $css_class_max . '" style="' . $css_style_max . '">' . "\n" .
+						'<!-- wpsso ' . $css_type . ' begin -->' .
+						'<div class="' . $css_class . '" id="' . trim( $css_id ) . '">' . 
+						'<div class="' . $css_class_max . '" style="' . $css_style_max . '">' . 
 						$cache_array[ $cache_index ] .
 						'</div>' . "\n" .
-						'</div><!-- .wpsso-rrssb -->' . "\n" .
-						'<!-- generated on ' . date( 'c' ) . ' -->' . "\n";
+						'</div><!-- .wpsso-rrssb -->' .
+						'<!-- wpsso ' . $css_type . ' end -->' .
+						'<!-- generated on ' . date( 'c' ) . ' -->';
 
 					$cache_array[ $cache_index ] = apply_filters( 'wpsso_rrssb_buttons_html',
 						$cache_array[ $cache_index ], $type, $mod, $location, $atts );
@@ -596,20 +598,33 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			return $this->get_buttons( $text, 'content' );
 		}
 
+		public function get_buttons_for_get_the_excerpt( $text ) {
+
+			return $this->get_buttons( $text, 'excerpt' );
+		}
+
 		public function get_buttons_for_the_excerpt( $text ) {
 
 			$css_type = 'rrssb-excerpt';
 
-			$text = preg_replace_callback( '/(<!-- wpsso ' . $css_type . ' begin -->' . 
-				'.*<!-- wpsso ' . $css_type . ' end -->)(<\/p>)?/Usi',
-					array( __CLASS__, 'remove_paragraph_tags' ), $text );
+			$text = preg_replace_callback( '/(<!-- wpsso ' . $css_type . ' begin -->.*<!-- wpsso ' . $css_type . ' end -->)?/Usi',
+				array( $this, 'remove_wp_breaks' ), $text );
 
 			return $text;
 		}
 
-		public function get_buttons_for_get_the_excerpt( $text ) {
+		private function remove_wp_breaks( $match = array() ) {
 
-			return $this->get_buttons( $text, 'excerpt' );
+			if ( empty( $match ) || ! is_array( $match ) ) {
+
+				return;
+			}
+
+			$text = empty( $match[ 1 ] ) ? '' : $match[ 1 ];
+
+			$ret  = preg_replace( '/(<(\/?p|br ?\/?)>|\n)/i', '', $text );
+
+			return $ret;
 		}
 
 		/**
@@ -660,18 +675,20 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 						/**
 						 * Filter to add custom tracking arguments.
 						 */
-						$atts[ 'url' ] = apply_filters( 'wpsso_rrssb_buttons_shared_url',
-							$atts[ 'url' ], $mod, $id );
+						$atts[ 'url' ] = apply_filters( 'wpsso_rrssb_buttons_shared_url', $atts[ 'url' ], $mod, $id );
 
-						$force_prot = apply_filters( 'wpsso_rrssb_buttons_force_prot',
-							$this->p->options[ 'buttons_force_prot' ], $mod, $id, $atts[ 'url' ] );
+						$force_prot = apply_filters( 'wpsso_rrssb_buttons_force_prot', $this->p->options[ 'buttons_force_prot' ],
+							$mod, $id, $atts[ 'url' ] );
 
 						if ( ! empty( $force_prot ) && $force_prot !== 'none' ) {
 
 							$atts[ 'url' ] = preg_replace( '/^.*:\/\//', $force_prot . '://', $atts[ 'url' ] );
 						}
 
-						$buttons_part = $this->share[ $id ]->get_html( $atts, $this->p->options, $mod ) . "\n";
+						/**
+						 * Do not terminate with a newline to avoid WordPress adding breaks and paragraphs.
+						 */
+						$buttons_part = $this->share[ $id ]->get_html( $atts, $this->p->options, $mod );
 
 						$atts = $saved_atts;	// Restore the common $atts array.
 
@@ -781,20 +798,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			}
 
 			return $local_cache[ $post_id ] = apply_filters( 'wpsso_post_buttons_disabled', $ret, $post_id );
-		}
-
-		public function remove_paragraph_tags( $match = array() ) {
-
-			if ( empty( $match ) || ! is_array( $match ) ) {
-
-				return;
-			}
-
-			$text = empty( $match[1] ) ? '' : $match[1];
-			$suff = empty( $match[2] ) ? '' : $match[2];
-			$ret  = preg_replace( '/(<\/*[pP]>|\n)/', '', $text );
-
-			return $suff . $ret;
 		}
 
 		public function get_share_ids( $share = array() ) {
