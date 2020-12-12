@@ -130,6 +130,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **New Features**
 	* None.
 * **Improvements**
+	* Fixed 'the_excerpt' filter to remove extra paragraphs and line breaks.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v5.6.
+	* WordPress v5.2.
+	* WPSSO Core v8.17.0.
+
+**Version 5.5.0 (2020/12/11)**
+
+* **New Features**
+	* None.
+* **Improvements**
 	* None.
 * **Bugfixes**
 	* None.
@@ -171,6 +186,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v8.14.0.
 
 == Upgrade Notice ==
+
+= 5.5.1 =
+
+(2020/12/12) Fixed 'the_excerpt' filter to remove extra paragraphs and line breaks.
 
 = 5.5.0 =
 
