@@ -26,7 +26,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersUpgrade' ) ) {
 			$this->a =& $addon;
 
 			$this->p->util->add_plugin_filters( $this, array( 
-				'rename_options_keys'  => 1,
+				'rename_options_keys' => 1,
 			) );
 		}
 
