@@ -83,12 +83,12 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 		public static function get_sharing_css_path() {
 
-			return WPSSO_CACHEDIR . self::get_sharing_css_name();
+			return WPSSO_CACHE_DIR . self::get_sharing_css_name();
 		}
 
 		public static function get_sharing_css_url() {
 
-			return WPSSO_CACHEURL . self::get_sharing_css_name();
+			return WPSSO_CACHE_URL . self::get_sharing_css_name();
 		}
 
 		public static function update_sharing_css( &$opts ) {
@@ -140,16 +140,16 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			} else {
 
-				if ( ! is_writable( WPSSO_CACHEDIR ) ) {
+				if ( ! is_writable( WPSSO_CACHE_DIR ) ) {
 
 					if ( $wpsso->debug->enabled ) {
 
-						$wpsso->debug->log( 'cache folder ' . WPSSO_CACHEDIR . ' is not writable' );
+						$wpsso->debug->log( 'cache folder ' . WPSSO_CACHE_DIR . ' is not writable' );
 					}
 
 					if ( is_admin() ) {
 
-						$wpsso->notice->err( sprintf( __( 'Cache folder %s is not writable.', 'wpsso-rrssb' ), WPSSO_CACHEDIR ) );
+						$wpsso->notice->err( sprintf( __( 'Cache folder %s is not writable.', 'wpsso-rrssb' ), WPSSO_CACHE_DIR ) );
 					}
 				}
 
