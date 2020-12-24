@@ -47,7 +47,10 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				$this->add_buttons_filter( 'the_excerpt' );
 			}
 
-			if ( ! empty( $this->p->options[ 'plugin_cache_disable' ] ) || self::get_const( 'WPSSO_CACHE_DISABLE' ) ) {
+			/**
+			 * Maybe disable the sharing buttons transient cache for debugging purposes.
+			 */
+			if ( ! empty( $this->p->options[ 'plugin_cache_disable' ] ) || SucomUtil::get_const( 'WPSSO_CACHE_DISABLE' ) ) {
 
 				$this->p->util->add_plugin_filters( $this, array(
 					'cache_expire_sharing_buttons' => '__return_zero',
