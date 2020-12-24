@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.6.0-dev.4 (2020/12/23)**
+**Version 5.6.0-dev.5 (2020/12/24)**
 
 * **New Features**
 	* None.
@@ -134,12 +134,13 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
+	* Added support for a new WPSSO_CACHE_DISABLE constant.
 	* Renamed the WPSSO_CACHEDIR constant to WPSSO_CACHE_DIR.
 	* Renamed the WPSSO_CACHEURL constant to WPSSO_CACHE_URL.
 * **Requires At Least**
 	* PHP v7.0.
 	* WordPress v5.2.
-	* WPSSO Core v8.19.0-dev.4.
+	* WPSSO Core v8.19.0-dev.5.
 
 **Version 5.5.1 (2020/12/11)**
 
@@ -203,9 +204,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.6.0-dev.4 =
+= 5.6.0-dev.5 =
 
-(2020/12/23) Renamed the WPSSO_CACHEDIR and WPSSO_CACHEURL constants.
+(2020/12/24) Renamed the WPSSO_CACHEDIR and WPSSO_CACHEURL constants.
 
 = 5.5.1 =
 
