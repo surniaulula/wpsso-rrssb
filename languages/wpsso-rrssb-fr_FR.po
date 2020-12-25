@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 5.5.0\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 5.6.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2020-12-10 10:31-0800\n"
-"PO-Revision-Date: 2020-12-10 10:31-0800\n"
+"POT-Creation-Date: 2020-12-25 08:28-0800\n"
+"PO-Revision-Date: 2020-12-25 08:28-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -274,7 +274,7 @@ msgstr "La valeur d'expiration de cache suggérée est de %1$s secondes (%2$s)."
 msgid "Failed to open the css file %s for reading."
 msgstr "Impossible d'ouvrir le fichier css %s pour lecture."
 
-#: lib/filters.php:224 lib/submenu/rrssb-buttons.php:232
+#: lib/filters.php:223 lib/submenu/rrssb-buttons.php:232
 msgctxt "option label"
 msgid "Sharing Buttons Cache Expiry"
 msgstr "Expiration cache boutons de partage"
@@ -284,57 +284,57 @@ msgctxt "option comment"
 msgid "seconds (0 to disable)"
 msgstr "secondes (0 pour désactiver)"
 
-#: lib/filters.php:242
+#: lib/filters.php:241
 msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr "Boutons de partage"
 
-#: lib/filters.php:260
+#: lib/filters.php:259
 msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr "Désactiver les boutons"
 
-#: lib/filters.php:281
+#: lib/filters.php:280
 msgctxt "option label"
 msgid "Email Subject"
 msgstr "Sujet du couriel"
 
-#: lib/filters.php:288
+#: lib/filters.php:287
 msgctxt "option label"
 msgid "Email Message"
 msgstr "Message du courriel"
 
-#: lib/filters.php:310
+#: lib/filters.php:309
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr "Texte du Tweet"
 
-#: lib/filters.php:347
+#: lib/filters.php:346
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr "Texte légende Pinterest"
 
-#: lib/filters.php:376
+#: lib/filters.php:375
 msgctxt "option label"
 msgid "%s Title"
 msgstr "Titre %s"
 
-#: lib/filters.php:383
+#: lib/filters.php:382
 msgctxt "option label"
 msgid "%s Caption"
 msgstr "Légende %s"
 
-#: lib/filters.php:459
+#: lib/filters.php:458
 msgctxt "lib file description"
 msgid "(sharing) Sharing Stylesheet"
 msgstr "(sharing) Styles de partage social"
 
-#: lib/filters.php:467
+#: lib/filters.php:466
 msgctxt "lib file description"
 msgid "(sharing) Sharing Shortcode"
 msgstr "(sharing) Code court de partage"
 
-#: lib/filters.php:475
+#: lib/filters.php:474
 msgctxt "lib file description"
 msgid "(sharing) Sharing Widget"
 msgstr "(sharing) Widget de partage"
@@ -409,19 +409,19 @@ msgctxt "option label"
 msgid "Recommend Author @username"
 msgstr "Recommander @nom d'auteur"
 
-#: lib/social.php:131
+#: lib/social.php:141
 msgid "Failed writing the css file %s."
 msgstr "Impossible d'écrire le fichier css %s."
 
-#: lib/social.php:152
+#: lib/social.php:162
 msgid "Cache folder %s is not writable."
 msgstr "Le dossier de cache %s n'est pas accessible en écriture."
 
-#: lib/social.php:163
+#: lib/social.php:173
 msgid "Failed to open the css file %s for writing."
 msgstr "Impossible d'ouvrir le fichier css %s pour écriture."
 
-#: lib/social.php:180
+#: lib/social.php:190
 msgid "Error removing the minified stylesheet &mdash; does the web server have sufficient privileges?"
 msgstr "Erreur en retirant la feuille de style minimisé &mdash; le serveur Web a t'il les privilèges nécessaires?"
 
