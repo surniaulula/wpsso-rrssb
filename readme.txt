@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.6.0-b.1 (2020/12/25)**
+**Version 5.6.0-b.2 (2020/12/26)**
 
 * **New Features**
 	* None.
@@ -140,7 +140,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.0.
 	* WordPress v5.2.
-	* WPSSO Core v8.19.0-b.1.
+	* WPSSO Core v8.19.0-b.2.
 
 **Version 5.5.1 (2020/12/11)**
 
@@ -204,9 +204,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.6.0-b.1 =
+= 5.6.0-b.2 =
 
-(2020/12/25) Renamed the WPSSO_CACHEDIR and WPSSO_CACHEURL constants.
+(2020/12/26) Renamed the WPSSO_CACHEDIR and WPSSO_CACHEURL constants.
 
 = 5.5.1 =
 
