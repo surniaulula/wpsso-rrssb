@@ -343,7 +343,7 @@
 	})();
 
 	// init load
-	$(document).ready(function(){
+	$(document).on('ready', function(){	// .ready() changed to .on() by jsmoriss 2021/01/11.
 		/*
 		 * Event listners
 		 */
