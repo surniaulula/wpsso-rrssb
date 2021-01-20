@@ -343,7 +343,7 @@
 	})();
 
 	// init load
-	$(document).on('ready', function(){	// .ready() changed to .on() by jsmoriss 2021/01/11.
+	$( function(){	// $( document ).ready() changed to $() for jQuery v3.0 by jsmoriss 2021/01/20.
 		/*
 		 * Event listners
 		 */
