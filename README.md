@@ -37,7 +37,7 @@
 
 <p>&#x2605;&#x2605;&#x2605;&#x2605;&#x2605; &mdash; "These buttons are great, work on mobile phones as well as desktops, and they load super fast!" - <a href="https://wordpress.org/support/topic/best-sharing-buttons-out-there/">undergroundnetwork</a></p>
 
-<h3>WPSSO RRSSB Standard Features</h3>
+<h3>WPSSO RRSSB Add-on Features</h3>
 
 <p>Extends the features of the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a> (required plugin).</p>
 
