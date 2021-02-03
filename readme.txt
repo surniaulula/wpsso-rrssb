@@ -42,46 +42,44 @@ The WPSSO RRSSB add-on includes special integration modules to add social sharin
 
 <h3>WPSSO RRSSB Standard Features</h3>
 
-* Extends the features of the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/).
+Extends the features of the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) (required plugin).
 
-* Include Ridiculously Responsive Social Sharing Buttons in multiple locations:
+Include Ridiculously Responsive Social Sharing Buttons in multiple locations:
 
-	* Above and/or below your content, excerpt text, bbPress single, BuddyBlog posts, BuddyPress activities, and WooCommerce short description.
-	* In an admin editing page metabox &ndash; including media, product pages, and custom post types.
-	* In a CSS / javascript sidebar.
-	* In a WordPress sharing widget.
-	* A shortcode in your content or excerpt.
-	* A function in your theme's template(s).
+* Above and/or below your content, excerpt text, bbPress single, BuddyBlog posts, BuddyPress activities, and WooCommerce short description.
+* In an admin editing page metabox &ndash; including media, product pages, and custom post types.
+* In a CSS / javascript sidebar.
+* In a WordPress sharing widget.
+* A shortcode in your content or excerpt.
+* A function in your theme's template(s).
 
-* Each of these social sharing buttons can be configured and styled individually:
+Each of these social sharing buttons can be configured and styled individually:
 
-	* Email
-	* Facebook
-	* Google+
-	* LinkedIn
-	* Pinterest
-	* Pocket
-	* Reddit
-	* Tumblr
-	* Twitter
-	* VK
-	* WhatsApp (for mobile devices)
+* Email
+* Facebook
+* Google+
+* LinkedIn
+* Pinterest
+* Pocket
+* Reddit
+* Tumblr
+* Twitter
+* VK
+* WhatsApp (for mobile devices)
 
-* Options to include / exclude social sharing buttons by post type.
+Options to include / exclude social sharing buttons by post type.
 
-* Include / exclude individual social sharing buttons based on the viewing device (desktop and/or mobile).
+Include / exclude individual social sharing buttons based on the viewing device (desktop and/or mobile).
 
-* Automatically exclude buttons from [Accelerated Mobile Pages (AMP)](https://wordpress.org/plugins/amp/) plugin pages.
+Automatically exclude buttons from [Accelerated Mobile Pages (AMP)](https://wordpress.org/plugins/amp/) plugin pages.
 
-* A built-in stylesheet editor allows you to easily fine-tune the CSS for each social sharing button location (content, excerpt, shortcode, widget, etc.).
+A built-in stylesheet editor allows you to easily fine-tune the CSS for each social sharing button location (content, excerpt, shortcode, widget, etc.).
 
-* Uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.
+Uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.
 
 <h3>WPSSO Core Plugin Required</h3>
 
-WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an add-on for the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/).
-
-WPSSO Core and its add-ons make sure your content looks best on social sites and in search results, no matter how webpages are shared, re-shared, messaged, posted, embedded, or crawled.
+WPSSO Ridiculously Responsive Social Sharing Buttons (aka WPSSO RRSSB) is an add-on for the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/). WPSSO Core and its add-ons make sure your content looks best on social sites and in search results, no matter how webpages are shared, re-shared, messaged, posted, embedded, or crawled.
 
 == Installation ==
 
