@@ -15,9 +15,7 @@
 
 <h2>Description</h2>
 
-<p style="margin:0;"><img class="readme-icon" src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png"></p>
-
-<p><em>Ridiculously Responsive Social Sharing Buttons</em> automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), no matter its size or resolution &mdash; including mobile, Retina, and high-PPI displays!</p>
+<p><img class="readme-icon" src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png"> <em>Ridiculously Responsive Social Sharing Buttons</em> automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), no matter its size or resolution &mdash; including mobile, Retina, and high-PPI displays!</p>
 
 <p><strong>Add Ridiculously Responsive Social Sharing Buttons to:</strong></p>
 
@@ -42,7 +40,7 @@
 <h3>WPSSO RRSSB Standard Features</h3>
 
 <ul>
-<li><p>Extends the features of the WPSSO Core plugin.</p></li>
+<li><p>Extends the features of the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a>.</p></li>
 <li><p>Include Ridiculously Responsive Social Sharing Buttons in multiple locations:</p>
 
 <ul>
