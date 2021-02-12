@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 7.0
 Requires At Least: 5.2
 Tested Up To: 5.6.1
-WC Tested Up To: 4.9.2
+WC Tested Up To: 5.0.0
 Stable Tag: 5.6.0
 
 Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, templates, and editor.
