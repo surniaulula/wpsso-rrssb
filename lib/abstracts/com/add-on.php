@@ -2,7 +2,7 @@
 /**
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
- * Copyright 2020 Jean-Sebastien Morisset (https://surniaulula.com/)
+ * Copyright 2020-2021 Jean-Sebastien Morisset (https://surniaulula.com/)
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -14,16 +14,31 @@ if ( ! class_exists( 'SucomAddOn' ) ) {
 
 	abstract class SucomAddOn {
 
-		protected $p;
-		protected $ext   = '';
-		protected $p_ext = '';
-		protected $cf    = array();
+		protected $p;	// Plugin class object.
 
-		protected $notice_added = false;
+		protected $ext   = '';		// Add-on lowercase classname. Example: 'wpssojson'.
+		protected $p_ext = '';		// Add-on lowercase acronym. Example: 'json'.
+		protected $cf    = array();	// Add-on config array. Example: WpssoJsonConfig::$cf.
+
+		protected $did_plugin_notices = false;	// True when $this->init_plugin_notices() has run.
 
 		public function __construct() {}
 
-		public function init_textdomain() {}
+		/**
+		 * Since WPSSO Core v8.11.1.
+		 */
+		public function get_ext() {
+
+			return $this->ext;	// Defined in WpssoAddon, which extends SucomAddon.
+		}
+
+		/**
+		 * Since WPSSO Core v8.11.1.
+		 */
+		public function get_p_ext() {
+
+			return $this->p_ext;	// Defined in WpssoAddon, which extends SucomAddon.
+		}
 
 		public function get_config( array $config ) {
 
@@ -34,8 +49,6 @@ if ( ! class_exists( 'SucomAddOn' ) ) {
 
 			return SucomUtil::array_merge_recursive_distinct( $config, $this->cf );
 		}
-
-		public function init_objects( $is_admin, $doing_ajax, $doing_cron ) {}
 
 		public function get_avail( array $avail ) {
 
@@ -51,11 +64,17 @@ if ( ! class_exists( 'SucomAddOn' ) ) {
 			return $avail;
 		}
 
-		public function init_plugin_notices( $is_admin, $doing_ajax, $doing_cron ) {
+		/**
+		 * All WPSSO Core objects are instantiated and configured.
+		 *
+		 * $is_admin and $doing_ajax available since WPSSO Core v7.10.0.
+		 * $doing_cron available since WPSSO Core v8.8.0.
+		 */
+		public function init_plugin_notices( $is_admin = false, $doing_ajax = false, $doing_cron = false ) {
 
 			$missing_reqs = $this->get_missing_requirements();	// Returns false or an array of missing requirements.
 
-			$this->notice_added = true;
+			$this->did_plugin_notices = true;	// Signal that $this->init_plugin_notices() has run.
 
 			if ( ! $doing_ajax && $missing_reqs ) {
 
@@ -85,7 +104,7 @@ if ( ! class_exists( 'SucomAddOn' ) ) {
 
 		public function show_admin_notices() {
 
-			if ( $this->notice_added ) {	// Nothing to do.
+			if ( $this->did_plugin_notices ) {	// True when $this->init_plugin_notices() has run.
 
 				return;	// Stop here.
 			}
@@ -108,8 +127,6 @@ if ( ! class_exists( 'SucomAddOn' ) ) {
 			}
 		}
 
-		protected function add_hooks() {}
-
 		/**
 		 * Returns false or an array of missing requirements.
 		 */
@@ -131,7 +148,8 @@ if ( ! class_exists( 'SucomAddOn' ) ) {
 				return $local_cache = false;
 			}
 
-			$addon_name  = $info[ 'name' ];
+			$addon_name = $info[ 'name' ];
+
 			$text_domain = $info[ 'text_domain' ];
 
 			foreach ( $info[ 'req' ] as $key => $req_info ) {
@@ -162,7 +180,12 @@ if ( ! class_exists( 'SucomAddOn' ) ) {
 
 					$req_info[ 'notice' ] = sprintf( $notice_msg, $addon_name, $req_name );
 
-				} elseif ( ! empty( $req_info[ 'version' ] ) ) {
+				}
+
+				/**
+				 * A version value from a global variable or constant.
+				 */
+				if ( ! empty( $req_info[ 'version' ] ) ) {
 
 					if ( ! empty( $req_info[ 'min_version' ] ) ) {
 
@@ -179,6 +202,9 @@ if ( ! class_exists( 'SucomAddOn' ) ) {
 					}
 				}
 
+				/**
+				 * Possible notice for an insufficient wordpress or plugin version, or a missing plugin.
+				 */
 				if ( ! empty( $req_info[ 'notice' ] ) ) {
 
 					$local_cache[ $key ] = $req_info;
