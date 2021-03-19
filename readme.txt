@@ -121,6 +121,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 5.6.2 (2021/03/19)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Updated the default CSS to include the WhatsApp button for both desktop and mobile.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.0.
+	* WordPress v5.2.
+	* WPSSO Core v8.23.0.
+
 **Version 5.6.1 (2021/02/25)**
 
 * **New Features**
@@ -214,6 +229,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v8.14.0.
 
 == Upgrade Notice ==
+
+= 5.6.2 =
+
+(2021/03/19) Updated the default CSS to include the WhatsApp button for both desktop and mobile.
 
 = 5.6.1 =
 
