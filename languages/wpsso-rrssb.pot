@@ -380,17 +380,17 @@ msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
 
-#: lib/filters.php:454
+#: lib/filters.php:455
 msgctxt "lib file description"
 msgid "(sharing) Sharing Stylesheet"
 msgstr ""
 
-#: lib/filters.php:462
+#: lib/filters.php:463
 msgctxt "lib file description"
 msgid "(sharing) Sharing Shortcode"
 msgstr ""
 
-#: lib/filters.php:470
+#: lib/filters.php:471
 msgctxt "lib file description"
 msgid "(sharing) Sharing Widget"
 msgstr ""

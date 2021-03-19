@@ -436,8 +436,9 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			$metabox_html .= $this->a->social->get_buttons( $text = '', 'admin_edit', $mod );
 
 			$metabox_html .= '<script type="text/javascript">' . 
-				'if ( \'function\' === typeof rrssbInit ) { rrssbInit(); } ' .
-				'else { setTimeout( function(){ rrssbInit(); }, 5000 ); }' .	// Allow WordPress more time to load the script.
+				'var rrssbInitExists = setInterval( function(){' .
+				'if ( \'function\' === typeof rrssbInit ) { rrssbInit(); clearInterval( rrssbInitExists ); }' .
+				'}, 500 );' .	// Check for the rrssbInit() function every 500 ms and execute only when available.
 				'</script>' . "\n";
 
 			return $metabox_html;
