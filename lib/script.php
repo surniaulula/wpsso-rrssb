@@ -33,8 +33,14 @@ if ( ! class_exists( 'WpssoRrssbScript' ) ) {
 			$this->file_ext  = $this->doing_dev ? 'js' : 'min.js';
 			$this->version   = WpssoRrssbConfig::get_version();
 
-			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ), WPSSO_ADMIN_SCRIPTS_PRIORITY );
-			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+			if ( is_admin() ) {
+
+				add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+
+			} else {
+
+				add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+			}
 		}
 
 		public function enqueue_scripts( $hook_name ) {

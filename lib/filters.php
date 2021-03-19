@@ -435,14 +435,10 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 			$metabox_html .= $this->a->social->get_buttons( $text = '', 'admin_edit', $mod );
 
-			if ( $doing_ajax ) {
-
-				$metabox_html .= '<script type="text/javascript">rrssbInit();</script>' . "\n";
-
-			} else {
-
-				$metabox_html .= '<script type="text/javascript">jQuery( window ).on( \'load\', function(){ rrssbInit(); });</script>' . "\n";
-			}
+			$metabox_html .= '<script type="text/javascript">' . 
+				'if ( \'function\' === typeof rrssbInit ) { rrssbInit(); } ' .
+				'else { setTimeout( function(){ rrssbInit(); }, 5000 ); }' .
+				'</script>' . "\n";
 
 			return $metabox_html;
 		}

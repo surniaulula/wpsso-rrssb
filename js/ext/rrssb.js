@@ -344,10 +344,10 @@
 
 	// init load
 	$( function(){	// $( document ).ready() changed to $() for jQuery v3.0 by jsmoriss 2021/01/20.
+
 		/*
 		 * Event listners
 		 */
-
 		try {
 			$(document).on('click', '.rrssb-buttons a.popup', {}, function popUp(e) {
 				var self = $(this);
