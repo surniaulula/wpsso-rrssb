@@ -437,7 +437,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 			$metabox_html .= '<script type="text/javascript">' . 
 				'if ( \'function\' === typeof rrssbInit ) { rrssbInit(); } ' .
-				'else { setTimeout( function(){ rrssbInit(); }, 5000 ); }' .
+				'else { setTimeout( function(){ rrssbInit(); }, 5000 ); }' .	// Allow WordPress more time to load the script.
 				'</script>' . "\n";
 
 			return $metabox_html;
