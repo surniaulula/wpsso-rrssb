@@ -306,7 +306,7 @@ msgid ""
 "If the %1$s option (above) is also checked, the %2$s is suggested first."
 msgstr ""
 
-#: lib/filters-messages.php:260 lib/share/twitter.php:58
+#: lib/filters-messages.php:260 lib/share/twitter.php:59
 msgctxt "option label"
 msgid "Add via Business @username"
 msgstr ""
@@ -420,7 +420,7 @@ msgid "Append Hashtags to Message"
 msgstr ""
 
 #: lib/share/email.php:51 lib/share/linkedin.php:51 lib/share/pinterest.php:51
-#: lib/share/reddit.php:51 lib/share/tumblr.php:51 lib/share/twitter.php:55
+#: lib/share/reddit.php:51 lib/share/tumblr.php:51 lib/share/twitter.php:56
 msgctxt "option comment"
 msgid "tag names"
 msgstr ""
@@ -460,7 +460,7 @@ msgctxt "option label"
 msgid "Append Hashtags to Tweet"
 msgstr ""
 
-#: lib/share/twitter.php:62
+#: lib/share/twitter.php:63
 msgctxt "option label"
 msgid "Recommend Author @username"
 msgstr ""

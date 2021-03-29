@@ -33,25 +33,25 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 		public function filter_rrssb_share_pinterest_rows( $table_rows, $form, $submenu ) {
 
 			$table_rows[] = '' .
-			$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
-			'<td>' . $submenu->show_on_checkboxes( 'pin' ) . '</td>';
+				$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
+				'<td>' . $submenu->show_on_checkboxes( 'pin' ) . '</td>';
 
 			$table_rows[] = '' .
-			$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
-			'<td>' . $form->get_select( 'pin_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
+				$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
+				'<td>' . $form->get_select( 'pin_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'pin_caption_max_len' ) . 
-                        $form->get_th_html( _x( 'Caption Text Length', 'option label', 'wpsso-rrssb' ) ) . 
-			'<td>' . $form->get_input( 'pin_caption_max_len', $css_class = 'chars' ) . ' ' . 
+				$form->get_th_html( _x( 'Caption Text Length', 'option label', 'wpsso-rrssb' ) ) . 
+				'<td>' . $form->get_input( 'pin_caption_max_len', $css_class = 'chars' ) . ' ' . 
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'pin_caption_hashtags' ) . 
-			$form->get_th_html( _x( 'Append Hashtags to Caption', 'option label', 'wpsso-rrssb' ) ) . 
-			'<td>' . $form->get_select( 'pin_caption_hashtags', range( 0, $this->p->cf[ 'form' ][ 'max_hashtags' ] ), 'short', '', true ) . ' ' . 
+				$form->get_th_html( _x( 'Append Hashtags to Caption', 'option label', 'wpsso-rrssb' ) ) . 
+				'<td>' . $form->get_select( 'pin_caption_hashtags', range( 0, $this->p->cf[ 'form' ][ 'max_hashtags' ] ), 'short', '', true ) . ' ' . 
 				_x( 'tag names', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'pin_rrssb_html' ) . 
-			'<td colspan="2">' . $form->get_textarea( 'pin_rrssb_html', 'button_html code' ) . '</td>';
+				'<td colspan="2">' . $form->get_textarea( 'pin_rrssb_html', 'button_html code' ) . '</td>';
 
 			return $table_rows;
 		}

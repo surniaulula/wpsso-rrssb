@@ -190,48 +190,48 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 				case 'rrssb_buttons-include':
 
 					$table_rows[ 'buttons_on_index' ] = '' .
-					$this->form->get_th_html( _x( 'Include on Archive Webpages', 'option label', 'wpsso-rrssb' ),
-						$css_class = '', $css_id = 'buttons_on_index' ) . 
-					'<td>' . $this->form->get_checkbox( 'buttons_on_index' ) . '</td>';
+						$this->form->get_th_html( _x( 'Include on Archive Webpages', 'option label', 'wpsso-rrssb' ),
+							$css_class = '', $css_id = 'buttons_on_index' ) . 
+						'<td>' . $this->form->get_checkbox( 'buttons_on_index' ) . '</td>';
 
 					$table_rows[ 'buttons_on_front' ] = '' .
-					$this->form->get_th_html( _x( 'Include on Page Homepage', 'option label', 'wpsso-rrssb' ),
-						$css_class = '', $css_id = 'buttons_on_front' ) . 
-					'<td>' . $this->form->get_checkbox( 'buttons_on_front' ) . '</td>';
+						$this->form->get_th_html( _x( 'Include on Page Homepage', 'option label', 'wpsso-rrssb' ),
+							$css_class = '', $css_id = 'buttons_on_front' ) . 
+						'<td>' . $this->form->get_checkbox( 'buttons_on_front' ) . '</td>';
 
 					$table_rows[ 'buttons_add_to' ] = '' .
-					$this->form->get_th_html( _x( 'Include on Post Types', 'option label', 'wpsso-rrssb' ),
-						$css_class = '', $css_id = 'buttons_add_to' ) . 
-					'<td>' . $this->form->get_checklist_post_types( 'buttons_add_to' ) . '</td>';
+						$this->form->get_th_html( _x( 'Include on Post Types', 'option label', 'wpsso-rrssb' ),
+							$css_class = '', $css_id = 'buttons_add_to' ) . 
+						'<td>' . $this->form->get_checklist_post_types( 'buttons_add_to' ) . '</td>';
 
 					break;
 
 				case 'rrssb_buttons-position':
 
 					$table_rows[ 'buttons_pos_content' ] = '' .
-					$this->form->get_th_html( _x( 'Position in Content', 'option label', 'wpsso-rrssb' ),
-						$css_class = '', $css_id = 'buttons_pos_content' ) . 
-					'<td>' . $this->form->get_select( 'buttons_pos_content', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
+						$this->form->get_th_html( _x( 'Position in Content', 'option label', 'wpsso-rrssb' ),
+							$css_class = '', $css_id = 'buttons_pos_content' ) . 
+						'<td>' . $this->form->get_select( 'buttons_pos_content', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
 
 					$table_rows[ 'buttons_pos_excerpt' ] = '' .
-					$this->form->get_th_html( _x( 'Position in Excerpt', 'option label', 'wpsso-rrssb' ),
-						$css_class = '', $css_id = 'buttons_pos_excerpt' ) . 
-					'<td>' . $this->form->get_select( 'buttons_pos_excerpt', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
+						$this->form->get_th_html( _x( 'Position in Excerpt', 'option label', 'wpsso-rrssb' ),
+							$css_class = '', $css_id = 'buttons_pos_excerpt' ) . 
+						'<td>' . $this->form->get_select( 'buttons_pos_excerpt', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
 
 					break;
 
 				case 'rrssb_buttons-advanced':
 
 					$table_rows[ 'buttons_force_prot' ] = '' .
-					$this->form->get_th_html( _x( 'Force Protocol for Shared URLs', 'option label', 'wpsso-rrssb' ),
-						$css_class = '', $css_id = 'buttons_force_prot' ) . 
-					'<td>' . $this->form->get_select( 'buttons_force_prot',
-						array_merge( array( '' => 'none' ), $this->p->cf[ 'sharing' ][ 'force_prot' ] ) ) . '</td>';
+						$this->form->get_th_html( _x( 'Force Protocol for Shared URLs', 'option label', 'wpsso-rrssb' ),
+							$css_class = '', $css_id = 'buttons_force_prot' ) . 
+						'<td>' . $this->form->get_select( 'buttons_force_prot',
+							array_merge( array( '' => 'none' ), $this->p->cf[ 'sharing' ][ 'force_prot' ] ) ) . '</td>';
 
 					$table_rows[ 'plugin_sharing_buttons_cache_exp' ] = '' .
-					$this->form->get_th_html( _x( 'Sharing Buttons Cache Expiry', 'option label', 'wpsso-rrssb' ),
-						$css_class = '', $css_id = 'plugin_sharing_buttons_cache_exp' ) . 
-					'<td nowrap>' . $this->form->get_input( 'plugin_sharing_buttons_cache_exp', 'medium' ) . ' ' .
+						$this->form->get_th_html( _x( 'Sharing Buttons Cache Expiry', 'option label', 'wpsso-rrssb' ),
+							$css_class = '', $css_id = 'plugin_sharing_buttons_cache_exp' ) . 
+						'<td nowrap>' . $this->form->get_input( 'plugin_sharing_buttons_cache_exp', 'medium' ) . ' ' .
 						_x( 'seconds (0 to disable)', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
 					break;

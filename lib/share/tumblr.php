@@ -33,25 +33,25 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTumblr' ) ) {
 		public function filter_rrssb_share_tumblr_rows( $table_rows, $form, $submenu ) {
 
 			$table_rows[ 'tumblr_show_on' ] = '' .
-			$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
-			'<td>' . $submenu->show_on_checkboxes( 'tumblr' ) . '</td>';
+				$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
+				'<td>' . $submenu->show_on_checkboxes( 'tumblr' ) . '</td>';
 
 			$table_rows[ 'tumblr_button_order' ] = '' .
-			$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
-			'<td>' . $form->get_select( 'tumblr_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
+				$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
+				'<td>' . $form->get_select( 'tumblr_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
 			$table_rows[ 'tumblr_caption_max_len' ] = $form->get_tr_hide( 'basic', 'tumblr_caption_max_len' ) . 
-                        $form->get_th_html( _x( 'Summary Text Length', 'option label', 'wpsso-rrssb' ) ) . 
-			'<td>' . $form->get_input( 'tumblr_caption_max_len', $css_class = 'chars' ) . ' ' . 
+				$form->get_th_html( _x( 'Summary Text Length', 'option label', 'wpsso-rrssb' ) ) . 
+				'<td>' . $form->get_input( 'tumblr_caption_max_len', $css_class = 'chars' ) . ' ' . 
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
 			$table_rows[ 'tumblr_caption_hashtags' ] = $form->get_tr_hide( 'basic', 'tumblr_caption_hashtags' ) . 
-			$form->get_th_html( _x( 'Append Hashtags to Summary', 'option label', 'wpsso-rrssb' ) ) . 
-			'<td>' . $form->get_select( 'tumblr_caption_hashtags', range( 0, $this->p->cf[ 'form' ][ 'max_hashtags' ] ), 'short', '', true ) . ' ' . 
+				$form->get_th_html( _x( 'Append Hashtags to Summary', 'option label', 'wpsso-rrssb' ) ) . 
+				'<td>' . $form->get_select( 'tumblr_caption_hashtags', range( 0, $this->p->cf[ 'form' ][ 'max_hashtags' ] ), 'short', '', true ) . ' ' . 
 				_x( 'tag names', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
 			$table_rows[ 'tumblr_rrssb_html' ] = $form->get_tr_hide( 'basic', 'tumblr_rrssb_html' ) . 
-			'<td colspan="2">' . $form->get_textarea( 'tumblr_rrssb_html', 'button_html code' ) . '</td>';
+				'<td colspan="2">' . $form->get_textarea( 'tumblr_rrssb_html', 'button_html code' ) . '</td>';
 
 			return $table_rows;
 		}

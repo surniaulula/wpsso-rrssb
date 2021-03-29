@@ -223,7 +223,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				'plugin_sharing_buttons_cache_exp' => $form->get_th_html( _x( 'Sharing Buttons Cache Expiry', 'option label', 'wpsso-rrssb' ),
 					$css_class = '', $css_id = 'plugin_sharing_buttons_cache_exp' ) . 
 				'<td nowrap' . $td_attr . '>' . $form->$get_func( 'plugin_sharing_buttons_cache_exp', $css_class = 'medium' ) . ' ' . 
-					_x( 'seconds (0 to disable)', 'option comment', 'wpsso-rrssb' ) . '</td>' . 
+				_x( 'seconds (0 to disable)', 'option comment', 'wpsso-rrssb' ) . '</td>' . 
 				WpssoAdmin::get_option_site_use( 'plugin_sharing_buttons_cache_exp', $form, $network ),
 			) );
 
