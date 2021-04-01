@@ -12,7 +12,7 @@ Requires PHP: 7.0
 Requires At Least: 5.2
 Tested Up To: 5.7
 WC Tested Up To: 5.1.0
-Stable Tag: 5.6.2
+Stable Tag: 5.7.0
 
 Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, templates, and editor.
 
@@ -134,7 +134,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.0.
 	* WordPress v5.2.
-	* WPSSO Core v8.23.0.
+	* WPSSO Core v8.25.2.
 
 **Version 5.6.2 (2021/03/19)**
 
