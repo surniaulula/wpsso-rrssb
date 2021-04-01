@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(			// Plugin acronym.
-					'version'     => '5.6.2',	// Plugin version.
+					'version'     => '5.7.0',	// Plugin version.
 					'opt_version' => '34',		// Increment when changing default option values.
 					'short'       => 'WPSSO RRSSB',	// Short plugin name.
 					'name'        => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
@@ -248,6 +248,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			$var_const = array();
 
 			$var_const[ 'WPSSORRSSB_SHARING_SHORTCODE_NAME' ] = 'rrssb';
+			$var_const[ 'WPSSORRSSB_MAX_WIDTH_MULTIPLIER' ]   = 118;
 
 			/**
 			 * Maybe override the default constant value with a pre-defined constant value.

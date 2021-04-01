@@ -507,17 +507,13 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				if ( ! empty( $cache_array[ $cache_index ] ) ) {
 
+					$buttons_count = preg_match_all( '/<li/', $cache_array[ $cache_index ] );	// Returns number of matches or false on error. 
+
 					$css_type      = 'rrssb-' . $type;
 					$css_id        = 'sidebar' === $type ? 'wpsso-' . $css_type . ' ' : '';
 					$css_class     = 'wpsso-rrssb wpsso-' . $css_type;
 					$css_class_max = 'wpsso-rrssb-limit wpsso-' . $css_type . '-limit';
-
-					/**
-					 * Do not count $sorted_ids since some buttons may not return anything (ie. the WhatsApp
-					 * button for a desktop browser).
-					 */
-					$buttons_count = preg_match_all( '/<li/', $cache_array[ $cache_index ] );
-					$css_style_max = 'max-width:' . ( 116 * $buttons_count ) . 'px;';
+					$css_style_max = 'max-width:' . ( WPSSORRSSB_MAX_WIDTH_MULTIPLIER * $buttons_count ) . 'px; margin:0 auto;';
 
 					if ( $mod[ 'name' ] ) {
 

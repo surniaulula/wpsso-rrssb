@@ -435,11 +435,31 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 			$metabox_html .= $this->a->social->get_buttons( $text = '', 'admin_edit', $mod );
 
-			$metabox_html .= '<script type="text/javascript">' . 
-				'var rrssbInitExists = setInterval( function(){' .
-				'if ( \'function\' === typeof rrssbInit ) { rrssbInit(); clearInterval( rrssbInitExists ); }' .
-				'}, 500 );' .	// Check for the rrssbInit() function every 500 ms and execute only when available.
-				'</script>' . "\n";
+			$metabox_html .= <<<EOF
+<script type="text/javascript">
+
+function runRrssbInit() {
+
+	var rrssbInitCount = 0;
+
+	var rrssbInitExists = setInterval( function() {
+
+		if ( 'function' === typeof rrssbInit ) {
+		
+			if ( ++rrssbInitCount >= 3 ) {
+
+				clearInterval( rrssbInitExists );
+			}
+			
+			rrssbInit();
+		}
+	}, 1000 );
+}
+
+runRrssbInit().bind( 'sucom_init_metabox' );
+
+</script>
+EOF;
 
 			return $metabox_html;
 		}
