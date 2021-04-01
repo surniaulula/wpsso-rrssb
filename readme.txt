@@ -121,6 +121,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 5.7.0 (2021/04/01)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Refactored the javascript used to initialize RRSSB buttons in the Document SSO metabox footer.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Added a new WPSSORRSSB_MAX_WIDTH_MULTIPLIER constant (default is 118px).
+* **Requires At Least**
+	* PHP v7.0.
+	* WordPress v5.2.
+	* WPSSO Core v8.23.0.
+
 **Version 5.6.2 (2021/03/19)**
 
 * **New Features**
@@ -229,6 +244,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v8.14.0.
 
 == Upgrade Notice ==
+
+= 5.7.0 =
+
+(2021/04/01) Refactored the javascript used to initialize RRSSB buttons in the Document SSO metabox footer. Added a new WPSSORRSSB_MAX_WIDTH_MULTIPLIER constant (default is 118px).
 
 = 5.6.2 =
 
