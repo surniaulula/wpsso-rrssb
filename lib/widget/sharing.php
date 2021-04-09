@@ -200,7 +200,7 @@ $after_widget .
 			/**
 			 * Clear all sharing button transient cache objects.
 			 */
-			$cleared_count = $this->p->util->cache->clear_db_transients( $clear_short = false, $transient_prefix = 'wpsso_b_' );
+			$cleared_count = $this->p->util->cache->clear_db_transients( $clear_short = false, $key_prefix = 'wpsso_b_' );
 
 			return $instance;
 		}
