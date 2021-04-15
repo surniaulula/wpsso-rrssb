@@ -445,18 +445,19 @@ function runRrssbInit() {
 	var rrssbInitExists = setInterval( function() {
 
 		if ( 'function' === typeof rrssbInit ) {
-		
-			if ( ++rrssbInitCount >= 3 ) {
+	
+			rrssbInit();
+
+			if ( ++rrssbInitCount > 5 ) {
 
 				clearInterval( rrssbInitExists );
 			}
-			
-			rrssbInit();
 		}
+
 	}, 1000 );
 }
 
-runRrssbInit().bind( 'sucom_init_metabox' );
+runRrssbInit();
 
 </script>
 EOF;
