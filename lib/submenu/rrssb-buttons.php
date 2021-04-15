@@ -202,7 +202,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 					$table_rows[ 'buttons_add_to' ] = '' .
 						$this->form->get_th_html( _x( 'Include on Post Types', 'option label', 'wpsso-rrssb' ),
 							$css_class = '', $css_id = 'buttons_add_to' ) . 
-						'<td>' . $this->form->get_checklist_post_types( 'buttons_add_to' ) . '</td>';
+						'<td>' . $this->form->get_checklist_post_types( $name_prefix = 'buttons_add_to' ) . '</td>';
 
 					break;
 
