@@ -177,7 +177,7 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 			 */
 			$twitter_button_html = $this->p->options[ 'twitter_rrssb_html' ];
 
-			$extra_inline_vars = array();
+			$extra = array();
 
 			foreach ( array( 
 				'text'     => 'tweet',
@@ -192,11 +192,11 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 
 				} else {
 
-					$extra_inline_vars[ 'twitter_' . $query_key ] = rawurlencode( $atts[ $atts_key ] );
+					$extra[ 'twitter_' . $query_key ] = rawurlencode( $atts[ $atts_key ] );
 				}
 			}
 
-			return $this->p->util->replace_inline_vars( '<!-- Twitter Button -->' . $twitter_button_html, $mod, $atts, $extra_inline_vars );
+			return $this->p->util->replace_inline_vars( '<!-- Twitter Button -->' . $twitter_button_html, $mod, $atts, $extra );
 		}
 	}
 }

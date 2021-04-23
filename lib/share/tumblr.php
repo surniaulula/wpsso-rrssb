@@ -125,7 +125,7 @@ if ( ! class_exists( 'WpssoRrssbShareTumblr' ) ) {
 
 			return $this->p->util->replace_inline_vars( '<!-- Tumblr Button -->' . $this->p->options[ 'tumblr_rrssb_html' ], $mod, $atts, array(
 				'tumblr_title'   => rawurlencode( $tumblr_title ),
-				 'tumblr_summary' => rawurlencode( $tumblr_summary ),
+				'tumblr_summary' => rawurlencode( $tumblr_summary ),
 			) );
 		}
 	}
