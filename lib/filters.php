@@ -435,8 +435,11 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 			$metabox_html .= $this->a->social->get_buttons( $text = '', 'admin_edit', $mod );
 
+			/**
+			 * The type="text/javascript" attribute is unnecessary for JavaScript resources and creates warnings in the W3C validator.
+			 */
 			$metabox_html .= <<<EOF
-<script type="text/javascript">
+<script>
 
 function runRrssbInit() {
 
