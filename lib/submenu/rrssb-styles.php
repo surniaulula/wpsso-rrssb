@@ -96,7 +96,8 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 
 				$this->form->get_th_html( _x( 'Enqueue the Stylesheet', 'option label', 'wpsso-rrssb' ), '', 'buttons_enqueue_social_style' ) . 
 					'<td>' . $this->form->get_checkbox( 'buttons_enqueue_social_style' ) . '</td>',
-			) );
+
+			), $class_href_key = 'metabox-info metabox-' . $metabox_id . '-info' );
 
 			$table_rows  = array();
 
