@@ -1,16 +1,16 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 5.6.0\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 5.7.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2020-12-29 08:28-0800\n"
-"PO-Revision-Date: 2020-12-29 08:28-0800\n"
+"POT-Creation-Date: 2021-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2021-04-28 15:16-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 2.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: gettext/gettext-lib-abstracts-com.php:6 lib/abstracts/com/add-on.php:178
@@ -252,7 +252,7 @@ msgstr "Réglages généraux"
 msgid "Recommend following the author's Twitter @username after sharing a webpage. If the %1$s option (above) is also checked, the %2$s is suggested first."
 msgstr "Conseiller de suivre le @nom Twitter de l'auteur après avoir partagé une page Web. Si l'option %1$s (ci-dessus) est également cochée, le %2$s sera recommandé en premier."
 
-#: lib/filters-messages.php:260 lib/share/twitter.php:58
+#: lib/filters-messages.php:260 lib/share/twitter.php:59
 msgctxt "option label"
 msgid "Add via Business @username"
 msgstr "Ajouter via @nom d'affaires"
@@ -324,17 +324,17 @@ msgctxt "option label"
 msgid "%s Caption"
 msgstr "Légende %s"
 
-#: lib/filters.php:458
+#: lib/filters.php:479
 msgctxt "lib file description"
 msgid "(sharing) Sharing Stylesheet"
 msgstr "(sharing) Styles de partage social"
 
-#: lib/filters.php:466
+#: lib/filters.php:487
 msgctxt "lib file description"
 msgid "(sharing) Sharing Shortcode"
 msgstr "(sharing) Code court de partage"
 
-#: lib/filters.php:474
+#: lib/filters.php:495
 msgctxt "lib file description"
 msgid "(sharing) Sharing Widget"
 msgstr "(sharing) Widget de partage"
@@ -364,7 +364,7 @@ msgid "Append Hashtags to Message"
 msgstr "Ajout de hashtags au message"
 
 #: lib/share/email.php:51 lib/share/linkedin.php:51 lib/share/pinterest.php:51
-#: lib/share/reddit.php:51 lib/share/tumblr.php:51 lib/share/twitter.php:55
+#: lib/share/reddit.php:51 lib/share/tumblr.php:51 lib/share/twitter.php:56
 msgctxt "option comment"
 msgid "tag names"
 msgstr "noms d'étiquettes"
@@ -404,7 +404,7 @@ msgctxt "option label"
 msgid "Append Hashtags to Tweet"
 msgstr "Ajout de hashtags au Tweet"
 
-#: lib/share/twitter.php:62
+#: lib/share/twitter.php:63
 msgctxt "option label"
 msgid "Recommend Author @username"
 msgstr "Recommander @nom d'auteur"
