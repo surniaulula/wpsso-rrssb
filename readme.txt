@@ -121,7 +121,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.7.1-rc.3 (2021/04/29)**
+**Version 5.7.1-rc.4 (2021/04/30)**
 
 * **New Features**
 	* None.
@@ -134,7 +134,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.0.
 	* WordPress v5.2.
-	* WPSSO Core v8.28.0-rc.3.
+	* WPSSO Core v8.28.0-rc.4.
 
 **Version 5.7.0 (2021/04/01)**
 
@@ -260,9 +260,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.7.1-rc.3 =
+= 5.7.1-rc.4 =
 
-(2021/04/29) Minor CSS and text formatting updates.
+(2021/04/30) Minor CSS and text formatting updates.
 
 = 5.7.0 =
 
