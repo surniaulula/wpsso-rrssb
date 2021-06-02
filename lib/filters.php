@@ -446,7 +446,7 @@ function runRrssbInit() {
 	var rrssbInitExists = setInterval( function() {
 
 		if ( 'function' === typeof rrssbInit ) {
-	
+
 			rrssbInit();
 
 			if ( ++rrssbInitCount > 5 ) {
