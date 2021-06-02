@@ -370,27 +370,27 @@ msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/filters.php:375
+#: lib/filters.php:373
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/filters.php:382
+#: lib/filters.php:380
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
 
-#: lib/filters.php:479
+#: lib/filters.php:477
 msgctxt "lib file description"
 msgid "(sharing) Sharing Stylesheet"
 msgstr ""
 
-#: lib/filters.php:487
+#: lib/filters.php:485
 msgctxt "lib file description"
 msgid "(sharing) Sharing Shortcode"
 msgstr ""
 
-#: lib/filters.php:495
+#: lib/filters.php:493
 msgctxt "lib file description"
 msgid "(sharing) Sharing Widget"
 msgstr ""
@@ -498,7 +498,7 @@ msgctxt "option label"
 msgid "Position in BuddyBlog Post"
 msgstr ""
 
-#: lib/style.php:130
+#: lib/style.php:115
 msgid "The %s file is not readable."
 msgstr ""
 

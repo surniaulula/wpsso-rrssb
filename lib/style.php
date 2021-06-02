@@ -48,7 +48,7 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 		public function admin_enqueue_styles() {
 
 			$settings_table_css = '
-				table.sucom-settings td.rrssb_show_on {	/* Used by WPSSO RRSSB add-on. */
+				table.sucom-settings td.rrssb_show_on {
 					min-width:80px;
 					padding-right:4px;
 					white-space:nowrap;
@@ -56,21 +56,6 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 				table.sucom-settings td.rrssb_show_on input[type="checkbox"] {
 					margin:0 6px 0 0;
 					vertical-align:text-bottom;
-				}
-				table.sucom-settings td.wp_thumb_rrssb_img {
-					width:100px;
-					max-width:100px;
-				}
-				table.sucom-settings img.wp_thumb_rrssb_img,
-				table.sucom-settings td.wp_thumb_rrssb_img img {
-					width:100px;
-					max-width:100px;
-					height:auto;
-				}
-				@media screen and ( max-width:1100px ) {
-					table.sucom-settings td.wp_thumb_rrssb_img {
-						display:none;
-					}
 				}
 			';
 
