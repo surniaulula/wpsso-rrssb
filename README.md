@@ -15,7 +15,7 @@
 
 <h2>Description</h2>
 
-<p><img class="readme-icon" src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png"> <em>Ridiculously Responsive Social Sharing Buttons</em> automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), no matter its size or resolution &mdash; including mobile, Retina, and high-PPI displays!</p>
+<p><img class="readme-icon" src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png"> <em>Ridiculously Responsive Social Sharing Buttons</em> automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), no matter its size or resolution - including mobile, Retina, and high-PPI displays!</p>
 
 <p><strong>Add Ridiculously Responsive Social Sharing Buttons to:</strong></p>
 
@@ -23,7 +23,7 @@
 
 <p><strong>Add Ridiculously Responsive Social Sharing Buttons in:</strong></p>
 
-<p>The content, excerpt, widget, CSS sidebar, shortcodes, templates, and <em>admin editor page</em> &mdash; so you can share directly from the admin editor page!</p>
+<p>The content, excerpt, widget, CSS sidebar, shortcodes, templates, and <em>admin editor page</em> - so you can share directly from the admin editor page!</p>
 
 <p><strong>Do you use bbPress, BuddyPress, BuddyBlog, or WooCommerce?</strong></p>
 
@@ -31,11 +31,11 @@
 
 <h3>Users Love the WPSSO RRSSB Add-on</h3>
 
-<p>&#x2605;&#x2605;&#x2605;&#x2605;&#x2605; &mdash; "Fast and sleek! These buttons are the bees knees for real. They look great across all platforms, play nice with w3-total-cache and doesn’t impact my 100/100 pagespeed score." - <a href="https://wordpress.org/support/topic/fast-and-sleek/">renoduck</a></p>
+<p>&#x2605;&#x2605;&#x2605;&#x2605;&#x2605; - "Fast and sleek! These buttons are the bees knees for real. They look great across all platforms, play nice with w3-total-cache and doesn’t impact my 100/100 pagespeed score." - <a href="https://wordpress.org/support/topic/fast-and-sleek/">renoduck</a></p>
 
-<p>&#x2605;&#x2605;&#x2605;&#x2605;&#x2605; &mdash; "FANTASTIC! This plugin is one of my favorites! This plugin makes it SOOO simple to add social sharing to wordpress posts!" - <a href="https://wordpress.org/support/topic/fantastic-1214/">mikegoubeaux</a></p>
+<p>&#x2605;&#x2605;&#x2605;&#x2605;&#x2605; - "FANTASTIC! This plugin is one of my favorites! This plugin makes it SOOO simple to add social sharing to wordpress posts!" - <a href="https://wordpress.org/support/topic/fantastic-1214/">mikegoubeaux</a></p>
 
-<p>&#x2605;&#x2605;&#x2605;&#x2605;&#x2605; &mdash; "These buttons are great, work on mobile phones as well as desktops, and they load super fast!" - <a href="https://wordpress.org/support/topic/best-sharing-buttons-out-there/">undergroundnetwork</a></p>
+<p>&#x2605;&#x2605;&#x2605;&#x2605;&#x2605; - "These buttons are great, work on mobile phones as well as desktops, and they load super fast!" - <a href="https://wordpress.org/support/topic/best-sharing-buttons-out-there/">undergroundnetwork</a></p>
 
 <h3>WPSSO RRSSB Add-on Features</h3>
 
