@@ -15,7 +15,7 @@ msgstr ""
 
 #: gettext/gettext-lib-abstracts-com.php:6 lib/abstracts/com/add-on.php:178
 msgid ""
-"The %1$s add-on requires the %2$s plugin &mdash; please activate the missing "
+"The %1$s add-on requires the %2$s plugin - please activate the missing "
 "plugin."
 msgstr ""
 
@@ -479,8 +479,8 @@ msgstr ""
 
 #: lib/social.php:190
 msgid ""
-"Error removing the minified stylesheet &mdash; does the web server have "
-"sufficient privileges?"
+"Error removing the minified stylesheet - does the web server have sufficient "
+"privileges?"
 msgstr ""
 
 #: lib/std/ecom/woocommerce.php:104

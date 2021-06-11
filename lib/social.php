@@ -187,7 +187,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 					if ( is_admin() ) {
 
-						$wpsso->notice->err( __( 'Error removing the minified stylesheet &mdash; does the web server have sufficient privileges?',
+						$wpsso->notice->err( __( 'Error removing the minified stylesheet - does the web server have sufficient privileges?',
 							'wpsso-rrssb' ) );
 					}
 				}
