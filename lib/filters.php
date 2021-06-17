@@ -54,10 +54,8 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				$this->msgs = new WpssoRrssbFiltersMessages( $plugin, $addon );
 
 				$this->p->util->add_plugin_filters( $this, array( 
-					'plugin_cache_rows'         => 3,
 					'post_document_meta_tabs'   => 3,
 					'post_buttons_rows'         => 4,
-					'post_cache_transient_keys' => 4,
 					'metabox_sso_inside_footer' => 2,
 				), $prio = 40 );	// Run after WPSSO Core's own Standard / Premium filters.
 
@@ -211,23 +209,6 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				'tumblr_desc'      => '',	// Tumblr Caption
 				'buttons_disabled' => 0,	// Disable Sharing Buttons
 			) );
-		}
-
-		public function filter_plugin_cache_rows( $table_rows, $form, $network = false ) {
-
-			$pkg_info = $this->p->admin->get_pkg_info();	// Returns an array from cache.
-			$td_attr  = $pkg_info[ 'wpsso' ][ 'pp' ] ? '' : ' class="blank"';
-			$get_func = $pkg_info[ 'wpsso' ][ 'pp' ] ? 'get_input' : 'get_no_input';
-
-			SucomUtil::add_after_key( $table_rows, 'plugin_content_cache_exp', array( 
-				'plugin_sharing_buttons_cache_exp' => $form->get_th_html( _x( 'Sharing Buttons Cache Expiry', 'option label', 'wpsso-rrssb' ),
-					$css_class = '', $css_id = 'plugin_sharing_buttons_cache_exp' ) . 
-				'<td nowrap' . $td_attr . '>' . $form->$get_func( 'plugin_sharing_buttons_cache_exp', $css_class = 'medium' ) . ' ' . 
-				_x( 'seconds (0 to disable)', 'option comment', 'wpsso-rrssb' ) . '</td>' . 
-				WpssoAdmin::get_option_site_use( 'plugin_sharing_buttons_cache_exp', $form, $network ),
-			) );
-
-			return $table_rows;
 		}
 
 		public function filter_post_document_meta_tabs( $tabs, $mod, $metabox_id ) {
@@ -384,37 +365,6 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			}
 
 			return $form->get_md_form_rows( $table_rows, $form_rows, $head, $mod );
-		}
-
-		public function filter_post_cache_transient_keys( $transient_keys, $mod, $sharing_url, $mod_salt ) {
-
-			$cache_md5_pre = 'wpsso_b_';
-
-			$transient_keys[] = array(
-				'id'   => $cache_md5_pre . md5( 'wpssorrssb_get_sharing_buttons(' . $mod_salt . ')' ),
-				'pre'  => $cache_md5_pre,
-				'salt' => 'wpssorrssb_get_sharing_buttons(' . $mod_salt . ')',
-			);
-
-			$transient_keys[] = array(
-				'id'   => $cache_md5_pre . md5( 'WpssoRrssbSocial::get_buttons(' . $mod_salt . ')' ),
-				'pre'  => $cache_md5_pre,
-				'salt' => 'WpssoRrssbSocial::get_buttons(' . $mod_salt . ')',
-			);
-
-			$transient_keys[] = array(
-				'id'   => $cache_md5_pre . md5( 'WpssoRrssbShortcodeSharing::do_shortcode(' . $mod_salt . ')' ),
-				'pre'  => $cache_md5_pre,
-				'salt' => 'WpssoRrssbShortcodeSharing::do_shortcode(' . $mod_salt . ')',
-			);
-
-			$transient_keys[] = array(
-				'id'   => $cache_md5_pre . md5( 'WpssoRrssbWidgetSharing::widget(' . $mod_salt . ')' ),
-				'pre'  => $cache_md5_pre,
-				'salt' => 'WpssoRrssbWidgetSharing::widget(' . $mod_salt . ')',
-			);
-
-			return $transient_keys;
 		}
 
 		public function filter_metabox_sso_inside_footer( $metabox_html, $mod ) {

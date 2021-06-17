@@ -228,12 +228,6 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 						'<td>' . $this->form->get_select( 'buttons_force_prot',
 							array_merge( array( '' => 'none' ), $this->p->cf[ 'sharing' ][ 'force_prot' ] ) ) . '</td>';
 
-					$table_rows[ 'plugin_sharing_buttons_cache_exp' ] = '' .
-						$this->form->get_th_html( _x( 'Sharing Buttons Cache Expiry', 'option label', 'wpsso-rrssb' ),
-							$css_class = '', $css_id = 'plugin_sharing_buttons_cache_exp' ) . 
-						'<td nowrap>' . $this->form->get_input( 'plugin_sharing_buttons_cache_exp', 'medium' ) . ' ' .
-						_x( 'seconds (0 to disable)', 'option comment', 'wpsso-rrssb' ) . '</td>';
-
 					break;
 			}
 

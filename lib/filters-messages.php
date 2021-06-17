@@ -28,7 +28,6 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 			$this->p->util->add_plugin_filters( $this, array( 
 				'messages_info'           => 2,
 				'messages_tooltip'        => 2,
-				'messages_tooltip_plugin' => 2,
 			) );
 		}
 
@@ -258,26 +257,6 @@ aside.widget
 				case 'tooltip-buttons_rec_author':
 
 					$text = sprintf( __( 'Recommend following the author\'s Twitter @username after sharing a webpage. If the %1$s option (above) is also checked, the %2$s is suggested first.', 'wpsso-rrssb' ), _x( 'Add via Business @username', 'option label', 'wpsso-rrssb' ), _x( 'Twitter Business @username', 'option label', 'wpsso-rrssb' ) );
-
-					break;
-			}
-
-			return $text;
-		}
-
-		public function filter_messages_tooltip_plugin( $text, $msg_key ) {
-
-			switch ( $msg_key ) {
-
-				case 'tooltip-plugin_sharing_buttons_cache_exp':
-
-					$cache_exp_secs  = $this->p->opt->get_defaults( 'plugin_sharing_buttons_cache_exp' );
-
-					$cache_exp_human = $cache_exp_secs ? human_time_diff( 0, $cache_exp_secs ) : _x( 'disabled', 'option comment', 'wpsso-rrssb' );
-
-					$text = __( 'The rendered HTML for social sharing buttons is saved to the WordPress transient cache to optimize performance.',
-						'wpsso-rrssb' ) . ' ' . sprintf( __( 'The suggested cache expiration value is %1$s seconds (%2$s).',
-							'wpsso-rrssb' ), $cache_exp_secs, $cache_exp_human );
 
 					break;
 			}

@@ -47,16 +47,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				$this->add_buttons_filter( 'the_excerpt' );
 			}
 
-			/**
-			 * Maybe disable the sharing buttons transient cache for debugging purposes.
-			 */
-			if ( ! empty( $this->p->options[ 'plugin_cache_disable' ] ) || SucomUtil::get_const( 'WPSSO_CACHE_DISABLE' ) ) {
-
-				$this->p->util->add_plugin_filters( $this, array(
-					'cache_expire_sharing_buttons' => '__return_zero',
-				) );
-			}
-
 			if ( $this->p->debug->enabled ) {
 
 				$this->p->debug->mark( 'rrssb sharing action / filter setup' );	// End timer.
@@ -131,19 +121,10 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				if ( ( $written = fwrite( $fh, $sharing_css_data ) ) === false ) {
 
-					if ( $wpsso->debug->enabled ) {
-
-						$wpsso->debug->log( 'failed writing the css file ' . $sharing_css_path );
-					}
-
 					if ( is_admin() ) {
 
 						$wpsso->notice->err( sprintf( __( 'Failed writing the css file %s.', 'wpsso-rrssb' ), $sharing_css_path ) );
 					}
-
-				} elseif ( $wpsso->debug->enabled ) {
-
-					$wpsso->debug->log( 'updated css file ' . $sharing_css_path . ' (' . $written . ' bytes written)' );
 				}
 
 				fclose( $fh );
@@ -152,20 +133,10 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				if ( ! is_writable( WPSSO_CACHE_DIR ) ) {
 
-					if ( $wpsso->debug->enabled ) {
-
-						$wpsso->debug->log( 'cache folder ' . WPSSO_CACHE_DIR . ' is not writable' );
-					}
-
 					if ( is_admin() ) {
 
 						$wpsso->notice->err( sprintf( __( 'Cache folder %s is not writable.', 'wpsso-rrssb' ), WPSSO_CACHE_DIR ) );
 					}
-				}
-
-				if ( $wpsso->debug->enabled ) {
-
-					$wpsso->debug->log( 'failed to open the css file ' . $sharing_css_path . ' for writing' );
 				}
 
 				if ( is_admin() ) {
@@ -404,171 +375,81 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			$sharing_url = $this->p->util->get_sharing_url( $mod );
 
-			$cache_md5_pre      = 'wpsso_b_';
-			$cache_exp_secs     = $this->p->util->get_cache_exp_secs( $cache_md5_pre );	// Default is week in seconds.
-			$cache_salt         = __METHOD__ . '(' . SucomUtil::get_mod_salt( $mod, $sharing_url ) . ')';
-			$cache_id           = $cache_md5_pre . md5( $cache_salt );
-			$cache_index        = $this->get_buttons_cache_index( $type );
-			$cache_array        = array();
-			$cache_date_archive = empty( $this->p->options[ 'plugin_cache_date_archive' ] ) ? false : true;
-
-			/**
-			 * Do not cache 404 pages, search results, or date (year, month, day) archive pages.
-			 */
-			if ( $mod[ 'is_404' ] || $mod[ 'is_search' ] || ( ! $cache_date_archive && $mod[ 'is_date' ] ) ) {
-
-				$cache_exp_secs = 0;
-			}
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->log( 'sharing url = ' . $sharing_url );
-				$this->p->debug->log( 'cache expire = ' . $cache_exp_secs );
-				$this->p->debug->log( 'cache salt = ' . $cache_salt );
-				$this->p->debug->log( 'cache id = ' . $cache_id );
-				$this->p->debug->log( 'cache index = ' . $cache_index );
-			}
-
-			if ( $cache_exp_secs > 0 ) {
-
-				$cache_array = SucomUtil::get_transient_array( $cache_id );
-
-				if ( isset( $cache_array[ $cache_index ] ) ) {	// Can be an empty string.
-
-					if ( $this->p->debug->enabled ) {
-
-						$this->p->debug->log( $type . ' cache index found in transient cache' );
-					}
-
-					/**
-					 * Continue and add buttons relative to the content (top, bottom, or both).
-					 */
-
-				} else {
-
-					if ( $this->p->debug->enabled ) {
-
-						$this->p->debug->log( $type . ' cache index not in transient cache' );
-					}
-
-					if ( ! is_array( $cache_array ) ) {
-
-						$cache_array = array();
-					}
-				}
-
-			} else {
-
-				if ( $this->p->debug->enabled ) {
-
-					$this->p->debug->log( $type . ' buttons transient cache is disabled' );
-				}
-
-				if ( SucomUtil::delete_transient_array( $cache_id ) ) {
-
-					if ( $this->p->debug->enabled ) {
-
-						$this->p->debug->log( 'deleted transient cache id ' . $cache_id );
-					}
-				}
-			}
-
 			if ( empty( $location ) ) {
 
 				$location = empty( $this->p->options[ 'buttons_pos_' . $type ] ) ? 'bottom' : $this->p->options[ 'buttons_pos_' . $type ];
 			}
 
-			if ( ! isset( $cache_array[ $cache_index ] ) ) {
+			/**
+			 * Sort enabled sharing buttons by their preferred order.
+			 */
+			$sorted_ids = array();
 
-				/**
-				 * Sort enabled sharing buttons by their preferred order.
-				 */
-				$sorted_ids = array();
+			foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $id => $opt_pre ) {
 
-				foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $id => $opt_pre ) {
+				if ( ! empty( $this->p->options[ $opt_pre . '_on_' . $type ] ) ) {
 
-					if ( ! empty( $this->p->options[ $opt_pre . '_on_' . $type ] ) ) {
+					$button_order = empty( $this->p->options[ $opt_pre . '_button_order' ] ) ? 0 : $this->p->options[ $opt_pre . '_button_order' ];
 
-						$button_order = empty( $this->p->options[ $opt_pre . '_button_order' ] ) ? 0 : $this->p->options[ $opt_pre . '_button_order' ];
+					$sorted_ids[ zeroise( $button_order, 3 ) . '-' . $id ] = $id;
+				}
+			}
 
-						$sorted_ids[ zeroise( $button_order, 3 ) . '-' . $id ] = $id;
+			ksort( $sorted_ids );
+
+			$atts[ 'use_post' ] = $mod[ 'use_post' ];
+
+			$buttons_html = $this->get_html( $sorted_ids, $atts, $mod );
+
+			if ( ! empty( $buttons_html ) ) {
+
+				$buttons_count = preg_match_all( '/<li/', $buttons_html );	// Returns number of matches or false on error. 
+
+				$css_type      = 'rrssb-' . $type;
+				$css_id        = 'sidebar' === $type ? 'wpsso-' . $css_type . ' ' : '';
+				$css_class     = 'wpsso-rrssb wpsso-' . $css_type;
+				$css_class_max = 'wpsso-rrssb-limit wpsso-' . $css_type . '-limit';
+				$css_style_max = 'max-width:' . ( WPSSORRSSB_MAX_WIDTH_MULTIPLIER * $buttons_count ) . 'px; margin:0 auto;';
+
+				if ( $mod[ 'name' ] ) {
+
+					$css_id .= 'wpsso-' . $css_type . '-' . $mod[ 'name' ];
+
+					if ( $mod[ 'id' ] ) {
+
+						$css_id .= '-' . (int) $mod[ 'id' ];
 					}
 				}
 
-				ksort( $sorted_ids );
+				$buttons_html = '<!-- wpsso ' . $css_type . ' begin -->' .	// Used by $this->get_buttons_for_the_excerpt().
+					'<div class="' . $css_class . '" id="' . trim( $css_id ) . '">' . 
+					'<div class="' . $css_class_max . '" style="' . $css_style_max . '">' . 
+					$buttons_html .
+					'</div>' . "\n" .
+					'</div><!-- .wpsso-rrssb -->' .
+					'<!-- wpsso ' . $css_type . ' end -->' .	// Used by $this->get_buttons_for_the_excerpt().
+					'<!-- generated on ' . date( 'c' ) . ' -->';
 
-				$atts[ 'use_post' ] = $mod[ 'use_post' ];
-
-				/**
-				 * Returns html or an empty string.
-				 */
-				$cache_array[ $cache_index ] = $this->get_html( $sorted_ids, $atts, $mod );
-
-				if ( ! empty( $cache_array[ $cache_index ] ) ) {
-
-					$buttons_count = preg_match_all( '/<li/', $cache_array[ $cache_index ] );	// Returns number of matches or false on error. 
-
-					$css_type      = 'rrssb-' . $type;
-					$css_id        = 'sidebar' === $type ? 'wpsso-' . $css_type . ' ' : '';
-					$css_class     = 'wpsso-rrssb wpsso-' . $css_type;
-					$css_class_max = 'wpsso-rrssb-limit wpsso-' . $css_type . '-limit';
-					$css_style_max = 'max-width:' . ( WPSSORRSSB_MAX_WIDTH_MULTIPLIER * $buttons_count ) . 'px; margin:0 auto;';
-
-					if ( $mod[ 'name' ] ) {
-
-						$css_id .= 'wpsso-' . $css_type . '-' . $mod[ 'name' ];
-
-						if ( $mod[ 'id' ] ) {
-
-							$css_id .= '-' . (int) $mod[ 'id' ];
-						}
-					}
-
-					$cache_array[ $cache_index ] = '' .
-						'<!-- wpsso ' . $css_type . ' begin -->' .	// Used by $this->get_buttons_for_the_excerpt().
-						'<div class="' . $css_class . '" id="' . trim( $css_id ) . '">' . 
-						'<div class="' . $css_class_max . '" style="' . $css_style_max . '">' . 
-						$cache_array[ $cache_index ] .
-						'</div>' . "\n" .
-						'</div><!-- .wpsso-rrssb -->' .
-						'<!-- wpsso ' . $css_type . ' end -->' .	// Used by $this->get_buttons_for_the_excerpt().
-						'<!-- generated on ' . date( 'c' ) . ' -->';
-
-					$cache_array[ $cache_index ] = apply_filters( 'wpsso_rrssb_buttons_html',
-						$cache_array[ $cache_index ], $type, $mod, $location, $atts );
-				}
-
-				if ( $cache_exp_secs > 0 ) {
-
-					/**
-					 * Update the cached array and maintain the existing transient expiration time.
-					 */
-					$expires_in_secs = SucomUtil::update_transient_array( $cache_id, $cache_array, $cache_exp_secs );
-
-					if ( $this->p->debug->enabled ) {
-
-						$this->p->debug->log( $type . ' buttons html saved to transient cache (expires in ' . $expires_in_secs . ' secs)' );
-					}
-				}
+				$buttons_html = apply_filters( 'wpsso_rrssb_buttons_html', $buttons_html, $type, $mod, $location, $atts );
 			}
 
 			switch ( $location ) {
 
 				case 'top': 
 
-					$text = $cache_array[ $cache_index ] . $text;
+					$text = $buttons_html . $text;
 
 					break;
 
 				case 'bottom': 
 
-					$text = $text . $cache_array[ $cache_index ];
+					$text = $text . $buttons_html;
 
 					break;
 
 				case 'both': 
 
-					$text = $cache_array[ $cache_index ] . $text . $cache_array[ $cache_index ];
+					$text = $buttons_html . $text . $buttons_html;
 
 					break;
 			}
@@ -579,23 +460,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			}
 
 			return $text;
-		}
-
-		public function get_buttons_cache_index( $type, $atts = false, $share_ids = false ) {
-
-			$cache_index = 'locale:' . SucomUtil::get_locale( 'current' );
-
-			$cache_index .= '_type:' . ( empty( $type ) ? 'none' : $type );
-
-			$cache_index .= '_https:' . ( SucomUtil::is_https() ? 'true' : 'false' );
-
-			$cache_index .= false !== $atts ? '_atts:' . http_build_query( $atts, '', '_' ) : '';
-
-			$cache_index .= false !== $share_ids ? '_share_ids:' . http_build_query( $share_ids, '', ',' ) : '';
-
-			$cache_index = apply_filters( 'wpsso_rrssb_buttons_cache_index', $cache_index );
-
-			return $cache_index;
 		}
 
 		public function get_buttons_for_the_content( $text ) {
@@ -673,8 +537,8 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 						 */
 						$atts[ 'url' ] = apply_filters( 'wpsso_rrssb_buttons_shared_url', $atts[ 'url' ], $mod, $id );
 
-						$force_prot = apply_filters( 'wpsso_rrssb_buttons_force_prot', $this->p->options[ 'buttons_force_prot' ],
-							$mod, $id, $atts[ 'url' ] );
+						$force_prot = apply_filters( 'wpsso_rrssb_buttons_force_prot',
+							$this->p->options[ 'buttons_force_prot' ], $mod, $id, $atts[ 'url' ] );
 
 						if ( ! empty( $force_prot ) && $force_prot !== 'none' ) {
 

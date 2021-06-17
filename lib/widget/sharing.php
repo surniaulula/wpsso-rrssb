@@ -63,77 +63,6 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 
 			$type = 'sharing_widget_' . $this->id;
 
-			$sharing_url = $this->p->util->get_sharing_url( $mod );
-
-			$cache_md5_pre      = 'wpsso_b_';
-			$cache_exp_secs     = $this->p->util->get_cache_exp_secs( $cache_md5_pre );	// Default is week in seconds.
-			$cache_salt         = __METHOD__ . '(' . SucomUtil::get_mod_salt( $mod, $sharing_url ) . ')';
-			$cache_id           = $cache_md5_pre . md5( $cache_salt );
-			$cache_index        = $rrssb->social->get_buttons_cache_index( $type, $atts );
-			$cache_array        = array();
-			$cache_date_archive = empty( $this->p->options[ 'plugin_cache_date_archive' ] ) ? false : true;
-
-			/**
-			 * Do not cache 404 pages, search results, or date (year, month, day) archive pages.
-			 */
-			if ( $mod[ 'is_404' ] || $mod[ 'is_search' ] || ( ! $cache_date_archive && $mod[ 'is_date' ] ) ) {
-
-				$cache_exp_secs = 0;
-			}
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->log( 'sharing url = ' . $sharing_url );
-				$this->p->debug->log( 'cache expire = ' . $cache_exp_secs );
-				$this->p->debug->log( 'cache salt = ' . $cache_salt );
-				$this->p->debug->log( 'cache id = ' . $cache_id );
-				$this->p->debug->log( 'cache index = ' . $cache_index );
-			}
-
-			if ( $cache_exp_secs > 0 ) {
-
-				$cache_array = SucomUtil::get_transient_array( $cache_id );
-
-				if ( isset( $cache_array[ $cache_index ] ) ) {	// Can be an empty string.
-
-					if ( $this->p->debug->enabled ) {
-
-						$this->p->debug->log( $type . ' cache index found in transient cache' );
-					}
-
-					echo $cache_array[ $cache_index ];	// Stop here.
-
-					return;
-
-				} else {
-
-					if ( $this->p->debug->enabled ) {
-
-						$this->p->debug->log( $type . ' cache index not in transient cache' );
-					}
-
-					if ( ! is_array( $cache_array ) ) {
-
-						$cache_array = array();
-					}
-				}
-
-			} else {
-
-				if ( $this->p->debug->enabled ) {
-
-					$this->p->debug->log( $type . ' buttons transient cache is disabled' );
-				}
-
-				if ( SucomUtil::delete_transient_array( $cache_id ) ) {
-
-					if ( $this->p->debug->enabled ) {
-
-						$this->p->debug->log( 'deleted transient cache id ' . $cache_id );
-					}
-				}
-			}
-
 			/**
 			 * Sort enabled sharing buttons by their preferred order.
 			 */
@@ -149,36 +78,19 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 
 			ksort( $sorted_ids );
 
-			/**
-			 * Returns html or an empty string.
-			 */
-			$cache_array[ $cache_index ] = $rrssb->social->get_html( $sorted_ids, $atts, $mod );
+			$buttons_html = $rrssb->social->get_html( $sorted_ids, $atts, $mod );	// Returns html or an empty string.
 
-			if ( ! empty( $cache_array[ $cache_index ] ) ) {
+			if ( ! empty( $buttons_html ) ) {
 
-				$cache_array[ $cache_index ] = '
-<!-- wpsso sharing widget ' . $args[ 'widget_id' ] . ' begin -->' . "\n" . 
-$before_widget . 
-( empty( $widget_title ) ? '' : $before_title . $widget_title . $after_title ) . 
-$cache_array[ $cache_index ] . "\n" . 	// Buttons html is trimmed, so add newline.
-$after_widget . 
-'<!-- wpsso sharing widget ' . $args[ 'widget_id' ] . ' end -->' . "\n\n";
+				$buttons_html = "\n" . '<!-- wpsso sharing widget ' . $args[ 'widget_id' ] . ' begin -->' . "\n" . 
+					$before_widget . 
+					( empty( $widget_title ) ? '' : $before_title . $widget_title . $after_title ) . 
+					$buttons_html . "\n" . 	// Buttons html is trimmed, so add a newline.
+					$after_widget . 
+					'<!-- wpsso sharing widget ' . $args[ 'widget_id' ] . ' end -->' . "\n\n";
 			}
 
-			if ( $cache_exp_secs > 0 ) {
-
-				/**
-				 * Update the cached array and maintain the existing transient expiration time.
-				 */
-				$expires_in_secs = SucomUtil::update_transient_array( $cache_id, $cache_array, $cache_exp_secs );
-
-				if ( $this->p->debug->enabled ) {
-
-					$this->p->debug->log( $type . ' buttons html saved to transient cache (expires in ' . $expires_in_secs . ' secs)' );
-				}
-			}
-
-			echo $cache_array[ $cache_index ];
+			echo $buttons_html;
 		}
 
 		public function update( $new_instance, $old_instance ) {
@@ -195,11 +107,6 @@ $after_widget .
 
 				$instance[ $share_id ] = empty( $new_instance[ $share_id ] ) ? 0 : 1;
 			}
-
-			/**
-			 * Clear all sharing button transient cache objects.
-			 */
-			$cleared_count = $this->p->util->cache->clear_db_transients( $clear_short = false, $key_prefix = 'wpsso_b_' );
 
 			return $instance;
 		}

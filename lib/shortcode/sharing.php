@@ -191,7 +191,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			}
 
 			$atts[ 'use_post' ]  = SucomUtil::sanitize_use_post( $atts, true );
-			$atts[ 'css_class' ] = empty( $atts[ 'css_class' ] ) ? 'rrssb-shortcode' : $atts[ 'css_class' ];
+			$atts[ 'css_class' ] = SucomUtil::sanitize_css_class( empty( $atts[ 'css_class' ] ) ? 'rrssb-shortcode' : $atts[ 'css_class' ] );
 
 			if ( $this->p->debug->enabled ) {
 
@@ -204,106 +204,22 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 			$atts[ 'url' ] = empty( $atts[ 'url' ] ) ? $this->p->util->get_sharing_url( $mod ) : $atts[ 'url' ];
 
-			$cache_md5_pre      = 'wpsso_b_';
-			$cache_exp_secs     = $this->p->util->get_cache_exp_secs( $cache_md5_pre );	// Default is week in seconds.
-			$cache_salt         = __METHOD__ . '(' . SucomUtil::get_mod_salt( $mod, $atts[ 'url' ] ) . ')';
-			$cache_id           = $cache_md5_pre . md5( $cache_salt );
-			$cache_index        = $rrssb->social->get_buttons_cache_index( $type, $atts );
-			$cache_array        = array();
-			$cache_date_archive = empty( $this->p->options[ 'plugin_cache_date_archive' ] ) ? false : true;
-
-			/**
-			 * Do not cache 404 pages, search results, or date (year, month, day) archive pages.
-			 */
-			if ( $mod[ 'is_404' ] || $mod[ 'is_search' ] || ( ! $cache_date_archive && $mod[ 'is_date' ] ) ) {
-
-				$cache_exp_secs = 0;
-			}
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->log( 'sharing url = ' . $atts[ 'url' ] );
-				$this->p->debug->log( 'cache expire = ' . $cache_exp_secs );
-				$this->p->debug->log( 'cache salt = ' . $cache_salt );
-				$this->p->debug->log( 'cache id = ' . $cache_id );
-				$this->p->debug->log( 'cache index = ' . $cache_index );
-			}
-
-			if ( $cache_exp_secs > 0 ) {
-
-				$cache_array = SucomUtil::get_transient_array( $cache_id );
-
-				if ( isset( $cache_array[ $cache_index ] ) ) {	// Can be an empty string.
-
-					if ( $this->p->debug->enabled ) {
-
-						$this->p->debug->log( $type . ' cache index found in transient cache' );
-					}
-
-					return $cache_array[ $cache_index ];	// Stop here.
-
-				} else {
-
-					if ( $this->p->debug->enabled ) {
-
-						$this->p->debug->log( $type . ' cache index not in transient cache' );
-					}
-
-					if ( ! is_array( $cache_array ) ) {
-
-						$cache_array = array();
-					}
-				}
-
-			} else {
-
-				if ( $this->p->debug->enabled ) {
-
-					$this->p->debug->log( $type . ' buttons transient cache is disabled' );
-				}
-
-				if ( SucomUtil::delete_transient_array( $cache_id ) ) {
-
-					if ( $this->p->debug->enabled ) {
-
-						$this->p->debug->log( 'deleted transient cache id ' . $cache_id );
-					}
-				}
-			}
-
 			$ids = array_map( 'trim', explode( ',', $atts[ 'buttons' ] ) );
 
 			unset ( $atts[ 'buttons' ] );
 
-			/**
-			 * Returns html or an empty string.
-			 */
-			$cache_array[ $cache_index ] = $rrssb->social->get_html( $ids, $atts, $mod );
+			$buttons_html = $rrssb->social->get_html( $ids, $atts, $mod );	// Returns html or an empty string.
 
-			if ( ! empty( $cache_array[ $cache_index ] ) ) {
+			if ( ! empty( $buttons_html ) ) {
 
-				$cache_array[ $cache_index ] = '
-<!-- wpsso ' . $type . ' begin -->
-<div class="wpsso-rrssb wpsso-' . $atts[ 'css_class' ] . '">' . "\n" . 
-$cache_array[ $cache_index ] . "\n" . 	// Buttons html is trimmed, so add newline.
-'</div><!-- .wpsso-' . $atts[ 'css_class' ] . ' -->' . "\n" . 
-'<!-- wpsso ' . $type . ' end -->' . "\n\n";
+				$buttons_html = "\n" . '<!-- wpsso ' . $type . ' begin -->' . "\n" .
+					'<div class="wpsso-rrssb wpsso-' . $atts[ 'css_class' ] . '">' . "\n" . 
+					$buttons_html . "\n" . 	// Buttons html is trimmed, so add a newline.
+					'</div><!-- .wpsso-' . $atts[ 'css_class' ] . ' -->' . "\n" . 
+					'<!-- wpsso ' . $type . ' end -->' . "\n\n";
 			}
 
-			if ( $cache_exp_secs > 0 ) {
-
-				/**
-				 * Update the cached array and maintain the existing transient expiration time.
-				 */
-				$expires_in_secs = SucomUtil::update_transient_array( $cache_id, $cache_array, $cache_exp_secs );
-
-				if ( $this->p->debug->enabled ) {
-
-					$this->p->debug->log( $type . ' buttons saved to transient cache (expires in ' . $expires_in_secs . ' secs)' );
-				}
-			}
-
-			return $cache_array[ $cache_index ];
+			return $buttons_html;
 		}
 	}
 }

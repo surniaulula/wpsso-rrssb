@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(			// Plugin acronym.
-					'version'     => '5.7.2-dev.2',	// Plugin version.
+					'version'     => '6.0.0-dev.2',	// Plugin version.
 					'opt_version' => '34',		// Increment when changing default option values.
 					'short'       => 'WPSSO RRSSB',	// Short plugin name.
 					'name'        => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
@@ -110,11 +110,6 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 				'defaults' => array(
 
 					/**
-					 * Advanced Settings
-					 */
-					'plugin_sharing_buttons_cache_exp' => WEEK_IN_SECONDS,	// Sharing Buttons Cache Expiry (7 days).
-
-					/**
 					 * Responsive Buttons
 					 */
 					'buttons_on_index'          => 0,
@@ -140,24 +135,6 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'buttons_css_rrssb-sidebar'     => '',
 					'buttons_css_rrssb-widget'      => '',
 				),	// end of defaults
-				'site_defaults' => array(
-
-					/**
-					 * Advanced Settings
-					 */
-					'plugin_sharing_buttons_cache_exp'     => WEEK_IN_SECONDS,	// Sharing Buttons Cache Expiry (7 days)
-					'plugin_sharing_buttons_cache_exp:use' => 'default',
-				),	// end of site defaults
-			),
-			'wp' => array(				// WordPress
-				'transient' => array(
-					'wpsso_b_' => array(
-						'label'       => 'Sharing Buttons',
-						'text_domain' => 'wpsso-rrssb',
-						'opt_key'     => 'plugin_sharing_buttons_cache_exp',
-						'filter'      => 'wpsso_cache_expire_sharing_buttons',
-					),
-				),
 			),
 			'sharing' => array(
 				'show_on' => array( 

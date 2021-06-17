@@ -12,10 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 
-	function wpssorrssb_get_sharing_buttons( $share_ids = array(), $atts = array(), $cache_exp_secs = null ) {
+	function wpssorrssb_get_sharing_buttons( $ids = array(), $atts = array() ) {
 
 		$wpsso =& Wpsso::get_instance();
-
 		$rrssb =& WpssoRrssb::get_instance();
 
 		if ( $wpsso->debug->enabled ) {
@@ -25,7 +24,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 
 		$error_msg = false;
 
-		if ( ! is_array( $share_ids ) ) {
+		if ( ! is_array( $ids ) ) {
 
 			$error_msg = 'sharing button ids must be an array';
 
@@ -41,7 +40,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 
 			$error_msg = 'sharing buttons are disabled';
 
-		} elseif ( empty( $share_ids ) ) {	// Nothing to do.
+		} elseif ( empty( $ids ) ) {	// Nothing to do.
 
 			$error_msg = 'no buttons requested';
 		}
@@ -65,108 +64,21 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 
 		$mod = $wpsso->page->get_mod( $atts[ 'use_post' ] );
 
-		$type = __FUNCTION__;
+		$buttons_html = $rrssb->social->get_html( $ids, $atts, $mod );	// Returns html or an empty string.
 
-		$sharing_url = $wpsso->util->get_sharing_url( $mod );
+		if ( ! empty( $buttons_html ) ) {
 
-		$cache_md5_pre      = 'wpsso_b_';
-		$cache_salt         = __FUNCTION__ . '(' . SucomUtil::get_mod_salt( $mod, $sharing_url ) . ')';
-		$cache_id           = $cache_md5_pre . md5( $cache_salt );
-		$cache_index        = $rrssb->social->get_buttons_cache_index( $type, $atts, $share_ids );
-		$cache_array        = array();
-		$cache_date_archive = empty( $this->p->options[ 'plugin_cache_date_archive' ] ) ? false : true;
-
-		if ( null === $cache_exp_secs ) {
-
-			$cache_exp_secs = $wpsso->util->get_cache_exp_secs( $cache_md5_pre );	// Default is week in seconds.
-
-			/**
-			 * Do not cache 404 pages, search results, or date (year, month, day) archive pages.
-			 */
-			if ( $mod[ 'is_404' ] || $mod[ 'is_search' ] || ( ! $cache_date_archive && $mod[ 'is_date' ] ) ) {
-
-				$cache_exp_secs = 0;
-			}
+			$buttons_html = "\n" . '<!-- wpsso ' . __FUNCTION__ . ' function begin -->' . "\n" .
+				'<!-- generated on ' . date( 'c' ) . ' -->' . "\n" . 
+				$buttons_html . "\n" . 	// Buttons html is trimmed, so add a newline.
+				'<!-- wpsso ' . __FUNCTION__ . ' function end -->' . "\n\n";
 		}
 
 		if ( $wpsso->debug->enabled ) {
-
-			$wpsso->debug->log( 'sharing url = ' . $sharing_url );
-			$wpsso->debug->log( 'cache expire = ' . $cache_exp_secs );
-			$wpsso->debug->log( 'cache salt = ' . $cache_salt );
-			$wpsso->debug->log( 'cache id = ' . $cache_id );
-			$wpsso->debug->log( 'cache index = ' . $cache_index );
+		
+			$buttons_html .= $wpsso->debug->get_html();
 		}
 
-		if ( $cache_exp_secs > 0 ) {
-
-			$cache_array = SucomUtil::get_transient_array( $cache_id );
-
-			if ( isset( $cache_array[ $cache_index ] ) ) {	// Can be an empty string.
-
-				if ( $wpsso->debug->enabled ) {
-
-					$wpsso->debug->log( 'exiting early: ' . $type . ' cache index found in transient cache' );
-				}
-
-				return $cache_array[ $cache_index ];	// Stop here.
-
-			} else {
-
-				if ( $wpsso->debug->enabled ) {
-
-					$wpsso->debug->log( $type . ' cache index not in transient cache' );
-				}
-
-				if ( ! is_array( $cache_array ) ) {	// Just in case.
-
-					$cache_array = array();
-				}
-			}
-
-		} else {
-
-			if ( $wpsso->debug->enabled ) {
-
-				$wpsso->debug->log( $type . ' buttons array transient cache is disabled' );
-			}
-
-			if ( SucomUtil::delete_transient_array( $cache_id ) ) {
-
-				if ( $wpsso->debug->enabled ) {
-
-					$wpsso->debug->log( 'deleted transient cache id ' . $cache_id );
-				}
-			}
-		}
-
-		/**
-		 * Returns html or an empty string.
-		 */
-		$cache_array[ $cache_index ] = $rrssb->social->get_html( $share_ids, $atts, $mod );
-
-		if ( ! empty( $cache_array[ $cache_index ] ) ) {
-
-			$cache_array[ $cache_index ] = '
-<!-- wpsso ' . __FUNCTION__ . ' function begin -->
-<!-- generated on ' . date( 'c' ) . ' -->' . "\n" . 
-$cache_array[ $cache_index ] . "\n" . 	// buttons html is trimmed, so add newline
-'<!-- wpsso ' . __FUNCTION__ . ' function end -->' . "\n\n";
-		}
-
-		if ( $cache_exp_secs > 0 ) {
-
-			/**
-			 * Update the cached array and maintain the existing transient expiration time.
-			 */
-			$expires_in_secs = SucomUtil::update_transient_array( $cache_id, $cache_array, $cache_exp_secs );
-
-			if ( $wpsso->debug->enabled ) {
-
-				$wpsso->debug->log( $type . ' buttons html saved to transient cache (expires in ' . $expires_in_secs . ' secs)' );
-			}
-		}
-
-		return $cache_array[ $cache_index ] . ( $wpsso->debug->enabled ? $wpsso->debug->get_html() : '' );
+		return $buttons_html;
 	}
 }
