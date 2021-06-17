@@ -69,22 +69,21 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 
 		$sharing_url = $wpsso->util->get_sharing_url( $mod );
 
-		$cache_md5_pre = 'wpsso_b_';
-		$cache_salt    = __FUNCTION__ . '(' . SucomUtil::get_mod_salt( $mod, $sharing_url ) . ')';
-		$cache_id      = $cache_md5_pre . md5( $cache_salt );
-		$cache_index   = $rrssb->social->get_buttons_cache_index( $type, $atts, $share_ids );
-		$cache_array   = array();
+		$cache_md5_pre      = 'wpsso_b_';
+		$cache_salt         = __FUNCTION__ . '(' . SucomUtil::get_mod_salt( $mod, $sharing_url ) . ')';
+		$cache_id           = $cache_md5_pre . md5( $cache_salt );
+		$cache_index        = $rrssb->social->get_buttons_cache_index( $type, $atts, $share_ids );
+		$cache_array        = array();
+		$cache_date_archive = empty( $this->p->options[ 'plugin_cache_date_archive' ] ) ? false : true;
 
 		if ( null === $cache_exp_secs ) {
 
 			$cache_exp_secs = $wpsso->util->get_cache_exp_secs( $cache_md5_pre );	// Default is week in seconds.
 
-			if ( $mod[ 'is_404' ] || $mod[ 'is_search' ] ) {
-
-				if ( $wpsso->debug->enabled ) {
-
-					$wpsso->debug->log( 'setting cache expiration to 0 seconds for 404 or search page' );
-				}
+			/**
+			 * Do not cache 404 pages, search results, or date (year, month, day) archive pages.
+			 */
+			if ( $mod[ 'is_404' ] || $mod[ 'is_search' ] || ( ! $cache_date_archive && $mod[ 'is_date' ] ) ) {
 
 				$cache_exp_secs = 0;
 			}
