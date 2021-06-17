@@ -121,6 +121,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 5.7.2-dev.2 (2021/06/17)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Added support for the "Cache Date Archive Pages" option in WPSSO Core v8.31.0.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.0.
+	* WordPress v5.2.
+	* WPSSO Core v8.28.0.
+
 **Version 5.7.1 (2021/04/30)**
 
 * **New Features**
@@ -259,6 +274,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v8.14.0.
 
 == Upgrade Notice ==
+
+= 5.7.2-dev.2 =
+
+(2021/06/17) Added support for the "Cache Date Archive Pages" option in WPSSO Core v8.31.0.
 
 = 5.7.1 =
 
