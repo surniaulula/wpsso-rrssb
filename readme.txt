@@ -121,12 +121,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.7.2-dev.2 (2021/06/17)**
+**Version 6.0.0-dev.2 (2021/06/17)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* Added support for the "Cache Date Archive Pages" option in WPSSO Core v8.31.0.
+	* Removed transient caching of sharing buttons HTML.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -275,9 +275,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.7.2-dev.2 =
+= 6.0.0-dev.2 =
 
-(2021/06/17) Added support for the "Cache Date Archive Pages" option in WPSSO Core v8.31.0.
+(2021/06/17) Removed transient caching of sharing buttons HTML.
 
 = 5.7.1 =
 
