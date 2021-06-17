@@ -52,7 +52,7 @@ if ( ! class_exists( 'WpssoRrssbScript' ) ) {
 
 			wp_register_script( 'rrssb',
 				WPSSORRSSB_URLPATH . 'js/ext/rrssb.' . $this->file_ext,
-					array( 'jquery' ), $this->version, true );
+					array( 'jquery' ), $this->version, $in_footer = true );
 
 			wp_enqueue_script( 'rrssb' );
 		}
