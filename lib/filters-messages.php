@@ -210,15 +210,15 @@ aside.widget
 
 					break;
 
-				case 'tooltip-buttons_on_index':
+				case 'tooltip-buttons_on_archive':
 
-					$text = __( 'Add the social sharing buttons to each entry of an index webpage (blog front page, category, archive, etc.). Social sharing buttons are not included on index webpages by default.', 'wpsso-rrssb' );
+					$text = __( 'Add social sharing buttons to each post on an archive webpage (blog front page, category, etc.).', 'wpsso-rrssb' );
 
 					break;
 
 				case 'tooltip-buttons_on_front':
 
-					$text = __( 'If a static Post or Page has been selected for the front page, you can add the social sharing buttons to that static front page as well (default is unchecked).', 'wpsso-rrssb' );
+					$text = __( 'If a static page has been selected for your homepage, you can add social sharing buttons to that static page as well (default is unchecked).', 'wpsso-rrssb' );
 
 					break;
 

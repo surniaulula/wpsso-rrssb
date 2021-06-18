@@ -238,16 +238,14 @@ msgstr ""
 
 #: lib/filters-messages.php:215
 msgid ""
-"Add the social sharing buttons to each entry of an index webpage (blog front "
-"page, category, archive, etc.). Social sharing buttons are not included on "
-"index webpages by default."
+"Add social sharing buttons to each post on an archive webpage (blog front "
+"page, category, etc.)."
 msgstr ""
 
 #: lib/filters-messages.php:221
 msgid ""
-"If a static Post or Page has been selected for the front page, you can add "
-"the social sharing buttons to that static front page as well (default is "
-"unchecked)."
+"If a static page has been selected for your homepage, you can add social "
+"sharing buttons to that static page as well (default is unchecked)."
 msgstr ""
 
 #: lib/filters-messages.php:227
@@ -482,47 +480,32 @@ msgctxt "metabox title"
 msgid "Social Sharing Buttons"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:139
-msgctxt "metabox tab"
-msgid "Include Buttons"
-msgstr ""
-
-#: lib/submenu/rrssb-buttons.php:140
-msgctxt "metabox tab"
-msgid "Buttons Position"
-msgstr ""
-
-#: lib/submenu/rrssb-buttons.php:141
-msgctxt "metabox tab"
-msgid "Advanced Settings"
-msgstr ""
-
-#: lib/submenu/rrssb-buttons.php:193
+#: lib/submenu/rrssb-buttons.php:170
 msgctxt "option label"
 msgid "Include on Archive Webpages"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:198
+#: lib/submenu/rrssb-buttons.php:175
 msgctxt "option label"
-msgid "Include on Page Homepage"
+msgid "Include on Static Homepage"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:203
+#: lib/submenu/rrssb-buttons.php:180
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:212
+#: lib/submenu/rrssb-buttons.php:185
 msgctxt "option label"
 msgid "Position in Content"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:217
+#: lib/submenu/rrssb-buttons.php:190
 msgctxt "option label"
 msgid "Position in Excerpt"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:226
+#: lib/submenu/rrssb-buttons.php:195
 msgctxt "option label"
 msgid "Force Protocol for Shared URLs"
 msgstr ""

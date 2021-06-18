@@ -300,9 +300,9 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					$this->p->debug->log( 'is_singular is false' );
 				}
 
-				if ( empty( $this->p->options[ 'buttons_on_index' ] ) ) {
+				if ( empty( $this->p->options[ 'buttons_on_archive' ] ) ) {
 
-					$error_msg = 'buttons_on_index not enabled';
+					$error_msg = 'buttons_on_archive not enabled';
 				}
 
 			} elseif ( is_front_page() ) {

@@ -79,6 +79,9 @@ if ( ! class_exists( 'WpssoRrssbFiltersUpgrade' ) ) {
 					'vk_platform'       => '',	// Deprecated on 2020/10/02.
 					'wa_platform'       => '',	// Deprecated on 2020/10/02.
 				),
+				34 => array(
+					'buttons_on_index' => 'buttons_on_archive',
+				),
 			);
 
 			$show_on = apply_filters( 'wpsso_rrssb_buttons_show_on', $this->p->cf[ 'sharing' ][ 'show_on' ], 'gp' );
