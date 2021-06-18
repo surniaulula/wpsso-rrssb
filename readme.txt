@@ -121,7 +121,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 6.0.0-rc.1 (2021/06/18)**
+**Version 6.0.0 (2021/06/18)**
 
 * **New Features**
 	* None.
@@ -134,7 +134,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.0.
 	* WordPress v5.2.
-	* WPSSO Core v8.31.0-rc.1.
+	* WPSSO Core v8.31.0.
 
 **Version 5.7.1 (2021/04/30)**
 
@@ -275,7 +275,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 6.0.0-rc.1 =
+= 6.0.0 =
 
 (2021/06/18) Removed transient caching of sharing buttons HTML.
 
