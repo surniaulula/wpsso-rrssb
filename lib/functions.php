@@ -22,7 +22,8 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 			$wpsso->debug->mark();
 		}
 
-		$error_msg = false;
+		$mtime_start = microtime( $get_float = true );
+		$error_msg   = '';
 
 		if ( ! is_array( $ids ) ) {
 
@@ -45,7 +46,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 			$error_msg = 'no buttons requested';
 		}
 
-		if ( false !== $error_msg ) {
+		if ( ! empty( $error_msg ) ) {
 
 			if ( $wpsso->debug->enabled ) {
 
@@ -65,14 +66,6 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 		$mod = $wpsso->page->get_mod( $atts[ 'use_post' ] );
 
 		$buttons_html = $rrssb->social->get_html( $ids, $atts, $mod );	// Returns html or an empty string.
-
-		if ( ! empty( $buttons_html ) ) {
-
-			$buttons_html = "\n" . '<!-- wpsso ' . __FUNCTION__ . ' function begin -->' . "\n" .
-				'<!-- generated on ' . date( 'c' ) . ' -->' . "\n" . 
-				$buttons_html . "\n" . 	// Buttons html is trimmed, so add a newline.
-				'<!-- wpsso ' . __FUNCTION__ . ' function end -->' . "\n\n";
-		}
 
 		if ( $wpsso->debug->enabled ) {
 		

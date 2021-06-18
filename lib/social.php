@@ -250,10 +250,11 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				$this->p->debug->mark( 'getting buttons for ' . $type );	// Begin timer.
 			}
 
-			$is_admin   = is_admin();
-			$is_amp     = SucomUtil::is_amp();	// Returns null, true, or false.
-			$doing_ajax = SucomUtilWP::doing_ajax();
-			$error_msg  = '';
+			$mtime_start = microtime( $get_float = true );
+			$is_admin    = is_admin();
+			$is_amp      = SucomUtil::is_amp();	// Returns null, true, or false.
+			$doing_ajax  = SucomUtilWP::doing_ajax();
+			$error_msg   = '';
 
 			if ( $doing_ajax ) {
 
@@ -368,13 +369,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				$mod = $this->p->page->get_mod( $mod );
 			}
 
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->log( 'getting sharing url' );
-			}
-
-			$sharing_url = $this->p->util->get_sharing_url( $mod );
-
 			if ( empty( $location ) ) {
 
 				$location = empty( $this->p->options[ 'buttons_pos_' . $type ] ) ? 'bottom' : $this->p->options[ 'buttons_pos_' . $type ];
@@ -421,14 +415,18 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					}
 				}
 
+				$mtime_total = microtime( $get_float = true ) - $mtime_start;
+
+				$total_secs = sprintf( '%f secs', $mtime_total );
+
 				$buttons_html = '<!-- wpsso ' . $css_type . ' begin -->' .	// Used by $this->get_buttons_for_the_excerpt().
 					'<div class="' . $css_class . '" id="' . trim( $css_id ) . '">' . 
 					'<div class="' . $css_class_max . '" style="' . $css_style_max . '">' . 
 					$buttons_html .
-					'</div>' . "\n" .
+					'</div><!-- .wpsso-rrssb-limit -->' .
 					'</div><!-- .wpsso-rrssb -->' .
 					'<!-- wpsso ' . $css_type . ' end -->' .	// Used by $this->get_buttons_for_the_excerpt().
-					'<!-- generated on ' . date( 'c' ) . ' -->';
+					'<!-- added on ' . date( 'c' ) . ' in ' . $total_secs . ' -->';
 
 				$buttons_html = apply_filters( 'wpsso_rrssb_buttons_html', $buttons_html, $type, $mod, $location, $atts );
 			}
