@@ -480,11 +480,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			return $text;
 		}
 
-		private function remove_wp_breaks( array $match ) {
-
-			return preg_replace( '/(<(\/?p|br ?\/?)>|\n)/i', '', $match[ 1 ] );
-		}
-
 		/**
 		 * Called by $this->get_buttons().
 		 *
@@ -730,6 +725,11 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			}
 
 			return $caption_max_len;
+		}
+
+		private function remove_wp_breaks( array $match ) {
+
+			return preg_replace( '/(<(\/?p|br ?\/?)>|\n)/i', '', $match[ 1 ] );
 		}
 	}
 }
