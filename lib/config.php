@@ -32,18 +32,12 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					 * Required plugin and its version.
 					 */
 					'req' => array(
-						'wp' => array(
-							'name'           => 'WordPress',
-							'home'           => 'https://wordpress.org/',
-							'version_global' => 'wp_version',
-							'min_version'    => '5.2.0',
-						),
 						'wpsso' => array(
 							'name'          => 'WPSSO Core',
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '8.31.0',
+							'min_version'   => '8.34.0',
 						),
 					),
 
