@@ -250,7 +250,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				$this->p->debug->mark( 'getting buttons for ' . $type );	// Begin timer.
 			}
 
-			$mtime_start = microtime( $get_float = true );
 			$is_admin    = is_admin();
 			$is_amp      = SucomUtil::is_amp();	// Returns null, true, or false.
 			$doing_ajax  = SucomUtilWP::doing_ajax();
@@ -414,10 +413,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 						$css_id .= '-' . (int) $mod[ 'id' ];
 					}
 				}
-
-				$mtime_total = microtime( $get_float = true ) - $mtime_start;
-
-				$total_secs = sprintf( '%f secs', $mtime_total );
 
 				$buttons_html = '<!-- wpsso ' . $css_type . ' begin -->' .	// Used by $this->get_buttons_for_the_excerpt().
 					'<div class="' . $css_class . '" id="' . trim( $css_id ) . '">' . 
