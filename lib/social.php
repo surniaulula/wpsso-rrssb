@@ -425,8 +425,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					$buttons_html .
 					'</div><!-- .wpsso-rrssb-limit -->' .
 					'</div><!-- .wpsso-rrssb -->' .
-					'<!-- wpsso ' . $css_type . ' end -->' .	// Used by $this->get_buttons_for_the_excerpt().
-					'<!-- added on ' . date( 'c' ) . ' in ' . $total_secs . ' -->';
+					'<!-- wpsso ' . $css_type . ' end -->';			// Used by $this->get_buttons_for_the_excerpt().
 
 				$buttons_html = apply_filters( 'wpsso_rrssb_buttons_html', $buttons_html, $type, $mod, $location, $atts );
 			}
