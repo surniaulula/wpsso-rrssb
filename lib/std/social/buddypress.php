@@ -172,6 +172,7 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddypressSharing' ) ) {
 			$rrssb =& WpssoRrssb::get_instance();
 
 			foreach ( array( 'get_the_excerpt', 'the_excerpt', 'the_content' ) as $filter_name ) {
+
 				$rrssb->social->remove_buttons_filter( $filter_name );
 			}
 		}
