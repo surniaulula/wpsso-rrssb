@@ -45,11 +45,6 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareLinkedin' ) ) {
 				'<td>' . $form->get_input( 'linkedin_caption_max_len', $css_class = 'chars' ) . ' ' . 
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
-			$table_rows[] = $form->get_tr_hide( 'basic', 'linkedin_caption_hashtags' ) . 
-				$form->get_th_html( _x( 'Append Hashtags to Caption', 'option label', 'wpsso-rrssb' ) ) . 
-				'<td>' . $form->get_select( 'linkedin_caption_hashtags', range( 0, $this->p->cf[ 'form' ][ 'max_hashtags' ] ), 'short', '', true ) . ' ' . 
-				_x( 'tag names', 'option comment', 'wpsso-rrssb' ) . '</td>';
-
 			$table_rows[] = $form->get_tr_hide( 'basic', 'linkedin_rrssb_html' ) . 
 				'<td colspan="2">' . $form->get_textarea( 'linkedin_rrssb_html', 'button_html code' ) . '</td>';
 
@@ -74,7 +69,6 @@ if ( ! class_exists( 'WpssoRrssbShareLinkedin' ) ) {
 					'linkedin_on_sidebar'       => 0,
 					'linkedin_on_woo_short'     => 1,
 					'linkedin_caption_max_len'  => 300,
-					'linkedin_caption_hashtags' => 0,
 					'linkedin_rrssb_html'       => '<li class="rrssb-linkedin">
 	<a href="http://www.linkedin.com/shareArticle?mini=true&url=%%sharing_url%%&title=%%linkedin_title%%&summary=%%linkedin_caption%%" class="popup">
 		<span class="rrssb-icon">
@@ -115,13 +109,11 @@ if ( ! class_exists( 'WpssoRrssbShareLinkedin' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts[ 'add_hashtags' ] = empty( $this->p->options[ 'linkedin_caption_hashtags' ] ) ? false : $this->p->options[ 'linkedin_caption_hashtags' ];
-
 		 	$linkedin_title = $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
 				$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'linkedin_title' );
 
 			$linkedin_caption = $this->p->page->get_caption( $type = 'excerpt', $opts[ 'linkedin_caption_max_len' ], $mod,
-				$read_cache = true, $atts[ 'add_hashtags' ], $do_encode = false, $md_key = 'linkedin_desc' );
+				$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'linkedin_desc' );
 
 			return $this->p->util->replace_inline_vars( '<!-- LinkedIn Button -->' . $this->p->options[ 'linkedin_rrssb_html' ], $mod, $atts, array(
 				'linkedin_title'   => rawurlencode( $linkedin_title ),

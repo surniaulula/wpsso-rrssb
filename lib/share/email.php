@@ -45,11 +45,6 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareEmail' ) ) {
 				'<td>' . $form->get_input( 'email_caption_max_len', $css_class = 'chars' ) . ' ' . 
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
-			$table_rows[] = $form->get_tr_hide( 'basic', 'email_caption_hashtags' ) . 
-				$form->get_th_html( _x( 'Append Hashtags to Message', 'option label', 'wpsso-rrssb' ) ) . 
-				'<td>' . $form->get_select( 'email_caption_hashtags', range( 0, $this->p->cf[ 'form' ][ 'max_hashtags' ] ), 'short', '', true ) . ' ' . 
-				_x( 'tag names', 'option comment', 'wpsso-rrssb' ) . '</td>';
-
 			$table_rows[] = $form->get_tr_hide( 'basic', 'email_rrssb_html' ) . 
 				'<td colspan="2">' . $form->get_textarea( 'email_rrssb_html', 'button_html code' ) . '</td>';
 
@@ -74,7 +69,6 @@ if ( ! class_exists( 'WpssoRrssbShareEmail' ) ) {
 					'email_on_sidebar'       => 0,
 					'email_on_woo_short'     => 1,
 					'email_caption_max_len'  => 500,
-					'email_caption_hashtags' => 0,
 					'email_rrssb_html'       => '<li class="rrssb-email">
 	<a href="mailto:?subject=Share:%20%%email_title%%&body=%%email_excerpt%%%0D%0A%0D%0AShared%20from%20%%sharing_url%%%0D%0A">
 		<span class="rrssb-icon">
@@ -115,13 +109,11 @@ if ( ! class_exists( 'WpssoRrssbShareEmail' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts[ 'add_hashtags' ] = empty( $this->p->options[ 'email_caption_hashtags' ] ) ? false : $this->p->options[ 'email_caption_hashtags' ];
-
 			$email_title = $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
 				$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'email_title' );
 
 			$email_excerpt = $this->p->page->get_caption( $type = 'both', $opts[ 'email_caption_max_len' ], $mod,
-				$read_cache = true, $atts[ 'add_hashtags' ], $do_encode = false, $md_key = 'email_desc' );
+				$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'email_desc' );
 
 			return $this->p->util->replace_inline_vars( '<!-- Email Button -->' . $this->p->options[ 'email_rrssb_html' ], $mod, $atts, array(
 			 	'email_title'   => rawurlencode( $email_title ),

@@ -45,11 +45,6 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTumblr' ) ) {
 				'<td>' . $form->get_input( 'tumblr_caption_max_len', $css_class = 'chars' ) . ' ' . 
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
-			$table_rows[ 'tumblr_caption_hashtags' ] = $form->get_tr_hide( 'basic', 'tumblr_caption_hashtags' ) . 
-				$form->get_th_html( _x( 'Append Hashtags to Summary', 'option label', 'wpsso-rrssb' ) ) . 
-				'<td>' . $form->get_select( 'tumblr_caption_hashtags', range( 0, $this->p->cf[ 'form' ][ 'max_hashtags' ] ), 'short', '', true ) . ' ' . 
-				_x( 'tag names', 'option comment', 'wpsso-rrssb' ) . '</td>';
-
 			$table_rows[ 'tumblr_rrssb_html' ] = $form->get_tr_hide( 'basic', 'tumblr_rrssb_html' ) . 
 				'<td colspan="2">' . $form->get_textarea( 'tumblr_rrssb_html', 'button_html code' ) . '</td>';
 
@@ -74,7 +69,6 @@ if ( ! class_exists( 'WpssoRrssbShareTumblr' ) ) {
 					'tumblr_on_sidebar'       => 0,
 					'tumblr_on_woo_short'     => 1,
 					'tumblr_caption_max_len'  => 300,
-					'tumblr_caption_hashtags' => 0,
 					'tumblr_rrssb_html'       => '<li class="rrssb-tumblr">
 	<a href="http://tumblr.com/share/link?url=%%sharing_url%%&name=%%tumblr_title%%&description=%%tumblr_summary%%" class="popup">
 		<span class="rrssb-icon">
@@ -115,13 +109,11 @@ if ( ! class_exists( 'WpssoRrssbShareTumblr' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts[ 'add_hashtags' ] = empty( $this->p->options[ 'tumblr_caption_hashtags' ] ) ? false : $this->p->options[ 'tumblr_caption_hashtags' ];
-
 			$tumblr_title = $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
 				$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'tumblr_title' );
 
 			$tumblr_summary = $this->p->page->get_caption( $type = 'excerpt', $opts[ 'tumblr_caption_max_len' ], $mod,
-				$read_cache = true, $atts[ 'add_hashtags' ], $do_encode = false, $md_key = 'tumblr_desc' );
+				$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'tumblr_desc' );
 
 			return $this->p->util->replace_inline_vars( '<!-- Tumblr Button -->' . $this->p->options[ 'tumblr_rrssb_html' ], $mod, $atts, array(
 				'tumblr_title'   => rawurlencode( $tumblr_title ),

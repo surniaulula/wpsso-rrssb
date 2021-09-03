@@ -524,8 +524,9 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 						 */
 						$atts[ 'url' ] = apply_filters( 'wpsso_rrssb_buttons_shared_url', $atts[ 'url' ], $mod, $id );
 
-						$force_prot = apply_filters( 'wpsso_rrssb_buttons_force_prot',
-							$this->p->options[ 'buttons_force_prot' ], $mod, $id, $atts[ 'url' ] );
+						$force_prot = $this->p->options[ 'buttons_force_prot' ];
+
+						$force_prot = apply_filters( 'wpsso_rrssb_buttons_force_prot', $force_prot, $mod, $id, $atts[ 'url' ] );
 
 						if ( ! empty( $force_prot ) && $force_prot !== 'none' ) {
 

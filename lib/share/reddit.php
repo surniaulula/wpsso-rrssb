@@ -45,11 +45,6 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareReddit' ) ) {
 				'<td>' . $form->get_input( 'reddit_caption_max_len', $css_class = 'chars' ) . ' ' . 
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
-			$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_caption_hashtags' ) . 
-				$form->get_th_html( _x( 'Append Hashtags to Caption', 'option label', 'wpsso-rrssb' ) ) . 
-				'<td>' . $form->get_select( 'reddit_caption_hashtags', range( 0, $this->p->cf[ 'form' ][ 'max_hashtags' ] ), 'short', '', true ) . ' ' . 
-				_x( 'tag names', 'option comment', 'wpsso-rrssb' ) . '</td>';
-
 			$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_rrssb_html' ) . 
 				'<td colspan="2">' . $form->get_textarea( 'reddit_rrssb_html', 'button_html code' ) . '</td>';
 
@@ -74,7 +69,6 @@ if ( ! class_exists( 'WpssoRrssbShareReddit' ) ) {
 					'reddit_on_sidebar'       => 0,
 					'reddit_on_woo_short'     => 1,
 					'reddit_caption_max_len'  => 300,
-					'reddit_caption_hashtags' => 0,
 					'reddit_rrssb_html'       => '<li class="rrssb-reddit">
 	<a href="http://www.reddit.com/submit?url=%%sharing_url%%&title=%%reddit_title%%&text=%%reddit_summary%%">
 		<span class="rrssb-icon">
@@ -116,13 +110,11 @@ if ( ! class_exists( 'WpssoRrssbShareReddit' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts[ 'add_hashtags' ] = empty( $this->p->options[ 'reddit_caption_hashtags' ] ) ? false : $this->p->options[ 'reddit_caption_hashtags' ];
-
 			$reddit_title = $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
 				$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'reddit_title' );
 
 			$reddit_summary = $this->p->page->get_caption( $type = 'excerpt', $opts[ 'reddit_caption_max_len' ], $mod,
-				$read_cache = true, $atts[ 'add_hashtags' ], $do_encode = false, $md_key = 'reddit_desc' );
+				$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'reddit_desc' );
 
 			return $this->p->util->replace_inline_vars( '<!-- Reddit Button -->' . $this->p->options[ 'reddit_rrssb_html' ], $mod, $atts, array(
 			 	'reddit_title'   => rawurlencode( $reddit_title ),

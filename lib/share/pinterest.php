@@ -45,11 +45,6 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 				'<td>' . $form->get_input( 'pin_caption_max_len', $css_class = 'chars' ) . ' ' . 
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
-			$table_rows[] = $form->get_tr_hide( 'basic', 'pin_caption_hashtags' ) . 
-				$form->get_th_html( _x( 'Append Hashtags to Caption', 'option label', 'wpsso-rrssb' ) ) . 
-				'<td>' . $form->get_select( 'pin_caption_hashtags', range( 0, $this->p->cf[ 'form' ][ 'max_hashtags' ] ), 'short', '', true ) . ' ' . 
-				_x( 'tag names', 'option comment', 'wpsso-rrssb' ) . '</td>';
-
 			$table_rows[] = $form->get_tr_hide( 'basic', 'pin_rrssb_html' ) . 
 				'<td colspan="2">' . $form->get_textarea( 'pin_rrssb_html', 'button_html code' ) . '</td>';
 
@@ -74,7 +69,6 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 					'pin_on_sidebar'       => 0,
 					'pin_on_woo_short'     => 1,
 					'pin_caption_max_len'  => 300,
-					'pin_caption_hashtags' => 0,
 					'pin_rrssb_html'       => '<li class="rrssb-pinterest">
 	<a href="http://pinterest.com/pin/create/button/?url=%%sharing_url%%&media=%%media_url%%&description=%%pinterest_caption%%" class="popup">
 		<span class="rrssb-icon">
@@ -120,8 +114,6 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 
 				$this->p->debug->mark();
 			}
-
-			$atts[ 'add_hashtags' ] = empty( $this->p->options[ 'pin_caption_hashtags' ] ) ? false : $this->p->options[ 'pin_caption_hashtags' ];
 
 			if ( empty( $atts[ 'size' ] ) ) {
 
@@ -172,7 +164,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 			}
 
 			$pinterest_caption = $this->p->page->get_caption( $type = 'excerpt', $opts[ 'pin_caption_max_len' ], $mod,
-				$read_cache = true, $atts[ 'add_hashtags' ], $do_encode = false, $md_key = array ( 'pin_desc', 'p_img_desc', 'og_desc' ) );
+				$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = array ( 'pin_desc', 'p_img_desc', 'og_desc' ) );
 
 			return $this->p->util->replace_inline_vars( '<!-- Pinterest Button -->' . $this->p->options[ 'pin_rrssb_html' ], $mod, $atts, array(
 				'media_url'         => rawurlencode( $atts[ 'photo' ] ),
