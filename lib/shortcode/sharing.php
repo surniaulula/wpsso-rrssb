@@ -202,7 +202,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 			$type = 'sharing_shortcode_' . $this->shortcode_name;
 
-			$atts[ 'url' ] = empty( $atts[ 'url' ] ) ? $this->p->util->get_sharing_url( $mod ) : $atts[ 'url' ];
+			$atts[ 'url' ] = empty( $atts[ 'url' ] ) ? $this->p->util->get_canonical_url( $mod ) : $atts[ 'url' ];
 
 			$ids = array_map( 'trim', explode( ',', $atts[ 'buttons' ] ) );
 

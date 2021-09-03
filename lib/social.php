@@ -482,7 +482,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 		public function get_html( array $share_ids, array $atts, $mod = false ) {
 
 			$atts[ 'use_post' ] = isset( $atts[ 'use_post' ] ) ? $atts[ 'use_post' ] : true;	// Maintain backwards compat.
-			$atts[ 'add_page' ] = isset( $atts[ 'add_page' ] ) ? $atts[ 'add_page' ] : true;	// Used by get_sharing_url().
+			$atts[ 'add_page' ] = isset( $atts[ 'add_page' ] ) ? $atts[ 'add_page' ] : true;	// Used by get_canonical_url().
 
 			/**
 			 * The $mod array argument is preferred but not required.
@@ -512,11 +512,11 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 						if ( empty( $atts[ 'url' ] ) ) {
 
-							$atts[ 'url' ] = $this->p->util->get_sharing_url( $mod, $atts[ 'add_page' ] );
+							$atts[ 'url' ] = $this->p->util->get_canonical_url( $mod, $atts[ 'add_page' ] );
 
 						} else {
 
-							$atts[ 'url' ] = apply_filters( 'wpsso_sharing_url', $atts[ 'url' ], $mod, $atts[ 'add_page' ] );
+							$atts[ 'url' ] = apply_filters( 'wpsso_canonical_url', $atts[ 'url' ], $mod, $atts[ 'add_page' ] );
 						}
 
 						/**
@@ -677,7 +677,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			if ( ! isset( $atts[ 'tweet' ] ) ) {	// Just in case.
 
 				$atts[ 'use_post' ]     = isset( $atts[ 'use_post' ] ) ? $atts[ 'use_post' ] : true;
-				$atts[ 'add_page' ]     = isset( $atts[ 'add_page' ] ) ? $atts[ 'add_page' ] : true;	// Used by get_sharing_url().
+				$atts[ 'add_page' ]     = isset( $atts[ 'add_page' ] ) ? $atts[ 'add_page' ] : true;	// Used by get_canonical_url().
 				$atts[ 'add_hashtags' ] = isset( $atts[ 'add_hashtags' ] ) ? $atts[ 'add_hashtags' ] : true;
 
 				$caption_type = empty( $wpsso->options[ $opt_pre . '_caption' ] ) ? 'title' : $wpsso->options[ $opt_pre . '_caption' ];
