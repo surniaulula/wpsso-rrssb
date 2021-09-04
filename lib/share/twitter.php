@@ -204,7 +204,7 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 
 				} else {
 
-					$extras[ 'twitter_' . $query_key ] = rawurlencode( $atts[ $atts_key ] );
+					$extras[ 'twitter_' . $query_key ] = $atts[ $atts_key ];
 				}
 			}
 
