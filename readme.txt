@@ -121,7 +121,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 7.0.0-dev.2 (2021/09/03)**
+**Version 7.0.0-dev.3 (2021/09/03)**
 
 * **New Features**
 	* None.
@@ -134,7 +134,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.0.
 	* WordPress v5.2.
-	* WPSSO Core v8.37.1-dev.2.
+	* WPSSO Core v8.37.1-dev.3.
 
 **Version 6.0.0 (2021/06/18)**
 
@@ -290,7 +290,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 7.0.0-dev.2 =
+= 7.0.0-dev.3 =
 
 (2021/09/03) Removed the "Append Hashtags" option from all buttons except for Twitter.
 
