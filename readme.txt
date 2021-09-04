@@ -121,7 +121,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 7.0.0-dev.5 (2021/09/03)**
+**Version 7.0.0-dev.5 (2021/09/04)**
 
 * **New Features**
 	* None.
@@ -292,7 +292,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 7.0.0-dev.5 =
 
-(2021/09/03) Removed the "Append Hashtags" option from all buttons except for Twitter.
+(2021/09/04) Removed the "Append Hashtags" option from all buttons except for Twitter.
 
 = 6.0.0 =
 
