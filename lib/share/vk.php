@@ -96,6 +96,18 @@ if ( ! class_exists( 'WpssoRrssbShareVk' ) ) {
 			return array_merge( $def_opts, self::$cf[ 'opt' ][ 'defaults' ] );
 		}
 
+		/**
+		 * Pre-defined attributes:
+		 *
+		 *	'use_post'
+		 *	'add_page'
+		 *	'opt_pre'
+		 *	'sharing_url'
+		 *	'sharing_short_url'
+		 *	'rawurlencode' (true)
+		 *
+		 * Note that for backwards compatibility, the 'sharing_short_url' value also replaces the '%%short_url%%' variable.
+		 */
 		public function get_html( array $atts, array $opts, array $mod ) {
 
 			if ( $this->p->debug->enabled ) {
@@ -103,7 +115,7 @@ if ( ! class_exists( 'WpssoRrssbShareVk' ) ) {
 				$this->p->debug->mark();
 			}
 
-			return $this->p->util->replace_inline_vars( '<!-- VK Button -->' . $this->p->options[ 'vk_rrssb_html' ], $mod, $atts );
+			return $this->p->util->replace_inline_variables( $this->p->options[ 'vk_rrssb_html' ], $mod, $atts );
 		}
 	}
 }

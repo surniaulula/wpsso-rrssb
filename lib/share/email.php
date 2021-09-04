@@ -102,6 +102,18 @@ if ( ! class_exists( 'WpssoRrssbShareEmail' ) ) {
 			return array_merge( $def_opts, self::$cf[ 'opt' ][ 'defaults' ] );
 		}
 
+		/**
+		 * Pre-defined attributes:
+		 *
+		 *	'use_post'
+		 *	'add_page'
+		 *	'opt_pre'
+		 *	'sharing_url'
+		 *	'sharing_short_url'
+		 *	'rawurlencode' (true)
+		 *
+		 * Note that for backwards compatibility, the 'sharing_short_url' value also replaces the '%%short_url%%' variable.
+		 */
 		public function get_html( array $atts, array $opts, array $mod ) {
 
 			if ( $this->p->debug->enabled ) {
@@ -109,16 +121,14 @@ if ( ! class_exists( 'WpssoRrssbShareEmail' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$email_title = $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
-				$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'email_title' );
+			$extras = array(
+				'email_title' => $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
+					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'email_title' ),
+				'email_excerpt' => $this->p->page->get_caption( $type = 'both', $opts[ 'email_caption_max_len' ], $mod,
+					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'email_desc' ),
+			);
 
-			$email_excerpt = $this->p->page->get_caption( $type = 'both', $opts[ 'email_caption_max_len' ], $mod,
-				$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'email_desc' );
-
-			return $this->p->util->replace_inline_vars( '<!-- Email Button -->' . $this->p->options[ 'email_rrssb_html' ], $mod, $atts, array(
-			 	'email_title'   => rawurlencode( $email_title ),
-		 		'email_excerpt' => rawurlencode( $email_excerpt ),
-			 ) );
+			return $this->p->util->replace_inline_variables( $this->p->options[ 'email_rrssb_html' ], $mod, $atts, $extras );
 		}
 	}
 }

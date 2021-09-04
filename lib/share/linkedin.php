@@ -102,6 +102,18 @@ if ( ! class_exists( 'WpssoRrssbShareLinkedin' ) ) {
 			return array_merge( $def_opts, self::$cf[ 'opt' ][ 'defaults' ] );
 		}
 
+		/**
+		 * Pre-defined attributes:
+		 *
+		 *	'use_post'
+		 *	'add_page'
+		 *	'opt_pre'
+		 *	'sharing_url'
+		 *	'sharing_short_url'
+		 *	'rawurlencode' (true)
+		 *
+		 * Note that for backwards compatibility, the 'sharing_short_url' value also replaces the '%%short_url%%' variable.
+		 */
 		public function get_html( array $atts, array $opts, array $mod ) {
 
 			if ( $this->p->debug->enabled ) {
@@ -109,16 +121,14 @@ if ( ! class_exists( 'WpssoRrssbShareLinkedin' ) ) {
 				$this->p->debug->mark();
 			}
 
-		 	$linkedin_title = $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
-				$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'linkedin_title' );
+			$extras = array(
+		 		'linkedin_title' => $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
+					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'linkedin_title' ),
+				'linkedin_caption' => $this->p->page->get_caption( $type = 'excerpt', $opts[ 'linkedin_caption_max_len' ], $mod,
+					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'linkedin_desc' ),
+			);
 
-			$linkedin_caption = $this->p->page->get_caption( $type = 'excerpt', $opts[ 'linkedin_caption_max_len' ], $mod,
-				$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'linkedin_desc' );
-
-			return $this->p->util->replace_inline_vars( '<!-- LinkedIn Button -->' . $this->p->options[ 'linkedin_rrssb_html' ], $mod, $atts, array(
-				'linkedin_title'   => rawurlencode( $linkedin_title ),
-			 	'linkedin_caption' => rawurlencode( $linkedin_caption ),
-			) );
+			return $this->p->util->replace_inline_variables( $this->p->options[ 'linkedin_rrssb_html' ], $mod, $atts, $extras );
 		}
 	}
 }

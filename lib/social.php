@@ -382,7 +382,8 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				if ( ! empty( $this->p->options[ $opt_pre . '_on_' . $type ] ) ) {
 
-					$button_order = empty( $this->p->options[ $opt_pre . '_button_order' ] ) ? 0 : $this->p->options[ $opt_pre . '_button_order' ];
+					$button_order = empty( $this->p->options[ $opt_pre . '_button_order' ] ) ?
+						0 : $this->p->options[ $opt_pre . '_button_order' ];
 
 					$sorted_ids[ zeroise( $button_order, 3 ) . '-' . $id ] = $id;
 				}
@@ -481,8 +482,11 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 		 */
 		public function get_html( array $share_ids, array $atts, $mod = false ) {
 
+			/**
+			 * Common attributes for all buttons.
+			 */
 			$atts[ 'use_post' ] = isset( $atts[ 'use_post' ] ) ? $atts[ 'use_post' ] : true;	// Maintain backwards compat.
-			$atts[ 'add_page' ] = isset( $atts[ 'add_page' ] ) ? $atts[ 'add_page' ] : true;	// Used by get_canonical_url().
+			$atts[ 'add_page' ] = isset( $atts[ 'add_page' ] ) ? $atts[ 'add_page' ] : true;	// Used by get_sharing_url().
 
 			/**
 			 * The $mod array argument is preferred but not required.
@@ -510,36 +514,57 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 					if ( method_exists( $this->share[ $id ], 'get_html' ) ) {
 
-						if ( empty( $atts[ 'url' ] ) ) {
+						/**
+						 * The contact method prefix (ie. 'email', 'fb', 'pin', etc.) allows getting custom option values.
+						 */
+						$atts[ 'opt_pre' ] = isset( $this->p->cf[ 'opt' ][ 'cm_prefix' ][ $id ] ) ?
+							$this->p->cf[ 'opt' ][ 'cm_prefix' ][ $id ] : '';
 
-							$atts[ 'url' ] = $this->p->util->get_canonical_url( $mod, $atts[ 'add_page' ] );
-
-						} else {
-
-							$atts[ 'url' ] = apply_filters( 'wpsso_canonical_url', $atts[ 'url' ], $mod, $atts[ 'add_page' ] );
-						}
+						$atts[ 'sharing_url' ] = $this->p->util->get_sharing_url( $mod, $atts[ 'add_page' ], $atts[ 'opt_pre' ] );
 
 						/**
-						 * Filter to add custom tracking arguments.
+						 * Filter hook to possibly add custom tracking arguments.
 						 */
-						$atts[ 'url' ] = apply_filters( 'wpsso_rrssb_buttons_shared_url', $atts[ 'url' ], $mod, $id );
+						$atts[ 'sharing_url' ] = apply_filters( 'wpsso_rrssb_buttons_shared_url', $atts[ 'sharing_url' ], $mod, $id );
 
+						/**
+						 * Maybe force the protocol to http or https.
+						 */
 						$force_prot = $this->p->options[ 'buttons_force_prot' ];
 
-						$force_prot = apply_filters( 'wpsso_rrssb_buttons_force_prot', $force_prot, $mod, $id, $atts[ 'url' ] );
+						$force_prot = apply_filters( 'wpsso_rrssb_buttons_force_prot', $force_prot, $mod, $id, $atts[ 'sharing_url' ] );
 
 						if ( ! empty( $force_prot ) && $force_prot !== 'none' ) {
 
-							$atts[ 'url' ] = preg_replace( '/^.*:\/\//', $force_prot . '://', $atts[ 'url' ] );
+							$atts[ 'sharing_url' ] = preg_replace( '/^.*:\/\//', $force_prot . '://', $atts[ 'sharing_url' ] );
 						}
+
+						/**
+						 * Maybe shorten the sharing URL.
+						 *
+						 * Note that for backwards compatibility, the 'sharing_short_url' value also
+						 * replaces the '%%short_url%%' variable.
+						 */
+						$atts[ 'sharing_short_url' ] = $this->p->util->shorten_url( $atts[ 'sharing_url' ], $mod );
+
+						/**
+						 * Encode values as URL query arguments.
+						 */
+						$atts[ 'rawurlencode' ] = true;
 
 						/**
 						 * Do not terminate with a newline to avoid WordPress adding breaks and paragraphs.
 						 */
 						$buttons_part = $this->share[ $id ]->get_html( $atts, $this->p->options, $mod );
 
-						$atts = $saved_atts;	// Restore the common $atts array.
+						/**
+						 * Restore the common attributes array.
+						 */
+						$atts = $saved_atts;
 
+						/**
+						 * Add the button HTML and maybe align the buttons vertically.
+						 */
 						if ( false !== strpos( $buttons_part, '<li' ) ) {
 
 							if ( empty( $atts[ 'container_each' ] ) ) {

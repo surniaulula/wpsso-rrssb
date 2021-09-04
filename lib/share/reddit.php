@@ -103,6 +103,18 @@ if ( ! class_exists( 'WpssoRrssbShareReddit' ) ) {
 			return array_merge( $def_opts, self::$cf[ 'opt' ][ 'defaults' ] );
 		}
 
+		/**
+		 * Pre-defined attributes:
+		 *
+		 *	'use_post'
+		 *	'add_page'
+		 *	'opt_pre'
+		 *	'sharing_url'
+		 *	'sharing_short_url'
+		 *	'rawurlencode' (true)
+		 *
+		 * Note that for backwards compatibility, the 'sharing_short_url' value also replaces the '%%short_url%%' variable.
+		 */
 		public function get_html( array $atts, array $opts, array $mod ) {
 
 			if ( $this->p->debug->enabled ) {
@@ -110,16 +122,14 @@ if ( ! class_exists( 'WpssoRrssbShareReddit' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$reddit_title = $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
-				$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'reddit_title' );
+			$extras = array(
+				'reddit_title' => $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
+					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'reddit_title' ),
+				'reddit_summary' => $this->p->page->get_caption( $type = 'excerpt', $opts[ 'reddit_caption_max_len' ], $mod,
+					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'reddit_desc' ),
+			);
 
-			$reddit_summary = $this->p->page->get_caption( $type = 'excerpt', $opts[ 'reddit_caption_max_len' ], $mod,
-				$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'reddit_desc' );
-
-			return $this->p->util->replace_inline_vars( '<!-- Reddit Button -->' . $this->p->options[ 'reddit_rrssb_html' ], $mod, $atts, array(
-			 	'reddit_title'   => rawurlencode( $reddit_title ),
-			 	'reddit_summary' => rawurlencode( $reddit_summary ),
-			 ) );
+			return $this->p->util->replace_inline_variables( $this->p->options[ 'reddit_rrssb_html' ], $mod, $atts, $extras );
 		}
 	}
 }

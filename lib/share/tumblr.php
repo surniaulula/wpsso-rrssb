@@ -102,6 +102,18 @@ if ( ! class_exists( 'WpssoRrssbShareTumblr' ) ) {
 			return array_merge( $def_opts, self::$cf[ 'opt' ][ 'defaults' ] );
 		}
 
+		/**
+		 * Pre-defined attributes:
+		 *
+		 *	'use_post'
+		 *	'add_page'
+		 *	'opt_pre'
+		 *	'sharing_url'
+		 *	'sharing_short_url'
+		 *	'rawurlencode' (true)
+		 *
+		 * Note that for backwards compatibility, the 'sharing_short_url' value also replaces the '%%short_url%%' variable.
+		 */
 		public function get_html( array $atts, array $opts, array $mod ) {
 
 			if ( $this->p->debug->enabled ) {
@@ -109,16 +121,14 @@ if ( ! class_exists( 'WpssoRrssbShareTumblr' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$tumblr_title = $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
-				$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'tumblr_title' );
+			$extras = array(
+				'tumblr_title' => $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
+					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'tumblr_title' ),
+				'tumblr_summary' => $this->p->page->get_caption( $type = 'excerpt', $opts[ 'tumblr_caption_max_len' ], $mod,
+					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'tumblr_desc' ),
+			);
 
-			$tumblr_summary = $this->p->page->get_caption( $type = 'excerpt', $opts[ 'tumblr_caption_max_len' ], $mod,
-				$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'tumblr_desc' );
-
-			return $this->p->util->replace_inline_vars( '<!-- Tumblr Button -->' . $this->p->options[ 'tumblr_rrssb_html' ], $mod, $atts, array(
-				'tumblr_title'   => rawurlencode( $tumblr_title ),
-				'tumblr_summary' => rawurlencode( $tumblr_summary ),
-			) );
+			return $this->p->util->replace_inline_variables( $this->p->options[ 'tumblr_rrssb_html' ], $mod, $atts, $extras );
 		}
 	}
 }

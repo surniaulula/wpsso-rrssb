@@ -124,6 +124,18 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 			return array_merge( $def_opts, self::$cf[ 'opt' ][ 'defaults' ] );
 		}
 
+		/**
+		 * Pre-defined attributes:
+		 *
+		 *	'use_post'
+		 *	'add_page'
+		 *	'opt_pre'
+		 *	'sharing_url'
+		 *	'sharing_short_url'
+		 *	'rawurlencode' (true)
+		 *
+		 * Note that for backwards compatibility, the 'sharing_short_url' value also replaces the '%%short_url%%' variable.
+		 */
 		public function get_html( array $atts, array $opts, array $mod ) {
 
 			if ( $this->p->debug->enabled ) {
@@ -177,7 +189,7 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 			 */
 			$twitter_button_html = $this->p->options[ 'twitter_rrssb_html' ];
 
-			$extra = array();
+			$extras = array();
 
 			foreach ( array( 
 				'text'     => 'tweet',
@@ -192,11 +204,11 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 
 				} else {
 
-					$extra[ 'twitter_' . $query_key ] = rawurlencode( $atts[ $atts_key ] );
+					$extras[ 'twitter_' . $query_key ] = rawurlencode( $atts[ $atts_key ] );
 				}
 			}
 
-			return $this->p->util->replace_inline_vars( '<!-- Twitter Button -->' . $twitter_button_html, $mod, $atts, $extra );
+			return $this->p->util->replace_inline_variables( $twitter_button_html, $mod, $atts, $extras );
 		}
 	}
 }

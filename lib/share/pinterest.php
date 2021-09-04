@@ -108,6 +108,18 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 			return array_merge( $def_opts, self::$cf[ 'opt' ][ 'defaults' ] );
 		}
 
+		/**
+		 * Pre-defined attributes:
+		 *
+		 *	'use_post'
+		 *	'add_page'
+		 *	'opt_pre'
+		 *	'sharing_url'
+		 *	'sharing_short_url'
+		 *	'rawurlencode' (true)
+		 *
+		 * Note that for backwards compatibility, the 'sharing_short_url' value also replaces the '%%short_url%%' variable.
+		 */
 		public function get_html( array $atts, array $opts, array $mod ) {
 
 			if ( $this->p->debug->enabled ) {
@@ -163,13 +175,13 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 				}
 			}
 
-			$pinterest_caption = $this->p->page->get_caption( $type = 'excerpt', $opts[ 'pin_caption_max_len' ], $mod,
-				$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = array ( 'pin_desc', 'p_img_desc', 'og_desc' ) );
+			$extras = array(
+				'media_url' => $atts[ 'photo' ],
+				'pinterest_caption' => $this->p->page->get_caption( $type = 'excerpt', $opts[ 'pin_caption_max_len' ], $mod,
+					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = array ( 'pin_desc', 'p_img_desc', 'og_desc' ) ),
+			);
 
-			return $this->p->util->replace_inline_vars( '<!-- Pinterest Button -->' . $this->p->options[ 'pin_rrssb_html' ], $mod, $atts, array(
-				'media_url'         => rawurlencode( $atts[ 'photo' ] ),
-			 	'pinterest_caption' => rawurlencode( $pinterest_caption ),
-			) );
+			return $this->p->util->replace_inline_variables( $this->p->options[ 'pin_rrssb_html' ], $mod, $atts, $extras );
 		}
 	}
 }
