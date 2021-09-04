@@ -61,12 +61,11 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 			);
 
 			/**
-			 * Email
+			 * Email.
 			 */
-			$email_caption_max_len = $this->p->options[ 'email_caption_max_len' ];
-
-			$email_caption_text = $this->p->page->get_caption( $type = 'excerpt', $email_caption_max_len, $mod,
-				$read_cache = true, $add_hashtags = false, $do_encode = true, $md_key = 'none' );
+			$email_type     = 'both';
+			$email_max_len  = $this->p->options[ 'email_caption_max_len' ];
+			$def_email_desc = $this->p->page->get_caption( $email_type, $email_max_len, $mod, $read_cache = true, $add_hashtags = false );
 
 			$form_rows[ 'subsection_email' ] = array(
 				'td_class' => 'subsection',
@@ -86,20 +85,16 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 				'th_class' => 'medium',
 				'label'    => _x( 'Email Message', 'option label', 'wpsso-rrssb' ),
 				'tooltip'  => 'rrssb-email_desc',
-				'content'  => $form->get_textarea( 'email_desc', $css_class = '', $css_id = '', $email_caption_max_len, $email_caption_text ),
+				'content'  => $form->get_textarea( 'email_desc', $css_class = '', $css_id = '', $email_max_len, $def_email_desc ),
 			);
 
 			/**
-			 * Twitter
+			 * Twitter.
 			 */
-			$twitter_caption_type = empty( $this->p->options[ 'twitter_caption' ] ) ? 'title' : $this->p->options[ 'twitter_caption' ];
-
-			$twitter_caption_max_len = WpssoRrssbSocial::get_tweet_max_len();
-
-			$twitter_caption_hashtags = $this->p->options[ 'twitter_caption_hashtags' ];
-
-			$twitter_caption_text = $this->p->page->get_caption( $twitter_caption_type, $twitter_caption_max_len, $mod,
-				$read_cache = true, $twitter_caption_hashtags );
+			$twitter_type     = $this->p->options[ 'twitter_caption' ];
+			$twitter_max_len  = WpssoRrssbSocial::get_tweet_max_len();
+			$twitter_hashtags = $this->p->options[ 'twitter_caption_hashtags' ];
+			$def_twitter_desc = $this->p->page->get_caption( $twitter_type, $twitter_max_len, $mod, $read_cache = true, $twitter_hashtags );
 
 			$form_rows[ 'subsection_twitter' ] = array(
 				'td_class' => 'subsection',
@@ -112,16 +107,15 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 				'th_class' => 'medium',
 				'label'    => _x( 'Tweet Text', 'option label', 'wpsso-rrssb' ),
 				'tooltip'  => 'rrssb-twitter_desc',
-				'content'  => $form->get_textarea( 'twitter_desc', '', '', $twitter_caption_max_len, $twitter_caption_text ),
+				'content'  => $form->get_textarea( 'twitter_desc', '', '', $twitter_max_len, $def_twitter_desc ),
 			);
 
 			/**
-			 * Pinterest
+			 * Pinterest.
 			 */
-			$pin_caption_max_len = $this->p->options[ 'pin_caption_max_len' ];
-
-			$pin_caption_text = $this->p->page->get_caption( $type = 'excerpt', $pin_caption_max_len, $mod,
-				$read_cache = true, $add_hashtags = false );
+			$pin_type    = 'excerpt';
+			$pin_max_len = $this->p->options[ 'pin_caption_max_len' ];
+			$pin_desc    = $this->p->page->get_caption( $pin_type, $pin_max_len, $mod, $read_cache = true, $add_hashtags = false );
 
 			$form_rows[ 'subsection_pinterest' ] = array(
 				'td_class' => 'subsection',
@@ -135,22 +129,21 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 				'td_class' => 'top',
 				'label'    => _x( 'Pinterest Caption', 'option label', 'wpsso-rrssb' ),
 				'tooltip'  => 'rrssb-pin_desc',
-				'content'  => $form->get_textarea( 'pin_desc', '', '', $pin_caption_max_len, $pin_caption_text ),
+				'content'  => $form->get_textarea( 'pin_desc', '', '', $pin_max_len, $pin_desc ),
 			);
 
 			/**
-			 * Other Title / Caption Input
+			 * Others.
 			 */
 			foreach ( array(
 				'linkedin' => 'LinkedIn',
-				'reddit' => 'Reddit',
-				'tumblr' => 'Tumblr',
+				'reddit'   => 'Reddit',
+				'tumblr'   => 'Tumblr',
 			) as $opt_pre => $name ) {
 
-				$other_caption_max_len = $this->p->options[ $opt_pre . '_caption_max_len' ];
-
-				$other_caption_text = $this->p->page->get_caption( $type = 'excerpt', $other_caption_max_len, $mod,
-					$read_cache = true, $add_hashtags = false );
+				$other_type    = 'excerpt';
+				$other_max_len = $this->p->options[ $opt_pre . '_caption_max_len' ];
+				$other_desc    = $this->p->page->get_caption( $other_type, $other_max_len, $mod, $read_cache = true, $add_hashtags = false );
 
 				$form_rows[ 'subsection_' . $opt_pre ] = array(
 					'td_class' => 'subsection',
@@ -170,7 +163,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 					'th_class' => 'medium',
 					'label'    => sprintf( _x( '%s Caption', 'option label', 'wpsso-rrssb' ), $name ),
 					'tooltip'  => 'rrssb-' . $opt_pre . '_desc',
-					'content'  => $form->get_textarea( $opt_pre . '_desc', '', '', $other_caption_max_len, $other_caption_text ),
+					'content'  => $form->get_textarea( $opt_pre . '_desc', '', '', $other_max_len, $other_desc ),
 				);
 			}
 

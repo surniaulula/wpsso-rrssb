@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"7.0.0-dev.2\n"
+"7.0.0-dev.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2021-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -160,32 +160,32 @@ msgctxt "option label"
 msgid "Disable Sharing Buttons"
 msgstr ""
 
-#: lib/filters-edit.php:80
+#: lib/filters-edit.php:79
 msgctxt "option label"
 msgid "Email Subject"
 msgstr ""
 
-#: lib/filters-edit.php:87
+#: lib/filters-edit.php:86
 msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/filters-edit.php:113
+#: lib/filters-edit.php:108
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/filters-edit.php:136
+#: lib/filters-edit.php:130
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/filters-edit.php:164
+#: lib/filters-edit.php:157
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/filters-edit.php:171
+#: lib/filters-edit.php:164
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
