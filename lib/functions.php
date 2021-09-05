@@ -65,7 +65,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 
 		$mod = $wpsso->page->get_mod( $atts[ 'use_post' ] );
 
-		$buttons_html = $rrssb->social->get_html( $ids, $atts, $mod );	// Returns html or an empty string.
+		$buttons_html = $rrssb->social->get_html( $ids, $mod, $atts );
 
 		if ( $wpsso->debug->enabled ) {
 

@@ -179,9 +179,9 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 		public function show_sidebar() {
 
-			echo "\n\n";
+			$atts = array( 'container_each' => true );
 
-			echo $this->get_buttons( $text = '', $type = 'sidebar', $use_post = false, $location = 'bottom', $atts = array( 'container_each' => true ) );
+			echo "\n\n" . $this->get_buttons( $text = '', $type = 'sidebar', $use_post = false, $location = 'bottom', $atts );
 		}
 
 		public function add_buttons_filter( $filter_name = 'the_content' ) {
@@ -243,6 +243,9 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			return $removed;
 		}
 
+		/**
+		 * The WpssoRrssbSocial->show_sidebar() method passes $atts = array( 'container_each' => true ).
+		 */
 		public function get_buttons( $text, $type = 'content', $mod = true, $location = '', $atts = array() ) {
 
 			if ( $this->p->debug->enabled ) {
@@ -391,9 +394,13 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			ksort( $sorted_ids );
 
-			$atts[ 'use_post' ] = $mod[ 'use_post' ];
+			/**
+			 * UTM attributes are used (but not required) by the WpssoUtil->get_sharing_url() method.
+			 */
+			$atts[ 'use_post' ]    = $mod[ 'use_post' ];
+			$atts[ 'utm_content' ] = sanitize_title_with_dashes( $type . '-' . $location );
 
-			$buttons_html = $this->get_html( $sorted_ids, $atts, $mod );
+			$buttons_html = $this->get_html( $sorted_ids, $mod, $atts );
 
 			if ( ! empty( $buttons_html ) ) {
 
@@ -480,13 +487,16 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 		 *
 		 * get_html() can also be called by a widget, shortcode, function, filter hook, etc.
 		 */
-		public function get_html( array $share_ids, array $atts, $mod = false ) {
+		public function get_html( $ids, $mod, $atts ) {
 
 			/**
-			 * Common attributes for all buttons.
+			 * Basic attributes for all buttons.
+			 *
+			 * UTM attributes are used (but not required) by the WpssoUtil->get_sharing_url() method.
 			 */
-			$atts[ 'use_post' ] = isset( $atts[ 'use_post' ] ) ? $atts[ 'use_post' ] : true;	// Maintain backwards compat.
-			$atts[ 'add_page' ] = isset( $atts[ 'add_page' ] ) ? $atts[ 'add_page' ] : true;	// Used by get_sharing_url().
+			$atts[ 'use_post' ]    = isset( $atts[ 'use_post' ] ) ? $atts[ 'use_post' ] : true;
+			$atts[ 'add_page' ]    = isset( $atts[ 'add_page' ] ) ? $atts[ 'add_page' ] : true;
+			$atts[ 'utm_medium' ]  = isset( $this->p->options[ 'buttons_utm_medium' ] ) ? $this->p->options[ 'buttons_utm_medium' ] : '';
 
 			/**
 			 * The $mod array argument is preferred but not required.
@@ -508,30 +518,35 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			$buttons_end   = '</ul><!-- .rrssb-buttons.' . SucomUtil::get_locale( $mod ) . '.clearfix -->' . "\n";
 			$saved_atts    = $atts;
 
-			foreach ( $share_ids as $id ) {
+			foreach ( $ids as $id ) {
 
 				if ( isset( $this->share[ $id ] ) ) {
 
 					if ( method_exists( $this->share[ $id ], 'get_html' ) ) {
 
 						/**
-						 * The contact method prefix (ie. 'email', 'fb', 'pin', etc.) allows getting custom option values.
+						 * UTM attributes are used (but not required) by the WpssoUtil->get_sharing_url() method.
 						 */
-						$atts[ 'opt_pre' ] = isset( $this->p->cf[ 'opt' ][ 'cm_prefix' ][ $id ] ) ?
-							$this->p->cf[ 'opt' ][ 'cm_prefix' ][ $id ] : '';
+						if ( ! empty( $this->p->cf[ 'opt' ][ 'cm_prefix' ][ $id ] ) ) {	// Skip if empty.
 
-						$atts[ 'sharing_url' ] = $this->p->util->get_sharing_url( $mod, $atts[ 'add_page' ], $atts[ 'opt_pre' ] );
+							$opt_pre = $this->p->cf[ 'opt' ][ 'cm_prefix' ][ $id ];
+
+							if ( isset( $this->p->options[ $opt_pre . '_utm_source' ] ) ) {	// Empty is ok.
+
+								$atts[ 'utm_source' ] = $this->p->options[ $opt_pre . '_utm_source' ];
+							}
+						}
 
 						/**
-						 * Filter hook to possibly add custom tracking arguments.
+						 * Backwards compatible filter to add custom tracking arguments.
 						 */
+						$atts[ 'sharing_url' ] = $this->p->util->get_sharing_url( $mod, $atts[ 'add_page' ], $atts );
 						$atts[ 'sharing_url' ] = apply_filters( 'wpsso_rrssb_buttons_shared_url', $atts[ 'sharing_url' ], $mod, $id );
 
 						/**
 						 * Maybe force the protocol to http or https.
 						 */
 						$force_prot = $this->p->options[ 'buttons_force_prot' ];
-
 						$force_prot = apply_filters( 'wpsso_rrssb_buttons_force_prot', $force_prot, $mod, $id, $atts[ 'sharing_url' ] );
 
 						if ( ! empty( $force_prot ) && $force_prot !== 'none' ) {
@@ -542,20 +557,20 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 						/**
 						 * Maybe shorten the sharing URL.
 						 *
-						 * Note that for backwards compatibility, the 'sharing_short_url' value also
-						 * replaces the '%%short_url%%' variable.
+						 * We already have a complete and filtered sharing URL, so we can shorten the URL
+						 * here instead of using the WpssoUtil->get_sharing_short_url() method.
 						 */
 						$atts[ 'sharing_short_url' ] = $this->p->util->shorten_url( $atts[ 'sharing_url' ], $mod );
 
 						/**
-						 * Encode values as URL query arguments.
+						 * Signal to encode values as URL query arguments.
 						 */
 						$atts[ 'rawurlencode' ] = true;
 
 						/**
 						 * Do not terminate with a newline to avoid WordPress adding breaks and paragraphs.
 						 */
-						$buttons_part = $this->share[ $id ]->get_html( $atts, $this->p->options, $mod );
+						$buttons_part = $this->share[ $id ]->get_html( $mod, $atts );
 
 						/**
 						 * Restore the common attributes array.
@@ -675,7 +690,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 		public function get_share_ids( $share = array() ) {
 
-			$share_ids = array();
+			$ids = array();
 
 			if ( empty( $share ) ) {
 
@@ -690,61 +705,43 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			foreach ( $keys as $id ) {
 
-				$share_ids[ $id ] = isset( $share_lib[ $id ] ) ? $share_lib[ $id ] : ucfirst( $id );
+				$ids[ $id ] = isset( $share_lib[ $id ] ) ? $share_lib[ $id ] : ucfirst( $id );
 			}
 
-			return $share_ids;
+			return $ids;
 		}
 
 		public static function get_tweet_text( array $mod, $atts = array(), $opt_pre = 'twitter', $md_pre = 'twitter' ) {
 
 			$wpsso =& Wpsso::get_instance();
 
-			if ( ! isset( $atts[ 'tweet' ] ) ) {	// Just in case.
+			$type  = empty( $wpsso->options[ $opt_pre . '_caption' ] ) ? 'title' : $wpsso->options[ $opt_pre . '_caption' ];
 
-				$atts[ 'use_post' ]     = isset( $atts[ 'use_post' ] ) ? $atts[ 'use_post' ] : true;
-				$atts[ 'add_page' ]     = isset( $atts[ 'add_page' ] ) ? $atts[ 'add_page' ] : true;	// Used by get_canonical_url().
-				$atts[ 'add_hashtags' ] = isset( $atts[ 'add_hashtags' ] ) ? $atts[ 'add_hashtags' ] : true;
+			$max_len = self::get_tweet_max_len( $opt_pre );
 
-				$caption_type = empty( $wpsso->options[ $opt_pre . '_caption' ] ) ? 'title' : $wpsso->options[ $opt_pre . '_caption' ];
+			$add_hashtags  = isset( $wpsso->options[ $opt_pre . '_caption_hashtags' ] ) ? $wpsso->options[ $opt_pre . '_caption_hashtags' ] : true;
 
-				$caption_max_len = self::get_tweet_max_len( $opt_pre );
-
-				$atts[ 'tweet' ] = $wpsso->page->get_caption( $caption_type, $caption_max_len, $mod,
-					$read_cache = true, $atts[ 'add_hashtags' ], $do_encode = false, $md_key = $md_pre . '_desc' );
-			}
-
-			return $atts[ 'tweet' ];
+			return $wpsso->page->get_caption( $type, $max_len, $mod, $read_cache = true, $add_hashtags, $do_encode = false, $md_pre . '_desc' );
 		}
 
-		/**
-		 * $opt_pre can be twitter, buffer, etc.
-		 */
 		public static function get_tweet_max_len( $opt_pre = 'twitter', $num_urls = 1 ) {
 
 			$wpsso =& Wpsso::get_instance();
+
+			$site_len = 0;
 
 			$short_len = 23 * $num_urls;	// Twitter counts 23 characters for any url.
 
 			if ( isset( $wpsso->options[ 'tc_site' ] ) && ! empty( $wpsso->options[ $opt_pre . '_via' ] ) ) {
 
-				$tc_site  = preg_replace( '/^@/', '', $wpsso->options[ 'tc_site' ] );
+				$tc_site = preg_replace( '/^@/', '', $wpsso->options[ 'tc_site' ] );
+
 				$site_len = empty( $tc_site ) ? 0 : strlen( $tc_site ) + 6;
-
-			} else {
-				$site_len = 0;
 			}
 
-			$caption_max_len = $wpsso->options[ $opt_pre . '_caption_max_len' ] - $site_len - $short_len;
+			$max_len = isset( $wpsso->options[ $opt_pre . '_caption_max_len' ] ) ? $wpsso->options[ $opt_pre . '_caption_max_len' ] : 280;
 
-			if ( $wpsso->debug->enabled ) {
-
-				$wpsso->debug->log( 'max tweet length is ' . $caption_max_len . ' chars ' .
-					'(' . $wpsso->options[ $opt_pre . '_caption_max_len' ] . ' less ' . $site_len .
-						' for site name and ' . $short_len . ' for url)' );
-			}
-
-			return $caption_max_len;
+			return $max_len - $site_len - $short_len;
 		}
 
 		private function remove_wp_breaks( array $match ) {

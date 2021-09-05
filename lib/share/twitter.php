@@ -40,6 +40,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTwitter' ) ) {
 				$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
 				'<td>' . $form->get_select( 'twitter_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
+			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_utm_source' ) .
+				$form->get_th_html( _x( 'UTM Source', 'option label', 'wpsso-rrssb' ) ) . 
+				'<td>' . $form->get_input( 'twitter_utm_source' ) . '</td>';
+
 			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_caption' ) .
 				$form->get_th_html( _x( 'Tweet Text Source', 'option label', 'wpsso-rrssb' ) ) . 
 				'<td>' . $form->get_select( 'twitter_caption', $this->p->cf[ 'form' ][ 'caption_types' ] ) . '</td>';
@@ -80,12 +84,13 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 		private static $cf = array(
 			'opt' => array(
 				'defaults' => array(
-					'twitter_button_order'     => 3,
 					'twitter_on_admin_edit'    => 1,
 					'twitter_on_content'       => 1,
 					'twitter_on_excerpt'       => 0,
 					'twitter_on_sidebar'       => 0,
 					'twitter_on_woo_short'     => 1,
+					'twitter_button_order'     => 3,
+					'twitter_utm_source'       => 'twitter',
 					'twitter_caption'          => 'excerpt',
 					'twitter_caption_max_len'  => 280,	// Changed from 140 to 280 on 2017/11/17.
 					'twitter_caption_hashtags' => 3,
@@ -129,59 +134,30 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 		 *
 		 *	'use_post'
 		 *	'add_page'
-		 *	'opt_pre'
 		 *	'sharing_url'
 		 *	'sharing_short_url'
 		 *	'rawurlencode' (true)
-		 *
-		 * Note that for backwards compatibility, the 'sharing_short_url' value also replaces the '%%short_url%%' variable.
 		 */
-		public function get_html( array $atts, array $opts, array $mod ) {
+		public function get_html( $mod, $atts ) {
 
 			if ( $this->p->debug->enabled ) {
 
 				$this->p->debug->mark();
 			}
 
-			if ( ! isset( $atts[ 'add_hashtags' ] ) ) {
+			$atts[ 'tweet' ]    = WpssoRrssbSocial::get_tweet_text( $mod, $atts, $opt_pre = 'twitter', $md_pre = 'twitter' );
+			$atts[ 'hashtags' ] = '';
+			$atts[ 'via' ]      = '';
+			$atts[ 'related' ]  = '';
 
-				$atts[ 'add_hashtags' ] = empty( $this->p->options[ 'twitter_caption_hashtags' ] ) ? false : $this->p->options[ 'twitter_caption_hashtags' ];
+			if ( ! empty( $this->p->options[ 'twitter_via' ] ) ) {
+
+				$atts[ 'via' ] = preg_replace( '/^@/', '', SucomUtil::get_key_value( 'tc_site', $this->p->options ) );
 			}
 
-			if ( ! isset( $atts[ 'tweet' ] ) ) {
+			if ( ! empty( $this->p->options[ 'twitter_rel_author' ] ) && ! empty( $mod[ 'post_author' ] ) && $atts[ 'use_post' ] ) {
 
-				$atts[ 'tweet' ] = WpssoRrssbSocial::get_tweet_text( $mod, $atts, 'twitter', 'twitter' );
-			}
-
-			if ( ! isset( $atts[ 'hashtags' ] ) ) {
-
-				$atts[ 'hashtags' ] = '';
-			}
-
-			if ( ! isset( $atts[ 'via' ] ) ) {
-
-				if ( ! empty( $opts[ 'twitter_via' ] ) ) {
-
-					$atts[ 'via' ] = preg_replace( '/^@/', '', SucomUtil::get_key_value( 'tc_site', $opts ) );
-
-				} else {
-
-					$atts[ 'via' ] = '';
-				}
-			}
-
-			if ( ! isset( $atts[ 'related' ] ) ) {
-
-
-				if ( ! empty( $opts[ 'twitter_rel_author' ] ) && ! empty( $mod[ 'post_author' ] ) && $atts[ 'use_post' ] ) {
-
-
-					$atts[ 'related' ] = preg_replace( '/^@/', '', get_the_author_meta( $opts[ 'plugin_cm_twitter_name' ], $mod[ 'post_author' ] ) );
-
-				} else {
-
-					$atts[ 'related' ] = '';
-				}
+				$atts[ 'related' ] = preg_replace( '/^@/', '', get_the_author_meta( $this->p->options[ 'plugin_cm_twitter_name' ], $mod[ 'post_author' ] ) );
 			}
 
 			/**

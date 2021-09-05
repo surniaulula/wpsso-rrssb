@@ -49,6 +49,9 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 			return $tabs;
 		}
 
+		/**
+		 * Default option values are defined in WpssoRrssbFiltersOptions->filter_get_md_defaults().
+		 */
 		public function filter_post_buttons_rows( $table_rows, $form, $head, $mod ) {
 
 			$def_caption_title = $this->p->page->get_caption( $type = 'title', 0, $mod, true, false );
@@ -58,6 +61,13 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 				'label'    => _x( 'Disable Sharing Buttons', 'option label', 'wpsso-rrssb' ),
 				'tooltip'  => 'rrssb-buttons_disabled',
 				'content'  => $form->get_checkbox( 'buttons_disabled' ),
+			);
+
+			$form_rows[ 'buttons_mtu_campaign' ] = array(
+				'th_class' => 'medium',
+				'label'    => _x( 'MTU Campain', 'option label', 'wpsso-rrssb' ),
+				'tooltip'  => 'rrssb-buttons_mtu_campaign',
+				'content'  => $form->get_input( 'buttons_mtu_campaign' ),
 			);
 
 			/**

@@ -40,6 +40,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareReddit' ) ) {
 				$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
 				'<td>' . $form->get_select( 'reddit_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
+			$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_utm_source' ) .
+				$form->get_th_html( _x( 'UTM Source', 'option label', 'wpsso-rrssb' ) ) . 
+				'<td>' . $form->get_input( 'reddit_utm_source' ) . '</td>';
+
 			$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_caption_max_len' ) .
 				$form->get_th_html( _x( 'Caption Text Length', 'option label', 'wpsso-rrssb' ) ) . 
 				'<td>' . $form->get_input( 'reddit_caption_max_len', $css_class = 'chars' ) . ' ' . 
@@ -62,14 +66,15 @@ if ( ! class_exists( 'WpssoRrssbShareReddit' ) ) {
 		private static $cf = array(
 			'opt' => array(
 				'defaults' => array(
-					'reddit_button_order'     => 6,
-					'reddit_on_admin_edit'    => 1,
-					'reddit_on_content'       => 1,
-					'reddit_on_excerpt'       => 0,
-					'reddit_on_sidebar'       => 0,
-					'reddit_on_woo_short'     => 1,
-					'reddit_caption_max_len'  => 300,
-					'reddit_rrssb_html'       => '<li class="rrssb-reddit">
+					'reddit_on_admin_edit'   => 1,
+					'reddit_on_content'      => 1,
+					'reddit_on_excerpt'      => 0,
+					'reddit_on_sidebar'      => 0,
+					'reddit_on_woo_short'    => 1,
+					'reddit_button_order'    => 6,
+					'reddit_utm_source'      => 'reddit',
+					'reddit_caption_max_len' => 300,
+					'reddit_rrssb_html'      => '<li class="rrssb-reddit">
 	<a href="http://www.reddit.com/submit?url=%%sharing_url%%&title=%%reddit_title%%&text=%%reddit_summary%%">
 		<span class="rrssb-icon">
 			<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
@@ -108,14 +113,11 @@ if ( ! class_exists( 'WpssoRrssbShareReddit' ) ) {
 		 *
 		 *	'use_post'
 		 *	'add_page'
-		 *	'opt_pre'
 		 *	'sharing_url'
 		 *	'sharing_short_url'
 		 *	'rawurlencode' (true)
-		 *
-		 * Note that for backwards compatibility, the 'sharing_short_url' value also replaces the '%%short_url%%' variable.
 		 */
-		public function get_html( array $atts, array $opts, array $mod ) {
+		public function get_html( $mod, $atts ) {
 
 			if ( $this->p->debug->enabled ) {
 
@@ -125,7 +127,7 @@ if ( ! class_exists( 'WpssoRrssbShareReddit' ) ) {
 			$extras = array(
 				'reddit_title' => $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
 					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'reddit_title' ),
-				'reddit_summary' => $this->p->page->get_caption( $type = 'excerpt', $opts[ 'reddit_caption_max_len' ], $mod,
+				'reddit_summary' => $this->p->page->get_caption( $type = 'excerpt', $this->p->options[ 'reddit_caption_max_len' ], $mod,
 					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'reddit_desc' ),
 			);
 

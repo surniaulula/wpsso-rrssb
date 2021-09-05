@@ -40,6 +40,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareVk' ) ) {
 				$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
 				'<td>' . $form->get_select( 'vk_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
+			$table_rows[] = $form->get_tr_hide( 'basic', 'vk_utm_source' ) .
+				$form->get_th_html( _x( 'UTM Source', 'option label', 'wpsso-rrssb' ) ) . 
+				'<td>' . $form->get_input( 'vk_utm_source' ) . '</td>';
+
 			$table_rows[] = $form->get_tr_hide( 'basic', 'vk_rrssb_html' ) . 
 				'<td colspan="2">' . $form->get_textarea( 'vk_rrssb_html', 'button_html code' ) . '</td>';
 
@@ -57,12 +61,13 @@ if ( ! class_exists( 'WpssoRrssbShareVk' ) ) {
 		private static $cf = array(
 			'opt' => array(
 				'defaults' => array(
-					'vk_button_order'  => 9,
 					'vk_on_admin_edit' => 1,
 					'vk_on_content'    => 1,
 					'vk_on_excerpt'    => 0,
 					'vk_on_sidebar'    => 0,
 					'vk_on_woo_short'  => 1,
+					'vk_button_order'  => 9,
+					'vk_utm_source'    => 'vk',
 					'vk_rrssb_html'    => '<li class="rrssb-vk">
 	<a href="http://vk.com/share.php?url=%%sharing_url%%" class="popup">
 		<span class="rrssb-icon">
@@ -101,14 +106,11 @@ if ( ! class_exists( 'WpssoRrssbShareVk' ) ) {
 		 *
 		 *	'use_post'
 		 *	'add_page'
-		 *	'opt_pre'
 		 *	'sharing_url'
 		 *	'sharing_short_url'
 		 *	'rawurlencode' (true)
-		 *
-		 * Note that for backwards compatibility, the 'sharing_short_url' value also replaces the '%%short_url%%' variable.
 		 */
-		public function get_html( array $atts, array $opts, array $mod ) {
+		public function get_html( $mod, $atts ) {
 
 			if ( $this->p->debug->enabled ) {
 

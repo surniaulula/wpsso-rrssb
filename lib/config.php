@@ -17,8 +17,8 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(			// Plugin acronym.
-					'version'     => '7.0.0-dev.5',	// Plugin version.
-					'opt_version' => '37',		// Increment when changing default option values.
+					'version'     => '7.0.0-dev.6',	// Plugin version.
+					'opt_version' => '39',		// Increment when changing default option values.
 					'short'       => 'WPSSO RRSSB',	// Short plugin name.
 					'name'        => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
 					'desc'        => 'Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, templates, and editor.',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '8.38.0-dev.5',
+							'min_version'   => '8.38.0-dev.6',
 						),
 					),
 
@@ -108,13 +108,14 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					 */
 					'buttons_on_archive'        => 0,
 					'buttons_on_front'          => 0,
-					'buttons_add_to_post'       => 1,
-					'buttons_add_to_page'       => 1,
 					'buttons_add_to_attachment' => 1,
+					'buttons_add_to_page'       => 1,
+					'buttons_add_to_post'       => 1,
 					'buttons_pos_content'       => 'bottom',
 					'buttons_pos_excerpt'       => 'bottom',
 					'buttons_pos_bblog_post'    => 'bottom',
-					'buttons_force_prot'        => '',
+					'buttons_force_prot'        => 'none',
+					'buttons_utm_medium'        => 'social',
 
 					/**
 					 * Responsive Styles
@@ -122,9 +123,9 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'buttons_use_social_style'      => 1,
 					'buttons_enqueue_social_style'  => 1,
 					'buttons_css_rrssb-admin_edit'  => '',
-					'buttons_css_rrssb-content'     => '',		// post/page content
-					'buttons_css_rrssb-excerpt'     => '',		// post/page excerpt
-					'buttons_css_rrssb-sharing'     => '',		// all buttons
+					'buttons_css_rrssb-content'     => '',
+					'buttons_css_rrssb-excerpt'     => '',
+					'buttons_css_rrssb-sharing'     => '',
 					'buttons_css_rrssb-shortcode'   => '',
 					'buttons_css_rrssb-sidebar'     => '',
 					'buttons_css_rrssb-widget'      => '',
@@ -154,11 +155,6 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'top'    => 'Top',
 					'bottom' => 'Bottom',
 					'both'   => 'Top and Bottom',
-				),
-				'platform' => array(
-					'desktop' => 'Desktop Only',
-					'mobile'  => 'Mobile Only',
-					'any'     => 'Any Platform',
 				),
 			),
 		);

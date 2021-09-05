@@ -40,6 +40,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareEmail' ) ) {
 				$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
 				'<td>' . $form->get_select( 'email_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
+			$table_rows[] = $form->get_tr_hide( 'basic', 'email_utm_source' ) .
+				$form->get_th_html( _x( 'UTM Source', 'option label', 'wpsso-rrssb' ) ) . 
+				'<td>' . $form->get_input( 'email_utm_source' ) . '</td>';
+
 			$table_rows[] = $form->get_tr_hide( 'basic', 'email_caption_max_len' ) . 
 				$form->get_th_html( _x( 'Email Message Length', 'option label', 'wpsso-rrssb' ) ) . 
 				'<td>' . $form->get_input( 'email_caption_max_len', $css_class = 'chars' ) . ' ' . 
@@ -62,12 +66,13 @@ if ( ! class_exists( 'WpssoRrssbShareEmail' ) ) {
 		private static $cf = array(
 			'opt' => array(
 				'defaults' => array(
-					'email_button_order'     => 1,
 					'email_on_admin_edit'    => 1,
 					'email_on_content'       => 1,
 					'email_on_excerpt'       => 0,
 					'email_on_sidebar'       => 0,
 					'email_on_woo_short'     => 1,
+					'email_button_order'     => 1,
+					'email_utm_source'       => 'email',
 					'email_caption_max_len'  => 500,
 					'email_rrssb_html'       => '<li class="rrssb-email">
 	<a href="mailto:?subject=Share:%20%%email_title%%&body=%%email_excerpt%%%0D%0A%0D%0AShared%20from%20%%sharing_url%%%0D%0A">
@@ -107,14 +112,13 @@ if ( ! class_exists( 'WpssoRrssbShareEmail' ) ) {
 		 *
 		 *	'use_post'
 		 *	'add_page'
-		 *	'opt_pre'
 		 *	'sharing_url'
 		 *	'sharing_short_url'
 		 *	'rawurlencode' (true)
 		 *
 		 * Note that for backwards compatibility, the 'sharing_short_url' value also replaces the '%%short_url%%' variable.
 		 */
-		public function get_html( array $atts, array $opts, array $mod ) {
+		public function get_html( $mod, $atts ) {
 
 			if ( $this->p->debug->enabled ) {
 
@@ -124,7 +128,7 @@ if ( ! class_exists( 'WpssoRrssbShareEmail' ) ) {
 			$extras = array(
 				'email_title' => $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
 					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'email_title' ),
-				'email_excerpt' => $this->p->page->get_caption( $type = 'both', $opts[ 'email_caption_max_len' ], $mod,
+				'email_excerpt' => $this->p->page->get_caption( $type = 'both', $this->p->options[ 'email_caption_max_len' ], $mod,
 					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'email_desc' ),
 			);
 

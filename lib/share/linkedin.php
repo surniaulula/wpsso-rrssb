@@ -40,6 +40,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareLinkedin' ) ) {
 				$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
 				'<td>' . $form->get_select( 'linkedin_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
+			$table_rows[] = $form->get_tr_hide( 'basic', 'linkedin_utm_source' ) .
+				$form->get_th_html( _x( 'UTM Source', 'option label', 'wpsso-rrssb' ) ) . 
+				'<td>' . $form->get_input( 'linkedin_utm_source' ) . '</td>';
+
 			$table_rows[] = $form->get_tr_hide( 'basic', 'linkedin_caption_max_len' ) . 
 				$form->get_th_html( _x( 'Caption Text Length', 'option label', 'wpsso-rrssb' ) ) . 
 				'<td>' . $form->get_input( 'linkedin_caption_max_len', $css_class = 'chars' ) . ' ' . 
@@ -62,12 +66,13 @@ if ( ! class_exists( 'WpssoRrssbShareLinkedin' ) ) {
 		private static $cf = array(
 			'opt' => array(
 				'defaults' => array(
-					'linkedin_button_order'     => 5,
 					'linkedin_on_admin_edit'    => 1,
 					'linkedin_on_content'       => 1,
 					'linkedin_on_excerpt'       => 0,
 					'linkedin_on_sidebar'       => 0,
 					'linkedin_on_woo_short'     => 1,
+					'linkedin_button_order'     => 5,
+					'linkedin_utm_source'       => 'linkedin',
 					'linkedin_caption_max_len'  => 300,
 					'linkedin_rrssb_html'       => '<li class="rrssb-linkedin">
 	<a href="http://www.linkedin.com/shareArticle?mini=true&url=%%sharing_url%%&title=%%linkedin_title%%&summary=%%linkedin_caption%%" class="popup">
@@ -107,14 +112,13 @@ if ( ! class_exists( 'WpssoRrssbShareLinkedin' ) ) {
 		 *
 		 *	'use_post'
 		 *	'add_page'
-		 *	'opt_pre'
 		 *	'sharing_url'
 		 *	'sharing_short_url'
 		 *	'rawurlencode' (true)
 		 *
 		 * Note that for backwards compatibility, the 'sharing_short_url' value also replaces the '%%short_url%%' variable.
 		 */
-		public function get_html( array $atts, array $opts, array $mod ) {
+		public function get_html( $mod, $atts ) {
 
 			if ( $this->p->debug->enabled ) {
 
@@ -124,7 +128,7 @@ if ( ! class_exists( 'WpssoRrssbShareLinkedin' ) ) {
 			$extras = array(
 		 		'linkedin_title' => $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
 					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'linkedin_title' ),
-				'linkedin_caption' => $this->p->page->get_caption( $type = 'excerpt', $opts[ 'linkedin_caption_max_len' ], $mod,
+				'linkedin_caption' => $this->p->page->get_caption( $type = 'excerpt', $this->p->options[ 'linkedin_caption_max_len' ], $mod,
 					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'linkedin_desc' ),
 			);
 

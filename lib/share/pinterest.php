@@ -40,6 +40,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 				$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
 				'<td>' . $form->get_select( 'pin_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
+			$table_rows[] = $form->get_tr_hide( 'basic', 'pin_utm_source' ) .
+				$form->get_th_html( _x( 'UTM Source', 'option label', 'wpsso-rrssb' ) ) . 
+				'<td>' . $form->get_input( 'pin_utm_source' ) . '</td>';
+
 			$table_rows[] = $form->get_tr_hide( 'basic', 'pin_caption_max_len' ) . 
 				$form->get_th_html( _x( 'Caption Text Length', 'option label', 'wpsso-rrssb' ) ) . 
 				'<td>' . $form->get_input( 'pin_caption_max_len', $css_class = 'chars' ) . ' ' . 
@@ -62,12 +66,13 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 		private static $cf = array(
 			'opt' => array(
 				'defaults' => array(
-					'pin_button_order'     => 4,
 					'pin_on_admin_edit'    => 1,
 					'pin_on_content'       => 1,
 					'pin_on_excerpt'       => 0,
 					'pin_on_sidebar'       => 0,
 					'pin_on_woo_short'     => 1,
+					'pin_button_order'     => 4,
+					'pin_utm_source'       => 'pinterest',
 					'pin_caption_max_len'  => 300,
 					'pin_rrssb_html'       => '<li class="rrssb-pinterest">
 	<a href="http://pinterest.com/pin/create/button/?url=%%sharing_url%%&media=%%media_url%%&description=%%pinterest_caption%%" class="popup">
@@ -113,14 +118,13 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 		 *
 		 *	'use_post'
 		 *	'add_page'
-		 *	'opt_pre'
 		 *	'sharing_url'
 		 *	'sharing_short_url'
 		 *	'rawurlencode' (true)
 		 *
 		 * Note that for backwards compatibility, the 'sharing_short_url' value also replaces the '%%short_url%%' variable.
 		 */
-		public function get_html( array $atts, array $opts, array $mod ) {
+		public function get_html( $mod, $atts ) {
 
 			if ( $this->p->debug->enabled ) {
 
@@ -177,7 +181,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 
 			$extras = array(
 				'media_url' => $atts[ 'photo' ],
-				'pinterest_caption' => $this->p->page->get_caption( $type = 'excerpt', $opts[ 'pin_caption_max_len' ], $mod,
+				'pinterest_caption' => $this->p->page->get_caption( $type = 'excerpt', $this->p->options[ 'pin_caption_max_len' ], $mod,
 					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = array ( 'pin_desc', 'p_img_desc', 'og_desc' ) ),
 			);
 

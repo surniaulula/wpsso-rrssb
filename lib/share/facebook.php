@@ -39,6 +39,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareFacebook' ) ) {
 				$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
 				'<td>' . $form->get_select( 'fb_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
+			$table_rows[] = $form->get_tr_hide( 'basic', 'fb_utm_source' ) .
+				$form->get_th_html( _x( 'UTM Source', 'option label', 'wpsso-rrssb' ) ) . 
+				'<td>' . $form->get_input( 'fb_utm_source' ) . '</td>';
+
 			$table_rows[] = $form->get_tr_hide( 'basic', 'fb_rrssb_html' ) . 
 				'<td colspan="2">' . $form->get_textarea( 'fb_rrssb_html', 'button_html code' ) . '</td>';
 
@@ -56,12 +60,13 @@ if ( ! class_exists( 'WpssoRrssbShareFacebook' ) ) {
 		private static $cf = array(
 			'opt' => array(
 				'defaults' => array(
-					'fb_button_order'  => 2,
 					'fb_on_admin_edit' => 1,
 					'fb_on_content'    => 1,
 					'fb_on_excerpt'    => 0,
 					'fb_on_sidebar'    => 0,
 					'fb_on_woo_short'  => 1,
+					'fb_button_order'  => 2,
+					'fb_utm_source'    => 'facebook',
 					'fb_rrssb_html'    => '<li class="rrssb-facebook">
 	<a href="https://www.facebook.com/sharer/sharer.php?u=%%sharing_url%%" class="popup">
 		<span class="rrssb-icon">
@@ -100,14 +105,13 @@ if ( ! class_exists( 'WpssoRrssbShareFacebook' ) ) {
 		 *
 		 *	'use_post'
 		 *	'add_page'
-		 *	'opt_pre'
 		 *	'sharing_url'
 		 *	'sharing_short_url'
 		 *	'rawurlencode' (true)
 		 *
 		 * Note that for backwards compatibility, the 'sharing_short_url' value also replaces the '%%short_url%%' variable.
 		 */
-		public function get_html( array $atts, array $opts, array $mod ) {
+		public function get_html( $mod, $atts ) {
 
 			if ( $this->p->debug->enabled ) {
 

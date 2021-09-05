@@ -43,6 +43,14 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 			switch ( $base_key ) {
 
 				/**
+				 * Options that cannot be blank.
+				 */
+				case 'buttons_force_prot':
+				case ( preg_match( '/^buttons_pos_/', $base_key ) ? true : false ):
+
+					return 'not_blank';
+
+				/**
 				 * Integer options that must be 1 or more (not zero).
 				 */
 				case ( preg_match( '/_button_order$/', $base_key ) ? true : false ):
@@ -50,10 +58,16 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 					return 'pos_int';
 
 				/**
+				 * Text strings that can be blank (line breaks are removed).
+				 */
+				case ( preg_match( '/_(desc|title)$/', $base_key ) ? true : false ):
+
+					return 'one_line';
+
+				/**
 				 * Text strings that can be blank.
 				 */
-				case 'buttons_force_prot':
-				case ( preg_match( '/_(desc|title)$/', $base_key ) ? true : false ):
+				case ( preg_match( '/^buttons_css_/', $base_key ) ? true : false ):	// Use the tool page to reload the default CSS.
 
 					return 'ok_blank';
 			}
@@ -165,17 +179,18 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 		public function filter_get_md_defaults( $md_defs ) {
 
 			return array_merge( $md_defs, array(
-				'email_title'      => '',	// Email Subject
-				'email_desc'       => '',	// Email Message
-				'twitter_desc'     => '',	// Tweet Text
-				'pin_desc'         => '',	// Pinterest Caption
-				'linkedin_title'   => '',	// LinkedIn Title
-				'linkedin_desc'    => '',	// LinkedIn Caption
-				'reddit_title'     => '',	// Reddit Title
-				'reddit_desc'      => '',	// Reddit Caption
-				'tumblr_title'     => '',	// Tumblr Title
-				'tumblr_desc'      => '',	// Tumblr Caption
-				'buttons_disabled' => 0,	// Disable Sharing Buttons
+				'buttons_disabled'     => 0,	// Disable Sharing Buttons.
+				'buttons_mtu_campaign' => '',	// MTU Campain.
+				'email_title'          => '',	// Email Subject.
+				'email_desc'           => '',	// Email Message.
+				'twitter_desc'         => '',	// Tweet Text.
+				'pin_desc'             => '',	// Pinterest Caption.
+				'linkedin_title'       => '',	// LinkedIn Title.
+				'linkedin_desc'        => '',	// LinkedIn Caption.
+				'reddit_title'         => '',	// Reddit Title.
+				'reddit_desc'          => '',	// Reddit Caption.
+				'tumblr_title'         => '',	// Tumblr Title.
+				'tumblr_desc'          => '',	// Tumblr Caption.
 			) );
 		}
 	}

@@ -27,6 +27,3 @@ _x( 'Widget', 'option value', 'wpsso-rrssb' );
 _x( 'Top', 'option value', 'wpsso-rrssb' );
 _x( 'Bottom', 'option value', 'wpsso-rrssb' );
 _x( 'Top and Bottom', 'option value', 'wpsso-rrssb' );
-_x( 'Desktop Only', 'option value', 'wpsso-rrssb' );
-_x( 'Mobile Only', 'option value', 'wpsso-rrssb' );
-_x( 'Any Platform', 'option value', 'wpsso-rrssb' );

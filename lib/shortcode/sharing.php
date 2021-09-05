@@ -208,7 +208,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 			unset ( $atts[ 'buttons' ] );
 
-			$buttons_html = $rrssb->social->get_html( $ids, $atts, $mod );	// Returns html or an empty string.
+			$buttons_html = $rrssb->social->get_html( $ids, $mod, $atts );
 
 			if ( ! empty( $buttons_html ) ) {
 

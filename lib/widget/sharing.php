@@ -78,7 +78,7 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 
 			ksort( $sorted_ids );
 
-			$buttons_html = $rrssb->social->get_html( $sorted_ids, $atts, $mod );	// Returns html or an empty string.
+			$buttons_html = $rrssb->social->get_html( $sorted_ids, $mod, $atts );
 
 			if ( ! empty( $buttons_html ) ) {
 

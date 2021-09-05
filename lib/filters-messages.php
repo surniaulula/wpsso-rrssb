@@ -204,12 +204,6 @@ aside.widget
 
 			switch ( $msg_key ) {
 
-				case ( strpos( $msg_key, 'tooltip-buttons_pos_' ) === false ? false : true ):
-
-					$text = sprintf( __( 'Social sharing buttons can be added to the top, bottom, or both. Each sharing button must also be enabled below (see the <em>%s</em> options).', 'wpsso-rrssb' ), _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) );
-
-					break;
-
 				case 'tooltip-buttons_on_archive':
 
 					$text = __( 'Add social sharing buttons to each post on an archive webpage (blog front page, category, etc.).', 'wpsso-rrssb' );
@@ -218,19 +212,37 @@ aside.widget
 
 				case 'tooltip-buttons_on_front':
 
-					$text = __( 'If a static page has been selected for your homepage, you can add social sharing buttons to that static page as well (default is unchecked).', 'wpsso-rrssb' );
+					$text = __( 'If a static page has been selected for your homepage, you can add social sharing buttons to that static page as well.', 'wpsso-rrssb' );
 
 					break;
 
 				case 'tooltip-buttons_add_to':
 
-					$text = __( 'Enabled social sharing buttons are added to the Post, Page, Media, and Product webpages by default. If your theme (or another plugin) supports additional custom post types, and you would like to include social sharing buttons on these webpages, check the appropriate option(s) here.', 'wpsso-rrssb' );
+					$text = __( 'Social sharing buttons are added to posts, pages, and attachment webpages by default.', 'wpsso-rrssb' ) . ' ';
+					
+					$text .= __( 'If your theme (or another plugin) supports additional custom post types, and you would like to include social sharing buttons on these webpages, check the associated options here.', 'wpsso-rrssb' );
 
 					break;
 
-				case 'tooltip-buttons_force_prot':
+				case ( strpos( $msg_key, 'tooltip-buttons_pos_' ) === false ? false : true ):	// Position in Content and Excerpt.
 
-					$text = __( 'Modify URLs shared by the sharing buttons to use a specific protocol.', 'wpsso-rrssb' );
+					$text = __( 'Social sharing buttons can be added to the top, bottom, or both locations in the text.', 'wpsso-rrssb' ) . ' ';
+					
+					$text .= sprintf( __( 'The <em>%s</em> option of each social sharing button must be enabled as well for that button to appear in that location in the text.', 'wpsso-rrssb' ), _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) );
+
+					break;
+
+				case 'tooltip-buttons_force_prot':	// Force Protocol for Shared URLs.
+
+					$text = __( 'Force the selected protocol for all shared URLs, or select none to keep the protocol as-is.', 'wpsso-rrssb' );
+
+					break;
+
+				case 'tooltip-buttons_utm_medium':	// UTM Medium.
+
+					$text = __( 'Identifies the medium a visitor followed to your website when clicking a shared link.', 'wpsso-rrssb' ) . ' ';
+
+					$text .= __( 'Common UTM medium values are "social", "email" or "cpc".', 'wpsso-rrssb' );
 
 					break;
 
@@ -238,13 +250,19 @@ aside.widget
 
 					$sharing_css_url = WpssoRrssbSocial::get_sharing_css_url();
 
-					$text = sprintf( __( 'Add the CSS of all <em>%1$s</em> to webpages (default is checked). The CSS will be <strong>minified</strong>, and saved to a single stylesheet with a URL of <a href="%2$s">%3$s</a>. The minified stylesheet can be enqueued or added directly to the webpage HTML.', 'wpsso-rrssb' ), _x( 'Responsive Styles', 'lib file description', 'wpsso-rrssb' ), $sharing_css_url, $sharing_css_url );
+					$text = sprintf( __( 'Combine and include the CSS of all <em>%s</em> in webpages.', 'wpsso-rrssb' ), _x( 'Responsive Styles', 'lib file description', 'wpsso-rrssb' ) ) . ' ';
+					
+					$text .= sprintf( __( 'The combined CSS will be minified and saved into a single stylesheet with a URL of <a href="%1$s">%2$s</a>.', 'wpsso-rrssb' ), $sharing_css_url, $sharing_css_url ) . ' ';
+
+					$text .= __( 'The minified stylesheet can be enqueued, or included directly in the webpage HTML.', 'wpsso-rrssb' );
 
 					break;
 
 				case 'tooltip-buttons_enqueue_social_style':
 
-					$text = __( 'Have WordPress enqueue the social stylesheet instead of adding the CSS to in the webpage HTML (default is unchecked). Enqueueing the stylesheet may be desirable if you use a plugin to concatenate all enqueued styles into a single stylesheet URL.', 'wpsso-rrssb' );
+					$text = __( 'Have WordPress enqueue the social stylesheet instead, of including the CSS in the webpage HTML.', 'wpsso-rrssb' ) . ' ';
+					
+					$text .= __( 'Enqueueing the stylesheet may be desirable if you use an optimization plugin to concatenate all enqueued styles into a single stylesheet.', 'wpsso-rrssb' );
 
 					break;
 

@@ -32,20 +32,24 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTumblr' ) ) {
 
 		public function filter_rrssb_share_tumblr_rows( $table_rows, $form, $submenu ) {
 
-			$table_rows[ 'tumblr_show_on' ] = '' .
+			$table_rows[] = '' .
 				$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
 				'<td>' . $submenu->show_on_checkboxes( 'tumblr' ) . '</td>';
 
-			$table_rows[ 'tumblr_button_order' ] = '' .
+			$table_rows[] = '' .
 				$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
 				'<td>' . $form->get_select( 'tumblr_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
-			$table_rows[ 'tumblr_caption_max_len' ] = $form->get_tr_hide( 'basic', 'tumblr_caption_max_len' ) . 
+			$table_rows[] = $form->get_tr_hide( 'basic', 'tumblr_utm_source' ) .
+				$form->get_th_html( _x( 'UTM Source', 'option label', 'wpsso-rrssb' ) ) . 
+				'<td>' . $form->get_input( 'tumblr_utm_source' ) . '</td>';
+
+			$table_rows[] = $form->get_tr_hide( 'basic', 'tumblr_caption_max_len' ) . 
 				$form->get_th_html( _x( 'Summary Text Length', 'option label', 'wpsso-rrssb' ) ) . 
 				'<td>' . $form->get_input( 'tumblr_caption_max_len', $css_class = 'chars' ) . ' ' . 
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
-			$table_rows[ 'tumblr_rrssb_html' ] = $form->get_tr_hide( 'basic', 'tumblr_rrssb_html' ) . 
+			$table_rows[] = $form->get_tr_hide( 'basic', 'tumblr_rrssb_html' ) . 
 				'<td colspan="2">' . $form->get_textarea( 'tumblr_rrssb_html', 'button_html code' ) . '</td>';
 
 			return $table_rows;
@@ -62,12 +66,13 @@ if ( ! class_exists( 'WpssoRrssbShareTumblr' ) ) {
 		private static $cf = array(
 			'opt' => array(
 				'defaults' => array(
-					'tumblr_button_order'     => 8,
 					'tumblr_on_admin_edit'    => 1,
 					'tumblr_on_content'       => 1,
 					'tumblr_on_excerpt'       => 0,
 					'tumblr_on_sidebar'       => 0,
 					'tumblr_on_woo_short'     => 1,
+					'tumblr_button_order'     => 8,
+					'tumblr_utm_source'       => 'tumblr',
 					'tumblr_caption_max_len'  => 300,
 					'tumblr_rrssb_html'       => '<li class="rrssb-tumblr">
 	<a href="http://tumblr.com/share/link?url=%%sharing_url%%&name=%%tumblr_title%%&description=%%tumblr_summary%%" class="popup">
@@ -107,14 +112,11 @@ if ( ! class_exists( 'WpssoRrssbShareTumblr' ) ) {
 		 *
 		 *	'use_post'
 		 *	'add_page'
-		 *	'opt_pre'
 		 *	'sharing_url'
 		 *	'sharing_short_url'
 		 *	'rawurlencode' (true)
-		 *
-		 * Note that for backwards compatibility, the 'sharing_short_url' value also replaces the '%%short_url%%' variable.
 		 */
-		public function get_html( array $atts, array $opts, array $mod ) {
+		public function get_html( $mod, $atts ) {
 
 			if ( $this->p->debug->enabled ) {
 
@@ -124,7 +126,7 @@ if ( ! class_exists( 'WpssoRrssbShareTumblr' ) ) {
 			$extras = array(
 				'tumblr_title' => $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
 					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'tumblr_title' ),
-				'tumblr_summary' => $this->p->page->get_caption( $type = 'excerpt', $opts[ 'tumblr_caption_max_len' ], $mod,
+				'tumblr_summary' => $this->p->page->get_caption( $type = 'excerpt', $this->p->options[ 'tumblr_caption_max_len' ], $mod,
 					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'tumblr_desc' ),
 			);
 

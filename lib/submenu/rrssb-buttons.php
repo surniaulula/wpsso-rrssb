@@ -143,15 +143,19 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 
 			if ( empty( $metabox_tabs ) ) {
 
-				$this->p->util->metabox->do_table( apply_filters( 'wpsso_' . $metabox_id . '_' . $callback_args[ 'share_id' ] . '_rows',
-					array(), $this->form, $this ), 'metabox-' . $metabox_id . '-' . $callback_args[ 'share_id' ], 'metabox-' . $metabox_id );
+				$filter_name     = 'wpsso_' . $metabox_id . '_' . $callback_args[ 'share_id' ] . '_rows';
+				$class_href_key  = 'metabox-' . $metabox_id . '-' . $callback_args[ 'share_id' ];
+				$class_tabset_mb = 'metabox-' . $metabox_id;
+
+				$this->p->util->metabox->do_table( apply_filters( $filter_name, array(), $this->form, $this ), $class_href_key, $class_tabset_mb );
 
 			} else {
 
 				foreach ( $metabox_tabs as $tab => $title ) {
 
-					$table_rows[ $tab ] = apply_filters( 'wpsso_' . $metabox_id . '_' . $callback_args[ 'share_id' ] . '_' . $tab . '_rows',
-						array(), $this->form, $this );
+					$filter_name = 'wpsso_' . $metabox_id . '_' . $callback_args[ 'share_id' ] . '_' . $tab . '_rows';
+
+					$table_rows[ $tab ] = apply_filters( $filter_name, array(), $this->form, $this );
 				}
 
 				$this->p->util->metabox->do_tabbed( $metabox_id . '_' . $callback_args[ 'share_id' ], $metabox_tabs, $table_rows );
@@ -194,8 +198,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 					$table_rows[ 'buttons_force_prot' ] = $this->form->get_tr_hide( 'basic', 'buttons_force_prot' ) .
 						$this->form->get_th_html( _x( 'Force Protocol for Shared URLs', 'option label', 'wpsso-rrssb' ),
 							$css_class = '', $css_id = 'buttons_force_prot' ) . 
-						'<td>' . $this->form->get_select( 'buttons_force_prot',
-							array_merge( array( '' => 'none' ), $this->p->cf[ 'sharing' ][ 'force_prot' ] ) ) . '</td>';
+						'<td>' . $this->form->get_select_none( 'buttons_force_prot', $this->p->cf[ 'sharing' ][ 'force_prot' ] ) . '</td>';
+
+					$table_rows[ 'buttons_utm_medium' ] = $this->form->get_tr_hide( 'basic', 'buttons_utm_medium' ) .
+						$this->form->get_th_html( _x( 'UTM Medium', 'option label', 'wpsso-rrssb' ),
+							$css_class = '', $css_id = 'buttons_utm_medium' ) . 
+						'<td>' . $this->form->get_input( 'buttons_utm_medium' ) . '</td>';
 
 					break;
 			}
