@@ -190,8 +190,11 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				return '<!-- ' . $this->shortcode_name . ' shortcode: no buttons attribute -->' . "\n\n";
 			}
 
-			$atts[ 'use_post' ]  = SucomUtil::sanitize_use_post( $atts, true );
-			$atts[ 'css_class' ] = SucomUtil::sanitize_css_class( empty( $atts[ 'css_class' ] ) ? 'rrssb-shortcode' : $atts[ 'css_class' ] );
+			$ids = array_map( 'trim', explode( ',', $atts[ 'buttons' ] ) );
+
+			unset ( $atts[ 'buttons' ] );
+
+			$atts[ 'use_post' ] = SucomUtil::sanitize_use_post( $atts, $default = true );
 
 			if ( $this->p->debug->enabled ) {
 
@@ -200,23 +203,19 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 			$mod = $this->p->page->get_mod( $atts[ 'use_post' ] );
 
-			$type = 'sharing_shortcode_' . $this->shortcode_name;
-
-			$atts[ 'url' ] = empty( $atts[ 'url' ] ) ? $this->p->util->get_canonical_url( $mod ) : $atts[ 'url' ];
-
-			$ids = array_map( 'trim', explode( ',', $atts[ 'buttons' ] ) );
-
-			unset ( $atts[ 'buttons' ] );
+			$atts[ 'utm_content' ] = 'wpsso-rrssb-shortcode';
+			$atts[ 'sharing_url' ] = empty( $atts[ 'url' ] ) ? $this->p->util->get_sharing_url( $mod, $atts ) : $atts[ 'url' ];
+			$atts[ 'css_class' ]   = empty( $atts[ 'css_class' ] ) ? 'rrssb-shortcode' : SucomUtil::sanitize_css_class( $atts[ 'css_class' ] );
 
 			$buttons_html = $rrssb->social->get_html( $ids, $mod, $atts );
 
 			if ( ! empty( $buttons_html ) ) {
 
-				$buttons_html = "\n" . '<!-- wpsso ' . $type . ' begin -->' . "\n" .
+				$buttons_html = "\n" . '<!-- wpsso rrssb shortcode begin -->' . "\n" .
 					'<div class="wpsso-rrssb wpsso-' . $atts[ 'css_class' ] . '">' . "\n" . 
 					$buttons_html . "\n" . 	// Buttons html is trimmed, so add a newline.
 					'</div><!-- .wpsso-' . $atts[ 'css_class' ] . ' -->' . "\n" . 
-					'<!-- wpsso ' . $type . ' end -->' . "\n\n";
+					'<!-- wpsso rrssb shortcode end -->' . "\n\n";
 			}
 
 			return $buttons_html;

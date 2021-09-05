@@ -61,8 +61,6 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 
 			$mod = $this->p->page->get_mod( $atts[ 'use_post' ] );
 
-			$type = 'sharing_widget_' . $this->id;
-
 			/**
 			 * Sort enabled sharing buttons by their preferred order.
 			 */
@@ -77,6 +75,8 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 			}
 
 			ksort( $sorted_ids );
+
+			$atts[ 'utm_content' ] = 'wpsso-rrssb-widget-' . sanitize_title_with_dashes( $this->id_base );
 
 			$buttons_html = $rrssb->social->get_html( $sorted_ids, $mod, $atts );
 

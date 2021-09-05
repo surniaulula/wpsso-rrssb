@@ -398,7 +398,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			 * UTM attributes are used (but not required) by the WpssoUtil->get_sharing_url() method.
 			 */
 			$atts[ 'use_post' ]    = $mod[ 'use_post' ];
-			$atts[ 'utm_content' ] = sanitize_title_with_dashes( $type . '-' . $location );
+			$atts[ 'utm_content' ] = 'wpsso-rrssb-' . sanitize_title_with_dashes( $type . '-' . $location );
 
 			$buttons_html = $this->get_html( $sorted_ids, $mod, $atts );
 
@@ -494,9 +494,9 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			 *
 			 * UTM attributes are used (but not required) by the WpssoUtil->get_sharing_url() method.
 			 */
-			$atts[ 'use_post' ]    = isset( $atts[ 'use_post' ] ) ? $atts[ 'use_post' ] : true;
-			$atts[ 'add_page' ]    = isset( $atts[ 'add_page' ] ) ? $atts[ 'add_page' ] : true;
-			$atts[ 'utm_medium' ]  = isset( $this->p->options[ 'buttons_utm_medium' ] ) ? $this->p->options[ 'buttons_utm_medium' ] : '';
+			$atts[ 'use_post' ]   = isset( $atts[ 'use_post' ] ) ? $atts[ 'use_post' ] : true;
+			$atts[ 'add_page' ]   = isset( $atts[ 'add_page' ] ) ? $atts[ 'add_page' ] : true;
+			$atts[ 'utm_medium' ] = isset( $this->p->options[ 'buttons_utm_medium' ] ) ? $this->p->options[ 'buttons_utm_medium' ] : '';
 
 			/**
 			 * The $mod array argument is preferred but not required.
@@ -540,18 +540,21 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 						/**
 						 * Backwards compatible filter to add custom tracking arguments.
 						 */
-						$atts[ 'sharing_url' ] = $this->p->util->get_sharing_url( $mod, $atts[ 'add_page' ], $atts );
-						$atts[ 'sharing_url' ] = apply_filters( 'wpsso_rrssb_buttons_shared_url', $atts[ 'sharing_url' ], $mod, $id );
+						if ( empty( $atts[ 'sharing_url' ] ) ) {	// A shortcode may already provide a sharing URL.
 
-						/**
-						 * Maybe force the protocol to http or https.
-						 */
-						$force_prot = $this->p->options[ 'buttons_force_prot' ];
-						$force_prot = apply_filters( 'wpsso_rrssb_buttons_force_prot', $force_prot, $mod, $id, $atts[ 'sharing_url' ] );
+							$atts[ 'sharing_url' ] = $this->p->util->get_sharing_url( $mod, $atts[ 'add_page' ], $atts );
+							$atts[ 'sharing_url' ] = apply_filters( 'wpsso_rrssb_buttons_shared_url', $atts[ 'sharing_url' ], $mod, $id );
 
-						if ( ! empty( $force_prot ) && $force_prot !== 'none' ) {
+							/**
+							 * Maybe force the protocol to http or https.
+							 */
+							$force_prot = $this->p->options[ 'buttons_force_prot' ];
+							$force_prot = apply_filters( 'wpsso_rrssb_buttons_force_prot', $force_prot, $mod, $id, $atts[ 'sharing_url' ] );
 
-							$atts[ 'sharing_url' ] = preg_replace( '/^.*:\/\//', $force_prot . '://', $atts[ 'sharing_url' ] );
+							if ( ! empty( $force_prot ) && $force_prot !== 'none' ) {
+
+								$atts[ 'sharing_url' ] = preg_replace( '/^.*:\/\//', $force_prot . '://', $atts[ 'sharing_url' ] );
+							}
 						}
 
 						/**
