@@ -124,7 +124,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 		 *	'sharing_short_url'
 		 *	'rawurlencode' (true)
 		 *
-		 * Note that for backwards compatibility, the 'sharing_short_url' value also replaces the '%%short_url%%' variable.
+		 * Note that the $atts array may include additional user input from the RRSSB shortcode attributes.
 		 */
 		public function get_html( $mod, $atts ) {
 
@@ -133,10 +133,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 				$this->p->debug->mark();
 			}
 
-			if ( empty( $atts[ 'size' ] ) ) {
-
-				$atts[ 'size' ] = 'wpsso-pinterest';
-			}
+			$size_name = 'wpsso-pinterest';
 
 			if ( ! empty( $atts[ 'pid' ] ) ) {
 
@@ -147,7 +144,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 					$atts[ 'cropped' ],
 					$atts[ 'pid' ],
 					$atts[ 'alt' ]
-				) = $this->p->media->get_attachment_image_src( $atts[ 'pid' ], $atts[ 'size' ], $check_dupes = false );
+				) = $this->p->media->get_attachment_image_src( $atts[ 'pid' ], $size_name, $check_dupes = false );
 
 				if ( $this->p->debug->enabled ) {
 
@@ -159,13 +156,13 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 
 				$media_request = array( 'img_url', 'prev_url' );
 
-				$media_info = $this->p->og->get_media_info( $atts[ 'size' ], $media_request, $mod, $md_pre = array( 'p', 'schema', 'og' ) );
+				$media_info = $this->p->og->get_media_info( $size_name, $media_request, $mod, $md_pre = array( 'p', 'schema', 'og' ) );
 
 				if ( ! empty( $media_info[ 'img_url' ] ) ) {
 
 					$atts[ 'photo' ] = $media_info[ 'img_url' ];
 
-				} elseif ( ! empty( $media_info[ 'prev_url' ] ) ) {
+				} elseif ( ! empty( $media_info[ 'prev_url' ] ) ) {	// Video preview image URL.
 
 					$atts[ 'photo' ] = $media_info[ 'prev_url' ];
 				}
@@ -182,7 +179,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 			}
 
 			$extras = array(
-				'media_url' => $atts[ 'photo' ],
+				'media_url'         => $atts[ 'photo' ],
 				'pinterest_caption' => $this->p->page->get_caption( $type = 'excerpt', $this->p->options[ 'pin_caption_max_len' ], $mod,
 					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = array ( 'pin_desc', 'p_img_desc', 'og_desc' ) ),
 			);

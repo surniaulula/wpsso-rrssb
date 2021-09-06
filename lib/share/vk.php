@@ -111,6 +111,8 @@ if ( ! class_exists( 'WpssoRrssbShareVk' ) ) {
 		 *	'sharing_url'
 		 *	'sharing_short_url'
 		 *	'rawurlencode' (true)
+		 *
+		 * Note that the $atts array may include additional user input from the RRSSB shortcode attributes.
 		 */
 		public function get_html( $mod, $atts ) {
 

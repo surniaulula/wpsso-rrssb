@@ -394,9 +394,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			ksort( $sorted_ids );
 
-			/**
-			 * UTM attributes are used (but not required) by the WpssoUtil->get_sharing_url() method.
-			 */
 			$atts[ 'use_post' ]    = $mod[ 'use_post' ];
 			$atts[ 'utm_content' ] = 'wpsso-rrssb-' . sanitize_title_with_dashes( $type . '-' . $location );
 
@@ -483,9 +480,10 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 		}
 
 		/**
-		 * Called by $this->get_buttons().
+		 * Called by WpssoRrssbSocial->get_buttons(), WpssoRrssbShortcodeSharing->do_shortcode(),
+		 * WpssoRrssbWidgetSharing->widget(), and wpssorrssb_get_sharing_buttons().
 		 *
-		 * get_html() can also be called by a widget, shortcode, function, filter hook, etc.
+		 * Note that the $atts array may include additional user input from the RRSSB shortcode attributes.
 		 */
 		public function get_html( $ids, $mod, $atts ) {
 
@@ -539,8 +537,10 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 						/**
 						 * Backwards compatible filter to add custom tracking arguments.
+						 *
+						 * Note that an RRSSB shortcode attribute may already provide the sharing URL.
 						 */
-						if ( empty( $atts[ 'sharing_url' ] ) ) {	// A shortcode may already provide a sharing URL.
+						if ( empty( $atts[ 'sharing_url' ] ) ) {
 
 							$atts[ 'sharing_url' ] = $this->p->util->get_sharing_url( $mod, $atts[ 'add_page' ], $atts );
 							$atts[ 'sharing_url' ] = apply_filters( 'wpsso_rrssb_buttons_shared_url', $atts[ 'sharing_url' ], $mod, $id );
@@ -714,7 +714,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			return $ids;
 		}
 
-		public static function get_tweet_text( array $mod, $atts = array(), $opt_pre = 'twitter', $md_pre = 'twitter' ) {
+		public static function get_tweet_text( array $mod, $opt_pre = 'twitter', $md_pre = 'twitter' ) {
 
 			$wpsso =& Wpsso::get_instance();
 

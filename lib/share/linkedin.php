@@ -118,7 +118,7 @@ if ( ! class_exists( 'WpssoRrssbShareLinkedin' ) ) {
 		 *	'sharing_short_url'
 		 *	'rawurlencode' (true)
 		 *
-		 * Note that for backwards compatibility, the 'sharing_short_url' value also replaces the '%%short_url%%' variable.
+		 * Note that the $atts array may include additional user input from the RRSSB shortcode attributes.
 		 */
 		public function get_html( $mod, $atts ) {
 

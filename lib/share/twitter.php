@@ -139,6 +139,8 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 		 *	'sharing_url'
 		 *	'sharing_short_url'
 		 *	'rawurlencode' (true)
+		 *
+		 * Note that the $atts array may include additional user input from the RRSSB shortcode attributes.
 		 */
 		public function get_html( $mod, $atts ) {
 
@@ -147,7 +149,7 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts[ 'tweet' ]    = WpssoRrssbSocial::get_tweet_text( $mod, $atts, $opt_pre = 'twitter', $md_pre = 'twitter' );
+			$atts[ 'tweet' ]    = WpssoRrssbSocial::get_tweet_text( $mod, $opt_pre = 'twitter', $md_pre = 'twitter' );
 			$atts[ 'hashtags' ] = '';
 			$atts[ 'via' ]      = '';
 			$atts[ 'related' ]  = '';

@@ -1,0 +1,43 @@
+
+<p>You can add one or more social sharing buttons to your content by using the <code>[rrssb]</code> shortcode anywhere in the content text.</p>
+
+<p>Example:</p>
+
+<pre>
+[rrssb buttons="email, facebook, twitter"]
+</pre>
+
+<p>You may use several arguments:</p>
+
+<dl>
+ 	<dt><code>buttons</code></dt>
+
+ 	<dd>A list of buttons to include, as shown in the example above. You must include at least one button name.</dd>
+
+ 	<dt><code>use_post</code></dt>
+
+ 	<dd>true, false, or a specific post ID to share.
+		<ul>
+			<li>true = Use the WordPress $post object to determine the effective post ID (default).</li>
+			<li>false = Use the WordPress query to determine the effective post ID.</li>
+			<li># = Use a specific WordPress post ID number.</li>
+		</ul>
+	</dd>
+
+ 	<dt><code>url</code></dt>
+
+ 	<dd>A specific webpage URL to share, instead of the current webpage or post / page URL.</dd>
+
+ 	<dt><code>pid</code></dt>
+
+ 	<dd>An image ID to share for the Pinterest social sharing button.</dd>
+
+ 	<dt><code>photo</code></dt>
+
+ 	<dd>An image URL to for the Pinterest social sharing button.</dd>
+
+ 	<dt><code>css_class</code></dt>
+
+ 	<dd>A CSS class name to wrap the social sharing buttons.</dd>
+
+</dl>
