@@ -65,7 +65,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 
 			$form_rows[ 'buttons_utm_campaign' ] = array(
 				'th_class' => 'medium',
-				'label'    => _x( 'UTM Campain', 'option label', 'wpsso-rrssb' ),
+				'label'    => _x( 'UTM Campaign', 'option label', 'wpsso-rrssb' ),
 				'tooltip'  => 'meta-buttons_utm_campaign',
 				'content'  => $form->get_input( 'buttons_utm_campaign' ),
 			);

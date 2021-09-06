@@ -489,12 +489,9 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			/**
 			 * Basic attributes for all buttons.
-			 *
-			 * UTM attributes are used (but not required) by the WpssoUtil->get_sharing_url() method.
 			 */
 			$atts[ 'use_post' ]   = isset( $atts[ 'use_post' ] ) ? $atts[ 'use_post' ] : true;
 			$atts[ 'add_page' ]   = isset( $atts[ 'add_page' ] ) ? $atts[ 'add_page' ] : true;
-			$atts[ 'utm_medium' ] = isset( $this->p->options[ 'buttons_utm_medium' ] ) ? $this->p->options[ 'buttons_utm_medium' ] : '';
 
 			/**
 			 * The $mod array argument is preferred but not required.
@@ -511,6 +508,19 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				$mod = $this->p->page->get_mod( $atts[ 'use_post' ] );
 			}
 
+			/**
+			 * UTM attributes are used (but not required) by the WpssoUtil->get_sharing_url() method.
+			 *
+			 * Example:
+			 *
+			 * 	utm_medium   = 'social'
+			 * 	utm_source   = 'facebook'
+			 * 	utm_campaign = 'book-launch'
+			 * 	utm_content  = 'wpsso-rrssb-content-bottom'
+			 */
+			$atts[ 'utm_medium' ]   = isset( $this->p->options[ 'buttons_utm_medium' ] ) ? $this->p->options[ 'buttons_utm_medium' ] : '';
+			$atts[ 'utm_campaign' ] = is_object( $mod[ 'obj' ] ) ? $mod[ 'obj' ]->get_options( $mod[ 'id' ], 'buttons_utm_campaign' ) : null;
+
 			$buttons_html  = '';
 			$buttons_begin = '<ul class="rrssb-buttons ' . SucomUtil::get_locale( $mod ) . ' clearfix">' . "\n";
 			$buttons_end   = '</ul><!-- .rrssb-buttons.' . SucomUtil::get_locale( $mod ) . '.clearfix -->' . "\n";
@@ -523,7 +533,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					if ( method_exists( $this->share[ $id ], 'get_html' ) ) {
 
 						/**
-						 * UTM attributes are used (but not required) by the WpssoUtil->get_sharing_url() method.
+						 * Get the social sharing button UTM source name (ie. 'facebook').
 						 */
 						if ( ! empty( $this->p->cf[ 'opt' ][ 'cm_prefix' ][ $id ] ) ) {	// Skip if empty.
 

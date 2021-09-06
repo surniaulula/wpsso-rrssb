@@ -307,7 +307,7 @@ aside.widget
 
 				 	break;
 
-				case 'tooltip-meta-buttons_utm_campaign':	// UTM Campain.
+				case 'tooltip-meta-buttons_utm_campaign':	// UTM Campaign.
 
 					$text = __( 'Identifies a strategic campaign (e.g. product launch, new feature, partnership, etc.) or a specific promotion (e.g. a sale, a giveaway, etc.).', 'wpsso-rrssb' );
 

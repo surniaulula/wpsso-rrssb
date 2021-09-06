@@ -180,7 +180,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 
 			return array_merge( $md_defs, array(
 				'buttons_disabled'     => 0,	// Disable Share Buttons.
-				'buttons_utm_campaign' => '',	// UTM Campain.
+				'buttons_utm_campaign' => '',	// UTM Campaign.
 				'email_title'          => '',	// Email Subject.
 				'email_desc'           => '',	// Email Message.
 				'twitter_desc'         => '',	// Tweet Text.
