@@ -121,7 +121,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 7.0.0-dev.6 (2021/09/05)**
+**Version 7.0.0-dev.7 (2021/09/05)**
 
 * **New Features**
 	* Added a "UTM Medium" option in the SSO &gt; Responsive Buttons &gt; Social Sharing Buttons metabox.
@@ -135,7 +135,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.0.
 	* WordPress v5.2.
-	* WPSSO Core v8.38.0-dev.6.
+	* WPSSO Core v8.38.0-dev.7.
 
 **Version 6.0.0 (2021/06/18)**
 
@@ -291,7 +291,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 7.0.0-dev.6 =
+= 7.0.0-dev.7 =
 
 (2021/09/05) Added "UTM Medium" and "UTM Source" options. Removed the "Append Hashtags" option from all buttons except for Twitter.
 
