@@ -32,6 +32,8 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTwitter' ) ) {
 
 		public function filter_rrssb_share_twitter_rows( $table_rows, $form, $submenu ) {
 
+			$utm_source_label = sprintf( _x( 'UTM Source for %s', 'option label', 'wpsso-rrssb' ), 'Twitter' );
+
 			$table_rows[] = '' .
 				$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
 				'<td>' . $submenu->show_on_checkboxes( 'twitter' ) . '</td>';
@@ -41,7 +43,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTwitter' ) ) {
 				'<td>' . $form->get_select( 'twitter_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_utm_source' ) .
-				$form->get_th_html( _x( 'UTM Source', 'option label', 'wpsso-rrssb' ) ) . 
+				$form->get_th_html( $utm_source_label ) . 
 				'<td>' . $form->get_input( 'twitter_utm_source' ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_caption' ) .
@@ -60,11 +62,11 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTwitter' ) ) {
 				_x( 'tag names', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_via' ) .
-				$form->get_th_html( _x( 'Add via Business @username', 'option label', 'wpsso-rrssb' ), '', 'buttons_add_via'  ) . 
+				$form->get_th_html( _x( 'Add via Business @username', 'option label', 'wpsso-rrssb' ), $css_class = '', $css_id = 'buttons_add_via'  ) . 
 				'<td>' . $form->get_checkbox( 'twitter_via' ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_rel_author' ) .
-				$form->get_th_html( _x( 'Recommend Author @username', 'option label', 'wpsso-rrssb' ), '', 'buttons_rec_author'  ) . 
+				$form->get_th_html( _x( 'Recommend Author @username', 'option label', 'wpsso-rrssb' ), $css_class = '', $css_id = 'buttons_rec_author'  ) . 
 				'<td>' . $form->get_checkbox( 'twitter_rel_author' ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'twitter_rrssb_html' ) . 

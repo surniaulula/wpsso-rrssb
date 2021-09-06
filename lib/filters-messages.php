@@ -26,14 +26,15 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 			$this->a =& $addon;
 
 			$this->p->util->add_plugin_filters( $this, array( 
-				'messages_info'           => 2,
-				'messages_tooltip'        => 2,
+				'messages_info'            => 2,
+				'messages_tooltip_buttons' => 2,
+				'messages_tooltip_meta'    => 2,
 			) );
 		}
 
 		public function filter_messages_info( $text, $msg_key ) {
 
-			if ( strpos( $msg_key, 'info-styles-rrssb-' ) !== 0 ) {
+			if ( 0 !== strpos( $msg_key, 'info-styles-rrssb-' ) ) {
 
 				return $text;
 			}
@@ -195,28 +196,31 @@ aside.widget
 			return $text;
 		}
 
-		public function filter_messages_tooltip( $text, $msg_key ) {
+		public function filter_messages_tooltip_buttons( $text, $msg_key ) {
 
-			if ( strpos( $msg_key, 'tooltip-buttons_' ) !== 0 ) {
+			if ( 0 !== strpos( $msg_key, 'tooltip-buttons_' ) ) {
 
 				return $text;
 			}
 
 			switch ( $msg_key ) {
 
-				case 'tooltip-buttons_on_archive':
+				/**
+				 * SSO > Responsive Buttons settings page.
+				 */
+				case 'tooltip-buttons_on_archive':	// Include on Archive Webpages.
 
 					$text = __( 'Add social sharing buttons to each post on an archive webpage (blog front page, category, etc.).', 'wpsso-rrssb' );
 
 					break;
 
-				case 'tooltip-buttons_on_front':
+				case 'tooltip-buttons_on_front':	// Include on Static Homepage.
 
 					$text = __( 'If a static page has been selected for your homepage, you can add social sharing buttons to that static page as well.', 'wpsso-rrssb' );
 
 					break;
 
-				case 'tooltip-buttons_add_to':
+				case 'tooltip-buttons_add_to':	// Include on Post Types.
 
 					$text = __( 'Social sharing buttons are added to posts, pages, and attachment webpages by default.', 'wpsso-rrssb' ) . ' ';
 					
@@ -238,31 +242,11 @@ aside.widget
 
 					break;
 
-				case 'tooltip-buttons_utm_medium':	// UTM Medium.
+				case 'tooltip-buttons_utm_medium':	// UTM Medium for All Buttons.
 
 					$text = __( 'Identifies the medium a visitor followed to your website when clicking a shared link.', 'wpsso-rrssb' ) . ' ';
 
 					$text .= __( 'Common UTM medium values are "social", "email" or "cpc".', 'wpsso-rrssb' );
-
-					break;
-
-				case 'tooltip-buttons_use_social_style':
-
-					$sharing_css_url = WpssoRrssbSocial::get_sharing_css_url();
-
-					$text = sprintf( __( 'Combine and include the CSS of all <em>%s</em> in webpages.', 'wpsso-rrssb' ), _x( 'Responsive Styles', 'lib file description', 'wpsso-rrssb' ) ) . ' ';
-					
-					$text .= sprintf( __( 'The combined CSS will be minified and saved into a single stylesheet with a URL of <a href="%1$s">%2$s</a>.', 'wpsso-rrssb' ), $sharing_css_url, $sharing_css_url ) . ' ';
-
-					$text .= __( 'The minified stylesheet can be enqueued, or included directly in the webpage HTML.', 'wpsso-rrssb' );
-
-					break;
-
-				case 'tooltip-buttons_enqueue_social_style':
-
-					$text = __( 'Have WordPress enqueue the social stylesheet instead, of including the CSS in the webpage HTML.', 'wpsso-rrssb' ) . ' ';
-					
-					$text .= __( 'Enqueueing the stylesheet may be desirable if you use an optimization plugin to concatenate all enqueued styles into a single stylesheet.', 'wpsso-rrssb' );
 
 					break;
 
@@ -277,6 +261,57 @@ aside.widget
 					$text = sprintf( __( 'Recommend following the author\'s Twitter @username after sharing a webpage. If the %1$s option (above) is also checked, the %2$s is suggested first.', 'wpsso-rrssb' ), _x( 'Add via Business @username', 'option label', 'wpsso-rrssb' ), _x( 'Twitter Business @username', 'option label', 'wpsso-rrssb' ) );
 
 					break;
+
+				/**
+				 * SSO > Responsive Styles settings page.
+				 */
+				case 'tooltip-buttons_use_social_style':		// Use the Social Stylesheet.
+
+					$sharing_css_url = WpssoRrssbSocial::get_sharing_css_url();
+
+					$text = sprintf( __( 'Combine and include the CSS of all <em>%s</em> in webpages.', 'wpsso-rrssb' ), _x( 'Responsive Styles', 'lib file description', 'wpsso-rrssb' ) ) . ' ';
+					
+					$text .= sprintf( __( 'The combined CSS will be minified and saved into a single stylesheet with a URL of <a href="%1$s">%2$s</a>.', 'wpsso-rrssb' ), $sharing_css_url, $sharing_css_url ) . ' ';
+
+					$text .= __( 'The minified stylesheet can be enqueued, or included directly in the webpage HTML.', 'wpsso-rrssb' );
+
+					break;
+
+				case 'tooltip-buttons_enqueue_social_style':	// Enqueue the Stylesheet.
+
+					$text = __( 'Have WordPress enqueue the social stylesheet instead, of including the CSS in the webpage HTML.', 'wpsso-rrssb' ) . ' ';
+					
+					$text .= __( 'Enqueueing the stylesheet may be desirable if you use an optimization plugin to concatenate all enqueued styles into a single stylesheet.', 'wpsso-rrssb' );
+
+					break;
+
+			}
+
+			return $text;
+		}
+
+		public function filter_messages_tooltip_meta( $text, $msg_key ) {
+
+			if ( 0 !== strpos( $msg_key, 'tooltip-meta-buttons_' ) ) {
+
+				return $text;
+			}
+
+			switch ( $msg_key ) {
+
+				case 'tooltip-meta-buttons_disabled':	// Disable Share Buttons.
+
+					$text = __( 'Disable social sharing buttons in the post content, excerpt, and/or CSS sidebar.', 'wpsso-rrssb' ) . ' ';
+
+					$text .= __( 'This does not disable social sharing buttons added using a shortcode or widget.', 'wpsso-rrssb' ) . ' ';
+
+				 	break;
+
+				case 'tooltip-meta-buttons_utm_campaign':	// UTM Campain.
+
+					$text = __( 'Identifies a strategic campaign (e.g. product launch, new feature, partnership, etc.) or a specific promotion (e.g. a sale, a giveaway, etc.).', 'wpsso-rrssb' );
+
+				 	break;
 			}
 
 			return $text;

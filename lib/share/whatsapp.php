@@ -32,6 +32,8 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareWhatsApp' ) ) {
 
 		public function filter_rrssb_share_whatsapp_rows( $table_rows, $form, $submenu ) {
 
+			$utm_source_label = sprintf( _x( 'UTM Source for %s', 'option label', 'wpsso-rrssb' ), 'WhatsApp' );
+
 			$table_rows[] = '' .
 				$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
 				'<td>' . $submenu->show_on_checkboxes( 'wa' ) . '</td>';
@@ -41,7 +43,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareWhatsApp' ) ) {
 				'<td>' . $form->get_select( 'wa_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'wa_utm_source' ) .
-				$form->get_th_html( _x( 'UTM Source', 'option label', 'wpsso-rrssb' ) ) . 
+				$form->get_th_html( $utm_source_label ) . 
 				'<td>' . $form->get_input( 'wa_utm_source' ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'wa_rrssb_html' ) . 

@@ -201,7 +201,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 						'<td>' . $this->form->get_select_none( 'buttons_force_prot', $this->p->cf[ 'sharing' ][ 'force_prot' ] ) . '</td>';
 
 					$table_rows[ 'buttons_utm_medium' ] = $this->form->get_tr_hide( 'basic', 'buttons_utm_medium' ) .
-						$this->form->get_th_html( _x( 'UTM Medium', 'option label', 'wpsso-rrssb' ),
+						$this->form->get_th_html( _x( 'UTM Medium for All Buttons', 'option label', 'wpsso-rrssb' ),
 							$css_class = '', $css_id = 'buttons_utm_medium' ) . 
 						'<td>' . $this->form->get_input( 'buttons_utm_medium' ) . '</td>';
 

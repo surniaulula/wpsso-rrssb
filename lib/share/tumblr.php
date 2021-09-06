@@ -32,6 +32,8 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTumblr' ) ) {
 
 		public function filter_rrssb_share_tumblr_rows( $table_rows, $form, $submenu ) {
 
+			$utm_source_label = sprintf( _x( 'UTM Source for %s', 'option label', 'wpsso-rrssb' ), 'Tumblr' );
+
 			$table_rows[] = '' .
 				$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
 				'<td>' . $submenu->show_on_checkboxes( 'tumblr' ) . '</td>';
@@ -41,7 +43,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTumblr' ) ) {
 				'<td>' . $form->get_select( 'tumblr_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'tumblr_utm_source' ) .
-				$form->get_th_html( _x( 'UTM Source', 'option label', 'wpsso-rrssb' ) ) . 
+				$form->get_th_html( $utm_source_label ) . 
 				'<td>' . $form->get_input( 'tumblr_utm_source' ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'tumblr_caption_max_len' ) . 

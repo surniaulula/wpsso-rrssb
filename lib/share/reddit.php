@@ -32,6 +32,8 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareReddit' ) ) {
 
 		public function filter_rrssb_share_reddit_rows( $table_rows, $form, $submenu ) {
 
+			$utm_source_label = sprintf( _x( 'UTM Source for %s', 'option label', 'wpsso-rrssb' ), 'Reddit' );
+
 			$table_rows[] = '' .
 				$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
 				'<td>' . $submenu->show_on_checkboxes( 'reddit' ) . '</td>';
@@ -41,7 +43,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareReddit' ) ) {
 				'<td>' . $form->get_select( 'reddit_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_utm_source' ) .
-				$form->get_th_html( _x( 'UTM Source', 'option label', 'wpsso-rrssb' ) ) . 
+				$form->get_th_html( $utm_source_label ) . 
 				'<td>' . $form->get_input( 'reddit_utm_source' ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'reddit_caption_max_len' ) .

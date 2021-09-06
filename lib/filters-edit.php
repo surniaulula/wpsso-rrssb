@@ -58,16 +58,16 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 
 			$form_rows[ 'buttons_disabled' ] = array(
 				'th_class' => 'medium',
-				'label'    => _x( 'Disable Sharing Buttons', 'option label', 'wpsso-rrssb' ),
-				'tooltip'  => 'rrssb-buttons_disabled',
+				'label'    => _x( 'Disable Share Buttons', 'option label', 'wpsso-rrssb' ),
+				'tooltip'  => 'meta-buttons_disabled',
 				'content'  => $form->get_checkbox( 'buttons_disabled' ),
 			);
 
-			$form_rows[ 'buttons_mtu_campaign' ] = array(
+			$form_rows[ 'buttons_utm_campaign' ] = array(
 				'th_class' => 'medium',
-				'label'    => _x( 'MTU Campain', 'option label', 'wpsso-rrssb' ),
-				'tooltip'  => 'rrssb-buttons_mtu_campaign',
-				'content'  => $form->get_input( 'buttons_mtu_campaign' ),
+				'label'    => _x( 'UTM Campain', 'option label', 'wpsso-rrssb' ),
+				'tooltip'  => 'meta-buttons_utm_campaign',
+				'content'  => $form->get_input( 'buttons_utm_campaign' ),
 			);
 
 			/**
@@ -87,14 +87,14 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 			$form_rows[ 'email_title' ] = array(
 				'th_class' => 'medium',
 				'label'    => _x( 'Email Subject', 'option label', 'wpsso-rrssb' ),
-				'tooltip'  => 'rrssb-email_title',
+				'tooltip'  => 'meta-buttons_email_title',
 				'content'  => $form->get_input( 'email_title', $css_class = 'wide', $css_id = '', 0, $def_caption_title ),
 			);
 
 			$form_rows[ 'email_desc' ] = array(
 				'th_class' => 'medium',
 				'label'    => _x( 'Email Message', 'option label', 'wpsso-rrssb' ),
-				'tooltip'  => 'rrssb-email_desc',
+				'tooltip'  => 'meta-buttons_email_desc',
 				'content'  => $form->get_textarea( 'email_desc', $css_class = '', $css_id = '', $email_max_len, $def_email_desc ),
 			);
 
@@ -116,7 +116,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 			$form_rows[ 'twitter_desc' ] = array(
 				'th_class' => 'medium',
 				'label'    => _x( 'Tweet Text', 'option label', 'wpsso-rrssb' ),
-				'tooltip'  => 'rrssb-twitter_desc',
+				'tooltip'  => 'meta-buttons_twitter_desc',
 				'content'  => $form->get_textarea( 'twitter_desc', '', '', $twitter_max_len, $def_twitter_desc ),
 			);
 
@@ -138,7 +138,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 				'th_class' => 'medium',
 				'td_class' => 'top',
 				'label'    => _x( 'Pinterest Caption', 'option label', 'wpsso-rrssb' ),
-				'tooltip'  => 'rrssb-pin_desc',
+				'tooltip'  => 'meta-buttons_pin_desc',
 				'content'  => $form->get_textarea( 'pin_desc', '', '', $pin_max_len, $pin_desc ),
 			);
 
@@ -165,14 +165,14 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 				$form_rows[ $opt_pre . '_title' ] = array(
 					'th_class' => 'medium',
 					'label'    => sprintf( _x( '%s Title', 'option label', 'wpsso-rrssb' ), $name ),
-					'tooltip'  => 'rrssb-' . $opt_pre . '_title',
+					'tooltip'  => 'meta-buttons_' . $opt_pre . '_title',
 					'content'  => $form->get_input( $opt_pre . '_title', 'wide', '', 0, $def_caption_title ),
 				);
 
 				$form_rows[ $opt_pre . '_desc' ] = array(
 					'th_class' => 'medium',
 					'label'    => sprintf( _x( '%s Caption', 'option label', 'wpsso-rrssb' ), $name ),
-					'tooltip'  => 'rrssb-' . $opt_pre . '_desc',
+					'tooltip'  => 'meta-buttons_' . $opt_pre . '_desc',
 					'content'  => $form->get_textarea( $opt_pre . '_desc', '', '', $other_max_len, $other_desc ),
 				);
 			}

@@ -31,6 +31,8 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareFacebook' ) ) {
 
 		public function filter_rrssb_share_facebook_rows( $table_rows, $form, $submenu ) {
 
+			$utm_source_label = sprintf( _x( 'UTM Source for %s', 'option label', 'wpsso-rrssb' ), 'Facebook' );
+
 			$table_rows[] = '' .
 				$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
 				'<td>' . $submenu->show_on_checkboxes( 'fb' ) . '</td>';
@@ -40,7 +42,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareFacebook' ) ) {
 				'<td>' . $form->get_select( 'fb_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'fb_utm_source' ) .
-				$form->get_th_html( _x( 'UTM Source', 'option label', 'wpsso-rrssb' ) ) . 
+				$form->get_th_html( $utm_source_label ) . 
 				'<td>' . $form->get_input( 'fb_utm_source' ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'fb_rrssb_html' ) . 
