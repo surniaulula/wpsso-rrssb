@@ -244,9 +244,9 @@ aside.widget
 
 				case 'tooltip-buttons_utm_medium':	// UTM Medium for All Buttons.
 
-					$text = __( 'Identifies the medium a visitor followed to your website when clicking a shared link.', 'wpsso-rrssb' ) . ' ';
+					$text = __( 'Identifies the origin of a shared link.', 'wpsso-rrssb' ) . ' ';
 
-					$text .= __( 'Common UTM medium values are "social", "email" or "cpc".', 'wpsso-rrssb' );
+					$text .= __( 'Popular UTM medium values are "cpc", "email", "referral", and "social".', 'wpsso-rrssb' );
 
 					break;
 
@@ -279,7 +279,7 @@ aside.widget
 
 				case 'tooltip-buttons_enqueue_social_style':	// Enqueue the Stylesheet.
 
-					$text = __( 'Have WordPress enqueue the social stylesheet instead, of including the CSS in the webpage HTML.', 'wpsso-rrssb' ) . ' ';
+					$text = __( 'Have WordPress enqueue the social stylesheet instead of including the social styles directly in the webpage HTML.', 'wpsso-rrssb' ) . ' ';
 					
 					$text .= __( 'Enqueueing the stylesheet may be desirable if you use an optimization plugin to concatenate all enqueued styles into a single stylesheet.', 'wpsso-rrssb' );
 
@@ -301,7 +301,7 @@ aside.widget
 
 				case 'tooltip-meta-buttons_disabled':	// Disable Share Buttons.
 
-					$text = __( 'Disable social sharing buttons in the post content, excerpt, and/or CSS sidebar.', 'wpsso-rrssb' ) . ' ';
+					$text = __( 'Disable social sharing buttons in the post content, excerpt, and CSS sidebar.', 'wpsso-rrssb' ) . ' ';
 
 					$text .= __( 'This does not disable social sharing buttons added using a shortcode or widget.', 'wpsso-rrssb' ) . ' ';
 
