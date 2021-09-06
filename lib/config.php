@@ -17,8 +17,8 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(			// Plugin acronym.
-					'version'     => '7.0.0-b.1',	// Plugin version.
-					'opt_version' => '39',		// Increment when changing default option values.
+					'version'     => '7.0.0-b.2',	// Plugin version.
+					'opt_version' => '40',		// Increment when changing default option values.
 					'short'       => 'WPSSO RRSSB',	// Short plugin name.
 					'name'        => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
 					'desc'        => 'Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, templates, and editor.',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '8.38.0-b.1',
+							'min_version'   => '8.38.0-b.2',
 						),
 					),
 
@@ -120,15 +120,15 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					/**
 					 * Responsive Styles
 					 */
-					'buttons_use_social_style'      => 1,
-					'buttons_enqueue_social_style'  => 1,
-					'buttons_css_rrssb-admin_edit'  => '',
-					'buttons_css_rrssb-content'     => '',
-					'buttons_css_rrssb-excerpt'     => '',
-					'buttons_css_rrssb-sharing'     => '',
-					'buttons_css_rrssb-shortcode'   => '',
-					'buttons_css_rrssb-sidebar'     => '',
-					'buttons_css_rrssb-widget'      => '',
+					'buttons_use_social_style'     => 1,
+					'buttons_enqueue_social_style' => 1,
+					'buttons_css_rrssb-common'     => '',	// All Buttons tab.
+					'buttons_css_rrssb-content'    => '',	// Content tab.
+					'buttons_css_rrssb-excerpt'    => '',	// Excerpt tab.
+					'buttons_css_rrssb-sidebar'    => '',	// CSS Sidebar tab.
+					'buttons_css_rrssb-admin_edit' => '',	// Admin Edit tab.
+					'buttons_css_rrssb-shortcode'  => '',	// Shortcode tab.
+					'buttons_css_rrssb-widget'     => '',	// Widget tab.
 				),	// end of defaults
 			),
 			'sharing' => array(
@@ -143,7 +143,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'https' => 'HTTPS',
 				),
 				'rrssb_styles' => array(
-					'rrssb-sharing'    => 'All Buttons',
+					'rrssb-common'     => 'All Buttons',
 					'rrssb-content'    => 'Content',
 					'rrssb-excerpt'    => 'Excerpt',
 					'rrssb-sidebar'    => 'CSS Sidebar',

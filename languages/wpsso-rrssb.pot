@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"7.0.0-b.1\n"
+"7.0.0-b.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2021-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -211,20 +211,20 @@ msgstr ""
 
 #: lib/filters-messages.php:109
 msgid ""
-"Social sharing buttons added from a shortcode are assigned the \"%1$s\" "
-"class by default."
+"Social sharing buttons enabled in the %1$s settings page for admin editing "
+"pages are assigned the \"%2$s\" class."
 msgstr ""
 
 #: lib/filters-messages.php:121
 msgid ""
-"Social sharing buttons enabled in the %1$s widget are assigned the \"%2$s\" "
-"class (along with additional unique CSS ID names)."
+"Social sharing buttons added from a shortcode are assigned the \"%1$s\" "
+"class by default."
 msgstr ""
 
-#: lib/filters-messages.php:139
+#: lib/filters-messages.php:133
 msgid ""
-"Social sharing buttons enabled in the %1$s settings page for admin editing "
-"pages are assigned the \"%2$s\" class."
+"Social sharing buttons enabled in the %1$s widget are assigned the \"%2$s\" "
+"class (along with additional unique CSS ID names)."
 msgstr ""
 
 #: lib/filters-messages.php:151

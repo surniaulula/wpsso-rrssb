@@ -82,12 +82,13 @@ if ( ! class_exists( 'WpssoRrssbFiltersUpgrade' ) ) {
 				34 => array(
 					'buttons_on_index' => 'buttons_on_archive',
 				),
-				36 => array(
+				39 => array(
 					'email_caption_hashtags'    => '',
 					'linkedin_caption_hashtags' => '',
 					'pin_caption_hashtags'      => '',
 					'reddit_caption_hashtags'   => '',
 					'tumblr_caption_hashtags'   => '',
+					'buttons_css_rrssb-sharing' => 'buttons_css_rrssb-common',
 				),
 			);
 

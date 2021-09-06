@@ -1,0 +1,75 @@
+/**
+ * Save an empty style text box to reload the default example styles.
+ * These styles are provided as examples only - modifications may be
+ * necessary to customize the layout for your website.
+ */
+
+ul.rrssb-buttons {
+	clear:both;
+	visibility:visible;
+	margin:0;
+	padding:0 !important;
+	list-style:none;
+}
+
+ul.rrssb-buttons a {
+	box-shadow:none;
+	-webkit-box-shadow:none;
+	line-height:1em;
+	border:none;
+}
+
+ul.rrssb-buttons a:hover {
+	box-shadow:none;
+	-webkit-box-shadow:none;
+}
+
+ul.rrssb-buttons > li,
+.archive-page ul.rrssb-buttons > li,
+.content ul.rrssb-buttons > li,
+.entry-content ul.rrssb-buttons > li,
+.list-data ul.rrssb-buttons > li {
+	position:relative;
+	font-size:inherit !important;
+	text-shadow: none !important;
+	line-height:inherit !important;
+	list-style-type:none !important;
+	list-style-image:none !important;
+	margin:0;
+	padding:0 2px !important;
+	border:none;
+}
+
+ul.rrssb-buttons > li::before,
+.content ul.rrssb-buttons > li::before,
+.list-data ul.rrssb-buttons > li::before {
+	content:none !important;
+}
+
+ul.rrssb-buttons > li a .rrssb-icon {
+	display:inline-block;
+	text-align:center;
+}
+
+ul.rrssb-buttons > li a .rrssb-text {
+	display:inline-block;
+	text-transform:none;
+	white-space:nowrap;
+	margin:0 5px;
+}
+
+ul.rrssb-buttons > li a svg {
+	display:inline-block;
+}
+
+.rrssb-email      a .rrssb-text::before { content:"E-Mail"; }
+.rrssb-facebook   a .rrssb-text::before { content:"Facebook"; }
+.rrssb-linkedin   a .rrssb-text::before { content:"LinkedIn"; }
+.rrssb-pinterest  a .rrssb-text::before { content:"Pinterest"; }
+.rrssb-pocket     a .rrssb-text::before { content:"Pocket"; }
+.rrssb-reddit     a .rrssb-text::before { content:"Reddit"; }
+.rrssb-tumblr     a .rrssb-text::before { content:"Tumblr"; }
+.rrssb-twitter    a .rrssb-text::before { content:"Twitter"; }
+.rrssb-vk         a .rrssb-text::before { content:"Vk"; }
+.rrssb-whatsapp   a .rrssb-text::before { content:"WhatsApp"; }
+

@@ -43,7 +43,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 
 			switch ( $msg_key ) {
 
-				case 'info-styles-rrssb-sharing':
+				case 'info-styles-rrssb-common':	// All Buttons tab.
 
 					$text = '<p>';
 
@@ -57,7 +57,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 
 					break;
 
-				case 'info-styles-rrssb-content':
+				case 'info-styles-rrssb-content':	// Content tab.
 
 					$text = '<p>';
 
@@ -69,7 +69,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 
 					break;
 
-				case 'info-styles-rrssb-excerpt':
+				case 'info-styles-rrssb-excerpt':	// Excerpt tab.
 
 					$text = '<p>';
 
@@ -81,7 +81,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 
 					break;
 
-				case 'info-styles-rrssb-sidebar':
+				case 'info-styles-rrssb-sidebar':	// CSS Sidebar tab.
 
 					$text = '<p>';
 
@@ -102,7 +102,19 @@ div.wpsso-rrssb
 </pre>';
 					break;
 
-				case 'info-styles-rrssb-shortcode':
+				case 'info-styles-rrssb-admin_edit':	// Admin Edit tab.
+
+					$text = '<p>';
+
+					$text .= sprintf( __( 'Social sharing buttons enabled in the %1$s settings page for admin editing pages are assigned the "%2$s" class.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-admin_edit' );
+
+					$text .= '</p>';
+
+					$text .= $this->get_info_css_example( 'admin_edit', true );
+
+					break;
+
+				case 'info-styles-rrssb-shortcode':	// Shortcode tab.
 
 					$text = '<p>';
 
@@ -114,7 +126,7 @@ div.wpsso-rrssb
 
 					break;
 
-				case 'info-styles-rrssb-widget':
+				case 'info-styles-rrssb-widget':	// Widget tab.
 
 					$text = '<p>';
 
@@ -129,18 +141,6 @@ aside.widget
     ul.rrssb-buttons
         li.rrssb-facebook {}
 </pre>';
-
-					break;
-
-				case 'info-styles-rrssb-admin_edit':
-
-					$text = '<p>';
-
-					$text .= sprintf( __( 'Social sharing buttons enabled in the %1$s settings page for admin editing pages are assigned the "%2$s" class.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-admin_edit' );
-
-					$text .= '</p>';
-
-					$text .= $this->get_info_css_example( 'admin_edit', true );
 
 					break;
 
