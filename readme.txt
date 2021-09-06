@@ -96,7 +96,7 @@ WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) is an add-on 
 
 <h3>Notes and Documentation</h3>
 
-* [RRSSB Shortcode for Sharing Buttons](https://wpsso.com/docs/plugins/wpsso-rrssb/notes/rrssb-shortcode/)
+* [RRSSB Shortcode for Social Sharing Buttons](https://wpsso.com/docs/plugins/wpsso-rrssb/notes/rrssb-shortcode/)
 
 == Screenshots ==
 
@@ -121,7 +121,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 7.0.0-dev.8 (2021/09/06)**
+**Version 7.0.0-dev.9 (2021/09/06)**
 
 * **New Features**
 	* Added a "UTM Medium" option in the SSO &gt; Responsive Buttons &gt; Social Sharing Buttons metabox.
@@ -129,6 +129,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Added a "UTM Campaign" option under the Document SSO &gt; Share Buttons tab.
 * **Improvements**
 	* Removed the "Append Hashtags" option from all buttons except for Twitter.
+	* Updated the RRSSB shortcode documentation in https://wpsso.com/docs/plugins/wpsso-rrssb/notes/rrssb-shortcode/.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -136,7 +137,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.0.
 	* WordPress v5.2.
-	* WPSSO Core v8.38.0-dev.8.
+	* WPSSO Core v8.38.0-dev.9.
 
 **Version 6.0.0 (2021/06/18)**
 
@@ -292,7 +293,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 7.0.0-dev.8 =
+= 7.0.0-dev.9 =
 
 (2021/09/06) Added "UTM Medium", "UTM Source", and "UTM Campaign" options. Removed the "Append Hashtags" option from all buttons except for Twitter.
 
