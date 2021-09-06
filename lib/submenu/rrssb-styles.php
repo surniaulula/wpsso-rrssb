@@ -130,7 +130,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 
 		protected function get_table_rows( $metabox_id, $tab_key ) {
 
-			$table_rows[ 'buttons_css_' . $tab_key] = '' .
+			$table_rows[ 'buttons_css_' . $tab_key ] = '' .
 				'<th class="textinfo">' . $this->p->msgs->get( 'info-styles-' . $tab_key ) . '</th>' . 
 				'<td' . ( isset( $this->p->options[ 'buttons_css_' . $tab_key . ':is' ] ) &&
 					$this->p->options[ 'buttons_css_' . $tab_key . ':is' ] === 'disabled' ? ' class="blank"' : '' ) . '>' . 
