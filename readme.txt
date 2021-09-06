@@ -126,6 +126,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **New Features**
 	* Added a "UTM Medium" option in the SSO &gt; Responsive Buttons &gt; Social Sharing Buttons metabox.
 	* Added a "UTM Source" option to the RRSSB metaboxes in the SSO &gt; Responsive Buttons settings page.
+	* Added a "UTM Campaign" option under the Document SSO &gt; Share Buttons tab.
 * **Improvements**
 	* Removed the "Append Hashtags" option from all buttons except for Twitter.
 * **Bugfixes**
@@ -293,7 +294,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 7.0.0-dev.7 =
 
-(2021/09/05) Added "UTM Medium" and "UTM Source" options. Removed the "Append Hashtags" option from all buttons except for Twitter.
+(2021/09/05) Added "UTM Medium", "UTM Source", and "UTM Campaign" options. Removed the "Append Hashtags" option from all buttons except for Twitter.
 
 = 6.0.0 =
 
