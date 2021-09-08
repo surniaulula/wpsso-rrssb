@@ -69,11 +69,7 @@ Each of these social sharing buttons can be configured and styled individually:
 * VK
 * WhatsApp (for mobile devices)
 
-Options to include / exclude social sharing buttons by post type.
-
-Include / exclude individual social sharing buttons based on the viewing device (desktop and/or mobile).
-
-Automatically exclude buttons from [Accelerated Mobile Pages (AMP)](https://wordpress.org/plugins/amp/) plugin pages.
+Provides UTM medium, source, and campaign values for each social sharing button.
 
 A built-in stylesheet editor allows you to easily fine-tune the CSS for each social sharing button location (content, excerpt, shortcode, widget, etc.).
 
