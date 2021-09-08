@@ -23,11 +23,13 @@
 
 <p><strong>Add Ridiculously Responsive Social Sharing Buttons in:</strong></p>
 
-<p>The content, excerpt, widget, CSS sidebar, shortcodes, templates, and <em>admin editor page</em> - so you can share directly from the admin editor page!</p>
+<p>The content, excerpt, widget, CSS sidebar, shortcodes, templates, and <em>admin editor page</em> - so you can quickly share directly from the admin editor page!</p>
+
+<p><strong>UTM Medium, Source, and Campaign Values per Social Sharing Button.</strong></p>
 
 <p><strong>Do you use bbPress, BuddyPress, BuddyBlog, or WooCommerce?</strong></p>
 
-<p>The WPSSO RRSSB add-on includes special integration modules to add social sharing buttons to even more locations!</p>
+<p>The WPSSO RRSSB add-on includes integration modules to add social sharing buttons to even more locations!</p>
 
 <h3>Users Love the WPSSO RRSSB Add-on</h3>
 
