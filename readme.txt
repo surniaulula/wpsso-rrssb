@@ -69,7 +69,7 @@ Each of these social sharing buttons can be configured and styled individually:
 * VK
 * WhatsApp (for mobile devices)
 
-Provides UTM medium, source, and campaign values for each social sharing button.
+Provides UTM medium, UTM source, and UTM campaign values for each social sharing button.
 
 A built-in stylesheet editor allows you to easily fine-tune the CSS for each social sharing button location (content, excerpt, shortcode, widget, etc.).
 
