@@ -119,7 +119,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 7.0.1-dev.2 (2021/09/09)**
+**Version 7.1.0-dev.2 (2021/09/09)**
 
 * **New Features**
 	* None.
@@ -309,7 +309,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 7.0.1-dev.2 =
+= 7.1.0-dev.2 =
 
 (2021/09/09) Fixed the CSS sidebar default styling.
 
