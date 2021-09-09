@@ -124,9 +124,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **New Features**
 	* None.
 * **Improvements**
-	* None.
+	* Added a new SSO &gt; Responsive Buttons &gt; Call to Action option.
 * **Bugfixes**
-	* Fixed the CSS sidebar default styling.
+	* Fixed the CSS sidebar id value and its default styling.
 * **Developer Notes**
 	* Added a new 'wpsso_rrssb_buttons_ids' filter.
 	* Added a new 'wpsso_rrssb_buttons_disabled' filter.
@@ -311,7 +311,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 7.1.0-dev.2 =
 
-(2021/09/09) Fixed the CSS sidebar default styling.
+(2021/09/09) Added a new SSO &gt; Responsive Buttons &gt; Call to Action option. Fixed the CSS sidebar id value and its default styling.
 
 = 7.0.0 =
 
