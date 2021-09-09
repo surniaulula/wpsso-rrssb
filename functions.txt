@@ -3,4 +3,5 @@ wpssorrssb_get_sharing_buttons( $ids = array(), $atts = array() );
 
 wpssorrssb_get_post_sharing_buttons( $post_id, $ids = array(), $atts = array() );
 
+wpssorrssb_get_mod_sharing_buttons( array $mod, $ids = array(), $atts = array() );
 
