@@ -4,6 +4,10 @@
  * necessary to customize the layout for your website.
  */
 
+#wpsso-rrssb-sidebar .wpsso-rrssb-buttons-cta {
+	display:none;
+}
+
 #wpsso-rrssb-sidebar {
 	display:block;
 	cursor:pointer;

@@ -440,36 +440,49 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					}
 				}
 
+				$buttons_cta = SucomUtil::get_key_value( 'buttons_cta', $this->p->options, $mod );
+
+				if ( ! empty( $buttons_cta ) ) {
+
+					$buttons_cta = '<div class="wpsso-rrssb-buttons-cta">' . $buttons_cta . '</div>';
+				}
+
+				$buttons_cta = apply_filters( 'wpsso_rrssb_buttons_cta', $buttons_cta, $type, $mod, $location, $atts );
+
 				$buttons_html = '<!-- wpsso ' . $css_type . ' begin -->' .	// Used by $this->get_buttons_for_the_excerpt().
 					'<div class="' . $css_class . '" id="' . $css_id . '">' . 
 					'<div class="' . $css_class_max . '" style="' . $css_style_max . '">' . 
+					$buttons_cta .
 					$buttons_html .
 					'</div><!-- .wpsso-rrssb-limit -->' .
 					'</div><!-- .wpsso-rrssb -->' .
 					'<!-- wpsso ' . $css_type . ' end -->';			// Used by $this->get_buttons_for_the_excerpt().
-
-				$buttons_html = apply_filters( 'wpsso_rrssb_buttons_html', $buttons_html, $type, $mod, $location, $atts );
 			}
 
-			switch ( $location ) {
+			$buttons_html = apply_filters( 'wpsso_rrssb_buttons_html', $buttons_html, $type, $mod, $location, $atts );
 
-				case 'top': 
+			if ( ! empty( $buttons_html ) ) {
 
-					$text = $buttons_html . $text;
+				switch ( $location ) {
 
-					break;
+					case 'top': 
 
-				case 'bottom': 
+						$text = $buttons_html . $text;
 
-					$text = $text . $buttons_html;
+						break;
 
-					break;
+					case 'bottom': 
 
-				case 'both': 
+						$text = $text . $buttons_html;
 
-					$text = $buttons_html . $text . $buttons_html;
+						break;
 
-					break;
+					case 'both': 
+
+						$text = $buttons_html . $text . $buttons_html;
+
+						break;
+				}
 			}
 
 			if ( $this->p->debug->enabled ) {

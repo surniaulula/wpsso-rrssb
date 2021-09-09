@@ -1,6 +1,8 @@
 
 'wpsso_rrssb_buttons_ids' ( $ids, $type = 'content', $mod, $location = 'bottom', $atts )
 
+'wpsso_rrssb_buttons_cta' ( $text, $type = 'content', $mod, $location = 'bottom', $atts )
+
 'wpsso_rrssb_buttons_html' ( $html, $type = 'content', $mod, $location = 'bottom', $atts )
 
 'wpsso_rrssb_buttons_shared_url' ( $url, $mod, $id = 'facebook' )
