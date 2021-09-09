@@ -25,7 +25,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 
 		$mtime_start = microtime( $get_float = true );
 
-		$error_msg   = '';
+		$error_msg = '';
 
 		if ( ! is_array( $ids ) ) {
 
@@ -41,7 +41,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 
 		} elseif ( ! $wpsso->avail[ 'p_ext' ][ 'rrssb' ] ) {
 
-			$error_msg = 'sharing buttons are disabled';
+			$error_msg = 'rrssb add-on is disabled';
 
 		} elseif ( empty( $ids ) ) {	// Nothing to do.
 
@@ -63,7 +63,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 			$wpsso->debug->log( 'required call to WpssoPage->get_mod()' );
 		}
 
-		$atts[ 'use_post' ] = SucomUtil::sanitize_use_post( $atts );
+		$atts[ 'use_post' ] = SucomUtil::sanitize_use_post( $atts, $default = true );
 
 		$mod = $wpsso->page->get_mod( $atts[ 'use_post' ] );
 
@@ -77,3 +77,17 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 		return $buttons_html;
 	}
 }
+
+/**
+ * $use_post can be true, false, or a post ID.
+ */
+if ( ! function_exists( 'wpssorrssb_get_post_sharing_buttons' ) ) {
+
+	function wpssorrssb_get_post_sharing_buttons( $use_post = true, $ids = array(), $atts = array() ) {
+
+		$atts[ 'use_post' ] = $use_post;
+	
+		wpssorrssb_get_sharing_buttons( $ids, $atts );
+	}
+}
+

@@ -1,0 +1,48 @@
+
+<p>The <code>wpssorrssb_get_sharing_buttons()</code> function can include social sharing buttons anywhere in your theme template files. As an example, the following PHP code includes Facebook and Twitter sharing buttons from within a loop, post, or page (the global <code>$post-&gt;ID</code> must be available):</p>
+
+<pre class="wp-block-preformatted">
+&lt;?php if ( function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
+
+    echo wpssorrssb_get_sharing_buttons( array( 'facebook', 'twitter' ) );
+} ?&gt;
+</pre>
+
+<p>The sharing button names for the array can be:</p>
+
+<ul>
+	<li>email</li>
+	<li>facebook</li>
+	<li>linkedin</li>
+	<li>pinterest</li>
+	<li>pocket</li>
+	<li>reddit</li>
+	<li>tumblr</li>
+	<li>twitter</li>
+	<li>vk</li>
+	<li>whatsapp</li>
+</ul>
+
+<p>You can also use the <code>wpssorrssb_get_sharing_buttons()</code> function <em>outside</em> of a loop, post, or page, but you will have to provide additional information to the function. Since the <code>$post</code> variable is not available outside of a loop (to get the permalink URL), at a minimum you will have to provide the webpage URL. Here's an example from a custom NextGEN Gallery template (plugins/nextgen-gallery/view/):</p>
+
+<pre class="wp-block-preformatted">
+if ( function_exists( 'wpssorrssb_get_sharing_buttons' ) ) { 
+
+    $url = ( empty( $_SERVER['HTTPS'] ) ? 'http://' : 'https://' ) .
+    	$_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
+
+    echo wpssorrssb_get_sharing_buttons(
+    	array(
+		'pinterest',
+		'tumblr',
+	),
+        array (
+		'pid' =&gt; 'ngg-' . $image-&gt;pid,
+		'url' =&gt; $url,
+		'caption' =&gt; $image-&gt;caption ),
+	);
+}
+</pre>
+
+<p>This creates a Pinterest and Tumblr button to share a picture from a NextGEN Gallery, sets the URL to the current webpage, and uses the picture's caption as well.</p>
+

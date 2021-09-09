@@ -7,7 +7,7 @@
 
 'wpsso_rrssb_buttons_shared_url' ( $url, $mod, $id = 'facebook' )
 
-'wpsso_rrssb_buttons_force_prot' ( $prot = 'none', $mod, $id = 'facebook', $url )
+'wpsso_rrssb_buttons_force_prot' ( $prot = false, $mod, $id = 'facebook', $url )
 
 'wpsso_rrssb_buttons_disabled' ( $bool = true, $type = 'content', $mod, $location = 'bottom' )
 

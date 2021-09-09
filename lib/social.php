@@ -590,7 +590,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 							$atts[ 'sharing_url' ] = apply_filters( 'wpsso_rrssb_buttons_shared_url', $atts[ 'sharing_url' ], $mod, $id );
 
-							$atts[ 'sharing_url' ] = $this->maybe_force_prot( $atts[ 'sharing_url' ] );
+							$atts[ 'sharing_url' ] = $this->maybe_force_prot( $atts[ 'sharing_url' ], $mod, $id );
 						}
 
 						/**
@@ -659,20 +659,20 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 		/**
 		 * Maybe force a URL protocol to http or https.
 		 */
-		public function maybe_force_prot( $url ) {
+		public function maybe_force_prot( $url, $mod, $id ) {
 
 			/**
 			 * Use false instead of 'none' for the 'wpsso_rrssb_buttons_force_prot' filter.
 			 */
-			$scheme = empty( $this->p->options[ 'buttons_force_prot' ] ) ||
+			$prot = empty( $this->p->options[ 'buttons_force_prot' ] ) ||
 				'none' === $this->p->options[ 'buttons_force_prot' ] ?
 					false : $this->p->options[ 'buttons_force_prot' ];
 
-			$scheme = apply_filters( 'wpsso_rrssb_buttons_force_prot', $scheme, $mod, $id, $atts[ 'sharing_url' ] );
+			$prot = apply_filters( 'wpsso_rrssb_buttons_force_prot', $prot, $mod, $id, $url );
 
-			if ( $scheme && is_string( $scheme ) && 'none' !== $scheme ) {
+			if ( $prot && is_string( $prot ) && 'none' !== $prot ) {
 
-				$url = preg_replace( '/^\w*:?\/\//', $scheme . '://', $url );
+				$url = preg_replace( '/^\w*:?\/\//', $prot . '://', $url );
 			}
 
 			return $url;

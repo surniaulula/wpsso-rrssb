@@ -1,3 +1,6 @@
 
-wpssorrssb_get_sharing_buttons( $share_ids = array(), $atts = array(), $cache_exp_secs = null );
+wpssorrssb_get_sharing_buttons( $ids = array(), $atts = array() );
+
+wpssorrssb_get_post_sharing_buttons( $post_id, $ids = array(), $atts = array() );
+
 
