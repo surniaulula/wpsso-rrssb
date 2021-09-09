@@ -128,6 +128,8 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* Fixed the CSS sidebar id value and its default styling.
 * **Developer Notes**
+	* Added a new `wpssorrssb_get_post_sharing_buttons()` function.
+	* Added a new `wpssorrssb_get_mod_sharing_buttons()` function.
 	* Added a new 'wpsso_rrssb_buttons_ids' filter.
 	* Added a new 'wpsso_rrssb_buttons_disabled' filter.
 	* Removed the 'wpsso_rrssb_add_buttons' filter.
