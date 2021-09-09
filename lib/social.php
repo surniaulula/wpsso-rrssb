@@ -44,6 +44,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			if ( $this->have_buttons_for_type( 'excerpt' ) ) {
 
 				$this->add_buttons_filter( 'get_the_excerpt' );
+
 				$this->add_buttons_filter( 'the_excerpt' );
 			}
 
@@ -115,6 +116,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			}
 
 			$sharing_css_data = SucomUtil::minify_css( $sharing_css_data, $ext = 'wpsso' );
+
 			$sharing_css_path = self::get_sharing_css_path();
 
 			if ( $fh = @fopen( $sharing_css_path, 'wb' ) ) {
@@ -253,10 +255,10 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				$this->p->debug->mark( 'getting buttons for ' . $type );	// Begin timer.
 			}
 
-			$is_admin    = is_admin();
-			$is_amp      = SucomUtil::is_amp();	// Returns null, true, or false.
-			$doing_ajax  = SucomUtilWP::doing_ajax();
-			$error_msg   = '';
+			$is_admin         = is_admin();
+			$is_amp           = SucomUtil::is_amp();	// Returns null, true, or false.
+			$doing_ajax       = SucomUtilWP::doing_ajax();
+			$buttons_disabled = false;
 
 			if ( $doing_ajax ) {
 
@@ -264,6 +266,30 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 					$this->p->debug->log( 'doing_ajax is true' );
 				}
+
+				$buttons_disabled = true;
+
+			} elseif ( $is_amp ) {
+
+				if ( $this->p->debug->enabled ) {
+
+					$this->p->debug->log( 'is_amp is true' );
+				}
+
+				$buttons_disabled = true;
+
+				$text .= '<!-- wpsso rrssb get buttons: buttons not allowed in amp endpoint -->' . "\n";
+
+			} elseif ( is_feed() ) {
+
+				if ( $this->p->debug->enabled ) {
+
+					$this->p->debug->log( 'is_feed is true' );
+				}
+
+				$buttons_disabled = true;
+
+				$text .= '<!-- wpsso rrssb get buttons: buttons not allowed in rss feed -->' . "\n";
 
 			} elseif ( $is_admin ) {
 
@@ -274,26 +300,10 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				if ( strpos( $type, 'admin_' ) !== 0 ) {
 
-					$error_msg = $type . ' ignored in back-end';
+					$buttons_disabled = true;
+
+					$text .= '<!-- wpsso rrssb get buttons: ' . $type . ' buttons ignore in back-end -->' . "\n";
 				}
-
-			} elseif ( $is_amp ) {
-
-				if ( $this->p->debug->enabled ) {
-
-					$this->p->debug->log( 'is_amp is true' );
-				}
-
-				$error_msg = 'buttons not allowed in amp endpoint';
-
-			} elseif ( is_feed() ) {
-
-				if ( $this->p->debug->enabled ) {
-
-					$this->p->debug->log( 'is_feed is true' );
-				}
-
-				$error_msg = 'buttons not allowed in rss feeds';
 
 			} elseif ( ! is_singular() ) {
 
@@ -304,7 +314,9 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				if ( empty( $this->p->options[ 'buttons_on_archive' ] ) ) {
 
-					$error_msg = 'buttons_on_archive not enabled';
+					$buttons_disabled = true;
+
+					$text .= '<!-- wpsso rrssb get buttons: buttons on archive option not enabled -->' . "\n";
 				}
 
 			} elseif ( is_front_page() ) {
@@ -316,7 +328,9 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				if ( empty( $this->p->options[ 'buttons_on_front' ] ) ) {
 
-					$error_msg = 'buttons_on_front not enabled';
+					$buttons_disabled = true;
+
+					$text .= '<!-- wpsso rrssb get buttons: buttons on front option not enabled -->' . "\n";
 				}
 
 			} elseif ( is_singular() ) {
@@ -328,32 +342,34 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				if ( $this->is_post_buttons_disabled() ) {
 
-					$error_msg = 'post buttons are disabled';
+					$buttons_disabled = true;
+
+					$text .= '<!-- wpsso rrssb get buttons: post buttons disabled -->' . "\n";
 				}
-
-			} elseif ( ! apply_filters( 'wpsso_rrssb_add_buttons', true, $type, $mod, $location ) ) {
-
-				$error_msg = 'wpsso_rrssb_add_buttons filter returned false';
 			}
 
-			if ( empty( $error_msg ) ) {
+			if ( ! $buttons_disabled ) {
 
 				if ( ! $this->have_buttons_for_type( $type ) ) {
 
-					$error_msg = 'no sharing buttons enabled';
+					$buttons_disabled = true;
+
+					$text .= '<!-- wpsso rrssb get buttons: no buttons for type ' . $type . ' -->' . "\n";
 				}
 			}
 
-			if ( ! empty( $error_msg ) ) {
+			$buttons_disabled = apply_filters( 'wpsso_rrssb_buttons_disabled', $buttons_disabled, $type, $mod, $location );
+
+			if ( $buttons_disabled ) {
 
 				if ( $this->p->debug->enabled ) {
 
-					$this->p->debug->log( $type . ' filter skipped: ' . $error_msg );
+					$this->p->debug->log( 'exiting early: add buttons is false' );
 
 					$this->p->debug->mark( 'getting buttons for ' . $type );	// End timer.
 				}
 
-				return $text . "\n" . '<!-- ' . __METHOD__ . ' ' . $type . ' filter skipped: ' . $error_msg . ' -->' . "\n";
+				return $text;
 			}
 
 			/**
@@ -396,6 +412,8 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			$atts[ 'use_post' ]    = $mod[ 'use_post' ];
 			$atts[ 'utm_content' ] = 'wpsso-rrssb-' . sanitize_title_with_dashes( $type . '-' . $location );
+
+			$sorted_ids = apply_filters( 'wpsso_rrssb_buttons_ids', $sorted_ids, $type, $mod, $location, $atts );
 
 			$buttons_html = $this->get_html( $sorted_ids, $mod, $atts );
 
@@ -553,15 +571,17 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 						if ( empty( $atts[ 'sharing_url' ] ) ) {
 
 							$atts[ 'sharing_url' ] = $this->p->util->get_sharing_url( $mod, $atts[ 'add_page' ], $atts );
+
 							$atts[ 'sharing_url' ] = apply_filters( 'wpsso_rrssb_buttons_shared_url', $atts[ 'sharing_url' ], $mod, $id );
 
 							/**
 							 * Maybe force the protocol to http or https.
 							 */
 							$force_prot = $this->p->options[ 'buttons_force_prot' ];
+
 							$force_prot = apply_filters( 'wpsso_rrssb_buttons_force_prot', $force_prot, $mod, $id, $atts[ 'sharing_url' ] );
 
-							if ( ! empty( $force_prot ) && $force_prot !== 'none' ) {
+							if ( $force_prot && is_string( $force_prot ) && $force_prot !== 'none' ) {
 
 								$atts[ 'sharing_url' ] = preg_replace( '/^.*:\/\//', $force_prot . '://', $atts[ 'sharing_url' ] );
 							}
@@ -652,7 +672,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 		public function is_post_buttons_disabled() {
 
-			$ret = false;
+			$disabled = false;
 
 			static $local_cache = array();
 
@@ -663,15 +683,14 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					$this->p->debug->log( 'exiting early: invalid post object' );
 				}
 
-				return $ret;
-
+				return $disabled;
 			}
 
 			$post_id = empty( $post_obj->ID ) ? 0 : $post_obj->ID;
 
 			if ( empty( $post_id ) ) {
 
-				return $ret;
+				return $disabled;
 			}
 
 			if ( isset( $local_cache[ $post_id ] ) ) {
@@ -686,7 +705,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					$this->p->debug->log( 'post ' . $post_id . ': sharing buttons disabled by meta data option' );
 				}
 
-				$ret = true;
+				$disabled = true;
 
 			} elseif ( ! empty( $post_obj->post_type ) && empty( $this->p->options[ 'buttons_add_to_' . $post_obj->post_type ] ) ) {
 
@@ -695,10 +714,10 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					$this->p->debug->log( 'post ' . $post_id . ': sharing buttons not enabled for post type ' . $post_obj->post_type );
 				}
 
-				$ret = true;
+				$disabled = true;
 			}
 
-			return $local_cache[ $post_id ] = apply_filters( 'wpsso_post_buttons_disabled', $ret, $post_id );
+			return $local_cache[ $post_id ] = $disabled;
 		}
 
 		public function get_share_ids( $share = array() ) {

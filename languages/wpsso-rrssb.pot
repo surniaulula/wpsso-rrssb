@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"7.0.0\n"
+"7.0.1-dev.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2021-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -467,19 +467,19 @@ msgctxt "option label"
 msgid "Recommend Author @username"
 msgstr ""
 
-#: lib/social.php:126
+#: lib/social.php:128
 msgid "Failed writing the css file %s."
 msgstr ""
 
-#: lib/social.php:138
+#: lib/social.php:140
 msgid "Cache folder %s is not writable."
 msgstr ""
 
-#: lib/social.php:144
+#: lib/social.php:146
 msgid "Failed to open the css file %s for writing."
 msgstr ""
 
-#: lib/social.php:161
+#: lib/social.php:163
 msgid ""
 "Error removing the minified stylesheet - does the web server have sufficient "
 "privileges?"

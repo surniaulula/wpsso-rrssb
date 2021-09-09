@@ -191,7 +191,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 			if ( empty( $atts[ 'buttons' ] ) ) {	// Nothing to do.
 
-				return '<!-- ' . $this->shortcode_name . ' shortcode: no buttons attribute -->' . "\n\n";
+				return '<!-- ' . $this->shortcode_name . ' shortcode: no buttons in attributes -->' . "\n\n";
 			}
 
 			$atts[ 'use_post' ] = SucomUtil::sanitize_use_post( $atts, $default = true );
