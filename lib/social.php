@@ -555,8 +555,8 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			$atts[ 'utm_medium' ]   = isset( $this->p->options[ 'buttons_utm_medium' ] ) ? $this->p->options[ 'buttons_utm_medium' ] : '';
 			$atts[ 'utm_campaign' ] = is_object( $mod[ 'obj' ] ) ? $mod[ 'obj' ]->get_options( $mod[ 'id' ], 'buttons_utm_campaign' ) : null;
 
-			$buttons_html  = '';
 			$buttons_begin = '<ul class="rrssb-buttons ' . SucomUtil::get_locale( $mod ) . ' clearfix">' . "\n";
+			$buttons_html  = '';
 			$buttons_end   = '</ul><!-- .rrssb-buttons.' . SucomUtil::get_locale( $mod ) . '.clearfix -->' . "\n";
 			$saved_atts    = $atts;
 
@@ -564,7 +564,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				if ( isset( $this->share[ $id ] ) ) {
 
-					if ( method_exists( $this->share[ $id ], 'get_html' ) ) {
+					if ( method_exists( $this->share[ $id ], 'get_html' ) ) {	// Just in case.
 
 						/**
 						 * Get the social sharing button UTM source name (ie. 'facebook').
@@ -590,17 +590,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 							$atts[ 'sharing_url' ] = apply_filters( 'wpsso_rrssb_buttons_shared_url', $atts[ 'sharing_url' ], $mod, $id );
 
-							/**
-							 * Maybe force the protocol to http or https.
-							 */
-							$force_prot = $this->p->options[ 'buttons_force_prot' ];
-
-							$force_prot = apply_filters( 'wpsso_rrssb_buttons_force_prot', $force_prot, $mod, $id, $atts[ 'sharing_url' ] );
-
-							if ( $force_prot && is_string( $force_prot ) && $force_prot !== 'none' ) {
-
-								$atts[ 'sharing_url' ] = preg_replace( '/^.*:\/\//', $force_prot . '://', $atts[ 'sharing_url' ] );
-							}
+							$atts[ 'sharing_url' ] = $this->maybe_force_prot( $atts[ 'sharing_url' ] );
 						}
 
 						/**
@@ -664,6 +654,28 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			}
 
 			return $buttons_html;
+		}
+
+		/**
+		 * Maybe force a URL protocol to http or https.
+		 */
+		public function maybe_force_prot( $url ) {
+
+			/**
+			 * Use false instead of 'none' for the 'wpsso_rrssb_buttons_force_prot' filter.
+			 */
+			$scheme = empty( $this->p->options[ 'buttons_force_prot' ] ) ||
+				'none' === $this->p->options[ 'buttons_force_prot' ] ?
+					false : $this->p->options[ 'buttons_force_prot' ];
+
+			$scheme = apply_filters( 'wpsso_rrssb_buttons_force_prot', $scheme, $mod, $id, $atts[ 'sharing_url' ] );
+
+			if ( $scheme && is_string( $scheme ) && 'none' !== $scheme ) {
+
+				$url = preg_replace( '/^\w*:?\/\//', $scheme . '://', $url );
+			}
+
+			return $url;
 		}
 
 		public function have_buttons_for_type( $type ) {
