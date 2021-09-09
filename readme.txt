@@ -119,6 +119,24 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 7.0.1-dev.1 (2021/09/09)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Added a new 'wpsso_rrssb_buttons_ids' filter.
+	* Added a new 'wpsso_rrssb_buttons_disabled' filter.
+	* Removed the 'wpsso_rrssb_add_buttons' filter.
+	* Removed the 'wpsso_post_buttons_disabled' filter.
+* **Requires At Least**
+	* PHP v7.0.
+	* WordPress v5.2.
+	* WPSSO Core v8.39.0-dev.1.
+
 **Version 7.0.0 (2021/09/07)**
 
 * **New Features**
@@ -290,6 +308,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v8.14.0.
 
 == Upgrade Notice ==
+
+= 7.0.1-dev.1 =
+
+(2021/09/09) Added and removed share buttons filters.
 
 = 7.0.0 =
 
