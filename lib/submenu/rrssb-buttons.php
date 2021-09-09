@@ -186,7 +186,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 						'<td>' . $this->form->get_checklist_post_types( $name_prefix = 'buttons_add_to' ) . '</td>';
 
 					$table_rows[ 'buttons_cta' ] = '' .
-						$this->form->get_th_html( _x( 'Call to Action', 'option label', 'wpsso-rrssb' ),
+						$this->form->get_th_html_locale( _x( 'Call to Action', 'option label', 'wpsso-rrssb' ),
 							$css_class = '', $css_id = 'buttons_cta' ) . 
 						'<td>' . $this->form->get_input( 'buttons_cta', $class_class = 'wide' ) . '</td>';
 

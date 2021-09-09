@@ -194,7 +194,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 
 			$doing_ajax = SucomUtilWP::doing_ajax();
 
-			$metabox_html .= $this->a->social->get_buttons( $text = '', 'admin_edit', $mod );
+			$metabox_html .= $this->a->social->get_buttons( $text = '', $type = 'admin_edit', $mod );
 
 			/**
 			 * The type="text/javascript" attribute is unnecessary for JavaScript resources and creates warnings in the W3C validator.

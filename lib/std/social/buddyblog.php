@@ -150,7 +150,7 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddyblogSharing' ) ) {
 
 			$rrssb =& WpssoRrssb::get_instance();
 
-			echo $rrssb->social->get_buttons( '', 'bblog_post' );
+			echo $rrssb->social->get_buttons( $text = '', $type = 'bblog_post' );
 		}
 	}
 }

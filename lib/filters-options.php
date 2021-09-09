@@ -67,6 +67,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 				/**
 				 * Text strings that can be blank.
 				 */
+				case 'buttons_cta':
 				case ( preg_match( '/^buttons_css_/', $base_key ) ? true : false ):	// Use the tool page to reload the default CSS.
 
 					return 'ok_blank';

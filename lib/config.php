@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(			// Plugin acronym.
-					'version'     => '7.0.1-dev.2',	// Plugin version.
+					'version'     => '7.1.0-dev.2',	// Plugin version.
 					'opt_version' => '41',		// Increment when changing default option values.
 					'short'       => 'WPSSO RRSSB',	// Short plugin name.
 					'name'        => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
@@ -111,7 +111,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'buttons_add_to_attachment' => 1,	// Include on Post Types (Media).
 					'buttons_add_to_page'       => 1,	// Include on Post Types (Pages).
 					'buttons_add_to_post'       => 1,	// Include on Post Types (Posts).
-					'buttons_cta'               => 'Find this content useful? Share it with your friends!',	// Call to Action.
+					'buttons_cta'               => 'Find this content useful? Share it with your friends!',	// Call to Action (localized).
 					'buttons_pos_content'       => 'bottom',	// Position in Content.
 					'buttons_pos_excerpt'       => 'bottom',	// Position in Excerpt.
 					'buttons_force_prot'        => 'none',		// Force Protocol for Shared URLs.

@@ -15,6 +15,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 	function wpssorrssb_get_sharing_buttons( $ids = array(), $atts = array() ) {
 
 		$wpsso =& Wpsso::get_instance();
+
 		$rrssb =& WpssoRrssb::get_instance();
 
 		if ( $wpsso->debug->enabled ) {
@@ -23,6 +24,7 @@ if ( ! function_exists( 'wpssorrssb_get_sharing_buttons' ) ) {
 		}
 
 		$mtime_start = microtime( $get_float = true );
+
 		$error_msg   = '';
 
 		if ( ! is_array( $ids ) ) {

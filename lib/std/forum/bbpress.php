@@ -185,7 +185,7 @@ if ( ! class_exists( 'WpssoRrssbStdForumBbpressSharing' ) ) {
 
 					$rrssb =& WpssoRrssb::get_instance();
 
-					echo $rrssb->social->get_buttons( $text = '', 'bbp_single', true, 'top' );
+					echo $rrssb->social->get_buttons( $text = '', $type = 'bbp_single', $use_post = true, $location = 'top' );
 				}
 			}
 		}

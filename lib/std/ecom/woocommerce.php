@@ -145,7 +145,7 @@ if ( ! class_exists( 'WpssoRrssbStdEcomWoocommerceSharing' ) ) {
 				return $text;
 			}
 
-			return $rrssb->social->get_buttons( $text, 'woo_short' );
+			return $rrssb->social->get_buttons( $text, $type = 'woo_short' );
 		}
 
 		public function get_variation_woo_short( $data, $product, $variation ) {

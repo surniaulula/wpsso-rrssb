@@ -482,12 +482,12 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 		public function get_buttons_for_the_content( $text ) {
 
-			return $this->get_buttons( $text, 'content' );
+			return $this->get_buttons( $text, $type = 'content' );
 		}
 
 		public function get_buttons_for_get_the_excerpt( $text ) {
 
-			return $this->get_buttons( $text, 'excerpt' );
+			return $this->get_buttons( $text, $type = 'excerpt' );
 		}
 
 		public function get_buttons_for_the_excerpt( $text ) {

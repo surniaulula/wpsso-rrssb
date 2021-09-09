@@ -154,7 +154,7 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddypressSharing' ) ) {
 
 				$rrssb =& WpssoRrssb::get_instance();
 
-				echo $rrssb->social->get_buttons( $text = '', 'bp_activity' );
+				echo $rrssb->social->get_buttons( $text = '', $type = 'bp_activity' );
 
 			} elseif ( $this->p->debug->enabled ) {
 
