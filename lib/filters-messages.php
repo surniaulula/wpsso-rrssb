@@ -228,6 +228,12 @@ aside.widget
 
 					break;
 
+				case 'tooltip-buttons_cta':	// Call to Action.
+
+					$text = __( 'Include a call to action banner above the social sharing buttons.', 'wpsso-rrssb' ) . ' ';
+					
+					break;
+
 				case ( strpos( $msg_key, 'tooltip-buttons_pos_' ) === false ? false : true ):	// Position in Content and Excerpt.
 
 					$text = __( 'Social sharing buttons can be added to the top, bottom, or both locations in the text.', 'wpsso-rrssb' ) . ' ';

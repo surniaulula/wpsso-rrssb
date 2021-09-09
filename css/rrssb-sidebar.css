@@ -4,7 +4,7 @@
  * necessary to customize the layout for your website.
  */
 
-.wpsso-rrssb-sidebar {
+#wpsso-rrssb-sidebar {
 	display:block;
 	cursor:pointer;
 	position:fixed;
@@ -17,42 +17,41 @@
 	overflow:hidden;
 }
 
-.wpsso-rrssb-sidebar ul.rrssb-buttons,
-.wpsso-rrssb-sidebar .wpsso-rrssb-sidebar-limit ul.rrssb-buttons {
+#wpsso-rrssb-sidebar ul.rrssb-buttons {
 	width:42px;
 	height:42px;
 	margin:0;
 	padding:0;
 }
 
-.wpsso-rrssb-sidebar ul.rrssb-buttons::before,
-.wpsso-rrssb-sidebar ul.rrssb-buttons::after {
+#wpsso-rrssb-sidebar ul.rrssb-buttons::before,
+#wpsso-rrssb-sidebar ul.rrssb-buttons::after {
 	display:none;
 }
 
-.wpsso-rrssb-sidebar ul.rrssb-buttons > li a {
+#wpsso-rrssb-sidebar ul.rrssb-buttons li a {
 	border-radius:0;
 }
 
-.wpsso-rrssb-sidebar ul.rrssb-buttons.small-format > li {
+#wpsso-rrssb-sidebar ul.rrssb-buttons li {
 	height:42px;
 	padding:0;
 }
 
-.wpsso-rrssb-sidebar ul.rrssb-buttons.small-format > li a .rrssb-icon svg {
-	height:60%;
+#wpsso-rrssb-sidebar ul.rrssb-buttons li a .rrssb-icon svg {
+	height:50%;
 	top:0;
-	margin:20% auto;
+	margin:25% auto;
 }
 
 @media screen and (max-width:1200px) {
 
-	.wpsso-rrssb-sidebar ul.rrssb-buttons {
-		width:32px;
-		height:32px;
+	#wpsso-rrssb-sidebar ul.rrssb-buttons {
+		width:36px;
+		height:36px;
 	}
 
-	.wpsso-rrssb-sidebar ul.rrssb-buttons.small-format > li {
-		height:32px;
+	#wpsso-rrssb-sidebar ul.rrssb-buttons li {
+		height:36px;
 	}
 }

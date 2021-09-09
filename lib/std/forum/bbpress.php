@@ -22,12 +22,14 @@ if ( ! class_exists( 'WpssoRrssbStdForumBbpress' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
 			if ( empty( $this->p->avail[ 'p_ext' ][ 'rrssb' ] ) ) {	// False if required version(s) not available.
 
 				if ( $this->p->debug->enabled ) {
+
 					$this->p->debug->log( 'exiting early: this extension / add-on is not available' );
 				}
 
@@ -55,6 +57,7 @@ if ( ! class_exists( 'WpssoRrssbStdForumBbpressSharing' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -73,7 +76,9 @@ if ( ! class_exists( 'WpssoRrssbStdForumBbpressSharing' ) ) {
 
 			} else {
 
-				switch ( $this->p->options[ 'buttons_pos_bbp_single' ] ) {
+				$location = empty( $this->p->options[ 'buttons_pos_bbp_single' ] ) ? 'top' : $this->p->options[ 'buttons_pos_bbp_single' ];
+
+				switch ( $location ) {
 
 					case 'top':
 
@@ -111,6 +116,7 @@ if ( ! class_exists( 'WpssoRrssbStdForumBbpressSharing' ) ) {
 					default:
 
 						if ( $this->p->debug->enabled ) {
+
 							$this->p->debug->log( 'unrecognized value for buttons_pos_bbp_single option' );
 						}
 
@@ -120,6 +126,7 @@ if ( ! class_exists( 'WpssoRrssbStdForumBbpressSharing' ) ) {
 				}
 
 				foreach ( $pos_bbp_single as $bbp_action ) {
+
 					add_action( $bbp_action, array( $this, 'add_bbp_template_single' ), 90 );
 				}
 			}
@@ -127,11 +134,12 @@ if ( ! class_exists( 'WpssoRrssbStdForumBbpressSharing' ) ) {
 
 		public function filter_get_defaults( $opts_def ) {
 
+			$opts_def[ 'buttons_pos_bbp_single' ] = 'top';	// Position in bbPress Single.
+
 			foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $id => $opt_pre ) {
+
 				$opts_def[ $opt_pre . '_on_bbp_single' ] = 0;
 			}
-
-			$opts_def[ 'buttons_pos_bbp_single' ] = 'top';
 
 			return $opts_def;
 		}
@@ -146,8 +154,9 @@ if ( ! class_exists( 'WpssoRrssbStdForumBbpressSharing' ) ) {
 		public function filter_rrssb_buttons_position_rows( $table_rows, $form ) {
 
 			$table_rows[ 'buttons_pos_bbp_single' ] = '' .
-			$form->get_th_html( _x( 'Position in bbPress Single', 'option label', 'wpsso-rrssb' ), null, 'buttons_pos_bbp_single' ) . 
-			'<td>' . $form->get_select( 'buttons_pos_bbp_single', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
+				$form->get_th_html( _x( 'Position in bbPress Single', 'option label', 'wpsso-rrssb' ),
+					$css_class = '', $css_id = 'buttons_pos_bbp_single' ) . 
+				'<td>' . $form->get_select( 'buttons_pos_bbp_single', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
 
 			return $table_rows;
 		}

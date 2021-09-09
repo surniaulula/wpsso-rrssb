@@ -17,8 +17,8 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(			// Plugin acronym.
-					'version'     => '7.0.1-dev.1',	// Plugin version.
-					'opt_version' => '40',		// Increment when changing default option values.
+					'version'     => '7.0.1-dev.2',	// Plugin version.
+					'opt_version' => '41',		// Increment when changing default option values.
 					'short'       => 'WPSSO RRSSB',	// Short plugin name.
 					'name'        => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
 					'desc'        => 'Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, templates, and editor.',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '8.39.0-dev.1',
+							'min_version'   => '8.39.0-dev.2',
 						),
 					),
 
@@ -106,16 +106,16 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					/**
 					 * Responsive Buttons
 					 */
-					'buttons_on_archive'        => 0,
-					'buttons_on_front'          => 0,
-					'buttons_add_to_attachment' => 1,
-					'buttons_add_to_page'       => 1,
-					'buttons_add_to_post'       => 1,
-					'buttons_pos_content'       => 'bottom',
-					'buttons_pos_excerpt'       => 'bottom',
-					'buttons_pos_bblog_post'    => 'bottom',
-					'buttons_force_prot'        => 'none',
-					'buttons_utm_medium'        => 'social',
+					'buttons_on_archive'        => 0,	// Include on Archive Webpages.
+					'buttons_on_front'          => 0,	// Include on Static Homepage.
+					'buttons_add_to_attachment' => 1,	// Include on Post Types (Media).
+					'buttons_add_to_page'       => 1,	// Include on Post Types (Pages).
+					'buttons_add_to_post'       => 1,	// Include on Post Types (Posts).
+					'buttons_cta'               => 'Find this content useful? Share it with your friends!',	// Call to Action.
+					'buttons_pos_content'       => 'bottom',	// Position in Content.
+					'buttons_pos_excerpt'       => 'bottom',	// Position in Excerpt.
+					'buttons_force_prot'        => 'none',		// Force Protocol for Shared URLs.
+					'buttons_utm_medium'        => 'social',	// UTM Medium for All Buttons.
 
 					/**
 					 * Responsive Styles

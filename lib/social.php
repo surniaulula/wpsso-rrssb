@@ -422,14 +422,17 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				$buttons_count = preg_match_all( '/<li/', $buttons_html );	// Returns number of matches or false on error. 
 
 				$css_type      = 'rrssb-' . $type;
-				$css_id        = 'sidebar' === $type ? 'wpsso-' . $css_type . ' ' : '';
 				$css_class     = 'wpsso-rrssb wpsso-' . $css_type;
 				$css_class_max = 'wpsso-rrssb-limit wpsso-' . $css_type . '-limit';
 				$css_style_max = 'max-width:' . ( WPSSORRSSB_MAX_WIDTH_MULTIPLIER * $buttons_count ) . 'px; margin:0 auto;';
 
-				if ( $mod[ 'name' ] ) {
+				if ( 'sidebar' === $type ) {
 
-					$css_id .= 'wpsso-' . $css_type . '-' . $mod[ 'name' ];
+					$css_id = 'wpsso-' . $css_type;
+				
+				} elseif ( $mod[ 'name' ] ) {
+
+					$css_id = 'wpsso-' . $css_type . '-' . $mod[ 'name' ];
 
 					if ( $mod[ 'id' ] ) {
 
@@ -438,7 +441,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				}
 
 				$buttons_html = '<!-- wpsso ' . $css_type . ' begin -->' .	// Used by $this->get_buttons_for_the_excerpt().
-					'<div class="' . $css_class . '" id="' . trim( $css_id ) . '">' . 
+					'<div class="' . $css_class . '" id="' . $css_id . '">' . 
 					'<div class="' . $css_class_max . '" style="' . $css_style_max . '">' . 
 					$buttons_html .
 					'</div><!-- .wpsso-rrssb-limit -->' .

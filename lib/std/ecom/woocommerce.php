@@ -81,12 +81,12 @@ if ( ! class_exists( 'WpssoRrssbStdEcomWoocommerceSharing' ) ) {
 
 		public function filter_get_defaults( $opts_def ) {
 
+			$opts_def[ 'buttons_pos_woo_short' ] = 'bottom';	// Position in Woo Short Text.
+
 			foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $cm_id => $opt_pre ) {
 
-				$opts_def[$opt_pre . '_on_woo_short' ] = 0;
+				$opts_def[ $opt_pre . '_on_woo_short' ] = 0;
 			}
-
-			$opts_def[ 'buttons_pos_woo_short' ] = 'bottom';
 
 			return $opts_def;
 		}
@@ -101,8 +101,9 @@ if ( ! class_exists( 'WpssoRrssbStdEcomWoocommerceSharing' ) ) {
 		public function filter_rrssb_buttons_position_rows( $table_rows, $form ) {
 
 			$table_rows[ 'buttons_pos_woo_short' ] = '' .
-			$form->get_th_html( _x( 'Position in Woo Short Text', 'option label', 'wpsso-rrssb' ), null, 'buttons_pos_woo_short' ) . 
-			'<td>' . $form->get_select( 'buttons_pos_woo_short', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
+				$form->get_th_html( _x( 'Position in Woo Short Text', 'option label', 'wpsso-rrssb' ),
+					$css_class = '', $css_id = 'buttons_pos_woo_short' ) . 
+				'<td>' . $form->get_select( 'buttons_pos_woo_short', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
 
 			return $table_rows;
 		}

@@ -22,12 +22,14 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddyblog' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
 			if ( empty( $this->p->avail[ 'p_ext' ][ 'rrssb' ] ) ) {	// False if required version(s) not available.
 
 				if ( $this->p->debug->enabled ) {
+
 					$this->p->debug->log( 'exiting early: this extension / add-on is not available' );
 				}
 
@@ -55,6 +57,7 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddyblogSharing' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -74,8 +77,7 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddyblogSharing' ) ) {
 
 			if ( bp_is_buddyblog_component() ) {
 
-				$location = empty( $this->p->options[ 'buttons_pos_bblog_post' ] ) ? 
-					'bottom' : $this->p->options[ 'buttons_pos_bblog_post' ];
+				$location = empty( $this->p->options[ 'buttons_pos_bblog_post' ] ) ? 'bottom' : $this->p->options[ 'buttons_pos_bblog_post' ];
 
 				switch ( $location ) {
 
@@ -103,7 +105,10 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddyblogSharing' ) ) {
 
 		public function filter_get_defaults( $opts_def ) {
 
+			$opts_def[ 'buttons_pos_bblog_post' ] = 'bottom';	// Position in BuddyBlog Post.
+
 			foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $id => $opt_pre ) {
+
 				$opts_def[ $opt_pre . '_on_bblog_post' ] = 0;
 			}
 
@@ -112,9 +117,10 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddyblogSharing' ) ) {
 
 		public function filter_rrssb_buttons_position_rows( $table_rows, $form ) {
 
-			$table_rows[ 'buttons_pos_bblog_post' ] = $form->get_th_html( _x( 'Position in BuddyBlog Post',
-				'option label', 'wpsso-rrssb' ), '', 'buttons_pos_bblog_post' ) . 
-			'<td>' . $form->get_select( 'buttons_pos_bblog_post', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
+			$table_rows[ 'buttons_pos_bblog_post' ] = '' .
+				$form->get_th_html( _x( 'Position in BuddyBlog Post',
+					'option label', 'wpsso-rrssb' ), '', 'buttons_pos_bblog_post' ) . 
+				'<td>' . $form->get_select( 'buttons_pos_bblog_post', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
 
 			return $table_rows;
 		}
