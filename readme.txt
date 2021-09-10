@@ -134,6 +134,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Added a new 'wpsso_rrssb_buttons_disabled' filter.
 	* Removed the 'wpsso_rrssb_add_buttons' filter.
 	* Removed the 'wpsso_post_buttons_disabled' filter.
+	* Renamed Pinterest option keys from 'p_*' to 'pin_*'.
 * **Requires At Least**
 	* PHP v7.0.
 	* WordPress v5.2.
