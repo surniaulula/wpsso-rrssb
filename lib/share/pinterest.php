@@ -102,8 +102,8 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 			/**
 			 * Make sure the Pinterest Pin It image size is available.
 			 */
-			$this->p->options[ 'p_add_img_html' ]    = 1;
-			$this->p->options[ 'p_add_img_html:is' ] = 'disabled';
+			$this->p->options[ 'pin_add_img_html' ]    = 1;
+			$this->p->options[ 'pin_add_img_html:is' ] = 'disabled';
 
 			$this->p->util->add_plugin_filters( $this, array( 
 				'get_defaults' => 1,
@@ -156,7 +156,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 
 				$media_request = array( 'img_url', 'prev_url' );
 
-				$media_info = $this->p->og->get_media_info( $size_name, $media_request, $mod, $md_pre = array( 'p', 'schema', 'og' ) );
+				$media_info = $this->p->og->get_media_info( $size_name, $media_request, $mod, $md_pre = array( 'pin', 'schema', 'og' ) );
 
 				if ( ! empty( $media_info[ 'img_url' ] ) ) {
 
@@ -181,7 +181,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 			$extras = array(
 				'media_url'         => $atts[ 'photo' ],
 				'pinterest_caption' => $this->p->page->get_caption( $type = 'excerpt', $this->p->options[ 'pin_caption_max_len' ], $mod,
-					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = array ( 'pin_desc', 'p_img_desc', 'og_desc' ) ),
+					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = array ( 'pin_desc', 'pin_img_desc', 'og_desc' ) ),
 			);
 
 			return $this->p->util->replace_inline_variables( $this->p->options[ 'pin_rrssb_html' ], $mod, $atts, $extras );

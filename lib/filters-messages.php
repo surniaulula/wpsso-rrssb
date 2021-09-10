@@ -198,11 +198,6 @@ aside.widget
 
 		public function filter_messages_tooltip_buttons( $text, $msg_key ) {
 
-			if ( 0 !== strpos( $msg_key, 'tooltip-buttons_' ) ) {
-
-				return $text;
-			}
-
 			switch ( $msg_key ) {
 
 				/**

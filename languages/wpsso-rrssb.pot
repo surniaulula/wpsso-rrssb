@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"7.1.0-dev.3\n"
+"7.1.0-dev.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2021-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -50,7 +50,7 @@ msgctxt "lib file description"
 msgid "Responsive Buttons"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:11 lib/filters-messages.php:278
+#: gettext/gettext-lib-config.php:11 lib/filters-messages.php:273
 msgctxt "lib file description"
 msgid "Responsive Styles"
 msgstr ""
@@ -251,48 +251,48 @@ msgid ""
 "activities are assigned the \"%2$s\" class."
 msgstr ""
 
-#: lib/filters-messages.php:213
+#: lib/filters-messages.php:208
 msgid ""
 "Add social sharing buttons to each post on an archive webpage (blog front "
 "page, category, etc.)."
 msgstr ""
 
-#: lib/filters-messages.php:219
+#: lib/filters-messages.php:214
 msgid ""
 "If a static page has been selected for your homepage, you can add social "
 "sharing buttons to that static page as well."
 msgstr ""
 
-#: lib/filters-messages.php:225
+#: lib/filters-messages.php:220
 msgid ""
 "Social sharing buttons are added to posts, pages, and attachment webpages by "
 "default."
 msgstr ""
 
-#: lib/filters-messages.php:227
+#: lib/filters-messages.php:222
 msgid ""
 "If your theme (or another plugin) supports additional custom post types, and "
 "you would like to include social sharing buttons on these webpages, check "
 "the associated options here."
 msgstr ""
 
-#: lib/filters-messages.php:233
+#: lib/filters-messages.php:228
 msgid "Include a call to action banner above the social sharing buttons."
 msgstr ""
 
-#: lib/filters-messages.php:239
+#: lib/filters-messages.php:234
 msgid ""
 "Social sharing buttons can be added to the top, bottom, or both locations in "
 "the text."
 msgstr ""
 
-#: lib/filters-messages.php:241
+#: lib/filters-messages.php:236
 msgid ""
 "The <em>%s</em> option of each social sharing button must be enabled as well "
 "for that button to appear in that location in the text."
 msgstr ""
 
-#: lib/filters-messages.php:241 lib/share/email.php:38
+#: lib/filters-messages.php:236 lib/share/email.php:38
 #: lib/share/facebook.php:37 lib/share/linkedin.php:38
 #: lib/share/pinterest.php:38 lib/share/pocket.php:38 lib/share/reddit.php:38
 #: lib/share/tumblr.php:38 lib/share/twitter.php:38 lib/share/vk.php:38
@@ -301,90 +301,90 @@ msgctxt "option label"
 msgid "Show Button in"
 msgstr ""
 
-#: lib/filters-messages.php:247
+#: lib/filters-messages.php:242
 msgid ""
 "Force the selected protocol for all shared URLs, or select none to keep the "
 "protocol as-is."
 msgstr ""
 
-#: lib/filters-messages.php:253
+#: lib/filters-messages.php:248
 msgid "Identifies the origin of a shared link."
 msgstr ""
 
-#: lib/filters-messages.php:255
+#: lib/filters-messages.php:250
 msgid ""
 "Popular UTM medium values are \"cpc\", \"email\", \"referral\", and \"social"
 "\"."
 msgstr ""
 
-#: lib/filters-messages.php:261
+#: lib/filters-messages.php:256
 msgid ""
 "Append the %1$s to the tweet (see <a href=\"%2$s\">the Twitter options tab</"
 "a> in the %3$s page). The %1$s will be displayed and recommended after the "
 "webpage is shared."
 msgstr ""
 
-#: lib/filters-messages.php:261 lib/filters-messages.php:267
+#: lib/filters-messages.php:256 lib/filters-messages.php:262
 msgctxt "option label"
 msgid "Twitter Business @username"
 msgstr ""
 
-#: lib/filters-messages.php:261
+#: lib/filters-messages.php:256
 msgctxt "lib file description"
 msgid "General Settings"
 msgstr ""
 
-#: lib/filters-messages.php:267
+#: lib/filters-messages.php:262
 msgid ""
 "Recommend following the author's Twitter @username after sharing a webpage. "
 "If the %1$s option (above) is also checked, the %2$s is suggested first."
 msgstr ""
 
-#: lib/filters-messages.php:267 lib/share/twitter.php:65
+#: lib/filters-messages.php:262 lib/share/twitter.php:65
 msgctxt "option label"
 msgid "Add via Business @username"
 msgstr ""
 
-#: lib/filters-messages.php:278
+#: lib/filters-messages.php:273
 msgid "Combine and include the CSS of all <em>%s</em> in webpages."
 msgstr ""
 
-#: lib/filters-messages.php:280
+#: lib/filters-messages.php:275
 msgid ""
 "The combined CSS will be minified and saved into a single stylesheet with a "
 "URL of <a href=\"%1$s\">%2$s</a>."
 msgstr ""
 
-#: lib/filters-messages.php:282
+#: lib/filters-messages.php:277
 msgid ""
 "The minified stylesheet can be enqueued, or included directly in the webpage "
 "HTML."
 msgstr ""
 
-#: lib/filters-messages.php:288
+#: lib/filters-messages.php:283
 msgid ""
 "Have WordPress enqueue the social stylesheet instead of including the social "
 "styles directly in the webpage HTML."
 msgstr ""
 
-#: lib/filters-messages.php:290
+#: lib/filters-messages.php:285
 msgid ""
 "Enqueueing the stylesheet may be desirable if you use an optimization plugin "
 "to concatenate all enqueued styles into a single stylesheet."
 msgstr ""
 
-#: lib/filters-messages.php:310
+#: lib/filters-messages.php:305
 msgid ""
 "Disable social sharing buttons in the post content, excerpt, and CSS sidebar."
 msgstr ""
 
-#: lib/filters-messages.php:312
+#: lib/filters-messages.php:307
 msgid ""
 "This does not disable social sharing buttons added using a shortcode or "
 "widget."
 msgstr ""
 
-#: lib/filters-messages.php:318
+#: lib/filters-messages.php:313
 msgid ""
 "Identifies a strategic campaign (e.g. product launch, new feature, "
 "partnership, etc.) or a specific promotion (e.g. a sale, a giveaway, etc.)."
