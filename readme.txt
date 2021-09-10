@@ -119,7 +119,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 7.1.0-dev.3 (2021/09/09)**
+**Version 7.1.0-dev.4 (2021/09/10)**
 
 * **New Features**
 	* None.
@@ -137,7 +137,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.0.
 	* WordPress v5.2.
-	* WPSSO Core v8.39.0-dev.3.
+	* WPSSO Core v8.39.0-dev.4.
 
 **Version 7.0.0 (2021/09/07)**
 
@@ -311,9 +311,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 7.1.0-dev.3 =
+= 7.1.0-dev.4 =
 
-(2021/09/09) Added a new SSO &gt; Responsive Buttons &gt; Call to Action option. Fixed the CSS sidebar id value and its default styling.
+(2021/09/10) Added a new SSO &gt; Responsive Buttons &gt; Call to Action option. Fixed the CSS sidebar id value and its default styling.
 
 = 7.0.0 =
 
