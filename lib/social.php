@@ -429,7 +429,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				if ( 'sidebar' === $type ) {
 
 					$css_id = 'wpsso-' . $css_type;
-				
+
 				} elseif ( $mod[ 'name' ] ) {
 
 					$css_id = 'wpsso-' . $css_type . '-' . $mod[ 'name' ];

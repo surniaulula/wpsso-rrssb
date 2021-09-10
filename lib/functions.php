@@ -25,7 +25,7 @@ if ( ! function_exists( 'wpssorrssb_get_post_sharing_buttons' ) ) {
 		}
 
 		$atts[ 'use_post' ] = $use_post;
-	
+
 		return wpssorrssb_get_sharing_buttons( $ids, $atts );
 	}
 }
@@ -92,7 +92,7 @@ if ( ! function_exists( 'wpssorrssb_get_mod_sharing_buttons' ) ) {
 		}
 
 		$atts[ 'use_post' ] = false;	// Just in case.
-	
+
 		$buttons_html = $rrssb->social->get_html( $ids, $mod, $atts );
 
 		if ( $wpsso->debug->enabled ) {

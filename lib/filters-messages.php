@@ -218,7 +218,7 @@ aside.widget
 				case 'tooltip-buttons_add_to':	// Include on Post Types.
 
 					$text = __( 'Social sharing buttons are added to posts, pages, and attachment webpages by default.', 'wpsso-rrssb' ) . ' ';
-					
+
 					$text .= __( 'If your theme (or another plugin) supports additional custom post types, and you would like to include social sharing buttons on these webpages, check the associated options here.', 'wpsso-rrssb' );
 
 					break;
@@ -226,13 +226,13 @@ aside.widget
 				case 'tooltip-buttons_cta':	// Call to Action.
 
 					$text = __( 'Include a call to action banner above the social sharing buttons.', 'wpsso-rrssb' ) . ' ';
-					
+
 					break;
 
 				case ( strpos( $msg_key, 'tooltip-buttons_pos_' ) === false ? false : true ):	// Position in Content and Excerpt.
 
 					$text = __( 'Social sharing buttons can be added to the top, bottom, or both locations in the text.', 'wpsso-rrssb' ) . ' ';
-					
+
 					$text .= sprintf( __( 'The <em>%s</em> option of each social sharing button must be enabled as well for that button to appear in that location in the text.', 'wpsso-rrssb' ), _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) );
 
 					break;
@@ -271,7 +271,7 @@ aside.widget
 					$sharing_css_url = WpssoRrssbSocial::get_sharing_css_url();
 
 					$text = sprintf( __( 'Combine and include the CSS of all <em>%s</em> in webpages.', 'wpsso-rrssb' ), _x( 'Responsive Styles', 'lib file description', 'wpsso-rrssb' ) ) . ' ';
-					
+
 					$text .= sprintf( __( 'The combined CSS will be minified and saved into a single stylesheet with a URL of <a href="%1$s">%2$s</a>.', 'wpsso-rrssb' ), $sharing_css_url, $sharing_css_url ) . ' ';
 
 					$text .= __( 'The minified stylesheet can be enqueued, or included directly in the webpage HTML.', 'wpsso-rrssb' );
@@ -281,7 +281,7 @@ aside.widget
 				case 'tooltip-buttons_enqueue_social_style':	// Enqueue the Stylesheet.
 
 					$text = __( 'Have WordPress enqueue the social stylesheet instead of including the social styles directly in the webpage HTML.', 'wpsso-rrssb' ) . ' ';
-					
+
 					$text .= __( 'Enqueueing the stylesheet may be desirable if you use an optimization plugin to concatenate all enqueued styles into a single stylesheet.', 'wpsso-rrssb' );
 
 					break;
