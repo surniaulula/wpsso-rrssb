@@ -48,8 +48,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 
 			if ( null !== $row_num ) {
 
-				$form_button_rows[ $row_num ][ 'reload_default_rrssb_styles' ] = _x( 'Reload Default Responsive Styles',
-					'submit button', 'wpsso-rrssb' );
+				$form_button_rows[ $row_num ][ 'reload_default_rrssb_styles' ] = _x( 'Reload Default Responsive Styles', 'submit button', 'wpsso-rrssb' );
 			}
 
 			return $form_button_rows;

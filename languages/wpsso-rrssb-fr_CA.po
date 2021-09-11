@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 7.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2021-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-09-11 12:22-0700\n"
+"PO-Revision-Date: 2021-09-11 15:16-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -73,13 +73,13 @@ msgstr "Extrait"
 
 #: gettext/gettext-lib-config.php:16 gettext/gettext-lib-config.php:23
 msgctxt "option value"
-msgid "CSS Sidebar"
+msgid "Sidebar"
 msgstr "Barre latérale"
 
 #: gettext/gettext-lib-config.php:17 gettext/gettext-lib-config.php:24
 msgctxt "option value"
-msgid "Admin Edit"
-msgstr "Edit admin"
+msgid "Admin"
+msgstr "Admin"
 
 #: gettext/gettext-lib-config.php:18
 msgctxt "option value"
@@ -93,8 +93,8 @@ msgstr "HTTPS"
 
 #: gettext/gettext-lib-config.php:20
 msgctxt "option value"
-msgid "All Buttons"
-msgstr "Tous les boutons"
+msgid "All"
+msgstr "Tous"
 
 #: gettext/gettext-lib-config.php:25
 msgctxt "option value"
@@ -474,13 +474,13 @@ msgstr "Appel à l'action"
 
 #: lib/submenu/rrssb-buttons.php:194
 msgctxt "option label"
-msgid "Position in Content"
-msgstr "Position dans le contenu"
+msgid "Buttons Position in Content"
+msgstr "Position des boutons dans le contenu"
 
 #: lib/submenu/rrssb-buttons.php:199
 msgctxt "option label"
-msgid "Position in Excerpt"
-msgstr "Position dans l'extrait"
+msgid "Buttons Position in Excerpt"
+msgstr "Position des boutons dans l'extrait"
 
 #: lib/submenu/rrssb-buttons.php:204
 msgctxt "option label"
@@ -497,17 +497,17 @@ msgctxt "submit button"
 msgid "Reload Default Responsive Styles"
 msgstr "Recharger styles réactifs par défaut"
 
-#: lib/submenu/rrssb-styles.php:64
+#: lib/submenu/rrssb-styles.php:63
 msgctxt "metabox title"
 msgid "Social Sharing Styles"
 msgstr "Styles de partage social"
 
-#: lib/submenu/rrssb-styles.php:98
+#: lib/submenu/rrssb-styles.php:97
 msgctxt "option label"
 msgid "Use the Social Stylesheet"
 msgstr "Utiliser la feuille de style social"
 
-#: lib/submenu/rrssb-styles.php:103
+#: lib/submenu/rrssb-styles.php:102
 msgctxt "option label"
 msgid "Enqueue the Stylesheet"
 msgstr "Placer la feuille de style en queue"

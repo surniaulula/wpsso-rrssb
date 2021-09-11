@@ -188,15 +188,15 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 					$table_rows[ 'buttons_cta' ] = '' .
 						$this->form->get_th_html_locale( _x( 'Call to Action', 'option label', 'wpsso-rrssb' ),
 							$css_class = '', $css_id = 'buttons_cta' ) . 
-						'<td>' . $this->form->get_input( 'buttons_cta', $class_class = 'wide' ) . '</td>';
+						'<td>' . $this->form->get_input_locale( 'buttons_cta', $class_class = 'wide' ) . '</td>';
 
 					$table_rows[ 'buttons_pos_content' ] = '' .
-						$this->form->get_th_html( _x( 'Position in Content', 'option label', 'wpsso-rrssb' ),
+						$this->form->get_th_html( _x( 'Buttons Position in Content', 'option label', 'wpsso-rrssb' ),
 							$css_class = '', $css_id = 'buttons_pos_content' ) . 
 						'<td>' . $this->form->get_select( 'buttons_pos_content', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
 
 					$table_rows[ 'buttons_pos_excerpt' ] = $this->form->get_tr_hide( 'basic', 'buttons_pos_excerpt' ) .
-						$this->form->get_th_html( _x( 'Position in Excerpt', 'option label', 'wpsso-rrssb' ),
+						$this->form->get_th_html( _x( 'Buttons Position in Excerpt', 'option label', 'wpsso-rrssb' ),
 							$css_class = '', $css_id = 'buttons_pos_excerpt' ) . 
 						'<td>' . $this->form->get_select( 'buttons_pos_excerpt', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
 

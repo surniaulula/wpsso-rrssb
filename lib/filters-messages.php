@@ -43,7 +43,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 
 			switch ( $msg_key ) {
 
-				case 'info-styles-rrssb-common':	// All Buttons tab.
+				case 'info-styles-rrssb-common':	// All tab.
 
 					$text = '<p>';
 
@@ -81,7 +81,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 
 					break;
 
-				case 'info-styles-rrssb-sidebar':	// CSS Sidebar tab.
+				case 'info-styles-rrssb-sidebar':	// Sidebar tab.
 
 					$text = '<p>';
 
@@ -102,7 +102,7 @@ div.wpsso-rrssb
 </pre>';
 					break;
 
-				case 'info-styles-rrssb-admin_edit':	// Admin Edit tab.
+				case 'info-styles-rrssb-admin_edit':	// Admin tab.
 
 					$text = '<p>';
 
@@ -229,7 +229,7 @@ aside.widget
 
 					break;
 
-				case ( strpos( $msg_key, 'tooltip-buttons_pos_' ) === false ? false : true ):	// Position in Content and Excerpt.
+				case ( strpos( $msg_key, 'tooltip-buttons_pos_' ) === false ? false : true ):	// Buttons Position in Content and Excerpt.
 
 					$text = __( 'Social sharing buttons can be added to the top, bottom, or both locations in the text.', 'wpsso-rrssb' ) . ' ';
 

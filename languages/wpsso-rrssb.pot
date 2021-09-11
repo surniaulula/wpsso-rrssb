@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"7.1.0-b.2\n"
+"7.1.0-rc.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2021-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -79,12 +79,12 @@ msgstr ""
 
 #: gettext/gettext-lib-config.php:16 gettext/gettext-lib-config.php:23
 msgctxt "option value"
-msgid "CSS Sidebar"
+msgid "Sidebar"
 msgstr ""
 
 #: gettext/gettext-lib-config.php:17 gettext/gettext-lib-config.php:24
 msgctxt "option value"
-msgid "Admin Edit"
+msgid "Admin"
 msgstr ""
 
 #: gettext/gettext-lib-config.php:18
@@ -99,7 +99,7 @@ msgstr ""
 
 #: gettext/gettext-lib-config.php:20
 msgctxt "option value"
-msgid "All Buttons"
+msgid "All"
 msgstr ""
 
 #: gettext/gettext-lib-config.php:25
@@ -540,12 +540,12 @@ msgstr ""
 
 #: lib/submenu/rrssb-buttons.php:194
 msgctxt "option label"
-msgid "Position in Content"
+msgid "Buttons Position in Content"
 msgstr ""
 
 #: lib/submenu/rrssb-buttons.php:199
 msgctxt "option label"
-msgid "Position in Excerpt"
+msgid "Buttons Position in Excerpt"
 msgstr ""
 
 #: lib/submenu/rrssb-buttons.php:204
@@ -563,17 +563,17 @@ msgctxt "submit button"
 msgid "Reload Default Responsive Styles"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:64
+#: lib/submenu/rrssb-styles.php:63
 msgctxt "metabox title"
 msgid "Social Sharing Styles"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:98
+#: lib/submenu/rrssb-styles.php:97
 msgctxt "option label"
 msgid "Use the Social Stylesheet"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:103
+#: lib/submenu/rrssb-styles.php:102
 msgctxt "option label"
 msgid "Enqueue the Stylesheet"
 msgstr ""

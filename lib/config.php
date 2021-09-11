@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(			// Plugin acronym.
-					'version'     => '7.1.0-b.2',	// Plugin version.
+					'version'     => '7.1.0-rc.1',	// Plugin version.
 					'opt_version' => '41',		// Increment when changing default option values.
 					'short'       => 'WPSSO RRSSB',	// Short plugin name.
 					'name'        => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '8.39.0-b.2',
+							'min_version'   => '8.39.0-rc.1',
 						),
 					),
 
@@ -112,8 +112,8 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'buttons_add_to_page'       => 1,	// Include on Post Types (Pages).
 					'buttons_add_to_post'       => 1,	// Include on Post Types (Posts).
 					'buttons_cta'               => 'Find this content useful? Share it with your friends!',	// Call to Action (localized).
-					'buttons_pos_content'       => 'bottom',	// Position in Content.
-					'buttons_pos_excerpt'       => 'bottom',	// Position in Excerpt.
+					'buttons_pos_content'       => 'bottom',	// Buttons Position in Content.
+					'buttons_pos_excerpt'       => 'bottom',	// Buttons Position in Excerpt.
 					'buttons_force_prot'        => 'none',		// Force Protocol for Shared URLs.
 					'buttons_utm_medium'        => 'social',	// UTM Medium for All Buttons.
 
@@ -122,11 +122,11 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					 */
 					'buttons_use_social_style'     => 1,
 					'buttons_enqueue_social_style' => 1,
-					'buttons_css_rrssb-common'     => '',	// All Buttons tab.
+					'buttons_css_rrssb-common'     => '',	// All tab.
 					'buttons_css_rrssb-content'    => '',	// Content tab.
 					'buttons_css_rrssb-excerpt'    => '',	// Excerpt tab.
-					'buttons_css_rrssb-sidebar'    => '',	// CSS Sidebar tab.
-					'buttons_css_rrssb-admin_edit' => '',	// Admin Edit tab.
+					'buttons_css_rrssb-sidebar'    => '',	// Sidebar tab.
+					'buttons_css_rrssb-admin_edit' => '',	// Admin tab.
 					'buttons_css_rrssb-shortcode'  => '',	// Shortcode tab.
 					'buttons_css_rrssb-widget'     => '',	// Widget tab.
 				),	// end of defaults
@@ -135,19 +135,19 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 				'show_on' => array( 
 					'content'    => 'Content',
 					'excerpt'    => 'Excerpt',
-					'sidebar'    => 'CSS Sidebar',
-					'admin_edit' => 'Admin Edit',
+					'sidebar'    => 'Sidebar',
+					'admin_edit' => 'Admin',
 				),
 				'force_prot' => array( 
 					'http'  => 'HTTP',
 					'https' => 'HTTPS',
 				),
 				'rrssb_styles' => array(
-					'rrssb-common'     => 'All Buttons',
+					'rrssb-common'     => 'All',
 					'rrssb-content'    => 'Content',
 					'rrssb-excerpt'    => 'Excerpt',
-					'rrssb-sidebar'    => 'CSS Sidebar',
-					'rrssb-admin_edit' => 'Admin Edit',
+					'rrssb-sidebar'    => 'Sidebar',
+					'rrssb-admin_edit' => 'Admin',
 					'rrssb-shortcode'  => 'Shortcode',
 					'rrssb-widget'     => 'Widget',
 				),
