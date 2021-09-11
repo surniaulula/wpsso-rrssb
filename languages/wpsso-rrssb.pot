@@ -135,47 +135,47 @@ msgstr ""
 msgid "The default responsive styles CSS has been reloaded and saved."
 msgstr ""
 
-#: lib/filters-edit.php:43
+#: lib/filters-edit.php:45
 msgctxt "metabox tab"
 msgid "Share Buttons"
 msgstr ""
 
-#: lib/filters-edit.php:61
+#: lib/filters-edit.php:63
 msgctxt "option label"
 msgid "Disable Share Buttons"
 msgstr ""
 
-#: lib/filters-edit.php:68
+#: lib/filters-edit.php:70
 msgctxt "option label"
 msgid "UTM Campaign"
 msgstr ""
 
-#: lib/filters-edit.php:89
+#: lib/filters-edit.php:91
 msgctxt "option label"
 msgid "Email Subject"
 msgstr ""
 
-#: lib/filters-edit.php:96
+#: lib/filters-edit.php:98
 msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/filters-edit.php:118
+#: lib/filters-edit.php:120
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/filters-edit.php:140
+#: lib/filters-edit.php:142
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/filters-edit.php:167
+#: lib/filters-edit.php:169
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/filters-edit.php:174
+#: lib/filters-edit.php:176
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""

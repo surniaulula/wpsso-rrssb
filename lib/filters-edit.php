@@ -34,13 +34,15 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 
 		public function filter_post_document_meta_tabs( $tabs, $mod, $metabox_id ) {
 
+			$after_tab = 'edit';
+
 			switch ( $metabox_id ) {
 
 				case $this->p->cf[ 'meta' ][ 'id' ]:	// 'sso' metabox ID.
 
 					if ( $mod[ 'is_public' ] ) {	// Since WPSSO Core v7.0.0.
 
-						SucomUtil::add_after_key( $tabs, 'media', 'buttons', _x( 'Share Buttons', 'metabox tab', 'wpsso-rrssb' ) );
+						SucomUtil::add_after_key( $tabs, $after_tab, 'buttons', _x( 'Share Buttons', 'metabox tab', 'wpsso-rrssb' ) );
 					}
 
 					break;
