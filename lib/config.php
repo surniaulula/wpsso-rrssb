@@ -18,7 +18,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			'plugin' => array(
 				'wpssorrssb' => array(			// Plugin acronym.
 					'version'     => '7.1.0-rc.1',	// Plugin version.
-					'opt_version' => '41',		// Increment when changing default option values.
+					'opt_version' => '43',		// Increment when changing default option values.
 					'short'       => 'WPSSO RRSSB',	// Short plugin name.
 					'name'        => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
 					'desc'        => 'Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, templates, and editor.',
@@ -112,6 +112,9 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'buttons_add_to_page'       => 1,	// Include on Post Types (Pages).
 					'buttons_add_to_post'       => 1,	// Include on Post Types (Posts).
 					'buttons_cta'               => 'Find this content useful? Share it with your friends!',	// Call to Action (localized).
+					'buttons_cta#fr_BE'         => 'Trouvez vous ce contenu utile? Partagez-le avec vos amis!',
+					'buttons_cta#fr_CA'         => 'Trouvez vous ce contenu utile? Partagez-le avec vos amis!',
+					'buttons_cta#fr_FR'         => 'Trouvez vous ce contenu utile? Partagez-le avec vos amis!',
 					'buttons_pos_content'       => 'bottom',	// Buttons Position in Content.
 					'buttons_pos_excerpt'       => 'bottom',	// Buttons Position in Excerpt.
 					'buttons_force_prot'        => 'none',		// Force Protocol for Shared URLs.
