@@ -131,7 +131,7 @@ msgstr ""
 msgid "The default responsive button options have been reloaded and saved."
 msgstr ""
 
-#: lib/actions.php:115 lib/filters-options.php:106
+#: lib/actions.php:115 lib/filters-options.php:109
 msgid "The default responsive styles CSS has been reloaded and saved."
 msgstr ""
 
@@ -390,7 +390,7 @@ msgid ""
 "partnership, etc.) or a specific promotion (e.g. a sale, a giveaway, etc.)."
 msgstr ""
 
-#: lib/filters-options.php:152
+#: lib/filters-options.php:155
 msgid "Failed to open the css file %s for reading."
 msgstr ""
 
