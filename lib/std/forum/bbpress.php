@@ -134,7 +134,7 @@ if ( ! class_exists( 'WpssoRrssbStdForumBbpressSharing' ) ) {
 
 		public function filter_get_defaults( $opts_def ) {
 
-			$opts_def[ 'buttons_pos_bbp_single' ] = 'top';	// Position in bbPress Single.
+			$opts_def[ 'buttons_pos_bbp_single' ] = 'top';	// Default position in bbPress Single.
 
 			foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $id => $opt_pre ) {
 

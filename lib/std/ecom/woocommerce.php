@@ -81,7 +81,7 @@ if ( ! class_exists( 'WpssoRrssbStdEcomWoocommerceSharing' ) ) {
 
 		public function filter_get_defaults( $opts_def ) {
 
-			$opts_def[ 'buttons_pos_woo_short' ] = 'bottom';	// Position in Woo Short Text.
+			$opts_def[ 'buttons_pos_woo_short' ] = 'bottom';	// Default position in Woo Short Text.
 
 			foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $cm_id => $opt_pre ) {
 

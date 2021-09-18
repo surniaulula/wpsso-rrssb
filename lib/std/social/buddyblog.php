@@ -105,7 +105,7 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddyblogSharing' ) ) {
 
 		public function filter_get_defaults( $opts_def ) {
 
-			$opts_def[ 'buttons_pos_bblog_post' ] = 'bottom';	// Position in BuddyBlog Post.
+			$opts_def[ 'buttons_pos_bblog_post' ] = 'bottom';	// Default position in BuddyBlog Post.
 
 			foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $id => $opt_pre ) {
 

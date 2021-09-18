@@ -401,14 +401,13 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				if ( ! empty( $this->p->options[ $opt_pre . '_on_' . $type ] ) ) {
 
-					$button_order = empty( $this->p->options[ $opt_pre . '_button_order' ] ) ?
-						0 : $this->p->options[ $opt_pre . '_button_order' ];
+					$button_order = empty( $this->p->options[ $opt_pre . '_button_order' ] ) ? 0 : $this->p->options[ $opt_pre . '_button_order' ];
 
 					$sorted_ids[ zeroise( $button_order, 3 ) . '-' . $id ] = $id;
 				}
 			}
 
-			ksort( $sorted_ids );
+			ksort( $sorted_ids );	// Sort associative array by key.
 
 			$atts[ 'use_post' ]    = $mod[ 'use_post' ];
 			$atts[ 'utm_content' ] = 'wpsso-rrssb-' . sanitize_title_with_dashes( $type . '-' . $location );
@@ -689,9 +688,9 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $id => $opt_pre ) {
 
-				if ( ! empty( $this->p->options[ $opt_pre . '_on_' . $type ] ) ) {	// Check if button is enabled.
+				if ( ! empty( $this->p->options[ $opt_pre . '_on_' . $type ] ) ) {
 
-					return $local_cache[ $type ] = true;	// Stop here.
+					return $local_cache[ $type ] = true;
 				}
 			}
 
