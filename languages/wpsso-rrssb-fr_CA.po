@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 7.1.0\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 7.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2021-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-09-11 15:16-0700\n"
+"PO-Revision-Date: 2021-09-23 11:32-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -13,11 +13,11 @@ msgstr ""
 "X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: gettext/gettext-lib-abstracts-com.php:6 lib/abstracts/com/add-on.php:178
+#: gettext/gettext-lib-abstracts-com.php:6 lib/abstracts/com/add-on.php:179
 msgid "The %1$s add-on requires the %2$s plugin - please activate the missing plugin."
 msgstr "L'ajout %1$s nécessite l'extension %2$s - veuillez activer l'extension manquante."
 
-#: gettext/gettext-lib-abstracts-com.php:7 lib/abstracts/com/add-on.php:196
+#: gettext/gettext-lib-abstracts-com.php:7 lib/abstracts/com/add-on.php:197
 msgid "The %1$s add-on requires %2$s version %3$s or newer (version %4$s is currently installed)."
 msgstr "L'ajout %1$s nécessite %2$s version %3$s ou plus récente (la version %4$s est actuellement installée)."
 
@@ -125,7 +125,7 @@ msgstr "Haut et bas"
 msgid "The default responsive button options have been reloaded and saved."
 msgstr "Les options des boutons réactifs par défaut ont été rechargées et sauvegardés."
 
-#: lib/actions.php:115 lib/filters-options.php:106
+#: lib/actions.php:115 lib/filters-options.php:109
 msgid "The default responsive styles CSS has been reloaded and saved."
 msgstr "Le CSS par défaut des styles réactifs ont été rechargés et sauvegardés."
 
@@ -326,7 +326,7 @@ msgstr "Cela ne désactive pas les boutons de partage social ajoutés à l'aide 
 msgid "Identifies a strategic campaign (e.g. product launch, new feature, partnership, etc.) or a specific promotion (e.g. a sale, a giveaway, etc.)."
 msgstr "Identifie une campagne stratégique (par exemple, lancement de produit, nouvelle fonctionnalité, partenariat, etc.) ou une promotion spécifique (par exemple, une vente, un cadeau, etc.)."
 
-#: lib/filters-options.php:152
+#: lib/filters-options.php:155
 msgid "Failed to open the css file %s for reading."
 msgstr "Impossible d'ouvrir le fichier css %s pour lecture."
 
