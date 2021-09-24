@@ -119,7 +119,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 7.2.0-rc.3 (2021/09/24)**
+**Version 7.2.0 (2021/09/24)**
 
 Maintenance release for WPSSO Core v9.0.0.
 
@@ -134,7 +134,7 @@ Maintenance release for WPSSO Core v9.0.0.
 * **Requires At Least**
 	* PHP v7.0.
 	* WordPress v5.2.
-	* WPSSO Core v9.0.0-rc.3.
+	* WPSSO Core v9.0.0.
 
 **Version 7.1.0 (2021/09/11)**
 
@@ -329,7 +329,7 @@ Maintenance release for WPSSO Core v9.0.0.
 
 == Upgrade Notice ==
 
-= 7.2.0-rc.3 =
+= 7.2.0 =
 
 (2021/09/24) Maintenance release for WPSSO Core v9.0.0.
 
