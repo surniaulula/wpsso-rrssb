@@ -194,8 +194,6 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 				return $metabox_html;
 			}
 
-			$doing_ajax = SucomUtilWP::doing_ajax();
-
 			$metabox_html .= $this->a->social->get_buttons( $text = '', $type = 'admin_edit', $mod );
 
 			/**

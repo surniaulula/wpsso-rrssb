@@ -257,19 +257,9 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			$is_admin         = is_admin();
 			$is_amp           = SucomUtil::is_amp();	// Returns null, true, or false.
-			$doing_ajax       = SucomUtilWP::doing_ajax();
 			$buttons_disabled = false;
 
-			if ( $doing_ajax ) {
-
-				if ( $this->p->debug->enabled ) {
-
-					$this->p->debug->log( 'doing_ajax is true' );
-				}
-
-				$buttons_disabled = true;
-
-			} elseif ( $is_amp ) {
+			if ( $is_amp ) {
 
 				if ( $this->p->debug->enabled ) {
 
