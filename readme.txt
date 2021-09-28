@@ -119,6 +119,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 7.2.1-dev.1 (2021/09/28)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* Fixed missing admin buttons after saving in the block editor.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.0.
+	* WordPress v5.2.
+	* WPSSO Core v9.0.0.
+
 **Version 7.2.0 (2021/09/24)**
 
 Maintenance release for WPSSO Core v9.0.0.
@@ -176,6 +191,10 @@ Maintenance release for WPSSO Core v9.0.0.
 	* WPSSO Core v8.38.0.
 
 == Upgrade Notice ==
+
+= 7.2.1-dev.1 =
+
+(2021/09/28) Fixed missing admin buttons after saving in the block editor.
 
 = 7.2.0 =
 
