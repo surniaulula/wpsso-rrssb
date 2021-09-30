@@ -115,7 +115,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 7.2.1-rc.1 (2021/09/30)**
+**Version 7.2.1 (2021/09/30)**
 
 * **New Features**
 	* None.
@@ -128,7 +128,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.0.
 	* WordPress v5.2.
-	* WPSSO Core v9.0.1-rc.1.
+	* WPSSO Core v9.0.1.
 
 **Version 7.2.0 (2021/09/24)**
 
@@ -188,7 +188,7 @@ Maintenance release for WPSSO Core v9.0.0.
 
 == Upgrade Notice ==
 
-= 7.2.1-rc.1 =
+= 7.2.1 =
 
 (2021/09/30) Fixed the missing admin share buttons after saving a post / page in the block editor.
 
