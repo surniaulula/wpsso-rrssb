@@ -18,21 +18,17 @@ Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts,
 
 == Description ==
 
-<p><img class="readme-icon" src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png"> <em>Ridiculously Responsive Social Sharing Buttons</em> automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), no matter its size or resolution - including mobile, Retina, and high-PPI displays!</p>
+<p><img class="readme-icon" src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png"> <strong>Ridiculously Responsive Social Sharing Buttons</strong> automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), no matter its size or resolution - including mobile, Retina, and high-PPI displays!</p>
 
-**Add Ridiculously Responsive Social Sharing Buttons to:**
+**Add responsive share buttons to:**
 
-Posts, Pages, custom post types, bbPress, BuddyBlog posts, BuddyPress activities, WooCommerce product pages, and much more.</p>
+Posts, pages, custom post types, bbPress, BuddyBlog posts, BuddyPress activities, WooCommerce product pages, and much more.
 
-**Add Ridiculously Responsive Social Sharing Buttons in:**
+**Add responsive share buttons in:**
 
-The content, excerpt, widget, CSS sidebar, shortcodes, templates, and *admin editor page* - so you can quickly share directly from the admin editor page!
+The content, excerpt, widget, CSS sidebar, shortcodes, templates, and *admin editor page* (so you can quickly share directly from the admin editor page).
 
-**UTM Medium, Source, and Campaign Values per Social Sharing Button.**
-
-**Do you use bbPress, BuddyPress, BuddyBlog, or WooCommerce?**
-
-The WPSSO RRSSB add-on includes integration modules to add social sharing buttons to even more locations!
+**Add UTM medium, source, and campaign values per share button.**
 
 <h3>Users Love the WPSSO RRSSB Add-on</h3>
 
