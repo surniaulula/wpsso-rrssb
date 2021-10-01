@@ -18,13 +18,13 @@ Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts,
 
 == Description ==
 
-<p><img class="readme-icon" src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png"> <strong>Ridiculously Responsive Social Sharing Buttons</strong> automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), no matter its size or resolution - including mobile, Retina, and high-PPI displays!</p>
+<p><img class="readme-icon" src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png"> <em>Ridiculously Responsive Social Sharing Buttons</em> automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), no matter its size or resolution - including mobile, Retina, and high-PPI displays!</p>
 
-**Add responsive share buttons to:**
+**Add responsive social sharing buttons to:**
 
 Posts, pages, custom post types, bbPress, BuddyBlog posts, BuddyPress activities, WooCommerce product pages, and much more.
 
-**Add responsive share buttons in:**
+**Add responsive social sharing buttons in:**
 
 The content, excerpt, widget, CSS sidebar, shortcodes, templates, and *admin editor page* (so you can quickly share directly from the admin editor page).
 
@@ -42,7 +42,7 @@ The content, excerpt, widget, CSS sidebar, shortcodes, templates, and *admin edi
 
 Extends the features of the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) (required plugin).
 
-Include Ridiculously Responsive Social Sharing Buttons in multiple locations:
+Include responsive social sharing buttons in many locations:
 
 * Above and/or below your content, excerpt text, bbPress single, BuddyBlog posts, BuddyPress activities, and WooCommerce short description.
 * In an admin editing page metabox &ndash; including media, product pages, and custom post types.
@@ -50,20 +50,6 @@ Include Ridiculously Responsive Social Sharing Buttons in multiple locations:
 * In a WordPress sharing widget.
 * A shortcode in your content or excerpt.
 * A function in your theme's template(s).
-
-Each of these social sharing buttons can be configured and styled individually:
-
-* Email
-* Facebook
-* Google+
-* LinkedIn
-* Pinterest
-* Pocket
-* Reddit
-* Tumblr
-* Twitter
-* VK
-* WhatsApp (for mobile devices)
 
 Provides UTM medium, UTM source, and UTM campaign values for each social sharing button.
 
