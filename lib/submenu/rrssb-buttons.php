@@ -139,23 +139,29 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 
 			$metabox_id = 'rrssb_share';
 
-			$metabox_tabs  = apply_filters( 'wpsso_' . $metabox_id . '_' . $callback_args[ 'share_id' ] . '_tabs', array() );
+			$filter_name = SucomUtil::sanitize_hookname( 'wpsso_' . $metabox_id . '_' . $callback_args[ 'share_id' ] . '_tabs' );
+
+			$metabox_tabs  = apply_filters( $filter_name, array() );
 
 			if ( empty( $metabox_tabs ) ) {
 
-				$filter_name     = 'wpsso_' . $metabox_id . '_' . $callback_args[ 'share_id' ] . '_rows';
-				$class_href_key  = 'metabox-' . $metabox_id . '-' . $callback_args[ 'share_id' ];
+				$filter_name = SucomUtil::sanitize_hookname( 'wpsso_' . $metabox_id . '_' . $callback_args[ 'share_id' ] . '_rows' );
+
+				$class_href_key = 'metabox-' . $metabox_id . '-' . $callback_args[ 'share_id' ];
+
 				$class_tabset_mb = 'metabox-' . $metabox_id;
 
-				$this->p->util->metabox->do_table( apply_filters( $filter_name, array(), $this->form, $this ), $class_href_key, $class_tabset_mb );
+				$table_rows = apply_filters( $filter_name, array(), $this->form, $network = false, $this );
+
+				$this->p->util->metabox->do_table( $table_rows, $class_href_key, $class_tabset_mb );
 
 			} else {
 
 				foreach ( $metabox_tabs as $tab => $title ) {
 
-					$filter_name = 'wpsso_' . $metabox_id . '_' . $callback_args[ 'share_id' ] . '_' . $tab . '_rows';
+					$filter_name = SucomUtil::sanitize_hookname( 'wpsso_' . $metabox_id . '_' . $callback_args[ 'share_id' ] . '_' . $tab . '_rows' );
 
-					$table_rows[ $tab ] = apply_filters( $filter_name, array(), $this->form, $this );
+					$table_rows[ $tab ] = apply_filters( $filter_name, array(), $this->form, $network = false, $this );
 				}
 
 				$this->p->util->metabox->do_tabbed( $metabox_id . '_' . $callback_args[ 'share_id' ], $metabox_tabs, $table_rows );

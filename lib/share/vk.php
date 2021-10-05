@@ -26,21 +26,21 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareVk' ) ) {
 			}
 
 			$this->p->util->add_plugin_filters( $this, array(
-				'rrssb_share_vk_rows' => 3,
+				'rrssb_share_vk_rows' => 4,
 			) );
 		}
 
-		public function filter_rrssb_share_vk_rows( $table_rows, $form, $submenu ) {
+		public function filter_rrssb_share_vk_rows( $table_rows, $form, $network, $submenu_obj ) {
 
 			$utm_source_label = sprintf( _x( 'UTM Source for %s', 'option label', 'wpsso-rrssb' ), 'Vk' );
 
 			$table_rows[] = '' .
 				$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
-				'<td>' . $submenu->show_on_checkboxes( 'vk' ) . '</td>';
+				'<td>' . $submenu_obj->show_on_checkboxes( 'vk' ) . '</td>';
 
 			$table_rows[] = '' .
 				$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
-				'<td>' . $form->get_select( 'vk_button_order', range( 1, count( $submenu->share ) ) ) . '</td>';
+				'<td>' . $form->get_select( 'vk_button_order', range( 1, count( $submenu_obj->share ) ) ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( 'basic', 'vk_utm_source' ) .
 				$form->get_th_html( $utm_source_label ) . 

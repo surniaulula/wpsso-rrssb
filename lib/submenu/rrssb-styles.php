@@ -110,21 +110,20 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 			 */
 			$table_rows  = array();
 
-			$styles_tabs = apply_filters( 'wpsso_' . $metabox_id . '_tabs', $this->p->cf[ 'sharing' ][ 'rrssb_styles' ] );
+			$tabs = apply_filters( 'wpsso_' . $metabox_id . '_tabs', $this->p->cf[ 'sharing' ][ 'rrssb_styles' ] );
 
-			foreach ( $styles_tabs as $tab_key => $title ) {
+			foreach ( $tabs as $tab_key => $title ) {
 
-				$filter_name = 'wpsso_' . $metabox_id . '_' . $tab_key . '_rows';
+				$tabs[ $tab_key ] = _x( $title, 'metabox tab', 'wpsso-rrssb' );	// Translate the tab title.
 
-				$table_rows[ $tab_key ] = array_merge(
-					$this->get_table_rows( $metabox_id, $tab_key ),
-					(array) apply_filters( $filter_name, array(), $this->form )
-				);
+				$filter_name = SucomUtil::sanitize_hookname( 'wpsso_' . $metabox_id . '_' . $tab_key . '_rows' );
 
-				$styles_tabs[ $tab_key ] = _x( $title, 'metabox tab', 'wpsso-rrssb' );	// Translate the tab title.
+				$table_rows[ $tab_key ] = $this->get_table_rows( $metabox_id, $tab_key );
+
+				$table_rows[ $tab_key ] = apply_filters( $filter_name, $table_rows[ $tab_key ], $this->form, $network = false );
 			}
 
-			$this->p->util->metabox->do_tabbed( $metabox_id, $styles_tabs, $table_rows );
+			$this->p->util->metabox->do_tabbed( $metabox_id, $tabs, $table_rows );
 		}
 
 		protected function get_table_rows( $metabox_id, $tab_key ) {
