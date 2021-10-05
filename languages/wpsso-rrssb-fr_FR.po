@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 7.2.0\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 7.2.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2021-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-09-23 11:32-0700\n"
+"PO-Revision-Date: 2021-10-05 08:57-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -452,42 +452,42 @@ msgctxt "metabox title"
 msgid "Social Sharing Buttons"
 msgstr "Boutons de partage social"
 
-#: lib/submenu/rrssb-buttons.php:174
+#: lib/submenu/rrssb-buttons.php:180
 msgctxt "option label"
 msgid "Include on Archive Webpages"
 msgstr "Inclure sur les pages d'archive"
 
-#: lib/submenu/rrssb-buttons.php:179
+#: lib/submenu/rrssb-buttons.php:185
 msgctxt "option label"
 msgid "Include on Static Homepage"
 msgstr "Inclure sur la page d'accueil statique"
 
-#: lib/submenu/rrssb-buttons.php:184
+#: lib/submenu/rrssb-buttons.php:190
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr "Inclure sur les articles de type"
 
-#: lib/submenu/rrssb-buttons.php:189
+#: lib/submenu/rrssb-buttons.php:195
 msgctxt "option label"
 msgid "Call to Action"
 msgstr "Appel à l'action"
 
-#: lib/submenu/rrssb-buttons.php:194
+#: lib/submenu/rrssb-buttons.php:200
 msgctxt "option label"
 msgid "Buttons Position in Content"
 msgstr "Position des boutons dans le contenu"
 
-#: lib/submenu/rrssb-buttons.php:199
+#: lib/submenu/rrssb-buttons.php:205
 msgctxt "option label"
 msgid "Buttons Position in Excerpt"
 msgstr "Position des boutons dans l'extrait"
 
-#: lib/submenu/rrssb-buttons.php:204
+#: lib/submenu/rrssb-buttons.php:210
 msgctxt "option label"
 msgid "Force Protocol for Shared URLs"
 msgstr "Forcer protocole pour URLs partagées"
 
-#: lib/submenu/rrssb-buttons.php:209
+#: lib/submenu/rrssb-buttons.php:215
 msgctxt "option label"
 msgid "UTM Medium for All Buttons"
 msgstr "Moyen UTM pour tous les boutons"
