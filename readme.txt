@@ -101,7 +101,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 7.2.2-rc.1 (2021/10/05)**
+**Version 7.2.2 (2021/10/06)**
 
 * **New Features**
 	* None.
@@ -114,7 +114,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.0.
 	* WordPress v5.2.
-	* WPSSO Core v9.1.0-rc.1.
+	* WPSSO Core v9.1.0.
 
 **Version 7.2.1 (2021/09/30)**
 
@@ -189,9 +189,9 @@ Maintenance release for WPSSO Core v9.0.0.
 
 == Upgrade Notice ==
 
-= 7.2.2-rc.1 =
+= 7.2.2 =
 
-(2021/10/05) Standardized `get_table_rows()` calls and filters in 'submenu' and 'sitesubmenu' classes.
+(2021/10/06) Standardized `get_table_rows()` calls and filters in 'submenu' and 'sitesubmenu' classes.
 
 = 7.2.1 =
 
