@@ -99,7 +99,31 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * [GitHub](https://surniaulula.github.io/wpsso-rrssb/)
 * [WordPress.org](https://plugins.trac.wordpress.org/browser/wpsso-rrssb/)
 
+<h3>Updates for Development Versions</h3>
+
+<p>Development, alpha, beta, and release candidate plugin updates are available for WPSSO Core Premium users.</p>
+
+<p>Under the SSO &gt; Update Manager settings page, select the "Development and Up" (for example) version filter for the WPSSO Core plugin or its add-ons. Save the plugin settings and click the "Check for Plugin Updates" button to fetch the latest version information. When new development versions are available, they will automatically appear under your WordPress Dashboard &gt; Updates page. You can always reselect the "Stable / Production" version filter at any time to reinstall the latest stable version.</p>
+
 <h3>Changelog / Release Notes</h3>
+
+**Version 8.0.0-dev.1 (2021/10/08)**
+
+* **New Features**
+	* Added a new "Position in WC Add to Cart" option.
+	* Added a new "WC Add to Cart" option for each social sharing button (enabled by default).
+	* Added a new "WooCommerce" tab in the SSO &gt; Responsive Styles settings page.
+	* Removed the "Woo Short" tab in the SSO &gt; Responsive Styles settings page.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.0.
+	* WordPress v5.2.
+	* WPSSO Core v9.1.0.
 
 **Version 7.2.2 (2021/10/06)**
 
@@ -188,6 +212,10 @@ Maintenance release for WPSSO Core v9.0.0.
 	* WPSSO Core v8.38.0.
 
 == Upgrade Notice ==
+
+= 8.0.0-dev.1 =
+
+(2021/10/08) Added a new "WC Add to Cart" option for each social sharing button (enabled by default).
 
 = 7.2.2 =
 
