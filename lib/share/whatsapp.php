@@ -67,7 +67,6 @@ if ( ! class_exists( 'WpssoRrssbShareWhatsApp' ) ) {
 					'wa_on_content'    => 1,
 					'wa_on_excerpt'    => 0,
 					'wa_on_sidebar'    => 0,
-					'wa_on_woo_short'  => 1,
 					'wa_button_order'  => 10,
 					'wa_utm_source'    => 'whatsapp',
 					'wa_rrssb_html'    => '<li class="rrssb-whatsapp">

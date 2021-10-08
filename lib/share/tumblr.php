@@ -72,7 +72,6 @@ if ( ! class_exists( 'WpssoRrssbShareTumblr' ) ) {
 					'tumblr_on_content'       => 1,
 					'tumblr_on_excerpt'       => 0,
 					'tumblr_on_sidebar'       => 0,
-					'tumblr_on_woo_short'     => 1,
 					'tumblr_button_order'     => 8,
 					'tumblr_utm_source'       => 'tumblr',
 					'tumblr_caption_max_len'  => 300,

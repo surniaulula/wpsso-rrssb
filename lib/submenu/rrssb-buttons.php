@@ -206,6 +206,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 							$css_class = '', $css_id = 'buttons_pos_excerpt' ) . 
 						'<td>' . $this->form->get_select( 'buttons_pos_excerpt', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
 
+					$filter_name = SucomUtil::sanitize_hookname( 'wpsso_' . $page_id . '_position_rows' );
+
+					$table_rows = apply_filters( $filter_name, $table_rows, $this->form, $network = false );
+
 					$table_rows[ 'buttons_force_prot' ] = $this->form->get_tr_hide( 'basic', 'buttons_force_prot' ) .
 						$this->form->get_th_html( _x( 'Force Protocol for Shared URLs', 'option label', 'wpsso-rrssb' ),
 							$css_class = '', $css_id = 'buttons_force_prot' ) . 
@@ -226,9 +230,9 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 
 			$col = 0;
 
-			$max_cols = 6;
+			$max_cols = 4;
 
-			$show_on = apply_filters( 'wpsso_rrssb_buttons_show_on', $this->p->cf[ 'sharing' ][ 'show_on' ], $opt_pre );
+			$show_on = apply_filters( 'wpsso_rrssb_buttons_show_on', $this->p->cf[ 'sharing' ][ 'show_on' ] );
 
 			$html = '<table>';
 

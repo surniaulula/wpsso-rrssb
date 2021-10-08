@@ -72,7 +72,6 @@ if ( ! class_exists( 'WpssoRrssbShareReddit' ) ) {
 					'reddit_on_content'      => 1,
 					'reddit_on_excerpt'      => 0,
 					'reddit_on_sidebar'      => 0,
-					'reddit_on_woo_short'    => 1,
 					'reddit_button_order'    => 6,
 					'reddit_utm_source'      => 'reddit',
 					'reddit_caption_max_len' => 300,

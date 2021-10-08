@@ -67,7 +67,6 @@ if ( ! class_exists( 'WpssoRrssbSharePocket' ) ) {
 					'pocket_on_content'    => 1,
 					'pocket_on_excerpt'    => 0,
 					'pocket_on_sidebar'    => 0,
-					'pocket_on_woo_short'  => 1,
 					'pocket_button_order'  => 7,
 					'pocket_utm_source'    => 'pocket',
 					'pocket_rrssb_html'    => '<li class="rrssb-pocket">

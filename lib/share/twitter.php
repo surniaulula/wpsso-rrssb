@@ -90,7 +90,6 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 					'twitter_on_content'       => 1,
 					'twitter_on_excerpt'       => 0,
 					'twitter_on_sidebar'       => 0,
-					'twitter_on_woo_short'     => 1,
 					'twitter_button_order'     => 3,
 					'twitter_utm_source'       => 'twitter',
 					'twitter_caption'          => 'excerpt',

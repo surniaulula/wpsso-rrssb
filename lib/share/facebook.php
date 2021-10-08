@@ -66,7 +66,6 @@ if ( ! class_exists( 'WpssoRrssbShareFacebook' ) ) {
 					'fb_on_content'    => 1,
 					'fb_on_excerpt'    => 0,
 					'fb_on_sidebar'    => 0,
-					'fb_on_woo_short'  => 1,
 					'fb_button_order'  => 2,
 					'fb_utm_source'    => 'facebook',
 					'fb_rrssb_html'    => '<li class="rrssb-facebook">

@@ -1,0 +1,21 @@
+/**
+ * Save an empty style text box to reload the default example styles.
+ * These styles are provided as examples only - modifications may be
+ * necessary to customize the layout for your website.
+ */
+
+.wpsso-rrssb-wc_short_desc {
+	margin:20px auto;
+}
+
+.wpsso-rrssb-wc_add_to_cart {
+	margin:20px auto;
+}
+
+.wpsso-rrssb-wc_add_to_cart.wpsso-rrssb-pos-top {
+	margin-bottom:40px;
+}
+
+.wpsso-rrssb-wc_add_to_cart.wpsso-rrssb-pos-bottom {
+	margin-bottom:0;
+}

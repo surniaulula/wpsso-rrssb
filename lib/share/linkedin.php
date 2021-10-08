@@ -72,7 +72,6 @@ if ( ! class_exists( 'WpssoRrssbShareLinkedin' ) ) {
 					'linkedin_on_content'       => 1,
 					'linkedin_on_excerpt'       => 0,
 					'linkedin_on_sidebar'       => 0,
-					'linkedin_on_woo_short'     => 1,
 					'linkedin_button_order'     => 5,
 					'linkedin_utm_source'       => 'linkedin',
 					'linkedin_caption_max_len'  => 300,

@@ -67,62 +67,73 @@ if ( ! class_exists( 'WpssoRrssbStdEcomWoocommerceSharing' ) ) {
 			if ( is_admin() ) {
 
 				$this->p->util->add_plugin_filters( $this, array( 
-					'rrssb_buttons_show_on'       => 2,
+					'rrssb_buttons_show_on'       => 1,
 					'rrssb_buttons_position_rows' => 2,
 					'rrssb_styles_tabs'           => 1,
 				) );
 
 			} else {
 
-				add_filter( 'woocommerce_short_description', array( $this, 'get_buttons_woo_short' ) );
-				add_filter( 'woocommerce_available_variation', array( $this, 'get_variation_woo_short' ), 10, 3 );
+				add_filter( 'woocommerce_short_description', array( $this, 'get_buttons_wc_short_desc' ), 1000 );
+				add_filter( 'woocommerce_available_variation', array( $this, 'get_variation_wc_short_desc' ), 10, 3 );
+
+				add_action( 'woocommerce_before_add_to_cart_button', array( $this, 'show_buttons_before_add_to_cart' ), -1000, 0 );
+				add_action( 'woocommerce_after_add_to_cart_button', array( $this, 'show_buttons_after_add_to_cart' ), 1000, 0 );
 			}
 		}
 
 		public function filter_get_defaults( $opts_def ) {
 
-			$opts_def[ 'buttons_pos_woo_short' ] = 'bottom';	// Default position in Woo Short Text.
+			$opts_def[ 'buttons_pos_wc_short_desc' ]  = 'bottom';	// Default position for product short description.
+			$opts_def[ 'buttons_pos_wc_add_to_cart' ] = 'bottom';	// Default position (before/after) for Add to Cart.
 
 			foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $cm_id => $opt_pre ) {
 
-				$opts_def[ $opt_pre . '_on_woo_short' ] = 0;
+				$opts_def[ $opt_pre . '_on_wc_short_desc' ]  = 0;
+				$opts_def[ $opt_pre . '_on_wc_add_to_cart' ] = 1;
 			}
 
 			return $opts_def;
 		}
 
-		public function filter_rrssb_buttons_show_on( $show_on = array(), $opt_pre ) {
+		public function filter_rrssb_buttons_show_on( $show_on = array() ) {
 
-			$show_on[ 'woo_short' ] = 'Woo Short';
+			$show_on[ 'wc_short_desc' ]  = _x( 'WC Short Desc', 'option value', 'wpsso-rrssb' );
+			$show_on[ 'wc_add_to_cart' ] = _x( 'WC Add to Cart', 'option value', 'wpsso-rrssb' );
 
 			return $show_on;
 		}
 
 		public function filter_rrssb_buttons_position_rows( $table_rows, $form ) {
 
-			$table_rows[ 'buttons_pos_woo_short' ] = '' .
-				$form->get_th_html( _x( 'Position in Woo Short Text', 'option label', 'wpsso-rrssb' ),
-					$css_class = '', $css_id = 'buttons_pos_woo_short' ) . 
-				'<td>' . $form->get_select( 'buttons_pos_woo_short', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
+			$table_rows[ 'buttons_pos_wc_short_desc' ] = '' .
+				$form->get_th_html( _x( 'Position in WC Short Desc', 'option label', 'wpsso-rrssb' ),
+					$css_class = '', $css_id = 'buttons_pos_wc_short_desc' ) . 
+				'<td>' . $form->get_select( 'buttons_pos_wc_short_desc', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
+
+			$table_rows[ 'buttons_pos_wc_add_to_cart' ] = '' .
+				$form->get_th_html( _x( 'Position in WC Add to Cart', 'option label', 'wpsso-rrssb' ),
+					$css_class = '', $css_id = 'buttons_pos_wc_add_to_cart' ) . 
+				'<td>' . $form->get_select( 'buttons_pos_wc_add_to_cart', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
 
 			return $table_rows;
 		}
 
 		public function filter_rrssb_styles( $styles ) {
 
-			$styles[ 'rrssb-woo_short' ] = 'Woo Short';
+			$styles[ 'rrssb-woocommerce' ]  = _x( 'WooCommerce', 'option value', 'wpsso-rrssb' );
 
 			return $styles;
 		}
 
 		public function filter_rrssb_styles_tabs( $styles ) {
 
-			$styles[ 'rrssb-woo_short' ] = 'Woo Short';
+			$styles[ 'rrssb-woocommerce' ]  = _x( 'WooCommerce', 'option value', 'wpsso-rrssb' );
 
 			return $styles;
 		}
 
-		public function get_buttons_woo_short( $text ) {
+		public function get_buttons_wc_short_desc( $text ) {
 
 			$rrssb =& WpssoRrssb::get_instance();
 
@@ -145,10 +156,10 @@ if ( ! class_exists( 'WpssoRrssbStdEcomWoocommerceSharing' ) ) {
 				return $text;
 			}
 
-			return $rrssb->social->get_buttons( $text, $type = 'woo_short' );
+			return $rrssb->social->get_buttons( $text, $type = 'wc_short_desc' );
 		}
 
-		public function get_variation_woo_short( $data, $product, $variation ) {
+		public function get_variation_wc_short_desc( $data, $product, $variation ) {
 
 			$this->is_variation = true;
 
@@ -157,6 +168,40 @@ if ( ! class_exists( 'WpssoRrssbStdEcomWoocommerceSharing' ) ) {
 			$this->is_variation = false;
 
 			return $data;
+		}
+
+		public function show_buttons_before_add_to_cart() {
+
+			$location = $this->p->options[ 'buttons_pos_wc_add_to_cart' ];
+
+			switch ( $location ) {
+
+				case 'both':
+				case 'top':
+
+					$rrssb =& WpssoRrssb::get_instance();
+
+					echo $rrssb->social->get_buttons( $text = '', $type = 'wc_add_to_cart', $use_post = true, $location = 'top' );
+
+					break;
+			}
+		}
+
+		public function show_buttons_after_add_to_cart() {
+
+			$location = $this->p->options[ 'buttons_pos_wc_add_to_cart' ];
+
+			switch ( $location ) {
+
+				case 'both':
+				case 'bottom':
+
+					$rrssb =& WpssoRrssb::get_instance();
+
+					echo $rrssb->social->get_buttons( $text = '', $type = 'wc_add_to_cart', $use_post = true, $location = 'bottom' );
+
+					break;
+			}
 		}
 	}
 }

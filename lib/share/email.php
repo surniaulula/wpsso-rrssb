@@ -72,7 +72,6 @@ if ( ! class_exists( 'WpssoRrssbShareEmail' ) ) {
 					'email_on_content'       => 1,
 					'email_on_excerpt'       => 0,
 					'email_on_sidebar'       => 0,
-					'email_on_woo_short'     => 1,
 					'email_button_order'     => 1,
 					'email_utm_source'       => 'email',
 					'email_caption_max_len'  => 500,

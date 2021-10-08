@@ -72,7 +72,6 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 					'pin_on_content'       => 1,
 					'pin_on_excerpt'       => 0,
 					'pin_on_sidebar'       => 0,
-					'pin_on_woo_short'     => 1,
 					'pin_button_order'     => 4,
 					'pin_utm_source'       => 'pinterest',
 					'pin_caption_max_len'  => 300,

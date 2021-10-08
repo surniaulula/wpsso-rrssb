@@ -7,7 +7,7 @@
 .wpsso-rrssb .wpsso-rrssb-buttons-cta {
 	font-size:1.1em;
 	font-weight:600;
-	margin:30px 0 10px 0;
+	margin:10px 0;
 }
 
 ul.rrssb-buttons {
@@ -16,16 +16,18 @@ ul.rrssb-buttons {
 	margin:0;
 	padding:0 !important;
 	list-style:none;
-}
-
-ul.rrssb-buttons a {
-	box-shadow:none;
-	-webkit-box-shadow:none;
-	line-height:1em;
 	border:none;
 }
 
-ul.rrssb-buttons a:hover {
+ul.rrssb-buttons li a {
+	box-shadow:none;
+	-webkit-box-shadow:none;
+	line-height:1em;
+	padding:11px 7px 12px 27px;
+	border:none;
+}
+
+ul.rrssb-buttons li a:hover {
 	box-shadow:none;
 	-webkit-box-shadow:none;
 }

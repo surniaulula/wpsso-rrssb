@@ -70,7 +70,7 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddyblogSharing' ) ) {
 
 				$this->p->util->add_plugin_filters( $this, array( 
 					'rrssb_buttons_position_rows' => 2,
-					'rrssb_buttons_show_on'       => 2,
+					'rrssb_buttons_show_on'       => 1,
 					'rrssb_styles_tabs'           => 1,
 				) );
 			}
@@ -125,23 +125,23 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddyblogSharing' ) ) {
 			return $table_rows;
 		}
 
-		public function filter_rrssb_buttons_show_on( $show_on = array(), $opt_pre = '' ) {
+		public function filter_rrssb_buttons_show_on( $show_on = array() ) {
 
-			$show_on[ 'bblog_post' ] = 'BBlog Post';
+			$show_on[ 'bblog_post' ] = _x( 'BBlog Post', 'option value', 'wpsso-rrssb' );
 
 			return $show_on;
 		}
 
 		public function filter_rrssb_styles( $styles ) {
 
-			$styles[ 'rrssb-bblog_post' ] = 'BBlog Post';
+			$styles[ 'rrssb-bblog_post' ] = _x( 'BBlog Post', 'option value', 'wpsso-rrssb' );
 
 			return $styles;
 		}
 
 		public function filter_rrssb_styles_tabs( $styles ) {
 
-			$styles[ 'rrssb-bblog_post' ] = 'BBlog Post';
+			$styles[ 'rrssb-bblog_post' ] = _x( 'BBlog Post', 'option value', 'wpsso-rrssb' );
 
 			return $styles;
 		}

@@ -67,7 +67,6 @@ if ( ! class_exists( 'WpssoRrssbShareVk' ) ) {
 					'vk_on_content'    => 1,
 					'vk_on_excerpt'    => 0,
 					'vk_on_sidebar'    => 0,
-					'vk_on_woo_short'  => 1,
 					'vk_button_order'  => 9,
 					'vk_utm_source'    => 'vk',
 					'vk_rrssb_html'    => '<li class="rrssb-vk">

@@ -90,13 +90,31 @@ if ( ! class_exists( 'WpssoRrssbFiltersUpgrade' ) ) {
 					'tumblr_caption_hashtags'   => '',
 					'buttons_css_rrssb-sharing' => 'buttons_css_rrssb-common',
 				),
+				45 => array(
+					'buttons_pos_woo_short'       => 'buttons_pos_wc_short_desc',
+					'buttons_pos_woo_short_desc'  => 'buttons_pos_wc_short_desc',
+					'buttons_css_rrssb-woo_short' => '',		// Remove and re-load new key value from default.
+					'buttons_css_rrssb-wc_short_desc' => '',	// Remove and re-load new key value from default.
+				),
 			);
 
-			$show_on = apply_filters( 'wpsso_rrssb_buttons_show_on', $this->p->cf[ 'sharing' ][ 'show_on' ], 'gp' );
+			/**
+			 * Remove all G+ buttons.
+			 */
+			$show_on = apply_filters( 'wpsso_rrssb_buttons_show_on', $this->p->cf[ 'sharing' ][ 'show_on' ] );
 
 			foreach ( $show_on as $opt_suffix => $short_desc ) {
 
 				$options_keys[ 'wpssorrssb' ][ 20 ][ 'gp_on_' . $opt_suffix ] = '';
+			}
+
+			/**
+			 * Rename show button from 'woo_short' to 'wc_short_desc'.
+			 */
+			foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $cm_id => $opt_pre ) {
+
+				$options_keys[ 'wpssorrssb' ][ 44 ][ $opt_pre . '_on_woo_short' ]      = $opt_pre . '_on_wc_short_desc';
+				$options_keys[ 'wpssorrssb' ][ 44 ][ $opt_pre . '_on_woo_short_desc' ] = $opt_pre . '_on_wc_short_desc';
 			}
 
 			return $options_keys;

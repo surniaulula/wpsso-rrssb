@@ -82,7 +82,7 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddypressSharing' ) ) {
 			if ( is_admin() ) {
 
 				$this->p->util->add_plugin_filters( $this, array( 
-					'rrssb_buttons_show_on' => 2,
+					'rrssb_buttons_show_on' => 1,
 					'rrssb_styles_tabs'     => 1,
 				) );
 			}
@@ -116,23 +116,23 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddypressSharing' ) ) {
 			return $opts_def;
 		}
 
-		public function filter_rrssb_buttons_show_on( $show_on = array(), $opt_pre = '' ) {
+		public function filter_rrssb_buttons_show_on( $show_on = array() ) {
 
-			$show_on[ 'bp_activity' ] = 'BP Activity';
+			$show_on[ 'bp_activity' ] = _x( 'BP Activity', 'option value', 'wpsso-rrssb' );
 
 			return $show_on;
 		}
 
 		public function filter_rrssb_styles( $styles ) {
 
-			$styles[ 'rrssb-bp_activity' ] = 'BP Activity';
+			$styles[ 'rrssb-bp_activity' ] = _x( 'BP Activity', 'option value', 'wpsso-rrssb' );
 
 			return $styles;
 		}
 
 		public function filter_rrssb_styles_tabs( $styles ) {
 
-			$styles[ 'rrssb-bp_activity' ] = 'BP Activity';
+			$styles[ 'rrssb-bp_activity' ] = _x( 'BP Activity', 'option value', 'wpsso-rrssb' );
 
 			return $styles;
 		}

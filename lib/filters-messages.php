@@ -39,7 +39,9 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 				return $text;
 			}
 
-			$short = $this->p->cf[ 'plugin' ][ 'wpssorrssb' ][ 'short' ];
+			$addon_name   = $this->p->cf[ 'plugin' ][ 'wpssorrssb' ][ 'name' ];
+			$widget_name  = $this->p->cf[ 'plugin' ][ 'wpssorrssb' ][ 'lib' ][ 'widget' ][ 'sharing' ];
+			$buttons_link = $this->p->util->get_admin_url( 'rrssb-buttons', _x( 'Responsive Buttons', 'lib file description', 'wpsso-rrssb' ) );
 
 			switch ( $msg_key ) {
 
@@ -47,11 +49,14 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 
 					$text = '<p>';
 
-					$text .= sprintf( __( 'The %1$s add-on uses the "%2$s" class to wrap all sharing buttons, and each button has its own individual class name as well.', 'wpsso-rrssb' ), $short, 'wpsso-rrssb' );
+					$text .= sprintf( __( 'The %1$s add-on uses the "%2$s" class to wrap all social sharing buttons.', 'wpsso-rrssb' ),
+						$addon_name, 'wpsso-rrssb' ) . ' ';
 
 					$text .= '</p><p>';
 
-					$text .= __( 'This tab can be used to edit the CSS common to all sharing button locations.', 'wpsso-rrssb' );
+					$text .= __( 'This style tab can be used to edit the styling applied to all social sharing buttons.', 'wpsso-rrssb' ) . ' ';
+
+					$text .= __( 'To edit the style for a specific location, use the style tab for that location.', 'wpsso-rrssb' ) . ' ';
 
 					$text .= '</p>';
 
@@ -61,11 +66,17 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 
 					$text = '<p>';
 
-					$text .= sprintf( __( 'Social sharing buttons enabled in the %1$s settings page for the WordPress content are assigned the "%2$s" class.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-content' ).
+					$text .= sprintf( __( 'Social sharing buttons for the WordPress content area are wrapped in a "%s" CSS class.', 'wpsso-rrssb' ),
+						'wpsso-rrssb-content' ) . ' ';
+
+					$text .= '</p><p>';
+
+					$text .= sprintf( __( 'Social sharing buttons can be enabled individually from the %s settings page.', 'wpsso-rrssb' ),
+						$buttons_link ) . ' ';
 
 					$text .= '</p>';
 
-					$text .= $this->get_info_css_example( 'content', true );
+					$text .= $this->get_info_css_example( 'content' );
 
 					break;
 
@@ -73,11 +84,17 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 
 					$text = '<p>';
 
-					$text .= sprintf( __( 'Social sharing buttons enabled in the %1$s settings page for the WordPress excerpt are assigned the "%2$s" class.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-excerpt' );
+					$text .= sprintf( __( 'Social sharing buttons for the WordPress excerpt area are wrapped in a "%s" CSS class.', 'wpsso-rrssb' ),
+						'wpsso-rrssb-excerpt' ) . ' ';
+
+					$text .= '</p><p>';
+
+					$text .= sprintf( __( 'Social sharing buttons can be enabled individually from the %s settings page.', 'wpsso-rrssb' ),
+						$buttons_link ) . ' ';
 
 					$text .= '</p>';
 
-					$text .= $this->get_info_css_example( 'excerpt', true );
+					$text .= $this->get_info_css_example( 'excerpt' );
 
 					break;
 
@@ -85,32 +102,41 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 
 					$text = '<p>';
 
-					$text .= sprintf( __( 'Social sharing buttons enabled in the %1$s settings page for the CSS sidebar are assigned the "%2$s" ID.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-sidebar' );
+					$text .= sprintf( __( 'Social sharing buttons for the CSS foating sidebar are wrapped in a "%s" container ID.', 'wpsso-rrssb' ),
+						'wpsso-rrssb-sidebar' ) . ' ';
 
 					$text .= '</p><p>';
 
-					$text .= 'In order to achieve a vertical display, each unordered list (UL) contains a single list item (LI).';
+					$text .= sprintf( __( 'Social sharing buttons can be enabled individually from the %s settings page.', 'wpsso-rrssb' ),
+						$buttons_link ) . ' ';
 
 					$text .= '</p>';
 
-					$text .= '<p>Example CSS:</p>
-<pre>
-div.wpsso-rrssb 
-  #wpsso-rrssb-sidebar
-    ul.rrssb-buttons
-      li.rrssb-facebook {}
-</pre>';
+					$text .= $this->get_info_css_example( 'sidebar', $is_css_id = true );
+
+					$text .= '<p>';
+
+					$text .= __( 'Note that in order to achieve a vertical display each unordered list contains a single button.', 'wpsso-rrssb' );
+
+					$text .= '</p>';
+
 					break;
 
 				case 'info-styles-rrssb-admin_edit':	// Admin tab.
 
 					$text = '<p>';
 
-					$text .= sprintf( __( 'Social sharing buttons enabled in the %1$s settings page for admin editing pages are assigned the "%2$s" class.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-admin_edit' );
+					$text .= sprintf( __( 'Social sharing buttons for the WordPress admin editor are wrapped in a "%s" CSS class.', 'wpsso-rrssb' ),
+						'wpsso-rrssb-admin_edit' ) . ' ';
+
+					$text .= '</p><p>';
+
+					$text .= sprintf( __( 'Social sharing buttons can be enabled individually from the %s settings page.', 'wpsso-rrssb' ),
+						$buttons_link ) . ' ';
 
 					$text .= '</p>';
 
-					$text .= $this->get_info_css_example( 'admin_edit', true );
+					$text .= $this->get_info_css_example( 'admin_edit' );
 
 					break;
 
@@ -118,11 +144,11 @@ div.wpsso-rrssb
 
 					$text = '<p>';
 
-					$text .= sprintf( __( 'Social sharing buttons added from a shortcode are assigned the "%1$s" class by default.', 'wpsso-rrssb' ), 'wpsso-rrssb-shortcode' );
+					$text .= sprintf( __( 'Social sharing buttons added by the RRSSB shortcode are wrapped in a "%s" CSS class by default (a different class name may be provided to the shortcode).', 'wpsso-rrssb' ), 'wpsso-rrssb-shortcode' ) . ' ';
 
 					$text .= '</p>';
 
-					$text .= $this->get_info_css_example( 'shortcode', true );
+					$text .= $this->get_info_css_example( 'shortcode' );
 
 					break;
 
@@ -130,7 +156,8 @@ div.wpsso-rrssb
 
 					$text = '<p>';
 
-					$text .= sprintf( __( 'Social sharing buttons enabled in the %1$s widget are assigned the "%2$s" class (along with additional unique CSS ID names).', 'wpsso-rrssb' ), $short, 'wpsso-rrssb-widget' );
+					$text .= sprintf( __( 'Social sharing buttons enabled for the RRSSB widget are wrapped in a "%s" CSS class.', 'wpsso-rrssb' ),
+						'wpsso-rrssb-widget' ) . ' ';
 
 					$text .= '</p>';
 
@@ -144,35 +171,17 @@ aside.widget
 
 					break;
 
-				case 'info-styles-rrssb-woo_short': 
-
-					$text = '<p>';
-
-					$text .= sprintf( __( 'Social sharing buttons enabled in the %1$s settings page for WooCommerce short descriptions are assigned the "%2$s" class.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-woo_short' );
-
-					$text .= '</p>';
-
-					$text .= $this->get_info_css_example( 'woo_short' );
-
-      					break;
-
-				case 'info-styles-rrssb-bbp_single': 
-
-					$text = '<p>';
-
-					$text .= sprintf( __( 'Social sharing buttons enabled in the %1$s settings page for bbPress single templates are assigned the "%2$s" class.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-bbp_single' );
-
-					$text .= '</p>';
-
-					$text .= $this->get_info_css_example( 'bbp_single' );
-
-      					break;
-
 				case 'info-styles-rrssb-bblog_post': 
 
 					$text = '<p>';
 
-					$text .= sprintf( __( 'Social sharing buttons enabled in the %1$s settings page for BuddyBlog posts are assigned the "%2$s" class.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-bblog_post' );
+					$text .= sprintf( __( 'Social sharing buttons for BuddyBlog posts are wrapped in a "%s" CSS class.', 'wpsso-rrssb' ),
+						'wpsso-rrssb-bblog_post' ) . ' ';
+
+					$text .= '</p><p>';
+
+					$text .= sprintf( __( 'Social sharing buttons can be enabled individually from the %s settings page.', 'wpsso-rrssb' ),
+						$buttons_link ) . ' ';
 
 					$text .= '</p>';
 
@@ -180,15 +189,55 @@ aside.widget
 
       					break;
 
+				case 'info-styles-rrssb-bbp_single': 
+
+					$text = '<p>';
+
+					$text .= sprintf( __( 'Social sharing buttons for the bbPress single templates are wrapped in a "%s" CSS class.', 'wpsso-rrssb' ),
+						'wpsso-rrssb-bbp_single' ) . ' ';
+
+					$text .= '</p><p>';
+
+					$text .= sprintf( __( 'Social sharing buttons can be enabled individually from the %s settings page.', 'wpsso-rrssb' ),
+						$buttons_link ) . ' ';
+
+					$text .= '</p>';
+
+					$text .= $this->get_info_css_example( 'bbp_single' );
+
+      					break;
+
 				case 'info-styles-rrssb-bp_activity': 
 
 					$text = '<p>';
 
-					$text .= sprintf( __( 'Social sharing buttons enabled in the %1$s settings page for BuddyPress activities are assigned the "%2$s" class.', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'rrssb-buttons', 'Responsive Buttons' ), 'wpsso-rrssb-bp_activity' );
+					$text .= sprintf( __( 'Social sharing buttons for BuddyPress activities are wrapped in a "%s" CSS class.', 'wpsso-rrssb' ),
+						'wpsso-rrssb-bp_activity' ) . ' ';
+
+					$text .= '</p><p>';
+
+					$text .= sprintf( __( 'Social sharing buttons can be enabled individually from the %s settings page.', 'wpsso-rrssb' ),
+						$buttons_link ) . ' ';
 
 					$text .= '</p>';
 
 					$text .= $this->get_info_css_example( 'bp_activity' );
+
+      					break;
+
+				case 'info-styles-rrssb-woocommerce': 
+
+					$text = '<p>';
+
+					$text .= sprintf( __( 'Social sharing buttons enabled for the WooCommerce short description or add to cart button areas are wrapped in a "%1$s" or "%2$s" CSS class.', 'wpsso-rrssb' ), 'wpsso-rrssb-wc_short_desc', 'wpsso-rrssb-wc_add_to_cart' ) . ' ';
+
+					$text .= '</p><p>';
+
+					$text .= sprintf( __( 'Social sharing buttons can be enabled individually from the %s settings page.', 'wpsso-rrssb' ),
+						$buttons_link ) . ' ';
+					$text .= '</p>';
+
+					$text .= $this->get_info_css_example( array( 'wc_short_desc', 'wc_add_to_cart' ) );
 
       					break;
 			}
@@ -226,6 +275,9 @@ aside.widget
 				case 'tooltip-buttons_cta':	// Call to Action.
 
 					$text = __( 'Include a call to action banner above the social sharing buttons.', 'wpsso-rrssb' ) . ' ';
+
+					$text .= sprintf( __( 'You may leave this option blank or hide it using the "%s" CSS class.', 'wpsso-rrssb' ),
+						'wpsso-rrssb-buttons-cta' ) . ' ';
 
 					break;
 
@@ -318,15 +370,24 @@ aside.widget
 			return $text;
 		}
 
-		private function get_info_css_example( $type ) {
+		private function get_info_css_example( $types, $is_css_id = false ) {
 
-			$text = '<p>Example CSS:</p>
-<pre>
+			$text = '<p>' . __( 'Example CSS:', 'wpsso-rrssb' ) . '</p>';
+
+			$types = is_array( $types ) ? $types : array( $types );
+
+			foreach ( $types as $type ) {
+
+				$container = $is_css_id ? '#wpsso-rrssb-' . $type : '.wpsso-rrssb-' . $type;
+
+				$text .= '<pre>
 div.wpsso-rrssb
-  .wpsso-rrssb-' . $type . '
+  ' . $container . '
     ul.rrssb-buttons
       li.rrssb-facebook {}
 </pre>';
+
+			}
 
 			return $text;
 		}

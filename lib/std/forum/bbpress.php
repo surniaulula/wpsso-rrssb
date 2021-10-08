@@ -69,7 +69,7 @@ if ( ! class_exists( 'WpssoRrssbStdForumBbpressSharing' ) ) {
 			if ( is_admin() ) {
 
 				$this->p->util->add_plugin_filters( $this, array( 
-					'rrssb_buttons_show_on'       => 2,
+					'rrssb_buttons_show_on'       => 1,
 					'rrssb_buttons_position_rows' => 2,
 					'rrssb_styles_tabs'           => 1,
 				) );
@@ -144,9 +144,9 @@ if ( ! class_exists( 'WpssoRrssbStdForumBbpressSharing' ) ) {
 			return $opts_def;
 		}
 
-		public function filter_rrssb_buttons_show_on( $show_on = array(), $opt_pre = '' ) {
+		public function filter_rrssb_buttons_show_on( $show_on = array() ) {
 
-			$show_on[ 'bbp_single' ] = 'bbPress Single';
+			$show_on[ 'bbp_single' ] = _x( 'bbPress Single', 'option value', 'wpsso-rrssb' );
 
 			return $show_on;
 		}
@@ -163,14 +163,14 @@ if ( ! class_exists( 'WpssoRrssbStdForumBbpressSharing' ) ) {
 
 		public function filter_rrssb_styles( $styles ) {
 
-			$styles[ 'rrssb-bbp_single' ] = 'bbPress Single';
+			$styles[ 'rrssb-bbp_single' ] = _x( 'bbPress Single', 'option value', 'wpsso-rrssb' );
 
 			return $styles;
 		}
 
 		public function filter_rrssb_styles_tabs( $styles ) {
 
-			$styles[ 'rrssb-bbp_single' ] = 'bbPress Single';
+			$styles[ 'rrssb-bbp_single' ] = _x( 'bbPress Single', 'option value', 'wpsso-rrssb' );
 
 			return $styles;
 		}
@@ -185,7 +185,7 @@ if ( ! class_exists( 'WpssoRrssbStdForumBbpressSharing' ) ) {
 
 					$rrssb =& WpssoRrssb::get_instance();
 
-					echo $rrssb->social->get_buttons( $text = '', $type = 'bbp_single', $use_post = true, $location = 'top' );
+					echo $rrssb->social->get_buttons( $text = '', $type = 'bbp_single' );
 				}
 			}
 		}
