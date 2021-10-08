@@ -42,7 +42,7 @@
 <p>Include responsive social sharing buttons in many locations:</p>
 
 <ul>
-<li>Above and/or below your content, excerpt text, bbPress single, BuddyBlog posts, BuddyPress activities, and WooCommerce short description.</li>
+<li>Above and/or below your content, excerpt text, bbPress single, BuddyBlog posts, BuddyPress activities, WooCommerce short description, and WooCommerce add to cart.</li>
 <li>In an admin editing page metabox &ndash; including media, product pages, and custom post types.</li>
 <li>In a CSS / javascript sidebar.</li>
 <li>In a WordPress sharing widget.</li>

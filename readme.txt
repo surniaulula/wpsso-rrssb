@@ -44,7 +44,7 @@ Extends the features of the [WPSSO Core plugin](https://wordpress.org/plugins/wp
 
 Include responsive social sharing buttons in many locations:
 
-* Above and/or below your content, excerpt text, bbPress single, BuddyBlog posts, BuddyPress activities, and WooCommerce short description.
+* Above and/or below your content, excerpt text, bbPress single, BuddyBlog posts, BuddyPress activities, WooCommerce short description, and WooCommerce add to cart.
 * In an admin editing page metabox &ndash; including media, product pages, and custom post types.
 * In a CSS / javascript sidebar.
 * In a WordPress sharing widget.
