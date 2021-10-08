@@ -99,7 +99,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * [GitHub](https://surniaulula.github.io/wpsso-rrssb/)
 * [WordPress.org](https://plugins.trac.wordpress.org/browser/wpsso-rrssb/)
 
-<h3>Updates for Development Versions</h3>
+<h3>Development Version Updates</h3>
 
 <p><strong>WPSSO Core Premium customers have access to development, alpha, beta, and release candidate version updates:</strong></p>
 
