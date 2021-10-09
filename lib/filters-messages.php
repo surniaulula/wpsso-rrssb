@@ -102,7 +102,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 
 					$text = '<p>';
 
-					$text .= sprintf( __( 'Social sharing buttons for the CSS foating sidebar are wrapped in a "%s" container ID.', 'wpsso-rrssb' ),
+					$text .= sprintf( __( 'Social sharing buttons for the CSS floating sidebar are wrapped in a "%s" container ID.', 'wpsso-rrssb' ),
 						'wpsso-rrssb-sidebar' ) . ' ';
 
 					$text .= '</p><p>';

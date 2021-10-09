@@ -219,7 +219,7 @@ msgstr ""
 
 #: lib/filters-messages.php:105
 msgid ""
-"Social sharing buttons for the CSS foating sidebar are wrapped in a \"%s\" "
+"Social sharing buttons for the CSS floating sidebar are wrapped in a \"%s\" "
 "container ID."
 msgstr ""
 
