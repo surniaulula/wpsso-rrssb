@@ -229,7 +229,7 @@ aside.widget
 
 					$text = '<p>';
 
-					$text .= sprintf( __( 'Social sharing buttons enabled for the WooCommerce short description or add to cart button areas are wrapped in a "%1$s" or "%2$s" CSS class.', 'wpsso-rrssb' ), 'wpsso-rrssb-wc_short_desc', 'wpsso-rrssb-wc_add_to_cart' ) . ' ';
+					$text .= sprintf( __( 'Social sharing buttons for the WooCommerce short description or add to cart button areas are wrapped in a "%1$s" or "%2$s" CSS class.', 'wpsso-rrssb' ), 'wpsso-rrssb-wc_short_desc', 'wpsso-rrssb-wc_add_to_cart' ) . ' ';
 
 					$text .= '</p><p>';
 

@@ -267,8 +267,8 @@ msgstr ""
 
 #: lib/filters-messages.php:232
 msgid ""
-"Social sharing buttons enabled for the WooCommerce short description or add "
-"to cart button areas are wrapped in a \"%1$s\" or \"%2$s\" CSS class."
+"Social sharing buttons for the WooCommerce short description or add to cart "
+"button areas are wrapped in a \"%1$s\" or \"%2$s\" CSS class."
 msgstr ""
 
 #: lib/filters-messages.php:257
