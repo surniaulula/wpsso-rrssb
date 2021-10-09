@@ -12,7 +12,7 @@ Requires PHP: 7.0
 Requires At Least: 5.2
 Tested Up To: 5.8.1
 WC Tested Up To: 5.7.1
-Stable Tag: 7.2.2
+Stable Tag: 8.0.0
 
 Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, templates, and editor.
 
@@ -125,115 +125,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v5.2.
 	* WPSSO Core v9.1.0.
 
-**Version 7.2.2 (2021/10/06)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Standardized `get_table_rows()` calls and filters in 'submenu' and 'sitesubmenu' classes.
-* **Requires At Least**
-	* PHP v7.0.
-	* WordPress v5.2.
-	* WPSSO Core v9.1.0.
-
-**Version 7.2.1 (2021/09/30)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* Fixed the missing admin share buttons after saving a post / page in the block editor.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.0.
-	* WordPress v5.2.
-	* WPSSO Core v9.0.1.
-
-**Version 7.2.0 (2021/09/24)**
-
-Maintenance release for WPSSO Core v9.0.0.
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.0.
-	* WordPress v5.2.
-	* WPSSO Core v9.0.0.
-
-**Version 7.1.0 (2021/09/11)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Added a new SSO &gt; Responsive Buttons &gt; Call to Action option.
-* **Bugfixes**
-	* Fixed the CSS sidebar id value and its default styling.
-* **Developer Notes**
-	* Added a new `wpssorrssb_get_post_sharing_buttons()` function.
-	* Added a new `wpssorrssb_get_mod_sharing_buttons()` function.
-	* Added a new 'wpsso_rrssb_buttons_ids' filter.
-	* Added a new 'wpsso_rrssb_buttons_disabled' filter.
-	* Removed the 'wpsso_rrssb_add_buttons' filter.
-	* Removed the 'wpsso_post_buttons_disabled' filter.
-	* Renamed Pinterest option keys from 'p_\*' to 'pin_\*'.
-* **Requires At Least**
-	* PHP v7.0.
-	* WordPress v5.2.
-	* WPSSO Core v8.39.0.
-
-**Version 7.0.0 (2021/09/07)**
-
-* **New Features**
-	* Added a "UTM Medium" option in the SSO &gt; Responsive Buttons &gt; Social Sharing Buttons metabox (hidden in basic options view).
-	* Added a "UTM Source" option to the RRSSB metaboxes in the SSO &gt; Responsive Buttons settings page (hidden in basic options view).
-	* Added a "UTM Campaign" option under the Document SSO &gt; Share Buttons tab.
-* **Improvements**
-	* Removed the "Append Hashtags" option from all buttons except for Twitter.
-	* Updated the RRSSB shortcode documentation in https://wpsso.com/docs/plugins/wpsso-rrssb/notes/rrssb-shortcode/.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.0.
-	* WordPress v5.2.
-	* WPSSO Core v8.38.0.
-
 == Upgrade Notice ==
 
 = 8.0.0 =
 
 (2021/10/09) Added a new "WC Add to Cart" option for each social sharing button (enabled by default).
-
-= 7.2.2 =
-
-(2021/10/06) Standardized `get_table_rows()` calls and filters in 'submenu' and 'sitesubmenu' classes.
-
-= 7.2.1 =
-
-(2021/09/30) Fixed the missing admin share buttons after saving a post / page in the block editor.
-
-= 7.2.0 =
-
-(2021/09/24) Maintenance release for WPSSO Core v9.0.0.
-
-= 7.1.0 =
-
-(2021/09/11) Added a new SSO &gt; Responsive Buttons &gt; Call to Action option. Fixed the CSS sidebar id value and its default styling.
-
-= 7.0.0 =
-
-(2021/09/07) Added "UTM Medium", "UTM Source", and "UTM Campaign" options. Removed the "Append Hashtags" option from all buttons except for Twitter.
 
