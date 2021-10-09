@@ -107,7 +107,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 8.0.0-b.1 (2021/10/09)**
+**Version 8.0.0-rc.1 (2021/10/09)**
 
 * **New Features**
 	* Added a new "Position in WC Add to Cart" option.
@@ -213,7 +213,7 @@ Maintenance release for WPSSO Core v9.0.0.
 
 == Upgrade Notice ==
 
-= 8.0.0-b.1 =
+= 8.0.0-rc.1 =
 
 (2021/10/09) Added a new "WC Add to Cart" option for each social sharing button (enabled by default).
 
