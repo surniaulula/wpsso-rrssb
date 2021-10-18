@@ -6,6 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
@@ -81,6 +82,7 @@ if ( ! class_exists( 'WpssoRrssbRegister' ) ) {
 				global $wpdb;
 
 				$db_query = 'SELECT blog_id FROM '.$wpdb->blogs;
+
 				$blog_ids = $wpdb->get_col( $db_query );
 
 				foreach ( $blog_ids as $blog_id ) {
@@ -93,6 +95,7 @@ if ( ! class_exists( 'WpssoRrssbRegister' ) ) {
 				restore_current_blog();
 
 			} else {
+
 				call_user_func_array( $method, array( $args ) );
 			}
 		}
