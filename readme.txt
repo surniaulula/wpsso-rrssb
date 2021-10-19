@@ -18,7 +18,7 @@ Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts,
 
 == Description ==
 
-<p><img class="readme-icon" src="https://surniaulula.github.io/wpsso-rrssb/assets/icon-256x256.png"> <em>Ridiculously Responsive Social Sharing Buttons</em> automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), no matter its size or resolution - including mobile, Retina, and high-PPI displays!</p>
+*Ridiculously Responsive Social Sharing Buttons* automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), no matter its size or resolution - including mobile, Retina, and high-PPI displays!
 
 **Add responsive social sharing buttons to:**
 
