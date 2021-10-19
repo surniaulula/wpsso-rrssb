@@ -15,6 +15,8 @@
 
 <h2>Description</h2>
 
+<!-- about -->
+
 <p><em>Ridiculously Responsive Social Sharing Buttons</em> automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), no matter its size or resolution - including mobile, Retina, and high-PPI displays!</p>
 
 <p><strong>Add responsive social sharing buttons to:</strong></p>
@@ -26,6 +28,8 @@
 <p>The content, excerpt, widget, CSS sidebar, shortcodes, templates, and <em>admin editor page</em> (so you can quickly share directly from the admin editor page).</p>
 
 <p><strong>Add UTM medium, source, and campaign values per share button.</strong></p>
+
+<!-- /about -->
 
 <h3>Users Love the WPSSO RRSSB Add-on</h3>
 

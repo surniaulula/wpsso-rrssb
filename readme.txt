@@ -18,6 +18,8 @@ Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts,
 
 == Description ==
 
+<!-- about -->
+
 *Ridiculously Responsive Social Sharing Buttons* automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), no matter its size or resolution - including mobile, Retina, and high-PPI displays!
 
 **Add responsive social sharing buttons to:**
@@ -29,6 +31,8 @@ Posts, pages, custom post types, bbPress, BuddyBlog posts, BuddyPress activities
 The content, excerpt, widget, CSS sidebar, shortcodes, templates, and *admin editor page* (so you can quickly share directly from the admin editor page).
 
 **Add UTM medium, source, and campaign values per share button.**
+
+<!-- /about -->
 
 <h3>Users Love the WPSSO RRSSB Add-on</h3>
 
