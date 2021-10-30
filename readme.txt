@@ -111,6 +111,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 8.1.0-dev.1 (2021/10/30)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Added support for the new `WpssoUtilInline` class methods in WPSSO Core v9.5.0.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.0.
+	* WordPress v5.2.
+	* WPSSO Core v9.1.0.
+
 **Version 8.0.0 (2021/10/09)**
 
 * **New Features**
@@ -130,6 +145,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v9.1.0.
 
 == Upgrade Notice ==
+
+= 8.1.0-dev.1 =
+
+(2021/10/30) Added support for the new `WpssoUtilInline` class methods in WPSSO Core v9.5.0.
 
 = 8.0.0 =
 
