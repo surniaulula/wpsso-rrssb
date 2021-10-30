@@ -187,7 +187,7 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 				}
 			}
 
-			return $this->p->util->replace_inline_variables( $twitter_button_html, $mod, $atts, $extras );
+			return $this->p->util->inline->replace_variables( $twitter_button_html, $mod, $atts, $extras );
 		}
 	}
 }

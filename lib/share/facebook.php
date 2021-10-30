@@ -119,7 +119,7 @@ if ( ! class_exists( 'WpssoRrssbShareFacebook' ) ) {
 				$this->p->debug->mark();
 			}
 
-			return $this->p->util->replace_inline_variables( $this->p->options[ 'fb_rrssb_html' ], $mod, $atts );
+			return $this->p->util->inline->replace_variables( $this->p->options[ 'fb_rrssb_html' ], $mod, $atts );
 		}
 	}
 }

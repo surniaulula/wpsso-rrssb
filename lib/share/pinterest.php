@@ -183,7 +183,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = array ( 'pin_desc', 'pin_img_desc', 'og_desc' ) ),
 			);
 
-			return $this->p->util->replace_inline_variables( $this->p->options[ 'pin_rrssb_html' ], $mod, $atts, $extras );
+			return $this->p->util->inline->replace_variables( $this->p->options[ 'pin_rrssb_html' ], $mod, $atts, $extras );
 		}
 	}
 }

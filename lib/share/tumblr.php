@@ -133,7 +133,7 @@ if ( ! class_exists( 'WpssoRrssbShareTumblr' ) ) {
 					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'tumblr_desc' ),
 			);
 
-			return $this->p->util->replace_inline_variables( $this->p->options[ 'tumblr_rrssb_html' ], $mod, $atts, $extras );
+			return $this->p->util->inline->replace_variables( $this->p->options[ 'tumblr_rrssb_html' ], $mod, $atts, $extras );
 		}
 	}
 }

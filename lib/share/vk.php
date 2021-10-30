@@ -120,7 +120,7 @@ if ( ! class_exists( 'WpssoRrssbShareVk' ) ) {
 				$this->p->debug->mark();
 			}
 
-			return $this->p->util->replace_inline_variables( $this->p->options[ 'vk_rrssb_html' ], $mod, $atts );
+			return $this->p->util->inline->replace_variables( $this->p->options[ 'vk_rrssb_html' ], $mod, $atts );
 		}
 	}
 }

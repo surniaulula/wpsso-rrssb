@@ -133,7 +133,7 @@ if ( ! class_exists( 'WpssoRrssbShareEmail' ) ) {
 					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'email_desc' ),
 			);
 
-			return $this->p->util->replace_inline_variables( $this->p->options[ 'email_rrssb_html' ], $mod, $atts, $extras );
+			return $this->p->util->inline->replace_variables( $this->p->options[ 'email_rrssb_html' ], $mod, $atts, $extras );
 		}
 	}
 }

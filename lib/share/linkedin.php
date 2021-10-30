@@ -133,7 +133,7 @@ if ( ! class_exists( 'WpssoRrssbShareLinkedin' ) ) {
 					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'linkedin_desc' ),
 			);
 
-			return $this->p->util->replace_inline_variables( $this->p->options[ 'linkedin_rrssb_html' ], $mod, $atts, $extras );
+			return $this->p->util->inline->replace_variables( $this->p->options[ 'linkedin_rrssb_html' ], $mod, $atts, $extras );
 		}
 	}
 }

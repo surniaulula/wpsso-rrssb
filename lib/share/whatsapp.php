@@ -120,12 +120,7 @@ if ( ! class_exists( 'WpssoRrssbShareWhatsApp' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$extras = array(
-				'title' => $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
-					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'og_title' ),
-			);
-
-			return $this->p->util->replace_inline_variables( $this->p->options[ 'wa_rrssb_html' ], $mod, $atts, $extras );
+			return $this->p->util->inline->replace_variables( $this->p->options[ 'wa_rrssb_html' ], $mod, $atts );
 		}
 	}
 }
