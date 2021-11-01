@@ -111,7 +111,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 8.1.0-dev.2 (2021/10/30)**
+**Version 8.1.0-dev.2 (2021/11/01)**
 
 * **New Features**
 	* None.
@@ -148,7 +148,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 8.1.0-dev.2 =
 
-(2021/10/30) Added support for the new `WpssoUtilInline` class methods in WPSSO Core v9.5.0.
+(2021/11/01) Added support for the new `WpssoUtilInline` class methods in WPSSO Core v9.5.0.
 
 = 8.0.0 =
 
