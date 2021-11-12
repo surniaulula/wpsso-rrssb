@@ -119,9 +119,6 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 
 		public function filter_get_defaults( $defs ) {
 
-			/**
-			 * Add options using a key prefix array and post type names.
-			 */
 			$this->p->util->add_post_type_names( $defs, array(
 				'buttons_add_to' => 1,
 			) );
