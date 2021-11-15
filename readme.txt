@@ -111,7 +111,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 8.1.1-dev.4 (2021/11/14)**
+**Version 8.1.1-b.1 (2021/11/15)**
 
 * **New Features**
 	* None.
@@ -124,7 +124,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.0.
 	* WordPress v5.2.
-	* WPSSO Core v9.8.0-dev.4.
+	* WPSSO Core v9.8.0-b.1.
 
 **Version 8.1.0 (2021/11/02)**
 
@@ -161,9 +161,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 8.1.1-dev.4 =
+= 8.1.1-b.1 =
 
-(2021/11/14) Refactored the `SucomAddOn->get_missing_requirements()` method.
+(2021/11/15) Refactored the `SucomAddOn->get_missing_requirements()` method.
 
 = 8.1.0 =
 
