@@ -115,7 +115,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				}
 			}
 
-			$sharing_css_data = SucomUtil::minify_css( $sharing_css_data, $ext = 'wpsso' );
+			$sharing_css_data = SucomUtil::minify_css( $sharing_css_data, $filter_prefix = 'wpsso' );
 
 			$sharing_css_path = self::get_sharing_css_path();
 
