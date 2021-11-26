@@ -244,12 +244,25 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			require_once WPSSORRSSB_PLUGINDIR . 'lib/social.php';
 			require_once WPSSORRSSB_PLUGINDIR . 'lib/style.php';
 
-			add_filter( 'wpssorrssb_load_lib', array( 'WpssoRrssbConfig', 'load_lib' ), 10, 3 );
+			add_filter( 'wpssorrssb_load_lib', array( __CLASS__, 'load_lib' ), 10, 3 );
 		}
 
 		public static function load_lib( $success = false, $filespec = '', $classname = '' ) {
 
-			if ( false === $success && ! empty( $filespec ) ) {
+			if ( false !== $success ) {
+
+				return $success;
+			}
+
+			if ( ! empty( $classname ) ) {
+
+				if ( class_exists( $classname ) ) {
+
+					return $classname;
+				}
+			}
+
+			if ( ! empty( $filespec ) ) {
 
 				$file_path = WPSSORRSSB_PLUGINDIR . 'lib/' . $filespec . '.php';
 
