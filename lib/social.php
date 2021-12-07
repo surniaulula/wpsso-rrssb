@@ -508,8 +508,10 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 		}
 
 		/**
-		 * Called by WpssoRrssbSocial->get_buttons(), WpssoRrssbShortcodeSharing->do_shortcode(),
-		 * WpssoRrssbWidgetSharing->widget(), and wpssorrssb_get_sharing_buttons().
+		 * Called by WpssoRrssbSocial->get_buttons().
+		 * Called by WpssoRrssbShortcodeSharing->do_shortcode().
+		 * Called by WpssoRrssbWidgetSharing->widget().
+		 * Called by wpssorrssb_get_sharing_buttons().
 		 *
 		 * Note that the $atts array may include additional user input from the RRSSB shortcode attributes.
 		 */
