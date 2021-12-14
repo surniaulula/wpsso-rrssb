@@ -228,48 +228,30 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 
 		public function show_on_checkboxes( $opt_pre ) {
 
-			$col = 0;
-
+			$col      = 0;
 			$max_cols = 4;
-
-			$show_on = apply_filters( 'wpsso_rrssb_buttons_show_on', $this->p->cf[ 'sharing' ][ 'show_on' ] );
-
-			$html = '<table>';
+			$show_on  = apply_filters( 'wpsso_rrssb_buttons_show_on', $this->p->cf[ 'sharing' ][ 'show_on' ] );
+			$html     = '<table>';
 
 			foreach ( $show_on as $opt_suffix => $short_desc ) {
 
-				$css_class = isset( $this->p->options[ $opt_pre . '_on_' . $opt_suffix . ':is' ] ) &&
-					$this->p->options[ $opt_pre . '_on_' . $opt_suffix . ':is' ] === 'disabled' ?
-						'rrssb_show_on blank' : 'rrssb_show_on';
-
 				$col++;
 
-				if ( $col == 1 ) {
+				$css_class = 'rrssb_show_on' . ( empty( $this->p->options[ $opt_pre . '_on_' . $opt_suffix . ':disabled' ] ) ? '' : ' blank' );
 
-					$html .= '<tr><td class="' . $css_class . '">';
+				$html .= ( $col == 1 ? '<tr>' : '' ) . '<td class="' . $css_class . '">';
+				$html .= $this->form->get_checkbox( $opt_pre . '_on_' . $opt_suffix ) . _x( $short_desc, 'option value', 'wpsso-rrssb' ) . '&nbsp; ';
+				$html .= '</td>';
 
-				} else {
-
-					$html .= '<td class="' . $css_class . '">';
-				}
-
-				$html .= $this->form->get_checkbox( $opt_pre . '_on_' . $opt_suffix ) . 
-					_x( $short_desc, 'option value', 'wpsso-rrssb' ) . '&nbsp; ';
-
-				if ( $col == $max_cols ) {
-
-					$html .= '</td></tr>';
+				if ( $col === $max_cols ) {
 
 					$col = 0;
 
-				} else {
-
-					$html .= '</td>';
+					$html .= '</tr>';
 				}
 			}
 
 			$html .= $col < $max_cols ? '</tr>' : '';
-
 			$html .= '</table>';
 
 			return $html;

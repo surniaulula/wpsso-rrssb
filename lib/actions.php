@@ -96,15 +96,15 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 
 		public function action_load_setting_page_reload_default_rrssb_styles( $pagehook, $menu_id, $menu_name, $menu_lib ) {
 
-			$def_opts = $this->p->opt->get_defaults();
+			$defs = $this->p->opt->get_defaults();
 
 			$styles = apply_filters( 'wpsso_rrssb_styles', $this->p->cf[ 'sharing' ][ 'rrssb_styles' ] );
 
 			foreach ( $styles as $id => $name ) {
 
-				if ( isset( $this->p->options[ 'buttons_css_' . $id ] ) && isset( $def_opts[ 'buttons_css_' . $id ] ) ) {
+				if ( isset( $this->p->options[ 'buttons_css_' . $id ] ) && isset( $defs[ 'buttons_css_' . $id ] ) ) {
 
-					$this->p->options[ 'buttons_css_' . $id ] = $def_opts[ 'buttons_css_' . $id ];
+					$this->p->options[ 'buttons_css_' . $id ] = $defs[ 'buttons_css_' . $id ];
 				}
 			}
 

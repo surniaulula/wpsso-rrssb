@@ -103,16 +103,16 @@ if ( ! class_exists( 'WpssoRrssbStdSocialBuddyblogSharing' ) ) {
 			}
 		}
 
-		public function filter_get_defaults( $opts_def ) {
+		public function filter_get_defaults( $defs ) {
 
-			$opts_def[ 'buttons_pos_bblog_post' ] = 'bottom';	// Default position in BuddyBlog Post.
+			$defs[ 'buttons_pos_bblog_post' ] = 'bottom';	// Default position in BuddyBlog Post.
 
 			foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $id => $opt_pre ) {
 
-				$opts_def[ $opt_pre . '_on_bblog_post' ] = 0;
+				$defs[ $opt_pre . '_on_bblog_post' ] = 0;
 			}
 
-			return $opts_def;
+			return $defs;
 		}
 
 		public function filter_rrssb_buttons_position_rows( $table_rows, $form ) {

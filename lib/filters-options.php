@@ -26,57 +26,11 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 			$this->a =& $addon;
 
 			$this->p->util->add_plugin_filters( $this, array( 
-				'option_type'          => 2,
 				'save_setting_options' => 3,
 				'get_defaults'         => 1,
 				'get_md_defaults'      => 1,
+				'option_type'          => 2,
 			) );
-		}
-
-		/**
-		 * Return the sanitation type for a given option key.
-		 */
-		public function filter_option_type( $type, $base_key ) {
-
-			if ( ! empty( $type ) ) {	// Return early if we already have a type.
-
-				return $type;
-			}
-
-			switch ( $base_key ) {
-
-				/**
-				 * Options that cannot be blank.
-				 */
-				case 'buttons_force_prot':
-				case ( preg_match( '/^buttons_pos_/', $base_key ) ? true : false ):
-
-					return 'not_blank';
-
-				/**
-				 * Integer options that must be 1 or more (not zero).
-				 */
-				case ( preg_match( '/_button_order$/', $base_key ) ? true : false ):
-
-					return 'pos_int';
-
-				/**
-				 * Text strings that can be blank (line breaks are removed).
-				 */
-				case ( preg_match( '/_(desc|title)$/', $base_key ) ? true : false ):
-
-					return 'one_line';
-
-				/**
-				 * Text strings that can be blank.
-				 */
-				case 'buttons_cta':
-				case ( preg_match( '/^buttons_css_/', $base_key ) ? true : false ):	// Use the tool page to reload the default CSS.
-
-					return 'ok_blank';
-			}
-
-			return $type;
 		}
 
 		/**
@@ -193,6 +147,49 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 				'tumblr_title'         => '',	// Tumblr Title.
 				'tumblr_desc'          => '',	// Tumblr Caption.
 			) );
+		}
+
+		public function filter_option_type( $type, $base_key ) {
+
+			if ( ! empty( $type ) ) {	// Return early if we already have a type.
+
+				return $type;
+			}
+
+			switch ( $base_key ) {
+
+				/**
+				 * Options that cannot be blank.
+				 */
+				case 'buttons_force_prot':
+				case ( preg_match( '/^buttons_pos_/', $base_key ) ? true : false ):
+
+					return 'not_blank';
+
+				/**
+				 * Integer options that must be 1 or more (not zero).
+				 */
+				case ( preg_match( '/_button_order$/', $base_key ) ? true : false ):
+
+					return 'pos_int';
+
+				/**
+				 * Text strings that can be blank (line breaks are removed).
+				 */
+				case ( preg_match( '/_(desc|title)$/', $base_key ) ? true : false ):
+
+					return 'one_line';
+
+				/**
+				 * Text strings that can be blank.
+				 */
+				case 'buttons_cta':
+				case ( preg_match( '/^buttons_css_/', $base_key ) ? true : false ):	// Use the tool page to reload the default CSS.
+
+					return 'ok_blank';
+			}
+
+			return $type;
 		}
 	}
 }

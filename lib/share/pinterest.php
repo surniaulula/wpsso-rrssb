@@ -101,17 +101,17 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 			/**
 			 * Make sure the Pinterest Pin It image size is available.
 			 */
-			$this->p->options[ 'pin_add_img_html' ]    = 1;
-			$this->p->options[ 'pin_add_img_html:is' ] = 'disabled';
+			$this->p->options[ 'pin_add_img_html' ]          = 1;
+			$this->p->options[ 'pin_add_img_html:disabled' ] = true;
 
 			$this->p->util->add_plugin_filters( $this, array( 
 				'get_defaults' => 1,
 			) );
 		}
 
-		public function filter_get_defaults( $def_opts ) {
+		public function filter_get_defaults( $defs ) {
 
-			return array_merge( $def_opts, self::$cf[ 'opt' ][ 'defaults' ] );
+			return array_merge( $defs, self::$cf[ 'opt' ][ 'defaults' ] );
 		}
 
 		/**

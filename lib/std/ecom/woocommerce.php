@@ -82,18 +82,18 @@ if ( ! class_exists( 'WpssoRrssbStdEcomWoocommerceSharing' ) ) {
 			}
 		}
 
-		public function filter_get_defaults( $opts_def ) {
+		public function filter_get_defaults( $defs ) {
 
-			$opts_def[ 'buttons_pos_wc_short_desc' ]  = 'bottom';	// Default position for product short description.
-			$opts_def[ 'buttons_pos_wc_add_to_cart' ] = 'bottom';	// Default position (before/after) for Add to Cart.
+			$defs[ 'buttons_pos_wc_short_desc' ]  = 'bottom';	// Default position for product short description.
+			$defs[ 'buttons_pos_wc_add_to_cart' ] = 'bottom';	// Default position (before/after) for Add to Cart.
 
 			foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $cm_id => $opt_pre ) {
 
-				$opts_def[ $opt_pre . '_on_wc_short_desc' ]  = 0;
-				$opts_def[ $opt_pre . '_on_wc_add_to_cart' ] = 1;
+				$defs[ $opt_pre . '_on_wc_short_desc' ]  = 0;
+				$defs[ $opt_pre . '_on_wc_add_to_cart' ] = 1;
 			}
 
-			return $opts_def;
+			return $defs;
 		}
 
 		public function filter_rrssb_buttons_show_on( $show_on = array() ) {

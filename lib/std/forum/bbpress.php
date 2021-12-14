@@ -132,16 +132,16 @@ if ( ! class_exists( 'WpssoRrssbStdForumBbpressSharing' ) ) {
 			}
 		}
 
-		public function filter_get_defaults( $opts_def ) {
+		public function filter_get_defaults( $defs ) {
 
-			$opts_def[ 'buttons_pos_bbp_single' ] = 'top';	// Default position in bbPress Single.
+			$defs[ 'buttons_pos_bbp_single' ] = 'top';	// Default position in bbPress Single.
 
 			foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $id => $opt_pre ) {
 
-				$opts_def[ $opt_pre . '_on_bbp_single' ] = 0;
+				$defs[ $opt_pre . '_on_bbp_single' ] = 0;
 			}
 
-			return $opts_def;
+			return $defs;
 		}
 
 		public function filter_rrssb_buttons_show_on( $show_on = array() ) {
