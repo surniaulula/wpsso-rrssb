@@ -1,92 +1,11 @@
-<h1>WPSSO Ridiculously Responsive Social Sharing Buttons (RRSSB)</h1>
 
-<table>
-<tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Ridiculously Responsive Social Sharing Buttons</td></tr>
-<tr><th align="right" valign="top" nowrap>Summary</th><td>Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, templates, and editor.</td></tr>
-<tr><th align="right" valign="top" nowrap>Stable Version</th><td>8.1.1</td></tr>
-<tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.2 or newer</td></tr>
-<tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>5.2 or newer</td></tr>
-<tr><th align="right" valign="top" nowrap>Tested Up To WordPress</th><td>5.8.2</td></tr>
-<tr><th align="right" valign="top" nowrap>Tested Up To WooCommerce</th><td>6.0.0</td></tr>
-<tr><th align="right" valign="top" nowrap>Contributors</th><td>jsmoriss</td></tr>
-<tr><th align="right" valign="top" nowrap>License</th><td><a href="https://www.gnu.org/licenses/gpl.txt">GPLv3</a></td></tr>
-<tr><th align="right" valign="top" nowrap>Tags / Keywords</th><td>responsive, share buttons, social widget, social media, woocommerce, facebook, google, twitter, pinterest, linkedin, whatsapp, bbpress, buddypress</td></tr>
-</table>
-
-<h2>Description</h2>
-
-<!-- about -->
-
-<p><em>Ridiculously Responsive Social Sharing Buttons</em> automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), no matter its size or resolution - including mobile, Retina, and high-PPI displays!</p>
-
-<p><strong>Add responsive social sharing buttons to:</strong></p>
-
-<p>Posts, pages, custom post types, bbPress, BuddyBlog posts, BuddyPress activities, WooCommerce product pages, and much more.</p>
-
-<p><strong>Add responsive social sharing buttons in:</strong></p>
-
-<p>The content, excerpt, widget, CSS sidebar, shortcodes, templates, and <em>admin editor page</em> (so you can quickly share directly from the admin editor page).</p>
-
-<p><strong>Add UTM medium, source, and campaign values per share button.</strong></p>
-
-<!-- /about -->
-
-<h3>Users Love the WPSSO RRSSB Add-on</h3>
-
-<p>&#x2605;&#x2605;&#x2605;&#x2605;&#x2605; - "Fast and sleek! These buttons are the bees knees for real. They look great across all platforms, play nice with w3-total-cache and doesn’t impact my 100/100 pagespeed score." - <a href="https://wordpress.org/support/topic/fast-and-sleek/">renoduck</a></p>
-
-<p>&#x2605;&#x2605;&#x2605;&#x2605;&#x2605; - "FANTASTIC! This plugin is one of my favorites! This plugin makes it SOOO simple to add social sharing to wordpress posts!" - <a href="https://wordpress.org/support/topic/fantastic-1214/">mikegoubeaux</a></p>
-
-<p>&#x2605;&#x2605;&#x2605;&#x2605;&#x2605; - "These buttons are great, work on mobile phones as well as desktops, and they load super fast!" - <a href="https://wordpress.org/support/topic/best-sharing-buttons-out-there/">undergroundnetwork</a></p>
-
-<h3>WPSSO RRSSB Add-on Features</h3>
-
-<p>Extends the features of the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a> (required plugin).</p>
-
-<p>Include responsive social sharing buttons in many locations:</p>
-
-<ul>
-<li>Above and/or below your content, excerpt text, bbPress single, BuddyBlog posts, BuddyPress activities, WooCommerce short description, and WooCommerce add to cart.</li>
-<li>In an admin editing page metabox &ndash; including media, product pages, and custom post types.</li>
-<li>In a CSS / javascript sidebar.</li>
-<li>In a WordPress sharing widget.</li>
-<li>A shortcode in your content or excerpt.</li>
-<li>A function in your theme's template(s).</li>
-</ul>
-
-<p>Provides UTM medium, UTM source, and UTM campaign values for each social sharing button.</p>
-
-<p>A built-in stylesheet editor allows you to easily fine-tune the CSS for each social sharing button location (content, excerpt, shortcode, widget, etc.).</p>
-
-<p>Uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.</p>
-
-<h3>WPSSO Core Required</h3>
-
-<p>WPSSO Ridiculously Responsive Social Sharing Buttons (WPSSO RRSSB) is an add-on for the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a>.</p>
-
-
-<h2>Installation</h2>
-
-<h3 class="top">Install and Uninstall</h3>
-
-<ul>
-<li><a href="https://wpsso.com/docs/plugins/wpsso-rrssb/installation/install-the-plugin/">Install the WPSSO RRSSB add-on</a>.</li>
-<li><a href="https://wpsso.com/docs/plugins/wpsso-rrssb/installation/uninstall-the-plugin/">Uninstall the WPSSO RRSSB add-on</a>.</li>
-</ul>
-
-
-<h2>Frequently Asked Questions</h2>
-
-<h3 class="top">Frequently Asked Questions</h3>
-
-<ul>
-<li>None.</li>
-</ul>
-
-<h3>Notes and Documentation</h3>
-
-<ul>
-<li><a href="https://wpsso.com/docs/plugins/wpsso-rrssb/notes/rrssb-shortcode/">RRSSB Shortcode for Social Sharing Buttons</a></li>
-</ul>
-
-
+Fatal error: Uncaught TypeError: Argument 1 passed to WpssoOptions::add_versions() must be of the type array, null given, called in /var/www/wpadm/wordpress/wp-content/plugins/wpsso/lib/options.php on line 845 and defined in /var/www/wpadm/wordpress/wp-content/plugins/wpsso/lib/options.php:963
+Stack trace:
+#0 /var/www/wpadm/wordpress/wp-content/plugins/wpsso/lib/options.php(845): WpssoOptions->add_versions(NULL)
+#1 /var/www/wpadm/wordpress/wp-content/plugins/wpsso/lib/options.php(570): WpssoOptions->save_options('wpsso_options', Array, false)
+#2 /var/www/wpadm/wordpress/wp-content/plugins/wpsso/wpsso.php(477): WpssoOptions->check_options('wpsso_options', Array, false)
+#3 /var/www/wpadm/wordpress/wp-includes/class-wp-hook.php(303): Wpsso->set_objects('')
+#4 /var/www/wpadm/wordpress/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#5 /var/www/wpadm/wordpress/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#6 /var/www/wpadm/wordpress/wp-settings.php(578): do_action('init')
+#7 /var/www/wpadm/wp-c in /var/www/wpadm/wordpress/wp-content/plugins/wpsso/lib/options.php on line 963
