@@ -27,6 +27,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersUpgrade' ) ) {
 
 			$this->p->util->add_plugin_filters( $this, array( 
 				'rename_options_keys' => 1,
+				'upgraded_options'    => 2,
 			) );
 		}
 
@@ -118,6 +119,39 @@ if ( ! class_exists( 'WpssoRrssbFiltersUpgrade' ) ) {
 			}
 
 			return $options_keys;
+		}
+
+		public function filter_upgraded_options( $opts, $defs ) {
+
+			/**
+			 * Get the current options version number for checks to follow.
+			 */
+			$prev_version = $this->p->opt->get_version( $opts, 'wpssorrssb' );	// Returns 'opt_version'.
+
+			/**
+			 * Reload the defaults styles if older than WPSSO RRSSB v4.0.0 (options version 31).
+			 */
+			if ( $prev_version > 0 && $prev_version <= 31 ) {
+
+				$styles = apply_filters( 'wpsso_rrssb_styles', $this->p->cf[ 'sharing' ][ 'rrssb_styles' ] );
+
+				foreach ( $styles as $id => $name ) {
+
+					if ( isset( $opts[ 'buttons_css_' . $id ] ) && isset( $defs[ 'buttons_css_' . $id ] ) ) {
+
+						$opts[ 'buttons_css_' . $id ] = $defs[ 'buttons_css_' . $id ];
+					}
+				}
+
+				$this->p->notice->upd( __( 'The default responsive styles CSS has been reloaded and saved.', 'wpsso-rrssb' ) );
+
+				/**
+				 * Update the combined and minified social stylesheet.
+				 */
+				WpssoRrssbSocial::update_sharing_css( $opts );
+			}
+
+			return $opts;
 		}
 	}
 }
