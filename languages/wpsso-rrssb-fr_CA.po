@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 8.1.1\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 8.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2021-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-11-15 09:09-0800\n"
+"PO-Revision-Date: 2021-12-16 16:56-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -130,7 +130,7 @@ msgstr "Haut et bas"
 msgid "The default responsive button options have been reloaded and saved."
 msgstr "Les options des boutons réactifs par défaut ont été rechargées et sauvegardés."
 
-#: lib/actions.php:115 lib/filters-options.php:109
+#: lib/actions.php:115 lib/filters-upgrade.php:146
 msgid "The default responsive styles CSS has been reloaded and saved."
 msgstr "Le CSS par défaut des styles réactifs ont été rechargés et sauvegardés."
 
@@ -354,7 +354,7 @@ msgstr "Identifie une campagne stratégique (par exemple, lancement de produit, 
 msgid "Example CSS:"
 msgstr "Exemple CSS:"
 
-#: lib/filters-options.php:152
+#: lib/filters-options.php:86
 msgid "Failed to open the css file %s for reading."
 msgstr "Impossible d'ouvrir le fichier css %s pour lecture."
 
