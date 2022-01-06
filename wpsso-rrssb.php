@@ -13,7 +13,7 @@
  * Description: Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, templates, and editor.
  * Requires PHP: 7.2
  * Requires At Least: 5.2
- * Tested Up To: 5.8.2
+ * Tested Up To: 5.8.3
  * WC Tested Up To: 6.0.0
  * Version: 8.2.0
  * 
@@ -24,7 +24,7 @@
  *      {bugfix}        Backwards-compatible bug fixes or small improvements.
  *      {stage}.{level} Pre-production release: dev < a (alpha) < b (beta) < rc (release candidate).
  * 
- * Copyright 2014-2021 Jean-Sebastien Morisset (https://wpsso.com/)
+ * Copyright 2014-2022 Jean-Sebastien Morisset (https://wpsso.com/)
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
