@@ -10,14 +10,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
-if ( ! class_exists( 'SucomAddOn' ) ) {
+if ( ! class_exists( 'SucomAbstractAddOn' ) ) {
 
-	require_once dirname( __FILE__ ) . '/com/add-on.php';	// SucomAddOn class.
+	require_once dirname( __FILE__ ) . '/com/add-on.php';	// SucomAbstractAddOn class.
 }
 
-if ( ! class_exists( 'WpssoAddOn' ) ) {
+if ( ! class_exists( 'WpssoAbstractAddOn' ) ) {
 
-	abstract class WpssoAddOn extends SucomAddOn {
+	abstract class WpssoAbstractAddOn extends SucomAbstractAddOn {
 
 		protected $p;	// Wpsso class object.
 
@@ -82,13 +82,13 @@ if ( ! class_exists( 'WpssoAddOn' ) ) {
 			}
 
 			/**
-			 * The SucomAddon->init_plugin_notices() method adds toolbar notices for any missing requirements.
+			 * The SucomAbstractAddOn->init_plugin_notices() method adds toolbar notices for any missing requirements.
 			 */
 			add_action( 'wpsso_init_plugin', array( $this, 'init_plugin_notices' ), $prio, 0 );
 
 			/**
-			 * If SucomAddon->init_plugin_notices() is not executed, then show any missing requirements using the
-			 * standard WordPress admin notices action.
+			 * If SucomAbstractAddOn->init_plugin_notices() is not executed, then show any missing requirements using
+			 * the standard WordPress admin notices action.
 			 */
 			add_action( 'all_admin_notices', array( $this, 'show_admin_notices' ), $prio, 0 );
 		}

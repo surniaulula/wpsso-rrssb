@@ -10,9 +10,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
-if ( ! class_exists( 'SucomAddOn' ) ) {
+if ( ! class_exists( 'SucomAbstractAddOn' ) ) {
 
-	abstract class SucomAddOn {
+	abstract class SucomAbstractAddOn {
 
 		protected $p;	// Plugin class object.
 
@@ -24,20 +24,14 @@ if ( ! class_exists( 'SucomAddOn' ) ) {
 
 		public function __construct() {}
 
-		/**
-		 * Since WPSSO Core v8.11.1.
-		 */
 		public function get_ext() {
 
-			return $this->ext;	// Defined in WpssoAddon, which extends SucomAddon.
+			return $this->ext;
 		}
 
-		/**
-		 * Since WPSSO Core v8.11.1.
-		 */
 		public function get_p_ext() {
 
-			return $this->p_ext;	// Defined in WpssoAddon, which extends SucomAddon.
+			return $this->p_ext;
 		}
 
 		public function get_config( array $config ) {
