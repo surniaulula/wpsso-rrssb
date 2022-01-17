@@ -29,12 +29,10 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 				'post_document_meta_tabs'   => 3,
 				'post_buttons_rows'         => 4,
 				'metabox_sso_inside_footer' => 2,
-			), $prio = 40 );	// Run after WPSSO Core's own Standard / Premium filters.
+			), $prio = 200 );
 		}
 
 		public function filter_post_document_meta_tabs( $tabs, $mod, $metabox_id ) {
-
-			$after_tab = 'edit';
 
 			switch ( $metabox_id ) {
 
@@ -42,7 +40,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 
 					if ( $mod[ 'is_public' ] ) {	// Since WPSSO Core v7.0.0.
 
-						SucomUtil::add_after_key( $tabs, $after_tab, 'buttons', _x( 'Share Buttons', 'metabox tab', 'wpsso-rrssb' ) );
+						SucomUtil::add_after_key( $tabs, $after_tab = 'edit_media', 'buttons', _x( 'Share Buttons', 'metabox tab', 'wpsso-rrssb' ) );
 					}
 
 					break;
