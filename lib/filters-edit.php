@@ -27,7 +27,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 
 			$this->p->util->add_plugin_filters( $this, array( 
 				'post_document_meta_tabs'   => 3,
-				'post_buttons_rows'         => 4,
+				'post_edit_share_rows'      => 4,
 				'metabox_sso_inside_footer' => 2,
 			), $prio = 200 );
 		}
@@ -40,7 +40,8 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 
 					if ( $mod[ 'is_public' ] ) {	// Since WPSSO Core v7.0.0.
 
-						SucomUtil::add_after_key( $tabs, $after_tab = 'edit_media', 'buttons', _x( 'Share Buttons', 'metabox tab', 'wpsso-rrssb' ) );
+						SucomUtil::add_before_key( $tabs, $after_tab = 'prev_social', 'edit_share',
+							_x( 'Edit Share Buttons', 'metabox tab', 'wpsso-rrssb' ) );
 					}
 
 					break;
@@ -52,7 +53,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 		/**
 		 * Default option values are defined in WpssoRrssbFiltersOptions->filter_get_md_defaults().
 		 */
-		public function filter_post_buttons_rows( $table_rows, $form, $head, $mod ) {
+		public function filter_post_edit_share_rows( $table_rows, $form, $head, $mod ) {
 
 			$def_caption_title = $this->p->page->get_caption( $type = 'title', 0, $mod, true, false );
 
@@ -77,13 +78,6 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 			$email_max_len  = $this->p->options[ 'email_caption_max_len' ];
 			$def_email_desc = $this->p->page->get_caption( $email_type, $email_max_len, $mod, $read_cache = true, $add_hashtags = false );
 
-			$form_rows[ 'subsection_email' ] = array(
-				'td_class' => 'subsection',
-				'col_span' => '3',
-				'header'   => 'h4',
-				'label'    => 'Email',
-			);
-
 			$form_rows[ 'email_title' ] = array(
 				'th_class' => 'medium',
 				'label'    => _x( 'Email Subject', 'option label', 'wpsso-rrssb' ),
@@ -106,18 +100,11 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 			$twitter_hashtags = $this->p->options[ 'twitter_caption_hashtags' ];
 			$def_twitter_desc = $this->p->page->get_caption( $twitter_type, $twitter_max_len, $mod, $read_cache = true, $twitter_hashtags );
 
-			$form_rows[ 'subsection_twitter' ] = array(
-				'td_class' => 'subsection',
-				'col_span' => '3',
-				'header'   => 'h4',
-				'label'    => 'Twitter',
-			);
-
 			$form_rows[ 'twitter_desc' ] = array(
 				'th_class' => 'medium',
 				'label'    => _x( 'Tweet Text', 'option label', 'wpsso-rrssb' ),
 				'tooltip'  => 'meta-buttons_twitter_desc',
-				'content'  => $form->get_textarea( 'twitter_desc', '', '', $twitter_max_len, $def_twitter_desc ),
+				'content'  => $form->get_textarea( 'twitter_desc', $css_class = '', $css_id = '', $twitter_max_len, $def_twitter_desc ),
 			);
 
 			/**
@@ -127,19 +114,12 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 			$pin_max_len = $this->p->options[ 'pin_caption_max_len' ];
 			$pin_desc    = $this->p->page->get_caption( $pin_type, $pin_max_len, $mod, $read_cache = true, $add_hashtags = false );
 
-			$form_rows[ 'subsection_pinterest' ] = array(
-				'td_class' => 'subsection',
-				'col_span' => '3',
-				'header'   => 'h4',
-				'label'    => 'Pinterest',
-			);
-
 			$form_rows[ 'pin_desc' ] = array(
 				'th_class' => 'medium',
 				'td_class' => 'top',
 				'label'    => _x( 'Pinterest Caption', 'option label', 'wpsso-rrssb' ),
 				'tooltip'  => 'meta-buttons_pin_desc',
-				'content'  => $form->get_textarea( 'pin_desc', '', '', $pin_max_len, $pin_desc ),
+				'content'  => $form->get_textarea( 'pin_desc', $css_class = '', $css_id = '', $pin_max_len, $pin_desc ),
 			);
 
 			/**
@@ -155,25 +135,18 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 				$other_max_len = $this->p->options[ $opt_pre . '_caption_max_len' ];
 				$other_desc    = $this->p->page->get_caption( $other_type, $other_max_len, $mod, $read_cache = true, $add_hashtags = false );
 
-				$form_rows[ 'subsection_' . $opt_pre ] = array(
-					'td_class' => 'subsection',
-					'col_span' => '3',
-					'header'   => 'h4',
-					'label'    => $name,
-				);
-
 				$form_rows[ $opt_pre . '_title' ] = array(
 					'th_class' => 'medium',
 					'label'    => sprintf( _x( '%s Title', 'option label', 'wpsso-rrssb' ), $name ),
 					'tooltip'  => 'meta-buttons_' . $opt_pre . '_title',
-					'content'  => $form->get_input( $opt_pre . '_title', 'wide', '', 0, $def_caption_title ),
+					'content'  => $form->get_input( $opt_pre . '_title', $css_class = 'wide', $css_id = '', 0, $def_caption_title ),
 				);
 
 				$form_rows[ $opt_pre . '_desc' ] = array(
 					'th_class' => 'medium',
 					'label'    => sprintf( _x( '%s Caption', 'option label', 'wpsso-rrssb' ), $name ),
 					'tooltip'  => 'meta-buttons_' . $opt_pre . '_desc',
-					'content'  => $form->get_textarea( $opt_pre . '_desc', '', '', $other_max_len, $other_desc ),
+					'content'  => $form->get_textarea( $opt_pre . '_desc', $css_class = '', $css_id = '', $other_max_len, $other_desc ),
 				);
 			}
 
