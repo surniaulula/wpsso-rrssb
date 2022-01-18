@@ -1,23 +1,23 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 8.2.0\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 8.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2021-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-12-16 16:56-0800\n"
+"POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2022-01-18 15:01-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.0.1\n"
 
-#: gettext/gettext-lib-abstracts-com.php:6 lib/abstracts/com/add-on.php:213
+#: gettext/gettext-lib-abstract-com.php:6 lib/abstract/com/add-on.php:207
 msgid "The %1$s add-on requires the %2$s plugin."
 msgstr "L'ajout %1$s requiert l'extension %2$s."
 
-#: gettext/gettext-lib-abstracts-com.php:7 lib/abstracts/com/add-on.php:227
+#: gettext/gettext-lib-abstract-com.php:7 lib/abstract/com/add-on.php:221
 msgid "The %1$s add-on requires %2$s version %3$s or newer (version %4$s is currently installed)."
 msgstr "L'ajout %1$s nécessite %2$s version %3$s ou plus récente (la version %4$s est installée actuellement)."
 
@@ -134,47 +134,47 @@ msgstr "Les options des boutons réactifs par défaut ont été rechargées et s
 msgid "The default responsive styles CSS has been reloaded and saved."
 msgstr "Le CSS par défaut des styles réactifs ont été rechargés et sauvegardés."
 
-#: lib/filters-edit.php:45
+#: lib/filters-edit.php:44
 msgctxt "metabox tab"
-msgid "Share Buttons"
-msgstr "Boutons de partage"
+msgid "Edit Share Buttons"
+msgstr "Modifier boutons de partage"
 
-#: lib/filters-edit.php:63
+#: lib/filters-edit.php:62
 msgctxt "option label"
 msgid "Disable Share Buttons"
 msgstr "Désactiver les boutons"
 
-#: lib/filters-edit.php:70
+#: lib/filters-edit.php:69
 msgctxt "option label"
 msgid "UTM Campaign"
 msgstr "Campagne UTM"
 
-#: lib/filters-edit.php:91
+#: lib/filters-edit.php:83
 msgctxt "option label"
 msgid "Email Subject"
 msgstr "Sujet du couriel"
 
-#: lib/filters-edit.php:98
+#: lib/filters-edit.php:90
 msgctxt "option label"
 msgid "Email Message"
 msgstr "Message du courriel"
 
-#: lib/filters-edit.php:120
+#: lib/filters-edit.php:105
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr "Texte du Tweet"
 
-#: lib/filters-edit.php:142
+#: lib/filters-edit.php:120
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr "Texte légende Pinterest"
 
-#: lib/filters-edit.php:169
+#: lib/filters-edit.php:140
 msgctxt "option label"
 msgid "%s Title"
 msgstr "Titre %s"
 
-#: lib/filters-edit.php:176
+#: lib/filters-edit.php:147
 msgctxt "option label"
 msgid "%s Caption"
 msgstr "Légende %s"
