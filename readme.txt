@@ -116,6 +116,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **New Features**
 	* None.
 * **Improvements**
+	* Renamed the ".wpsso-rrssb-buttons-cta" CSS class to ".rrssb-buttons-cta".
 	* Renamed the Document SSO &gt; Share Buttons tab to Edit Share Buttons.
 * **Bugfixes**
 	* None.
@@ -196,7 +197,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 8.3.0 =
 
-(2022/01/19) Renamed the Document SSO &gt; Share Buttons tab. Renamed the lib/abstracts/ folder and its classes.
+(2022/01/19) Renamed the ".wpsso-rrssb-buttons-cta" CSS class to ".rrssb-buttons-cta". Renamed the Document SSO &gt; Share Buttons tab. Renamed the lib/abstracts/ folder and its classes.
 
 = 8.2.0 =
 
