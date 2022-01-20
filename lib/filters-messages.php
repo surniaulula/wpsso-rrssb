@@ -277,7 +277,7 @@ aside.widget
 					$text = __( 'Include a call to action banner above the social sharing buttons.', 'wpsso-rrssb' ) . ' ';
 
 					$text .= sprintf( __( 'You may leave this option blank or hide it using the "%s" CSS class.', 'wpsso-rrssb' ),
-						'wpsso-rrssb-buttons-cta' ) . ' ';
+						'rrssb-buttons-cta' ) . ' ';
 
 					break;
 
