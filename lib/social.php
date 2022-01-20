@@ -434,9 +434,10 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					}
 				}
 
+				$mod_locale  = SucomUtil::get_locale( $mod );
 				$buttons_cta = SucomUtil::get_key_value( 'buttons_cta', $this->p->options, $mod );
 				$buttons_cta = apply_filters( 'wpsso_rrssb_buttons_cta', $buttons_cta, $type, $mod, $location, $atts );
-				$buttons_cta = $buttons_cta ? '<div class="wpsso-rrssb-buttons-cta">' . $buttons_cta . '</div>' : '';
+				$buttons_cta = '<div class="rrssb-buttons-cta ' . $mod_locale . '">' . $buttons_cta . '</div>';
 
 				$buttons_html = '<!-- wpsso ' . $css_type . ' begin -->' .	// Used by $this->get_buttons_for_the_excerpt().
 					'<div class="' . $css_class . '" id="' . $css_id . '">' . 
@@ -546,9 +547,10 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			$atts[ 'utm_medium' ]   = isset( $this->p->options[ 'buttons_utm_medium' ] ) ? $this->p->options[ 'buttons_utm_medium' ] : '';
 			$atts[ 'utm_campaign' ] = is_object( $mod[ 'obj' ] ) ? $mod[ 'obj' ]->get_options( $mod[ 'id' ], 'buttons_utm_campaign' ) : null;
 
-			$buttons_begin = '<ul class="rrssb-buttons ' . SucomUtil::get_locale( $mod ) . ' clearfix">' . "\n";
+			$mod_locale    = SucomUtil::get_locale( $mod );
+			$buttons_begin = '<ul class="rrssb-buttons ' . $mod_locale . ' clearfix">' . "\n";
 			$buttons_html  = '';
-			$buttons_end   = '</ul><!-- .rrssb-buttons.' . SucomUtil::get_locale( $mod ) . '.clearfix -->' . "\n";
+			$buttons_end   = '</ul><!-- .rrssb-buttons.' . $mod_locale . '.clearfix -->' . "\n";
 			$saved_atts    = $atts;
 
 			foreach ( $ids as $id ) {
@@ -578,9 +580,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 						if ( empty( $atts[ 'sharing_url' ] ) ) {
 
 							$atts[ 'sharing_url' ] = $this->p->util->get_sharing_url( $mod, $atts[ 'add_page' ], $atts );
-
 							$atts[ 'sharing_url' ] = apply_filters( 'wpsso_rrssb_buttons_shared_url', $atts[ 'sharing_url' ], $mod, $id );
-
 							$atts[ 'sharing_url' ] = $this->maybe_force_prot( $atts[ 'sharing_url' ], $mod, $id );
 						}
 

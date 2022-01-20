@@ -10,6 +10,6 @@
 	border-top:1px solid #ccc;
 }
 
-.wpsso-rrssb-admin_edit .wpsso-rrssb-buttons-cta {
+.wpsso-rrssb-admin_edit div.rrssb-buttons-cta {
 	display:none;
 }
