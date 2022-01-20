@@ -4,7 +4,7 @@
  * necessary to customize the layout for your website.
  */
 
-.wpsso-rrssb div.rrssb-buttons-cta {
+.wpsso-rrssb div.wpsso-rrssb-buttons-cta {
 	font-size:1.1em;
 	font-weight:600;
 	margin:10px 0;
