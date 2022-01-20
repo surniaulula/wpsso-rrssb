@@ -435,13 +435,8 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				}
 
 				$buttons_cta = SucomUtil::get_key_value( 'buttons_cta', $this->p->options, $mod );
-
-				if ( ! empty( $buttons_cta ) ) {
-
-					$buttons_cta = '<div class="wpsso-rrssb-buttons-cta">' . $buttons_cta . '</div>';
-				}
-
 				$buttons_cta = apply_filters( 'wpsso_rrssb_buttons_cta', $buttons_cta, $type, $mod, $location, $atts );
+				$buttons_cta = $buttons_cta ? '<div class="wpsso-rrssb-buttons-cta">' . $buttons_cta . '</div>' : '';
 
 				$buttons_html = '<!-- wpsso ' . $css_type . ' begin -->' .	// Used by $this->get_buttons_for_the_excerpt().
 					'<div class="' . $css_class . '" id="' . $css_id . '">' . 
