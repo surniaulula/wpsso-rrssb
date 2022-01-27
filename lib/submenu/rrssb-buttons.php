@@ -90,7 +90,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			$metabox_context = 'normal';
 			$metabox_prio    = 'default';
 			$callback_args   = array(	// Second argument passed to the callback function / method.
-				'page_id'    => SucomUtil::sanitize_hookname( $this->menu_id ),
+				'page_id'    => $this->menu_id,
 				'metabox_id' => $metabox_id,
 			);
 
