@@ -26,11 +26,19 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 			$this->a =& $addon;
 
 			$this->p->util->add_plugin_filters( $this, array( 
-				'save_setting_options' => 3,
-				'get_defaults'         => 1,
-				'get_md_defaults'      => 1,
-				'option_type'          => 2,
+				'add_custom_post_type_options' => 1,
+				'save_setting_options'         => 3,
+				'get_defaults'                 => 1,
+				'get_md_defaults'              => 1,
+				'option_type'                  => 2,
 			) );
+		}
+
+		public function filter_add_custom_post_type_options( $opt_prefixes ) {
+
+			$opt_prefixes[ 'buttons_add_to' ] = 1;
+
+			return $opt_prefixes;
 		}
 
 		/**
@@ -52,10 +60,6 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 		}
 
 		public function filter_get_defaults( $defs ) {
-
-			$this->p->util->add_post_type_names( $defs, array(
-				'buttons_add_to' => 1,
-			) );
 
 			$rel_url_path = parse_url( WPSSORRSSB_URLPATH, PHP_URL_PATH );	// Returns a relative URL.
 

@@ -174,7 +174,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 
 			switch ( $page_id . '-' . $metabox_id ) {
 
-				case 'rrssb_buttons-general':
+				case 'rrssb-buttons-general':
 
 					$table_rows[ 'buttons_on_archive' ] = '' .
 						$this->form->get_th_html( _x( 'Include on Archive Webpages', 'option label', 'wpsso-rrssb' ),
