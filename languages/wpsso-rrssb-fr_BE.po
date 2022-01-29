@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 8.3.0\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 8.4.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-01-18 15:01-0800\n"
+"PO-Revision-Date: 2022-01-29 10:12-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -354,7 +354,12 @@ msgstr "Identifie une campagne stratégique (par exemple, lancement de produit, 
 msgid "Example CSS:"
 msgstr "Exemple CSS:"
 
-#: lib/filters-options.php:86
+#: lib/filters-options.php:67
+msgctxt "option value"
+msgid "Find this content useful? Share it with your friends!"
+msgstr "Trouvez ce contenu utile? Partagez-le avec vos amis!"
+
+#: lib/filters-options.php:103
 msgid "Failed to open the css file %s for reading."
 msgstr "Impossible d'ouvrir le fichier css %s pour lecture."
 

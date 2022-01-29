@@ -26,19 +26,13 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 			$this->a =& $addon;
 
 			$this->p->util->add_plugin_filters( $this, array( 
-				'add_custom_post_type_options' => 1,
 				'save_setting_options'         => 3,
+				'add_custom_post_type_options' => 1,
+				'get_text_default_options_key' => 2,
 				'get_defaults'                 => 1,
 				'get_md_defaults'              => 1,
 				'option_type'                  => 2,
 			) );
-		}
-
-		public function filter_add_custom_post_type_options( $opt_prefixes ) {
-
-			$opt_prefixes[ 'buttons_add_to' ] = 1;
-
-			return $opt_prefixes;
 		}
 
 		/**
@@ -59,7 +53,26 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 			return $opts;
 		}
 
+		public function filter_add_custom_post_type_options( $opt_prefixes ) {
+
+			$opt_prefixes[ 'buttons_add_to' ] = 1;
+
+			return $opt_prefixes;
+		}
+
+		public function filter_get_text_default_options_key( $text, $opt_key ) {
+
+			if ( 'buttons_cta' === $opt_key ) {
+
+				return _x( 'Find this content useful? Share it with your friends!', 'option value', 'wpsso-rrssb' );
+			}
+
+			return $text;
+		}
+
 		public function filter_get_defaults( $defs ) {
+
+			$this->p->opt->set_default_text( $defs, 'buttons_cta' );
 
 			$rel_url_path = parse_url( WPSSORRSSB_URLPATH, PHP_URL_PATH );	// Returns a relative URL.
 

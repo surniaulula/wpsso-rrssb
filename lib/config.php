@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(			// Plugin acronym.
-					'version'     => '8.3.1-dev.5',	// Plugin version.
+					'version'     => '8.4.0-dev.7',	// Plugin version.
 					'opt_version' => '46',		// Increment when changing default option values.
 					'short'       => 'WPSSO RRSSB',	// Short plugin name.
 					'name'        => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '9.16.0-dev.5',
+							'min_version'   => '9.16.0-dev.7',
 						),
 					),
 
@@ -111,10 +111,6 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'buttons_add_to_attachment' => 1,	// Include on Post Types (Media).
 					'buttons_add_to_page'       => 1,	// Include on Post Types (Pages).
 					'buttons_add_to_post'       => 1,	// Include on Post Types (Posts).
-					'buttons_cta'               => 'Find this content useful? Share it with your friends!',	// Call to Action (localized).
-					'buttons_cta#fr_BE'         => 'Trouvez vous ce contenu utile? Partagez-le avec vos amis!',
-					'buttons_cta#fr_CA'         => 'Trouvez vous ce contenu utile? Partagez-le avec vos amis!',
-					'buttons_cta#fr_FR'         => 'Trouvez vous ce contenu utile? Partagez-le avec vos amis!',
 					'buttons_pos_content'       => 'bottom',	// Buttons Position in Content.
 					'buttons_pos_excerpt'       => 'bottom',	// Buttons Position in Excerpt.
 					'buttons_force_prot'        => 'none',		// Force Protocol for Shared URLs.

@@ -435,7 +435,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				}
 
 				$mod_locale  = SucomUtil::get_locale( $mod );
-				$buttons_cta = SucomUtil::get_key_value( 'buttons_cta', $this->p->options, $mod );
+				$buttons_cta = $this->p->opt->get_text( 'buttons_cta', $use_opts = true, $mod );
 				$buttons_cta = apply_filters( 'wpsso_rrssb_buttons_cta', $buttons_cta, $type, $mod, $location, $atts );
 				$buttons_cta = '<div class="rrssb-buttons-cta ' . $mod_locale . '">' . $buttons_cta . '</div>';
 
