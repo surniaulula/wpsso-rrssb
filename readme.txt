@@ -111,20 +111,20 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 8.4.0-dev.8 (2022/01/29)**
+**Version 9.0.0-a.1 (2022/01/30)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* None.
+	* Moved the buttons Call To Action option text from the add-on config array to a default translatable string.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Replaced call to `WpssoUtil->add_post_type_names()` by `WpssoOptions->set_default_text()`.
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v10.0.0-dev.8.
+	* WPSSO Core v10.0.0-a.1.
 
 **Version 8.3.0 (2022/01/19)**
 
@@ -210,9 +210,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 8.4.0-dev.8 =
+= 9.0.0-a.1 =
 
-(2022/01/29) None.
+(2022/01/30) Moved the buttons Call To Action option text from the add-on config array to a default translatable string.
 
 = 8.3.0 =
 
