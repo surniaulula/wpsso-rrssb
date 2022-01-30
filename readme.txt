@@ -111,7 +111,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 8.4.0-dev.7 (2022/01/29)**
+**Version 8.4.0-dev.8 (2022/01/29)**
 
 * **New Features**
 	* None.
@@ -124,7 +124,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v9.16.0-dev.7.
+	* WPSSO Core v10.0.0-dev.8.
 
 **Version 8.3.0 (2022/01/19)**
 
@@ -210,7 +210,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 8.4.0-dev.7 =
+= 8.4.0-dev.8 =
 
 (2022/01/29) None.
 
