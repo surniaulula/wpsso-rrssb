@@ -12,7 +12,7 @@ Requires PHP: 7.2
 Requires At Least: 5.2
 Tested Up To: 5.9.0
 WC Tested Up To: 6.1.1
-Stable Tag: 8.3.0
+Stable Tag: 9.0.0
 
 Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, templates, and editor.
 
@@ -111,7 +111,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 9.0.0 (2022/02/01)**
+**Version 9.0.0 (2022/02/02)**
 
 * **New Features**
 	* None.
@@ -212,7 +212,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 9.0.0 =
 
-(2022/02/01) Moved the buttons Call To Action option text from the add-on config array to a default translatable string.
+(2022/02/02) Moved the buttons Call To Action option text from the add-on config array to a default translatable string.
 
 = 8.3.0 =
 
