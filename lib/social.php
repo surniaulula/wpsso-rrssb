@@ -548,9 +548,9 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			$atts[ 'utm_campaign' ] = is_object( $mod[ 'obj' ] ) ? $mod[ 'obj' ]->get_options( $mod[ 'id' ], 'buttons_utm_campaign' ) : null;
 
 			$mod_locale    = SucomUtil::get_locale( $mod );
-			$buttons_begin = '<ul class="rrssb-buttons ' . $mod_locale . ' clearfix">' . "\n";
+			$buttons_begin = '<ul class="rrssb-buttons ' . $mod_locale . ' clearfix">';
 			$buttons_html  = '';
-			$buttons_end   = '</ul><!-- .rrssb-buttons.' . $mod_locale . '.clearfix -->' . "\n";
+			$buttons_end   = '</ul><!-- .rrssb-buttons.' . $mod_locale . '.clearfix -->';
 			$saved_atts    = $atts;
 
 			foreach ( $ids as $id ) {
