@@ -111,7 +111,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 9.1.0-dev.4 (2022/02/03)**
+**Version 9.1.0-dev.5 (2022/02/03)**
 
 * **New Features**
 	* None.
@@ -120,11 +120,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Removed the `$read_cache` argument from `WpssoPage` methods for WPSSO Core v10.1.0.
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v10.1.0-dev.4.
+	* WPSSO Core v10.1.0-dev.5.
 
 **Version 9.0.0 (2022/02/02)**
 
@@ -225,9 +225,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 9.1.0-dev.4 =
+= 9.1.0-dev.5 =
 
-(2022/02/03) None.
+(2022/02/03) Removed the `$read_cache` argument from `WpssoPage` methods for WPSSO Core v10.1.0.
 
 = 9.0.0 =
 
