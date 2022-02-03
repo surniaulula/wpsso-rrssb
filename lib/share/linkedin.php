@@ -128,9 +128,9 @@ if ( ! class_exists( 'WpssoRrssbShareLinkedin' ) ) {
 
 			$extras = array(
 		 		'linkedin_title' => $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
-					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'linkedin_title' ),
+					$add_hashtags = false, $do_encode = false, $md_key = 'linkedin_title' ),
 				'linkedin_caption' => $this->p->page->get_caption( $type = 'excerpt', $this->p->options[ 'linkedin_caption_max_len' ], $mod,
-					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'linkedin_desc' ),
+					$add_hashtags = false, $do_encode = false, $md_key = 'linkedin_desc' ),
 			);
 
 			return $this->p->util->inline->replace_variables( $this->p->options[ 'linkedin_rrssb_html' ], $mod, $atts, $extras );

@@ -128,9 +128,9 @@ if ( ! class_exists( 'WpssoRrssbShareEmail' ) ) {
 
 			$extras = array(
 				'email_title' => $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
-					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'email_title' ),
+					$add_hashtags = false, $do_encode = false, $md_key = 'email_title' ),
 				'email_excerpt' => $this->p->page->get_caption( $type = 'both', $this->p->options[ 'email_caption_max_len' ], $mod,
-					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'email_desc' ),
+					$add_hashtags = false, $do_encode = false, $md_key = 'email_desc' ),
 			);
 
 			return $this->p->util->inline->replace_variables( $this->p->options[ 'email_rrssb_html' ], $mod, $atts, $extras );

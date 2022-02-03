@@ -128,9 +128,9 @@ if ( ! class_exists( 'WpssoRrssbShareTumblr' ) ) {
 
 			$extras = array(
 				'tumblr_title' => $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
-					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'tumblr_title' ),
+					$add_hashtags = false, $do_encode = false, $md_key = 'tumblr_title' ),
 				'tumblr_summary' => $this->p->page->get_caption( $type = 'excerpt', $this->p->options[ 'tumblr_caption_max_len' ], $mod,
-					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'tumblr_desc' ),
+					$add_hashtags = false, $do_encode = false, $md_key = 'tumblr_desc' ),
 			);
 
 			return $this->p->util->inline->replace_variables( $this->p->options[ 'tumblr_rrssb_html' ], $mod, $atts, $extras );

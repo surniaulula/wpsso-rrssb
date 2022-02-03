@@ -55,7 +55,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 		 */
 		public function filter_post_edit_share_rows( $table_rows, $form, $head, $mod ) {
 
-			$def_caption_title = $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod, $read_cache = true, $add_hashtags = false );
+			$def_caption_title = $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod, $add_hashtags = false );
 
 			$form_rows[ 'buttons_disabled' ] = array(
 				'th_class' => 'medium',
@@ -76,7 +76,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 			 */
 			$email_type     = 'both';
 			$email_max_len  = $this->p->options[ 'email_caption_max_len' ];
-			$def_email_desc = $this->p->page->get_caption( $email_type, $email_max_len, $mod, $read_cache = true, $add_hashtags = false );
+			$def_email_desc = $this->p->page->get_caption( $email_type, $email_max_len, $mod, $add_hashtags = false );
 
 			$form_rows[ 'email_title' ] = array(
 				'th_class' => 'medium',
@@ -98,7 +98,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 			$twitter_type     = $this->p->options[ 'twitter_caption' ];
 			$twitter_max_len  = WpssoRrssbSocial::get_tweet_max_len();
 			$twitter_hashtags = $this->p->options[ 'twitter_caption_hashtags' ];
-			$def_twitter_desc = $this->p->page->get_caption( $twitter_type, $twitter_max_len, $mod, $read_cache = true, $twitter_hashtags );
+			$def_twitter_desc = $this->p->page->get_caption( $twitter_type, $twitter_max_len, $mod, $twitter_hashtags );
 
 			$form_rows[ 'twitter_desc' ] = array(
 				'th_class' => 'medium',
@@ -112,7 +112,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 			 */
 			$pin_type    = 'excerpt';
 			$pin_max_len = $this->p->options[ 'pin_caption_max_len' ];
-			$pin_desc    = $this->p->page->get_caption( $pin_type, $pin_max_len, $mod, $read_cache = true, $add_hashtags = false );
+			$pin_desc    = $this->p->page->get_caption( $pin_type, $pin_max_len, $mod, $add_hashtags = false );
 
 			$form_rows[ 'pin_desc' ] = array(
 				'th_class' => 'medium',
@@ -133,7 +133,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 
 				$other_type    = 'excerpt';
 				$other_max_len = $this->p->options[ $opt_pre . '_caption_max_len' ];
-				$other_desc    = $this->p->page->get_caption( $other_type, $other_max_len, $mod, $read_cache = true, $add_hashtags = false );
+				$other_desc    = $this->p->page->get_caption( $other_type, $other_max_len, $mod, $add_hashtags = false );
 
 				$form_rows[ $opt_pre . '_title' ] = array(
 					'th_class' => 'medium',

@@ -129,9 +129,9 @@ if ( ! class_exists( 'WpssoRrssbShareReddit' ) ) {
 
 			$extras = array(
 				'reddit_title' => $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
-					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'reddit_title' ),
+					$add_hashtags = false, $do_encode = false, $md_key = 'reddit_title' ),
 				'reddit_summary' => $this->p->page->get_caption( $type = 'excerpt', $this->p->options[ 'reddit_caption_max_len' ], $mod,
-					$read_cache = true, $add_hashtags = false, $do_encode = false, $md_key = 'reddit_desc' ),
+					$add_hashtags = false, $do_encode = false, $md_key = 'reddit_desc' ),
 			);
 
 			return $this->p->util->inline->replace_variables( $this->p->options[ 'reddit_rrssb_html' ], $mod, $atts, $extras );
