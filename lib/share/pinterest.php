@@ -132,58 +132,21 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$size_name = 'wpsso-pinterest';
+			$size_name     = 'wpsso-pinterest';
+			$media_request = array( 'img_url' );
+			$media_info    = $this->p->og->get_media_info( $size_name, $media_request, $mod, $md_pre = array( 'pin', 'schema', 'og' ) );
 
-			if ( ! empty( $atts[ 'pid' ] ) ) {
+			if ( empty( $media_info[ 'img_url' ] ) ) {
 
-				list(
-					$atts[ 'photo' ],
-					$atts[ 'width' ],
-					$atts[ 'height' ],
-					$atts[ 'cropped' ],
-					$atts[ 'pid' ],
-					$atts[ 'alt' ]
-				) = $this->p->media->get_attachment_image_src( $atts[ 'pid' ], $size_name, $check_dupes = false );
-
-				if ( $this->p->debug->enabled ) {
-
-					$this->p->debug->log( 'returned image ' . $atts[ 'photo' ] . ' (' . $atts[ 'width' ] . 'x' . $atts[ 'height' ] . ')' );
-				}
+				return '<!-- pinterest button: no media url available -->';
 			}
 
-			if ( empty( $atts[ 'photo' ] ) ) {
+			$atts[ 'media_url' ] = $media_info[ 'img_url' ];
 
-				$media_request = array( 'img_url', 'prev_url' );
+			$atts[ 'pinterest_caption' ] = $this->p->page->get_caption( $type = 'excerpt', $this->p->options[ 'pin_caption_max_len' ], $mod,
+				$add_hashtags = false, $do_encode = false, $md_key = array ( 'pin_desc', 'pin_img_desc', 'og_desc' ) );
 
-				$media_info = $this->p->og->get_media_info( $size_name, $media_request, $mod, $md_pre = array( 'pin', 'schema', 'og' ) );
-
-				if ( ! empty( $media_info[ 'img_url' ] ) ) {
-
-					$atts[ 'photo' ] = $media_info[ 'img_url' ];
-
-				} elseif ( ! empty( $media_info[ 'prev_url' ] ) ) {	// Video preview image URL.
-
-					$atts[ 'photo' ] = $media_info[ 'prev_url' ];
-				}
-
-				if ( empty( $atts[ 'photo' ] ) ) {
-
-					if ( $this->p->debug->enabled ) {
-
-						$this->p->debug->log( 'exiting early: no photo available' );
-					}
-
-					return '<!-- Pinterest Button: no photo available -->';	// abort
-				}
-			}
-
-			$extras = array(
-				'media_url'         => $atts[ 'photo' ],
-				'pinterest_caption' => $this->p->page->get_caption( $type = 'excerpt', $this->p->options[ 'pin_caption_max_len' ], $mod,
-					$add_hashtags = false, $do_encode = false, $md_key = array ( 'pin_desc', 'pin_img_desc', 'og_desc' ) ),
-			);
-
-			return $this->p->util->inline->replace_variables( $this->p->options[ 'pin_rrssb_html' ], $mod, $atts, $extras );
+			return $this->p->util->inline->replace_variables( $this->p->options[ 'pin_rrssb_html' ], $mod, $atts );
 		}
 	}
 }

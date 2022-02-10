@@ -148,19 +148,26 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts[ 'tweet' ]    = WpssoRrssbSocial::get_tweet_text( $mod, $opt_pre = 'twitter', $md_pre = 'twitter' );
-			$atts[ 'hashtags' ] = '';
-			$atts[ 'via' ]      = '';
-			$atts[ 'related' ]  = '';
+			$atts[ 'twitter_text' ]     = WpssoRrssbSocial::get_tweet_text( $mod, $opt_pre = 'twitter', $md_pre = 'twitter' );
+			$atts[ 'twitter_hashtags' ] = '';
+			$atts[ 'twitter_via' ]      = '';
+			$atts[ 'twitter_related' ]  = '';
 
 			if ( ! empty( $this->p->options[ 'twitter_via' ] ) ) {
 
-				$atts[ 'via' ] = preg_replace( '/^@/', '', SucomUtil::get_key_value( 'tc_site', $this->p->options ) );
+				$tc_site = SucomUtil::get_key_value( 'tc_site', $this->p->options );
+
+				$atts[ 'twitter_via' ] = preg_replace( '/^@/', '', $tc_site );
 			}
 
-			if ( ! empty( $this->p->options[ 'twitter_rel_author' ] ) && ! empty( $mod[ 'post_author' ] ) && $atts[ 'use_post' ] ) {
+			if ( ! empty( $this->p->options[ 'twitter_rel_author' ] ) ) {
+			
+				if ( ! empty( $mod[ 'post_author' ] ) && $atts[ 'use_post' ] ) {
 
-				$atts[ 'related' ] = preg_replace( '/^@/', '', get_the_author_meta( $this->p->options[ 'plugin_cm_twitter_name' ], $mod[ 'post_author' ] ) );
+					$twitter_name = get_the_author_meta( $this->p->options[ 'plugin_cm_twitter_name' ], $mod[ 'post_author' ] );
+
+					$atts[ 'twitter_related' ] = preg_replace( '/^@/', '', $twitter_name );
+				}
 			}
 
 			/**
@@ -168,26 +175,20 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 			 */
 			$twitter_button_html = $this->p->options[ 'twitter_rrssb_html' ];
 
-			$extras = array();
-
 			foreach ( array( 
-				'text'     => 'tweet',
-				'hashtags' => 'hashtags',
-				'via'      => 'via',
-				'related'  => 'related',
+				'text'     => 'twitter_text',
+				'hashtags' => 'twitter_hashtags',
+				'via'      => 'twitter_via',
+				'related'  => 'twitter_related',
 			) as $query_key => $atts_key  ) {
 
 				if ( empty( $atts[ $atts_key ] ) ) {
 
-					$twitter_button_html = preg_replace( '/&(amp;)?' . $query_key . '=%%twitter_' . $query_key . '%%/', '', $twitter_button_html );
-
-				} else {
-
-					$extras[ 'twitter_' . $query_key ] = $atts[ $atts_key ];
+					$twitter_button_html = preg_replace( '/&(amp;)?' . $query_key . '=%%' . $atts_key . '%%/', '', $twitter_button_html );
 				}
 			}
 
-			return $this->p->util->inline->replace_variables( $twitter_button_html, $mod, $atts, $extras );
+			return $this->p->util->inline->replace_variables( $twitter_button_html, $mod, $atts );
 		}
 	}
 }
