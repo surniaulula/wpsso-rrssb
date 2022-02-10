@@ -111,7 +111,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 9.2.0-b.2 (2022/02/10)**
+**Version 9.2.0-rc.1 (2022/02/10)**
 
 * **New Features**
 	* None.
@@ -240,7 +240,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 9.2.0-b.2 =
+= 9.2.0-rc.1 =
 
 (2022/02/10) Refactored all share button `get_html()` methods.
 
