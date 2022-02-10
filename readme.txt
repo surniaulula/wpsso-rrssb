@@ -111,7 +111,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 9.2.0-rc.1 (2022/02/10)**
+**Version 9.2.0 (2022/02/10)**
 
 * **New Features**
 	* None.
@@ -124,7 +124,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v10.1.0.
+	* WPSSO Core v10.3.0.
 
 **Version 9.1.0 (2022/02/05)**
 
@@ -240,7 +240,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 9.2.0-rc.1 =
+= 9.2.0 =
 
 (2022/02/10) Refactored all share button `get_html()` methods.
 
