@@ -161,7 +161,7 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 			}
 
 			if ( ! empty( $this->p->options[ 'twitter_rel_author' ] ) ) {
-			
+
 				if ( ! empty( $mod[ 'post_author' ] ) && $atts[ 'use_post' ] ) {
 
 					$twitter_name = get_the_author_meta( $this->p->options[ 'plugin_cm_twitter_name' ], $mod[ 'post_author' ] );
