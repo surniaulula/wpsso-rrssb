@@ -22,7 +22,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 		/**
 		 * Instantiated by WpssoRrssb->init_objects().
 		 */
-		public function __construct( &$plugin ) {
+		public function __construct( &$plugin, &$addon ) {
 
 			$this->p =& $plugin;
 			$this->a =& $addon;
@@ -498,7 +498,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			$css_type = 'rrssb-excerpt';
 
 			$text = preg_replace_callback( '/<!-- wpsso ' . $css_type . ' begin -->(.*)<!-- wpsso ' . $css_type . ' end -->/Usi',
-				array( $this, 'remove_wp_breaks' ), $text );
+				array( $this, 'remove_wp_breaks_callback' ), $text );
 
 			return $text;
 		}
@@ -795,7 +795,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			return $max_len - $site_len - $short_len;
 		}
 
-		private function remove_wp_breaks( array $match ) {
+		private function remove_wp_breaks_callback( array $match ) {
 
 			return preg_replace( '/(<(\/?p|br ?\/?)>|\n)/i', '', $match[ 1 ] );
 		}

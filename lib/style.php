@@ -24,7 +24,7 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 		/**
 		 * Instantiated by WpssoRrssb->init_objects().
 		 */
-		public function __construct( &$plugin ) {
+		public function __construct( &$plugin, &$addon ) {
 
 			$this->p =& $plugin;
 			$this->a =& $addon;
