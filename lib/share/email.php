@@ -126,11 +126,11 @@ if ( ! class_exists( 'WpssoRrssbShareEmail' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts[ 'email_title' ] = $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
-				$add_hashtags = false, $do_encode = false, $md_key = 'email_title' );
+			$atts[ 'email_title' ] = $this->p->page->get_caption( $mod, $md_key = 'email_title', $type = 'title',
+				$max_len = 0, $num_hashtags = false, $do_encode = false );
 
-			$atts[ 'email_excerpt' ] = $this->p->page->get_caption( $type = 'both', $this->p->options[ 'email_caption_max_len' ], $mod,
-				$add_hashtags = false, $do_encode = false, $md_key = 'email_desc' );
+			$atts[ 'email_excerpt' ] = $this->p->page->get_caption( $mod, $md_key = 'email_desc', $type = 'both',
+				$this->p->options[ 'email_caption_max_len' ], $num_hashtags = false, $do_encode = false );
 
 			return $this->p->util->inline->replace_variables( $this->p->options[ 'email_rrssb_html' ], $mod, $atts );
 		}

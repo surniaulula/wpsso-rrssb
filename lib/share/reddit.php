@@ -127,11 +127,11 @@ if ( ! class_exists( 'WpssoRrssbShareReddit' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts[ 'reddit_title' ] = $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
-				$add_hashtags = false, $do_encode = false, $md_key = 'reddit_title' );
+			$atts[ 'reddit_title' ] = $this->p->page->get_caption( $mod, $md_key = 'reddit_title', $type = 'title',
+				$max_len = 0, $num_hashtags = false, $do_encode = false );
 
-			$atts[ 'reddit_summary' ] = $this->p->page->get_caption( $type = 'excerpt', $this->p->options[ 'reddit_caption_max_len' ], $mod,
-				$add_hashtags = false, $do_encode = false, $md_key = 'reddit_desc' );
+			$atts[ 'reddit_summary' ] = $this->p->page->get_caption( $mod, $md_key = 'reddit_desc', $type = 'excerpt',
+				$this->p->options[ 'reddit_caption_max_len' ], $num_hashtags = false, $do_encode = false );
 
 			return $this->p->util->inline->replace_variables( $this->p->options[ 'reddit_rrssb_html' ], $mod, $atts );
 		}

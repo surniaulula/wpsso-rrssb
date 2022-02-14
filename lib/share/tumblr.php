@@ -126,11 +126,11 @@ if ( ! class_exists( 'WpssoRrssbShareTumblr' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts[ 'tumblr_title' ] = $this->p->page->get_caption( $type = 'title', $max_len = 0, $mod,
-				$add_hashtags = false, $do_encode = false, $md_key = 'tumblr_title' );
+			$atts[ 'tumblr_title' ] = $this->p->page->get_caption( $mod, $md_key = 'tumblr_title', $type = 'title',
+				$max_len = 0, $num_hashtags = false, $do_encode = false );
 
-			$atts[ 'tumblr_summary' ] = $this->p->page->get_caption( $type = 'excerpt', $this->p->options[ 'tumblr_caption_max_len' ], $mod,
-				$add_hashtags = false, $do_encode = false, $md_key = 'tumblr_desc' );
+			$atts[ 'tumblr_summary' ] = $this->p->page->get_caption( $mod, $md_key = 'tumblr_desc', $type = 'excerpt',
+				$this->p->options[ 'tumblr_caption_max_len' ], $num_hashtags = false, $do_encode = false );
 
 			return $this->p->util->inline->replace_variables( $this->p->options[ 'tumblr_rrssb_html' ], $mod, $atts );
 		}

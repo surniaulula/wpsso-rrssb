@@ -770,9 +770,9 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			$max_len = self::get_tweet_max_len( $opt_pre );
 
-			$add_hashtags  = isset( $wpsso->options[ $opt_pre . '_caption_hashtags' ] ) ? $wpsso->options[ $opt_pre . '_caption_hashtags' ] : true;
+			$num_hashtags  = isset( $wpsso->options[ $opt_pre . '_caption_hashtags' ] ) ? $wpsso->options[ $opt_pre . '_caption_hashtags' ] : true;
 
-			return $wpsso->page->get_caption( $type, $max_len, $mod, $add_hashtags, $do_encode = false, $md_pre . '_desc' );
+			return $wpsso->page->get_caption( $mod, $md_pre . '_desc', $type, $max_len, $num_hashtags, $do_encode = false );
 		}
 
 		public static function get_tweet_max_len( $opt_pre = 'twitter', $num_urls = 1 ) {
