@@ -111,6 +111,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 9.3.0-dev.2 (2022/02/14)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Updated the `WpssoPage` class `get_title()`, `get_description()`, and `get_caption()` method arguments for WPSSO Core v10.4.0.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v10.4.0-dev.2.
+
 **Version 9.2.0 (2022/02/10)**
 
 * **New Features**
@@ -239,6 +254,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v9.1.0.
 
 == Upgrade Notice ==
+
+= 9.3.0-dev.2 =
+
+(2022/02/14) Updated `WpssoPage` class method arguments for WPSSO Core v10.4.0.
 
 = 9.2.0 =
 
