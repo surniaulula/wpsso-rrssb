@@ -111,7 +111,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 9.3.0-dev.4 (2022/02/15)**
+**Version 9.3.0-dev.5 (2022/02/15)**
 
 * **New Features**
 	* None.
@@ -124,7 +124,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v11.0.0-dev.4.
+	* WPSSO Core v11.0.0-dev.5.
 
 **Version 9.2.0 (2022/02/10)**
 
@@ -255,7 +255,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 9.3.0-dev.4 =
+= 9.3.0-dev.5 =
 
 (2022/02/15) Updated `WpssoPage` class method arguments for WPSSO Core v11.0.0.
 
