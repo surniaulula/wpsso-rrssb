@@ -534,19 +534,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				$mod = $this->p->page->get_mod( $atts[ 'use_post' ] );
 			}
 
-			/**
-			 * UTM attributes are used (but not required) by the WpssoUtil->get_sharing_url() method.
-			 *
-			 * Example:
-			 *
-			 * 	utm_medium   = 'social'
-			 * 	utm_source   = 'facebook'
-			 * 	utm_campaign = 'book-launch'
-			 * 	utm_content  = 'wpsso-rrssb-content-bottom'
-			 */
-			$atts[ 'utm_medium' ]   = isset( $this->p->options[ 'buttons_utm_medium' ] ) ? $this->p->options[ 'buttons_utm_medium' ] : '';
-			$atts[ 'utm_campaign' ] = is_object( $mod[ 'obj' ] ) ? $mod[ 'obj' ]->get_options( $mod[ 'id' ], 'buttons_utm_campaign' ) : null;
-
 			$mod_locale    = SucomUtil::get_locale( $mod );
 			$buttons_begin = '<ul class="rrssb-buttons ' . $mod_locale . ' clearfix">';
 			$buttons_html  = '';

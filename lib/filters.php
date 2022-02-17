@@ -46,6 +46,10 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 			$this->upg = new WpssoRrssbFiltersUpgrade( $plugin, $addon );
 
+			$this->p->util->add_plugin_filters( $this, array( 
+				'sharing_utm_args' => 3,
+			), $prio = 1000 );
+
 			if ( is_admin() ) {
 
 				require_once WPSSORRSSB_PLUGINDIR . 'lib/filters-edit.php';
@@ -60,6 +64,29 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 					'status_std_features' => 3,
 				), $prio = 10, $ext = 'wpssorrssb' );	// Hooks the 'wpssorrssb' filters.
 			}
+		}
+
+		public function filter_sharing_utm_args( $utm, $mod ) {
+
+			/**
+			 * Example:
+			 *
+			 * 	utm_medium   = 'social'
+			 * 	utm_source   = 'facebook'
+			 * 	utm_campaign = 'book-launch'
+			 * 	utm_content  = 'wpsso-rrssb-content-bottom'
+			 */
+			if ( is_object( $mod[ 'obj' ] ) && $mod[ 'id' ] ) {
+
+				$utm[ 'utm_campaign' ] = $mod[ 'obj' ]->get_options( $mod[ 'id' ], 'buttons_utm_campaign' );
+			}
+
+			if ( ! empty( $this->p->options[ 'buttons_utm_medium' ] ) ) {
+
+				$utm[ 'utm_medium' ] = $this->p->options[ 'buttons_utm_medium' ];
+			}
+
+			return $utm;
 		}
 
 		/**
