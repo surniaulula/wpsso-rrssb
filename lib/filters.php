@@ -76,7 +76,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			 * 	utm_campaign = 'book-launch'
 			 * 	utm_content  = 'wpsso-rrssb-content-bottom'
 			 */
-			if ( is_object( $mod[ 'obj' ] ) && $mod[ 'id' ] ) {
+			if ( ! empty( $mod[ 'obj' ] ) && $mod[ 'id' ] ) {
 
 				$utm[ 'utm_campaign' ] = $mod[ 'obj' ]->get_options( $mod[ 'id' ], 'buttons_utm_campaign' );
 			}
