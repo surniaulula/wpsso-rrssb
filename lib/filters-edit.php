@@ -55,7 +55,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 		 */
 		public function filter_post_edit_share_rows( $table_rows, $form, $head, $mod ) {
 
-			$def_caption_title = $this->p->page->get_caption( $mod, $md_key = '', $type = 'title', $max_len = 0, $num_hashtags = false );
+			$def_caption_title = $this->p->page->get_caption( $mod, $md_key = '', $caption_type = 'title', $caption_max_len = 0, $num_hashtags = false );
 
 			$form_rows[ 'buttons_disabled' ] = array(
 				'th_class' => 'medium',

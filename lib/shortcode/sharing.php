@@ -194,12 +194,12 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				return '<!-- ' . $this->shortcode_name . ' shortcode: no buttons in attributes -->' . "\n\n";
 			}
 
-			$atts[ 'use_post' ] = SucomUtil::sanitize_use_post( $atts, $default = true );
-
 			if ( $this->p->debug->enabled ) {
 
 				$this->p->debug->log( 'required call to WpssoPage->get_mod()' );
 			}
+
+			$atts[ 'use_post' ] = SucomUtil::sanitize_use_post( $atts, $default = true );
 
 			$mod = $this->p->page->get_mod( $atts[ 'use_post' ] );
 

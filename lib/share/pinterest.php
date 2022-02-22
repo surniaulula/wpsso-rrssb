@@ -143,7 +143,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 
 			$atts[ 'media_url' ] = $media_info[ 'img_url' ];
 
-			$atts[ 'pinterest_caption' ] = $this->p->page->get_caption( $mod, $md_key = 'pin_desc', $type = 'excerpt',
+			$atts[ 'pinterest_caption' ] = $this->p->page->get_caption( $mod, $md_key = 'pin_desc', $caption_type = 'excerpt',
 				$this->p->options[ 'pin_caption_max_len' ], $num_hashtags = false, $do_encode = false );
 
 			return $this->p->util->inline->replace_variables( $this->p->options[ 'pin_rrssb_html' ], $mod, $atts );

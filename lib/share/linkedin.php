@@ -126,10 +126,10 @@ if ( ! class_exists( 'WpssoRrssbShareLinkedin' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$atts[ 'linkedin_title' ] = $this->p->page->get_caption( $mod, $md_key = 'linkedin_title', $type = 'title',
+			$atts[ 'linkedin_title' ] = $this->p->page->get_caption( $mod, $md_key = 'linkedin_title', $caption_type = 'title',
 				$max_len = 0, $num_hashtags = false, $do_encode = false );
 
-			$atts[ 'linkedin_caption' ] = $this->p->page->get_caption( $mod, $md_key = 'linkedin_desc', $type = 'excerpt',
+			$atts[ 'linkedin_caption' ] = $this->p->page->get_caption( $mod, $md_key = 'linkedin_desc', $caption_type = 'excerpt',
 				$this->p->options[ 'linkedin_caption_max_len' ], $num_hashtags = false, $do_encode = false );
 
 			return $this->p->util->inline->replace_variables( $this->p->options[ 'linkedin_rrssb_html' ], $mod, $atts );
