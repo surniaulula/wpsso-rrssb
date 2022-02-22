@@ -134,7 +134,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 
 			$size_name     = 'wpsso-pinterest';
 			$media_request = array( 'img_url' );
-			$media_info    = $this->p->og->get_media_info( $size_name, $media_request, $mod, $md_pre = array( 'pin', 'schema', 'og' ) );
+			$media_info    = $this->p->media->get_media_info( $size_name, $media_request, $mod, $md_pre = array( 'pin', 'schema', 'og' ) );
 
 			if ( empty( $media_info[ 'img_url' ] ) ) {
 
