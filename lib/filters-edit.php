@@ -183,7 +183,7 @@ function runRrssbInit() {
 
 			rrssbInit();
 
-			if ( ++rrssbInitCount > 5 ) {
+			if ( ++rrssbInitCount > 3 ) {
 
 				clearInterval( rrssbInitExists );
 			}
