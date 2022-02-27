@@ -111,6 +111,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 9.4.0 (2022/02/26)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Updated the `WpssoOpenGraph->get_media_info()` method to `WpssoMedia->get_media_info()` for WPSSO Core v11.2.0.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v11.0.0.
+
 **Version 9.3.0 (2022/02/17)**
 
 * **New Features**
@@ -254,6 +269,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v9.1.0.
 
 == Upgrade Notice ==
+
+= 9.4.0 =
+
+(2022/02/26) Updated the `WpssoOpenGraph->get_media_info()` method to `WpssoMedia->get_media_info()` for WPSSO Core v11.2.0.
 
 = 9.3.0 =
 
