@@ -111,6 +111,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 9.4.1-b.2 (2022/03/06)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v11.5.0-b.2.
+
 **Version 9.4.0 (2022/02/26)**
 
 * **New Features**
@@ -269,6 +284,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v9.1.0.
 
 == Upgrade Notice ==
+
+= 9.4.1-b.2 =
+
+(2022/03/06) None.
 
 = 9.4.0 =
 
