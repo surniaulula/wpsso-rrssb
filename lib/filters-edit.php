@@ -175,21 +175,16 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 
 function runRrssbInit() {
 
-	var rrssbInitCount = 0;
-
 	var rrssbInitExists = setInterval( function() {
 
 		if ( 'function' === typeof rrssbInit ) {
 
 			rrssbInit();
 
-			if ( ++rrssbInitCount > 3 ) {
-
-				clearInterval( rrssbInitExists );
-			}
+			clearInterval( rrssbInitExists );
 		}
 
-	}, 1000 );
+	}, 1500 );
 }
 
 runRrssbInit();
