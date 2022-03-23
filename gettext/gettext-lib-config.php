@@ -4,9 +4,6 @@
  * Extract of translatable strings from lib/config.php.
  */
 _x( '(plugin) WooCommerce', 'lib file description', 'wpsso-rrssb' );
-_x( '(plugin) bbPress', 'lib file description', 'wpsso-rrssb' );
-_x( '(plugin) BuddyBlog', 'lib file description', 'wpsso-rrssb' );
-_x( '(plugin) BuddyPress', 'lib file description', 'wpsso-rrssb' );
 _x( 'Responsive Buttons', 'lib file description', 'wpsso-rrssb' );
 _x( 'Responsive Styles', 'lib file description', 'wpsso-rrssb' );
 _x( 'WPSSO Ridiculously Responsive Social Sharing Buttons', 'plugin name', 'wpsso-rrssb' );

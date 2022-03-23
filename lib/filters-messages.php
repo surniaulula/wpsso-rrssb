@@ -171,60 +171,6 @@ aside.widget
 
 					break;
 
-				case 'info-styles-rrssb-bblog_post': 
-
-					$text = '<p>';
-
-					$text .= sprintf( __( 'Social sharing buttons for BuddyBlog posts are wrapped in a "%s" CSS class.', 'wpsso-rrssb' ),
-						'wpsso-rrssb-bblog_post' ) . ' ';
-
-					$text .= '</p><p>';
-
-					$text .= sprintf( __( 'Social sharing buttons can be enabled individually from the %s settings page.', 'wpsso-rrssb' ),
-						$buttons_link ) . ' ';
-
-					$text .= '</p>';
-
-					$text .= $this->get_info_css_example( 'bblog_post' );
-
-      					break;
-
-				case 'info-styles-rrssb-bbp_single': 
-
-					$text = '<p>';
-
-					$text .= sprintf( __( 'Social sharing buttons for the bbPress single templates are wrapped in a "%s" CSS class.', 'wpsso-rrssb' ),
-						'wpsso-rrssb-bbp_single' ) . ' ';
-
-					$text .= '</p><p>';
-
-					$text .= sprintf( __( 'Social sharing buttons can be enabled individually from the %s settings page.', 'wpsso-rrssb' ),
-						$buttons_link ) . ' ';
-
-					$text .= '</p>';
-
-					$text .= $this->get_info_css_example( 'bbp_single' );
-
-      					break;
-
-				case 'info-styles-rrssb-bp_activity': 
-
-					$text = '<p>';
-
-					$text .= sprintf( __( 'Social sharing buttons for BuddyPress activities are wrapped in a "%s" CSS class.', 'wpsso-rrssb' ),
-						'wpsso-rrssb-bp_activity' ) . ' ';
-
-					$text .= '</p><p>';
-
-					$text .= sprintf( __( 'Social sharing buttons can be enabled individually from the %s settings page.', 'wpsso-rrssb' ),
-						$buttons_link ) . ' ';
-
-					$text .= '</p>';
-
-					$text .= $this->get_info_css_example( 'bp_activity' );
-
-      					break;
-
 				case 'info-styles-rrssb-woocommerce': 
 
 					$text = '<p>';

@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"9.4.1\n"
+"10.0.0-dev.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -28,104 +28,89 @@ msgctxt "lib file description"
 msgid "(plugin) WooCommerce"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:7
-msgctxt "lib file description"
-msgid "(plugin) bbPress"
-msgstr ""
-
-#: gettext/gettext-lib-config.php:8
-msgctxt "lib file description"
-msgid "(plugin) BuddyBlog"
-msgstr ""
-
-#: gettext/gettext-lib-config.php:9
-msgctxt "lib file description"
-msgid "(plugin) BuddyPress"
-msgstr ""
-
-#: gettext/gettext-lib-config.php:10 lib/filters-messages.php:44
+#: gettext/gettext-lib-config.php:7 lib/filters-messages.php:44
 msgctxt "lib file description"
 msgid "Responsive Buttons"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:11 lib/filters-messages.php:324
+#: gettext/gettext-lib-config.php:8 lib/filters-messages.php:270
 msgctxt "lib file description"
 msgid "Responsive Styles"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:12
+#: gettext/gettext-lib-config.php:9
 msgctxt "plugin name"
 msgid "WPSSO Ridiculously Responsive Social Sharing Buttons"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:13
+#: gettext/gettext-lib-config.php:10
 msgctxt "plugin description"
 msgid ""
 "Ridiculously Responsive (SVG) Social Sharing Buttons for your content, "
 "excerpts, CSS sidebar, widget, shortcode, templates, and editor."
 msgstr ""
 
-#: gettext/gettext-lib-config.php:14
+#: gettext/gettext-lib-config.php:11
 msgctxt "plugin name"
 msgid "WPSSO Core"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:15 gettext/gettext-lib-config.php:22
+#: gettext/gettext-lib-config.php:12 gettext/gettext-lib-config.php:19
 msgctxt "option value"
 msgid "Content"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:16 gettext/gettext-lib-config.php:23
+#: gettext/gettext-lib-config.php:13 gettext/gettext-lib-config.php:20
 msgctxt "option value"
 msgid "Excerpt"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:17 gettext/gettext-lib-config.php:24
+#: gettext/gettext-lib-config.php:14 gettext/gettext-lib-config.php:21
 msgctxt "option value"
 msgid "Sidebar"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:18 gettext/gettext-lib-config.php:25
+#: gettext/gettext-lib-config.php:15 gettext/gettext-lib-config.php:22
 msgctxt "option value"
 msgid "Admin"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:19
+#: gettext/gettext-lib-config.php:16
 msgctxt "option value"
 msgid "HTTP"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:20
+#: gettext/gettext-lib-config.php:17
 msgctxt "option value"
 msgid "HTTPS"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:21
+#: gettext/gettext-lib-config.php:18
 msgctxt "option value"
 msgid "All"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:26
+#: gettext/gettext-lib-config.php:23
 msgctxt "option value"
 msgid "Shortcode"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:27
+#: gettext/gettext-lib-config.php:24
 msgctxt "option value"
 msgid "Widget"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:28
+#: gettext/gettext-lib-config.php:25
 msgctxt "option value"
 msgid "Top"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:29
+#: gettext/gettext-lib-config.php:26
 msgctxt "option value"
 msgid "Bottom"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:30
+#: gettext/gettext-lib-config.php:27
 msgctxt "option value"
 msgid "Top and Bottom"
 msgstr ""
@@ -208,8 +193,7 @@ msgstr ""
 
 #: lib/filters-messages.php:74 lib/filters-messages.php:92
 #: lib/filters-messages.php:110 lib/filters-messages.php:134
-#: lib/filters-messages.php:183 lib/filters-messages.php:201
-#: lib/filters-messages.php:219 lib/filters-messages.php:236
+#: lib/filters-messages.php:182
 msgid ""
 "Social sharing buttons can be enabled individually from the %s settings page."
 msgstr ""
@@ -253,73 +237,56 @@ msgstr ""
 
 #: lib/filters-messages.php:178
 msgid ""
-"Social sharing buttons for BuddyBlog posts are wrapped in a \"%s\" CSS class."
-msgstr ""
-
-#: lib/filters-messages.php:196
-msgid ""
-"Social sharing buttons for the bbPress single templates are wrapped in a \"%s"
-"\" CSS class."
-msgstr ""
-
-#: lib/filters-messages.php:214
-msgid ""
-"Social sharing buttons for BuddyPress activities are wrapped in a \"%s\" CSS "
-"class."
-msgstr ""
-
-#: lib/filters-messages.php:232
-msgid ""
 "Social sharing buttons for the WooCommerce short description or add to cart "
 "button areas are wrapped in a \"%1$s\" or \"%2$s\" CSS class."
 msgstr ""
 
-#: lib/filters-messages.php:257
+#: lib/filters-messages.php:203
 msgid ""
 "Add social sharing buttons to each post on an archive webpage (blog front "
 "page, category, etc.)."
 msgstr ""
 
-#: lib/filters-messages.php:263
+#: lib/filters-messages.php:209
 msgid ""
 "If a static page has been selected for your homepage, you can add social "
 "sharing buttons to that static page as well."
 msgstr ""
 
-#: lib/filters-messages.php:269
+#: lib/filters-messages.php:215
 msgid ""
 "Social sharing buttons are added to posts, pages, and attachment webpages by "
 "default."
 msgstr ""
 
-#: lib/filters-messages.php:271
+#: lib/filters-messages.php:217
 msgid ""
 "If your theme (or another plugin) supports additional custom post types, and "
 "you would like to include social sharing buttons on these webpages, check "
 "the associated options here."
 msgstr ""
 
-#: lib/filters-messages.php:277
+#: lib/filters-messages.php:223
 msgid "Include a call to action banner above the social sharing buttons."
 msgstr ""
 
-#: lib/filters-messages.php:279
+#: lib/filters-messages.php:225
 msgid "You may leave this option blank or hide it using the \"%s\" CSS class."
 msgstr ""
 
-#: lib/filters-messages.php:285
+#: lib/filters-messages.php:231
 msgid ""
 "Social sharing buttons can be added to the top, bottom, or both locations in "
 "the text."
 msgstr ""
 
-#: lib/filters-messages.php:287
+#: lib/filters-messages.php:233
 msgid ""
 "The <em>%s</em> option of each social sharing button must be enabled as well "
 "for that button to appear in that location in the text."
 msgstr ""
 
-#: lib/filters-messages.php:287 lib/share/email.php:38
+#: lib/filters-messages.php:233 lib/share/email.php:38
 #: lib/share/facebook.php:37 lib/share/linkedin.php:38
 #: lib/share/pinterest.php:38 lib/share/pocket.php:38 lib/share/reddit.php:38
 #: lib/share/tumblr.php:38 lib/share/twitter.php:38 lib/share/vk.php:38
@@ -328,96 +295,96 @@ msgctxt "option label"
 msgid "Show Button in"
 msgstr ""
 
-#: lib/filters-messages.php:293
+#: lib/filters-messages.php:239
 msgid ""
 "Force the selected protocol for all shared URLs, or select none to keep the "
 "protocol as-is."
 msgstr ""
 
-#: lib/filters-messages.php:299
+#: lib/filters-messages.php:245
 msgid "Identifies the origin of a shared link."
 msgstr ""
 
-#: lib/filters-messages.php:301
+#: lib/filters-messages.php:247
 msgid ""
 "Popular UTM medium values are \"cpc\", \"email\", \"referral\", and \"social"
 "\"."
 msgstr ""
 
-#: lib/filters-messages.php:307
+#: lib/filters-messages.php:253
 msgid ""
 "Append the %1$s to the tweet (see <a href=\"%2$s\">the Twitter options tab</"
 "a> in the %3$s page). The %1$s will be displayed and recommended after the "
 "webpage is shared."
 msgstr ""
 
-#: lib/filters-messages.php:307 lib/filters-messages.php:313
+#: lib/filters-messages.php:253 lib/filters-messages.php:259
 msgctxt "option label"
 msgid "Twitter Business @username"
 msgstr ""
 
-#: lib/filters-messages.php:307
+#: lib/filters-messages.php:253
 msgctxt "lib file description"
 msgid "General Settings"
 msgstr ""
 
-#: lib/filters-messages.php:313
+#: lib/filters-messages.php:259
 msgid ""
 "Recommend following the author's Twitter @username after sharing a webpage. "
 "If the %1$s option (above) is also checked, the %2$s is suggested first."
 msgstr ""
 
-#: lib/filters-messages.php:313 lib/share/twitter.php:65
+#: lib/filters-messages.php:259 lib/share/twitter.php:65
 msgctxt "option label"
 msgid "Add via Business @username"
 msgstr ""
 
-#: lib/filters-messages.php:324
+#: lib/filters-messages.php:270
 msgid "Combine and include the CSS of all <em>%s</em> in webpages."
 msgstr ""
 
-#: lib/filters-messages.php:326
+#: lib/filters-messages.php:272
 msgid ""
 "The combined CSS will be minified and saved into a single stylesheet with a "
 "URL of <a href=\"%1$s\">%2$s</a>."
 msgstr ""
 
-#: lib/filters-messages.php:328
+#: lib/filters-messages.php:274
 msgid ""
 "The minified stylesheet can be enqueued, or included directly in the webpage "
 "HTML."
 msgstr ""
 
-#: lib/filters-messages.php:334
+#: lib/filters-messages.php:280
 msgid ""
 "Have WordPress enqueue the social stylesheet instead of including the social "
 "styles directly in the webpage HTML."
 msgstr ""
 
-#: lib/filters-messages.php:336
+#: lib/filters-messages.php:282
 msgid ""
 "Enqueueing the stylesheet may be desirable if you use an optimization plugin "
 "to concatenate all enqueued styles into a single stylesheet."
 msgstr ""
 
-#: lib/filters-messages.php:356
+#: lib/filters-messages.php:302
 msgid ""
 "Disable social sharing buttons in the post content, excerpt, and CSS sidebar."
 msgstr ""
 
-#: lib/filters-messages.php:358
+#: lib/filters-messages.php:304
 msgid ""
 "This does not disable social sharing buttons added using a shortcode or "
 "widget."
 msgstr ""
 
-#: lib/filters-messages.php:364
+#: lib/filters-messages.php:310
 msgid ""
 "Identifies a strategic campaign (e.g. product launch, new feature, "
 "partnership, etc.) or a specific promotion (e.g. a sale, a giveaway, etc.)."
 msgstr ""
 
-#: lib/filters-messages.php:374
+#: lib/filters-messages.php:320
 msgid "Example CSS:"
 msgstr ""
 
@@ -548,34 +515,6 @@ msgstr ""
 #: lib/std/ecom/woocommerce.php:124 lib/std/ecom/woocommerce.php:131
 msgctxt "option value"
 msgid "WooCommerce"
-msgstr ""
-
-#: lib/std/forum/bbpress.php:149 lib/std/forum/bbpress.php:166
-#: lib/std/forum/bbpress.php:173
-msgctxt "option value"
-msgid "bbPress Single"
-msgstr ""
-
-#: lib/std/forum/bbpress.php:157
-msgctxt "option label"
-msgid "Position in bbPress Single"
-msgstr ""
-
-#: lib/std/social/buddyblog.php:121
-msgctxt "option label"
-msgid "Position in BuddyBlog Post"
-msgstr ""
-
-#: lib/std/social/buddyblog.php:130 lib/std/social/buddyblog.php:137
-#: lib/std/social/buddyblog.php:144
-msgctxt "option value"
-msgid "BBlog Post"
-msgstr ""
-
-#: lib/std/social/buddypress.php:121 lib/std/social/buddypress.php:128
-#: lib/std/social/buddypress.php:135
-msgctxt "option value"
-msgid "BP Activity"
 msgstr ""
 
 #: lib/style.php:115
