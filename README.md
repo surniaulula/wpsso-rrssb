@@ -10,7 +10,7 @@
 <tr><th align="right" valign="top" nowrap>Tested Up To WooCommerce</th><td>6.3.1</td></tr>
 <tr><th align="right" valign="top" nowrap>Contributors</th><td>jsmoriss</td></tr>
 <tr><th align="right" valign="top" nowrap>License</th><td><a href="https://www.gnu.org/licenses/gpl.txt">GPLv3</a></td></tr>
-<tr><th align="right" valign="top" nowrap>Tags / Keywords</th><td>responsive, share buttons, social widget, social media, woocommerce, facebook, google, twitter, pinterest, linkedin, whatsapp, bbpress, buddypress</td></tr>
+<tr><th align="right" valign="top" nowrap>Tags / Keywords</th><td>responsive, share buttons, social widget, social media, woocommerce, facebook, google, twitter, pinterest, linkedin, whatsapp</td></tr>
 </table>
 
 <h2>Description</h2>
@@ -18,16 +18,6 @@
 <!-- about -->
 
 <p><em>Ridiculously Responsive Social Sharing Buttons</em> automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), no matter its size or resolution - including mobile, Retina, and high-PPI displays!</p>
-
-<p><strong>Add responsive social sharing buttons to:</strong></p>
-
-<p>Posts, pages, custom post types, bbPress, BuddyBlog posts, BuddyPress activities, WooCommerce product pages, and much more.</p>
-
-<p><strong>Add responsive social sharing buttons in:</strong></p>
-
-<p>The content, excerpt, widget, CSS sidebar, shortcodes, templates, and <em>admin editor page</em> (so you can quickly share directly from the admin editor page).</p>
-
-<p><strong>Add UTM medium, source, and campaign values per share button.</strong></p>
 
 <!-- /about -->
 
@@ -46,12 +36,12 @@
 <p>Include responsive social sharing buttons in many locations:</p>
 
 <ul>
-<li>Above and/or below your content, excerpt text, bbPress single, BuddyBlog posts, BuddyPress activities, WooCommerce short description, and WooCommerce add to cart.</li>
-<li>In an admin editing page metabox &ndash; including media, product pages, and custom post types.</li>
+<li>Above and/or below your content, excerpt text, WooCommerce short description, and WooCommerce add to cart.</li>
+<li>In the admin editing page Document SSO metabox.</li>
 <li>In a CSS / javascript sidebar.</li>
 <li>In a WordPress sharing widget.</li>
-<li>A shortcode in your content or excerpt.</li>
-<li>A function in your theme's template(s).</li>
+<li>From a shortcode in your content or excerpt.</li>
+<li>From a function in your theme's template(s).</li>
 </ul>
 
 <p>Provides UTM medium, UTM source, and UTM campaign values for each social sharing button.</p>

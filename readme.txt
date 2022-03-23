@@ -6,7 +6,7 @@ Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://surniaulula.github.io/wpsso-rrssb/assets/
-Tags: responsive, share buttons, social widget, social media, woocommerce, facebook, google, twitter, pinterest, linkedin, whatsapp, bbpress, buddypress
+Tags: responsive, share buttons, social widget, social media, woocommerce, facebook, google, twitter, pinterest, linkedin, whatsapp
 Contributors: jsmoriss
 Requires PHP: 7.2
 Requires At Least: 5.2
@@ -21,16 +21,6 @@ Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts,
 <!-- about -->
 
 *Ridiculously Responsive Social Sharing Buttons* automatically resize to their container width, so they always look great on any device (phone, tablet, laptop, etc.), no matter its size or resolution - including mobile, Retina, and high-PPI displays!
-
-**Add responsive social sharing buttons to:**
-
-Posts, pages, custom post types, bbPress, BuddyBlog posts, BuddyPress activities, WooCommerce product pages, and much more.
-
-**Add responsive social sharing buttons in:**
-
-The content, excerpt, widget, CSS sidebar, shortcodes, templates, and *admin editor page* (so you can quickly share directly from the admin editor page).
-
-**Add UTM medium, source, and campaign values per share button.**
 
 <!-- /about -->
 
@@ -48,12 +38,12 @@ Extends the features of the [WPSSO Core plugin](https://wordpress.org/plugins/wp
 
 Include responsive social sharing buttons in many locations:
 
-* Above and/or below your content, excerpt text, bbPress single, BuddyBlog posts, BuddyPress activities, WooCommerce short description, and WooCommerce add to cart.
-* In an admin editing page metabox &ndash; including media, product pages, and custom post types.
+* Above and/or below your content, excerpt text, WooCommerce short description, and WooCommerce add to cart.
+* In the admin editing page Document SSO metabox.
 * In a CSS / javascript sidebar.
 * In a WordPress sharing widget.
-* A shortcode in your content or excerpt.
-* A function in your theme's template(s).
+* From a shortcode in your content or excerpt.
+* From a function in your theme's template(s).
 
 Provides UTM medium, UTM source, and UTM campaign values for each social sharing button.
 
@@ -110,6 +100,23 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 <p>Under the SSO &gt; Update Manager settings page, select the "Development and Up" (for example) version filter for the WPSSO Core plugin and/or its add-ons. Save the plugin settings and click the "Check for Plugin Updates" button to fetch the latest version information. When new development versions are available, they will automatically appear under your WordPress Dashboard &gt; Updates page. You can always reselect the "Stable / Production" version filter at any time to reinstall the latest stable version.</p>
 
 <h3>Changelog / Release Notes</h3>
+
+**Version 10.0.0-dev.2 (2022/03/23)**
+
+Removed support for bbPress, BuddyPress, and BuddyBlog.
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v11.8.0-dev.2.
 
 **Version 9.4.1 (2022/03/07)**
 
@@ -286,6 +293,10 @@ Maintenance release.
 	* WPSSO Core v9.1.0.
 
 == Upgrade Notice ==
+
+= 10.0.0-dev.2 =
+
+(2022/03/23) Removed support for bbPress, BuddyPress, and BuddyBlog.
 
 = 9.4.1 =
 
