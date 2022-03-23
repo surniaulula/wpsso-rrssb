@@ -101,7 +101,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 10.0.0-dev.2 (2022/03/23)**
+**Version 10.0.0-dev.3 (2022/03/23)**
 
 Removed support for bbPress, BuddyPress, and BuddyBlog.
 
@@ -116,7 +116,7 @@ Removed support for bbPress, BuddyPress, and BuddyBlog.
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v12.0.0-dev.2.
+	* WPSSO Core v12.0.0-dev.3.
 
 **Version 9.4.1 (2022/03/07)**
 
@@ -294,7 +294,7 @@ Maintenance release.
 
 == Upgrade Notice ==
 
-= 10.0.0-dev.2 =
+= 10.0.0-dev.3 =
 
 (2022/03/23) Removed support for bbPress, BuddyPress, and BuddyBlog.
 
