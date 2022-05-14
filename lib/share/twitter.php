@@ -166,7 +166,7 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 
 					$twitter_name = get_the_author_meta( $this->p->options[ 'plugin_cm_twitter_name' ], $mod[ 'post_author' ] );
 
-					$atts[ 'twitter_related' ] = preg_replace( '/^@/', '', $twitter_name );
+					$atts[ 'twitter_related' ] = SucomUtil::sanitize_twitter_name( $twitter_name, $add_at = false );
 				}
 			}
 
