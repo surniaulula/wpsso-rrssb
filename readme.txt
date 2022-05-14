@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 7.2
 Requires At Least: 5.2
 Tested Up To: 6.0.0
-WC Tested Up To: 6.4.1
+WC Tested Up To: 6.5.1
 Stable Tag: 10.0.0
 
 Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, templates, and editor.
@@ -100,6 +100,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 <p>Under the SSO &gt; Update Manager settings page, select the "Development and Up" (for example) version filter for the WPSSO Core plugin and/or its add-ons. Save the plugin settings and click the "Check for Plugin Updates" button to fetch the latest version information. When new development versions are available, they will automatically appear under your WordPress Dashboard &gt; Updates page. You can always reselect the "Stable / Production" version filter at any time to reinstall the latest stable version.</p>
 
 <h3>Changelog / Release Notes</h3>
+
+**Version 10.0.1-dev.1 (2022/05/13)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Added support for the new `SucomUtil::sanitize_twitter_name()` method in WPSSO Core v12.2.3-dev.1.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v12.2.3-dev.1.
 
 **Version 10.0.0 (2022/03/26)**
 
@@ -293,6 +308,10 @@ Maintenance release.
 	* WPSSO Core v9.1.0.
 
 == Upgrade Notice ==
+
+= 10.0.1-dev.1 =
+
+(2022/05/13) Added support for the new `SucomUtil::sanitize_twitter_name()` method in WPSSO Core v12.2.3-dev.1.
 
 = 10.0.0 =
 
