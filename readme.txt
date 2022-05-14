@@ -101,7 +101,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 10.0.1-dev.1 (2022/05/13)**
+**Version 10.1.0-dev.1 (2022/05/13)**
 
 * **New Features**
 	* None.
@@ -110,11 +110,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Added support for the new `SucomUtil::sanitize_twitter_name()` method in WPSSO Core v12.2.3-dev.1.
+	* Added support for the new `SucomUtil::sanitize_twitter_name()` method in WPSSO Core v12.3.0-dev.1.
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v12.2.3-dev.1.
+	* WPSSO Core v12.3.0-dev.1.
 
 **Version 10.0.0 (2022/03/26)**
 
@@ -309,9 +309,9 @@ Maintenance release.
 
 == Upgrade Notice ==
 
-= 10.0.1-dev.1 =
+= 10.1.0-dev.1 =
 
-(2022/05/13) Added support for the new `SucomUtil::sanitize_twitter_name()` method in WPSSO Core v12.2.3-dev.1.
+(2022/05/13) Added support for the new `SucomUtil::sanitize_twitter_name()` method in WPSSO Core v12.3.0-dev.1.
 
 = 10.0.0 =
 
