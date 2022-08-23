@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(			// Plugin acronym.
-					'version'     => '10.1.0',	// Plugin version.
+					'version'     => '10.2.0-b.2',	// Plugin version.
 					'opt_version' => '47',		// Increment when changing default option values.
 					'short'       => 'WPSSO RRSSB',	// Short plugin name.
 					'name'        => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '12.3.0',
+							'min_version'   => '13.0.0-b.2',
 						),
 					),
 
@@ -59,6 +59,11 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					 * Library files loaded and instantiated by WPSSO.
 					 */
 					'lib' => array(
+						'integ' => array(
+							'ecom' => array(
+								'woocommerce' => '(plugin) WooCommerce',
+							),
+						),
 						'share' => array(
 							'email'     => 'Email',
 							'facebook'  => 'Facebook',
@@ -73,11 +78,6 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 						),
 						'shortcode' => array(
 							'sharing' => 'Sharing Shortcode',
-						),
-						'std' => array(
-							'ecom' => array(
-								'woocommerce' => '(plugin) WooCommerce',
-							),
 						),
 						'submenu' => array(
 							'rrssb-buttons' => 'Responsive Buttons',

@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"10.1.0\n"
+"10.2.0-b.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -412,6 +412,31 @@ msgctxt "lib file description"
 msgid "(sharing) Sharing Widget"
 msgstr ""
 
+#: lib/integ/ecom/woocommerce.php:101
+msgctxt "option value"
+msgid "WC Short Desc"
+msgstr ""
+
+#: lib/integ/ecom/woocommerce.php:102
+msgctxt "option value"
+msgid "WC Add to Cart"
+msgstr ""
+
+#: lib/integ/ecom/woocommerce.php:110
+msgctxt "option label"
+msgid "Position in WC Short Desc"
+msgstr ""
+
+#: lib/integ/ecom/woocommerce.php:115
+msgctxt "option label"
+msgid "Position in WC Add to Cart"
+msgstr ""
+
+#: lib/integ/ecom/woocommerce.php:124 lib/integ/ecom/woocommerce.php:131
+msgctxt "option value"
+msgid "WooCommerce"
+msgstr ""
+
 #: lib/share/email.php:35 lib/share/facebook.php:34 lib/share/linkedin.php:35
 #: lib/share/pinterest.php:35 lib/share/pocket.php:35 lib/share/reddit.php:35
 #: lib/share/tumblr.php:35 lib/share/twitter.php:35 lib/share/vk.php:35
@@ -490,31 +515,6 @@ msgstr ""
 msgid ""
 "Error removing the minified stylesheet - does the web server have sufficient "
 "privileges?"
-msgstr ""
-
-#: lib/std/ecom/woocommerce.php:101
-msgctxt "option value"
-msgid "WC Short Desc"
-msgstr ""
-
-#: lib/std/ecom/woocommerce.php:102
-msgctxt "option value"
-msgid "WC Add to Cart"
-msgstr ""
-
-#: lib/std/ecom/woocommerce.php:110
-msgctxt "option label"
-msgid "Position in WC Short Desc"
-msgstr ""
-
-#: lib/std/ecom/woocommerce.php:115
-msgctxt "option label"
-msgid "Position in WC Add to Cart"
-msgstr ""
-
-#: lib/std/ecom/woocommerce.php:124 lib/std/ecom/woocommerce.php:131
-msgctxt "option value"
-msgid "WooCommerce"
 msgstr ""
 
 #: lib/style.php:115

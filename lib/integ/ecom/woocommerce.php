@@ -10,9 +10,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
-if ( ! class_exists( 'WpssoRrssbStdEcomWoocommerce' ) ) {
+if ( ! class_exists( 'WpssoRrssbIntegEcomWoocommerce' ) ) {
 
-	class WpssoRrssbStdEcomWoocommerce {
+	class WpssoRrssbIntegEcomWoocommerce {
 
 		private $p;	// Wpsso class object.
 
@@ -44,9 +44,9 @@ if ( ! class_exists( 'WpssoRrssbStdEcomWoocommerce' ) ) {
 	}
 }
 
-if ( ! class_exists( 'WpssoRrssbStdEcomWoocommerceSharing' ) ) {
+if ( ! class_exists( 'WpssoRrssbIntegEcomWoocommerceSharing' ) ) {
 
-	class WpssoRrssbStdEcomWoocommerceSharing {
+	class WpssoRrssbIntegEcomWoocommerceSharing {
 
 		private $p;	// Wpsso class object.
 		private $is_variation = false;
