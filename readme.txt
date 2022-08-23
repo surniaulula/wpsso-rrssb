@@ -10,7 +10,7 @@ Tags: responsive, share buttons, social widget, social media, woocommerce, faceb
 Contributors: jsmoriss
 Requires PHP: 7.2
 Requires At Least: 5.2
-Tested Up To: 6.0.1
+Tested Up To: 6.0.2
 WC Tested Up To: 6.8.2
 Stable Tag: 10.1.0
 
@@ -101,7 +101,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 10.2.0-b.2 (2022/08/23)**
+**Version 10.2.0-rc.1 (2022/08/23)**
 
 * **New Features**
 	* None.
@@ -114,7 +114,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v13.0.0-b.2.
+	* WPSSO Core v13.0.0-rc.1.
 
 **Version 10.1.0 (2022/05/17)**
 
@@ -324,7 +324,7 @@ Maintenance release.
 
 == Upgrade Notice ==
 
-= 10.2.0-b.2 =
+= 10.2.0-rc.1 =
 
 (2022/08/23) Renamed the 'std' library folder to 'integ' for WPSSO Core v13.0.0.
 
