@@ -124,13 +124,13 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 				),
 			),
 			'sharing' => array(
-				'show_on' => array( 
+				'show_on' => array(
 					'content'    => 'Content',
 					'excerpt'    => 'Excerpt',
 					'sidebar'    => 'Sidebar',
 					'admin_edit' => 'Admin',
 				),
-				'force_prot' => array( 
+				'force_prot' => array(
 					'http'  => 'HTTP',
 					'https' => 'HTTPS',
 				),

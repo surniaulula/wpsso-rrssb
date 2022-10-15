@@ -25,7 +25,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 			$this->p =& $plugin;
 			$this->a =& $addon;
 
-			$this->p->util->add_plugin_filters( $this, array( 
+			$this->p->util->add_plugin_filters( $this, array(
 				'post_document_meta_tabs'   => 3,
 				'post_edit_share_rows'      => 4,
 				'metabox_sso_inside_footer' => 2,

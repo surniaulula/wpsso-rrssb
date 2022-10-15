@@ -59,14 +59,14 @@ if ( ! class_exists( 'WpssoRrssbIntegEcomWoocommerceSharing' ) ) {
 
 				$this->p->debug->mark();
 
-			$this->p->util->add_plugin_filters( $this, array( 
+			$this->p->util->add_plugin_filters( $this, array(
 				'get_defaults' => 1,
 				'rrssb_styles' => 1,
 			) );
 
 			if ( is_admin() ) {
 
-				$this->p->util->add_plugin_filters( $this, array( 
+				$this->p->util->add_plugin_filters( $this, array(
 					'rrssb_buttons_show_on'       => 1,
 					'rrssb_buttons_position_rows' => 2,
 					'rrssb_styles_tabs'           => 1,
@@ -108,12 +108,12 @@ if ( ! class_exists( 'WpssoRrssbIntegEcomWoocommerceSharing' ) ) {
 
 			$table_rows[ 'buttons_pos_wc_short_desc' ] = '' .
 				$form->get_th_html( _x( 'Position in WC Short Desc', 'option label', 'wpsso-rrssb' ),
-					$css_class = '', $css_id = 'buttons_pos_wc_short_desc' ) . 
+					$css_class = '', $css_id = 'buttons_pos_wc_short_desc' ) .
 				'<td>' . $form->get_select( 'buttons_pos_wc_short_desc', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
 
 			$table_rows[ 'buttons_pos_wc_add_to_cart' ] = '' .
 				$form->get_th_html( _x( 'Position in WC Add to Cart', 'option label', 'wpsso-rrssb' ),
-					$css_class = '', $css_id = 'buttons_pos_wc_add_to_cart' ) . 
+					$css_class = '', $css_id = 'buttons_pos_wc_add_to_cart' ) .
 				'<td>' . $form->get_select( 'buttons_pos_wc_add_to_cart', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
 
 			return $table_rows;

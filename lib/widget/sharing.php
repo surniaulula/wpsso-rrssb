@@ -34,7 +34,7 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 			$name         = $this->p->cf[ 'plugin' ][ 'wpssorrssb' ][ 'name' ];
 			$widget_name  = $short;
 			$widget_class = 'wpsso-rrssb-widget';
-			$widget_ops   = array( 
+			$widget_ops   = array(
 				'classname'   => $widget_class,
 				'description' => sprintf( __( 'The %s widget.', 'wpsso-rrssb' ), $name ),
 			);
@@ -81,11 +81,11 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 
 				$widget_title = apply_filters( 'widget_title', $instance[ 'title' ], $instance, $this->id_base );
 
-				$buttons_html = "\n" . '<!-- wpsso sharing widget ' . $args[ 'widget_id' ] . ' begin -->' . "\n" . 
-					$before_widget . 
-					( empty( $widget_title ) ? '' : $before_title . $widget_title . $after_title ) . 
+				$buttons_html = "\n" . '<!-- wpsso sharing widget ' . $args[ 'widget_id' ] . ' begin -->' . "\n" .
+					$before_widget .
+					( empty( $widget_title ) ? '' : $before_title . $widget_title . $after_title ) .
 					$buttons_html . "\n" . 	// Buttons html is trimmed, so add a newline.
-					$after_widget . 
+					$after_widget .
 					'<!-- wpsso sharing widget ' . $args[ 'widget_id' ] . ' end -->' . "\n\n";
 			}
 
@@ -112,9 +112,9 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 
 			$widget_title = isset( $instance[ 'title' ] ) ? esc_attr( $instance[ 'title' ] ) : _x( 'Share It', 'option value', 'wpsso-rrssb' );
 
-			echo "\n" . '<p><label for="' . $this->get_field_id( 'title' ) . '">' . 
-				_x( 'Widget Title (leave blank for no title)', 'option label', 'wpsso-rrssb' ) . ':</label>' . 
-				'<input class="widefat" id="' . $this->get_field_id( 'title' ) . '" name="' . 
+			echo "\n" . '<p><label for="' . $this->get_field_id( 'title' ) . '">' .
+				_x( 'Widget Title (leave blank for no title)', 'option label', 'wpsso-rrssb' ) . ':</label>' .
+				'<input class="widefat" id="' . $this->get_field_id( 'title' ) . '" name="' .
 					$this->get_field_name( 'title' ) . '" type="text" value="' . $widget_title . '"/></p>' . "\n";
 
 			$share_ids = $this->a->social->get_share_ids();
@@ -123,9 +123,9 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 
 				$share_title = $share_title === 'GooglePlus' ? 'Google+' : $share_title;
 
-				echo '<p><label for="' . $this->get_field_id( $share_id ) . '">' . 
-					'<input id="' . $this->get_field_id( $share_id ) . 
-					'" name="' . $this->get_field_name( $share_id ) . 
+				echo '<p><label for="' . $this->get_field_id( $share_id ) . '">' .
+					'<input id="' . $this->get_field_id( $share_id ) .
+					'" name="' . $this->get_field_name( $share_id ) .
 					'" value="1" type="checkbox" ';
 
 				if ( ! empty( $instance[ $share_id ] ) ) {

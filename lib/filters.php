@@ -46,7 +46,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 			$this->upg = new WpssoRrssbFiltersUpgrade( $plugin, $addon );
 
-			$this->p->util->add_plugin_filters( $this, array( 
+			$this->p->util->add_plugin_filters( $this, array(
 				'sharing_utm_args' => 3,
 			), $prio = 1000 );
 
@@ -60,7 +60,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 				$this->msgs = new WpssoRrssbFiltersMessages( $plugin, $addon );
 
-				$this->p->util->add_plugin_filters( $this, array( 
+				$this->p->util->add_plugin_filters( $this, array(
 					'status_std_features' => 3,
 				), $prio = 10, $ext = 'wpssorrssb' );	// Hooks the 'wpssorrssb' filters.
 			}

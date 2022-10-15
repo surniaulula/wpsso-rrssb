@@ -178,32 +178,32 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 
 					$table_rows[ 'buttons_on_archive' ] = '' .
 						$this->form->get_th_html( _x( 'Include on Archive Webpages', 'option label', 'wpsso-rrssb' ),
-							$css_class = '', $css_id = 'buttons_on_archive' ) . 
+							$css_class = '', $css_id = 'buttons_on_archive' ) .
 						'<td>' . $this->form->get_checkbox( 'buttons_on_archive' ) . '</td>';
 
 					$table_rows[ 'buttons_on_front' ] = '' .
 						$this->form->get_th_html( _x( 'Include on Static Homepage', 'option label', 'wpsso-rrssb' ),
-							$css_class = '', $css_id = 'buttons_on_front' ) . 
+							$css_class = '', $css_id = 'buttons_on_front' ) .
 						'<td>' . $this->form->get_checkbox( 'buttons_on_front' ) . '</td>';
 
 					$table_rows[ 'buttons_add_to' ] = '' .
 						$this->form->get_th_html( _x( 'Include on Post Types', 'option label', 'wpsso-rrssb' ),
-							$css_class = '', $css_id = 'buttons_add_to' ) . 
+							$css_class = '', $css_id = 'buttons_add_to' ) .
 						'<td>' . $this->form->get_checklist_post_types( $name_prefix = 'buttons_add_to' ) . '</td>';
 
 					$table_rows[ 'buttons_cta' ] = '' .
 						$this->form->get_th_html_locale( _x( 'Call to Action', 'option label', 'wpsso-rrssb' ),
-							$css_class = '', $css_id = 'buttons_cta' ) . 
+							$css_class = '', $css_id = 'buttons_cta' ) .
 						'<td>' . $this->form->get_input_locale( 'buttons_cta', $class_class = 'wide' ) . '</td>';
 
 					$table_rows[ 'buttons_pos_content' ] = '' .
 						$this->form->get_th_html( _x( 'Buttons Position in Content', 'option label', 'wpsso-rrssb' ),
-							$css_class = '', $css_id = 'buttons_pos_content' ) . 
+							$css_class = '', $css_id = 'buttons_pos_content' ) .
 						'<td>' . $this->form->get_select( 'buttons_pos_content', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
 
 					$table_rows[ 'buttons_pos_excerpt' ] = $this->form->get_tr_hide( $in_view = 'basic', 'buttons_pos_excerpt' ) .
 						$this->form->get_th_html( _x( 'Buttons Position in Excerpt', 'option label', 'wpsso-rrssb' ),
-							$css_class = '', $css_id = 'buttons_pos_excerpt' ) . 
+							$css_class = '', $css_id = 'buttons_pos_excerpt' ) .
 						'<td>' . $this->form->get_select( 'buttons_pos_excerpt', $this->p->cf[ 'sharing' ][ 'position' ] ) . '</td>';
 
 					$filter_name = SucomUtil::sanitize_hookname( 'wpsso_' . $page_id . '_position_rows' );
@@ -212,12 +212,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 
 					$table_rows[ 'buttons_force_prot' ] = $this->form->get_tr_hide( $in_view = 'basic', 'buttons_force_prot' ) .
 						$this->form->get_th_html( _x( 'Force Protocol for Shared URLs', 'option label', 'wpsso-rrssb' ),
-							$css_class = '', $css_id = 'buttons_force_prot' ) . 
+							$css_class = '', $css_id = 'buttons_force_prot' ) .
 						'<td>' . $this->form->get_select_none( 'buttons_force_prot', $this->p->cf[ 'sharing' ][ 'force_prot' ] ) . '</td>';
 
 					$table_rows[ 'buttons_utm_medium' ] = $this->form->get_tr_hide( $in_view = 'basic', 'buttons_utm_medium' ) .
 						$this->form->get_th_html( _x( 'UTM Medium for All Buttons', 'option label', 'wpsso-rrssb' ),
-							$css_class = '', $css_id = 'buttons_utm_medium' ) . 
+							$css_class = '', $css_id = 'buttons_utm_medium' ) .
 						'<td>' . $this->form->get_input( 'buttons_utm_medium' ) . '</td>';
 
 					break;

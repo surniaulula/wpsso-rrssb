@@ -25,7 +25,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 			$this->p =& $plugin;
 			$this->a =& $addon;
 
-			$this->p->util->add_plugin_filters( $this, array( 
+			$this->p->util->add_plugin_filters( $this, array(
 				'save_setting_options'         => 3,
 				'add_custom_post_type_options' => 1,
 				'get_text_default_options_key' => 2,

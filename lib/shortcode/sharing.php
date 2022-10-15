@@ -41,7 +41,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 				$this->add_shortcode();
 
-				$this->p->util->add_plugin_actions( $this, array( 
+				$this->p->util->add_plugin_actions( $this, array(
 					'pre_apply_filters_text'   => 1,
 				) );
 			}
@@ -80,7 +80,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 			if ( $this->p->debug->enabled ) {
 
-				$this->p->debug->log_args( array( 
+				$this->p->debug->log_args( array(
 					'filter_name' => $filter_name,
 				) );
 			}
@@ -90,7 +90,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			 */
 			if ( $this->remove_shortcode() ) {
 
-				$this->p->util->add_plugin_actions( $this, array( 
+				$this->p->util->add_plugin_actions( $this, array(
 					'after_apply_filters_text' => 1,
 				) );
 			}
@@ -103,7 +103,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 			if ( $this->p->debug->enabled ) {
 
-				$this->p->debug->log_args( array( 
+				$this->p->debug->log_args( array(
 					'filter_name' => $filter_name,
 				) );
 			}
@@ -217,7 +217,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				$css_class = 'wpsso-rrssb wpsso-rrssb-shortcode' . empty( $atts[ 'css_class' ] ) ?
 					'' : ' ' . SucomUtil::sanitize_css_class( $atts[ 'css_class' ] );
 
-				$buttons_html = "\n" . '<div class="' . $css_class . '">' . "\n" . 
+				$buttons_html = "\n" . '<div class="' . $css_class . '">' . "\n" .
 					$buttons_html . "\n" . 	// Buttons HTML is trimmed, so add a newline.
 					'</div><!-- .wpsso-rrssb.wpsso-rrssb-shortcode -->' . "\n";
 			}

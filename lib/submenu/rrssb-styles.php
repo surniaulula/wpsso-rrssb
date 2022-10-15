@@ -97,12 +97,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 
 			$table_rows[] = ''.
 				$this->form->get_th_html( _x( 'Use the Social Stylesheet', 'option label', 'wpsso-rrssb' ),
-					$css_class = '', $css_id = 'buttons_use_social_style' ) . 
+					$css_class = '', $css_id = 'buttons_use_social_style' ) .
 				'<td>' . $this->form->get_checkbox( 'buttons_use_social_style' ) . $css_min_msg . '</td>';
 
 			$table_rows[] = ''.
 				$this->form->get_th_html( _x( 'Enqueue the Stylesheet', 'option label', 'wpsso-rrssb' ),
-					$css_class = '', $css_id = 'buttons_enqueue_social_style' ) . 
+					$css_class = '', $css_id = 'buttons_enqueue_social_style' ) .
 				'<td>' . $this->form->get_checkbox( 'buttons_enqueue_social_style' ) . '</td>';
 
 			$this->p->util->metabox->do_table( $table_rows, $class_href_key = 'metabox-info metabox-' . $metabox_id . '-info' );
@@ -131,8 +131,8 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 		protected function get_table_rows( $metabox_id, $tab_key ) {
 
 			$table_rows[ 'buttons_css_' . $tab_key ] = '' .
-				'<th class="textinfo">' . $this->p->msgs->get( 'info-styles-' . $tab_key ) . '</th>' . 
-				'<td' . ( empty( $this->p->options[ 'buttons_css_' . $tab_key . ':disabled' ] ) ? '' : ' class="blank"' ) . '>' . 
+				'<th class="textinfo">' . $this->p->msgs->get( 'info-styles-' . $tab_key ) . '</th>' .
+				'<td' . ( empty( $this->p->options[ 'buttons_css_' . $tab_key . ':disabled' ] ) ? '' : ' class="blank"' ) . '>' .
 				$this->form->get_textarea( 'buttons_css_' . $tab_key, 'button_css code' ) . '</td>';
 
 			return $table_rows;

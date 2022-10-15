@@ -39,19 +39,19 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 				'<td>' . $submenu_obj->show_on_checkboxes( 'pin' ) . '</td>';
 
 			$table_rows[] = '' .
-				$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) . 
+				$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) .
 				'<td>' . $form->get_select( 'pin_button_order', range( 1, count( $submenu_obj->share ) ) ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( $in_view = 'basic', 'pin_utm_source' ) .
-				$form->get_th_html( $utm_source_label ) . 
+				$form->get_th_html( $utm_source_label ) .
 				'<td>' . $form->get_input( 'pin_utm_source' ) . '</td>';
 
-			$table_rows[] = $form->get_tr_hide( $in_view = 'basic', 'pin_caption_max_len' ) . 
-				$form->get_th_html( _x( 'Caption Text Length', 'option label', 'wpsso-rrssb' ) ) . 
-				'<td>' . $form->get_input( 'pin_caption_max_len', $css_class = 'chars' ) . ' ' . 
+			$table_rows[] = $form->get_tr_hide( $in_view = 'basic', 'pin_caption_max_len' ) .
+				$form->get_th_html( _x( 'Caption Text Length', 'option label', 'wpsso-rrssb' ) ) .
+				'<td>' . $form->get_input( 'pin_caption_max_len', $css_class = 'chars' ) . ' ' .
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
-			$table_rows[] = $form->get_tr_hide( $in_view = 'basic', 'pin_rrssb_html' ) . 
+			$table_rows[] = $form->get_tr_hide( $in_view = 'basic', 'pin_rrssb_html' ) .
 				'<td colspan="2">' . $form->get_textarea( 'pin_rrssb_html', 'button_html code' ) . '</td>';
 
 			return $table_rows;
@@ -104,7 +104,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 			$this->p->options[ 'pin_add_img_html' ]          = 1;
 			$this->p->options[ 'pin_add_img_html:disabled' ] = true;
 
-			$this->p->util->add_plugin_filters( $this, array( 
+			$this->p->util->add_plugin_filters( $this, array(
 				'get_defaults' => 1,
 			) );
 		}

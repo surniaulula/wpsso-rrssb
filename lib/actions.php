@@ -34,7 +34,7 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 			$this->p =& $plugin;
 			$this->a =& $addon;
 
-			$this->p->util->add_plugin_actions( $this, array( 
+			$this->p->util->add_plugin_actions( $this, array(
 				'pre_apply_filters_text'   => 1,
 			) );
 
@@ -51,7 +51,7 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 
 			if ( $this->p->debug->enabled ) {
 
-				$this->p->debug->log_args( array( 
+				$this->p->debug->log_args( array(
 					'filter_name' => $filter_name,
 				) );
 			}
@@ -61,7 +61,7 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 			 */
 			if ( $this->a->social->remove_buttons_filter( $filter_name ) ) {
 
-				$this->p->util->add_plugin_actions( $this, array( 
+				$this->p->util->add_plugin_actions( $this, array(
 					'after_apply_filters_text' => 1,
 				) );
 			}
@@ -71,7 +71,7 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 
 			if ( $this->p->debug->enabled ) {
 
-				$this->p->debug->log_args( array( 
+				$this->p->debug->log_args( array(
 					'filter_name' => $filter_name,
 				) );
 			}

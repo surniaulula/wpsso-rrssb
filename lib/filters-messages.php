@@ -25,7 +25,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 			$this->p =& $plugin;
 			$this->a =& $addon;
 
-			$this->p->util->add_plugin_filters( $this, array( 
+			$this->p->util->add_plugin_filters( $this, array(
 				'messages_info'            => 2,
 				'messages_tooltip_buttons' => 2,
 				'messages_tooltip_meta'    => 2,
@@ -163,15 +163,15 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 
 					$text .= '<p>Example CSS:</p>
 <pre>
-aside.widget 
-  .wpsso-rrssb-widget 
+aside.widget
+  .wpsso-rrssb-widget
     ul.rrssb-buttons
         li.rrssb-facebook {}
 </pre>';
 
 					break;
 
-				case 'info-styles-rrssb-woocommerce': 
+				case 'info-styles-rrssb-woocommerce':
 
 					$text = '<p>';
 

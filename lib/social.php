@@ -190,7 +190,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			if ( $this->p->debug->enabled ) {
 
-				$this->p->debug->log_args( array( 
+				$this->p->debug->log_args( array(
 					'filter_name' => $filter_name,
 				) );
 			}
@@ -225,7 +225,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			if ( $this->p->debug->enabled ) {
 
-				$this->p->debug->log_args( array( 
+				$this->p->debug->log_args( array(
 					'filter_name' => $filter_name,
 				) );
 			}
@@ -413,7 +413,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			if ( ! empty( $buttons_html ) ) {
 
-				$buttons_count = preg_match_all( '/<li/', $buttons_html );	// Returns number of matches or false on error. 
+				$buttons_count = preg_match_all( '/<li/', $buttons_html );	// Returns number of matches or false on error.
 
 				$css_type      = 'rrssb-' . $type;
 				$css_class     = 'wpsso-rrssb wpsso-' . $css_type . ' wpsso-rrssb-pos-' . $location;
@@ -440,8 +440,8 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				$buttons_cta = '<div class="rrssb-buttons-cta ' . $mod_locale . '">' . $buttons_cta . '</div>';
 
 				$buttons_html = '<!-- wpsso ' . $css_type . ' begin -->' .	// Used by $this->get_buttons_for_the_excerpt().
-					'<div class="' . $css_class . '" id="' . $css_id . '">' . 
-					'<div class="' . $css_class_max . '" style="' . $css_style_max . '">' . 
+					'<div class="' . $css_class . '" id="' . $css_id . '">' .
+					'<div class="' . $css_class_max . '" style="' . $css_style_max . '">' .
 					$buttons_cta .
 					$buttons_html .
 					'</div><!-- .wpsso-rrssb-limit -->' .
@@ -455,19 +455,19 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 				switch ( $location ) {
 
-					case 'top': 
+					case 'top':
 
 						$text = $buttons_html . $text;
 
 						break;
 
-					case 'bottom': 
+					case 'bottom':
 
 						$text = $text . $buttons_html;
 
 						break;
 
-					case 'both': 
+					case 'both':
 
 						$text = $buttons_html . $text . $buttons_html;
 
@@ -605,7 +605,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 							} else {
 
-								$buttons_html .= '<!-- adding buttons as individual containers -->' . "\n" . 
+								$buttons_html .= '<!-- adding buttons as individual containers -->' . "\n" .
 									$buttons_begin . $buttons_part . $buttons_end;
 							}
 						}
