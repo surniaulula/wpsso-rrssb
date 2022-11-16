@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires Plugins: wpsso
 Requires PHP: 7.2
 Requires At Least: 5.2
-Tested Up To: 6.1.0
+Tested Up To: 6.1.1
 WC Tested Up To: 7.1.0
 Stable Tag: 10.2.0
 
