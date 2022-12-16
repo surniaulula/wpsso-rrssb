@@ -6,4 +6,6 @@
 
 .wpsso-rrssb-content {
 	margin:20px auto;
+	max-width:100vw;
+	overflow:hidden;
 }
