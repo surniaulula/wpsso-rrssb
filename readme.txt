@@ -102,7 +102,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 10.2.1-dev.1 (2022/12/16)**
+**Version 10.2.1-dev.2 (2022/12/20)**
 
 * **New Features**
 	* None.
@@ -115,7 +115,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v13.13.1-dev.1.
+	* WPSSO Core v13.13.1-dev.2.
 
 **Version 10.2.0 (2022/08/24)**
 
@@ -340,9 +340,9 @@ Maintenance release.
 
 == Upgrade Notice ==
 
-= 10.2.1-dev.1 =
+= 10.2.1-dev.2 =
 
-(2022/12/16) Minor update for the `.wpsso-rrssb-content` default CSS.
+(2022/12/20) Minor update for the `.wpsso-rrssb-content` default CSS.
 
 = 10.2.0 =
 
