@@ -107,7 +107,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **New Features**
 	* None.
 * **Improvements**
-	* Minor update for the `.wpsso-rrssb-content` default CSS.
+	* Update for the `.wpsso-rrssb-content` default CSS.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -342,7 +342,7 @@ Maintenance release.
 
 = 10.3.0-dev.4 =
 
-(2022/12/20) Minor update for the `.wpsso-rrssb-content` default CSS.
+(2022/12/20) Update for the `.wpsso-rrssb-content` default CSS.
 
 = 10.2.0 =
 
