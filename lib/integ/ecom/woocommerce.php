@@ -82,7 +82,7 @@ if ( ! class_exists( 'WpssoRrssbIntegEcomWoocommerceSharing' ) ) {
 			}
 		}
 
-		public function filter_get_defaults( $defs ) {
+		public function filter_get_defaults( array $defs ) {
 
 			$defs[ 'buttons_pos_wc_short_desc' ]  = 'bottom';	// Default position for product short description.
 			$defs[ 'buttons_pos_wc_add_to_cart' ] = 'bottom';	// Default position (before/after) for Add to Cart.

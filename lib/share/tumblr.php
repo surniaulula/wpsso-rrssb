@@ -103,7 +103,7 @@ if ( ! class_exists( 'WpssoRrssbShareTumblr' ) ) {
 			) );
 		}
 
-		public function filter_get_defaults( $defs ) {
+		public function filter_get_defaults( array $defs ) {
 
 			return array_merge( $defs, self::$cf[ 'opt' ][ 'defaults' ] );
 		}

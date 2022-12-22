@@ -70,7 +70,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 			return $text;
 		}
 
-		public function filter_get_defaults( $defs ) {
+		public function filter_get_defaults( array $defs ) {
 
 			$this->p->opt->set_default_text( $defs, 'buttons_cta' );
 
