@@ -12,7 +12,7 @@ Requires Plugins: wpsso
 Requires PHP: 7.2
 Requires At Least: 5.2
 Tested Up To: 6.1.1
-WC Tested Up To: 7.2.1
+WC Tested Up To: 7.2.2
 Stable Tag: 10.2.0
 
 Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, templates, and editor.
@@ -102,7 +102,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 10.3.0-dev.6 (2022/12/21)**
+**Version 10.3.0-dev.7 (2022/12/21)**
 
 * **New Features**
 	* None.
@@ -115,7 +115,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v13.14.0-dev.6.
+	* WPSSO Core v13.14.0-dev.7.
 
 **Version 10.2.0 (2022/08/24)**
 
@@ -340,7 +340,7 @@ Maintenance release.
 
 == Upgrade Notice ==
 
-= 10.3.0-dev.6 =
+= 10.3.0-dev.7 =
 
 (2022/12/21) Update for the `.wpsso-rrssb-content` default CSS.
 
