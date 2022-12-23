@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 10.0.0\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 10.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-03-24 07:49-0700\n"
+"PO-Revision-Date: 2022-12-23 07:49-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: gettext/gettext-lib-abstract-com.php:6 lib/abstract/com/add-on.php:207
 msgid "The %1$s add-on requires the %2$s plugin."
@@ -350,6 +350,31 @@ msgctxt "lib file description"
 msgid "(sharing) Sharing Widget"
 msgstr "(sharing) Widget de partage"
 
+#: lib/integ/ecom/woocommerce.php:101
+msgctxt "option value"
+msgid "WC Short Desc"
+msgstr "Desc. courte WC"
+
+#: lib/integ/ecom/woocommerce.php:102
+msgctxt "option value"
+msgid "WC Add to Cart"
+msgstr "Ajout panier WC"
+
+#: lib/integ/ecom/woocommerce.php:110
+msgctxt "option label"
+msgid "Position in WC Short Desc"
+msgstr "Position dans desc. courte WC"
+
+#: lib/integ/ecom/woocommerce.php:115
+msgctxt "option label"
+msgid "Position in WC Add to Cart"
+msgstr "Position dans l'ajout panier WC"
+
+#: lib/integ/ecom/woocommerce.php:124 lib/integ/ecom/woocommerce.php:131
+msgctxt "option value"
+msgid "WooCommerce"
+msgstr "WooCommerce"
+
 #: lib/share/email.php:35 lib/share/facebook.php:34 lib/share/linkedin.php:35
 #: lib/share/pinterest.php:35 lib/share/pocket.php:35 lib/share/reddit.php:35
 #: lib/share/tumblr.php:35 lib/share/twitter.php:35 lib/share/vk.php:35
@@ -427,31 +452,6 @@ msgstr "Impossible d'ouvrir le fichier css %s pour écriture."
 #: lib/social.php:163
 msgid "Error removing the minified stylesheet - does the web server have sufficient privileges?"
 msgstr "Erreur en retirant la feuille de style minimisé - le serveur Web a t'il les privilèges nécessaires?"
-
-#: lib/std/ecom/woocommerce.php:101
-msgctxt "option value"
-msgid "WC Short Desc"
-msgstr "Desc. courte WC"
-
-#: lib/std/ecom/woocommerce.php:102
-msgctxt "option value"
-msgid "WC Add to Cart"
-msgstr "Ajout panier WC"
-
-#: lib/std/ecom/woocommerce.php:110
-msgctxt "option label"
-msgid "Position in WC Short Desc"
-msgstr "Position dans desc. courte WC"
-
-#: lib/std/ecom/woocommerce.php:115
-msgctxt "option label"
-msgid "Position in WC Add to Cart"
-msgstr "Position dans l'ajout panier WC"
-
-#: lib/std/ecom/woocommerce.php:124 lib/std/ecom/woocommerce.php:131
-msgctxt "option value"
-msgid "WooCommerce"
-msgstr "WooCommerce"
 
 #: lib/style.php:115
 msgid "The %s file is not readable."
