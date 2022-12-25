@@ -102,7 +102,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 10.3.0-b.4 (2022/12/24)**
+**Version 10.3.0-b.4 (2022/12/25)**
 
 * **New Features**
 	* None.
@@ -342,7 +342,7 @@ Maintenance release.
 
 = 10.3.0-b.4 =
 
-(2022/12/24) Update for the `.wpsso-rrssb-content` default CSS.
+(2022/12/25) Update for the `.wpsso-rrssb-content` default CSS.
 
 = 10.2.0 =
 
