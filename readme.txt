@@ -102,7 +102,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 10.3.0-rc.3 (2022/12/26)**
+**Version 10.3.0-rc.4 (2022/12/27)**
 
 * **New Features**
 	* None.
@@ -115,7 +115,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v14.0.0-rc.3.
+	* WPSSO Core v14.0.0-rc.4.
 
 **Version 10.2.0 (2022/08/24)**
 
@@ -340,9 +340,9 @@ Maintenance release.
 
 == Upgrade Notice ==
 
-= 10.3.0-rc.3 =
+= 10.3.0-rc.4 =
 
-(2022/12/26) Update for the `.wpsso-rrssb-content` default CSS.
+(2022/12/27) Update for the `.wpsso-rrssb-content` default CSS.
 
 = 10.2.0 =
 
