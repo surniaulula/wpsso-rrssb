@@ -1,8 +1,7 @@
 <?php die( 'These aren\'t the droids you\'re looking for.' );
-
-/**
- * Extract of translatable strings from lib/config.php.
- */
+// 
+// Extract of translatable strings from lib/config.php.
+// 
 _x( '(plugin) WooCommerce', 'lib file description', 'wpsso-rrssb' );
 _x( 'Responsive Buttons', 'lib file description', 'wpsso-rrssb' );
 _x( 'Responsive Styles', 'lib file description', 'wpsso-rrssb' );
