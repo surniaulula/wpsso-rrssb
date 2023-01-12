@@ -33,7 +33,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			$this->set_objects();
 
 			$this->p->util->add_plugin_filters( $this, array(
-				'form_button_rows' => 2,	// Filter form buttons for all settings pages.
+				'form_button_rows' => 2,	// Form buttons for all settings pages.
 			) );
 		}
 
