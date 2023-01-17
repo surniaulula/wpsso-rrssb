@@ -35,8 +35,6 @@ Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts,
 
 <h3>WPSSO RRSSB Add-on Features</h3>
 
-Extends the features of the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) (required plugin).
-
 Include responsive social sharing buttons in many locations:
 
 * Above and/or below your content, excerpt text, WooCommerce short description, and WooCommerce add to cart.
@@ -50,7 +48,7 @@ Provides UTM medium, UTM source, and UTM campaign values for each social sharing
 
 A built-in stylesheet editor allows you to easily fine-tune the CSS for each social sharing button location (content, excerpt, shortcode, widget, etc.).
 
-Uses the CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.
+Includes CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.
 
 <h3>WPSSO Core Required</h3>
 
