@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 10.3.0\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 10.4.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-12-26 06:29-0800\n"
+"POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2023-01-18 11:58-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -13,100 +13,100 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.2.2\n"
 
-#: gettext/gettext-lib-abstract-com.php:6 lib/abstract/com/add-on.php:207
+#: gettext/gettext-lib-abstract-com.php:5 lib/abstract/com/add-on.php:206
 msgid "The %1$s add-on requires the %2$s plugin."
 msgstr "L'ajout %1$s requiert l'extension %2$s."
 
-#: gettext/gettext-lib-abstract-com.php:7 lib/abstract/com/add-on.php:221
+#: gettext/gettext-lib-abstract-com.php:6 lib/abstract/com/add-on.php:220
 msgid "The %1$s add-on requires %2$s version %3$s or newer (version %4$s is currently installed)."
 msgstr "L'ajout %1$s nécessite %2$s version %3$s ou plus récente (la version %4$s est installée actuellement)."
 
-#: gettext/gettext-lib-config.php:6
+#: gettext/gettext-lib-config.php:5
 msgctxt "lib file description"
 msgid "(plugin) WooCommerce"
 msgstr "(plugin) WooCommerce"
 
-#: gettext/gettext-lib-config.php:7 lib/filters-messages.php:44
+#: gettext/gettext-lib-config.php:6 lib/filters-messages.php:44
 msgctxt "lib file description"
 msgid "Responsive Buttons"
 msgstr "Boutons réactifs"
 
-#: gettext/gettext-lib-config.php:8 lib/filters-messages.php:270
+#: gettext/gettext-lib-config.php:7 lib/filters-messages.php:270
 msgctxt "lib file description"
 msgid "Responsive Styles"
 msgstr "Styles réactifs"
 
-#: gettext/gettext-lib-config.php:9
+#: gettext/gettext-lib-config.php:8
 msgctxt "plugin name"
 msgid "WPSSO Ridiculously Responsive Social Sharing Buttons"
 msgstr "WPSSO boutons de partage social ridiculement réactifs"
 
-#: gettext/gettext-lib-config.php:10
+#: gettext/gettext-lib-config.php:9
 msgctxt "plugin description"
 msgid "Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, templates, and editor."
 msgstr "Boutons de partage social ridiculement réactifs (SVG) pour votre contenu, extraits, barre latérale CSS, widget, code court, modèles et éditeur."
 
-#: gettext/gettext-lib-config.php:11
+#: gettext/gettext-lib-config.php:10
 msgctxt "plugin name"
 msgid "WPSSO Core"
 msgstr "WPSSO Core"
 
-#: gettext/gettext-lib-config.php:12 gettext/gettext-lib-config.php:19
+#: gettext/gettext-lib-config.php:11 gettext/gettext-lib-config.php:18
 msgctxt "option value"
 msgid "Content"
 msgstr "Contenu"
 
-#: gettext/gettext-lib-config.php:13 gettext/gettext-lib-config.php:20
+#: gettext/gettext-lib-config.php:12 gettext/gettext-lib-config.php:19
 msgctxt "option value"
 msgid "Excerpt"
 msgstr "Extrait"
 
-#: gettext/gettext-lib-config.php:14 gettext/gettext-lib-config.php:21
+#: gettext/gettext-lib-config.php:13 gettext/gettext-lib-config.php:20
 msgctxt "option value"
 msgid "Sidebar"
 msgstr "Barre latérale"
 
-#: gettext/gettext-lib-config.php:15 gettext/gettext-lib-config.php:22
+#: gettext/gettext-lib-config.php:14 gettext/gettext-lib-config.php:21
 msgctxt "option value"
 msgid "Admin"
 msgstr "Admin"
 
-#: gettext/gettext-lib-config.php:16
+#: gettext/gettext-lib-config.php:15
 msgctxt "option value"
 msgid "HTTP"
 msgstr "HTTP"
 
-#: gettext/gettext-lib-config.php:17
+#: gettext/gettext-lib-config.php:16
 msgctxt "option value"
 msgid "HTTPS"
 msgstr "HTTPS"
 
-#: gettext/gettext-lib-config.php:18
+#: gettext/gettext-lib-config.php:17
 msgctxt "option value"
 msgid "All"
 msgstr "Tous"
 
-#: gettext/gettext-lib-config.php:23
+#: gettext/gettext-lib-config.php:22
 msgctxt "option value"
 msgid "Shortcode"
 msgstr "Code court"
 
-#: gettext/gettext-lib-config.php:24
+#: gettext/gettext-lib-config.php:23
 msgctxt "option value"
 msgid "Widget"
 msgstr "Widget"
 
-#: gettext/gettext-lib-config.php:25
+#: gettext/gettext-lib-config.php:24
 msgctxt "option value"
 msgid "Top"
 msgstr "Le haut"
 
-#: gettext/gettext-lib-config.php:26
+#: gettext/gettext-lib-config.php:25
 msgctxt "option value"
 msgid "Bottom"
 msgstr "Le bas"
 
-#: gettext/gettext-lib-config.php:27
+#: gettext/gettext-lib-config.php:26
 msgctxt "option value"
 msgid "Top and Bottom"
 msgstr "Haut et bas"
