@@ -287,7 +287,7 @@ msgid ""
 msgstr ""
 
 #: lib/filters-messages.php:233 lib/share/email.php:38
-#: lib/share/facebook.php:37 lib/share/linkedin.php:38
+#: lib/share/facebook.php:38 lib/share/linkedin.php:38
 #: lib/share/pinterest.php:38 lib/share/pocket.php:38 lib/share/reddit.php:38
 #: lib/share/tumblr.php:38 lib/share/twitter.php:38 lib/share/vk.php:38
 #: lib/share/whatsapp.php:38
@@ -437,7 +437,7 @@ msgctxt "option value"
 msgid "WooCommerce"
 msgstr ""
 
-#: lib/share/email.php:35 lib/share/facebook.php:34 lib/share/linkedin.php:35
+#: lib/share/email.php:35 lib/share/facebook.php:35 lib/share/linkedin.php:35
 #: lib/share/pinterest.php:35 lib/share/pocket.php:35 lib/share/reddit.php:35
 #: lib/share/tumblr.php:35 lib/share/twitter.php:35 lib/share/vk.php:35
 #: lib/share/whatsapp.php:35
@@ -445,7 +445,7 @@ msgctxt "option label"
 msgid "UTM Source for %s"
 msgstr ""
 
-#: lib/share/email.php:42 lib/share/facebook.php:41 lib/share/linkedin.php:42
+#: lib/share/email.php:42 lib/share/facebook.php:42 lib/share/linkedin.php:42
 #: lib/share/pinterest.php:42 lib/share/pocket.php:42 lib/share/reddit.php:42
 #: lib/share/tumblr.php:42 lib/share/twitter.php:42 lib/share/vk.php:42
 #: lib/share/whatsapp.php:42
