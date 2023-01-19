@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2014-2022 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 		private $p;	// Wpsso class object.
 		private $a;	// WpssoRrssb class object.
 
-		/**
+		/*
 		 * Instantiated by WpssoRrssb->init_objects().
 		 */
 		public function __construct( &$plugin, &$addon ) {
@@ -56,7 +56,7 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 				) );
 			}
 
-			/**
+			/*
 			 * If a buttons filter is removed, then re-add it when the text filter is finished executing.
 			 */
 			if ( $this->a->social->remove_buttons_filter( $filter_name ) ) {

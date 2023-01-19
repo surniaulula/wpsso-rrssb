@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2014-2022 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(			// Plugin acronym.
-					'version'     => '10.4.0-rc.1',	// Plugin version.
+					'version'     => '10.4.0-rc.2',	// Plugin version.
 					'opt_version' => '47',		// Increment when changing default option values.
 					'short'       => 'WPSSO RRSSB',	// Short plugin name.
 					'name'        => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
@@ -28,7 +28,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'text_domain' => 'wpsso-rrssb',
 					'domain_path' => '/languages',
 
-					/**
+					/*
 					 * Required plugin and its version.
 					 */
 					'req' => array(
@@ -37,16 +37,16 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '14.5.0-rc.1',
+							'min_version'   => '14.5.0-rc.2',
 						),
 					),
 
-					/**
+					/*
 					 * URLs or relative paths to plugin banners and icons.
 					 */
 					'assets' => array(
 
-						/**
+						/*
 						 * Icon image array keys are '1x' and '2x'.
 						 */
 						'icons' => array(
@@ -55,7 +55,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 						),
 					),
 
-					/**
+					/*
 					 * Library files loaded and instantiated by WPSSO.
 					 */
 					'lib' => array(
@@ -90,13 +90,13 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 				),
 			),
 
-			/**
+			/*
 			 * Additional add-on setting options.
 			 */
 			'opt' => array(
 				'defaults' => array(
 
-					/**
+					/*
 					 * Responsive Buttons
 					 */
 					'buttons_on_archive'        => 0,		// Include on Archive Webpages.
@@ -109,7 +109,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 					'buttons_force_prot'        => 'none',		// Force Protocol for Shared URLs.
 					'buttons_utm_medium'        => 'social',	// UTM Medium for All Buttons.
 
-					/**
+					/*
 					 * Responsive Styles
 					 */
 					'buttons_use_social_style'     => 1,
@@ -167,7 +167,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 
 			$info =& self::$cf[ 'plugin' ][ 'wpssorrssb' ];
 
-			/**
+			/*
 			 * Define fixed constants.
 			 */
 			define( 'WPSSORRSSB_FILEPATH', $plugin_file );
@@ -177,7 +177,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			define( 'WPSSORRSSB_URLPATH', trailingslashit( plugins_url( '', $plugin_file ) ) );
 			define( 'WPSSORRSSB_VERSION', $info[ 'version' ] );
 
-			/**
+			/*
 			 * Define variable constants.
 			 */
 			self::set_variable_constants();
@@ -190,7 +190,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 				$var_const = (array) self::get_variable_constants();
 			}
 
-			/**
+			/*
 			 * Define the variable constants, if not already defined.
 			 */
 			foreach ( $var_const as $name => $value ) {
@@ -209,7 +209,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 			$var_const[ 'WPSSORRSSB_SHARING_SHORTCODE_NAME' ] = 'rrssb';
 			$var_const[ 'WPSSORRSSB_MAX_WIDTH_MULTIPLIER' ]   = 118;
 
-			/**
+			/*
 			 * Maybe override the default constant value with a pre-defined constant value.
 			 */
 			foreach ( $var_const as $name => $value ) {
