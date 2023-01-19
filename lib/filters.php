@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2015-2023 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -21,7 +21,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 		private $opts;	// WpssoRrssbFiltersOptions class object.
 		private $upg;	// WpssoRrssbFiltersUpgrade class object.
 
-		/**
+		/*
 		 * Instantiated by WpssoRrssb->init_objects().
 		 */
 		public function __construct( &$plugin, &$addon ) {
@@ -68,7 +68,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 
 		public function filter_sharing_utm_args( $utm, $mod ) {
 
-			/**
+			/*
 			 * Example:
 			 *
 			 * 	utm_medium   = 'social'
@@ -89,7 +89,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 			return $utm;
 		}
 
-		/**
+		/*
 		 * Filter for 'wpssorrssb_status_std_features'.
 		 */
 		public function filter_status_std_features( $features, $ext, $info ) {

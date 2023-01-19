@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2015-2023 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 		private $p;	// Wpsso class object.
 		private $a;	// WpssoRrssb class object.
 
-		/**
+		/*
 		 * Instantiated by WpssoRrssbFilters->__construct().
 		 */
 		public function __construct( &$plugin, &$addon ) {
@@ -35,7 +35,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 			) );
 		}
 
-		/**
+		/*
 		 * $network is true if saving multisite network settings.
 		 */
 		public function filter_save_setting_options( array $opts, $network, $upgrading ) {
@@ -45,7 +45,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 				return $opts;	// Nothing to do.
 			}
 
-			/**
+			/*
 			 * Update the combined and minified social stylesheet.
 			 */
 			WpssoRrssbSocial::update_sharing_css( $opts );
@@ -82,7 +82,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 
 				$buttons_css_file = WPSSORRSSB_PLUGINDIR . 'css/' . $id . '.css';
 
-				/**
+				/*
 				 * CSS files are only loaded once (when variable is empty) into defaults to minimize disk I/O.
 				 */
 				if ( empty( $defs[ 'buttons_css_' . $id ] ) ) {
@@ -155,7 +155,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 
 			switch ( $base_key ) {
 
-				/**
+				/*
 				 * Options that cannot be blank.
 				 */
 				case 'buttons_force_prot':
@@ -163,21 +163,21 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 
 					return 'not_blank';
 
-				/**
+				/*
 				 * Integer options that must be 1 or more (not zero).
 				 */
 				case ( preg_match( '/_button_order$/', $base_key ) ? true : false ):
 
 					return 'pos_int';
 
-				/**
+				/*
 				 * Text strings that can be blank (line breaks are removed).
 				 */
 				case ( preg_match( '/_(desc|title)$/', $base_key ) ? true : false ):
 
 					return 'one_line';
 
-				/**
+				/*
 				 * Text strings that can be blank.
 				 */
 				case 'buttons_cta':

@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2015-2023 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 		private $p;	// Wpsso class object.
 		private $a;	// WpssoRrssb class object.
 
-		/**
+		/*
 		 * Instantiated by WpssoRrssbFilters->__construct().
 		 */
 		public function __construct( &$plugin, &$addon ) {
@@ -50,7 +50,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 			return $tabs;
 		}
 
-		/**
+		/*
 		 * Default option values are defined in WpssoRrssbFiltersOptions->filter_get_md_defaults().
 		 */
 		public function filter_post_edit_share_rows( $table_rows, $form, $head, $mod ) {
@@ -71,7 +71,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 				'content'  => $form->get_input( 'buttons_utm_campaign' ),
 			);
 
-			/**
+			/*
 			 * Email.
 			 */
 			$email_type     = 'both';
@@ -92,7 +92,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 				'content'  => $form->get_textarea( 'email_desc', $css_class = '', $css_id = '', $email_max_len, $def_email_desc ),
 			);
 
-			/**
+			/*
 			 * Twitter.
 			 */
 			$twitter_type     = $this->p->options[ 'twitter_caption' ];
@@ -107,7 +107,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 				'content'  => $form->get_textarea( 'twitter_desc', $css_class = '', $css_id = '', $twitter_max_len, $def_twitter_desc ),
 			);
 
-			/**
+			/*
 			 * Pinterest.
 			 */
 			$pin_type    = 'excerpt';
@@ -122,7 +122,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 				'content'  => $form->get_textarea( 'pin_desc', $css_class = '', $css_id = '', $pin_max_len, $pin_desc ),
 			);
 
-			/**
+			/*
 			 * Others.
 			 */
 			foreach ( array(
@@ -167,7 +167,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 
 			$metabox_html .= $this->a->social->get_buttons( $text = '', $type = 'admin_edit', $mod );
 
-			/**
+			/*
 			 * The type="text/javascript" attribute is unnecessary for JavaScript resources and creates warnings in the W3C validator.
 			 */
 			$metabox_html .= <<<EOF

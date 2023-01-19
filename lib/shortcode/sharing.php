@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2015-2023 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -19,7 +19,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 		private $shortcode_name = 'rrssb';	// Default shortcode name.
 
-		/**
+		/*
 		 * Instantiated by Wpsso->init_shortcodes().
 		 */
 		public function __construct( &$plugin ) {
@@ -47,7 +47,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			}
 		}
 
-		/**
+		/*
 		 * Make sure wpautop() does not have a higher priority than 10, otherwise it will format the shortcode output
 		 * (shortcode filters are run at priority 11).
 		 */
@@ -73,7 +73,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			}
 		}
 
-		/**
+		/*
 		 * Remove our shortcode before applying a text filter.
 		 */
 		public function action_pre_apply_filters_text( $filter_name ) {
@@ -85,7 +85,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				) );
 			}
 
-			/**
+			/*
 			 * If a shortcode is removed, then re-add it when the text filter is finished executing.
 			 */
 			if ( $this->remove_shortcode() ) {
@@ -96,7 +96,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 			}
 		}
 
-		/**
+		/*
 		 * Re-add our shortcode after applying a text filter.
 		 */
 		public function action_after_apply_filters_text( $filter_name ) {

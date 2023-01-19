@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2015-2023 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersMessages' ) ) {
 		private $p;	// Wpsso class object.
 		private $a;	// WpssoRrssb class object.
 
-		/**
+		/*
 		 * Instantiated by WpssoRrssbFilters->__construct().
 		 */
 		public function __construct( &$plugin, &$addon ) {
@@ -195,7 +195,7 @@ aside.widget
 
 			switch ( $msg_key ) {
 
-				/**
+				/*
 				 * SSO > Responsive Buttons settings page.
 				 */
 				case 'tooltip-buttons_on_archive':	// Include on Archive Webpages.
@@ -260,7 +260,7 @@ aside.widget
 
 					break;
 
-				/**
+				/*
 				 * SSO > Responsive Styles settings page.
 				 */
 				case 'tooltip-buttons_use_social_style':		// Use the Social Stylesheet.

@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2015-2023 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersUpgrade' ) ) {
 		private $p;	// Wpsso class object.
 		private $a;	// WpssoRrssb class object.
 
-		/**
+		/*
 		 * Instantiated by WpssoRrssbFilters->__construct().
 		 */
 		public function __construct( &$plugin, &$addon ) {
@@ -99,7 +99,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersUpgrade' ) ) {
 				),
 			);
 
-			/**
+			/*
 			 * Remove all G+ buttons.
 			 */
 			$show_on = apply_filters( 'wpsso_rrssb_buttons_show_on', $this->p->cf[ 'sharing' ][ 'show_on' ] );
@@ -109,7 +109,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersUpgrade' ) ) {
 				$options_keys[ 'wpssorrssb' ][ 20 ][ 'gp_on_' . $opt_suffix ] = '';
 			}
 
-			/**
+			/*
 			 * Rename show button from 'woo_short' to 'wc_short_desc'.
 			 */
 			foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $cm_id => $opt_pre ) {
@@ -123,12 +123,12 @@ if ( ! class_exists( 'WpssoRrssbFiltersUpgrade' ) ) {
 
 		public function filter_upgraded_options( $opts, $defs ) {
 
-			/**
+			/*
 			 * Get the current options version number for checks to follow.
 			 */
 			$prev_version = $this->p->opt->get_version( $opts, 'wpssorrssb' );	// Returns 'opt_version'.
 
-			/**
+			/*
 			 * Reload the defaults styles if older than WPSSO RRSSB v4.0.0 (options version 31).
 			 */
 			if ( $prev_version > 0 && $prev_version <= 31 ) {
@@ -145,7 +145,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersUpgrade' ) ) {
 
 				$this->p->notice->upd( __( 'The default responsive styles CSS has been reloaded and saved.', 'wpsso-rrssb' ) );
 
-				/**
+				/*
 				 * Update the combined and minified social stylesheet.
 				 */
 				WpssoRrssbSocial::update_sharing_css( $opts );

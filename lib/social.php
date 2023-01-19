@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2015-2023 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -19,7 +19,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 		private $share = array();	// Associative array of lib/share/ class objects.
 
-		/**
+		/*
 		 * Instantiated by WpssoRrssb->init_objects().
 		 */
 		public function __construct( &$plugin, &$addon ) {
@@ -245,7 +245,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			return $removed;
 		}
 
-		/**
+		/*
 		 * The WpssoRrssbSocial->show_sidebar() method passes $atts = array( 'container_each' => true ).
 		 */
 		public function get_buttons( $text = '', $type = 'content', $mod = true, $location = '', $atts = array() ) {
@@ -362,7 +362,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				return $text;
 			}
 
-			/**
+			/*
 			 * The $mod array argument is preferred but not required.
 			 *
 			 * $mod = true | false | post_id | $mod array
@@ -387,7 +387,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				}
 			}
 
-			/**
+			/*
 			 * Sort enabled sharing buttons by their preferred order.
 			 */
 			$sorted_ids = array();
@@ -503,7 +503,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			return $text;
 		}
 
-		/**
+		/*
 		 * Called by WpssoRrssbSocial->get_buttons().
 		 * Called by WpssoRrssbShortcodeSharing->do_shortcode().
 		 * Called by WpssoRrssbWidgetSharing->widget().
@@ -513,13 +513,13 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 		 */
 		public function get_html( $ids, $mod, $atts ) {
 
-			/**
+			/*
 			 * Basic attributes for all buttons.
 			 */
 			$atts[ 'use_post' ]   = isset( $atts[ 'use_post' ] ) ? $atts[ 'use_post' ] : true;
 			$atts[ 'add_page' ]   = isset( $atts[ 'add_page' ] ) ? $atts[ 'add_page' ] : true;
 
-			/**
+			/*
 			 * The $mod array argument is preferred but not required.
 			 *
 			 * $mod = true | false | post_id | $mod array
@@ -546,7 +546,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 					if ( method_exists( $this->share[ $id ], 'get_html' ) ) {	// Just in case.
 
-						/**
+						/*
 						 * Get the social sharing button UTM source name (ie. 'facebook').
 						 */
 						if ( ! empty( $this->p->cf[ 'opt' ][ 'cm_prefix' ][ $id ] ) ) {	// Skip if empty.
@@ -559,7 +559,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 							}
 						}
 
-						/**
+						/*
 						 * Backwards compatible filter to add custom tracking arguments.
 						 *
 						 * Note that an RRSSB shortcode attribute may already provide the sharing URL.
@@ -571,7 +571,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 							$atts[ 'sharing_url' ] = $this->maybe_force_prot( $atts[ 'sharing_url' ], $mod, $id );
 						}
 
-						/**
+						/*
 						 * Maybe shorten the sharing URL.
 						 *
 						 * We already have a complete and filtered sharing URL, so we can shorten the URL
@@ -579,22 +579,22 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 						 */
 						$atts[ 'sharing_short_url' ] = $this->p->util->shorten_url( $atts[ 'sharing_url' ], $mod );
 
-						/**
+						/*
 						 * Signal to encode values as URL query arguments.
 						 */
 						$atts[ 'rawurlencode' ] = true;
 
-						/**
+						/*
 						 * Do not terminate with a newline to avoid WordPress adding breaks and paragraphs.
 						 */
 						$buttons_part = $this->share[ $id ]->get_html( $mod, $atts );
 
-						/**
+						/*
 						 * Restore the common attributes array.
 						 */
 						$atts = $saved_atts;
 
-						/**
+						/*
 						 * Add the button HTML and maybe align the buttons vertically.
 						 */
 						if ( false !== strpos( $buttons_part, '<li' ) ) {
@@ -634,12 +634,12 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			return $buttons_html;
 		}
 
-		/**
+		/*
 		 * Maybe force a URL protocol to http or https.
 		 */
 		public function maybe_force_prot( $url, $mod, $id ) {
 
-			/**
+			/*
 			 * Use false instead of 'none' for the 'wpsso_rrssb_buttons_force_prot' filter.
 			 */
 			$prot = empty( $this->p->options[ 'buttons_force_prot' ] ) ||

@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2015-2023 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -98,7 +98,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 				$this->p->debug->mark();
 			}
 
-			/**
+			/*
 			 * Make sure the Pinterest Pin It image size is available.
 			 */
 			$this->p->options[ 'pin_add_img_html' ]          = 1;
@@ -114,7 +114,7 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 			return array_merge( $defs, self::$cf[ 'opt' ][ 'defaults' ] );
 		}
 
-		/**
+		/*
 		 * Pre-defined attributes:
 		 *
 		 *	'use_post'

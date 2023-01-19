@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2015-2023 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 		private $p;	// Wpsso class object.
 		private $a;	// WpssoRrssb class object.
 
-		/**
+		/*
 		 * Registered by Wpsso->register_widgets() and instantiated by WordPress.
 		 */
 		public function __construct() {
@@ -58,7 +58,7 @@ if ( ! class_exists( 'WpssoRrssbWidgetSharing' ) && class_exists( 'WP_Widget' ) 
 
 			$mod = $this->p->page->get_mod( $atts[ 'use_post' ] );
 
-			/**
+			/*
 			 * Sort enabled sharing buttons by their preferred order.
 			 */
 			$sorted_ids = array();

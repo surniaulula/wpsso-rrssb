@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2015-2023 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -130,7 +130,7 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 			return array_merge( $defs, self::$cf[ 'opt' ][ 'defaults' ] );
 		}
 
-		/**
+		/*
 		 * Pre-defined attributes:
 		 *
 		 *	'use_post'
@@ -170,7 +170,7 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 				}
 			}
 
-			/**
+			/*
 			 * Remove empty query arguments from the twitter button html (prevents appending an empty 'via' word to the tweet).
 			 */
 			$twitter_button_html = $this->p->options[ 'twitter_rrssb_html' ];

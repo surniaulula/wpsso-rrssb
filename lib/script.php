@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2015-2023 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -21,7 +21,7 @@ if ( ! class_exists( 'WpssoRrssbScript' ) ) {
 		private $file_ext  = 'min.js';
 		private $version   = '';
 
-		/**
+		/*
 		 * Instantiated by WpssoRrssb->init_objects().
 		 */
 		public function __construct( &$plugin, &$addon ) {
