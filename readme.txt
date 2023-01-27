@@ -100,7 +100,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 10.5.0-dev.1 (2023/01/27)**
+**Version 10.5.0-rc.1 (2023/01/27)**
 
 * **New Features**
 	* None.
@@ -384,7 +384,7 @@ Maintenance release.
 
 == Upgrade Notice ==
 
-= 10.5.0-dev.1 =
+= 10.5.0-rc.1 =
 
 (2023/01/27) Updated the condition to force the "Add Hidden Image for Pinterest" option only when the Pinterest button is enabled for the content.
 
