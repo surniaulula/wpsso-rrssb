@@ -32,7 +32,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTwitter' ) ) {
 
 		public function filter_rrssb_share_twitter_rows( $table_rows, $form, $network, $submenu_obj ) {
 
-			$utm_source_label = sprintf( _x( 'UTM Source for %s', 'option label', 'wpsso-rrssb' ), 'Twitter' );
+			$urm_src_label = sprintf( _x( 'UTM Source for %s', 'option label', 'wpsso-rrssb' ), 'Twitter' );
 
 			$table_rows[] = '' .
 				$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
@@ -43,7 +43,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTwitter' ) ) {
 				'<td>' . $form->get_select( 'twitter_button_order', range( 1, count( $submenu_obj->share ) ) ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( $in_view = 'basic', 'twitter_utm_source' ) .
-				$form->get_th_html( $utm_source_label ) .
+				$form->get_th_html( $urm_src_label ) .
 				'<td>' . $form->get_input( 'twitter_utm_source' ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( $in_view = 'basic', 'twitter_caption' ) .

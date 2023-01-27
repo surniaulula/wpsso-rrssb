@@ -32,9 +32,10 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 
 		public function filter_rrssb_share_pinterest_rows( $table_rows, $form, $network, $submenu_obj ) {
 
-			$option_label = _x( 'Add Hidden Image for Pinterest', 'option label', 'wpsso' );
-			$option_link  = $this->p->util->get_admin_url( 'general#sucom-tabset_pub-tab_pinterest', $option_label );
-			$utm_source_label = sprintf( _x( 'UTM Source for %s', 'option label', 'wpsso-rrssb' ), 'Pinterest' );
+			// translators: Please ignore - translation uses a different text domain.
+			$option_label  = _x( 'Add Hidden Image for Pinterest', 'option label', 'wpsso' );
+			$option_link   = $this->p->util->get_admin_url( 'general#sucom-tabset_pub-tab_pinterest', $option_label );
+			$utm_src_label = sprintf( _x( 'UTM Source for %s', 'option label', 'wpsso-rrssb' ), 'Pinterest' );
 
 			$table_rows[] = '' .
 				$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
@@ -47,7 +48,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 				'<td>' . $form->get_select( 'pin_button_order', range( 1, count( $submenu_obj->share ) ) ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( $in_view = 'basic', 'pin_utm_source' ) .
-				$form->get_th_html( $utm_source_label ) .
+				$form->get_th_html( $utm_src_label ) .
 				'<td>' . $form->get_input( 'pin_utm_source' ) . '</td>';
 
 			$table_rows[] = $form->get_tr_hide( $in_view = 'basic', 'pin_caption_max_len' ) .

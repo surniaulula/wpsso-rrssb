@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"10.5.0-dev.1\n"
+"10.5.0-rc.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -288,7 +288,7 @@ msgstr ""
 
 #: lib/filters-messages.php:233 lib/share/email.php:38
 #: lib/share/facebook.php:38 lib/share/linkedin.php:38
-#: lib/share/pinterest.php:40 lib/share/pocket.php:38 lib/share/reddit.php:38
+#: lib/share/pinterest.php:41 lib/share/pocket.php:38 lib/share/reddit.php:38
 #: lib/share/tumblr.php:38 lib/share/twitter.php:38 lib/share/vk.php:38
 #: lib/share/whatsapp.php:38
 msgctxt "option label"
@@ -438,7 +438,7 @@ msgid "WooCommerce"
 msgstr ""
 
 #: lib/share/email.php:35 lib/share/facebook.php:35 lib/share/linkedin.php:35
-#: lib/share/pinterest.php:37 lib/share/pocket.php:35 lib/share/reddit.php:35
+#: lib/share/pinterest.php:38 lib/share/pocket.php:35 lib/share/reddit.php:35
 #: lib/share/tumblr.php:35 lib/share/twitter.php:35 lib/share/vk.php:35
 #: lib/share/whatsapp.php:35
 msgctxt "option label"
@@ -446,7 +446,7 @@ msgid "UTM Source for %s"
 msgstr ""
 
 #: lib/share/email.php:42 lib/share/facebook.php:42 lib/share/linkedin.php:42
-#: lib/share/pinterest.php:46 lib/share/pocket.php:42 lib/share/reddit.php:42
+#: lib/share/pinterest.php:47 lib/share/pocket.php:42 lib/share/reddit.php:42
 #: lib/share/tumblr.php:42 lib/share/twitter.php:42 lib/share/vk.php:42
 #: lib/share/whatsapp.php:42
 msgctxt "option label"
@@ -458,23 +458,24 @@ msgctxt "option label"
 msgid "Email Message Length"
 msgstr ""
 
-#: lib/share/email.php:52 lib/share/linkedin.php:52 lib/share/pinterest.php:56
+#: lib/share/email.php:52 lib/share/linkedin.php:52 lib/share/pinterest.php:57
 #: lib/share/reddit.php:52 lib/share/tumblr.php:52 lib/share/twitter.php:56
 msgctxt "option comment"
 msgid "characters or less"
 msgstr ""
 
-#: lib/share/linkedin.php:50 lib/share/pinterest.php:54 lib/share/reddit.php:50
+#: lib/share/linkedin.php:50 lib/share/pinterest.php:55 lib/share/reddit.php:50
 msgctxt "option label"
 msgid "Caption Text Length"
 msgstr ""
 
-#: lib/share/pinterest.php:35
+#. translators: Please ignore - translation uses a different text domain.
+#: lib/share/pinterest.php:36
 msgctxt "option label"
 msgid "Add Hidden Image for Pinterest"
 msgstr ""
 
-#: lib/share/pinterest.php:42
+#: lib/share/pinterest.php:43
 msgid ""
 "Note that enabling the Pinterest button for the content also enables the %s "
 "option."

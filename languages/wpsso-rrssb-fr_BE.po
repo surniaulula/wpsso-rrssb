@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 10.4.0\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 10.5.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-01-18 11:58-0800\n"
+"PO-Revision-Date: 2023-01-27 06:43-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -13,11 +13,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.2.2\n"
 
-#: gettext/gettext-lib-abstract-com.php:5 lib/abstract/com/add-on.php:206
+#: gettext/gettext-lib-abstract-com.php:5 lib/abstract/com/add-on.php:209
 msgid "The %1$s add-on requires the %2$s plugin."
 msgstr "L'ajout %1$s requiert l'extension %2$s."
 
-#: gettext/gettext-lib-abstract-com.php:6 lib/abstract/com/add-on.php:220
+#: gettext/gettext-lib-abstract-com.php:6 lib/abstract/com/add-on.php:223
 msgid "The %1$s add-on requires %2$s version %3$s or newer (version %4$s is currently installed)."
 msgstr "L'ajout %1$s nécessite %2$s version %3$s ou plus récente (la version %4$s est installée actuellement)."
 
@@ -247,8 +247,8 @@ msgid "The <em>%s</em> option of each social sharing button must be enabled as w
 msgstr "L'option <em>%s</em> de chaque bouton de partage social doit également être activée pour que ce bouton apparaisse à cet endroit dans le texte."
 
 #: lib/filters-messages.php:233 lib/share/email.php:38
-#: lib/share/facebook.php:37 lib/share/linkedin.php:38
-#: lib/share/pinterest.php:38 lib/share/pocket.php:38 lib/share/reddit.php:38
+#: lib/share/facebook.php:38 lib/share/linkedin.php:38
+#: lib/share/pinterest.php:41 lib/share/pocket.php:38 lib/share/reddit.php:38
 #: lib/share/tumblr.php:38 lib/share/twitter.php:38 lib/share/vk.php:38
 #: lib/share/whatsapp.php:38
 msgctxt "option label"
@@ -375,16 +375,16 @@ msgctxt "option value"
 msgid "WooCommerce"
 msgstr "WooCommerce"
 
-#: lib/share/email.php:35 lib/share/facebook.php:34 lib/share/linkedin.php:35
-#: lib/share/pinterest.php:35 lib/share/pocket.php:35 lib/share/reddit.php:35
+#: lib/share/email.php:35 lib/share/facebook.php:35 lib/share/linkedin.php:35
+#: lib/share/pinterest.php:38 lib/share/pocket.php:35 lib/share/reddit.php:35
 #: lib/share/tumblr.php:35 lib/share/twitter.php:35 lib/share/vk.php:35
 #: lib/share/whatsapp.php:35
 msgctxt "option label"
 msgid "UTM Source for %s"
 msgstr "Source UTM pour %s"
 
-#: lib/share/email.php:42 lib/share/facebook.php:41 lib/share/linkedin.php:42
-#: lib/share/pinterest.php:42 lib/share/pocket.php:42 lib/share/reddit.php:42
+#: lib/share/email.php:42 lib/share/facebook.php:42 lib/share/linkedin.php:42
+#: lib/share/pinterest.php:47 lib/share/pocket.php:42 lib/share/reddit.php:42
 #: lib/share/tumblr.php:42 lib/share/twitter.php:42 lib/share/vk.php:42
 #: lib/share/whatsapp.php:42
 msgctxt "option label"
@@ -396,16 +396,26 @@ msgctxt "option label"
 msgid "Email Message Length"
 msgstr "Longueur du message couriel"
 
-#: lib/share/email.php:52 lib/share/linkedin.php:52 lib/share/pinterest.php:52
+#: lib/share/email.php:52 lib/share/linkedin.php:52 lib/share/pinterest.php:57
 #: lib/share/reddit.php:52 lib/share/tumblr.php:52 lib/share/twitter.php:56
 msgctxt "option comment"
 msgid "characters or less"
 msgstr "caractères ou moins"
 
-#: lib/share/linkedin.php:50 lib/share/pinterest.php:50 lib/share/reddit.php:50
+#: lib/share/linkedin.php:50 lib/share/pinterest.php:55 lib/share/reddit.php:50
 msgctxt "option label"
 msgid "Caption Text Length"
 msgstr "Longueur du texte légende"
+
+#. translators: Please ignore - translation uses a different text domain.
+#: lib/share/pinterest.php:36
+msgctxt "option label"
+msgid "Add Hidden Image for Pinterest"
+msgstr "Ajouter image masquée pour Pinterest"
+
+#: lib/share/pinterest.php:43
+msgid "Note that enabling the Pinterest button for the content also enables the %s option."
+msgstr "Notez que l'activation du bouton Pinterest pour le contenu active également l'option %s."
 
 #: lib/share/tumblr.php:50
 msgctxt "option label"
