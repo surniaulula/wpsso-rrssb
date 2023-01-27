@@ -100,6 +100,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 10.5.0-dev.1 (2023/01/27)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Updated the condition to force the "Add Hidden Image for Pinterest" option only when the Pinterest button is enabled for the content.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.4.
+	* WPSSO Core v14.7.0.
+
 **Version 10.4.1 (2023/01/26)**
 
 * **New Features**
@@ -368,6 +383,10 @@ Maintenance release.
 	* WPSSO Core v9.1.0.
 
 == Upgrade Notice ==
+
+= 10.5.0-dev.1 =
+
+(2023/01/27) Updated the condition to force the "Add Hidden Image for Pinterest" option only when the Pinterest button is enabled for the content.
 
 = 10.4.1 =
 
