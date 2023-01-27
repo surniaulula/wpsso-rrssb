@@ -32,11 +32,15 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 
 		public function filter_rrssb_share_pinterest_rows( $table_rows, $form, $network, $submenu_obj ) {
 
+			$option_label = _x( 'Add Hidden Image for Pinterest', 'option label', 'wpsso' );
+			$option_link  = $this->p->util->get_admin_url( 'general#sucom-tabset_pub-tab_pinterest', $option_label );
 			$utm_source_label = sprintf( _x( 'UTM Source for %s', 'option label', 'wpsso-rrssb' ), 'Pinterest' );
 
 			$table_rows[] = '' .
 				$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
-				'<td>' . $submenu_obj->show_on_checkboxes( 'pin' ) . '</td>';
+				'<td>' . $submenu_obj->show_on_checkboxes( 'pin' ) . ' ' .
+				'<p class="status-msg left">' . sprintf( __( 'Note that enabling the Pinterest button for the content also enables the %s option.',
+					'wpsso-rrssb' ), $option_link ) . '</p></td>';
 
 			$table_rows[] = '' .
 				$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) .
@@ -99,10 +103,13 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 			}
 
 			/*
-			 * Make sure the Pinterest Pin It image size is available.
+			 * Make sure the Pinterest Pin It content image is available.
 			 */
-			$this->p->options[ 'pin_add_img_html' ]          = 1;
-			$this->p->options[ 'pin_add_img_html:disabled' ] = true;
+			if ( ! empty( $this->p->options[ 'pin_on_content' ] ) ) {
+
+				$this->p->options[ 'pin_add_img_html' ]          = 1;
+				$this->p->options[ 'pin_add_img_html:disabled' ] = true;
+			}
 
 			$this->p->util->add_plugin_filters( $this, array(
 				'get_defaults' => 1,
