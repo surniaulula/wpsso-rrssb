@@ -102,7 +102,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 10.6.0-dev.1 (TBD)**
+**Version 10.6.0-dev.2 (2023/02/17)**
 
 * **New Features**
 	* None.
@@ -115,7 +115,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.4.
-	* WPSSO Core v15.4.0-dev.1.
+	* WPSSO Core v15.4.0-dev.2.
 
 **Version 10.5.0 (2023/01/27)**
 
@@ -401,9 +401,9 @@ Maintenance release.
 
 == Upgrade Notice ==
 
-= 10.6.0-dev.1 =
+= 10.6.0-dev.2 =
 
-(TBD) Renamed the 'wpssorrssb_status_std_features' filter to 'wpssorrssb_features_status'.
+(2023/02/17) Renamed the 'wpssorrssb_status_std_features' filter to 'wpssorrssb_features_status'.
 
 = 10.5.0 =
 
