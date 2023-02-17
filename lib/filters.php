@@ -61,7 +61,7 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 				$this->msgs = new WpssoRrssbFiltersMessages( $plugin, $addon );
 
 				$this->p->util->add_plugin_filters( $this, array(
-					'status_std_features' => 3,
+					'features_status' => 3,
 				), $prio = 10, $ext = 'wpssorrssb' );	// Hooks the 'wpssorrssb' filters.
 			}
 		}
@@ -90,9 +90,9 @@ if ( ! class_exists( 'WpssoRrssbFilters' ) ) {
 		}
 
 		/*
-		 * Filter for 'wpssorrssb_status_std_features'.
+		 * Filter for 'wpssorrssb_features_status'.
 		 */
-		public function filter_status_std_features( $features, $ext, $info ) {
+		public function filter_features_status( $features, $ext, $info ) {
 
 			if ( ! empty( $info[ 'lib' ][ 'submenu' ][ 'rrssb-styles' ] ) ) {
 
