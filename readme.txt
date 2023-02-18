@@ -102,7 +102,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 10.6.0-dev.2 (2023/02/17)**
+**Version 10.6.0-dev.2 (2023/02/18)**
 
 * **New Features**
 	* None.
@@ -403,7 +403,7 @@ Maintenance release.
 
 = 10.6.0-dev.2 =
 
-(2023/02/17) Renamed the 'wpssorrssb_status_std_features' filter to 'wpssorrssb_features_status'.
+(2023/02/18) Renamed the 'wpssorrssb_status_std_features' filter to 'wpssorrssb_features_status'.
 
 = 10.5.0 =
 
