@@ -12,7 +12,7 @@ Requires Plugins: wpsso
 Requires PHP: 7.2
 Requires At Least: 5.5
 Tested Up To: 6.2.0
-WC Tested Up To: 7.5.1
+WC Tested Up To: 7.6.0
 Stable Tag: 10.6.0
 
 Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, templates, and editor.
