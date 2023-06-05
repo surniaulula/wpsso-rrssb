@@ -129,7 +129,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* None.
 * **Requires At Least**
 	* PHP v7.2.
-	* WordPress v5.4.
+	* WordPress v5.5.
 	* WPSSO Core v14.7.0.
 
 **Version 10.4.1 (2023/01/26)**
@@ -138,14 +138,14 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* None.
 * **Improvements**
 	* Added compatibility declaration for WooCommerce HPOS.
-	* Updated the minimum WordPress version from v5.2 to v5.4.
+	* Updated the minimum WordPress version from v5.2 to v5.5.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
 	* Updated the `WpssoAbstractAddOn` library class.
 * **Requires At Least**
 	* PHP v7.2.
-	* WordPress v5.4.
+	* WordPress v5.5.
 	* WPSSO Core v14.7.0.
 
 **Version 10.4.0 (2023/01/20)**
@@ -225,180 +225,6 @@ Removed support for bbPress, BuddyPress, and BuddyBlog.
 	* WordPress v5.2.
 	* WPSSO Core v12.0.0.
 
-**Version 9.4.1 (2022/03/07)**
-
-Maintenance release.
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.2.
-	* WPSSO Core v11.5.0.
-
-**Version 9.4.0 (2022/02/26)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Updated the `WpssoOpenGraph->get_media_info()` method to `WpssoMedia->get_media_info()` for WPSSO Core v11.2.0.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.2.
-	* WPSSO Core v11.0.0.
-
-**Version 9.3.0 (2022/02/17)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Updated the `WpssoPage` class `get_title()`, `get_description()`, and `get_caption()` method arguments for WPSSO Core v11.0.0.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.2.
-	* WPSSO Core v11.0.0.
-
-**Version 9.2.0 (2022/02/10)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* Refactored all share button `get_html()` methods to optimize the `WpssoUtilInline->replace_variables()` arguments.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.2.
-	* WPSSO Core v10.3.0.
-
-**Version 9.1.0 (2022/02/05)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Removed the `$read_cache` argument from `WpssoPage` methods for WPSSO Core v10.1.0.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.2.
-	* WPSSO Core v10.1.0.
-
-**Version 9.0.0 (2022/02/02)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Moved the buttons Call To Action option text from the add-on config array to a default translatable string.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Replaced call to `WpssoUtil->add_post_type_names()` by `WpssoOptions->set_default_text()`.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.2.
-	* WPSSO Core v10.0.0.
-
-**Version 8.3.0 (2022/01/19)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Renamed the ".wpsso-rrssb-buttons-cta" CSS class to ".rrssb-buttons-cta".
-	* Renamed the Document SSO &gt; Share Buttons tab to Edit Share Buttons.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Renamed the lib/abstracts/ folder to lib/abstract/.
-	* Renamed the `SucomAddOn` class to `SucomAbstractAddOn`.
-	* Renamed the `WpssoAddOn` class to `WpssoAbstractAddOn`.
-	* Renamed the `WpssoWpMeta` class to `WpssoAbstractWpMeta`.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.2.
-	* WPSSO Core v9.14.0.
-
-**Version 8.2.0 (2021/12/16)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Added a 'wpsso_upgraded_options' filter hook to reload the default CSS for old versions.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.2.
-	* WPSSO Core v9.12.0.
-
-**Version 8.1.1 (2021/11/16)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Refactored the `SucomAddOn->get_missing_requirements()` method.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.2.
-	* WPSSO Core v9.8.0.
-
-**Version 8.1.0 (2021/11/02)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Added support for the new `WpssoUtilInline` class methods in WPSSO Core v9.5.0.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.0.
-	* WordPress v5.2.
-	* WPSSO Core v9.5.0.
-
-**Version 8.0.0 (2021/10/09)**
-
-* **New Features**
-	* Added a new "Position in WC Add to Cart" option.
-	* Added a new "WC Add to Cart" option for each social sharing button (enabled by default).
-	* Added a new "WooCommerce" tab in the SSO &gt; Responsive Styles settings page.
-	* Removed the "Woo Short" tab in the SSO &gt; Responsive Styles settings page.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.0.
-	* WordPress v5.2.
-	* WPSSO Core v9.1.0.
-
 == Upgrade Notice ==
 
 = 10.6.0 =
@@ -411,7 +237,7 @@ Maintenance release.
 
 = 10.4.1 =
 
-(2023/01/26) Added compatibility declaration for WooCommerce HPOS. Updated the minimum WordPress version from v5.2 to v5.4.
+(2023/01/26) Added compatibility declaration for WooCommerce HPOS. Updated the minimum WordPress version from v5.2 to v5.5.
 
 = 10.4.0 =
 
@@ -432,48 +258,4 @@ Maintenance release.
 = 10.0.0 =
 
 (2022/03/26) Removed support for bbPress, BuddyPress, and BuddyBlog.
-
-= 9.4.1 =
-
-(2022/03/07) Maintenance release.
-
-= 9.4.0 =
-
-(2022/02/26) Updated the `WpssoOpenGraph->get_media_info()` method to `WpssoMedia->get_media_info()` for WPSSO Core v11.2.0.
-
-= 9.3.0 =
-
-(2022/02/17) Updated `WpssoPage` class method arguments for WPSSO Core v11.0.0.
-
-= 9.2.0 =
-
-(2022/02/10) Refactored all share button `get_html()` methods.
-
-= 9.1.0 =
-
-(2022/02/05) Removed the `$read_cache` argument from `WpssoPage` methods for WPSSO Core v10.1.0.
-
-= 9.0.0 =
-
-(2022/02/02) Moved the buttons Call To Action option text from the add-on config array to a default translatable string.
-
-= 8.3.0 =
-
-(2022/01/19) Renamed the ".wpsso-rrssb-buttons-cta" CSS class to ".rrssb-buttons-cta". Renamed the Document SSO &gt; Share Buttons tab. Renamed the lib/abstracts/ folder and its classes.
-
-= 8.2.0 =
-
-(2021/12/16) Added a 'wpsso_upgraded_options' filter hook to reload the default CSS for old versions.
-
-= 8.1.1 =
-
-(2021/11/16) Refactored the `SucomAddOn->get_missing_requirements()` method.
-
-= 8.1.0 =
-
-(2021/11/02) Added support for the new `WpssoUtilInline` class methods in WPSSO Core v9.5.0.
-
-= 8.0.0 =
-
-(2021/10/09) Added a new "WC Add to Cart" option for each social sharing button (enabled by default).
 
