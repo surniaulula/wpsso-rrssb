@@ -113,7 +113,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Developer Notes**
 	* Renamed the 'wpssorrssb_status_std_features' filter to 'wpssorrssb_features_status'.
 * **Requires At Least**
-	* PHP v7.2.5.
+	* PHP v7.2.34.
 	* WordPress v5.5.
 	* WPSSO Core v15.4.0.
 
