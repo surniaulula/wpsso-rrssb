@@ -59,7 +59,7 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 				}
 			';
 
-			 wp_add_inline_style( 'sucom-settings-table', $settings_table_css );   // Since WP v3.3.0.
+			 wp_add_inline_style( 'sucom-settings-table', $settings_table_css );
 		}
 
 		public function enqueue_styles() {

@@ -34,7 +34,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			$this->set_objects();
 
-			add_action( 'wp_body_open', array( $this, 'wp_body_open' ) );	// Since WP v5.2.
+			add_action( 'wp_body_open', array( $this, 'wp_body_open' ) );
 
 			if ( $this->have_buttons_for_type( 'content' ) ) {
 
