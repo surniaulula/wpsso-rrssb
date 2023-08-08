@@ -112,6 +112,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* None.
 * **Developer Notes**
 	* Renamed the 'save_setting_options' filter hook to 'save_settings_options' for WPSSO Core v15.19.0.
+	* Renamed the 'load_setting_page_*' filter hooks to 'load_settings_page_*' for WPSSO Core v15.19.0.
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.5.
