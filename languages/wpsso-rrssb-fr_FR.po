@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 10.6.0\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 10.7.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-05-26 04:13-0700\n"
+"PO-Revision-Date: 2023-08-08 08:34-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: gettext/gettext-lib-abstract-com.php:5 lib/abstract/com/add-on.php:209
 msgid "The %1$s add-on requires the %2$s plugin."
@@ -326,12 +326,12 @@ msgstr "Identifie une campagne stratégique (par exemple, lancement de produit, 
 msgid "Example CSS:"
 msgstr "Exemple CSS:"
 
-#: lib/filters-options.php:67
+#: lib/filters-options.php:72
 msgctxt "option value"
 msgid "Find this content useful? Share it with your friends!"
 msgstr "Trouvez ce contenu utile? Partagez-le avec vos amis!"
 
-#: lib/filters-options.php:103
+#: lib/filters-options.php:108
 msgid "Failed to open the css file %s for reading."
 msgstr "Impossible d'ouvrir le fichier css %s pour lecture."
 
