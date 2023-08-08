@@ -102,7 +102,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 10.7.0-dev.1 (TBD)**
+**Version 10.7.0-dev.1 (2023/08/08)**
 
 * **New Features**
 	* None.
@@ -111,8 +111,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Renamed the 'save_setting_options' filter hook to 'save_settings_options' for WPSSO Core v15.19.0.
-	* Renamed the 'load_setting_page_*' filter hooks to 'load_settings_page_*' for WPSSO Core v15.19.0.
+	* Updated filter hook names for WPSSO Core v15.19.0:
+		* Renamed the 'save_setting_options' filter hook to 'save_settings_options'.
+		* Renamed the 'load_setting_page_*' filter hooks to 'load_settings_page_*'.
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.5.
@@ -245,7 +246,7 @@ Removed support for bbPress, BuddyPress, and BuddyBlog.
 
 = 10.7.0-dev.1 =
 
-(TBD) Renamed the 'save_setting_options' filter hook to 'save_settings_options' for WPSSO Core v15.19.0.
+(2023/08/08) Updated filter hook names for WPSSO Core v15.19.0.
 
 = 10.6.0 =
 
