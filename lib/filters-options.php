@@ -26,7 +26,6 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 			$this->a =& $addon;
 
 			$this->p->util->add_plugin_filters( $this, array(
-				'save_setting_options'         => 3,
 				'save_settings_options'        => 3,
 				'add_custom_post_type_options' => 1,
 				'get_text_default_options_key' => 2,
@@ -34,17 +33,6 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 				'get_md_defaults'              => 1,
 				'option_type'                  => 2,
 			) );
-		}
-
-		/*
-		 * Deprecated since WPSSO Core v15.19.0.
-		 */
-		public function filter_save_setting_options( array $opts, $network, $upgrading ) {
-
-			_deprecated_function( __METHOD__ . '()', '2023/08/07',
-				$replacement = 'WpssoRrssbFiltersOptions::filter_save_settings_options()' );	// Deprecation message.
-
-			return $this->filter_save_settings_options( $opts, $network, $upgrading );
 		}
 
 		/*

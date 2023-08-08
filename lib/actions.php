@@ -41,8 +41,8 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 			if ( is_admin() ) {
 
 				$this->p->util->add_plugin_actions( $this, array(
-					'load_setting_page_reload_default_rrssb_buttons' => 4,
-					'load_setting_page_reload_default_rrssb_styles'  => 4,
+					'load_settings_page_reload_default_rrssb_buttons' => 4,
+					'load_settings_page_reload_default_rrssb_styles'  => 4,
 				) );
 			}
 		}
@@ -79,7 +79,7 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 			$this->a->social->add_buttons_filter( $filter_name );
 		}
 
-		public function action_load_setting_page_reload_default_rrssb_buttons( $pagehook, $menu_id, $menu_name, $menu_lib ) {
+		public function action_load_settings_page_reload_default_rrssb_buttons( $pagehook, $menu_id, $menu_name, $menu_lib ) {
 
 			foreach ( $this->a->social->get_share_objets() as $id => $share_obj ) {
 
@@ -94,7 +94,7 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 			$this->p->notice->upd( __( 'The default responsive button options have been reloaded and saved.', 'wpsso-rrssb' ) );
 		}
 
-		public function action_load_setting_page_reload_default_rrssb_styles( $pagehook, $menu_id, $menu_name, $menu_lib ) {
+		public function action_load_settings_page_reload_default_rrssb_styles( $pagehook, $menu_id, $menu_name, $menu_lib ) {
 
 			$defs = $this->p->opt->get_defaults();
 
