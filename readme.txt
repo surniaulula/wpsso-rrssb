@@ -102,6 +102,22 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 10.7.0-dev.1 (TBD)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Added support for the 'save_settings_options' filter in WPSSO Core v15.19.0.
+	* Deprecated the 'save_setting_options' filter hook.
+* **Requires At Least**
+	* PHP v7.2.34.
+	* WordPress v5.5.
+	* WPSSO Core v15.19.0-dev.1.
+
 **Version 10.6.0 (2023/02/20)**
 
 * **New Features**
@@ -226,6 +242,10 @@ Removed support for bbPress, BuddyPress, and BuddyBlog.
 	* WPSSO Core v12.0.0.
 
 == Upgrade Notice ==
+
+= 10.7.0-dev.1 =
+
+(TBD) Added support for the 'save_settings_options' filter in WPSSO Core v15.19.0.
 
 = 10.6.0 =
 
