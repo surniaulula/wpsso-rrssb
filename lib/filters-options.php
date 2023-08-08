@@ -27,6 +27,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 
 			$this->p->util->add_plugin_filters( $this, array(
 				'save_setting_options'         => 3,
+				'save_settings_options'        => 3,
 				'add_custom_post_type_options' => 1,
 				'get_text_default_options_key' => 2,
 				'get_defaults'                 => 1,
@@ -36,9 +37,25 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 		}
 
 		/*
-		 * $network is true if saving multisite network settings.
+		 * Deprecated since WPSSO Core v15.19.0.
 		 */
 		public function filter_save_setting_options( array $opts, $network, $upgrading ) {
+
+			_deprecated_function( __METHOD__ . '()', '2023/08/07',
+				$replacement = 'WpssoRrssbFiltersOptions::filter_save_settings_options()' );	// Deprecation message.
+
+			return $this->filter_save_settings_options( $opts, $network, $upgrading );
+		}
+
+		/*
+		 * The 'wpsso_save_settings_options' filter is applied by WpssoOptions->save_options(),
+		 * WpssoAdmin->settings_sanitation(), and WpssoAdmin->save_site_settings().
+		 *
+		 * $network is true if saving multisite network settings.
+		 *
+		 * $upgrading will be true when the options version, not the plugin version, is being upgraded.
+		 */
+		public function filter_save_settings_options( array $opts, $network, $upgrading ) {
 
 			if ( $network ) {
 
