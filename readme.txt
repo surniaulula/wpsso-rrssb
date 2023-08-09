@@ -102,7 +102,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 10.7.0-rc.1 (2023/08/09)**
+**Version 10.7.0 (2023/08/09)**
 
 * **New Features**
 	* None.
@@ -117,7 +117,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.5.
-	* WPSSO Core v15.19.0-rc.1.
+	* WPSSO Core v15.19.0.
 
 **Version 10.6.0 (2023/02/20)**
 
@@ -244,7 +244,7 @@ Removed support for bbPress, BuddyPress, and BuddyBlog.
 
 == Upgrade Notice ==
 
-= 10.7.0-rc.1 =
+= 10.7.0 =
 
 (2023/08/09) Updated filter hook names for WPSSO Core v15.19.0.
 
