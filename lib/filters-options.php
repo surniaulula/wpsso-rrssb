@@ -79,7 +79,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 
 			$this->p->opt->set_default_text( $defs, 'buttons_cta' );
 
-			$rel_url_path = parse_url( WPSSORRSSB_URLPATH, PHP_URL_PATH );	// Returns a relative URL.
+			$rel_url_path = wp_parse_url( WPSSORRSSB_URLPATH, PHP_URL_PATH );	// Returns a relative URL.
 
 			$styles = apply_filters( 'wpsso_rrssb_styles', $this->p->cf[ 'sharing' ][ 'rrssb_styles' ] );
 
