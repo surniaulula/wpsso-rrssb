@@ -46,7 +46,7 @@ Include responsive social sharing buttons in many locations:
 
 Provides UTM medium, UTM source, and UTM campaign values for each social sharing button.
 
-A built-in stylesheet editor allows you to easily fine-tune the CSS for each social sharing button location (content, excerpt, shortcode, widget, etc.).
+A stylesheet editor allows you to easily fine-tune the CSS for each social sharing button location (content, excerpt, shortcode, widget, etc.).
 
 Includes CSS and JS libraries provided by the <a href="https://github.com/kni-labs/rrssb">RRSSB project on GitHub</a>.
 
