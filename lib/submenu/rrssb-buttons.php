@@ -30,14 +30,61 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			$this->menu_lib  = $lib;
 			$this->menu_ext  = $ext;
 
-			$this->set_objects();
-
-			$this->p->util->add_plugin_filters( $this, array(
-				'form_button_rows' => 2,	// Form buttons for all settings pages.
-			) );
+			$this->menu_metaboxes = array(
+				'general' => _x( 'Social Sharing Buttons', 'metabox title', 'wpsso-rrssb' ),
+			);
 		}
 
-		private function set_objects() {
+		protected function add_plugin_hooks() {
+
+			$this->p->util->add_plugin_filters( $this, array( 'form_button_rows' => 2 ) );
+		}
+
+		public function filter_form_button_rows( $form_button_rows, $menu_id ) {
+
+			switch ( $menu_id ) {
+
+				case 'tools':
+
+					$form_button_rows[ 2 ][ 'reload_default_rrssb_buttons' ] = _x( 'Reload Default Responsive Buttons', 'submit button', 'wpsso-rrssb' );
+
+					break;
+			}
+
+			return $form_button_rows;
+		}
+
+		protected function add_meta_boxes( $callback_args = array() ) {
+
+			parent::add_meta_boxes( $callback_args );
+
+			$this->set_share_objects();
+
+			$rrssb =& WpssoRrssb::get_instance();
+
+			$share_ids = $rrssb->social->get_share_ids( $this->share );
+
+			foreach ( $share_ids as $metabox_id => $metabox_title ) {
+
+				$metabox_screen  = $this->pagehook;
+				$metabox_context = 'normal';
+				$metabox_prio    = 'default';
+				$callback_args   = array(	// Second argument passed to the callback function / method.
+					'page_id'       => $this->menu_id,
+					'metabox_id'    => $metabox_id,
+					'metabox_title' => $metabox_title,
+				);
+
+				add_meta_box( $this->pagehook . '_' . $metabox_id, $metabox_title,
+					array( $this, 'show_metabox_rrssb_share' ), $metabox_screen,
+						$metabox_context, $metabox_prio, $callback_args );
+
+				add_filter( 'postbox_classes_' . $this->pagehook . '_' . $this->pagehook . '_' . $metabox_id,
+					array( $this, 'add_class_postbox_rrssb_share' ) );
+			}
+		}
+
+		private function set_share_objects() {
 
 			foreach ( $this->p->cf[ 'plugin' ][ 'wpssorrssb' ][ 'lib' ][ 'share' ] as $id => $name ) {
 
@@ -45,7 +92,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 
 				if ( false !== $classname && class_exists( $classname ) ) {
 
-					$this->share[ $id ] = new $classname( $this->p );
+					$this->share[ $id ] = new $classname( $this->p, $this );
 
 					if ( $this->p->debug->enabled ) {
 
@@ -55,68 +102,9 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			}
 		}
 
-		public function filter_form_button_rows( $form_button_rows, $menu_id ) {
+		public function show_metabox_rrssb_share( $obj, $mb ) {
 
-			$row_num = null;
-
-			switch ( $menu_id ) {
-
-				case 'tools':
-
-					$row_num = 2;
-
-					break;
-			}
-
-			if ( null !== $row_num ) {
-
-				$form_button_rows[ $row_num ][ 'reload_default_rrssb_buttons' ] = _x( 'Reload Default Responsive Buttons',
-					'submit button', 'wpsso-rrssb' );
-			}
-
-			return $form_button_rows;
-		}
-
-		/*
-		 * Called by the extended WpssoAdmin class.
-		 */
-		protected function add_meta_boxes() {
-
-			$rrssb =& WpssoRrssb::get_instance();
-
-			$metabox_id      = 'general';
-			$metabox_title   = _x( 'Social Sharing Buttons', 'metabox title', 'wpsso-rrssb' );
-			$metabox_screen  = $this->pagehook;
-			$metabox_context = 'normal';
-			$metabox_prio    = 'default';
-			$callback_args   = array(	// Second argument passed to the callback function / method.
-				'page_id'    => $this->menu_id,
-				'metabox_id' => $metabox_id,
-			);
-
-			add_meta_box( $this->pagehook . '_' . $metabox_id, $metabox_title,
-				array( $this, 'show_metabox_table' ), $metabox_screen,
-					$metabox_context, $metabox_prio, $callback_args );
-
-			$share_ids = $rrssb->social->get_share_ids( $this->share );
-
-			foreach ( $share_ids as $share_id => $share_title ) {
-
-				$share_title     = $share_title == 'GooglePlus' ? 'Google+' : $share_title;
-				$metabox_screen  = $this->pagehook;
-				$metabox_context = 'normal';
-				$metabox_prio    = 'default';
-				$callback_args   = array(	// Second argument passed to the callback function / method.
-					'share_id'    => $share_id,
-					'share_title' => $share_title,
-				);
-
-				add_meta_box( $this->pagehook . '_' . $share_id, $share_title,
-					array( $this, 'show_metabox_rrssb_share' ), $metabox_screen,
-						$metabox_context, $metabox_prio, $callback_args );
-
-				add_filter( 'postbox_classes_' . $this->pagehook . '_' . $this->pagehook . '_' . $share_id, array( $this, 'add_class_postbox_rrssb_share' ) );
-			}
+			$this->show_metabox_tabbed( $obj, $mb, $tabs = array() );
 		}
 
 		public function add_class_postbox_rrssb_share( $classes ) {
@@ -133,46 +121,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			return $classes;
 		}
 
-		public function show_metabox_rrssb_share( $post, $callback ) {
-
-			$callback_args = $callback[ 'args' ];
-
-			$metabox_id = 'rrssb_share';
-
-			$filter_name = SucomUtil::sanitize_hookname( 'wpsso_' . $metabox_id . '_' . $callback_args[ 'share_id' ] . '_tabs' );
-
-			$metabox_tabs  = apply_filters( $filter_name, array() );
-
-			if ( empty( $metabox_tabs ) ) {
-
-				$filter_name = SucomUtil::sanitize_hookname( 'wpsso_' . $metabox_id . '_' . $callback_args[ 'share_id' ] . '_rows' );
-
-				$class_href_key = 'metabox-' . $metabox_id . '-' . $callback_args[ 'share_id' ];
-
-				$class_tabset_mb = 'metabox-' . $metabox_id;
-
-				$table_rows = apply_filters( $filter_name, array(), $this->form, $network = false, $this );
-
-				$this->p->util->metabox->do_table( $table_rows, $class_href_key, $class_tabset_mb );
-
-			} else {
-
-				foreach ( $metabox_tabs as $tab => $title ) {
-
-					$filter_name = SucomUtil::sanitize_hookname( 'wpsso_' . $metabox_id . '_' . $callback_args[ 'share_id' ] . '_' . $tab . '_rows' );
-
-					$table_rows[ $tab ] = apply_filters( $filter_name, array(), $this->form, $network = false, $this );
-				}
-
-				$this->p->util->metabox->do_tabbed( $metabox_id . '_' . $callback_args[ 'share_id' ], $metabox_tabs, $table_rows );
-			}
-		}
-
-		protected function get_table_rows( $page_id, $metabox_id ) {
+		protected function get_table_rows( $page_id, $metabox_id, $tab_key = '' ) {
 
 			$table_rows = array();
+			$match_rows = trim( $page_id . '-' . $metabox_id . '-' . $tab_key, '-' );
 
-			switch ( $page_id . '-' . $metabox_id ) {
+			switch ( $match_rows ) {
 
 				case 'rrssb-buttons-general':
 
@@ -226,7 +180,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			return $table_rows;
 		}
 
-		public function show_on_checkboxes( $opt_pre ) {
+		public function get_show_on_checkboxes( $opt_pre ) {
 
 			$col      = 0;
 			$max_cols = 4;

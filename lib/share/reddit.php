@@ -15,10 +15,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareReddit' ) ) {
 	class WpssoRrssbSubmenuShareReddit {
 
 		private $p;	// Wpsso class object.
+		private $s;	// Wpsso RRSSB submenu class object.
 
-		public function __construct( &$plugin ) {
+		public function __construct( &$plugin, &$submenu ) {
 
 			$this->p =& $plugin;
+			$this->s =& $submenu;
 
 			if ( $this->p->debug->enabled ) {
 
@@ -26,32 +28,32 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareReddit' ) ) {
 			}
 
 			$this->p->util->add_plugin_filters( $this, array(
-				'rrssb_share_reddit_rows' => 4,
+				'mb_rrssb_buttons_reddit_rows' => 4,
 			) );
 		}
 
-		public function filter_rrssb_share_reddit_rows( $table_rows, $form, $network, $submenu_obj ) {
+		public function filter_mb_rrssb_buttons_reddit_rows( $table_rows, $form, $network, $args ) {
 
-			$urm_src_label = sprintf( _x( 'UTM Source for %s', 'option label', 'wpsso-rrssb' ), 'Reddit' );
+			$utm_src_label = sprintf( _x( 'UTM Source for %s', 'option label', 'wpsso-rrssb' ), 'Reddit' );
 
-			$table_rows[] = '' .
+			$table_rows[ 'reddit_show_button'] = '' .
 				$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
-				'<td>' . $submenu_obj->show_on_checkboxes( 'reddit' ) . '</td>';
+				'<td>' . $this->s->get_show_on_checkboxes( 'reddit' ) . '</td>';
 
-			$table_rows[] = '' .
+			$table_rows[ 'reddit_button_order' ] = '' .
 				$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) .
-				'<td>' . $form->get_select( 'reddit_button_order', range( 1, count( $submenu_obj->share ) ) ) . '</td>';
+				'<td>' . $form->get_select( 'reddit_button_order', range( 1, count( $this->s->share ) ) ) . '</td>';
 
-			$table_rows[] = $form->get_tr_hide( $in_view = 'basic', 'reddit_utm_source' ) .
-				$form->get_th_html( $urm_src_label ) .
+			$table_rows[ 'reddit_utm_source' ] = $form->get_tr_hide( $in_view = 'basic', 'reddit_utm_source' ) .
+				$form->get_th_html( $utm_src_label ) .
 				'<td>' . $form->get_input( 'reddit_utm_source' ) . '</td>';
 
-			$table_rows[] = $form->get_tr_hide( $in_view = 'basic', 'reddit_caption_max_len' ) .
+			$table_rows[ 'reddit_caption_max_len' ] = $form->get_tr_hide( $in_view = 'basic', 'reddit_caption_max_len' ) .
 				$form->get_th_html( _x( 'Caption Text Length', 'option label', 'wpsso-rrssb' ) ) .
 				'<td>' . $form->get_input( 'reddit_caption_max_len', $css_class = 'chars' ) . ' ' .
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
-			$table_rows[] = $form->get_tr_hide( $in_view = 'basic', 'reddit_rrssb_html' ) .
+			$table_rows[ 'reddit_rrssb_html' ] = $form->get_tr_hide( $in_view = 'basic', 'reddit_rrssb_html' ) .
 				'<td colspan="2">' . $form->get_textarea( 'reddit_rrssb_html', 'button_html code' ) . '</td>';
 
 			return $table_rows;

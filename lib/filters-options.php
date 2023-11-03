@@ -39,11 +39,14 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 		 * The 'wpsso_save_settings_options' filter is applied by WpssoOptions->save_options(),
 		 * WpssoAdmin->settings_sanitation(), and WpssoAdmin->save_site_settings().
 		 *
-		 * $network is true if saving multisite network settings.
+		 * $opts is the new options to be saved. Wpsso->options and Wpsso->site_options are still the old options.
 		 *
-		 * $upgrading will be true when the options version, not the plugin version, is being upgraded.
+		 * $network is true if we're saving the multisite network settings.
+		 *
+		 * $is_option_upg is true when the option versions, not the plugin versions, have changed.
+		 *
 		 */
-		public function filter_save_settings_options( array $opts, $network, $upgrading ) {
+		public function filter_save_settings_options( array $opts, $network, $is_option_upg ) {
 
 			if ( $network ) {
 

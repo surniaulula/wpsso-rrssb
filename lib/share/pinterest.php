@@ -15,10 +15,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 	class WpssoRrssbSubmenuSharePinterest {
 
 		private $p;	// Wpsso class object.
+		private $s;	// Wpsso RRSSB submenu class object.
 
-		public function __construct( &$plugin ) {
+		public function __construct( &$plugin, &$submenu ) {
 
 			$this->p =& $plugin;
+			$this->s =& $submenu;
 
 			if ( $this->p->debug->enabled ) {
 
@@ -26,37 +28,37 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 			}
 
 			$this->p->util->add_plugin_filters( $this, array(
-				'rrssb_share_pinterest_rows'  => 4,
+				'mb_rrssb_buttons_pinterest_rows'  => 4,
 			) );
 		}
 
-		public function filter_rrssb_share_pinterest_rows( $table_rows, $form, $network, $submenu_obj ) {
+		public function filter_mb_rrssb_buttons_pinterest_rows( $table_rows, $form, $network, $args ) {
 
 			// translators: Please ignore - translation uses a different text domain.
 			$option_label  = _x( 'Add Hidden Image for Pinterest', 'option label', 'wpsso' );
-			$option_link   = $this->p->util->get_admin_url( 'general#sucom-tabset_pub-tab_pinterest', $option_label );
+			$option_link   = $this->p->util->get_admin_url( 'general#sucom-tabset_social_search-tab_pinterest', $option_label );
 			$utm_src_label = sprintf( _x( 'UTM Source for %s', 'option label', 'wpsso-rrssb' ), 'Pinterest' );
 
-			$table_rows[] = '' .
+			$table_rows[ 'pin_show_button'] = '' .
 				$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
-				'<td>' . $submenu_obj->show_on_checkboxes( 'pin' ) . ' ' .
+				'<td>' . $this->s->get_show_on_checkboxes( 'pin' ) . ' ' .
 				'<p class="status-msg left">' . sprintf( __( 'Note that enabling the Pinterest button for the content also enables the %s option.',
 					'wpsso-rrssb' ), $option_link ) . '</p></td>';
 
-			$table_rows[] = '' .
+			$table_rows[ 'pin_button_order' ] = '' .
 				$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) .
-				'<td>' . $form->get_select( 'pin_button_order', range( 1, count( $submenu_obj->share ) ) ) . '</td>';
+				'<td>' . $form->get_select( 'pin_button_order', range( 1, count( $this->s->share ) ) ) . '</td>';
 
-			$table_rows[] = $form->get_tr_hide( $in_view = 'basic', 'pin_utm_source' ) .
+			$table_rows[ 'pin_utm_source' ] = $form->get_tr_hide( $in_view = 'basic', 'pin_utm_source' ) .
 				$form->get_th_html( $utm_src_label ) .
 				'<td>' . $form->get_input( 'pin_utm_source' ) . '</td>';
 
-			$table_rows[] = $form->get_tr_hide( $in_view = 'basic', 'pin_caption_max_len' ) .
+			$table_rows[ 'pin_caption_max_len' ] = $form->get_tr_hide( $in_view = 'basic', 'pin_caption_max_len' ) .
 				$form->get_th_html( _x( 'Caption Text Length', 'option label', 'wpsso-rrssb' ) ) .
 				'<td>' . $form->get_input( 'pin_caption_max_len', $css_class = 'chars' ) . ' ' .
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
-			$table_rows[] = $form->get_tr_hide( $in_view = 'basic', 'pin_rrssb_html' ) .
+			$table_rows[ 'pin_rrssb_html' ] = $form->get_tr_hide( $in_view = 'basic', 'pin_rrssb_html' ) .
 				'<td colspan="2">' . $form->get_textarea( 'pin_rrssb_html', 'button_html code' ) . '</td>';
 
 			return $table_rows;

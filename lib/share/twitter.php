@@ -15,10 +15,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTwitter' ) ) {
 	class WpssoRrssbSubmenuShareTwitter {
 
 		private $p;	// Wpsso class object.
+		private $s;	// Wpsso RRSSB submenu class object.
 
-		public function __construct( &$plugin ) {
+		public function __construct( &$plugin, &$submenu ) {
 
 			$this->p =& $plugin;
+			$this->s =& $submenu;
 
 			if ( $this->p->debug->enabled ) {
 
@@ -26,50 +28,50 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTwitter' ) ) {
 			}
 
 			$this->p->util->add_plugin_filters( $this, array(
-				'rrssb_share_twitter_rows' => 4,
+				'mb_rrssb_buttons_twitter_rows' => 4,
 			) );
 		}
 
-		public function filter_rrssb_share_twitter_rows( $table_rows, $form, $network, $submenu_obj ) {
+		public function filter_mb_rrssb_buttons_twitter_rows( $table_rows, $form, $network, $args ) {
 
-			$urm_src_label = sprintf( _x( 'UTM Source for %s', 'option label', 'wpsso-rrssb' ), 'Twitter' );
+			$utm_src_label = sprintf( _x( 'UTM Source for %s', 'option label', 'wpsso-rrssb' ), 'Twitter' );
 
-			$table_rows[] = '' .
+			$table_rows[ 'twitter_show_button'] = '' .
 				$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .
-				'<td>' . $submenu_obj->show_on_checkboxes( 'twitter' ) . '</td>';
+				'<td>' . $this->s->get_show_on_checkboxes( 'twitter' ) . '</td>';
 
-			$table_rows[] = '' .
+			$table_rows[ 'twitter_button_order' ] = '' .
 				$form->get_th_html( _x( 'Preferred Order', 'option label', 'wpsso-rrssb' ) ) .
-				'<td>' . $form->get_select( 'twitter_button_order', range( 1, count( $submenu_obj->share ) ) ) . '</td>';
+				'<td>' . $form->get_select( 'twitter_button_order', range( 1, count( $this->s->share ) ) ) . '</td>';
 
-			$table_rows[] = $form->get_tr_hide( $in_view = 'basic', 'twitter_utm_source' ) .
-				$form->get_th_html( $urm_src_label ) .
+			$table_rows[ 'twitter_utm_source' ] = $form->get_tr_hide( $in_view = 'basic', 'twitter_utm_source' ) .
+				$form->get_th_html( $utm_src_label ) .
 				'<td>' . $form->get_input( 'twitter_utm_source' ) . '</td>';
 
-			$table_rows[] = $form->get_tr_hide( $in_view = 'basic', 'twitter_caption' ) .
+			$table_rows[ 'twitter_caption' ] = $form->get_tr_hide( $in_view = 'basic', 'twitter_caption' ) .
 				$form->get_th_html( _x( 'Tweet Text Source', 'option label', 'wpsso-rrssb' ) ) .
 				'<td>' . $form->get_select( 'twitter_caption', $this->p->cf[ 'form' ][ 'caption_types' ] ) . '</td>';
 
-			$table_rows[] = $form->get_tr_hide( $in_view = 'basic', 'twitter_caption_max_len' ) .
+			$table_rows[ 'twitter_caption_max_len' ] = $form->get_tr_hide( $in_view = 'basic', 'twitter_caption_max_len' ) .
 				$form->get_th_html( _x( 'Tweet Text Length', 'option label', 'wpsso-rrssb' ) ) .
 				'<td>' . $form->get_input( 'twitter_caption_max_len', $css_class = 'chars' ) . ' ' .
 				_x( 'characters or less', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
-			$table_rows[] = '' .
+			$table_rows[ 'twitter_caption_hashtags' ] = '' .
 				$form->get_th_html( _x( 'Append Hashtags to Tweet', 'option label', 'wpsso-rrssb' ) ) .
 				'<td>' . $form->get_select( 'twitter_caption_hashtags', range( 0, $this->p->cf[ 'form' ][ 'max_hashtags' ] ),
 					$css_class = 'short', '', true ) . ' ' .
 				_x( 'tag names', 'option comment', 'wpsso-rrssb' ) . '</td>';
 
-			$table_rows[] = $form->get_tr_hide( $in_view = 'basic', 'twitter_via' ) .
+			$table_rows[ 'twitter_via' ] = $form->get_tr_hide( $in_view = 'basic', 'twitter_via' ) .
 				$form->get_th_html( _x( 'Add via Business @username', 'option label', 'wpsso-rrssb' ), $css_class = '', $css_id = 'buttons_add_via'  ) .
 				'<td>' . $form->get_checkbox( 'twitter_via' ) . '</td>';
 
-			$table_rows[] = $form->get_tr_hide( $in_view = 'basic', 'twitter_rel_author' ) .
+			$table_rows[ 'twitter_rel_author' ] = $form->get_tr_hide( $in_view = 'basic', 'twitter_rel_author' ) .
 				$form->get_th_html( _x( 'Recommend Author @username', 'option label', 'wpsso-rrssb' ), $css_class = '', $css_id = 'buttons_rec_author'  ) .
 				'<td>' . $form->get_checkbox( 'twitter_rel_author' ) . '</td>';
 
-			$table_rows[] = $form->get_tr_hide( $in_view = 'basic', 'twitter_rrssb_html' ) .
+			$table_rows[ 'twitter_rrssb_html' ] = $form->get_tr_hide( $in_view = 'basic', 'twitter_rrssb_html' ) .
 				'<td colspan="2">' . $form->get_textarea( 'twitter_rrssb_html', 'button_html code' ) . '</td>';
 
 			return $table_rows;
