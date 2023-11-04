@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"10.8.0-dev.9\n"
+"10.8.0-dev.10\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -538,47 +538,47 @@ msgctxt "metabox title"
 msgid "Social Sharing Buttons"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:49
+#: lib/submenu/rrssb-buttons.php:54
 msgctxt "submit button"
 msgid "Reload Default Responsive Buttons"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:134
+#: lib/submenu/rrssb-buttons.php:149
 msgctxt "option label"
 msgid "Include on Archive Webpages"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:139
+#: lib/submenu/rrssb-buttons.php:154
 msgctxt "option label"
 msgid "Include on Static Homepage"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:144
+#: lib/submenu/rrssb-buttons.php:159
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:149
+#: lib/submenu/rrssb-buttons.php:164
 msgctxt "option label"
 msgid "Call to Action"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:154
+#: lib/submenu/rrssb-buttons.php:169
 msgctxt "option label"
 msgid "Buttons Position in Content"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:159
+#: lib/submenu/rrssb-buttons.php:174
 msgctxt "option label"
 msgid "Buttons Position in Excerpt"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:168
+#: lib/submenu/rrssb-buttons.php:183
 msgctxt "option label"
 msgid "Force Protocol for Shared URLs"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:173
+#: lib/submenu/rrssb-buttons.php:188
 msgctxt "option label"
 msgid "UTM Medium for All Buttons"
 msgstr ""
@@ -588,17 +588,17 @@ msgctxt "metabox title"
 msgid "Social Sharing Styles"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:56
+#: lib/submenu/rrssb-styles.php:61
 msgctxt "submit button"
 msgid "Reload Default Responsive Styles"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:79
+#: lib/submenu/rrssb-styles.php:84
 msgctxt "option label"
 msgid "Use the Social Stylesheet"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:84
+#: lib/submenu/rrssb-styles.php:89
 msgctxt "option label"
 msgid "Enqueue the Stylesheet"
 msgstr ""

@@ -35,7 +35,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			);
 		}
 
-		protected function add_plugin_hooks() {
+		protected function add_settings_page_callbacks() {
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
 
 			$this->p->util->add_plugin_filters( $this, array( 'form_button_rows' => 2 ) );
 		}
@@ -54,9 +59,19 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			return $form_button_rows;
 		}
 
-		protected function add_meta_boxes( $callback_args = array() ) {
+		/*
+		 * Add metaboxes for this settings page.
+		 *
+		 * See WpssoAdmin->load_settings_page().
+		 */
+		protected function add_settings_page_metaboxes( $callback_args = array() ) {
 
-			parent::add_meta_boxes( $callback_args );
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
+
+			parent::add_settings_page_metaboxes( $callback_args );
 
 			$this->set_share_objects();
 
