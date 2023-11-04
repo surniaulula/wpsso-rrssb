@@ -92,7 +92,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 			$this->show_metabox_tabbed( $obj, $mb, $tabs );
 		}
 
-		protected function get_table_rows( $page_id, $metabox_id, $tab_key = '' ) {
+		protected function get_table_rows( $page_id, $metabox_id, $tab_key = '', $args = array() ) {
 
 			$table_rows = array();
 

@@ -32,7 +32,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuSharePinterest' ) ) {
 			) );
 		}
 
-		public function filter_mb_rrssb_buttons_pinterest_rows( $table_rows, $form, $network, $args ) {
+		public function filter_mb_rrssb_buttons_pinterest_rows( $table_rows, $form, $args ) {
 
 			// translators: Please ignore - translation uses a different text domain.
 			$option_label  = _x( 'Add Hidden Image for Pinterest', 'option label', 'wpsso' );

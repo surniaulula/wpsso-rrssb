@@ -32,7 +32,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareFacebook' ) ) {
 			) );
 		}
 
-		public function filter_mb_rrssb_buttons_facebook_rows( $table_rows, $form, $network, $args ) {
+		public function filter_mb_rrssb_buttons_facebook_rows( $table_rows, $form, $args ) {
 
 			$utm_src_label = sprintf( _x( 'UTM Source for %s', 'option label', 'wpsso-rrssb' ), 'Facebook' );
 
