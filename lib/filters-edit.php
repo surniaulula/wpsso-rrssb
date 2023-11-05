@@ -26,9 +26,9 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 			$this->a =& $addon;
 
 			$this->p->util->add_plugin_filters( $this, array(
-				'mb_sso_tabs'               => 2,
-				'mb_sso_edit_share_rows'      => 4,
-				'metabox_sso_inside_footer' => 2,
+				'mb_sso_tabs'            => 2,
+				'mb_sso_edit_share_rows' => 4,
+				'mb_sso_inside_footer'   => 2,
 			), $prio = 200 );
 		}
 
@@ -145,7 +145,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 			return $form->get_md_form_rows( $table_rows, $form_rows, $head, $mod );
 		}
 
-		public function filter_metabox_sso_inside_footer( $metabox_html, $mod ) {
+		public function filter_mb_sso_inside_footer( $metabox_html, $mod ) {
 
 			if ( empty( $mod[ 'is_public' ] ) ) {
 
