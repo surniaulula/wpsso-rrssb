@@ -31,30 +31,13 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 			$this->menu_metaboxes = array(
 				'rrssb_styles' => _x( 'Social Sharing Styles', 'metabox title', 'wpsso-rrssb' ),
 			);
-		}
-
-		protected function add_settings_page_callbacks() {
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
-
+			
 			$this->p->util->add_plugin_filters( $this, array( 'form_button_rows' => 2 ) );
 		}
 
 		public function filter_form_button_rows( $form_button_rows, $menu_id ) {
 
 			switch ( $menu_id ) {
-
-				case 'rrssb-styles':
-
-					if ( isset( $form_button_rows[ 0 ] ) ) {
-
-						$form_button_rows[ 0 ] = SucomUtil::preg_grep_keys( '/^change_show_options/', $form_button_rows[ 0 ], $invert = true );
-					}
-
-					break;
 
 				case 'tools':
 
@@ -64,6 +47,12 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 			}
 
 			return $form_button_rows;
+		}
+
+		/*
+		 * Remove the "Change to View" button from this settings page.
+		 */
+		protected function add_form_buttons_change_show_options( &$form_button_rows ) {
 		}
 
 		public function show_metabox_rrssb_styles( $obj, $mb ) {

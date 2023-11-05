@@ -33,15 +33,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			$this->menu_metaboxes = array(
 				'general' => _x( 'Social Sharing Buttons', 'metabox title', 'wpsso-rrssb' ),
 			);
-		}
-
-		protected function add_settings_page_callbacks() {
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
-
+			
 			$this->p->util->add_plugin_filters( $this, array( 'form_button_rows' => 2 ) );
 		}
 

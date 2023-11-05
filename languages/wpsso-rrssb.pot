@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"10.8.0-dev.10\n"
+"10.8.0-dev.11\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -123,47 +123,47 @@ msgstr ""
 msgid "The default responsive styles CSS has been reloaded and saved."
 msgstr ""
 
-#: lib/filters-edit.php:44
+#: lib/filters-edit.php:39
 msgctxt "metabox tab"
 msgid "Edit Share Buttons"
 msgstr ""
 
-#: lib/filters-edit.php:62
+#: lib/filters-edit.php:54
 msgctxt "option label"
 msgid "Disable Share Buttons"
 msgstr ""
 
-#: lib/filters-edit.php:69
+#: lib/filters-edit.php:61
 msgctxt "option label"
 msgid "UTM Campaign"
 msgstr ""
 
-#: lib/filters-edit.php:83
+#: lib/filters-edit.php:75
 msgctxt "option label"
 msgid "Email Subject"
 msgstr ""
 
-#: lib/filters-edit.php:90
+#: lib/filters-edit.php:82
 msgctxt "option label"
 msgid "Email Message"
 msgstr ""
 
-#: lib/filters-edit.php:105
+#: lib/filters-edit.php:97
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr ""
 
-#: lib/filters-edit.php:120
+#: lib/filters-edit.php:112
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr ""
 
-#: lib/filters-edit.php:140
+#: lib/filters-edit.php:132
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/filters-edit.php:147
+#: lib/filters-edit.php:139
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
@@ -538,47 +538,47 @@ msgctxt "metabox title"
 msgid "Social Sharing Buttons"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:54
+#: lib/submenu/rrssb-buttons.php:46
 msgctxt "submit button"
 msgid "Reload Default Responsive Buttons"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:149
+#: lib/submenu/rrssb-buttons.php:141
 msgctxt "option label"
 msgid "Include on Archive Webpages"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:154
+#: lib/submenu/rrssb-buttons.php:146
 msgctxt "option label"
 msgid "Include on Static Homepage"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:159
+#: lib/submenu/rrssb-buttons.php:151
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:164
+#: lib/submenu/rrssb-buttons.php:156
 msgctxt "option label"
 msgid "Call to Action"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:169
+#: lib/submenu/rrssb-buttons.php:161
 msgctxt "option label"
 msgid "Buttons Position in Content"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:174
+#: lib/submenu/rrssb-buttons.php:166
 msgctxt "option label"
 msgid "Buttons Position in Excerpt"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:183
+#: lib/submenu/rrssb-buttons.php:175
 msgctxt "option label"
 msgid "Force Protocol for Shared URLs"
 msgstr ""
 
-#: lib/submenu/rrssb-buttons.php:188
+#: lib/submenu/rrssb-buttons.php:180
 msgctxt "option label"
 msgid "UTM Medium for All Buttons"
 msgstr ""
@@ -588,17 +588,17 @@ msgctxt "metabox title"
 msgid "Social Sharing Styles"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:61
+#: lib/submenu/rrssb-styles.php:44
 msgctxt "submit button"
 msgid "Reload Default Responsive Styles"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:84
+#: lib/submenu/rrssb-styles.php:73
 msgctxt "option label"
 msgid "Use the Social Stylesheet"
 msgstr ""
 
-#: lib/submenu/rrssb-styles.php:89
+#: lib/submenu/rrssb-styles.php:78
 msgctxt "option label"
 msgid "Enqueue the Stylesheet"
 msgstr ""

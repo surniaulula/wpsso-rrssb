@@ -26,25 +26,17 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 			$this->a =& $addon;
 
 			$this->p->util->add_plugin_filters( $this, array(
-				'post_document_meta_tabs'   => 3,
-				'post_edit_share_rows'      => 4,
+				'mb_sso_tabs'               => 2,
+				'mb_sso_edit_share_rows'      => 4,
 				'metabox_sso_inside_footer' => 2,
 			), $prio = 200 );
 		}
 
-		public function filter_post_document_meta_tabs( $tabs, $mod, $metabox_id ) {
+		public function filter_mb_sso_tabs( $tabs, $mod ) {
 
-			switch ( $metabox_id ) {
+			if ( $mod[ 'is_public' ] ) {
 
-				case $this->p->cf[ 'meta' ][ 'id' ]:	// 'sso' metabox ID.
-
-					if ( $mod[ 'is_public' ] ) {	// Since WPSSO Core v7.0.0.
-
-						SucomUtil::add_before_key( $tabs, $after_tab = 'prev_social', 'edit_share',
-							_x( 'Edit Share Buttons', 'metabox tab', 'wpsso-rrssb' ) );
-					}
-
-					break;
+				SucomUtil::add_before_key( $tabs, 'prev_social', 'edit_share', _x( 'Edit Share Buttons', 'metabox tab', 'wpsso-rrssb' ) );
 			}
 
 			return $tabs;
@@ -53,7 +45,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 		/*
 		 * Default option values are defined in WpssoRrssbFiltersOptions->filter_get_md_defaults().
 		 */
-		public function filter_post_edit_share_rows( $table_rows, $form, $head, $mod ) {
+		public function filter_mb_sso_edit_share_rows( $table_rows, $form, $head, $mod ) {
 
 			$def_caption_title = $this->p->page->get_caption( $mod, $md_key = '', $caption_type = 'title', $caption_max_len = 0, $num_hashtags = false );
 
