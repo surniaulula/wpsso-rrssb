@@ -102,7 +102,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 10.8.0-dev.11 (2021/11/05)**
+**Version 11.0.0-dev.13 (2021/11/05)**
 
 * **New Features**
 	* None.
@@ -111,11 +111,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Refactored the settings page load process.
+	* Refactored the settings page and metabox load process for WPSSO Core v17.0.0.
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.5.
-	* WPSSO Core v16.7.0-dev.11.
+	* WPSSO Core v17.0.0-dev.13.
 
 **Version 10.7.0 (2023/08/09)**
 
@@ -134,168 +134,13 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v5.5.
 	* WPSSO Core v15.19.0.
 
-**Version 10.6.0 (2023/02/20)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Renamed the 'wpssorrssb_status_std_features' filter to 'wpssorrssb_features_status'.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.5.
-	* WPSSO Core v15.4.0.
-
-**Version 10.5.0 (2023/01/27)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Updated the condition to force the "Add Hidden Image for Pinterest" option only when the Pinterest button is enabled for the content.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.5.
-	* WPSSO Core v14.7.0.
-
-**Version 10.4.1 (2023/01/26)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Added compatibility declaration for WooCommerce HPOS.
-	* Updated the minimum WordPress version from v5.2 to v5.5.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Updated the `WpssoAbstractAddOn` library class.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.5.
-	* WPSSO Core v14.7.0.
-
-**Version 10.4.0 (2023/01/20)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Updated the `SucomAbstractAddOn` common library class.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.2.
-	* WPSSO Core v14.5.0.
-
-**Version 10.3.0 (2022/12/28)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Update for the `.wpsso-rrssb-content` default CSS.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.2.
-	* WPSSO Core v14.0.0.
-
-**Version 10.2.0 (2022/08/24)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Renamed the 'std' library folder to 'integ' for WPSSO Core v13.0.0.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.2.
-	* WPSSO Core v13.0.0.
-
-**Version 10.1.0 (2022/05/17)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Added support for the new `SucomUtil::sanitize_twitter_name()` method in WPSSO Core.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.2.
-	* WPSSO Core v12.3.0.
-
-**Version 10.0.0 (2022/03/26)**
-
-Removed support for bbPress, BuddyPress, and BuddyBlog.
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.2.
-	* WPSSO Core v12.0.0.
-
 == Upgrade Notice ==
 
-= 10.8.0-dev.11 =
+= 11.0.0-dev.13 =
 
-(2021/11/05) Refactored the settings page load process.
+(2021/11/05) Refactored the settings page and metabox load process for WPSSO Core v17.0.0.
 
 = 10.7.0 =
 
 (2023/08/09) Updated filter hook names for WPSSO Core v15.19.0.
-
-= 10.6.0 =
-
-(2023/02/20) Renamed the 'wpssorrssb_status_std_features' filter to 'wpssorrssb_features_status'.
-
-= 10.5.0 =
-
-(2023/01/27) Updated the condition to force the "Add Hidden Image for Pinterest" option only when the Pinterest button is enabled for the content.
-
-= 10.4.1 =
-
-(2023/01/26) Added compatibility declaration for WooCommerce HPOS. Updated the minimum WordPress version from v5.2 to v5.5.
-
-= 10.4.0 =
-
-(2023/01/20) Updated the `SucomAbstractAddOn` common library class.
-
-= 10.3.0 =
-
-(2022/12/28) Update for the `.wpsso-rrssb-content` default CSS.
-
-= 10.2.0 =
-
-(2022/08/24) Renamed the 'std' library folder to 'integ' for WPSSO Core v13.0.0.
-
-= 10.1.0 =
-
-(2022/05/17) Added support for the new `SucomUtil::sanitize_twitter_name()` method in WPSSO Core.
-
-= 10.0.0 =
-
-(2022/03/26) Removed support for bbPress, BuddyPress, and BuddyBlog.
 
