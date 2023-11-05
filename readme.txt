@@ -102,7 +102,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 10.8.0-dev.11 (2021/11/04)**
+**Version 10.8.0-dev.11 (2021/11/05)**
 
 * **New Features**
 	* None.
@@ -261,7 +261,7 @@ Removed support for bbPress, BuddyPress, and BuddyBlog.
 
 = 10.8.0-dev.11 =
 
-(2021/11/04) Refactored the settings page load process.
+(2021/11/05) Refactored the settings page load process.
 
 = 10.7.0 =
 
