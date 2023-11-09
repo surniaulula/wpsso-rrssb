@@ -31,9 +31,9 @@ if ( ! class_exists( 'WpssoRrssbFiltersUpgrade' ) ) {
 			) );
 		}
 
-		public function filter_rename_options_keys( $options_keys ) {
+		public function filter_rename_options_keys( $rename_options ) {
 
-			$options_keys[ 'wpssorrssb' ] = array(
+			$rename_options[ 'wpssorrssb' ] = array(
 				14 => array(
 					'email_cap_len'         => 'email_caption_max_len',
 					'twitter_cap_len'       => 'twitter_caption_max_len',
@@ -106,7 +106,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersUpgrade' ) ) {
 
 			foreach ( $show_on as $opt_suffix => $short_desc ) {
 
-				$options_keys[ 'wpssorrssb' ][ 20 ][ 'gp_on_' . $opt_suffix ] = '';
+				$rename_options[ 'wpssorrssb' ][ 20 ][ 'gp_on_' . $opt_suffix ] = '';
 			}
 
 			/*
@@ -114,11 +114,11 @@ if ( ! class_exists( 'WpssoRrssbFiltersUpgrade' ) ) {
 			 */
 			foreach ( $this->p->cf[ 'opt' ][ 'cm_prefix' ] as $cm_id => $opt_pre ) {
 
-				$options_keys[ 'wpssorrssb' ][ 44 ][ $opt_pre . '_on_woo_short' ]      = $opt_pre . '_on_wc_short_desc';
-				$options_keys[ 'wpssorrssb' ][ 44 ][ $opt_pre . '_on_woo_short_desc' ] = $opt_pre . '_on_wc_short_desc';
+				$rename_options[ 'wpssorrssb' ][ 44 ][ $opt_pre . '_on_woo_short' ]      = $opt_pre . '_on_wc_short_desc';
+				$rename_options[ 'wpssorrssb' ][ 44 ][ $opt_pre . '_on_woo_short_desc' ] = $opt_pre . '_on_wc_short_desc';
 			}
 
-			return $options_keys;
+			return $rename_options;
 		}
 
 		public function filter_upgraded_options( $opts, $defs ) {
