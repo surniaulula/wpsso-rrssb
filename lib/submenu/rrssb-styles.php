@@ -31,7 +31,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbStyles' ) && class_exists( 'WpssoAdm
 			$this->menu_metaboxes = array(
 				'rrssb_styles' => _x( 'Social Sharing Styles', 'metabox title', 'wpsso-rrssb' ),
 			);
-			
+
 			$this->p->util->add_plugin_filters( $this, array( 'form_button_rows' => 2 ) );
 		}
 

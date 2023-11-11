@@ -33,7 +33,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuRrssbButtons' ) && class_exists( 'WpssoAd
 			$this->menu_metaboxes = array(
 				'general' => _x( 'Social Sharing Buttons', 'metabox title', 'wpsso-rrssb' ),
 			);
-			
+
 			$this->p->util->add_plugin_filters( $this, array( 'form_button_rows' => 2 ) );
 		}
 
