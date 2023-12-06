@@ -14,7 +14,7 @@
  * Requires Plugins: wpsso
  * Requires PHP: 7.2.34
  * Requires At Least: 5.5
- * Tested Up To: 6.4.1
+ * Tested Up To: 6.4.2
  * WC Tested Up To: 8.3.1
  * Version: 11.0.0
  *
