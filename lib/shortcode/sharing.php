@@ -33,17 +33,20 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 			if ( $this->p->avail[ 'p_ext' ][ 'rrssb' ] ) {	// Just in case.
 
-				$this->a =& WpssoRrssb::get_instance();
+				if ( ! isset( $this->a ) ) {
 
-				$this->shortcode_name = WPSSORRSSB_SHARING_SHORTCODE_NAME;
+					$this->a =& WpssoRrssb::get_instance();
 
-				$this->check_wpautop();
+					$this->shortcode_name = WPSSORRSSB_SHARING_SHORTCODE_NAME;
 
-				$this->add_shortcode();
+					$this->check_wpautop();
 
-				$this->p->util->add_plugin_actions( $this, array(
-					'pre_apply_filters_text'   => 1,
-				) );
+					$this->add_shortcode();
+
+					$this->p->util->add_plugin_actions( $this, array(
+						'pre_apply_filters_text'   => 1,
+					) );
+				}
 			}
 		}
 
@@ -52,6 +55,11 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 		 * (shortcode filters are run at priority 11).
 		 */
 		public function check_wpautop() {
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
 
 			$default_priority = 10;
 
@@ -113,6 +121,11 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 		public function add_shortcode() {
 
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
+
 			if ( shortcode_exists( $this->shortcode_name ) ) {
 
 				if ( $this->p->debug->enabled ) {
@@ -127,7 +140,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 			if ( $this->p->debug->enabled ) {
 
-				$this->p->debug->log( $this->shortcode_name . ' shortcode added' );
+				$this->p->debug->log( 'added ' . $this->shortcode_name . ' shortcode' );
 			}
 
 			return true;
