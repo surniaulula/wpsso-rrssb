@@ -221,7 +221,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 
 			$ids = array_map( 'trim', explode( ',', $atts[ 'buttons' ] ) );
 
-			unset ( $atts[ 'buttons' ] );
+			unset( $atts[ 'buttons' ] );
 
 			$buttons_html = $this->a->social->get_html( $ids, $mod, $atts );
 
