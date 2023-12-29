@@ -21,14 +21,6 @@
 
 <!-- /about -->
 
-<h3>Users Love the WPSSO RRSSB Add-on</h3>
-
-<p>&#x2605;&#x2605;&#x2605;&#x2605;&#x2605; - "Fast and sleek! These buttons are the bees knees for real. They look great across all platforms, play nice with w3-total-cache and doesn’t impact my 100/100 pagespeed score." - <a href="https://wordpress.org/support/topic/fast-and-sleek/">renoduck</a></p>
-
-<p>&#x2605;&#x2605;&#x2605;&#x2605;&#x2605; - "FANTASTIC! This plugin is one of my favorites! This plugin makes it SOOO simple to add social sharing to wordpress posts!" - <a href="https://wordpress.org/support/topic/fantastic-1214/">mikegoubeaux</a></p>
-
-<p>&#x2605;&#x2605;&#x2605;&#x2605;&#x2605; - "These buttons are great, work on mobile phones as well as desktops, and they load super fast!" - <a href="https://wordpress.org/support/topic/best-sharing-buttons-out-there/">undergroundnetwork</a></p>
-
 <h3>WPSSO RRSSB Add-on Features</h3>
 
 <p>Include responsive social sharing buttons in many locations:</p>
