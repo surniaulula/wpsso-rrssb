@@ -682,7 +682,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			static $local_cache = array();
 
-			if ( ( $post_obj = SucomUtil::get_post_object() ) === false ) {
+			if ( false === ( $post_obj = SucomUtil::get_post_object() ) ) {
 
 				if ( $this->p->debug->enabled ) {
 
