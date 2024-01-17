@@ -45,7 +45,7 @@ if ( ! class_exists( 'WpssoRrssbScript' ) ) {
 
 		public function enqueue_scripts( $hook_name ) {
 
-			if ( SucomUtil::is_amp() ) {	// Returns null, true, or false.
+			if ( SucomUtilWP::is_amp() ) {
 
 				return;
 			}

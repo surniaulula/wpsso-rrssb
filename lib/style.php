@@ -64,7 +64,7 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 
 		public function enqueue_styles() {
 
-			if ( SucomUtil::is_amp() ) {	// Returns null, true, or false.
+			if ( SucomUtilWP::is_amp() ) {
 
 				return;
 			}

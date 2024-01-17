@@ -176,7 +176,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				$this->p->debug->mark();
 			}
 
-			if ( SucomUtil::is_amp() ) {	// Returns null, true, or false.
+			if ( SucomUtilWP::is_amp() ) {
 
 				if ( $this->p->debug->enabled ) {
 

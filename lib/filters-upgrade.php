@@ -69,16 +69,16 @@ if ( ! class_exists( 'WpssoRrssbFiltersUpgrade' ) ) {
 					'wa_order'       => 'wa_button_order',
 				),
 				33 => array(
-					'email_platform'    => '',	// Deprecated on 2020/10/02.
-					'fb_platform'       => '',	// Deprecated on 2020/10/02.
-					'linkedin_platform' => '',	// Deprecated on 2020/10/02.
-					'pin_platform'      => '',	// Deprecated on 2020/10/02.
-					'pocket_platform'   => '',	// Deprecated on 2020/10/02.
-					'reddit_platform'   => '',	// Deprecated on 2020/10/02.
-					'tumblr_platform'   => '',	// Deprecated on 2020/10/02.
-					'twitter_platform'  => '',	// Deprecated on 2020/10/02.
-					'vk_platform'       => '',	// Deprecated on 2020/10/02.
-					'wa_platform'       => '',	// Deprecated on 2020/10/02.
+					'email_platform'    => '',
+					'fb_platform'       => '',
+					'linkedin_platform' => '',
+					'pin_platform'      => '',
+					'pocket_platform'   => '',
+					'reddit_platform'   => '',
+					'tumblr_platform'   => '',
+					'twitter_platform'  => '',
+					'vk_platform'       => '',
+					'wa_platform'       => '',
 				),
 				34 => array(
 					'buttons_on_index' => 'buttons_on_archive',

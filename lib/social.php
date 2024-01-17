@@ -256,7 +256,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			}
 
 			$is_admin         = is_admin();
-			$is_amp           = SucomUtil::is_amp();	// Returns null, true, or false.
+			$is_amp           = SucomUtilWP::is_amp();
 			$buttons_disabled = false;
 
 			if ( $is_amp ) {
@@ -434,7 +434,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 					}
 				}
 
-				$mod_locale  = SucomUtil::get_locale( $mod );
+				$mod_locale  = SucomUtilWP::get_locale( $mod );
 				$buttons_cta = $this->p->opt->get_text( 'buttons_cta', $use_opts = true, $mod );
 				$buttons_cta = apply_filters( 'wpsso_rrssb_buttons_cta', $buttons_cta, $type, $mod, $location, $atts );
 				$buttons_cta = '<div class="rrssb-buttons-cta ' . $mod_locale . '">' . $buttons_cta . '</div>';
@@ -534,7 +534,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 				$mod = $this->p->page->get_mod( $atts[ 'use_post' ] );
 			}
 
-			$mod_locale    = SucomUtil::get_locale( $mod );
+			$mod_locale    = SucomUtilWP::get_locale( $mod );
 			$buttons_begin = '<ul class="rrssb-buttons ' . $mod_locale . ' clearfix">';
 			$buttons_html  = '';
 			$buttons_end   = '</ul><!-- .rrssb-buttons.' . $mod_locale . '.clearfix -->';
@@ -682,7 +682,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			static $local_cache = array();
 
-			if ( false === ( $post_obj = SucomUtil::get_post_object() ) ) {
+			if ( false === ( $post_obj = SucomUtilWP::get_post_object() ) ) {
 
 				if ( $this->p->debug->enabled ) {
 
