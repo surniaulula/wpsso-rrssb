@@ -29,9 +29,9 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 			$this->p =& $plugin;
 			$this->a =& $addon;
 
-			$this->doing_dev = SucomUtil::get_const( 'WPSSO_DEV' );
+			$this->doing_dev = SucomUtilWP::doing_dev();
 			$this->file_ext  = $this->doing_dev ? 'css' : 'min.css';
-			$this->version   = WpssoRrssbConfig::get_version();
+			$this->version   = WpssoRrssbConfig::get_version() . ( $this->doing_dev ? gmdate( '-ymd-His' ) : '' );
 
 			if ( is_admin() ) {
 

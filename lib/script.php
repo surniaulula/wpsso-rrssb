@@ -16,7 +16,6 @@ if ( ! class_exists( 'WpssoRrssbScript' ) ) {
 
 		private $p;	// Wpsso class object.
 		private $a;	// WpssoRrssb class object.
-
 		private $doing_dev = false;
 		private $file_ext  = 'min.js';
 		private $version   = '';
@@ -29,9 +28,9 @@ if ( ! class_exists( 'WpssoRrssbScript' ) ) {
 			$this->p =& $plugin;
 			$this->a =& $addon;
 
-			$this->doing_dev = SucomUtil::get_const( 'WPSSO_DEV' );
+			$this->doing_dev = SucomUtilWP::doing_dev();
 			$this->file_ext  = $this->doing_dev ? 'js' : 'min.js';
-			$this->version   = WpssoRrssbConfig::get_version();
+			$this->version   = WpssoRrssbConfig::get_version() . ( $this->doing_dev ? gmdate( '-ymd-His' ) : '' );
 
 			if ( is_admin() ) {
 
