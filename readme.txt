@@ -94,7 +94,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 11.2.0-dev.1 (2024/01/31)**
+**Version 11.2.0-dev.2 (2024/02/03)**
 
 * **New Features**
 	* None.
@@ -107,7 +107,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.8.
-	* WPSSO Core v17.12.0-dev.1.
+	* WPSSO Core v17.12.0-dev.2.
 
 **Version 11.1.0 (2024/01/12)**
 
@@ -141,9 +141,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 11.2.0-dev.1 =
+= 11.2.0-dev.2 =
 
-(2024/01/31) Added support for the new `SucomUtilWP::doing_dev()` method.
+(2024/02/03) Added support for the new `SucomUtilWP::doing_dev()` method.
 
 = 11.1.0 =
 
