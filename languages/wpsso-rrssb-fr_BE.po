@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 11.0.0\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 11.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
-"POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-11-06 07:00-0800\n"
+"POT-Creation-Date: 2024-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2024-02-05 07:00-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -11,13 +11,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.4.1\n"
+"X-Generator: Poedit 3.4.2\n"
 
-#: gettext/gettext-lib-abstract-com.php:5 lib/abstract/com/add-on.php:209
+#: gettext/gettext-lib-abstract-com.php:5 lib/abstract/com/add-on.php:243
 msgid "The %1$s add-on requires the %2$s plugin."
 msgstr "L'ajout %1$s requiert l'extension %2$s."
 
-#: gettext/gettext-lib-abstract-com.php:6 lib/abstract/com/add-on.php:223
+#: gettext/gettext-lib-abstract-com.php:6 lib/abstract/com/add-on.php:262
 msgid "The %1$s add-on requires %2$s version %3$s or newer (version %4$s is currently installed)."
 msgstr "L'ajout %1$s nécessite %2$s version %3$s ou plus récente (la version %4$s est installée actuellement)."
 
@@ -119,47 +119,47 @@ msgstr "Les options des boutons réactifs par défaut ont été rechargées et s
 msgid "The default responsive styles CSS has been reloaded and saved."
 msgstr "Le CSS par défaut des styles réactifs ont été rechargés et sauvegardés."
 
-#: lib/filters-edit.php:44
+#: lib/filters-edit.php:39
 msgctxt "metabox tab"
 msgid "Edit Share Buttons"
 msgstr "Modifier boutons de partage"
 
-#: lib/filters-edit.php:62
+#: lib/filters-edit.php:54
 msgctxt "option label"
 msgid "Disable Share Buttons"
 msgstr "Désactiver les boutons"
 
-#: lib/filters-edit.php:69
+#: lib/filters-edit.php:61
 msgctxt "option label"
 msgid "UTM Campaign"
 msgstr "Campagne UTM"
 
-#: lib/filters-edit.php:83
+#: lib/filters-edit.php:75
 msgctxt "option label"
 msgid "Email Subject"
 msgstr "Sujet du couriel"
 
-#: lib/filters-edit.php:90
+#: lib/filters-edit.php:82
 msgctxt "option label"
 msgid "Email Message"
 msgstr "Message du courriel"
 
-#: lib/filters-edit.php:105
+#: lib/filters-edit.php:97
 msgctxt "option label"
 msgid "Tweet Text"
 msgstr "Texte du Tweet"
 
-#: lib/filters-edit.php:120
+#: lib/filters-edit.php:112
 msgctxt "option label"
 msgid "Pinterest Caption"
 msgstr "Texte légende Pinterest"
 
-#: lib/filters-edit.php:140
+#: lib/filters-edit.php:132
 msgctxt "option label"
 msgid "%s Title"
 msgstr "Titre %s"
 
-#: lib/filters-edit.php:147
+#: lib/filters-edit.php:139
 msgctxt "option label"
 msgid "%s Caption"
 msgstr "Légende %s"
@@ -472,47 +472,47 @@ msgctxt "metabox title"
 msgid "Social Sharing Buttons"
 msgstr "Boutons de partage social"
 
-#: lib/submenu/rrssb-buttons.php:49
+#: lib/submenu/rrssb-buttons.php:46
 msgctxt "submit button"
 msgid "Reload Default Responsive Buttons"
 msgstr "Recharger boutons réactifs par défaut"
 
-#: lib/submenu/rrssb-buttons.php:134
+#: lib/submenu/rrssb-buttons.php:141
 msgctxt "option label"
 msgid "Include on Archive Webpages"
 msgstr "Inclure sur les pages d'archive"
 
-#: lib/submenu/rrssb-buttons.php:139
+#: lib/submenu/rrssb-buttons.php:146
 msgctxt "option label"
 msgid "Include on Static Homepage"
 msgstr "Inclure sur la page d'accueil statique"
 
-#: lib/submenu/rrssb-buttons.php:144
+#: lib/submenu/rrssb-buttons.php:151
 msgctxt "option label"
 msgid "Include on Post Types"
 msgstr "Inclure sur les articles de type"
 
-#: lib/submenu/rrssb-buttons.php:149
+#: lib/submenu/rrssb-buttons.php:156
 msgctxt "option label"
 msgid "Call to Action"
 msgstr "Appel à l'action"
 
-#: lib/submenu/rrssb-buttons.php:154
+#: lib/submenu/rrssb-buttons.php:161
 msgctxt "option label"
 msgid "Buttons Position in Content"
 msgstr "Position des boutons dans le contenu"
 
-#: lib/submenu/rrssb-buttons.php:159
+#: lib/submenu/rrssb-buttons.php:166
 msgctxt "option label"
 msgid "Buttons Position in Excerpt"
 msgstr "Position des boutons dans l'extrait"
 
-#: lib/submenu/rrssb-buttons.php:168
+#: lib/submenu/rrssb-buttons.php:175
 msgctxt "option label"
 msgid "Force Protocol for Shared URLs"
 msgstr "Forcer protocole pour URLs partagées"
 
-#: lib/submenu/rrssb-buttons.php:173
+#: lib/submenu/rrssb-buttons.php:180
 msgctxt "option label"
 msgid "UTM Medium for All Buttons"
 msgstr "Moyen UTM pour tous les boutons"
@@ -522,17 +522,17 @@ msgctxt "metabox title"
 msgid "Social Sharing Styles"
 msgstr "Styles de partage social"
 
-#: lib/submenu/rrssb-styles.php:56
+#: lib/submenu/rrssb-styles.php:44
 msgctxt "submit button"
 msgid "Reload Default Responsive Styles"
 msgstr "Recharger styles réactifs par défaut"
 
-#: lib/submenu/rrssb-styles.php:79
+#: lib/submenu/rrssb-styles.php:73
 msgctxt "option label"
 msgid "Use the Social Stylesheet"
 msgstr "Utiliser la feuille de style social"
 
-#: lib/submenu/rrssb-styles.php:84
+#: lib/submenu/rrssb-styles.php:78
 msgctxt "option label"
 msgid "Enqueue the Stylesheet"
 msgstr "Placer la feuille de style en queue"
