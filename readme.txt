@@ -94,6 +94,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 11.3.0-dev.1 (2024/02/20)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.34.
+	* WordPress v5.8.
+	* WPSSO Core v17.14.0-rc.1.
+
 **Version 11.2.0 (2024/02/05)**
 
 * **New Features**
@@ -140,6 +155,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v17.0.0.
 
 == Upgrade Notice ==
+
+= 11.3.0-dev.1 =
+
+(2024/02/20) None.
 
 = 11.2.0 =
 
