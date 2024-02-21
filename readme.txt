@@ -12,7 +12,7 @@ Requires Plugins: wpsso
 Requires PHP: 7.2.34
 Requires At Least: 5.8
 Tested Up To: 6.4.3
-WC Tested Up To: 8.6.0
+WC Tested Up To: 8.6.1
 Stable Tag: 11.2.0
 
 Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, templates, and editor.
@@ -94,12 +94,13 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 11.3.0-dev.1 (2024/02/20)**
+**Version 11.3.0-rc.3 (2024/02/21)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* None.
+	* Renamed Twitter to X (Twitter).
+	* Removed the Tumblr button.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -107,7 +108,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.8.
-	* WPSSO Core v17.14.0-rc.1.
+	* WPSSO Core v17.14.0-rc.3.
 
 **Version 11.2.0 (2024/02/05)**
 
@@ -156,9 +157,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 11.3.0-dev.1 =
+= 11.3.0-rc.3 =
 
-(2024/02/20) None.
+(2024/02/21) Renamed Twitter to X (Twitter). Removed the Tumblr button.
 
 = 11.2.0 =
 
