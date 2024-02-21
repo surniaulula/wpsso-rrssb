@@ -250,13 +250,24 @@ aside.widget
 
 				case 'tooltip-buttons_add_via':
 
-					$text = sprintf( __( 'Append the %1$s to the tweet (see <a href="%2$s">the Twitter options tab</a> in the %3$s page). The %1$s will be displayed and recommended after the webpage is shared.', 'wpsso-rrssb' ), _x( 'Twitter Business @username', 'option label', 'wpsso-rrssb' ), $this->p->util->get_admin_url( 'general#sucom-tabset_social_search-tab_twitter' ), _x( 'General Settings', 'lib file description', 'wpsso-rrssb' ) );
+					$username_label = _x( 'X (Twitter) Business @username', 'option label', 'wpsso-rrssb' );
+
+					$text = sprintf( __( 'Append the %1$s to the tweet.', 'wpsso-rrssb' ), $username_label ) . ' ';
+
+					$text .= sprintf( __( 'The %1$s will be displayed and recommended after the webpage is shared.', 'wpsso-rrssb' ), $username_label );
+					
 
 					break;
 
 				case 'tooltip-buttons_rec_author':
 
-					$text = sprintf( __( 'Recommend following the author\'s Twitter @username after sharing a webpage. If the %1$s option (above) is also checked, the %2$s is suggested first.', 'wpsso-rrssb' ), _x( 'Add via Business @username', 'option label', 'wpsso-rrssb' ), _x( 'Twitter Business @username', 'option label', 'wpsso-rrssb' ) );
+					$username_label   = _x( 'X (Twitter) Business @username', 'option label', 'wpsso-rrssb' );
+					$add_option_label = _x( 'Add via Business @username', 'option label', 'wpsso-rrssb' );
+
+					$text = __( 'Recommend following the author\'s X (Twitter) @username after sharing a webpage.', 'wpsso-rrssb' ) . ' ';
+					
+					$text .= sprintf( __( 'If the %1$s option is also checked, the %2$s is suggested first.', 'wpsso-rrssb' ),
+						$add_option_label, $username_label );
 
 					break;
 
@@ -267,9 +278,11 @@ aside.widget
 
 					$sharing_css_url = WpssoRrssbSocial::get_sharing_css_url();
 
-					$text = sprintf( __( 'Combine and include the CSS of all <em>%s</em> in webpages.', 'wpsso-rrssb' ), _x( 'Responsive Styles', 'lib file description', 'wpsso-rrssb' ) ) . ' ';
+					$text = sprintf( __( 'Combine and include the CSS of all <em>%s</em> in webpages.', 'wpsso-rrssb' ),
+						_x( 'Responsive Styles', 'lib file description', 'wpsso-rrssb' ) ) . ' ';
 
-					$text .= sprintf( __( 'The combined CSS will be minified and saved into a single stylesheet with a URL of <a href="%1$s">%2$s</a>.', 'wpsso-rrssb' ), $sharing_css_url, $sharing_css_url ) . ' ';
+					$text .= sprintf( __( 'The combined CSS will be minified and saved into a single stylesheet with a URL of <a href="%1$s">%2$s</a>.',
+						'wpsso-rrssb' ), $sharing_css_url, $sharing_css_url ) . ' ';
 
 					$text .= __( 'The minified stylesheet can be enqueued, or included directly in the webpage HTML.', 'wpsso-rrssb' );
 

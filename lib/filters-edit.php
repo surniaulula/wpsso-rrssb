@@ -85,21 +85,6 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 			);
 
 			/*
-			 * Twitter.
-			 */
-			$twitter_type     = $this->p->options[ 'twitter_caption' ];
-			$twitter_max_len  = WpssoRrssbSocial::get_tweet_max_len();
-			$twitter_hashtags = $this->p->options[ 'twitter_caption_hashtags' ];
-			$def_twitter_desc = $this->p->page->get_caption( $mod, $md_key = '', $twitter_type, $twitter_max_len, $twitter_hashtags );
-
-			$form_rows[ 'twitter_desc' ] = array(
-				'th_class' => 'medium',
-				'label'    => _x( 'Tweet Text', 'option label', 'wpsso-rrssb' ),
-				'tooltip'  => 'meta-buttons_twitter_desc',
-				'content'  => $form->get_textarea( 'twitter_desc', $css_class = '', $css_id = '', $twitter_max_len, $def_twitter_desc ),
-			);
-
-			/*
 			 * Pinterest.
 			 */
 			$pin_type    = 'excerpt';
@@ -115,12 +100,26 @@ if ( ! class_exists( 'WpssoRrssbFiltersEdit' ) ) {
 			);
 
 			/*
+			 * X (Twitter).
+			 */
+			$twitter_type     = $this->p->options[ 'twitter_caption' ];
+			$twitter_max_len  = WpssoRrssbSocial::get_tweet_max_len();
+			$twitter_hashtags = $this->p->options[ 'twitter_caption_hashtags' ];
+			$def_twitter_desc = $this->p->page->get_caption( $mod, $md_key = '', $twitter_type, $twitter_max_len, $twitter_hashtags );
+
+			$form_rows[ 'twitter_desc' ] = array(
+				'th_class' => 'medium',
+				'label'    => _x( 'Tweet Text', 'option label', 'wpsso-rrssb' ),
+				'tooltip'  => 'meta-buttons_twitter_desc',
+				'content'  => $form->get_textarea( 'twitter_desc', $css_class = '', $css_id = '', $twitter_max_len, $def_twitter_desc ),
+			);
+
+			/*
 			 * Others.
 			 */
 			foreach ( array(
 				'linkedin' => 'LinkedIn',
 				'reddit'   => 'Reddit',
-				'tumblr'   => 'Tumblr',
 			) as $opt_pre => $name ) {
 
 				$other_type    = 'excerpt';

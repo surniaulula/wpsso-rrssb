@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"11.2.0\n"
+"11.3.0-rc.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2024-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -33,7 +33,7 @@ msgctxt "lib file description"
 msgid "Responsive Buttons"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:7 lib/filters-messages.php:270
+#: gettext/gettext-lib-config.php:7 lib/filters-messages.php:282
 msgctxt "lib file description"
 msgid "Responsive Styles"
 msgstr ""
@@ -119,7 +119,7 @@ msgstr ""
 msgid "The default responsive button options have been reloaded and saved."
 msgstr ""
 
-#: lib/actions.php:115 lib/filters-upgrade.php:146
+#: lib/actions.php:115 lib/filters-upgrade.php:156
 msgid "The default responsive styles CSS has been reloaded and saved."
 msgstr ""
 
@@ -150,20 +150,20 @@ msgstr ""
 
 #: lib/filters-edit.php:97
 msgctxt "option label"
-msgid "Tweet Text"
+msgid "Pinterest Caption"
 msgstr ""
 
 #: lib/filters-edit.php:112
 msgctxt "option label"
-msgid "Pinterest Caption"
+msgid "Tweet Text"
 msgstr ""
 
-#: lib/filters-edit.php:132
+#: lib/filters-edit.php:131
 msgctxt "option label"
 msgid "%s Title"
 msgstr ""
 
-#: lib/filters-edit.php:139
+#: lib/filters-edit.php:138
 msgctxt "option label"
 msgid "%s Caption"
 msgstr ""
@@ -289,8 +289,7 @@ msgstr ""
 #: lib/filters-messages.php:233 lib/share/email.php:40
 #: lib/share/facebook.php:40 lib/share/linkedin.php:40
 #: lib/share/pinterest.php:43 lib/share/pocket.php:40 lib/share/reddit.php:40
-#: lib/share/tumblr.php:40 lib/share/twitter.php:40 lib/share/vk.php:40
-#: lib/share/whatsapp.php:40
+#: lib/share/twitter.php:40 lib/share/vk.php:40 lib/share/whatsapp.php:40
 msgctxt "option label"
 msgid "Show Button in"
 msgstr ""
@@ -311,80 +310,80 @@ msgid ""
 "\"."
 msgstr ""
 
-#: lib/filters-messages.php:253
-msgid ""
-"Append the %1$s to the tweet (see <a href=\"%2$s\">the Twitter options tab</"
-"a> in the %3$s page). The %1$s will be displayed and recommended after the "
-"webpage is shared."
-msgstr ""
-
-#: lib/filters-messages.php:253 lib/filters-messages.php:259
+#: lib/filters-messages.php:253 lib/filters-messages.php:264
 msgctxt "option label"
-msgid "Twitter Business @username"
+msgid "X (Twitter) Business @username"
 msgstr ""
 
-#: lib/filters-messages.php:253
-msgctxt "lib file description"
-msgid "General Settings"
+#: lib/filters-messages.php:255
+msgid "Append the %1$s to the tweet."
 msgstr ""
 
-#: lib/filters-messages.php:259
-msgid ""
-"Recommend following the author's Twitter @username after sharing a webpage. "
-"If the %1$s option (above) is also checked, the %2$s is suggested first."
+#: lib/filters-messages.php:257
+msgid "The %1$s will be displayed and recommended after the webpage is shared."
 msgstr ""
 
-#: lib/filters-messages.php:259 lib/share/twitter.php:67
+#: lib/filters-messages.php:265 lib/share/twitter.php:67
 msgctxt "option label"
 msgid "Add via Business @username"
 msgstr ""
 
-#: lib/filters-messages.php:270
+#: lib/filters-messages.php:267
+msgid ""
+"Recommend following the author's X (Twitter) @username after sharing a "
+"webpage."
+msgstr ""
+
+#: lib/filters-messages.php:269
+msgid "If the %1$s option is also checked, the %2$s is suggested first."
+msgstr ""
+
+#: lib/filters-messages.php:281
 msgid "Combine and include the CSS of all <em>%s</em> in webpages."
 msgstr ""
 
-#: lib/filters-messages.php:272
+#: lib/filters-messages.php:284
 msgid ""
 "The combined CSS will be minified and saved into a single stylesheet with a "
 "URL of <a href=\"%1$s\">%2$s</a>."
 msgstr ""
 
-#: lib/filters-messages.php:274
+#: lib/filters-messages.php:287
 msgid ""
 "The minified stylesheet can be enqueued, or included directly in the webpage "
 "HTML."
 msgstr ""
 
-#: lib/filters-messages.php:280
+#: lib/filters-messages.php:293
 msgid ""
 "Have WordPress enqueue the social stylesheet instead of including the social "
 "styles directly in the webpage HTML."
 msgstr ""
 
-#: lib/filters-messages.php:282
+#: lib/filters-messages.php:295
 msgid ""
 "Enqueueing the stylesheet may be desirable if you use an optimization plugin "
 "to concatenate all enqueued styles into a single stylesheet."
 msgstr ""
 
-#: lib/filters-messages.php:302
+#: lib/filters-messages.php:315
 msgid ""
 "Disable social sharing buttons in the post content, excerpt, and CSS sidebar."
 msgstr ""
 
-#: lib/filters-messages.php:304
+#: lib/filters-messages.php:317
 msgid ""
 "This does not disable social sharing buttons added using a shortcode or "
 "widget."
 msgstr ""
 
-#: lib/filters-messages.php:310
+#: lib/filters-messages.php:323
 msgid ""
 "Identifies a strategic campaign (e.g. product launch, new feature, "
 "partnership, etc.) or a specific promotion (e.g. a sale, a giveaway, etc.)."
 msgstr ""
 
-#: lib/filters-messages.php:320
+#: lib/filters-messages.php:333
 msgid "Example CSS:"
 msgstr ""
 
@@ -439,16 +438,14 @@ msgstr ""
 
 #: lib/share/email.php:37 lib/share/facebook.php:37 lib/share/linkedin.php:37
 #: lib/share/pinterest.php:40 lib/share/pocket.php:37 lib/share/reddit.php:37
-#: lib/share/tumblr.php:37 lib/share/twitter.php:37 lib/share/vk.php:37
-#: lib/share/whatsapp.php:37
+#: lib/share/twitter.php:37 lib/share/vk.php:37 lib/share/whatsapp.php:37
 msgctxt "option label"
 msgid "UTM Source for %s"
 msgstr ""
 
 #: lib/share/email.php:44 lib/share/facebook.php:44 lib/share/linkedin.php:44
 #: lib/share/pinterest.php:49 lib/share/pocket.php:44 lib/share/reddit.php:44
-#: lib/share/tumblr.php:44 lib/share/twitter.php:44 lib/share/vk.php:44
-#: lib/share/whatsapp.php:44
+#: lib/share/twitter.php:44 lib/share/vk.php:44 lib/share/whatsapp.php:44
 msgctxt "option label"
 msgid "Preferred Order"
 msgstr ""
@@ -459,7 +456,7 @@ msgid "Email Message Length"
 msgstr ""
 
 #: lib/share/email.php:54 lib/share/linkedin.php:54 lib/share/pinterest.php:59
-#: lib/share/reddit.php:54 lib/share/tumblr.php:54 lib/share/twitter.php:58
+#: lib/share/reddit.php:54 lib/share/twitter.php:58
 msgctxt "option comment"
 msgid "characters or less"
 msgstr ""
@@ -479,11 +476,6 @@ msgstr ""
 msgid ""
 "Note that enabling the Pinterest button for the content also enables the %s "
 "option."
-msgstr ""
-
-#: lib/share/tumblr.php:52
-msgctxt "option label"
-msgid "Summary Text Length"
 msgstr ""
 
 #: lib/share/twitter.php:52

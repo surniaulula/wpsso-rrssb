@@ -768,7 +768,7 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 
 			$site_len = 0;
 
-			$short_len = 23 * $num_urls;	// Twitter counts 23 characters for any url.
+			$short_len = 23 * $num_urls;	// X (Twitter) counts 23 characters for any url.
 
 			if ( isset( $wpsso->options[ 'tc_site' ] ) && ! empty( $wpsso->options[ $opt_pre . '_via' ] ) ) {
 

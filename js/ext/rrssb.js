@@ -2,7 +2,7 @@
  Ridiculously Responsive Social Sharing Buttons
  Team: @dbox, @joshuatuscan
  Site: http://www.rrssb.ml
- Twitter: @therealkni
+ X (Twitter): @therealkni
 
         ___           ___
        /__/|         /__/\        ___

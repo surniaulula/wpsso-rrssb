@@ -17,8 +17,8 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssorrssb' => array(			// Plugin acronym.
-					'version'     => '11.2.0',	// Plugin version.
-					'opt_version' => '47',		// Increment when changing default option values.
+					'version'     => '11.3.0-rc.3',	// Plugin version.
+					'opt_version' => '48',		// Increment when changing default option values.
 					'short'       => 'WPSSO RRSSB',	// Short plugin name.
 					'name'        => 'WPSSO Ridiculously Responsive Social Sharing Buttons',
 					'desc'        => 'Ridiculously Responsive (SVG) Social Sharing Buttons for your content, excerpts, CSS sidebar, widget, shortcode, templates, and editor.',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '17.12.0',
+							'min_version'   => '17.14.0-rc.3',
 						),
 					),
 
@@ -67,14 +67,13 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 						'share' => array(
 							'email'     => 'Email',
 							'facebook'  => 'Facebook',
-							'twitter'   => 'Twitter',
 							'pinterest' => 'Pinterest',
 							'linkedin'  => 'LinkedIn',
 							'reddit'    => 'Reddit',
 							'pocket'    => 'Pocket',
-							'tumblr'    => 'Tumblr',
 							'vk'        => 'VK',
 							'whatsapp'  => 'WhatsApp',
+							'twitter'   => 'X (Twitter)',
 						),
 						'shortcode' => array(
 							'sharing' => 'Sharing Shortcode',

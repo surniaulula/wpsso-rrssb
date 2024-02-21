@@ -34,7 +34,7 @@ if ( ! class_exists( 'WpssoRrssbSubmenuShareTwitter' ) ) {
 
 		public function filter_mb_rrssb_buttons_twitter_rows( $table_rows, $form, $args ) {
 
-			$utm_src_label = sprintf( _x( 'UTM Source for %s', 'option label', 'wpsso-rrssb' ), 'Twitter' );
+			$utm_src_label = sprintf( _x( 'UTM Source for %s', 'option label', 'wpsso-rrssb' ), 'X (Twitter)' );
 
 			$table_rows[ 'twitter_show_button'] = '' .
 				$form->get_th_html( _x( 'Show Button in', 'option label', 'wpsso-rrssb' ) ) .

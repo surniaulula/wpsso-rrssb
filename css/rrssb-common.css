@@ -77,7 +77,7 @@ ul.rrssb-buttons > li a svg {
 .rrssb-pocket     a .rrssb-text::before { content:"Pocket"; }
 .rrssb-reddit     a .rrssb-text::before { content:"Reddit"; }
 .rrssb-tumblr     a .rrssb-text::before { content:"Tumblr"; }
-.rrssb-twitter    a .rrssb-text::before { content:"Twitter"; }
 .rrssb-vk         a .rrssb-text::before { content:"Vk"; }
 .rrssb-whatsapp   a .rrssb-text::before { content:"WhatsApp"; }
+.rrssb-twitter    a .rrssb-text::before { content:"X (Twitter)"; }
 

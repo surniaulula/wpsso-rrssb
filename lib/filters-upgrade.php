@@ -40,13 +40,13 @@ if ( ! class_exists( 'WpssoRrssbFiltersUpgrade' ) ) {
 					'pin_cap_len'           => 'pin_caption_max_len',
 					'linkedin_cap_len'      => 'linkedin_caption_max_len',
 					'reddit_cap_len'        => 'reddit_caption_max_len',
-					'tumblr_cap_len'        => 'tumblr_caption_max_len',
+					'tumblr_cap_len'        => '',
 					'email_cap_hashtags'    => 'email_caption_hashtags',
 					'twitter_cap_hashtags'  => 'twitter_caption_hashtags',
 					'pin_cap_hashtags'      => 'pin_caption_hashtags',
 					'linkedin_cap_hashtags' => 'linkedin_caption_hashtags',
 					'reddit_cap_hashtags'   => 'reddit_caption_hashtags',
-					'tumblr_cap_hashtags'   => 'tumblr_caption_hashtags',
+					'tumblr_cap_hashtags'   => '',
 				),
 				20 => array(
 					'gp_order'      => '',
@@ -63,7 +63,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersUpgrade' ) ) {
 					'pin_order'      => 'pin_button_order',
 					'pocket_order'   => 'pocket_button_order',
 					'reddit_order'   => 'reddit_button_order',
-					'tumblr_order'   => 'tumblr_button_order',
+					'tumblr_order'   => '',
 					'twitter_order'  => 'twitter_button_order',
 					'vk_order'       => 'vk_button_order',
 					'wa_order'       => 'wa_button_order',
@@ -92,10 +92,20 @@ if ( ! class_exists( 'WpssoRrssbFiltersUpgrade' ) ) {
 					'buttons_css_rrssb-sharing' => 'buttons_css_rrssb-common',
 				),
 				45 => array(
-					'buttons_pos_woo_short'       => 'buttons_pos_wc_short_desc',
-					'buttons_pos_woo_short_desc'  => 'buttons_pos_wc_short_desc',
-					'buttons_css_rrssb-woo_short' => '',		// Remove and re-load new key value from default.
+					'buttons_pos_woo_short'           => 'buttons_pos_wc_short_desc',
+					'buttons_pos_woo_short_desc'      => 'buttons_pos_wc_short_desc',
+					'buttons_css_rrssb-woo_short'     => '',	// Remove and re-load new key value from default.
 					'buttons_css_rrssb-wc_short_desc' => '',	// Remove and re-load new key value from default.
+				),
+				47 => array(
+					'tumblr_on_admin_edit'   => '',
+                                        'tumblr_on_content'      => '',
+                                        'tumblr_on_excerpt'      => '',
+                                        'tumblr_on_sidebar'      => '',
+                                        'tumblr_button_order'    => '',
+                                        'tumblr_utm_source'      => '',
+                                        'tumblr_caption_max_len' => '',
+                                        'tumblr_rrssb_html'      => '',
 				),
 			);
 
