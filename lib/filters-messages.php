@@ -255,7 +255,6 @@ aside.widget
 					$text = sprintf( __( 'Append the %1$s to the tweet.', 'wpsso-rrssb' ), $username_label ) . ' ';
 
 					$text .= sprintf( __( 'The %1$s will be displayed and recommended after the webpage is shared.', 'wpsso-rrssb' ), $username_label );
-					
 
 					break;
 
@@ -265,7 +264,7 @@ aside.widget
 					$add_option_label = _x( 'Add via Business @username', 'option label', 'wpsso-rrssb' );
 
 					$text = __( 'Recommend following the author\'s X (Twitter) @username after sharing a webpage.', 'wpsso-rrssb' ) . ' ';
-					
+
 					$text .= sprintf( __( 'If the %1$s option is also checked, the %2$s is suggested first.', 'wpsso-rrssb' ),
 						$add_option_label, $username_label );
 
