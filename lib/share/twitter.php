@@ -157,7 +157,7 @@ if ( ! class_exists( 'WpssoRrssbShareTwitter' ) ) {
 
 			if ( ! empty( $this->p->options[ 'twitter_via' ] ) ) {
 
-				$tc_site = SucomUtil::get_key_value( 'tc_site', $this->p->options );
+				$tc_site = SucomUtilOptions::get_key_value( 'tc_site', $this->p->options );
 
 				$atts[ 'twitter_via' ] = preg_replace( '/^@/', '', $tc_site );
 			}
