@@ -94,7 +94,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 11.4.0-rc.1 (2024/04/22)**
+**Version 11.4.0 (2024/04/23)**
 
 * **New Features**
 	* None.
@@ -107,7 +107,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.8.
-	* WPSSO Core v17.17.0-rc.1.
+	* WPSSO Core v17.17.0.
 
 **Version 11.3.0 (2024/02/21)**
 
@@ -172,9 +172,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 11.4.0-rc.1 =
+= 11.4.0 =
 
-(2024/04/22) Added support for the new `SucomUtilOptions` class in WPSSO Core v17.17.0.
+(2024/04/23) Added support for the new `SucomUtilOptions` class in WPSSO Core v17.17.0.
 
 = 11.3.0 =
 
