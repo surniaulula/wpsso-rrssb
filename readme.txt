@@ -6,7 +6,7 @@ Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://surniaulula.github.io/wpsso-rrssb/assets/
-Tags: responsive, share buttons, social widget, social media, woocommerce, facebook, google, twitter, pinterest, linkedin, whatsapp
+Tags: responsive, share buttons, social widget, social media, woocommerce
 Contributors: jsmoriss
 Requires Plugins: wpsso
 Requires PHP: 7.2.34
