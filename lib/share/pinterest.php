@@ -143,15 +143,15 @@ if ( ! class_exists( 'WpssoRrssbSharePinterest' ) ) {
 			}
 
 			$size_name     = 'wpsso-pinterest';
-			$media_request = array( 'img_url' );
+			$media_request = array( 'og_img_url' );
 			$media_info    = $this->p->media->get_media_info( $size_name, $media_request, $mod, $md_pre = array( 'pin', 'schema', 'og' ) );
 
-			if ( empty( $media_info[ 'img_url' ] ) ) {
+			if ( empty( $media_info[ 'og_img_url' ] ) ) {
 
 				return '<!-- pinterest button: no media url available -->';
 			}
 
-			$atts[ 'media_url' ] = $media_info[ 'img_url' ];
+			$atts[ 'media_url' ] = $media_info[ 'og_img_url' ];
 
 			$atts[ 'pinterest_caption' ] = $this->p->page->get_caption( $mod, $md_key = 'pin_desc', $caption_type = 'excerpt',
 				$this->p->options[ 'pin_caption_max_len' ], $num_hashtags = false, $do_encode = false );
