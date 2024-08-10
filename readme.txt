@@ -94,6 +94,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 11.5.0-dev.4 (2024/08/10)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Updated arguments for `WpssoMedia->get_media_info()`.
+* **Requires At Least**
+	* PHP v7.2.34.
+	* WordPress v5.8.
+	* WPSSO Core v17.25.0-dev.4.
+
 **Version 11.4.0 (2024/04/23)**
 
 * **New Features**
@@ -103,7 +118,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Added support for the new `SucomUtilOptions` class in WPSSO Core v17.17.0.
+	* Added support for the new `SucomUtilOptions` class.
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.8.
@@ -149,7 +164,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Update for `SucomUtil` and `SucomUtilWP` changes in WPSSO Core v17.8.0.
+	* Update for `SucomUtil` and `SucomUtilWP` changes.
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.8.
@@ -164,7 +179,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Refactored the settings page and metabox load process for WPSSO Core v17.0.0.
+	* Refactored settings page and metabox load process.
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.8.
@@ -172,9 +187,13 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
+= 11.5.0-dev.4 =
+
+(2024/08/10) Updated arguments for `WpssoMedia->get_media_info()`.
+
 = 11.4.0 =
 
-(2024/04/23) Added support for the new `SucomUtilOptions` class in WPSSO Core v17.17.0.
+(2024/04/23) Added support for the new `SucomUtilOptions` class.
 
 = 11.3.0 =
 
@@ -186,9 +205,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 11.1.0 =
 
-(2024/01/12) Update for `SucomUtil` and `SucomUtilWP` changes in WPSSO Core v17.8.0.
+(2024/01/12) Update for `SucomUtil` and `SucomUtilWP` changes.
 
 = 11.0.0 =
 
-(2023/11/08) Refactored the settings page and metabox load process for WPSSO Core v17.0.0.
+(2023/11/08) Refactored settings page and metabox load process.
 
