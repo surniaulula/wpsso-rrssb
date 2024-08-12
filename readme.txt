@@ -94,7 +94,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 11.5.0-b.4 (2024/08/11)**
+**Version 11.5.0-rc.1 (2024/08/12)**
 
 * **New Features**
 	* None.
@@ -107,7 +107,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.8.
-	* WPSSO Core v17.25.0-b.4.
+	* WPSSO Core v17.25.0-rc.1.
 
 **Version 11.4.0 (2024/04/23)**
 
@@ -187,9 +187,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 11.5.0-b.4 =
+= 11.5.0-rc.1 =
 
-(2024/08/11) Updated arguments for `WpssoMedia->get_media_info()`.
+(2024/08/12) Updated arguments for `WpssoMedia->get_media_info()`.
 
 = 11.4.0 =
 
