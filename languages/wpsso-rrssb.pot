@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons "
-"11.5.0\n"
+"11.6.0-dev.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2024-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -394,21 +394,6 @@ msgstr ""
 
 #: lib/filters-options.php:111
 msgid "Failed to open the css file %s for reading."
-msgstr ""
-
-#: lib/filters.php:100
-msgctxt "lib file description"
-msgid "(sharing) Sharing Stylesheet"
-msgstr ""
-
-#: lib/filters.php:108
-msgctxt "lib file description"
-msgid "(sharing) Sharing Shortcode"
-msgstr ""
-
-#: lib/filters.php:116
-msgctxt "lib file description"
-msgid "(sharing) Sharing Widget"
 msgstr ""
 
 #: lib/integ/ecom/woocommerce.php:101
