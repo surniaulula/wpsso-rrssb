@@ -103,7 +103,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Removed the 'wpsso_features_status' filter hook.
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.8.
@@ -204,7 +204,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 11.6.0-dev.5 =
 
-(2024/08/14) None.
+(2024/08/14) Removed the 'wpsso_features_status' filter hook.
 
 = 11.5.0 =
 
