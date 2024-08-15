@@ -94,7 +94,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 11.6.0-dev.6 (2024/08/14)**
+**Version 11.6.0-b.1 (2024/08/15)**
 
 * **New Features**
 	* None.
@@ -107,7 +107,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.8.
-	* WPSSO Core v18.0.0-dev.6.
+	* WPSSO Core v18.0.0-b.1.
 
 **Version 11.5.0 (2024/08/12)**
 
@@ -202,9 +202,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 11.6.0-dev.6 =
+= 11.6.0-b.1 =
 
-(2024/08/14) Removed the 'wpsso_features_status' filter hook.
+(2024/08/15) Removed the 'wpsso_features_status' filter hook.
 
 = 11.5.0 =
 
