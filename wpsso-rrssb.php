@@ -73,7 +73,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 		}
 
 		/*
-		 * Called by Wpsso->set_objects which runs at init priority 10.
+		 * Called by Wpsso->set_objects() which runs at init priority 10.
 		 */
 		public function init_objects() {
 
