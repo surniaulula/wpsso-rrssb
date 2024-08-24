@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoRrssbConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '18.4.1-dev.1',
+							'min_version'   => '18.5.0-dev.1',
 						),
 					),
 
