@@ -36,18 +36,12 @@ if ( ! class_exists( 'WpssoRrssbScript' ) ) {
 
 				add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
-			} else {
-
-				add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-			}
+			} else add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		}
 
 		public function enqueue_scripts( $hook_name ) {
 
-			if ( SucomUtilWP::is_amp() ) {
-
-				return;
-			}
+			if ( SucomUtilWP::is_amp() ) return;
 
 			wp_register_script( 'rrssb',
 				WPSSORRSSB_URLPATH . 'js/ext/rrssb.' . $this->file_ext,

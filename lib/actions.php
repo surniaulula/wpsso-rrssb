@@ -24,10 +24,7 @@ if ( ! class_exists( 'WpssoRrssbActions' ) ) {
 
 			static $do_once = null;
 
-			if ( true === $do_once ) {
-
-				return;	// Stop here.
-			}
+			if ( $do_once ) return;	// Stop here.
 
 			$do_once = true;
 

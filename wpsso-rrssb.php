@@ -16,7 +16,7 @@
  * Requires At Least: 5.8
  * Tested Up To: 6.6.1
  * WC Tested Up To: 9.2.2
- * Version: 11.6.0
+ * Version: 11.7.0-dev.1
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -42,11 +42,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 
 	class WpssoRrssb extends WpssoAbstractAddOn {
 
-		public $actions;	// WpssoRrssbActions class object.
-		public $filters;	// WpssoRrssbFilters class object.
-		public $script;		// WpssoRrssbScript class object.
 		public $social;		// WpssoRrssbSocial class object.
-		public $style;		// WpssoRrssbStyle class object.
 
 		protected $p;	// Wpsso class object.
 
@@ -75,7 +71,7 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 		/*
 		 * Called by Wpsso->set_objects() which runs at init priority 10.
 		 */
-		public function init_objects() {
+		public function init_objects_preloader() {
 
 			$this->p =& Wpsso::get_instance();
 
@@ -89,15 +85,24 @@ if ( ! class_exists( 'WpssoRrssb' ) ) {
 				return;	// Stop here.
 			}
 
-			$this->actions = new WpssoRrssbActions( $this->p, $this );
-			$this->filters = new WpssoRrssbFilters( $this->p, $this );
-			$this->script  = new WpssoRrssbScript( $this->p, $this );
-			$this->social  = new WpssoRrssbSocial( $this->p, $this );
-			$this->style   = new WpssoRrssbStyle( $this->p, $this );
+			new WpssoRrssbActions( $this->p, $this );
+			new WpssoRrssbFilters( $this->p, $this );
+			new WpssoRrssbScript( $this->p, $this );
+			new WpssoRrssbStyle( $this->p, $this );
+
+			/*
+			 * See WpssoRrssbActions->action_pre_apply_filters_text().
+			 * See WpssoRrssbActions->action_after_apply_filters_text().
+			 * See WpssoRrssbActions->action_load_settings_page_reload_default_rrssb_buttons().
+			 * See WpssoRrssbFiltersEdit->filter_mb_sso_inside_footer().
+			 * See WpssoRrssbShortcodeSharing->do_shortcode().
+			 * See WpssoRrssbWidgetSharing->widget().
+			 * See WpssoRrssbWidgetSharing->update().
+			 * See WpssoRrssbWidgetSharing->form().
+			 */
+			$this->social = new WpssoRrssbSocial( $this->p, $this );
 		}
 	}
 
-        global $wpssorrssb;
-
-	$wpssorrssb =& WpssoRrssb::get_instance();
+	WpssoRrssb::get_instance();
 }

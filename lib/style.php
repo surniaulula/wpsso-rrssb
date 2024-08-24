@@ -36,13 +36,9 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 			if ( is_admin() ) {
 
 				add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_styles' ) );
-
 				add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 
-			} else {
-
-				add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
-			}
+			} else add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		}
 
 		public function admin_enqueue_styles() {
@@ -64,10 +60,7 @@ if ( ! class_exists( 'WpssoRrssbStyle' ) ) {
 
 		public function enqueue_styles() {
 
-			if ( SucomUtilWP::is_amp() ) {
-
-				return;
-			}
+			if ( SucomUtilWP::is_amp() ) return;
 
 			wp_register_style( 'rrssb',
 				WPSSORRSSB_URLPATH . 'css/ext/rrssb.' . $this->file_ext,
