@@ -48,10 +48,7 @@ if ( ! class_exists( 'WpssoRrssbFiltersOptions' ) ) {
 		 */
 		public function filter_save_settings_options( array $opts, $network, $is_option_upg ) {
 
-			if ( $network ) {
-
-				return $opts;	// Nothing to do.
-			}
+			if ( $network ) return $opts;	// Nothing to do.
 
 			/*
 			 * Update the combined and minified social stylesheet.

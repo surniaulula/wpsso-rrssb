@@ -387,12 +387,12 @@ msgstr ""
 msgid "Example CSS:"
 msgstr ""
 
-#: lib/filters-options.php:75
+#: lib/filters-options.php:72
 msgctxt "option value"
 msgid "Find this content useful? Share it with your friends!"
 msgstr ""
 
-#: lib/filters-options.php:111
+#: lib/filters-options.php:108
 msgid "Failed to open the css file %s for reading."
 msgstr ""
 
