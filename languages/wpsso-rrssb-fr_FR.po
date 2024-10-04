@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 11.6.0\n"
+"Project-Id-Version: WPSSO Ridiculously Responsive Social Sharing Buttons 11.7.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-rrssb\n"
 "POT-Creation-Date: 2024-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2024-08-15 07:25-0700\n"
+"PO-Revision-Date: 2024-10-04 02:55-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 
 #: gettext/gettext-lib-abstract-com.php:5 lib/abstract/com/add-on.php:243
 msgid "The %1$s add-on requires the %2$s plugin."
@@ -455,7 +455,7 @@ msgstr "Boutons de partage social"
 #: lib/submenu/rrssb-buttons.php:46
 msgctxt "submit button"
 msgid "Reload Default Responsive Buttons"
-msgstr "Recharger boutons réactifs par défaut"
+msgstr "Recharger les boutons réactifs par défaut"
 
 #: lib/submenu/rrssb-buttons.php:141
 msgctxt "option label"
@@ -505,7 +505,7 @@ msgstr "Styles de partage social"
 #: lib/submenu/rrssb-styles.php:44
 msgctxt "submit button"
 msgid "Reload Default Responsive Styles"
-msgstr "Recharger styles réactifs par défaut"
+msgstr "Recharger les styles réactifs par défaut"
 
 #: lib/submenu/rrssb-styles.php:73
 msgctxt "option label"
