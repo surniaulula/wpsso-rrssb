@@ -414,7 +414,6 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			if ( ! empty( $buttons_html ) ) {
 
 				$buttons_count = preg_match_all( '/<li/', $buttons_html );	// Returns number of matches or false on error.
-
 				$css_type      = 'rrssb-' . $type;
 				$css_class     = 'wpsso-rrssb wpsso-' . $css_type . ' wpsso-rrssb-pos-' . $location;
 				$css_class_max = 'wpsso-rrssb-limit wpsso-' . $css_type . '-limit';
