@@ -15,7 +15,7 @@
  * Requires PHP: 7.4.33
  * Requires At Least: 5.9
  * Tested Up To: 6.7.2
- * WC Tested Up To: 9.6.0
+ * WC Tested Up To: 9.6.2
  * Version: 11.7.0
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
@@ -25,7 +25,7 @@
  *      {bugfix}        Backwards-compatible bug fixes or small improvements.
  *      {stage}.{level} Pre-production release: dev < a (alpha) < b (beta) < rc (release candidate).
  *
- * Copyright 2015-2024 Jean-Sebastien Morisset (https://wpsso.com/)
+ * Copyright 2015-2025 Jean-Sebastien Morisset (https://wpsso.com/)
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
