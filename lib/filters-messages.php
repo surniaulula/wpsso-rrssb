@@ -185,7 +185,7 @@ aside.widget
 
 					$text .= $this->get_info_css_example( array( 'wc_short_desc', 'wc_add_to_cart' ) );
 
-      					break;
+					break;
 			}
 
 			return $text;

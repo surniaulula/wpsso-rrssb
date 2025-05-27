@@ -99,13 +99,13 @@ if ( ! class_exists( 'WpssoRrssbFiltersUpgrade' ) ) {
 				),
 				47 => array(
 					'tumblr_on_admin_edit'   => '',
-                                        'tumblr_on_content'      => '',
-                                        'tumblr_on_excerpt'      => '',
-                                        'tumblr_on_sidebar'      => '',
-                                        'tumblr_button_order'    => '',
-                                        'tumblr_utm_source'      => '',
-                                        'tumblr_caption_max_len' => '',
-                                        'tumblr_rrssb_html'      => '',
+					'tumblr_on_content'      => '',
+					'tumblr_on_excerpt'      => '',
+					'tumblr_on_sidebar'      => '',
+					'tumblr_button_order'    => '',
+					'tumblr_utm_source'      => '',
+					'tumblr_caption_max_len' => '',
+					'tumblr_rrssb_html'      => '',
 				),
 			);
 

@@ -515,8 +515,8 @@ if ( ! class_exists( 'WpssoRrssbSocial' ) ) {
 			/*
 			 * Basic attributes for all buttons.
 			 */
-			$atts[ 'use_post' ]   = isset( $atts[ 'use_post' ] ) ? $atts[ 'use_post' ] : true;
-			$atts[ 'add_page' ]   = isset( $atts[ 'add_page' ] ) ? $atts[ 'add_page' ] : true;
+			$atts[ 'use_post' ] = isset( $atts[ 'use_post' ] ) ? $atts[ 'use_post' ] : true;
+			$atts[ 'add_page' ] = isset( $atts[ 'add_page' ] ) ? $atts[ 'add_page' ] : false;
 
 			/*
 			 * The $mod array argument is preferred but not required.

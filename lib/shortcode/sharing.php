@@ -136,7 +136,7 @@ if ( ! class_exists( 'WpssoRrssbShortcodeSharing' ) ) {
 				return false;
 			}
 
-        		add_shortcode( $this->shortcode_name, array( $this, 'do_shortcode' ) );
+			add_shortcode( $this->shortcode_name, array( $this, 'do_shortcode' ) );
 
 			if ( $this->p->debug->enabled ) {
 
